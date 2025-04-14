@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>http::/web.stcloudstate.edu/aanda/cs331/syllabus604f17.html</title>
+<meta name="Generator" content="Vim/6.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+                        CSCI 604 [001360]
+                        Advanced Data Structures
+                        Fall 2017 SYLLABUS
+
+INSTRUCTOR:     Andrew A. Anda, Ph.D., Assoc. Prof. of Computer Science
+OFFICE:         ECC-223          Telephone:     (320)308-2044
+E-MAIL:         aanda@stcloudstate.edu
+Web Site: <A HREF="http://web.stcloudstate.edu/aanda/cs331.html">http://web.stcloudstate.edu/aanda/cs331.html</A>
+Instructor Schedule: <A HREF="http://web.stcloudstate.edu/aanda/Wkly-sched-f15.html">http://web.stcloudstate.edu/aanda/Wkly-sched-f17.html</A>
+(and by appointment)
+
+
+CLASS TIME AND LOCATION:
+    Class: MWF: 11:00 - 11:50 in EB A122
+
+REQUIRED TEXT:  * File Structures: An Object-Oriented Approach with C++,
+                  M.J. Folk, B. Zoellick, G. Riccardi, Addison Wesley Longman, 1998.
+
+                  You may buy the text (used) from a campus bookstore (or from a Web-based merchant)
+                  or you can follow the following instructions on how to buy the electronic version from the publisher which includes the source code:
+		  <A HREF="http://web.stcloudstate.edu/aanda/cs331/Folk/CSCI331CustomBook.txt">http://web.stcloudstate.edu/aanda/cs331/Folk/CSCI331CustomBook.txt</A>
+
+RECOMMENDED TEXT * Introduction to the Personal Software Process, W. S. Humphrey, Addison Wesley, 1997.
+
+SUPPLEMENTARY TEXTS * Applied Data Structures with C++, Peter Smith, Jones and Bartlett, 2004.
+		    * (your CSCI 591 text, or equivalent text covering data structures in C++)
+
+COURSE DESCRIPTION:
+    Problem solving strategies and concepts applied in the context of issues
+    associated with the design and implementation of software systems using
+    a combination of current software packages/environments. Subjects
+    addressed include file processing, data modeling and mapping to storage
+    structures, data base systems, and software design and implementation.
+
+STUDENT LEARNING GOALS:
+    1. gain knowledge updating sequential files as related to data base systems.
+    2. gain knowledge about programs and software systems involving trees, blocking/deblocking, sort/merge, updating sequential files, and b-trees.
+
+
+II Student Outcomes (Sos) for the Computer Science Program:
+    Students will be able to:
+	1. apply structured principles and good practices to the task of developing software systems.
+	4. communicate both technical and non-technical aspects of their work in formal and informal situations.
+	5. apply formal methods to the process of constructing a system and an appreciation of the need to study and develop such methods.
+	7. analyze various aspects of the process used when designing a system and employ established frameworks to evaluate the completed work.
+
+TOPICS (not necessarily in order of coverage):
+    * Sequential file processing
+    * Indexed Files
+    * Hashed Files
+    * Tree Structured Files
+    * Secondary storage media
+    * Introduction to database
+    * Software Design Processes and Principles
+    * Software Development Processes and Principles
+    * and more...
+    * (I will expect students to learn the complexities {bigO} of the
+        operations on the data structures we discuss and to be able
+        to select, based on those complexities, the most appropriate ADT
+        considering the nature of the data and how it will be accessed.)
+
+PREREQUISITES:
+    [Prereq.: CSCI 591 or equivalent (A course in data structures using C++)]
+    We also assume that you have an operational facility with Unix, hardware, and OS theory.
+    We do not have time for an extensive recapitulation of topics covered in the prerequisite courses.
+
+
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.  Use of recording devices during exams is prohibited.
+    If you must quote or paraphrase another source, citation is essential,
+    otherwise plagiarism has been committed.  You are expected to be familiar
+    with your rights and obligations as outlined in the &quot;Code of Conduct&quot;
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/documents/2013_14_codeofconduct.pdf">http://www.stcloudstate.edu/studenthandbook/documents/2013_14_codeofconduct.pdf</A>]  See also:
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/code/prohibited.asp">http://www.stcloudstate.edu/studenthandbook/code/prohibited.asp</A>]
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/code/rights_responsibilities.asp">http://www.stcloudstate.edu/studenthandbook/code/rights_responsibilities.asp</A>]
+
+STUDYING IN GROUPS:
+    I encourage you to study with someone else in the class, but when you
+    prepare the final documents to turn in be sure that it is your own words
+    and sentences and that you understand it.  If you represent someone
+    else’s work as your own or allow someone else to turn your work in as
+    theirs you will be turned in for cheating and will be given an F.
+
+DECORUM: Conduct yourself so as not to distract others. In particular
+    * Silence all cell phones, watch alarms, and similar devices.
+    * Do not engage in distracting activities like reading a newspaper
+      or sleeping. [ the snoring can be so distracting... :^) ]
+    * Arrive for class on time, and be ready to begin.
+      If you must be late, be quiet.
+    * If you are early, sit toward the middle of a row.
+    * Do not start packing up before class ends.
+
+ATTENDANCE:
+    You are responsible for knowing what happens at each class meeting.
+
+QUIZZES:
+    There will be a sequence of quizzes of assigned readings.
+
+EXAMS:
+    There will be a small set of intermediate exams and a comprehensive
+    final exam.
+    Exams will be based on the notes; that is, on the presentations in class,
+    as well as on the assigned readings and assignments.
+    Calculators will be neither necessary nor allowed.
+    Make-up exams will be given in only in extreme (or university sanctioned) circumstances and only with prior notice.
+
+GRADING:
+        Your grade will be determined by the contributions of your scores
+        on assignments,  quizzes, intermediate and final exams.
+        Makeup of tests, quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE POINTS:
+        Term Paper              35%
+        Quizzes                 05%
+        Hour Exams              30%
+        Final Exam              30%
+
+FINAL EXAM: Monday, December 11, 9:55 - 12:10 in EB A122.
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************
+</pre>
+</body>
+</html>

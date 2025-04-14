@@ -1,0 +1,74 @@
+<html>
+    <head>
+	<title>onchange base conversion template</title>
+	<script type="text/javascript">
+
+	    function validateDigitInBase( digit, base )
+	    {
+		if()
+		{
+		    alert();
+		}
+	    }
+
+	    function convertBinaryToDecimal( binaryValue )
+	    // Assumes that binaryValue is a decimal value where each decimal digit represents a binary digit
+	    {
+
+		// constants
+		var SOURCE_BASE      =  2;
+		var DESTINATION_BASE = 10;
+		var DISPLAY_BASE     = 10;
+
+		// local variables
+		var placeValue   = 1; // initialized to the multiplicative identity
+		var decimalValue = 0; // initialized to the additive identity
+		var digit;
+
+		digit = ;                  // extracting the rightmost DISPLAY_BASE (simulated binary) digit
+		validateDigitInBase( , );  // ensuring that the new digit is valid in the SOURCE_BASE
+		decimalValue += ;          // adding the new digit scaled by its SOURCE_BASE place value
+		placeValue *= ;            // updating the SOURCE_BASE place value
+		binaryValue = ;            // the decimal (simulated binary) value without the rightmost DISPLAY_BASE digit
+		// repeat the above code block seven more times
+
+		return decimalValue;
+	    }
+
+	    function convertDecimalToBinary( decimalValue )
+	    {
+
+		// constants
+		var SOURCE_BASE      = 10;
+		var DESTINATION_BASE =  2;
+		var DISPLAY_BASE     = 10;
+
+		// local variables
+		var placeValue  = 1; // initialized to the multiplicative identity
+		var binaryValue = 0; // initialized to the additive identity
+				     // Assumes that binaryValue is a decimal value where each decimal digit represents a binary digit
+		var digit;
+
+		digit = ;                  // extracting the rightmost DESTINATION_BASE digit
+		validateDigitInBase( , );  // ensuring that the new digit is valid in the DESTINATION_BASE
+		binaryValue += ;           // adding the new digit scaled by its DISPLAY_BASE place value
+		placeValue *= ;            // updating the DISPLAY_BASE place value
+		decimalValue = ;           // the decimal value without the rightmost DESTINATION_BASE digit
+		// repeat the above code block seven more times
+
+		return binaryValue;
+	    }
+
+	</script>
+    </head>
+
+    <body>
+	<h1><tt>onchange</tt> base conversion template</h1>
+       <h2>Click to copy either value</h2>
+       <input type="text" id="box1" size="8" value="1" onchange="document.getElementById('box2').value = 
+                      convertBinaryToDecimal( parseFloat(document.getElementById('box1').value) );">
+       &nbsp; <tt>&lt;–––-&gt;</tt> &nbsp;
+       <input type="text" id="box2" size="3" value="1" onchange="document.getElementById('box1').value = 
+                      convertDecimalToBinary( parseFloat(document.getElementById('box2').value) );">
+    </body>
+</html>

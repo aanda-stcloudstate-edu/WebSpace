@@ -1,0 +1,447 @@
+MIME-Version: 1.0
+X-Document-Type: Worksheet
+Content-Location: file:///C:/2A4BCAB3/JavaScriptOperators.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 11">
+<link rel=3DFile-List href=3D"JavaScriptOperators_files/filelist.xml">
+<link rel=3DEdit-Time-Data href=3D"JavaScriptOperators_files/editdata.mso">
+<link rel=3DOLE-Object-Data href=3D"JavaScriptOperators_files/oledata.mso">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Andrew Anda</o:Author>
+  <o:LastAuthor>Andrew Anda</o:LastAuthor>
+  <o:LastPrinted>2006-11-20T08:00:56Z</o:LastPrinted>
+  <o:Created>2006-11-20T07:53:10Z</o:Created>
+  <o:LastSaved>2006-11-20T08:05:12Z</o:LastSaved>
+  <o:Company>St. Cloud State University</o:Company>
+  <o:Version>11.8107</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:DownloadComponents/>
+  <o:LocationOfComponents HRef=3D"file:///\\stcloudstate\huskynet\Apps\Micr=
+osoft\OfficeSystem2003\"/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-page-orientation:landscape;}
+tr
+	{mso-height-source:auto;}
+col
+	{mso-width-source:auto;}
+br
+	{mso-data-placement:same-cell;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normal;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl24
+	{mso-style-parent:style0;
+	text-align:center;}
+.xl25
+	{mso-style-parent:style0;
+	text-align:center;
+	border:.5pt solid windowtext;}
+.xl26
+	{mso-style-parent:style0;
+	border:.5pt solid windowtext;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>Sheet1</x:Name>
+    <x:WorksheetOptions>
+     <x:Print>
+      <x:ValidPrinterInfo/>
+      <x:Scale>115</x:Scale>
+      <x:HorizontalResolution>600</x:HorizontalResolution>
+      <x:VerticalResolution>600</x:VerticalResolution>
+      <x:Gridlines/>
+      <x:RowColHeadings/>
+     </x:Print>
+     <x:Selected/>
+     <x:Panes>
+      <x:Pane>
+       <x:Number>3</x:Number>
+       <x:RangeSelection>$A:$C</x:RangeSelection>
+      </x:Pane>
+     </x:Panes>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+    <x:QueryTable>
+     <x:OverwriteCells/>
+     <x:Name>ExternalData_1</x:Name>
+     <x:AutoFormatFont/>
+     <x:AutoFormatPattern/>
+     <x:QuerySource>
+      <x:QueryType>Web</x:QueryType>
+      <x:EnableRedirections/>
+      <x:RefreshedInXl9/>
+      <x:URLString
+       HRef=3D"http://www.devarticles.com/c/a/JavaScript/The-Power-of-Javas=
+cript-Operators-concluded/4/"/>
+      <x:HTMLTables>
+       <x:Number>63</x:Number>
+      </x:HTMLTables>
+      <x:VersionLastRefresh>2</x:VersionLastRefresh>
+     </x:QuerySource>
+    </x:QueryTable>
+   </x:ExcelWorksheet>
+   <x:ExcelWorksheet>
+    <x:Name>Sheet2</x:Name>
+    <x:WorksheetOptions>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+   <x:ExcelWorksheet>
+    <x:Name>Sheet3</x:Name>
+    <x:WorksheetOptions>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:WindowHeight>9210</x:WindowHeight>
+  <x:WindowWidth>14235</x:WindowWidth>
+  <x:WindowTopX>360</x:WindowTopX>
+  <x:WindowTopY>90</x:WindowTopY>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ProtectWindows>False</x:ProtectWindows>
+ </x:ExcelWorkbook>
+ <x:ExcelName>
+  <x:Name>ExternalData_1</x:Name>
+  <x:SheetIndex>1</x:SheetIndex>
+  <x:Formula>=3DSheet1!$A$1:$C$29</x:Formula>
+ </x:ExcelName>
+</xml><![endif]-->
+</head>
+
+<body link=3Dblue vlink=3Dpurple alink=3D"#000000" leftmargin=3D0 topmargin=
+=3D0>
+
+<table x:str border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D677 style=
+=3D'border-collapse:
+ collapse;table-layout:fixed;width:508pt' height=3D18>
+ <col class=3Dxl24 width=3D76 style=3D'mso-width-source:userset;mso-width-a=
+lt:2779;
+ width:57pt'>
+ <col class=3Dxl24 width=3D80 style=3D'mso-width-source:userset;mso-width-a=
+lt:2925;
+ width:60pt'>
+ <col width=3D521 style=3D'mso-width-source:userset;mso-width-alt:19053;wid=
+th:391pt'>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 width=3D76 style=3D'height:12.75pt;width:57p=
+t'><a
+  name=3D"ExternalData_1">Precedence</a></td>
+  <td class=3Dxl25 width=3D80 style=3D'border-left:none;width:60pt'>Associa=
+tivity</td>
+  <td class=3Dxl26 width=3D521 style=3D'border-left:none;width:391pt'>Opera=
+tor</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 colspan=3D2 class=3Dxl24 style=3D'height:12.75pt;mso-igno=
+re:colspan'></td>
+  <td></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt' x:num>0</td>
+  <td class=3Dxl25 style=3D'border-left:none'>left-to-right</td>
+  <td class=3Dxl26 style=3D'border-left:none'>() The Parentheses Operator</=
+td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>1</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>++ The Increm=
+ent
+  Operator</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>1</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>-- The Decrem=
+ent
+  Operator</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>1</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>- the Unary M=
+inus</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>1</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>~ The Bitwise=
+ NOT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>1</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>! The Logical=
+ NOT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>1</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>typeof Operat=
+or</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>1</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>void Operator=
+</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>2</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>*, /, %</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>3</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>+ Addition an=
+d -
+  Subtraction Operators</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>4</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>&gt;&gt; Righ=
+t Shift
+  With Sign</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>4</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>&gt;&gt;&gt; =
+Right
+  Shift With Zero Fill</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>4</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>&lt;&lt; Bitw=
+ise Left
+  Shift</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>5</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>&gt; and &gt;=
+=3D
+  Operators</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>5</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>&lt; and &lt;=
+=3D
+  Operators</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>6</=
+td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>=3D=3D The Eq=
+ual Operator</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>6</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>!=3D The Not =
+Equal
+  Operator</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>6</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>=3D=3D=3D The=
+ Strict Equal
+  to Operator</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>6</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>!=3D=3D The S=
+trict NOT
+  Equal to Operator</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>7</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>The Bitwise &=
+amp;</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>8</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>The Bitwise X=
+OR ^</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>9</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>The Bitwise O=
+R |</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>10</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>The Logical A=
+ND
+  &amp;&amp;</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>11</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>left-to-right=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>The Logical O=
+R ||</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>12</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>:? The Condit=
+ional
+  Operator</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none' x:n=
+um>13</td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'><span
+  style=3D'mso-spacerun:yes'>&nbsp;</span>=3D The Assignment Operator</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl25 style=3D'height:12.75pt;border-top:none'>13<=
+/td>
+  <td class=3Dxl25 style=3D'border-top:none;border-left:none'>right-to-left=
+</td>
+  <td class=3Dxl26 style=3D'border-top:none;border-left:none'>The Combined
+  Assignment Operators: *=3D, /=3D, %=3D, +=3D, -=3D, &lt;&lt;=3D, &gt;&gt;=
+=3D,
+  &gt;&gt;&gt;=3D, &amp;=3D, ^=3D, |=3D</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D76 style=3D'width:57pt'></td>
+  <td width=3D80 style=3D'width:60pt'></td>
+  <td width=3D521 style=3D'width:391pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+// !!!!!!!!!!!!!!!!! COMPLETE ME !!!!!!!!!!!!!!!!!
+// < complete the text delimited by the "<>" angle brackets >
+// This program experiments with integer products
+
+// <Include your Name, class & section, & date here>
+
+#include <iostream.h>
+#include <math.h>
+
+int counterI; //global counter variable for the iterative function
+int counterR; //global counter variable for the recursive function
+int counterB; //global counter variable for the binary function
+int counterRB; //global counter variable for the recursive binary function
+void resetCounters(void); // reset the counters
+
+double iterativePow(double number, int power);
+double recursivePow(double number, int power);
+double binaryAlgPow(double number, int power);
+double recursiveBinaryAlgPow(double number, int power);
+
+int main(void)
+{
+    // Local Declarations
+
+double number;
+int power;
+<place your local declarations here>
+    
+
+    // Statements
+
+
+
+    cout << "This program computes and compares several functions " << endl;
+    cout << "for computing the integer power of a number." << endl << endl;
+
+    cout << "Enter a number (<EOF> to stop)"
+         << endl << endl;
+
+    while (cin >> number)
+	{
+    cout << "Enter the positive integer power it is raised to " << endl;
+	cin >> power;
+
+	resetCounters(); // reset the counters
+	cout << number << " raised to the power of " << power << " is:" << endl;
+	cout << "Iterative   Value: "
+	     << iterativePow(number,power) << endl;
+	cout << "Iterative   mults: " << counterI << endl;
+	cout << "Recursive   Value: "
+	     << recursivePow(number,power) << endl;
+	cout << "Recursive   mults: " << counterR << endl;
+	cout << "Binary Alg. Value: "
+	     << binaryAlgPow(number,power) << endl;
+	cout << "Binary Alg. mults: " << counterB << endl;
+	cout << "Recursive Binary Alg. Value: "
+             << recursiveBinaryAlgPow(number,power) << endl;
+	cout << "Recursive Binary Alg. mults: " << counterRB << endl;
+	cout << "Enter a number (<EOF> to stop)"
+	}
+
+
+
+    return 0;
+} // main
+
+void resetCounters(void); // reset the counters
+{
+counterI=0; //global counter variable for the iterative function
+counterR=0; //global counter variable for the recursive function
+counterB=0; //global counter variable for the binary function
+counterRB=0; //global counter variable for the recursive binary function
+}
+double iterativePow(double number, int power)
+{
+}
+
+double recursivePow(double number, int power)
+{
+}
+
+double binaryAlgPow(double number, int power)
+{
+}
+double recursiveBinaryAlgPow(double number, int power)
+{
+}

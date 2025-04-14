@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	   <title>Conversion</title>
+	   <style type="text/css">
+	      body {background-color : dodgerblue; font-family : optima; 
+	                color: midnightblue; text-align : center}
+	      p       {font-size : x-large}
+	   </style>
+	</head>
+
+   <body>
+      <h1>How Cool Is It? </h1>
+      <script type="text/javascript">
+         function convertC2F (tempInC) {
+            return 9/5*tempInC + 32;
+         }
+         function convertF2C (tempInF) {
+            return 5/9*(tempInF - 32);
+         }
+      </script>
+      <form activity="">
+         <p> Celsius temperature:
+            <input type="text" name="textTempC" size="4"
+               onchange="document.forms[0].textTempF.value
+               =convertC2F(document.forms[0].textTempC.value)"/>&#176;  C</p>
+         <p> Fahrenheit temperature:
+            <input type="text" name="textTempF" size="4"
+               onchange="document.forms[0].textTempC.value
+               =convertF2C(document.forms[0].textTempF.value)"/>&#176;  F</p>
+      </form>
+   </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+ <html>
+   <head> <meta charset="UTF-8"/><title>Conversion</title>
+	   <style>
+	      body {background-color : dodgerblue; font-family : optima; 
+	                color: midnightblue; text-align : center}
+	      p       {font-size : x-large}
+	   </style>
+	</head>
+   <body>
+      <h1>How Cool Is It? </h1>
+      <script>
+         function convertC2F (tempInC) {
+            return 9/5*tempInC + 32;
+         }
+         function convertF2C (tempInF) {
+            return 5/9*(tempInF - 32);
+         }
+      </script>
+      <form id="cool">
+         <p> Celsius temperature:
+            <input type="text" id="textTempC" size="4"
+               onchange="textTempF.value=Math.round(
+               convertC2F(textTempC.value))"/>&#176;  C</p>
+         <p> Fahrenheit temperature:
+            <input type="text" id="textTempF" size="4"
+               onchange="textTempC.value=Math.round(
+               convertF2C(textTempF.value))"/>&#176;  F</p>
+      </form>
+   </body>
+</html>
+

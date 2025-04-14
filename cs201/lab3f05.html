@@ -1,0 +1,94 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab3</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 3</h2></center>
+
+<hr WIDTH="100%">
+<h2>
+Introduction:</h2>
+This lab examines and lists the local integer and floating point environments
+with respect to limits on <i>csci</i> (a <b>Sparc</b> architecture) and
+compares them with those on the authors' machine and on an <b>Intel</b>
+architecture.
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab3</i>, and move to it.</li>
+
+<li> <i>run</i>: <tt><b>cp</b> ~aanda/cs201/source/CHAppndx/PE-0[12].c++ .</tt>
+<font color="red">{dot}</font></li>
+<li> <i>run</i>: <tt><b>cp</b> ~aanda/cs201/source/CHAppndx/PE-0[12].Intel .</tt>
+<font color="red">{dot}</font></li>
+
+<li> <i>compile</i>: <tt>g++ PE-01.c++ -o PE-01.exe</tt> </li>
+<li> <i>compile</i>: <tt>g++ PE-02.c++ -o PE-02.exe</tt> </li>
+
+<li>
+
+<li> <i>Run</i>: each executable {<i>*.exe</i>}</li> saving the output in PE-01.Sparc and PE-02.Sparc respectively.
+
+<li> <i>Copy</i>: each source file naming the copy PE-01.Author and PE-02.Author respectively</li>
+
+<li> <i>Edit</i>: each *.Author file so that it only contains the Authors' machine's output without any comment tokens</li>
+
+<li> <i>Copy</i>: each *.Author file to a new file with a *.Table suffix</li>
+
+<li> <i>Edit</i>: each *.Table file to have three columns, where each column contains the output for that row for the three different architectures.  Add your <u>name</u> and <u>today's date</u> to the top of the file with a line of underscore characters underneath as a separator.</li>
+
+<li>
+<i>Print</i> two copies of the *.Table files together using <b>lpr -# 2</b> <i>outputfilename</i>.</li>
+
+
+<li>
+Hand in one printout.</li>
+
+<li>
+Retain one printout for your notes.</li>
+</ol>
+</ol>
+
+<h4>
+Editing Suggestions:</h4>
+
+<li>
+run <b>vim</b></li>
+
+<li>
+set the following flags:</li>
+
+<blockquote>
+<li>
+"<tt>:set cin sw=4</tt>"  {this maintains indenting.
+See p. 206 of our Unix text for details}</li>
+
+<li>
+"<tt>:syntax enable</tt>"
+{provides automatic syntax highlighting to help illuminate structure and
+mistakes}</li>
+
+<li>
+"yank" and "put" similar lines to save editing work {<b>yy</b> and
+<b>p</b> commands}</li>
+</blockquote>
+
+<li>
+use two terminal windows Write from the editor periodically {"<b>:w</b>"}
+while compiling and running in the other window to catch syntax and other
+errors early.</li>
+
+</body>
+</html>

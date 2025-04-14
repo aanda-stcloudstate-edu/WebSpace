@@ -1,0 +1,108 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab7 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 7</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2>
+Introduction:</h2>
+This lab provides experience defining functions.
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab7</i>, and move to it.</li>
+
+<li>
+Write a working program and, function <tt><u>round(fpnum,digits)</u></tt> which
+it calls, which requests from the user a positive floating point number
+(to round) and an integer in the interval
+[0-6] specifying the number of decimal places to round to.
+</li>
+
+<ol>
+    <li>
+    <ul>
+	<li>Base your equation on expressions from Exercise 21 of Section 4-12 of your C++ text.
+	<li>Notice that the power of 10 used is equal to the number of digits to round to.
+	<li>What function can you use to generate powers of 10?
+    </ul>
+</li>
+
+<li>
+Ensure that your program and functions have updated <u>comment </u>headers
+describing your identifying information, the date, and the purpose of the
+program or function.<br>
+Each user defined function should document what each
+parameter is and whether they are IN, OUT, or IN/OUT. <br>
+
+<li>
+Use a <b>function</b> to <u>prompt</u> the user with explicit instructions to
+<u>input</u> the positive floating point decimal number to be rounded
+<i>and</i> the number of digits to round to.<br>
+The number of digits to round should be between zero and six inclusive <i>[0-6]</i>.
+</li>
+
+<li>
+Use a <i>second</i> <b>function</b> to perform the rounding to the specified number
+of decimal places.
+</li>
+
+<li>
+<u>Output</u> the results using a <i>third</i> <b>function</b>.<br>
+The output will display:
+    <ul>
+	<li>
+	the original number,
+	<li>
+	the number of digits to round, and
+	<li>
+	the rounded value.
+    </ul>
+</li>
+
+<li>
+<b>Note</b>:
+<ul>
+<li>
+Don't forget to place the <u>prototype declaration</u>
+for each function above the function header of the main program.
+<li>
+Use <b>stubs</b> (See Program 4-13 on pg. 165) to design from the top down
+and ensure that the functional structure is working at an intermediate stage.  When the stub form is working properly, replace each with the complete code and test.
+</ul>
+</li>
+
+<li>
+Compile and run.<br>
+Ensure that the program is working correctly.<br>
+Use <b>1.345678</b> as the input number.<br>
+Test with rounding to 0, 1, 2, 3, 4, 5 and 6 decimal places.
+</li>
+
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the running of the program for "checkout".</li>
+</ol>
+
+</body>
+</html>

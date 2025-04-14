@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 19</h1>
+    <p align="center">
+    <a href="#Listing 19-1  A header file for a class of nodes for a 2-3 tree">
+    Listing 19-1</a></p>
+      <p align="center">&nbsp;</p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 19-1  A header file for a class of nodes for a 2-3 tree">
+                Listing 19-1&nbsp; A<font FACE="TimesNewRomanPS-Bold" SIZE="2"><b>
+                </b></font>header file for a class of nodes for a 2-3 tree</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="4" color="#0000FF">/** A class of nodes for a link-based 2-3 tree.
+@file TriNode.h */
+#ifndef _TRI_NODE
+#define _TRI_NODE
+template &lt; class ItemType &gt; class TriNode
+{
+private:
+  ItemType smallItem, largeItem;	// Data portion
+  TriNode &lt; ItemType &gt; *leftChildPtr;	// Left-child pointer
+  TriNode &lt; ItemType &gt; *midChildPtr;	// Middle-child pointer
+  TriNode &lt; ItemType &gt; *rightChildPtr;	// Right-child pointer
+public:
+  TriNode ();
+  TriNode (const ItemType &amp; anItem);
+
+  TriNode (const ItemType &amp; anItem, TriNode &lt; ItemType &gt; *leftPtr, TriNode &lt; ItemType &gt; *midPtr,
+	   TriNode &lt; ItemType &gt; *rightPtr);
+  bool isLeaf () const;
+
+  bool isTwoNode () const;
+
+  bool isThreeNode () const;
+
+  ItemType getSmallItem () const;
+
+  ItemType getLargeItem () const;
+
+  void setSmallItem (const ItemType &amp; anItem);
+
+  void setLargeItem (const ItemType &amp; anItem);
+
+  TriNode &lt; ItemType &gt; *getLeftChildPtr ()const;
+
+  TriNode &lt; ItemType &gt; *getMidChildPtr ()const;
+
+  TriNode &lt; ItemType &gt; *getRightChildPtr ()const;
+
+  void setLeftChildPtr (TriNode &lt; ItemType &gt; *leftPtr);
+
+  void setMidChildPtr (TriNode &lt; ItemType &gt; *midPtr);
+
+  void setRightChildPtr (TriNode &lt; ItemType &gt; *rightPtr);
+};				// end TriNode
+
+#include &quot;TriNode&quot;
+#endif</font></b></pre>
+                <pre><font size="4" color="#0000FF"><b>
+</b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+      </body>
+</html>

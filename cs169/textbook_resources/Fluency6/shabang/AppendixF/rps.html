@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8"/><title>RPS</title>
+  <style> button {margin:0; padding:0; background-color:white;
+  			               border-style:none; border-width:0} 
+			   p {text-align:center}	     <!--above styling centers pic-->
+  </style>												   
+  <script>		//this code prefetches, randomizes and flips a picture
+     var thro = 1;										//alternates betw 0 and 1
+     var pix = new Array(4);						//array to hold 4 pictures
+     for (var i=0; i<4; i++){							
+        pix[i] = new Image( );						//set up element for pics
+     }
+     pix[0].src = "imRPS/splash.gif"; 				//prefetch the 4 pics
+     pix[1].src = "imRPS/rock.gif";
+     pix[2].src = "imRPS/paper.gif"; 
+     pix[3].src = "imRPS/scissors.gif";
+     function randNum( range ) {					//old randomizing friend
+        return Math.floor( range * Math.random( ));
+     }
+     function rps(  ) {									//display a new image
+        if (thro == 1) 									//is this a throw or reset?
+            document.images[0].src				//throw, change picture
+                  =pix[1+randNum(3)].src;		//its random from pix 1-3
+        else
+            document.images[0].src				//reset, change picture
+                  =pix[0].src;								//to splash picture
+        thro = 1-thro;									//flip thro for next time
+     }
+   </script>
+   </head>
+   <body><p>
+      <!--The program is just a picture that acts as a button
+              flipping between the splash page and a random throw-->									
+      <button onclick="rps( )">					
+         <img src="imRPS/splash.gif" 				
+              alt="R-P-S Throw" height="300"/>
+      </button></p>										
+   </body>
+</html>
+
+
+
+

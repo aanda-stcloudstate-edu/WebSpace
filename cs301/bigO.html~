@@ -1,0 +1,138 @@
+<html><head><title>bigO exercises</title>
+
+
+<meta name="Generator" content="Vim/6.1"></head><body bgcolor="#ffffff" text="#000000">
+<pre>CS 301
+A. Anda
+
+big-O Exercises.
+
+I) Write out the big-O ordering of the following functions from smallest to
+    largest:
+
+a) 1.0001^N
+b) 10000 * lg(N)
+c) 15 * N^5 - 3 * N^3 + 13 * N
+d) 10^50
+e) N!
+f) 100 * N * lg(N)
+g) lg(lg(N))
+h) 20 * N^2
+i) 0.2 * N^3
+j) sqrt(N)
+k) sqrt(N^5)
+l) 0.00001 * N
+m) lg^5(N)
+
+Ordering:__________________________________________________________________
+
+II) Let Body1 = O(1); Body2 = O(lg(N)); Body3 = O(N).
+    What is big O(f(N)) for the following statements?
+
+1) O(____________________)
+    {
+        Body1;
+        Body2;
+        Body3;
+    }
+
+2) O(____________________)
+    for (i = 1; i &lt;= 10000; i++)
+    {
+        Body1;
+        Body2;
+        Body3;
+    }
+
+3) O(____________________)
+    for (i = 1; i &lt;= N; i++)
+    {
+        Body1;
+        Body2;
+        Body3;
+    }
+
+4) O(____________________)
+    for (i = 1; i &lt;= N/10000; i++)
+    {
+        Body1;
+        Body2;
+        Body3;
+    }
+
+5) O(____________________)
+    for (i = 1; i &lt;= N; i+=10000)
+    {
+        Body1;
+        Body2;
+        Body3;
+    }
+
+6) O(____________________)
+    for (i = N; i &gt;= 1; i--)
+    {
+        Body1;
+        Body2;
+        Body3;
+    }
+
+7) O(____________________)
+    for (i = 1; i &lt;= N; i*=10000)
+    {
+        Body1;
+        Body2;
+        Body3;
+    }
+
+8) O(____________________)
+    for (i = 1; i &lt;= N; i++)
+        Body1;
+    for (j = 1; j &lt;= N; j++)
+        Body2;
+    for (k = 1; k &lt;= N; k++)
+        Body3;
+
+9) O(____________________)
+    for (i = 1; i &lt;= N; i++)
+        for (j = 1; j &lt;= N; j++)
+            for (k = 1; k &lt;= N; k++)
+            {
+                Body1;
+                Body2;
+                Body3;
+            }
+
+10) O(____________________)
+    for (i = 1; i &lt;= N; i++)
+        for (j = 1; j &lt;= i; j++)
+            for (k = 1; k &lt;= j; k++)
+            {
+                Body1;
+                Body2;
+                Body3;
+            }
+
+11) O(____________________)
+    for (i = 1; i &lt;= N; i*=2)
+        for (j = 1; j &lt;= N; j*=2)
+            for (k = 1; k &lt;= N; k*=2)
+            {
+                Body1;
+                Body2;
+                Body3;
+            }
+
+12) O(____________________)
+    for (i = 1; i &lt;= N; i++)
+        for (j = 1; j &lt;= N; j*=2)
+            for (k = N; k &gt;= 1; k/=2)
+                for (m = N; m &gt;= 1; k--)
+                {
+                    Body1;
+                    Body2;
+                    Body3;
+                }
+</pre>
+</body><script type="text/javascript"><!--
+function __RP_Callback_Helper(str, strCallbackEvent, splitSize, func){var event = null;if (strCallbackEvent){event = document.createEvent('Events');event.initEvent(strCallbackEvent, true, true);}if (str && str.length > 0){var splitList = str.split('|');var strCompare = str;if (splitList.length == splitSize)strCompare = splitList[splitSize-1];var pluginList = document.plugins;for (var count = 0; count < pluginList.length; count++){var sSrc = '';if (pluginList[count] && pluginList[count].src)sSrc = pluginList[count].src;if (strCompare.length >= sSrc.length){if (strCompare.indexOf(sSrc) != -1){func(str, count, pluginList, splitList);break;}}}}if (strCallbackEvent)document.body.dispatchEvent(event);}function __RP_Coord_Callback(str){var func = function(str, index, pluginList, splitList){pluginList[index].__RP_Coord_Callback = str;pluginList[index].__RP_Coord_Callback_Left = splitList[0];pluginList[index].__RP_Coord_Callback_Top = splitList[1];pluginList[index].__RP_Coord_Callback_Right = splitList[2];pluginList[index].__RP_Coord_Callback_Bottom = splitList[3];};__RP_Callback_Helper(str, 'rp-js-coord-callback', 5, func);}function __RP_Url_Callback(str){var func = function(str, index, pluginList, splitList){pluginList[index].__RP_Url_Callback = str;pluginList[index].__RP_Url_Callback_Vid = splitList[0];pluginList[index].__RP_Url_Callback_Parent = splitList[1];};__RP_Callback_Helper(str, 'rp-js-url-callback', 3, func);}function __RP_TotalBytes_Callback(str){var func = function(str, index, pluginList, splitList){pluginList[index].__RP_TotalBytes_Callback = str;pluginList[index].__RP_TotalBytes_Callback_Bytes = splitList[0];};__RP_Callback_Helper(str, null, 2, func);}function __RP_Connection_Callback(str){var func = function(str, index, pluginList, splitList){pluginList[index].__RP_Connection_Callback = str;pluginList[index].__RP_Connection_Callback_Url = splitList[0];};__RP_Callback_Helper(str, null, 2, func);}
+//--></script></html>

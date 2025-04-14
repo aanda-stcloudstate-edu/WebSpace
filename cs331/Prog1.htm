@@ -1,0 +1,251 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>CSCI 331 Program 1 Assignment 2005</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Lucida Sans Unicode";
+	panose-1:2 11 6 2 3 5 4 2 2 4;}
+@font-face
+	{font-family:"MS Sans Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"MS Sans Serif";}
+h1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;}
+h2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.5in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+h3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Lucida Sans Unicode";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Lucida Sans Unicode";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	background:navy;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Tahoma;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:.5in .9in .6in 1.1in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<h1><span style='font-size:10.5pt;font-family:"Lucida Sans Unicode"'>CSCI 331 -
+Software Systems                                                                                </span></h1>
+
+<h3><span style='font-size:10.5pt'>PROGRAM 1</span></h3> 
+<h3>PROJECT COLLABORATION TYPE:  <u>Individual</u>.<BR>
+	That means you should do the work on your own. <br>
+	(<i>However, you may discuss with others</i>)</h3>
+
+<p>
+<h2>THE PROGRAM:</h2>  This is the first and foundational 
+installment of the object-oriented programming (OOP) project for this class.
+It is modeled after the project described in the text book.
+You will need to use the results of this project in subsequent projects so do
+this one carefully and design for change since you will certainly want to
+change what you do here.
+</p>
+
+<ol>
+    <li>Design a class <b>Book</b>.
+    <br>Each object represents information about a single book.
+    <br>Members should include:
+    <ul>
+	<li> Mandatory Fields
+	<ul>
+	    <li>identification number
+	    <li> author<small>(s)</small> (<i>or editor<small>(s)</small></i>)
+	    <li> title
+	    <li> publisher
+	    <li> year
+	</ul>
+	<li> Optional Fields
+	<ul>
+	    <li> volume
+	    <li> series
+	    <li> address
+	    <li> edition
+	    <li> month
+	    <li> note
+	</ul>
+    </ul>
+
+
+    <br>Methods should include:
+
+    <ul>
+	<li>constructors
+	<li>destructors
+	<li>assignment (<i>overloaded </i><b><tt>'='</tt></b> <i>operator</i>)
+	<li>mutators (<i>allow modification of each respective field</i>)
+	<li>accessors (<i>allow change-free access to each respective field</i>)
+	<li>dump (<i>for debugging</i>)
+    </ul>
+
+    <li>Design a class <b>Person</b>.
+    <br>Each object represents information about a single person.
+    <br>Members should include
+    <ul>
+	<li>identification number
+	<li>first name
+	<li>last name
+    </ul>
+    <br>Methods should include
+    <ul>
+	<li>constructors 
+	<li>destructors
+	<li>assignment
+	<li>mutators
+	<li>accessors
+	<li>dump
+    </ul>
+
+    <li>Design a class <b>Lending</b>.
+    <br>Each object represents a person borrowing one or more copies of a
+	certain book.
+    <br>Members should include</span></p>
+    <ul>
+	<li><u>person</u> identification number
+	<li><u>book</u> identification number
+	<li> the number of copies borrowed
+    </ul>
+
+    <br>Methods should include
+    <ul>
+	<li>constructors 
+	<li>destructors
+	<li>assignment
+	<li>mutators
+	<li>accessors
+	<li>dump
+    </ul>
+</ol>
+
+
+<ul>
+    <li>Implement your classes and create lists of <u>books</u>,
+    <u>persons</u>, and <u>lendings</u>.
+    <ul>
+	<li>This will be used in subsequent programming projects.
+    </ul>
+    <li>Add methods to the classes to read field values from an input stream
+    and to write the fields of an object to an output stream nicely formatted.
+    <li>You may also want to be able to prompt a user to enter the field values.
+    <li>Use the C++ stream operations to implement these methods.
+    <li>Write a driver program to verify that the class along with its
+    methods is correctly implemented.
+</ul>
+
+<p>
+<h2>WHAT TO TURN IN:</h2>
+Each of the items below should be typeset on a separate page.
+All the pages must be stapled together so that we can read everything without
+taking the staple out.
+
+<ol>
+    <li><u>Design document for the classes</u>.<br>
+    This one doesn’t have to be typed but it must be drawn neatly.<br>
+    Use only one side of the paper and do not hand in pages
+    torn from a spiral notebook unless you cut off the ruffles.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Also, leave a copy of the source file in your account until the graded
+    program is returned to you.<br>
+    (<font color="teal">20% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to run the program.
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+	<li>A short paragraph describing what you learned from this assignment.
+    </ol>
+	<li>Try to answer the questions:
+	<br>(<font color="teal">5% of your grade</font>)
+    <ul>
+	<li>How much time did you spend on the program?
+	<li>Did you plan well before going to the computer?
+	<li>Did you test the program completely? 
+	<li>Did you learn anything new about the language?
+	<li>Did you learn anything new about the way you study or should study?
+    </ul>
+</ol>
+
+</div>
+
+</body>
+
+</html>

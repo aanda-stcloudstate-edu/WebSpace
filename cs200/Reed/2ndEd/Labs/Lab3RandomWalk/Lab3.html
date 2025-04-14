@@ -1,0 +1,459 @@
+<HTML
+<HEAD>
+  <TITLE>Lab 3: Functions and Turtle Graphics</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR="white" LINK="red" VLINK="darkred" ALINK="blue">
+
+<P ALIGN="right">Name: 
+_________________________________________</P>
+
+<P><BR><BR></P>
+
+<center><h2>Lab 3: Functions and Turtle Graphics</h2>
+        <h3>Lab to accompany <a href="http://dave-reed.com/book">
+        A Balanced Introduction to Computer Science, 2nd ed.</a><br />
+        by David Reed, Pearson Prentice-Hall, &copy;2008.</h3></center>
+
+<P><BR></P>
+
+<P>Chapter 7 introduces the concept of a function, a unit of computational 
+abstraction within a program.  A function carries out some self-contained task, 
+such as performing a numerical computation or displaying something in a page.
+In order to carry out the computation, however, the user does not need to know 
+the details of how the function works.  Those details are abstracted away, and 
+the user only needs to know how to call the function.  In this lab, you will 
+work within a simple graphics environment, making 
+function calls to control drawings on the screen.  
+
+
+<P><HR></P>
+
+<H3> Turtle Graphics </H3>
+
+<P> In 1967, Seymour Papert and other researchers at MIT 
+developed the programming language LOGO.  
+LOGO was specifically designed to teach children how to program 
+and solve problems on the computer.  Central to the LOGO 
+approach is the use of "turtle graphics", where the 
+child/programmer draws pictures by moving an object (called a 
+turtle) around on the screen.  Simple commands such as "move 
+forward 100 steps" and "turn right 90 degrees" are used to 
+control the turtle, which leaves a trail (i.e., a line) in its 
+wake.  </P>
+
+<P> Research by Papert and others has shown that the graphical 
+LOGO environment has numerous advantages over textual 
+environments.  Beginners can see the effect of their actions, 
+and are often drawn to the more creative aspects of drawing.  
+In this following exercises, you will be introduced to some of 
+the basic turtle graphics functions, and will experiment with 
+calling these functions.  Hopefully, this more visual approach 
+will assist you in understanding how function calls behave, and 
+appeal to your creative side as well. </P>
+
+<P>The Web page <A HREF="Turtle.html" 
+TARGET="_blank">Turtle.html</A>  contains a simple Turtle 
+Graphics environment.  In the top half of the page there is a 
+box in which commands can be entered for controlling the 
+movement of the turtle.  When the button to the right is 
+clicked, these commands are then executed and the turtle moves 
+accordingly in the graphics screen below.  
+The graphics screen is 400 units wide and 250 units tall, where 
+each unit is a single pixel (dot) on the screen.  The center of 
+the screen is considered to be coordinate (0,0), so the x-axis 
+(horizontal) ranges from -200 to 200 while the y-axis 
+(vertical) ranges from -125 to 125.  When you first load the 
+page, the turtle is located at the center of the screen (0,0) 
+facing straight up.  You can't see the turtle itself, but you 
+can follow its trail as it moves around on the screen.  The 
+coordinates of the turtle, along with its current heading (0 = 
+up, 90 = right, 180 = down, etc.) and distance from the origin, 
+are also displayed to the right. 
+Functions for controlling the turtle's movement include:
+
+
+<P><TT>forward</TT>: moves the turtle the specified number of 
+steps in the direction it is currently facing.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For example, 
+<TT>forward(20)</TT> moves 20 steps forward.<BR><br>
+<TT>left</TT>: turns the turtle the specified number of degrees 
+to the left,  relative to the current heading.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For example, 
+<TT>left(90)</TT> makes a right angle turn to the left 
+(counter-clockwise).<BR><br>
+<TT>right</TT>: turns the turtle the specified number of 
+degrees to the right,  relative to the current heading.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For example, 
+<TT>right(90)</TT> makes a right angle turn to the right 
+(clockwise).
+
+
+<P> Each time the "<TT>Execute code</TT>" button is clicked, 
+the turtle will move according to the function calls in the 
+large box at the top of the page.  By default, each new drawing 
+will begin where the previous one ended, although you can force 
+all drawings to start at the center by checking the box labeled 
+"<TT>Start each drawing at (0,0)</TT>". The lines drawn by the 
+turtle will persist between executions, until the "<TT>Reset 
+graphics screen</TT>" button is clicked.   
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 1:</FONT></B> &nbsp;&nbsp; 
+Sketch what is drawn by executing each of the following 
+sequences of function calls.   Be sure to reset the graphics 
+screen between each sequence by clicking the button labeled 
+"<TT>Reset graphics screen</TT>". <I>Note:</I> it is perfectly 
+legal to put more than one function call on a line -- calls on 
+one line are evaluated in a left-to-right order before moving 
+on to the next line.
+
+<XMP>
+
+    forward(50);
+    left(90);
+    forward(25);
+    right(180);
+    forward(50);
+
+    ________________________
+
+
+    left(45);   forward(50);
+    left(45);   forward(80);
+    left(45);   forward(50);
+    left(90);   forward(50);
+    left(45);   forward(80);
+    left(45);   forward(50);
+
+    ________________________
+
+
+    forward(60);  right(90);
+    forward(60);  right(90);
+    forward(60);  right(90);
+    forward(60);  right(90);
+
+</XMP>
+
+</BLOCKQUOTE>
+
+<P>You may have noticed that the last sequence of function 
+calls is repetitive.  In particular, it consists of the same 
+two function calls repeated four times:  
+
+<XMP>
+    forward(60);  right(90);
+</XMP>
+
+<P>For repetitive drawing tasks such as this, the Turtle 
+Graphics page provides a simpler mechanism for execution.  To 
+the right of the "<TT>Execute code</TT>" button is a box that 
+specifies the number of times the code is to be executed.  By 
+entering the above two function calls and specifying 4 
+repetitions in this box, the same effect as before is obtained.  
+That is, the two function calls are executed four times in 
+succession.  
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 2:</FONT></B> &nbsp;&nbsp; 
+Execute the following sequence of function calls 4 times, and 
+verify that it yields the same result as in the previous 
+exercise. 
+
+<XMP>
+    forward(60);  right(90);
+</XMP>
+
+<P>Execute the following sequence of function calls 4 times and 
+sketch the results:
+
+<XMP>
+    forward(40); 
+    right(90);    
+    forward(20);  
+    left(90);     
+    forward(10);  
+    left(90);
+</XMP>
+
+<P>Execute the following sequence of function calls 5 times and 
+sketch the results:
+
+<XMP>
+    forward(40);   
+    right(144); 
+
+
+
+</XMP>
+
+<P>Execute the following sequence of function calls 5 times and 
+sketch the results:
+
+<XMP>
+    forward(10);
+    right(90);  
+    forward(10);  
+    left(90);
+
+</XMP>
+
+<P><BR><BR>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 3:</FONT></B> &nbsp;&nbsp; 
+As you verified above, the function calls
+
+<XMP>
+    forward(60);  right(90);    
+</XMP>
+
+<P>when executed 4 times in succession, draw a square on the 
+screen.  By changing the turning angle and the number of 
+executions, other regular polygons can likewise be drawn.  For 
+example, changing the angle to 120 and then executing 3 times 
+results in a triangle.  Likewise, changing the angle to 72 and 
+executing 5 times results in a pentagon.
+
+<P>In general, what must the turning angle be in order to draw 
+an N-sided polygon?  Give your answer as a formula involving 
+arbitrary variable <TT>N</TT>, such that if you assign 
+<TT>N=3</TT> and execute 3 times, a triangle is drawn; 
+assigning <TT>N=4</TT> and executing 4 times draws a square, 
+etc.  Verify your answer in the page.
+
+
+<P><BR><BR><BR>
+
+</BLOCKQUOTE>
+
+<P><HR><br><br></P>
+
+<H3> Brownian Motion &amp; Random Walks</H3>
+
+<P> In 1828, a biologist Robert Brown used a microscope to 
+discover that small pollen grains in a drop of water seemed to 
+quiver in perpetual motion. Brown showed that this motion was 
+not biological but physical and the phenomenon became known as 
+Brownian motion in his honor. In 1905, the 25 year old Albert 
+Einstein wrote a brilliant paper that developed a theory of 
+Brownian motion, explaining quantitatively how the perpetual 
+motion was a natural consequence of many ongoing collisions of 
+tiny invisible atoms with the pollen grain. This paper created 
+much excitement since it provided, for the first time, an 
+experimental way to prove the existence of atoms, which was a 
+very controversial issue at the turn of the century.  In 1926, 
+a French experimental scientist, Jean Perrin, won the Nobel 
+prize in Physics for verifying Einstein's predictions and for 
+making the first quantitative measurements of Brownian motion. 
+</P>
+
+<P> One simplified model of Brownian motion involves a particle 
+that takes successive steps of a fixed size but in randomly 
+chosen directions.  This approximates the effects of collisions 
+of a big object with many small atoms.  The path taken by such 
+a particle is often referred to as a "random walk", with the 
+common analogy being that of an inebriated person staggering in 
+random directions.   
+
+<P>It is possible to simulate such random walks using our 
+Turtle Graphics environment.  In addition to calls to turtle 
+functions such as <TT>forward</TT> and <TT>right</TT>, the 
+command box in the Turtle Graphics page can include arbitrary 
+JavaScript code.  In particular, it can contain assignments to 
+variables and calls to JavaScript functions, including those defined in the 
+<tt>random.js</tt> library.  Thus, the 
+following code for simulating a random walk can be executed in 
+the Turtle Graphics page:
+
+<XMP>
+
+    turnAngle = RandomInt(1, 360);
+    stepSize = 5;
+
+    right(turnAngle);
+    forward(stepSize);
+</XMP>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 4:</FONT></B> &nbsp;&nbsp; 
+Enter this code into the Turtle Graphics page and set the 
+number of repetitions to be 100.  Execute the code and describe 
+the general look of the walks below.
+
+<P><BR><BR><BR><BR><BR><br>
+
+<P>Increase the number of repetitions to 1000 and conduct 
+several more random walks (resetting the screen between each 
+walk).  Do walks ever extend beyond the boundaries of the 
+graphics screen?  Do walks ever extend off the screen but then 
+later return?  Describe the patterns you see.
+
+<P><BR><BR><BR><BR><BR><br><br>
+
+</BLOCKQUOTE>
+
+<P> Since random walks are, by definition, random in nature, 
+you might think that there is no way to predict the result of a 
+random walk.  Statistically speaking, this is not true.  Think 
+back to the random darts thrown in Lab 2 (the Monte Carlo PI lab).  Despite the 
+fact 
+that location of each dart was random, a large number of random 
+darts yielded a predictable distribution. 
+This same sort of predictability holds for random walks.  While 
+it is possible for a walker to head off in one direction and 
+continue in a straight line, this is very unlikely.  More 
+often, the path taken will loop back upon itself and the walker 
+will not venture too far off from its starting point.  
+In fact, it has been proven that after N random steps, the 
+<I>expected</I> distance of the walker is sqrt(N) steps from 
+its starting place.  Or, perhaps a better way to say it is that 
+the square of the final distance will be equal <I>on 
+average</I> to the number of steps taken.    </P>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 5:</FONT></B> &nbsp;&nbsp; 
+Set the step size to 1 and the number of repetitions to 100.  
+Then, conduct 10 random walks by clicking the "<TT>Execute 
+code</TT>" button repeatedly.  Be sure to check the box labeled 
+"<TT>Start each drawing at (0,0)</TT>" to ensure that each 
+random walk begins at the center of the screen.
+
+<P>Record the <I>squares</I> of the final distances below.  Is 
+the average of these 10 numbers close to the expected value of 
+100?
+
+
+<P><BR><BR><BR><BR><BR><BR><BR>
+</BLOCKQUOTE>
+
+<P> Since a step size of one pixel is quite small, you may have 
+trouble distinguishing  walks on the screen.  By increasing the 
+step size (in the first JavaScript assignment statement), the scale of 
+the walk is increased and its detail becomes more apparent.  Of 
+course, an increased step size also affects the expected 
+distance of the walk.  In particular, the expected distance 
+after N steps, each of size S, is sqrt(N)*S.  Accordingly, the 
+square of the distance would <IL>on average</I> be 
+N*S<SUP>2</SUP>.  </P>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 6:</FONT></B> &nbsp;&nbsp; 
+Set the step size to 4 and the number of repetitions to 100.  
+Then, conduct 10 random walks by clicking the "<TT>Execute 
+code</TT>" button repeatedly.  As before, be sure to check the 
+box labeled "<TT>Start each drawing at (0,0)</TT>" to ensure 
+that each random walk begins at the center of the screen.
+
+<P>Record the <I>squares</I> of the final distances below.  Is 
+the average of these 10 numbers close to the expected value of 
+1600?
+
+<P><BR><BR><BR><BR><BR>
+</BLOCKQUOTE>
+
+<P>Since 10 random walks are not very many, your averages from 
+the last two exercises may not have been very close to the 
+expected values.  The page <A HREF="Walk.html" 
+TARGET="_blank">Walk.html</A> makes it easier for you to 
+conduct a large number of random walks and gather statistics on 
+those walks.  You can enter the number of desired random walks 
+and details for each walk (the number of steps, the step size, 
+and the turning angle).  To save time, only the final position 
+of the turtle is marked for each walk, and averages over all of 
+the walks are displayed.  
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 7:</FONT></B> &nbsp;&nbsp; 
+Using this page, conduct 100 random walks, each consisting of 
+100 steps.  What is the average step distance<SUP>2</SUP> of 
+your 100 walks?  Is it close to the expected value of 100?  
+<I>Note:</I> you can change the step size for the walks without 
+affecting the average, since the box labeled <I>average (step 
+distance)<SUP>2</SUP></I> normalizes the distance with respect 
+to the step size.  
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><br>
+
+<P>Now, conduct 1000 random walks, each consisting of 100 
+steps.  What is the average (step distance)<SUP>2</SUP> of your 
+1000 walks?  Is this number closer to the expected value than 
+the average over 100 walks?  Should it be?  Explain.
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><br><br><br><br>
+</BLOCKQUOTE>
+
+<P><HR><br><br></P>
+
+<H3> Manhattan Walks </H3>
+
+<P>With each step, a random walk chooses one of 360 directions 
+in which to take a step. Sometimes, a walk is more
+constrained. Imagine walking in a city such as Manhattan, where 
+each block constitutes a step. Since most streets meet at
+right angles, you generally have four choices in direction 
+(including turning around) at each corner.  Because of this 
+analogy, a random walk where the direction is constrained to 
+right angles only is known as a <I>Manhattan walk</I>.
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 8:</FONT></B> &nbsp;&nbsp; 
+In the <A HREF="Turtle.html" TARGET="_blank">Turtle.html</A> 
+page, modify your random walk code to simulate a Manhattan 
+walk, randomly choosing between four directions (0, 90, 180 or 
+270 degrees) for each step.  List the modified code below.  
+<i>Hint:</i> to randomly select from 0, 90, 180, and 270, first 
+generate a random integer in the range 0 to 3, then multiply by 
+90.
+
+<P><BR><BR><BR><BR><BR><br>
+
+<P>Conduct several Manhattan walks using your code and describe 
+the general look of the walks below:
+
+<P><BR><BR><BR><BR><br>
+
+</BLOCKQUOTE>
+
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 9:</FONT></B> &nbsp;&nbsp; 
+How would you expect Manhattan walks to compare with 
+unconstrained 360-degree random walks?  That is, would you 
+predict that the expected distance for a Manhattan walk would 
+be greater or smaller than the corresponding unconstrained 
+random walk with the same number of steps and step size?  State 
+a hypothesis and a possible rationale for that hypothesis.
+
+<P><BR><BR><BR><BR><BR><BR><BR>
+
+<P>Using the <A HREF="Walk.html" TARGET="_blank">Walk.html</A> 
+page, test your hypothesis.  That is, conduct 1000 Manhattan 
+walks, each of 100 steps, and compare the average 
+(step distance)<SUP>2</SUP> with that obtained in EXERCISE 7.  Do the 
+results support or contradict your hypothesis?  Is there enough 
+of a difference to be considered significant?  You may need to 
+conduct further experiments to be more convincing.  
+  
+<P><BR><BR><BR><BR><BR><BR><BR>
+
+</BLOCKQUOTE>
+
+<P><HR></P>
+
+<I>Hand in these sheets with your written responses.</I>
+</BODY>
+</HTML>

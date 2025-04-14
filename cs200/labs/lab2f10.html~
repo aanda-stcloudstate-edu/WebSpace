@@ -1,0 +1,90 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>CSCI 200 lab2 Fall 2010 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 200</h1></center>
+
+<center>
+<h2>
+Lab 2</h2></center>
+
+<center>
+<h3>
+    [A. A. Anda]<br>
+    Fall 2010
+</h3></center>
+
+<hr WIDTH="100%">
+<h2>Introduction:</h2>
+This lab exercises the ability to:
+<ul>
+    <li> Use an editor to create and modify a Web page.</li>
+    <li> Submit a Web page to a D2L dropbox</li>
+</ul>
+<h2>Lab Assignment:</h2>
+
+<ol>
+    <li> Create a new directory, <b><tt>Lab2</tt></b>, in your class account directory.</li>
+    <li> Move into your Lab2 directory</li>
+    <li> Using a <span style="color:fuchsia"><b><u><i>syntax-highlighting</i></u></b></span> editor, open a new file to edit.
+	    Save it as <tt>Lab2.html</tt>.</li>
+    <li> For each of the following tasks,</li>
+    <ol>
+	<li> modify your Web page file via the editor</li>
+	<ul>
+	    <li>Always write paired tags first (<i>opening and closing tags</i>) then insert between them.</li>
+	</ul>
+	<li> save the file</li>
+	<li> refresh the browser open to your Web page</li>
+	<li> verify that your modifications did what you've intended</li>
+    </ol>
+</ol>
+<dl>
+    <dt><b><span style="color:blue">Task 1</span> - Create a Web page</b><br>
+    <dd>Add an <span style="color:darkred"><b><tt>&lt;html&gt;</tt></b></span> tag pair; <br>
+	<i>then</i> add <span style="color:darkred"><b><tt>&lt;head&gt;</tt></b></span> and <span style="color:darkred"><b><tt>&lt;body&gt;</tt></b></span> tag pairs inside;<br>
+	<i>then</i> add a <span style="color:darkred"><b><tt>&lt;title&gt;</tt></b></span> that reads <u><tt>Lab 2 (<i>your name here</i>)</tt></u>;
+	<i>then</i> add some text about yourself into the <span style="color:darkred"><b><tt>&lt;body&gt;</tt></b></span> region.
+        
+    <dt><b><span style="color:blue">Task 2</span> - Text spacing</b><br>
+    <dd>Add additional paragraphs to your Web page.<br>
+	You can write about yourself or describe your hobbies.<br>
+	Next, list some favorite books or movies.<br>
+	Use <span style="color:darkred"><b><tt>&lt;p&gt;</tt></b></span>,
+	<span style="color:darkred"><b><tt>&lt;br&gt;</tt></b></span>,
+	and <span style="color:darkred"><b><tt>&amp;nbsp;</tt></b></span>
+	appropriately to make your page readable and attractive.
+
+    <dt><b><span style="color:blue">Task 3</span> - Headings and alignment</b><br>
+    <dd>Divide your home page into sections.<br>
+    Use a large heading to list your name so that it is centered at the top of the page, followed by a horizontal line.<br>
+    For each subsequent text section,
+    use a smaller heading.<br>
+    At least one section of your page should contain multiple paragraphs.
+
+    <dt><b><span style="color:blue">Task 4</span> - Font formatting</b><br>
+    <dd>Augment your home page by coloring some of the text and using font formatting where appropriate.<br>
+    For example, if you listed favorite books or movies, you could italicize or underline their titles.
+
+    <dt><b><span style="color:blue">Task 5</span> - Hyperlinks</b><br>
+    <dd>Add a section to your home page containing at least three hyperlinks to sites that you consider useful and/or interesting.<br>
+	To ensure that these hyperlinks work correctly, you should click each one and then view the linked page in your browser.
+
+    <dt><b><span style="color:blue">Task 6</span> - Images</b><br>
+    <dd>Search the Web, and choose a public-domain image that you would like to include on your web page.<br>
+	You must be careful not to violate copyrights or otherwise infringe upon the rights of the owner unless explicitly stated otherwise, you should assume that any image on the Web is private property.
+	Once located, copy the image to your LAB1 directory and incorporate the local image into your home page.
+	Be sure to include alternate text for your image via both the
+	<a href="http://www.netmechanic.com/news/vol6/html_no1.htm"><tt>ALT</tt> &amp; <tt>TITLE</tt></a>
+	attributes.
+</dl>
+
+When finished (after you’ve <u>proofread</u> your Web page), submit your file to the appropriate D2L dropbox.
+</body>
+</html>

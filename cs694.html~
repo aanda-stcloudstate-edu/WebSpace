@@ -1,0 +1,1068 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+    <head>
+	<title>SCSU CSCI 475/694 Selected Topics: High Performance Numerical Computation, Fall 2009, A. A. Anda</title>
+    </head>
+
+<body bgcolor="#eeeeee">
+
+<center>
+<h1>
+    SCSU CSCI 475/694<br>
+    Selected Topics: High Performance Numerical Computation<br>
+</h1>
+<h2>
+    Section 1<br>
+    Fall 2009<br>
+</h2>
+<h3>
+    A. A. Anda
+</h3>
+</center>
+
+<h2>SYLLABUS:</h2>
+<dl>
+	<dd> <a href="http://web.stcloudstate.edu/aanda/cs694/syllabus694f09.html">Syllabus</a></dd>
+    <dd> <a href="http://web.stcloudstate.edu/aanda/Wkly-sched-f09.html">Instructor's Class Schedule</a></dd>
+<!--
+    <dd> <a href="http://www.ec-securehost.com/SIAM/ot80.html">Accuracy and Stability of Numerical Algorithms, Second Edition, by Nicholas J. Higham</a> </dd>
+    <dl>
+	<dd> <a href="http://www.ma.man.ac.uk/~higham/asna">Book Site</a> </dd>
+    </dl>
+-->
+    <dd> <a href="http://www.textbookx.com/product_detail.php?detail_isbn=0130170089">Software Optimization for High Performance Computing: Creating Faster Applications  by Wadleigh and Crawford</a> </dd>
+</dl>
+<h2> ANNOUNCEMENTS: </h2>
+<!--
+<b>Course Assessment</b> 
+    <dl>
+	<dd> Please take the time to complete the online course assessment:
+	    (<i>set aside an hour or so for this before the end of finals week</i>)</dd>
+	<dl>
+	    <dd> Go to: <a href="http://www.wcer.wisc.edu/salgains/student/default.asp">Course Assessment Page</a></dd>
+	    <dd> The <u>Course ID</u> is: <b> 714718059</b></dd>
+
+	    <dd> The <u>Course Password</u> is: <b>flops</b></dd>
+	    <dd> Enter your <u>CSCI system login ID</u> as your <u>Student ID</u> (<i>The assessment system will ensure your annonymity</i>)</dd>
+
+	    </dl>
+	</dl>
+    </dl>
+-->
+
+<h2> READ: </h2>
+<dl>
+    <!--
+    <dd> Wadleigh and Crawford: Ch 2, 7, 6, 3, 10</dd>
+    <dd> GvL: Ch 1, 2.1-2.4</dd>
+-->
+    <dd> Relevant Web based resources below</dd>
+    <dd> <a href="http://www.rdg.ac.uk/CSC/Topic/Pgram/PgSWC+FP01/Workshop/common/ug/index.html">Sun's Numerical Computation Guide</a> <i>Esp. Appdx. <b>E</b></i></dd>
+    <dd> <a href="http://docs.sun.com/app/docs/doc/819-3693">Sun's Numerical Computation Guide</a> <i>Newer</i></dd>
+    <dd> <a href="http://freecomputerbooks.com/cgi-bin/searchBooks?keywords=Numerical%20Computation%20Guide">Numerical Computation Guide</a> (links to 2005 docs)</dd>
+    <dl>
+	<dd> <a href="http://www.fizyka.umk.pl/~jkob/mnum2/ncg.pdf">Numerical Computation Guide</a> (PDF)</dd>
+	<dd> <a href="http://docs.sun.com/source/806-3568/ncgTOC.html">Numerical Computation Guide</a> (HTML)</dd>
+    </dl>
+    <dd> <a href="http://www.uni-koeln.de/rrzk/server/sundoku/opt/SUNWspro6up2/WS6U2/lib/locale/C/html/manuals/common/ncg/ncg.pdf">Sun's Numerical Computation Guide</a> <i>Esp. Appdx. <b>E</b></i></dd>
+    <dd> <a href="http://cch.loria.fr/documentation/IEEE754/numerical_comp_guide/postscript">Sun's Numerical Computation Guide</a> <i>Esp. Appdx. <b>E</b></i></dd>
+    <dd> <a href="http://www.litho.ucalgary.ca/opt/SPRO/common/ug">Numerical Computation Guide</a></dd>
+    <dd> <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.35.2346">Numerical Computation Guide</a> (CiteSeer^X reference)</dd>
+    <dd> <a href="http://web.stcloudstate.edu/aanda/cs475/goldberg1.pdf">Goldberg: <i>What Every Computer Scientist Should Know About Floating Point Arithmetic</i></a></dd>
+    <dd> <a href="http://www.cs.ucsd.edu/users/carter/sdsc98.pdf">Single Node Optimization - Larry Carter</a></dd>
+    <dl>
+	<dd> <a href="http://www-cse.ucsd.edu/users/carter/SIAM97/siam97.html">Performance Programming (One-day intensive course)</a></dd>
+    </dl>
+</dl>
+<h3>Number systems, etc.</h3>
+<dl>
+    <dd> <a href="http://en.wikipedia.org/wiki/Entropy_(information_theory)">Entropy (information theory) - Wikipedia</a></dd>
+    <dd> <a href="http://mathworld.wolfram.com/Base.html">base - MathWorld</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Continued_fractions">Continued fractions - Wikipedia</a></dd>
+    <dd> <a href="http://mathworld.wolfram.com/NestedRadical.html">Continued fractions - MathWorld</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Nested_radicals">Nested radicals - Wikipedia</a></dd>
+    <dd> <a href="http://mathworld.wolfram.com/NestedRadical.html">Nested radicals - MathWorld</a></dd>
+</dl>
+<h3>Finite Precision Principles</h3>
+<dl>
+	<dd>
+	<a href="http://www.cse.uiuc.edu/heath/scicomp/notes/chap01.pdf">Scientific Computing Principles, Chapter 1 Notes, Heath, 2nd ed</a> {with illustrative
+	<a href="http://www.cse.uiuc.edu/iem/index.html#floatingPoint">interactive Web-modules</a>}
+	</dd>
+    <dd> <a href="http://www.cse.uiuc.edu/heath/scicomp/notes/chap02.pdf">Scientific Computing Principles, Chapter 2 Notes, Heath, 2nd ed</a> Linear systems</dd>
+    <dd> <a href="http://www.cse.uiuc.edu/heath/scicomp/notes/chap03.pdf">Scientific Computing Principles, Chapter 3 Notes, Heath, 2nd ed</a> Linear least squares</dd>
+    <dd> <a href="http://www.cse.uiuc.edu/heath/scicomp/notes/chap04.pdf">Scientific Computing Principles, Chapter 4 Notes, Heath, 2nd ed</a> Eigenvalue problems</dd>
+    <dd> <a href="http://www.cse.uiuc.edu/heath/scicomp/notes/chap12.pdf">Scientific Computing Principles, Chapter 12 Notes, Heath, 2nd ed</a> FFT</dd>
+    <dd> <a href="http://www.cse.uiuc.edu/heath/scicomp/notes/chap13.pdf">Scientific Computing Principles, Chapter 13 Notes, Heath, 2nd ed</a> Random numbers &amp; simulation</dd>
+<!--
+-->
+</dl>
+
+<h2>Exams:</h2>
+<!--
+<dl>
+    <dd> <a href="http://web.stcloudstate.edu/aanda/final694f04.ps">Take Home Final</a> Turn in during regular final exam period.
+	<dd> <i>Please complete your assessment of this course <u>after completing the final exam</u> and by Monday, May 10. Go to the following Web site: <a href="http://www.wcer.wisc.edu/salgains/student/default.asp">Course Assessment Page</a> Use the following to log in for this course:</i>
+	<ul>
+		<li> The course ID: <B>714710461</B>
+		<li> Student ID: Use your <B>SCSU ID number</B>{Your ID will be logged, but <u>your response will be anonymous</u>}
+</dl>
+-->
+<h2>Homework:</h2>
+<ol>
+    <li> Heath:
+    <ol>
+	<li> Review Questions: 1.1 - 1.51 [<i>due Thurs. Sept. 24</i>]
+	<li> Exercises: 1.1, 1.2 (&amp; (d) <tt>355/113</tt>), 1.3 - 1.21, 1.22 (assume <i>p</i>+1 for normalized), 1.23, 1.25 (answer is in other source)<br>
+	Higham: 1.3.1, 2.3, 2.6, 2.17, 2.20
+	<li> Heath Computer Problems: 1.1 (Compare with result times the factor <br>
+	<tt>(1 + 1/(12 n) + 1/(288 n^2) + 139/(51840 n^3) + 571/(2488320 n^4))</tt>, <br>
+	1.2 (Compare with the
+	<a href="http://msdn2.microsoft.com/en-us/library/85084kd6(VS.80).aspx"> &lt;limits&gt;</a> 
+	values on both the Intel &amp; Sparc), 1.3,
+	1.4 (use <tt>ipow()</tt>), 1.6, 1.7, 1.12 (also compare w. the
+	<i>better</i> one-pass formula on p. 4 of
+	<a href="http://www.cs.berkeley.edu/~mhoemmen/cs194/Tutorials/variance.pdf"> Mark Hommen's <i>Computing the Standard Deviation Efficiently</i></a> 
+	)<br>
+	Higham Computer Problems: 2.13, 2.14, 2.15, 2.16 (try different languages and architectures)
+<!--
+-->
+    </ol>
+<!--
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs475/mm_project.html">Matrix Product Project</a> Grads vs. Undergrads!</dd>
+-->
+</ol>
+<!--
+<dl>
+    <h4>Harmonic Sum:</h4>
+    <dl>
+	<h5>Compare architectures and languages</h5>
+	Compare <b>C/C++</b> with <b>Java</b> on both <b>csci</b> and <b>csci2</b> (where applicable).<br>
+	Turn off all compiler optimization.
+	<ul>
+	    <li> The effect of various type coercions on the forward sum, e.g.
+	    <ul>
+		<li> single += 1.0f / integer (Reference value for # of terms)
+		<li> single += 1.0 / integer (Will the accuracy &amp; # of terms be altered for an event driven loop?)
+		<li> double += 1.0f / integer (Will the accuracy be altered? Do not use an event driven loop.  Use the reference value # of terms.)
+	    </ul>
+	    <li> The accuracy between floating point types<br>
+	    using the backward sum of the longest precision as the reference standard.<br>
+	    Test, forwards and backwards, <tt>float, double, &amp; long double</tt> using the reference # of terms.
+	    <li> The timing between floating point types
+	    <li> The effect of a subroutine call on efficiency and accuracy<br>
+	    (is it reducing an extended double to a double?)<br>
+	    On an Intel architecture, is there an effect from inlining?
+	    <li> The timing effect of using the divisions<br>
+	    (compare by replacing the division with a multiplication)
+	    <li> The timing effect of summing subnormals
+	    <li> The timing effect of summing NaNs
+	    <li> The accuracy and timing of using compensated (both singly and doubly) summation,<br>
+	    backwards and forwards for the harmonic sum in all precisions
+	    <li> The timing effect, accuracy, and maximum number of terms on each system of:
+	    <ul>
+		<li> pairwise summation
+		<li> insertion summation (always adding smallest two iterates in the set, inserting the sum back into the set)
+	    </ul>
+	</ul>
+	<dd> <a href="http://web.stcloudstate.edu/aanda/limits.cpp.html">limits.cpp</a> This program prints the local values for the constants in <tt>limits.h</tt> and <tt>float.h</tt></dd>
+	<h5>Timing in C++:</h5>
+	<ul>
+	    <li> include time.h
+	    <li> wrap the following around a loop to time (changing variable names):
+	    <ul>
+		<li>clock_t time_ffsum_start = clock(); // begin timing ffsum loop
+		<li>clock_t time_ffsum_end = clock(); // end timing ffsum loop
+	    </ul>
+	    <li> then calculate elapsed time using the following:
+	    <pre>
+    double looptime_ffsum = static_cast&lt;double&gt;(time_ffsum_end - time_ffsum_start);
+	cout << "The ffsum loop required "
+	     << looptime_ffsum/CLOCKS_PER_SEC
+	     << " seconds\n"
+	     << " (measurement granularity: " << CLOCKS_PER_SEC
+	     << " of a second)\n\n";
+
+	    </pre>
+	</ul>
+	<h5>Compare between architectures</h5>
+	<ul>
+	    <li> relevant relative differences in the above measures
+	    <li> relate the effects on accuracy of whether doubles are extended<br>
+		 and the relative precisions and ranges (<i>listed in float.h</i>)
+	</ul>
+    </dl>
+</dl>
+-->
+<h2>Presentations:</h2>
+All presentations will consist of:
+<ul>
+    <li> ~ 1 class period oral presentation with Web linked visual resources
+    <li> linkable resource Web page, which will ultimately link to:
+    <li> informal research paper (notes) [with bibliography] on topic.
+</ul>
+<h5>Topic List</h5>
+Each topic will describe <u>theory</u>, <u>algorithms</u>, <u>implementations</u>, and significant <u>applications</u> (if not covered by another talk)<br>
+Discuss (where applicable) time &amp; space complexity, temporal &amp; spacial locality, and mappings to special architectural or programming language features.
+<ul>
+    <li> <b>matrix product and powers algorithms</b> (<a href="http://studentweb.stcloudstate.edu/moha0902/">presentation link</a>)
+    <ul>
+	<li>3M
+	<li>Winnograd's and Strassen's (and Winnograd variant) methods
+	<ul>
+	    For the following three related topics, see Kunth "The Art of Computer Programming", Vol. 2, Sec. 4.6.3
+	    <li>minimal power tree
+	    <li>matrix powers using the binary algorithm
+	    <li>matrix powers using <a href="http://en.wikipedia.org/wiki/Addition-chain_exponentiation">addition/star chains</a>
+	    <li>explain the optimal <tt>powi(x,i)</tt> code from <a href="http://linenum.info/p/gcc/4.2.2/gcc/builtins.c?page=5">here</a> &amp;
+	    <a href="http://www.opensource.apple.com/source/gcc/gcc-1765/gcc/builtins.c">here</a>. <br>
+	    <b>Note:</b> For all of the above, see <a href="http://citeseer.ist.psu.edu/519252.html"><i>A survey of fast exponentiation methods</i></a>
+	</ul>
+	<li>matrix powers using eigendecomposition (e.g. Fibonacci iterate example)
+	<li>matrix power-vector product using eigendecomposition
+    </ul>
+    <li> <b>matrix chain</b> (dynamic programming) &amp; <b>matrix polynomial algorithms</b> (<a href="http://studentweb.stcloudstate.edu/meya0901/matrix_poly.ppt">presentation link</a>)
+    <li> <b>FFT algorithms</b> (<a href="http://studentweb.stcloudstate.edu/nasr0901/FFT_final.pptx">presentation link</a>)
+    <li> <b>algorithms for structured matrices</b>(<a href="http://studentweb.stcloudstate.edu/witi0901/">presentation link</a>)<br>
+    {<i>A taxonomy of structured matrix classes, and exploiting that structure in more assymptotically efficient algorithms for propblems ranging from matrix-vector products to solving matrix equations involving them</i>}
+    <li> <b>sparse matrix data structures and algorithms, direct methods w. graph theory</b> (<a href="http://studentweb.stcloudstate.edu/prra0901/sparse_rachna_raman.ppt">presentation link</a>)
+    <li> <b>fast multipole algorithms and data structures</b><br>
+    <li> <b>GPGPU computing</b> (<a href="http://studentweb/mees0901/index.html">presentation link</a>)<br>
+</ul>
+<h5>Student Presentations &amp; Reports</h5>
+<ul>
+</ul>
+<!--
+<ul>
+    <li> <b>Generative and template metaprogramming</b><br>
+    <li> <b>Matrix multiplication algorithms</b><br>
+    <li> <b>Cache and TLB conscious matrix algorithms</b><br>
+    {<i>recursive BLAS, FLAME, etc.</i>}
+</ul>
+-->
+<h2>Timely announcements:</h2>
+<dl>
+</dl>
+<h2>Lecture notes:</h2>
+<dl>
+    <dd> <a href="http://web.stcloudstate.edu/aanda/MICS03sem.ps">Introduction</a>
+    <a href="http://web.stcloudstate.edu/aanda/cs694/MICS03sem.pdf">(.pdf)</a></dd>
+    <dd> <a href="http://web.stcloudstate.edu/aanda/cs475/IEEE754notes.ps">IEEE 754 Notes</a>
+    <a href="http://web.stcloudstate.edu/aanda/cs694/IEEE754notes.pdf">(.pdf)</a></dd>
+</dl>
+<h2>Web based resources:</h2>
+<h3>references:</h3>
+<dl>
+    <dd> <a href="http://www.nist.gov/dads">Dictionary of Algorithms and Data Structures</a></dd>
+    <dd> <a href="http://foldoc.doc.ic.ac.uk/foldoc/index.html">FOLDOC - Computing Dictionary</a></dd>
+    <dd> <a href="http://www.wikipedia.com">Wikipedia, the free encyclopedia</a></dd>
+    <dd> <a href="http://www.freshnews.org">freshnews.org - fresh tech news from around the net</a></dd>
+</dl>
+<h4>Iterative transformations</h4>
+<dl>
+    <dd> <a href="http://www.research.ibm.com/journal/rd/276/ibmrd2706P.pdf">Replacing Square Roots by Pythagorean Sums</a></dd>
+    <dd> <a href="http://www.research.ibm.com/journal/rd/276/ibmrd2706Q.pdf">A Class of Numerical Methods for the Computation of Pythagorean Sums</a></dd>
+</dl>
+<h3>Architecture</h3>
+<dl>
+    <dd> <a href="http://www-2.cs.cmu.edu/afs/cs/academic/class/15213-f00/www/lectures.html">CMU CS 213 Lectures (2000)</a> {<i>especially 10, 11, 12, 14, 15</i>} Also check lectures from more recent years</dd>
+    <dl>
+	<dd> <a href="http://www-2.cs.cmu.edu/afs/cs/academic/class/15213-f04/www/lectures.html">CMU CS 213 Lectures (2004)</a></dd>
+	<dd> <a href="http://www-2.cs.cmu.edu/afs/cs/academic/class/15213-f05/www/lectures.html">CMU CS 213 Lectures (2005)</a></dd>
+	<dd> <a href="http://www-2.cs.cmu.edu/afs/cs/academic/class/15213-f06/www/lectures.html">CMU CS 213 Lectures (2006)</a></dd>
+	<dd> <a href="http://www-2.cs.cmu.edu/afs/cs/academic/class/15213-f07/www/lectures.html">CMU CS 213 Lectures (2007)</a></dd>
+	<dd> <a href="http://www-2.cs.cmu.edu/afs/cs/academic/class/15213-f08/www/lectures.html">CMU CS 213 Lectures (2008)</a></dd>
+	<dd> <a href="http://www-2.cs.cmu.edu/afs/cs/academic/class/15213-f09/www/schedule.html">CMU CS 213 Lectures (2009)</a></dd>
+    </dl>
+    <dd> <a href="http://www.nersc.gov/news/blueplanetmore.html">Blue Planet: Extending IBM Power Technology and Virtual Vector Processing</a></dd>
+    <dd> <a href="http://rentzsch.com/papers/straightenUpAndFlyRight">rentzsch.com: Straighten Up and Fly Right</a> Aligning your Data for Speed and Correctness</dd>
+</dl>
+<h2> Floating Point </h2>
+<dl>
+    <dd> <a href="http://www.cs.unc.edu/Admin/Exams/IP/Samples/parker-ip.pdf">Floating-Point from Three Perspectives</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/priest92propertie.html">On Properties of Floating Point Arithmetics: Numerical Stability and the Cost of Accurate Computations</a></dd>
+    <dd> <a href="http://swox.com/doc/x86-timing.pdf">Instruction latencies and throughput for AMD and Intel x86 processors</a></dd>
+</dl>
+<h3> IEEE 754: </h3>
+<dl>
+    <dd> <a href="http://www.validlab.com/754R/standards/754.pdf">IEEE Standard for Binary Floating-Point Arithmetic</a>[.pdf] {actual standard document}</dd>
+    <dd> <a href="http://www.randelshofer.ch/fhw/gri/float.html">IEEE 754 Floating Point</a>(<i>With single and double precision applets</i>)</dd>
+    <dd> <a href="http://www.geocities.com/SiliconValley/Pines/6639/docs/fp_summary.html">Introduction to Floating point calculations and IEEE 754 standard</a></dd>
+    <dd> <a href="http://research.microsoft.com/%7Ehollasch/cgindex/coding/ieeefloat.html">IEEE Standard 754 Floating Point Numbers</a></dd>
+    <dd> <a href="http://www.psc.edu/general/software/packages/ieee/ieee.html">The IEEE standard for floating point arithmetic</a></dd>
+    <dd> <a href="http://babbage.cs.qc.edu/courses/cs341/IEEE-754.html">IEEE-754 Floating-Point Conversion from Floating-Point to Hexadecimal</a></dd>
+    <dd> <a href="http://babbage.cs.qc.edu/courses/cs341/IEEE-754hex32.html">IEEE-754 Floating-Point Conversion from 32-bit Hexadecimal to Floating-Point</a></dd>
+    <dd> <a href="http://www.cs.berkeley.edu/~wkahan/ieee754status/IEEE754.PDF">Lecture Notes on the Status of IEEE Standard 754 for Binary Floating-Point Arithmetic, Kahan '96</a></dd>
+    <dd> <a href="http://people.sc.fsu.edu/~burkardt/html/ieee.html">IEEE Floating-Point Notes</a></dd>
+    <dd> <a href="http://www.cs.utah.edu/classes/cs6830/slides/FP-intro.pdf">Floating Point Arithmetic - U.ofUtah</a></dd>
+    <dd> <a href="http://cch.loria.fr/documentation/IEEE754">IEEE standard 754 for binary floating-point arithmetic </a>{Lots of links!}</dd>
+
+    <dd> <a href="http://www.validlab.com/goldberg/addendum.html">Differences Among IEEE 754 Implementations</a></dd>
+    <dd> <a href="http://grouper.ieee.org/groups/754">IEEE 754: Standard for Binary Floating-Point Arithmetic</a>(<i>IEEE754 Committee page</i>)</dd>
+    <dd> <a href="http://grouper.ieee.org/groups/754/reading.html">IEEE 754: Supplemental Readings</a></dd>
+    <dd> <a href="http://babbage.cs.qc.edu/courses/cs341/IEEE-754references.html">IEEE-754 References</a></dd>
+    <dd> <a href="http://www.math.utah.edu/pub/tex/bib/fparith.html">BibTeX bibliography fparith.bib</a></dd>
+    <dd> <a href="http://www.validlab.com/754R/">IEEE Standard for Binary Floating-Point Arithmetic</a>{Revision (754R) documents}</dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/IEEE_754r">IEEE 754R - Wikipedia</a></dd>
+    <dd> <a href="http://www.validlab.com/754R/drafts/archive/2006-10-04.pdf">IEEE Standard for Binary Floating-Point Arithmetic</a>{Revision 1.2.5 (754R) document}</dd>
+    <dd> <a href="http://grouper.ieee.org/groups/754/revision.html">IEEE 754: Revision Work</a></dd>
+    <dd> <a href="http://754r.ucbtest.org">Some Proposals for Revising ANSI/IEEE Std 754-1985</a></dd>
+    <dd> <a href="http://www.math.utah.edu/%7Ebeebe/software/ieee">IEEE 754 floating-point test software</a></dd>
+    <dd> <a href="http://www.jhauser.us/arithmetic/index.html">Hauser: The SoftFloat and TestFloat Packages</a></dd>
+    <dd> <a href="http://tima-cmp.imag.fr/~guyot/Cours/Oparithm/english/Flottan.htm">Floating Point Notes</a> {examples motivating guard, round, and sticky bits}</dd>
+    <dd> <a href="http://www.cs.waikato.ac.nz/%7Ejcleary/311/rounding.html">Examples of rounding modes in IEEE754 arithmetic</a> {rounding table}</dd>
+    <dd> <a href="http://pages.cs.wisc.edu/~cs354-2/cs354/karen.notes/flpt.apprec.html">Floating Point Appreciation</a></dd>
+    <dd> <a href="http://www-personal.umich.edu/~williams/archive/forth/complex/borda.html">Borda's Mouthpiece</a></dd>
+    <dd> <a href="http://www.cs.cmu.edu/~213/lectures/class03.ppt">Floating Point - CMU 15-213</a></dd>
+    <dd> <a href="http://www.mscs.mu.edu/%7Egeorgec/IFAQ/casares1.html">What machines support IEEE 754?</a></dd>
+    <dd> <a href="http://www.intel.com/technology/itj/q41999/articles/art_6.htm">IA-64 Floating-Point Operations and the IEEE Standard for Binary Floating-Point Arithmetic</a>[.html]</dd>
+
+    <dd> <a href="http://www.intel.com/technology/itj/q41999/pdf/ia64fpbf.pdf">IA-64 Floating-Point Operations and the IEEE Standard for Binary Floating-Point Arithmetic</a>[.pdf]</dd>
+
+    <dd> <a href="http://www.d6.com/users/checker/pdfs/gdmfp.pdf">Let's Go To The (Floating) Point, by Chris Hecker</a></dd>
+    <dd> <a href="http://developers.sun.com/tools/cc/articles/fp_errors.html">Floating-Point Computing: A Comedy of Errors?</a></dd>
+    <dd> <a href="http://www.cs.nyu.edu/cs/faculty/overton/book/refs/refs.html">Bibliographic Links for Numerical Computing with IEEE Floating Point Arithmetic, by Michael L. Overton</a></dd>
+    <h4>Guard Bits</h4>
+    <dl>
+	<dd> <a href="http://www.ecs.umass.edu/ece/koren/arith/slides/Part4a-flp.ppt">Koren: Floating point architecture [a]</a></dd>
+	<dd> <a href="http://www.ecs.umass.edu/ece/koren/arith/slides/Part4b-flp.ppt">Koren: Floating point architecture [b]</a></dd>
+	<dd> <a href="http://www.ecs.umass.edu/ece/koren/arith/slides/Part4c-flp.ppt">Koren: Floating point architecture [c]</a></dd>
+    </dl>
+    <h4>Exception Handling</h4>
+    <dl>
+	<dd> <a href="http://www.jhauser.us/publications/1996_Hauser_FloatingPointExceptions.html">Hauser: Handling Floating-Point Exceptions in Numeric Programs</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/22225.html">Demmel and Li: Faster Numerical Algorithms via Exception Handling</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/jackson94precision.html">Precision Control and Exception Handling in Scientific Computing - Nedialkov (ResearchIndex)</a></dd>
+	<dd> <a href="http://grouper.ieee.org/groups/754/meeting-materials/2002-08-22-pres.pdf">Exception Handling: Interfaces, Implementations, and Evaluation by David Bindel E. Jason Riedy</a></dd>
+	<dd> <a href="http://www.math.utah.edu/%7Ebeebe/software/ieee/timops.html">The cost of IEEE 754 exceptional operands and instructions</a></dd>
+	<dd> <a href="http://www.cs.berkeley.edu/~wkahan/ARITH_17U.pdf">A Brief Tutorial on Gradual Underflow</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/cuyt99underflow.html">Underflow Revisited (1999)</a></dd>
+	<dd> <a href="http://developer.intel.com/design/processor/manuals/248966.pdf">IA-32 Intel(R) Architecture Optimization Reference Manual</a> {<i>See section on "Floating-point Considerations" on page 3-77, Section 3.8</i>}</dd>
+	<dd> <a href="http://std.dkuug.dk/jtc1/sc22/open/n3661.pdf">ISO Final Document: Fortran 2003</a>{<i>See Ch.14 -- Exceptions and IEEE Arithmetic</i>}</dd>
+    </dl>
+    <dd> <a href="http://citeseer.ist.psu.edu/cache/papers/cs/1274/ftp:zSzzSzcrl.dec.comzSzpubzSzmisczSzlia-1-is.pdf/information-technology-language-independent.pdf">ISO: Information technology | Language independent arithmetic | Part 1: Integer and Floating Point Arithmetic</a></dd> (Examples on p. 84, Annex G)
+    <dd> <a href="http://wwwold.dkuug.dk/jtc1/sc22/open/n2824.pdf">ISO: Information technology | Language independent arithmetic | Part 2: Elementary numerical functions</a></dd>
+    <h4>Precisions</h4>
+    <dl>
+	<dd> <a href="http://crd.lbl.gov/%7Edhbailey/mpdist">Multiprecision Software Directory</a></dd>
+	<dd> <a href="https://hpcrd.lbl.gov/SCG/ocean/NRS/ECMWF/text18.htm">double-double precision arithmetic </a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Quad_precision">Quadruple precision floating-point format - Wikipedia</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/671467.html">Quad-Double Arithmetic</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/hida00quaddouble.html">Quad-Double Arithmetic: Algorithms, Implementation, and Application</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/446252.html">Algorithms for Quad-Double Precision Floating Point Arithmetic</a></dd>
+	<dd> <a href="http://portal.acm.org/citation.cfm?id=1141583">Quad and correctly rounded double precision math functions: portable and optimized for Intel architectures</a></dd>
+	<dd> <a href="http://www.netlib.org/blas/blast-forum/chapter4.pdf">Chapter 4: Extended and Mixed-Precision BLAS</a></dd>
+	<dd> <a href="http://crd.lbl.gov/%7Exiaoye/XBLAS">A Reference Implementation for Extended and Mixed Precision BLAS</a></dd>
+	<dd> <a href="http://crd.lbl.gov/%7Exiaoye/XBLAS/toms.ps">Design, Implementation and Testing of Extended and Mixed Precision BLAS</a></dd>
+	<dd> <a href="http://perso.ens-lyon.fr/jean-michel.muller/MultFmacArith.pdf">Correctly rounded multiplication by arbitrary precision constants</a></dd>
+	<dl>
+	    <dd> <a href="http://perso.ens-lyon.fr/jean-michel.muller/MultConstant.html">Supplementary material</a></dd>
+	    <dd> <a href="http://www.inria.fr/rapportsactivite/RA2003/arenaire2003/module19.html">Elementary functions research team</a></dd>
+	</dl>
+	<dd> <a href="http://perso.ens-lyon.fr/jean-michel.muller/FmacArith.pdf">Some Functions Computable with a Fused Mac -- Boldo &amp; Muller</a></dd>
+	<dd> <a href="http://netlib.org/utk/people/JackDongarra/PAPERS/itref_phys.pdf">Accelerating scientific computations with mixed precision algorithms</a></dd>
+	<dd> <a href="http://perso.ens-lyon.fr/jean-michel.muller/DivIEEETC-aug04.pdf">Accelerating Correctly Rounded Floating-Point Division when the Divisor is Known in Advance</a></dd>
+	<dd> <a href="http://webdali.univ-perp.fr/RR/slSCAN04.pdf">Automatic Enhancement of Floating Point Precision</a></dd>
+	<dd> <a href="http://crd.lbl.gov/~dhbailey/dhbtalks/">High-Precision Arithmetic and High-Performance Computing talks by David H. Bailey</a></dd>
+	<dd> <a href="http://crd.lbl.gov/~dhbailey/dhbtalks/dhb-high-prec-apps.pdf">High-Precision Arithmetic with Applications to Physics and Mathematics</a></dd>
+	<dd> <a href="http://crd.lbl.gov/~dhbailey/dhbpapers/high-prec-arith.pdf">High-Precision Floating-Point Arithmetic in Scientific Computation</a></dd>
+	<dd> <a href="ftp://ftp.inria.fr/INRIA/publication/publi-pdf/RR/RR-4644.pdf"> Necessary and sufficient conditions for exact floating point operations</a></dd>
+	<dd> <a href="http://portal.acm.org/citation.cfm?doid=335231.335253">Using Accurate Arithmetics to Improve Numerical Reproducibility and Stability in Parallel Applications</a></dd>
+	<dd> <a href="http://www.owlnet.rice.edu/%7Ecaam420/lectures/fpsum.html">Floating point summation</a></dd>
+	<dd> <a href="http://www.nersc.gov/research/SCG/ocean/NRS/nrs.ps">Using Accurate Arithmetics to Improve Numerical Reproducibility and Stability in Parallel Applications by He and Ding</a></dd>
+	<dd> <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.43.3535">The accuracy of flowting point summation, Higham '93</a></dd>
+	<dd> <a href="http://www.cs.berkeley.edu/%7Edemmel/AccurateSummation.pdf">Accurate floating point summation, Demmel et al</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/675622.html">Fast and Accurate Floating Point Summation with Application to Computational Geometry</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/devillers02finite.html">Finite Precision Elementary Geometric Constructions</a></dd>
+	<dd> <a href="http://www.cs.berkeley.edu/%7Ewkahan/VtetLang.pdf">What has the Volume of a Tetrahedron to do with Computer Programming Languages?</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/daumas99multiplications.html">Multiplications of Floating Point Expansions</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/bailey02high.html">High Performance Computing Meets Experimental Mathematics</a></dd>
+<!--
+-->
+	<h5>Exploiting special purpose FP ALUs</h5>
+	<dl>
+	    <dd></dd>
+	    <h6>FMAs</h6>
+	    <dd> <a href="http://web.stcloudstate.edu/aanda/cs694/FMA-YNievergelt.pdf">Scalar Fused Multiply-Add Instructions Produce Floating-Point Matrix Arithmetic Provably Accurate to the Penultimate Digit - YVES NIEVERGELT</a></dd>
+	    <dd> <a href="http://docs.sun.com/app/docs/doc/816-5172/fma-3m?l=Ja&a=view">fma(3M) - Sun Microsystems</a></dd>
+	    <h6>Intel</h6>
+	    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/microprocessors/ia32/pentium4/optimization/20298.htm">How Much is Optimizing Floating-Point Operations Worth?</a></dd>
+	    <dd> <a href="http://www.tommesani.com/SSE.html">Intel SSE</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/Streaming_SIMD_Extensions">SSE (Streaming SIMD Extensions) - Wikipedia</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/SSE2">SSE2 - Wikipedia</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/SSE3">SSE3 - Wikipedia</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/SSSE3">SSSE3 - Wikipedia</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/SSE4">SSE4 - Wikipedia</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/SSE5">SSE5 - Wikipedia</a></dd>
+	    <dd> <a href="http://www.tommesani.com/SSE2Intro.html">Intel SSE2 Preview</a></dd>
+	    <dd> <a href="http://www.tommesani.com/SSE2SSE.html">Intel 64-bit floating point instructions</a></dd>
+	    <dd> <a href="http://www.tommesani.com/IntelAppNotes.html">Intel Application Notes</a></dd>
+	    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/events/newsletter/19893.htm">New: Intel® Integrated Performance Primitives (IPP) v2.0</a></dd>
+	    <dd> <a href="http://www.intel.com/software/products/ipp/techtopics/wp_boosting_app_perf_web.pdf">Boosting Application Performance using Intel® Performance Libraries</a></dd>
+	    <dd> <a href="http://www.intel.com/software/products/ipp/docs/ippmman.pdf">Intel Integrated Performance Primitives (Intel IPP) for small matrix operations</a></dd>
+	    <dd> <a href="http://www.sara.nl/news/2003/20030703/seminar010703Priestly_Intel.pdf">Itanium 2 Processor Family (slides)</a></dd>
+	    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/microprocessors/itanium/resources/architecture/index.htm">Intel Developer Services Home - Architecture</a></dd>
+	    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/microprocessors/itanium/resources/reference/19249.htm">Intel Developer Services - Intel Itanium Processor FAQ</a></dd>
+	    <dd> <a href="http://cache-www.intel.com/cd/00/00/01/77/17743_sse2wp.pdf">Taking Advantage of Streaming SIMD Extension 2 (SSE2) Technology</a></dd>
+	    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/segments/digitalmedia/threading/52516.htm">'For-Loop' Threading Methods</a></dd>
+	    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/microprocessors/ia32/pentium4/resources/appnotes/sse2/19077.htm">Intel Developer Services - SSE2 Instruction for SAXPY/DAXPY</a></dd>
+	    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/66717.htm">Using SSE3 Technology in Algorithms with Complex Arithmetic</a></dd>
+	    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/segments/hpc/index.htm">Intel Developer Services Home - High Performance Computing</a></dd>
+	    <dd> <a href="http://www.intel.com/products/processor/corei7/index.htm?cid=cim:vib|corei7_us_vib_ft|im10976|c">Intel Core i7 Processor</a></dd>
+	    <dd> <a href="http://software.intel.com/en-us/intel-mkl/">Intel® Math Kernel Library (Intel® MKL) 10.2</a></dd>
+	    <h6>AMD</h6>
+	    <dd> <a href="http://www.amd.com/us-en/Corporate/VirtualPressRoom/0,,51_104_857_875%5E7044,00.html">AMD64 Architecture Tech Docs</a></dd>
+	    <dd> <a href="http://www.devx.com/amd/Article/27474">C/C++ Compiler Switches for Fast, Portable 64-Bit Code</a></dd>
+	    <dd> <a href="http://developer.amd.com/CPU/SSE5/Pages/default.aspx">128-Bit SSE5 Instruction Set</a></dd>
+	    <dd> <a href="http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/43479.pdf">SSE5 Whitepaper</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/Advanced_Vector_Extensions">AVX (Advanced Vector Extensions) - Wikipedia</a></dd>
+	    <dd> <a href="http://software.intel.com/en-us/avx/">Intel® AVX - Intel&#174; Software Network</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/XOP_instruction_set">XOP instruction set [AMD] - Wikipedia</a></dd>
+	    <dd> <a href="http://blogs.amd.com/nigeldessau/tag/avx/">AMD &amp; AVX</a> (blog)</dd>
+	    <dd> <a href="http://blogs.amd.com/nigeldessau/tag/sse5/">AMD &amp; AVX &amp; SSE5</a> (blog)</dd>
+	    <dd> <a href="http://forums.amd.com/devblog/blogpost.cfm?threadid=112934&catid=208">Striking a Balance [AMD AVX XOP]</a> (blog)</dd>
+	    <dd> <a href="http://www.theinquirer.net/inquirer/news/1137282/a-look-amd-avx-xop">A look at AMD's AVX and XOP</a></dd>
+	    <dd> <a href="http://developer.amd.com/cpu/Libraries/acml/Pages/default.aspx">AMD Core Math Library (ACML)</a></dd>
+	    <h6>AltiVec</h6>
+	    <dd> <a href="http://www.altivec.org">AltiVec - vector, FFT, DSP, fast fourier transform, digital signal processing</a></dd>
+	    <dd> <a href="http://developer.apple.com/hardware/ve">Velocity Engine (Apple)</a>
+	    <dl>
+		<dd> <a href="http://developer.apple.com/hardware/ve/summary.html">Summary</a></dd>
+	    </dl>
+	    <dd> <a href="http://e-www.motorola.com/webapp/sps/site/overview.jsp?nodeId=03M943030450467M0ymK5Nf2">AltiVec (Motorola)</a></dd>
+	    <dd> <a href="http://www.tommesani.com/AltiVec.html">Motorola AltiVec</a></dd>
+	    <dd> <a href="http://www.tommesani.com/InstructionSetCPU.html">Instruction Set / CPU map</a></dd>
+	</dl>
+	<h5>Exploiting graphics hardware </h5>
+	<dl>
+	    <dd> <a href="http://www.gpgpu.org/cgi-bin/blosxom.cgi/Scientific%20Computing/index.html">General-Purpose Computation Using Graphics Hardware (GPGPU)</a></dd>
+	    <dl>
+		<dd> <a href="http://www.gpgpu.org/sc2006">SUPERCOMPUTING 2006 Tutorial on GPGPU</a></dd>
+		<dd> <a href="http://www.gpgpu.org/s2007">SIGGRAPH 2007 GPGPU COURSE</a></dd>
+	    </dl>
+	    <dd> <a href="http://www.seas.upenn.edu/~cis665/physicsCML.ppt">A Survey of General-Purpose Computation on Graphics Hardware</a> (includes limitations)</dd>
+	    <dd> <a href="http://www.cs.unc.edu/Research/ProjectSummaries/numericalalgorithms07.pdf">Efficient Numerical Algorithms on Graphics Hardware</a></dd>
+	    <dd> <a href="http://www.ra.informatik.tu-darmstadt.de/pars/2007/talks_posters/Graphical%20Processing%20Units%20as%20Fast%20Co-Processors.pdf">Graphics Processing Units as Fast Co-Processors</a></dd>
+	    <dd> <a href="http://wwwcg.in.tum.de/Research/data/Publications/parsim04.pdf">Numerical Simulations on PC Graphics Hardware</a></dd>
+	    <dd> <a href="http://www.springerlink.com/content/2xxfa5m08vrp54y8">Numerical Simulations on PC Graphics Hardware</a> (book chapter abstract)</dd>
+	    <dd> <a href="http://www.springerlink.com/content/uffapp4et72d2c1u">Scientific Computing on Commodity Graphics Hardware</a> (book chapter abstract)</dd>
+	    <dd> <a href="http://www.eg.org/EG/CGF/volume23/issue4/v23i4pp697-714.pdf.abstract.pdf">SIMD Optimization of Linear Expressions for Programmable Graphics Hardware</a></dd>
+	    <dd> <a href="http://www.sc2001.org/papers/pap.pap313.pdf">Fast Matrix Multiplies using Graphics Hardware</a></dd>
+	    <dd> <a href="http://www.cis.upenn.edu/~suvenkat/700/lectures/7/moravanszky.pdf">Dense Matrix Algebra on the GPU</a></dd>
+	    <dd> <a href="http://www.cs.utah.edu/~shirley/books/fcg2/hw.pdf">Using Graphics Hardware</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/BrookGPU">BrookGPU</a> stream programming language</dd>
+	    <dd> <a href="http://ati.amd.com/technology/streamcomputing/AMD-Brookplus.pdf">Brook+</a> for AMD</dd>
+	    <dd> <a href="http://libsh.org/about.html">Sh: A high-level metaprogramming language for modern GPUs</a> </dd>
+	    <dd> <a href="http://www.cs.lth.se/home/Calle_Lejdfors/pygpu/">PyGPU - Python for the GPU</a> </dd>
+	    <dd> <a href="http://www.gpgpu.org/s2005/slides/lefohn.Glift.ppt">Glift: Generic, Efficient Random-Access GPU Data Structures</a> </dd>
+	    <dd> <a href="http://www.nvidia.com/object/cuda_get.html">Download CUDA Code - complete and free toolkit for creating derivative works</a> </dd>
+	    <dd> <a href="http://developer.nvidia.com/object/gpu-gems-3.html">GPU Gems 3</a> </dd>
+	</dl>
+	<h5>Exploiting FPGA hardware </h5>
+	<dl>
+	    <dd> <a href="http://www-scf.usc.edu/~lzhuo/research/lzhuo-tpds-mm.pdf">Scalable and Modular Algorithms for Floating-Point Matrix Multiplication on Reconfigurable Computing Systems</a></dd>
+	    <dl>
+		<dd> <a href="http://halcyon.usc.edu/~pk/prasannawebsite/pubs.php">Related Papers by Viktor K. Prasanna</a></dd>
+	    </dl>
+	</dl>
+    </dl>
+    <dd> <a href="http://studentweb.stcloudstate.edu/waje9901/fpsim/app.html">Jeff Ward's IEEE754 Demonstration Applet</a></dd>
+</dl>
+<h3>Vectorization</h3>
+<dl>
+    <dd> <a href="http://klausler.com/vecgloss.html">Peter's Glossary of Vectorization Terminology</a></dd>
+    <dd> <a href="http://oscinfo.osc.edu:8080/dynaweb/stnd_c_pe/2192_3.0/@Generic__BookView;td=2">Optimizing Code on Cray PVP Systems</a></dd>
+    <dd> <a href="http://www.pcc.qub.ac.uk/tec/courses/cray/stu-notes/CRAY-completeMIF_1.html">CRAY Y-MP EL Vector Processing and Performance Utilities - Student Notes</a></dd>
+    <dd> <a href="http://www.sdsc.edu/SDSCwire/Services/c90_opt_08_27_97/C90_optimization.html#vector">C90 Optimization - Vectorization</a></dd>
+    <dd> <a href="http://csep10.phys.utk.edu/guidry/phys594/lectures/performance_prog/vectorization.ps">Optimization for Vector Computers</a></dd>
+    <dd> <a href="http://support.stat.ucla.edu/documents/VAST_AltiVec_FAQ.pdf">Vectorization for AltiVec</a></dd>
+</dl>
+<h3>Cache issues, the memory hierarchy and algorithms</h3>
+<dl>
+    <dd><h5>Memory architectures</h5>
+	<dl>
+	    <dd> <a href="http://en.wikipedia.org/wiki/Von_Neumann_architecture">Von Neumann architecture - Wikipedia</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/Harvard_architecture">Harvard architecture - Wikipedia</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/Modified_Harvard_architecture">Modified Harvard architecture - Wikipedia</a></dd>
+	</dl>
+    </dd>
+    <dd> <a href="http://www-2.cs.cmu.edu/afs/cs/academic/class/15213-f03/lectures/class12.pdf">Cache Memories: CMU CS213 Lecture</a>(Examines matrix multiplication)</dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/307799.html">Cache-Oblivious Algorithms (Extended Abstract) (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/prokop99cacheobliviou.html">Cache-Oblivious Algorithms (Masters Thesis) - Prokop (ResearchIndex)</a></dd>
+    <dd> <a href="http://supertech.lcs.mit.edu/cilk/papers/abstracts/abstract2.html#afterheading">Portable High-Performance Programs (Ph.D Thesis) Frigo</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/gatlin00portable.html">Portable High Performance Programming via Architecture-Cognizant Divide-and-Conquer Algorithms - Gatlin (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/toledo95quantitative.html">Quantitative Performance Modeling of Scientific Computations and Creating Locality in Numerical Algorithms - Toledo (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/toledo99design.html">The Design and Implementation of SOLAR, a Portable Library for Scalable Out-of-Core Linear Algebra Computations - Toledo, Gustavson (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/toledo99survey.html">A Survey of Out-of-Core Algorithms in Numerical Linear Algebra - Toledo (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/384405.html">Out-of-Core SVD and QR Decompositions (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/toledo97locality.html">Locality Of Reference In Lu Decomposition With Partial Pivoting - Toledo (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/parker95how.html">How to Eliminate Pivoting from Gaussian Elimination - By Randomizing Instead - Parker, Le (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/520232.html">Random Butterfly Transformations (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/189177.html">A Randomizing Butterfly Transformation Useful in Block Matrix Computations - Parker (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/le95input.html">Input randomization and automatic derivation of systolic arrays for matrix computations - Le, Parker, Pierce (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/parker95randomizing.html">The randomizing FFT: an alternative to pivoting in Gaussian elimination - Parker, Pierce (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/silva02outcore.html">Out-Of-Core Algorithms for Scientific Visualization and Computer Graphics - Silva, Chiang, El-Sana, Lindstrom (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/vitter00external.html">External Memory Algorithms and Data Structures: Dealing with MASSIVE DATA - Vitter (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/chatterjee00cacheefficient.html">Cache-Efficient Matrix Transposition - Chatterjee, Sen (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/550444.html">Optimizing Graph Algorithms for Improved Cache Performance (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/chiang95externalmemory.html">External-Memory Graph Algorithms - Chiang, Goodrich, Grove, Tamassia, Vengroff, Vitter (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/vera00fast.html">A Fast and Accurate Approach to Analyze Cache Memory Behavior - Vera, Llosa, Gonz, Nerina (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/ghosh97cache.html">Cache Miss Equations: An Analytical Representation of Cache Misses - Ghosh, Martonosi, Malik (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/566477.html">Near-Optimal Loop Tiling by means of Cache Miss Equations and Genetic (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/carter96hierarchical.html">Hierarchical Tiling: A Methodology for High Performance - Carter, Ferrante, Hummel, Alpern, Gatlin (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/vera02nearoptimal.html">Near-Optimal Padding for Removing Conflict Misses (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/temam98cache.html">Cache Awareness in Blocking Techniques (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/153509.html">Cache Awareness in Blocking Techniques, Part II (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.cs.ucsd.edu/users/carter/Papers/icscNick.pdf">A Modal Model of Memory</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/gansterer98efficiency.html">Efficiency Enhancement by Blocking (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/demmel92stability.html">Stability of Block Algorithms with Fast Level 3 BLAS - Demmel, Higham (ResearchIndex)</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Dynamic_random_access_memory">DRAM - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Static_random_access_memory">SRAM - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/SDRAM">SDRAM - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/SDRAM_latency">SDRAM letency - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Page_(computer_memory)">Computer memory <i>page</i> - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Page_Size_Extension">Page Size Extension (PSE) [X86] - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Translation_Lookaside_Buffer">Translation Lookaside buffer (TLB) - Wikipedia</a></dd>
+    <dd> <a href="http://www.ece.umd.edu/~blj/talks/ASPLOS-8.2.pdf">A Look at Several MMUs, TLB-Refill Mechanisms, and Page Table Organizations</a></dd>
+    <dd> <a href="http://cug.org/5-publications/proceedings_attendee_lists/2006CD/S06_Proceedings/pages/Authors/Stringfellow/Stringfellow_Slides.pdf">TLB Entries and Application Performance</a></dd>
+    <dd> <a href="http://www.amd.com/us-en/Processors/ComputingSolutions/0,,30_288_13265_13295%5E13335,00.html">AMD's guide to memory latencies</a></dd>
+    <dd> <a href="http://gcc.gnu.org/projects/prefetch.html">gcc data prefetch support</a></dd>
+    <dd> <a href="http://gcc.gnu.org/onlinedocs/gcc-4.3.2/gcc/Other-Builtins.html#index-fma-2517">gcc built-in functions</a> [fma &amp; prefetch]</dd>
+    <dd> <a href="http://www.intel.com/software/products/compilers/clin/docs/main_cls/mergedProjects/optaps_cls/common/optaps_dir_pref.htm">Intel prefetching support</a></dd>
+</dl>
+<h3>Fortran 2003</h3>
+<dl>
+    <dd> <a href="http://std.dkuug.dk/jtc1/sc22/open/n3661.pdf">ISO Final Document: Fortran 2003</a></dd>
+    <ul>
+	<li> Whats new since Fortran 95: p. xiii </li>
+	<li>NOTE 10.14 Rounding on conversions: p232, p234 </li>
+	<li>13.4 Numeric models: p293 </li>
+	<li>13.5.6 Numeric inquiry functions: p295-296 </li>
+	<li>13.7.106 SELECTED REAL KIND ([P, R]): p350 </li>
+	<li>Section 14: Exceptions and IEEE arithmetic: p363-390 </li>
+	<li>Section 15: Interoperability with C: p391 </li>
+    </ul>
+    <dd> <a href="ftp://ftp.nag.co.uk/sc22wg5/N1551-N1600/N1579.pdf">The New Features of Fortran 2003 by Reid</a></dd>
+    <dd> <a href="http://www.maths.unsw.edu.au/ForStudents/courses/math3301/Topics/f2003.pdf">Fortran 2003</a></dd>
+    <dd> <a href="http://www.oup.co.uk/isbn/0-19-852693-8">OUP: Fortran 95/2003 Explained (3/e): Metcalf [book]</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/365174.html">A Fortran 90 Tutorial (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.lahey.com/other.htm">Fortran Resources (Lahey)</a></dd>
+    <dd> <a href="http://www.fortran-2000.com/MichelList">Michel Olagnon's Fortran 90 List</a></dd>
+    <dd> <a href="http://wwwasdoc.web.cern.ch/wwwasdoc/f90.html">Michael Metcalf's Fortran 90 CNL Articles</a></dd>
+</dl>
+<h3>C9X</h3>
+<dl>
+    <dd> <a href="http://anubis.dkuug.dk/JTC1/SC22/WG14/www/docs/n897.pdf">Rationale for International Standard Programming Languages C</a> (esp. pragmas, 7.6, 7.7, 7.12, 7.14, 7.22, Annex F,G,H)</dd>
+    <dd> <a href="http://grouper.ieee.org/groups/754/meeting-materials/2001-07-18-c99.pdf">IEEE 754 Support in C99</a></dd>
+    <dd> <a href="http://grouper.ieee.org/groups/754/meeting-minutes/01-07-18.html">minutes: IEEE 754 Support in C99</a></dd>
+    <dd> <a href="http://supertech.lcs.mit.edu/cilk">Cilk Home Page</a></dd>
+    <dl>
+	<dd> <a href="http://supertech.lcs.mit.edu/cilk/papers/index.html">Cilk Papers</a></dd>
+    </dl>
+</dl>
+<h3>Java</h3>
+<dl>
+    <dd> <a href="http://math.nist.gov/javanumerics">Java Numerics</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/moreira00java.html">Java Programming for High Performance Numerical Computing - Moreira, Midkiff, Gupta, Artigas, Snir, Lawrence (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.ayodele.20m.com/JavaHPC.htm">Java for High Performance Computing</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/472960.html">SUMA: A Scientific Metacomputer (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.sonic.net/%7Ejddarcy/Borneo">Borneo Language Homepage</a></dd>
+    <dl>
+	<dd> <a href="http://citeseer.ist.psu.edu/darcy98borneo.html">Borneo 1.0.2 - Adding IEEE 754 floating point support to Java (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/156819.html">Writing robust IEEE recommended functions in "100% Pure Java" (ResearchIndex)</a></dd>
+    </dl>
+    <dd> <a href="http://www.cs.berkeley.edu/%7Eliblit/titanium">Titanium: A High-Performance Java Dialect</a></dd>
+    <dd> <a href="http://www.cs.berkeley.edu/Research/Projects/titanium">Titanium Project Home Page</a></dd>
+    <dd> <a href="http://www.cs.berkeley.edu/%7Ewkahan/JAVAhurt.pdf">How Java&#8217;s Floating-Point Hurts Everyone Everywhere - Kahan</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/530231.html">Just When You Thought Your Little Language Was Safe: "Expression Templates" In Java (ResearchIndex)</a></dd>
+</dl>
+<h2>Numerical Linear Algebra</h2>
+<dl>
+    <dd> <a href="http://citeseer.ist.psu.edu/higham00recent.html">Recent Developments in Dense Numerical Linear Algebra (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.matheon.de/preprints/3401_updateLU.ps">ON THE EFFICIENT UPDATE OF RECTANGULAR LU FACTORIZATIONS SUBJECT ...</a></dd>
+</dl>
+<h4>Applications</h4>
+<dl>
+    <dd> <a href="http://www-users.itlabs.umn.edu/classes/Spring-2005/csci8363/papers.html">Information Retrieval applications of numerical linear algebra -- D. Boley, UMN</a> (categorical listing of papers)</dd>
+    <dd> <a href="http://www-users.itlabs.umn.edu/classes/Spring-2005/csci8363/ExtraPapers.html">(more) Information Retrieval applications of numerical linear algebra -- D. Boley, UMN</a> (additional categorical listing of papers)</dd>
+</dl>
+<h3>BLAS</h3>
+<dl>
+    <dd> <a href="http://www.cs.utk.edu/~dongarra/etemplates/node380.html">BLAS</a></dd>
+    <dd> <a href="http://www.netlib.org/blas">BLAS</a> (at NETLIB)</dd>
+    <dd> <a href="http://www.netlib.org/blas/faq.html">BLAS FAQ</a></dd>
+    <dd> <a href="http://www.netlib.org/blas/blast-forum">BLAS Techical Forum</a></dd>
+    <dd> <a href="http://www.ncsu.edu/itd/hpc/Courses/16blas.html">The BLAS (Basic Linear Algebra Subroutine) Library</a> </dd>
+    <dd> <a href="http://www.netlib.org/utk/people/JackDongarra/SLIDES/siam399-blas/index.htm">The Future of the BLAS</a></dd>
+    <dd> <a href="http://www.netlib.org/utk/people/JackDongarra/PAPERS/blast-toms.pdf">An Updated Set of Basic Linear Algebra Subprograms (BLAS)</a></dd>
+    <dd> <a href="http://toms.acm.org/V28.html#v28n2">ACM TOMS special issue on the BLAS</a></dd>
+</dl>
+<h3>Code Optimization</h3>
+<dl>
+    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/microprocessors/itanium/optimization/57663.htm">Directives and Pragmas and Switches Oh My!</a></dd>
+    <dd> <a href="http://www.ncsa.uiuc.edu/UserInfo/Resources/Hardware/IA32LinuxCluster/Doc/timing.html">Timing, Profiling and Debugging</a></dd>
+    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/internal/19314.htm">Intel Developer Services - An Introduction to the Optimization of Applications for Itanium Processors</a></dd>
+    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/technologies/threading/57611.htm">Intel Developer Services - Artificial Neural Nets and Hyper-Threading Technology</a></dd>
+    <dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/microprocessors/itanium/resources/architecture/19928.htm">Intel Developer Services - It's In The Numbers: Intel Puts An Open Architecture Supercomputer Inside</a></dd>
+    <h4>Justification of effort and expense</h4>
+    <dl>
+	<dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/strategy/resources/whitepapers/20160.htm">Intel Developer Services - Why Optimization Matters</a></dd>
+	<dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/strategy/resources/whitepapers/20186.htm">Intel Developer Services - You Don't Believe These Myths of Software Optimization-Do You?</a></dd>
+	<dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/strategy/resources/whitepapers/20084.htm">Intel Developer Services - Taking Performance Optimizations to the Bank</a></dd>
+	<dd> <a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/strategy/resources/whitepapers/20176.htm">Intel Developer Services - High Performance Computing For The Enterprise Draws Near</a></dd>
+	<dd> <a href="http://systems.cs.colorado.edu/EPIC2/papers/s2-1-rakvic.pdf">Performance Advantage of the Register Stack in Intel® Itanium ...</a></dd>
+    </dl>
+</dl>
+<h3>Code to Obtain System Properties</h3>
+<dl>
+    <dd> <a href="http://ftp.cac.psu.edu/pub/ger/fortran/chksys.htm">CHKSYS: Check compiler and run-time environment</a> {for C, F77, and F90}</dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/167857.html">FLECKmarks: Measuring Floating Point Performance using a FulL IEEE Compliant Arithmetic BenchmarK (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.vinc17.org/research/fptest.en.html">Floating-Point Arithmetic Test Programs</a></dd>
+<h4>System Benchmarking code &amp; Results</h4>
+    <dd> <a href="http://freespace.virgin.net/roy.longbottom/index.htm">Roy Longbottom's PC Benchmark Collection</a></dd>
+    <dd> <a href="http://www.top500.org/project/linpack">The Linpack Benchmark - Top 500</a></dd>
+    <dd> <a href="http://www.spec.org/cpu2000/CFP2000/">SPEC CFP2000 Benchmark Descriptions</a></dd>
+</dl>
+<h3>Automatic Code Generation and Optimization</h3>
+<dl>
+    <dd> <a href="http://www.cs.berkeley.edu/%7Edemmel/Tuning_CS258.ppt">CS 258 Guest Lecture on Performance Tuning, 13 March, 2002 (in PowerPoint) {Demmel}</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/439914.html">Code Generators for Automatic Tuning of Numerical Kernels: Experiences with FFTW - Vuduc, Demmel (ResearchIndex)</a></dd>
+    <h4>Intel Optimization</h4>
+    <dl>
+	<dd> <a href="http://www.agner.org/assem">Optimizing assembly code</a></dd>
+	<dd> <a href="http://developer.intel.com/design/pentium4/manuals/248966.htm">IA-32 Intel(R) Architecture Optimization Reference Manual</a>{<i>See section on "Improving the Performance of Floating-point Applications" starting on page 2-53</i>}</dd>
+    </dl>
+    <dd> <a href="http://icl.cs.utk.edu/salsa">SALSA: Self-Adapting Large-scale Solver Architecture</a></dd>
+    <dd> <a href="http://math-atlas.sourceforge.net">Automatically Tuned Linear Algebra Software (ATLAS)</a></dd>
+    <dd> <a href="http://www.icsi.berkeley.edu/~bilmes/phipac">PHiPAC Fast Matrix Multiply Home Page</a></dd>
+    <dd> <a href="http://www.osl.iu.edu/publications/prints/1998/siek98:_blais_poosc.pdf">A Rational Approach to Portable High Performance: The Basic Linear Algebra Instruction Set (BLAIS) and the Fixed Algorithm Size Template</a></dd>
+    <dd> <a href="http://www.osl.iu.edu/publications/prints/2000/siek00:_soft_eng_peak.pdf">Software Engineering for Peak Performance. C++ Report</a></dd>
+    <h4><a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2003-14.ps.gz">Aurora</a> project research</h4>
+    <dl>
+	<dd> <a href="http://spiral.ece.cmu.edu:8080/pub-spiral/submitfilter.jsp?order=year&order=type">Spiral: SW/HW Generation for DSP Algorithms</a> Publication list</dd>
+	<dd> <a href="http://www.ece.cmu.edu/~franzf/publications.htm">Franz Franchetti [generic SIMD]</a> Publication list (esp. Thesis)</dd>
+	<dd> <a href="http://www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA419857&Location=U2&doc=GetTRDoc.pdf">Short Vector SIMD Code Generation for DSP Algorithms</a></dd>
+    </dl>
+    <dl>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2003-14.ps.gz">Automatic Generation of Optimized Kernels for Matrix Multiplication</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2003-11.ps.gz">Backend Optimization for Straight Line Code</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2003-12.ps.gz">Practical Assessment of MAP's Vectorizer and Backend</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2003-07.ps.gz">Compiler Technology for the SIMD Vectorization of Straight Line Code</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2003-06.ps.gz">An Abstraction Layer for SIMD Extensions</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2003-02.ps.gz">SIMD Vectorization of Straight Line Code</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2003-01.ps.gz">Performance Portable Short Vector Transforms; Ph.D. Thesis by F. Franchetti</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2002-31.ps.gz">Top Performance SIMD FFTs</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2002-28.ps.gz">FMA Optimized FFT Codelets</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2002-29.ps.gz">Latency Hiding Parallel FFTs</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2002-27.ps.gz">Low Communication FFTs</a></dd>
+	<dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2002-01.ps.gz">Survey of Self-adapting FFT Software</a></dd>
+    </dl>
+</dl>
+<h3>Matrix Multiplication</h3>
+<dl>
+    <dd> <a href="http://www.csit.fsu.edu/~burkardt/f_src/matmul/matmul.html">MATMUL - A Matrix Multiplication Benchmark</a></dd>
+    <dd> <a href="http://www.icsi.berkeley.edu/~bilmes/phipac">PHiPAC Fast Matrix Multiply Home Page</a></dd>
+    <dd> <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.57.8227">Cache Oblivious High Performance Algorithms for Matrix Multiplication</a></dd>
+    <dd> <a href="http://www.cs.utexas.edu/users/flame/ITXGEMM">ITXGEMM</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/562097.html">On Reducing TLB Misses in Matrix Multiplication (ResearchIndex)</a></dd>
+    <dl>
+	<dd> <a href="http://citeseer.ist.psu.edu/bala94software.html">Software Prefetching and Caching for Translation Lookaside Buffers - Bala, Kaashoek, Weihl (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/chapman03itanium.html">Itanium Page Tables and TLB (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/kandiraju02characterizing.html">Characterizing the d-TLB Behavior of SPEC CPU2000 Benchmarks (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/190962.html">Page Tables for 64-Bit Computer Systems (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/au00enhancing.html">Enhancing IA-64 Memory Management (ResearchIndex)</a></dd>
+    </dl>
+    <dd> <a href="http://citeseer.ist.psu.edu/gunnels01highperformance.html">High-Performance Matrix Multiplication Algorithms for Architectures with Hierarchical Memories (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/gunnels01faulttolerant.html">Fault-Tolerant High-Performance Matrix Multiplication (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.cs.utexas.edu/users/rvdg/abstracts/SUMMA.html">SUMMA: Scalable Universal Matrix Multiplication Algorithm</a></dd>
+    <dd> <a href="http://www.hpcl.cs.msstate.edu/lab-hero">Linear Algebra Based on Hierarchical Extension of Recursive Orderings (LAB-HERO)</a></dd>
+    <dd> <a href="http://www.icsi.berkeley.edu/%7Ebilmes/phipac/lawn111.pdf">Optimizing Matrix Multiply using PHiPAC: a Portable, High-Performance, ANSI C Coding Methodology</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/550691.html">Efficient Matrix Multiplication Using Cache Conscious Data Layouts</a></dd>
+    <dl>
+	<dd> <a href="http://citeseer.ist.psu.edu/chilimbi99cacheconscious.html">Cache-Conscious Structure Layout - Chilimbi, Hill, Larus (ResearchIndex)</a></dd>
+    </dl>
+    <dd> <a href="http://books.google.com/books?id=dlsP4d6SWTUC&pg=PA54&lpg=PA54&dq=matrix+multiplication+results+different+loop+orderings&source=web&ots=SU2FQHa4Rk&sig=kjZENoXJ9-d-I8J2VRSHXvZUAIk&hl=en&sa=X&oi=book_result&resnum=1&ct=result">A Family of High-Performance Matrix Multiplication Algorithms</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/498167.html">The Combinatorics of Cache Misses during Matrix Multiplication (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/294055.html">Recursive Array Layouts and Fast Matrix Multiplication - Chatterjee, Lebeck, Patnala, Thottethodi (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/161393.html">Tuning Strassen's Matrix Multiplication for Memory Efficiency - Thottethodi, Chatterjee, Lebeck (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/102499.html">Architecture-efficient Strassen's Matrix Multiplication: A Case Study of Divide-and-Conquer Algorithms - Pauca, Sun, Chatterjee, Lebeck (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.cs.berkeley.edu/~yelick/cs267f01/lectures/Lect14-Dense1.ppt#256,1,CS 267: Applications of Parallel Computers  Lecture 14:  Parallel Matrix Multiplication">Parallel Matrix Multiplication -- Yelick</a> (slides)</dd>
+    <dd> <a href="http://researchweb.watson.ibm.com/journal/rd/395/agarwal.html">A three-dimensional approach to parallel matrix multiplication</a></dd>
+    <dd> <a href="ftp://ftp.cs.unc.edu/pub/users/sc/papers/recursive.pdf">Recursive Array Layouts and Fast Parallel Matrix Multiplication</a></dd>
+    <dd> <a href="http://www.research.ibm.com/journal/rd/416/gustavson.html">Recursion leads to automatic variable blocking for dense linear-algebra algorithms - Gustavson</a></dd>
+    <dd> <a href="http://www.springerlink.com/content/013017517w423336">Adapting Linear Algebra Codes to the Memory Hierarchy Using a Hypermatrix Scheme</a></dd>
+    <dd> <a href="http://www.math.ubc.ca/~anstee/math223/fibonacci.pdf">Fibonacci Numbers and 2 x 2 matrices</a>(<i>Fibonacci example</i>)</dd>
+    <dd> <a href="http://www.math.umd.edu/undergraduate/schol/primer/NbsasHTML/fibonacci.html">Using Eigenpairs to Calculate pow(A,k)</a>(<i>Fibonacci example</i>)</dd>
+    <dd> <a href="http://aix1.uottawa.ca/~jkhoury/fibonacci.htm">Application au problème de Fibonacci</a>(<i>Fibonacci example 2</i>)</dd>
+    <dd> <a href="http://www.cartage.org.lb/en/themes/Sciences/Mathematics/Algebra/foci/topics/transformations/transformations.htm#Fibonacci">Linear transformations</a>(<i>Fibonacci example 3</i>)</dd>
+    <dd> <a href="http://maths.dur.ac.uk/~dma0rcj/PED/fib.pdf">Matrix methods for Fibonacci and related sequences</a>(<i>Fibonacci example 4</i>)</dd>
+    <dd> <a href="http://sepwww.stanford.edu/sep/prof/fgdp/c5/paper_html/node3.html">SYLVESTER'S MATRIX THEOREM</a></dd>
+    <dd> <a href="http://mathforum.org/advanced/robertd/catalan.html">Catalan numbers</a>(<i>Matrix Chain etc. </i>)</dd>
+</dl>
+<h4>Sparse Matrix Algorithms and Software</h4>
+<dl>
+    <dd> <a href="http://www.netlib.org/linalg/html_templates/Templates.html">Templates for the Solution of Linear Systems, 2nd Edition</a></dd>
+    <dd> <a href="http://www.cs.utk.edu/~dongarra/etemplates/book.html">Templates for the Solution of Algebraic Eigenvalue Problems</a></dd>
+    <dd> <a href="http://www.cs.utk.edu/~dongarra/etemplates/node372.html">Sparse Matrix Storage Formats &nbsp; J.&nbsp;Dongarra</a></dd>
+    <dd> <a href="http://www.cs.utk.edu/~dongarra/etemplates/node381.html">Sparse Matrix Storage Formats &nbsp; J.&nbsp;Dongarra</a></dd>
+    <dd> <a href="http://math.nist.gov/MatrixMarket/links.html">Matrix Market: Links to Related Sites</a>Lots of sparse matrix algorithm libraries for a variety of languages and applications</dd>
+    <dd> <a href="http://www.netlib.org/linalg/spooles/spooles.2.2.html">SPOOLES 2.2 : SParse Object Oriented Linear Equations Solver</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/ashcraft99reference.html">The Reference Manual for SPOOLES, Release 2.2: An Object Oriented Software Library for Solving Sparse Linear Systems of Equations (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.netlib.org/utk/people/JackDongarra/pdf/oonski94.pdf">Sparse Matrix Libraries in C++ for High Performance Architectures</a></dd>
+    <dd> <a href="http://www.gmm.insa-tlse.fr/getfem/gmm_intro">GMM++: a generic C++ template library for sparse, dense and skyline matrices</a></dd>
+    <dd> <a href="http://www-users.cs.umn.edu/~saad/software/SPARSKIT/sparskit.html">SPARSKIT: a basic tool-kit for sparse matrix computations (Version 2)</a></dd>
+    <dl>
+	<dd> <a href="http://citeseer.ist.psu.edu/saad94sparskit.html">SPARSKIT: a basic tool kit for sparse matrix computations - Version 2 - Saad (ResearchIndex)</a></dd>
+	<dd> <a href="http://www.csc.fi/math_topics/Mail/NANET94/msg00446.html">SPARSKIT and Sparse Examples</a></dd>
+	<dd> <a href="http://202.38.126.65/mirror/math.nist.gov/MatrixMarket/data/index.htm">Matrix Market: Collection Table of Contents</a></dd>
+	<dl>
+	    <dd> <a href="http://202.38.126.65/mirror/math.nist.gov/MatrixMarket/data/SPARSKIT">Browse the SPARSKIT Collection</a></dd>
+	</dl>
+    </dl>
+    <dd> <a href="http://citeseer.ist.psu.edu/pinar99improving.html">Improving Performance of Sparse Matrix-Vector Multiplication - Pinar, Heath (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.research.ibm.com/journal/rd/416/toledo.html">Improving the memory-system performance of sparse-matrix vector multiplication</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/vuduc02performance.html">Performance Optimizations and Bounds for Sparse Matrix-Vector Multiply (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/592899.html">Modelling Data Locality for the Sparse Matrix-Vector Product using Distance Measures (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/temam92characterizing.html">Characterizing the Behavior of Sparse Algorithms on Caches - Temam, Jalby (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/202075.html">Direct Mapped Cache Performance Modeling for Sparse Matrix Operations (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/fraguela98modeling.html">Modeling Set Associative Caches Behavior for Irregular Computations - Fraguela, Doallo, Zapata (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/fraguela99memory.html">Memory Hierarchy Performance Prediction for Blocked Sparse Algorithms (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/196670.html">Cache Probabilistic Modeling for Basic Sparse Algebra Kernels involving Matrices with a Non Uniform Distribution - Doallo, Fraguela, Zapata (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/fraguela98cache.html">Cache Misses Prediction for High Performance Sparse Algorithms - Fraguela, Doallo, Zapata (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/heras99study.html">Study of Data Locality for Iterative Methods (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/226144.html">Sparse Matrix Computations: Implications for Cache Designs - Taylor (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/strout01rescheduling.html">Rescheduling for Locality in Sparse Matrix Computations - Strout, Carter, Ferrante (ResearchIndex)</a></dd>
+    <dl>
+	<dd> <a href="http://www.cs.ucsd.edu/users/carter/Papers/icscShTalk.pdf">Strout's talk on the above topic</a></dd>
+    </dl>
+</dl>
+<h3>FFT and applications</h3>
+<dl>
+    <dd> <a href="http://citeseer.ist.psu.edu/rockmore99fft.html">The FFT - an algorithm the whole family can use (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.fftw.org">FFTW Home Page</a></dd>
+    <dl>
+	<dd> <a href="http://www.fftw.org/links.html">FFT Links</a></dd>
+    </dl>
+    <dd> <a href="http://citeseer.ist.psu.edu/frigo98fftw.html">FFTW: An Adaptive Software Architecture For The FFT - Frigo, Johnson (ResearchIndex)</a></dd>
+    <dl>
+	<dd> <a href="http://citeseer.ist.psu.edu/frigo97fastest.html">The Fastest Fourier Transform in the West - Frigo, Johnson (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/588831.html">The Advanced FFT Program Generator GENFFT (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/273715.html">Accelerating FFTW by Multiply-Add Optimization (ResearchIndex)</a></dd>
+	<dl>
+	    <dd> <a href="http://citeseer.ist.psu.edu/karner98optimum.html">Optimum Complexity FFT Algorithms for RISC Processors - Karner, Auer, Ueberhuber (ResearchIndex)</a></dd>
+	</dl>
+    </dl>
+    <dd> <a href="http://citeseer.ist.psu.edu/518584.html">Faster FFTs via Architecture-Cognizance (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/bailey89fft.html">FFTs in External or Hierarchical Memory - Bailey (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/106774.html">Challenges of Computing the Fast Fourier Transform - Johnson, Johnson (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/246939.html">A New Fast Discrete Fourier Transform - Zhou, Kornerup (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/558331.html">A Sparse Data Fast Fourier Transform (SDFFT) (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/bailey95fractional.html">The Fractional Fourier Transform and Applications - Bailey, Swarztrauber (ResearchIndex)</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/edelman99future.html">The Future Fast Fourier Transform? (ResearchIndex)</a></dd>
+    <h3>Applications</h3>
+    <dl>
+	<dd> <a href="http://comet.lehman.cuny.edu/vpan/pdf/EPfft.pdf">Fast Fourier Transform and Its Applications - Emiris and Pan</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/556323.html">Fast Multiplication And Its Applications (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/451468.html">Multidigit Multiplication For Mathematicians - Bernstein (ResearchIndex)</a></dd>
+    </dl>
+</dl>
+
+<h3>Fast Multipole etc.</h3>
+<dl>
+    <dd> <a href="http://www.umiacs.umd.edu/users/yab/FMM/Gumerov2003TR.FMM.pdf">Data Structures, Optimal Choice of Parameters, and Complexity Results for Generalized Multilevel Fast Multipole Methods in d Dimensions</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/edelman99future.html">The Future Fast Fourier Transform? (ResearchIndex)</a></dd>
+</dl>
+
+<h3>Structured matrices and applications</h3>
+</dl>
+    <dd> <a href="http://www.cs.utk.edu/~dongarra/etemplates/node384.html">Fast Matrix-Vector Multiplication for Structured Matrices</a></dd>
+    <dd> <a href="http://www.cs.utk.edu/~dongarra/etemplates/node389.html">Direct Solvers for Structured Matrices</a></dd>
+    <dd> <a href="http://www-troja.fjfi.cvut.cz/aca98/sessions/approximate/pan/node6.html">Computations with dense structured matrices, correlations to polynomial and rational interpolation and multipoint evaluation</a></dd>
+<dd> <a href="http://math.mit.edu/~plamen/files/la03v.pdf">The Complexity of Accurate Computations with Structured Matrices - Koev</a></dd>
+<dd> <a href="http://citeseer.ist.psu.edu/gu95new.html">New Fast Algorithms For Structured Linear Least Squares Problems - Gu (ResearchIndex)</a></dd>
+<dd> <a href="http://links.jstor.org/sici?sici=0036-1445%28199206%2934%3A2%3C225%3ACOCWMA%3E2.0.CO%3B2-L">Complexity of Computations with Matrices and Polynomials - V. Pan</a></dd>
+<dd> <a href="http://links.jstor.org/sici?sici=0025-5718%28199007%2955%3A191%3C179%3AOCWDSM%3E2.0.CO%3B2-N">On Computations with Dense Structured Matrices - V. Pan</a></dd>
+<dd> <a href="http://math.mit.edu/~plamen/files/KoevThesis.ps">Accurate and Efficient Computations with Structured Matrices  [PhD Dissertation by Plamen Koev]</a></dd>
+<dd> <a href="http://comet.lehman.cuny.edu/vpan/pdf/201.pdf">Iterative Inversion of Structured Matrices</a>(.pdf)</dd>
+<dd> <a href="http://www.cs.berkeley.edu/~dbindel/present/lapack-sep03.pdf">A Fast Nonsymmetric Eigensolver for Structured Matrices</a>(.pdf)</dd>
+<dd> <a href="http://citeseer.ist.psu.edu/demmel97accurate.html">Accurate SVDs of Structured Matrices - Demmel (ResearchIndex)</a></dd>
+<dd> <a href="http://www.cs.kuleuven.ac.be/~nalag/research/projects/SMA.shtml">SMA: Structured Matrices and their Applications</a></dd>
+</dl>
+
+<h3>Software engineering for High Performance Numerics</h3>
+<dl>
+    <dd> <a href="http://www.oonumerics.org/oon">The Object-Oriented Numerics Page</a></dd>
+    <dd><a href="http://www.netlib.org/utk/people/JackDongarra/PAPERS/Telescope.pdf">Telescoping Languages: A Strategy for Automatic Generation of Scientific Problem-Solving Systems from Annotated Libraries</a></dd>
+    <dd><a href="http://citeseer.ist.psu.edu/560636.html">Delayed Evaluation, Self-Optimising Software Components As Programming (ResearchIndex)</a></dd>
+    <dd><a href="http://citeseer.ist.psu.edu/noulard01key.html">A Key for Reusable Parallel Linear Algebra Software - Noulard, Emad (ResearchIndex)</a></dd>
+    <dd><a href="http://citeseer.ist.psu.edu/fateman00code.html">Code generation: evaluating polynomials - Fateman (ResearchIndex)</a></dd>
+    <dd><a href="http://www.caam.rice.edu/software/ARPACK/UG/node9.html">Reverse Communication Interface (ARPACK)</a></dd>
+    <dd><a href="http://www.caam.rice.edu/software/ARPACK/UG/node80.html">The Reverse Communication Interface (II)</a></dd>
+    <dd><a href="http://citeseer.ist.psu.edu/dongarra95reverse.html">Reverse Communication Interface for Linear Algebra Templates for Iterative Methods - Dongarra, Eijkhout, Kahlan (ResearchIndex)</a></dd>
+    <dd><a href="http://citeseer.ist.psu.edu/287649.html">Automating the Debugging of Large Numerical Codes (ResearchIndex)</a></dd>
+    <dd><a href="http://www.osl.iu.edu/publications/prints/1998/siek98:_siamoo.pdf">Generic Programming for High Performance Numerical Linear Algebra</a></dd>
+    <dd><a href="http://www.osl.iu.edu/publications/prints/1998/siek98:_blais_scitools.pdf">The Basic Linear Algebra Instruction Set: Building Blocks for Portable High Performance</a></dd>
+    <dd><a href="http://www.osl.iu.edu/publications/prints/1998/siek98:_mtl_poosc.pdf">The Matrix Template Library: A Unifying Framework for Numerical Linear Algebra</a></dd>
+    <h4>Generative Programming</h4>
+    <dl>
+	<dd> <a href="http://www.generative-programming.org">Generative Programming - Methods, Tools, and Applications</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/272342.html">Generative Programming and Active Libraries (Extended Abstract) (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/breymann98generative.html">Generative Components: One Step Beyond Generic Programming (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/veldhuizen98active.html">Active Libraries: Rethinking the roles of compilers and libraries - Veldhuizen, Gannon (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/185213.html">C++ Templates as Partial Evaluation - Todd Veldhuizen (ResearchIndex)</a></dd>
+	<dd> <a href="http://www.osl.iu.edu/~tveldhui/papers/techniques">Techniques for Scientific C++ by Veldhuizen</a></dd>
+	<dd> <a href="http://www-ia.tu-ilmenau.de/%7Eczarn/gmcl">Generative Matrix Computation Library</a></dd>
+	<dd> <a href="http://www.program-transformation.org/Transform/GenerativeProgrammingWiki">Generative Programming Wiki</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/burton02static.html">Static Data Structures: Reconciling Template Metaprogramming and Generic Programming (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/burton01exploring.html">Exploring Extensibility and Performance in a Generic Programming Finite Element System (ResearchIndex)</a></dd>
+    </dl>
+    <dd> <a href="http://citeseer.ist.psu.edu/bader02algorithm.html">Algorithm Engineering for Parallel Computation (ResearchIndex)</a></dd>
+    <h4>Intentional Programming</h4>
+    <dl>
+	<dd> <a href="http://c2.com/cgi/wiki?IntentionalProgramming">Intentional Programming (Wiki)</a></dd>
+	<dd> <a href="http://c2.com/cgi/wiki?CritiqueOfIntentionalProgramming">Critique Of Intentional Programming (Wiki)</a></dd>
+	<dd> <a href="http://www.intentionalsoftware.com/">Welcome to Intentional Software (TM)</a></dd>
+	<dd> <a href="http://research.microsoft.com/research/pubs/view.aspx?type=Technical%20Report&id=4">The Death of Computer Languages, The Birth of Intentional Programming</a></dd>
+    </dl>
+    <h4>FLAME</h4>
+    <dl>
+	<dd> <a href="http://z.cs.utexas.edu/wiki/LA.wiki/books/TSoPMC/">The Science of Programming Matrix Computations - Wikibook</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/509855.html">A Systematic Approach to the Design and Analysis of Linear Algebra Algorithms (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/bientinesi02science.html">The Science of Deriving Dense Linear Algebra Algorithms (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/510177.html">Formal Linear Algebra Methods Environment (FLAME) Overview</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/vandegeijn03representing.html">Representing Linear Algebra Algorithms in Code: The FLAME API (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/reiley99pooclapack.html">POOCLAPACK: Parallel Out-of-Core Linear Algebra Package (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/alpatov97plapack.html">PLAPACK: Parallel Linear Algebra Package (1987) (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/bientinesi03flamelab.html">FLAME@lab: A Farewell to Indices (ResearchIndex)</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/guyer00customizing.html">Customizing Software Libraries for Performance Portability (ResearchIndex)</a></dd>
+    </dl>
+    <dd> <a href="http://www.cs.berkeley.edu/%7Ewkahan/improber.pdf">The Improbability of Probabilistic Error Analyses for Numerical Computations</a></dd>
+    <h4>Object Oriented Numerics</h4>
+    <dl>
+	<dd> <a href="http://www.oonumerics.org">Scientific Computing in Object-Oriented Languages</a></dd>
+	<dl>
+	    <dd> <a href="http://www.oonumerics.org/oon">The Object-Oriented Numerics Page</a></dd>
+	    <dd> <a href="http://citeseer.ist.psu.edu/292395.html">C++ Classes for the Efficient Manipulation and Storage of Hierarchical Objects</a></dd>
+	</dl>
+	<dd> <a href="http://www.trumphurst.com/cpplibs/datapage.phtml?category='intro'">Available C++ Libraries FAQ</a></dd>
+    </dl>
+    <h5>Matrix Oriented C++ Template Libraries</h5>
+	<dl>
+	    <dd> <a href="http://math.nist.gov/tnt">Template Numerical Toolkit (TNT) [An interface for scientific computing in C++]</a></dd>
+	    <dd> <a href="http://www.oonumerics.org/blitz">Blitz++</a></dd>
+	    <dd> <a href="http://www.extreme.indiana.edu/hpc++/index.html">High-Performance C++</a></dd>
+	    <dd> <a href="http://www.oonumerics.org/oon/#libraries">Freely available libraries</a></dd>
+	    <dd> <a href="http://www.oonumerics.org/oon/#commercial">Commercial software</a></dd>
+	</dl>
+    <h5>OO Fortran</h5>
+	<dl>
+	    <dd> <a href="http://www.cs.rpi.edu/~szymansk/oof90.html">Object Oriented Fortran 90 Programming</a></dd>
+	    <dd> <a href="http://www.cs.rpi.edu/~szymansk/OOF90/Forum.html">Expressing Object-Oriented Concepts in Fortran90</a></dd>
+	    <dd> <a href="http://books.cambridge.org/0521524083.htm">Object-Oriented Programming via Fortran 90/95 [book]</a></dd>
+	    <dd> <a href="http://www.liv.ac.uk/HPC/HTMLF90Course/HTMLF90CourseNotesnode53.html">Fortran 90 's Object Oriented Facilities</a></dd>
+	    <dd> <a href="http://citeseer.ist.psu.edu/norton97high.html">High Performance Object-Oriented Scientific Programming in Fortran 90 - Norton, Decyk, Szymanski (ResearchIndex)</a></dd>
+	    <dd> <a href="http://sdcd.gsfc.nasa.gov/ESS/annual.reports/ess98/cdn.html">Object-Oriented Programming in Fortran 90 [NASA]</a></dd>
+	    <dd> <a href="http://www.theochem.uwa.edu.au/fortran/recompile">Avoiding the Unnecessary Recompilation of Fortran 90 Modules</a></dd>
+	</dl>
+	<h6>Fortran 2000</h6>
+	<dl>
+	    <dd> <a href="http://www.liv.ac.uk/~qq42/BCSSeminar/f2ktalk.pdf">Fortran 2000</a> (slides)</dd>
+	    <dd> <a href="http://www.ukhec.ac.uk/publications/reports/N1507.pdf">The New Features of Fortran 2000</a></dd>
+	    <dd> <a href="http://epubs.cclrc.ac.uk/bitstream/298/raltr-2002030.pdf">The New Features of Fortran 2000</a></dd>
+	    <dd> <a href="http://www.hoise.com/primeur/02/articles/monthly/CL-PR-12-02-1.html">Public scrutiny time for new Fortran Standard</a></dd>
+	</dl>
+	<dd> <a href="http://www.americanscientist.org/Issues/Comsci03/03-03Hayes.html">American Scientist Online - The Post-OOP Paradigm</a></dd>
+    </dl>
+</dl>
+<h3>Programming Language Comparisons</h3>
+<dl>
+    <dd> <a href="http://dmoz.org/Computers/Programming/Languages/Comparison_and_Review">Open Directory - Computers: Programming: Languages: Comparison and Review</a></dd>
+    <dd> <a href="ftp://ftp.vcpc.univie.ac.at/projects/aurora/reports/auroratr2002-06.ps.gz">Performance of Linear Algebra Routines in Java and C</a></dd>
+    <dd> <a href="http://citeseer.ist.psu.edu/bull01benchmarking.html">Benchmarking Java against C and Fortran for Scientific Applications - Bull, Smith, Pottage, Freeman (ResearchIndex)</a></dd>
+    <dd> <a href="http://www.amath.washington.edu/~lf/software/CompCPP_F90SciOOP.html">Comparison of C++ and Fortran 90 for Object-Oriented Scientific Programming</a></dd>
+    <dd> <a href="http://www.fortran-2000.com/ArnaudRecipes/Articles.html">Fortran vs. C++ - good reading about aliasing</a></dd>
+<dd> <a href="http://www.arithmetica.ch/Oberon/CFORTRANOberon.nhtml">A Comparison of C++, FORTRAN 90 and Oberon-2 for Scientific Programming</a></dd>
+<dd> <a href="http://www.snakeisland.com/aplhiper.pdf">The Role of APL and J in High-performance Computation</a></dd>
+</dl>
+<dd><h5> Future C++</h5></dd>
+<dl>
+    <dd> <a href="http://en.wikipedia.org/wiki/C++0x">C++0x - Wikipedia</a></dd>
+    <dd> <a href="http://www.pvv.org/~oma/cpp0x_aquadi_nov_2007.pdf">A quick and dirty introduction to C++0x </a>(as of November 2007)</dd>
+    <dd> <a href="http://herbsutter.spaces.live.com/?_c11_BlogPart_BlogPart=blogview&_c=BlogPart&partqs=cat%3dC%252b%252b">Sutter's Mill: C++</a></dd>
+    <dd> <a href="http://www.research.att.com/~bs/rules.pdf">The Design of C++0x: Reinforcing C++’s proven strengths, while moving into the future - Stroustrup</a></dd>
+    <dd> <a href="http://www.informit.com/podcasts/episode.aspx?e=356872f9-fc8f-4165-bf5b-9b17be64a7fa&rl=1">The Future of C++ (video) [Scott Meyers]</a></dd>
+    <dd> <a href="http://www.aristeia.com/EC3E/TR1_info_frames.html">Scott Meyers: TR1 information</a></dd>
+    <dd> <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1836.pdf">Draft Technical Report on C++ Library Extensions (TR1)</a></dd>
+</dl>
+<dd><h4> Other Languages worth considering</h4></dd>
+
+<dl>
+    <dd> <a href="http://golang.org/">Google's Go programming language</a> New!</dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Go_(programming_language)">Go (programming langugage) - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Ada_2005">Ada 2005 - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/GNAT">GNU Ada compiler - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Fortran_2003">Fortran 2003 - Wikipedia</a> soon Fortran 2008</dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Icon_%28programming_language%29">Icon programming language - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Unicon_programming_language">Unicon programming language - Wikipedia</a> Icon descendant</dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/D_programming_language">D programming language - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/BETA_programming_language">BETA programming language - Wikipedia</a></dd>
+    <dd> <a href="http://www.daimi.au.dk/~eernst/gbeta/">gBETA programming language</a></dd>
+</dl>
+
+
+<h3>Random Number Generation</h3>
+<dl>
+    <dd> <a href="http://www.imm.dtu.dk/~jw/para04/Slides/Richard.Brent.pdf">Fast and Reliable Random Number Generators for Scientific Computing</a> (Slides)</dd>
+<h5>Benford's Law</h5>
+    <dd> <a href="http://mathworld.wolfram.com/BenfordsLaw.html">Benford's Law - Mathworld</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Benford's_law">Benford's Law - Wikipedia</a></dd>
+    <dd> <a href="http://www.dspguide.com/ch34.htm">Explaining Benford's Law</a></dd>
+</dl>
+<h2>Algorithmics </h2>
+<dl>
+    <dd> <a href="http://en.wikipedia.org/wiki/Greedy_algorithm">Greedy algorithm - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Dynamic_programming">Dynamic programming algorithm - Wikipedia</a></dd>
+    <dd> <a href="http://en.wikibooks.org/wiki/Algorithms/Dynamic_Programming">Dynamic programming - Wikibooks</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Memoization">Memoization - Wikipedia</a></dd>
+    <dd> <a href="http://www.cis.temple.edu/~pwang/9615-AA/Lecture/06-DynamicPro.htm">Dynamic Programming and Memoization</a> Fib. &amp; M-C</dd>
+    <dd> <a href="http://marknelson.us/2007/08/01/memoization/">C++ Hash Table Memoization: Simplifying Dynamic Programming</a></dd>
+    <dd> <a href="http://en.wikibooks.org/wiki/Optimizing_C%2B%2B/General_optimization_techniques/Memoization">Optimizing C++/General optimization techniques/Memoization</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Matrix_chain_multiplication">Matrix-chain multiplication - Wikipedia</a></dd>
+    <dd> <a href="http://www.columbia.edu/~cs2035/courses/csor4231.F09/matrix-chain.pdf">Matrix-chain multiplication </a> slides</dd>
+    <dd> <a href="http://oucsace.cs.ohiou.edu/~razvan/courses/cs404/lecture17.pdf">Matrix-chain multiplication, dynamic programming, &amp; memoization</a> slides</dd>
+    <dd> <a href="http://www.brian-borowski.com/Software/Matrix/">matrix-chain multiplier</a> applet</dd>
+    <h3>Discrete Algorithms (<i>applicable to numerical computation</i>)</h3>
+    <dl>
+	<dd> <a href="http://www.cs.fsu.edu/%7Ecop4531/slideshow/chapter9/toc.html">Sorting in Linear Time</a></dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/rahman00adapting.html">Adapting Radix Sort to the Memory Hierarchy - Rahman, Raman (ResearchIndex)</a></dd>
+    </dl>
+</dl>
+<h3>System Modeling Issues</h3>
+<dl>
+    <dd> <a href="http://www.cs.clemson.edu/~steve/Papers/CSE/vandvcse.pdf">A CRITICAL LOOK AT DESIGN, VERIFICATION, AND VALIDATION OF LARGE SCALE SIMULATIONS -- D. E. Stevenson</a></dd>
+</dl>
+<h2>People and their Web-resources</h2>
+<dl>
+    <dd> <a href="http://www.cs.berkeley.edu/%7Ewkahan">William Kahan</a></dd>
+    <dd> <a href="http://www.cs.berkeley.edu/%7Edemmel">James Demmel</a></dd>
+    <dl>
+	<dd> <a href="http://www.cs.berkeley.edu/%7Edemmel/MSRI99talk.ps">Recent Progress in High Accuracy and High Performance Linear Algebra Algorithms  (1999)</a></dd>
+	<dd> <a href="http://www.cs.berkeley.edu/%7Edemmel/ISSAC2001_2.pdf">The Complexity of Accurate Floating Point Computation, or Can we do Numerical Linear Algebra in Polynomial Time?</a></dd>
+	<dd> <a href="http://www.cs.berkeley.edu/%7Edemmel/PSC_Scaling.ppt">Scaling in Numerical Linear Algebra</a></dd>
+	<dd> <a href="http://www.cs.berkeley.edu/%7Edemmel/CS267_221001.ppt">Guest Lecture on Dense Linear Algebra for CS267 (Fall 2001, in PowerPoint) </a></dd>
+    </dl>
+    <dd> <a href="http://web.comlab.ox.ac.uk/oucl/work/nick.trefethen">Lloyd N. Trefethen</a></dd>
+    <dl>
+	<dd> <a href="http://web.comlab.ox.ac.uk/oucl/work/nick.trefethen/maxims.html">Maxims about numerical mathematics, computers, science, and life</a>(SIAM News, Jan/Feb 1998)</dd>
+	<dd> <a href="http://maply.univ-lyon1.fr/~fontviei/definition.html">The definition of numerical analysis</a>(SIAM News, Nov 1992)</dd>
+	<dd> <a href="http://web.comlab.ox.ac.uk/oucl/work/nick.trefethen/future.ps.gz">Predictions for scientific computing 50 years from now</a>(Mathematics Today, 2000)</dd>
+    </dl>
+    <dd> <a href="http://www.ma.man.ac.uk/~higham">Nick Higham</a></dd>
+    <dd> <a href="http://crd.lbl.gov/%7Edhbailey">David H. Bailey</a></dd>
+    <dd> <a href="http://www.cs.berkeley.edu/~yozo">Yozo Hida</a></dd>
+    <dd> <a href="http://crd.lbl.gov/%7Exiaoye">Xiaoye S. Li</a></dd>
+    <dd> <a href="http://www.osl.iu.edu/publications/Author/SIEK-J.php">Publications of Jeremy Siek</a></dd>
+    <dl>
+	<dd> <a href="http://crd.lbl.gov/%7Exiaoye/csd-93-728.shar.gz">ieee_except -- condition estimating routines</a></dd>
+    </dl>
+    <dd> <a href="http://www.netlib.org/utk/people/JackDongarra/index.html">Jack Dongarra</a></dd>
+    <dl>
+	<dd> <a href="http://www.netlib.org/utk/people/JackDongarra/talks.htm">Talks</a></dd>
+	<dd> <a href="http://www.netlib.org/utk/people/JackDongarra/papers.htm">Papers</a></dd>
+	<dd> <a href="http://www.netlib.org/utk/people/JackDongarra/SLIDES/siam-sheff-0104.pdf">Self Adapting Numerical Software and Trends (2004)</a>{slides}</dd>
+	<dd> <a href="http://www.netlib.org/utk/people/JackDongarra/PAPERS/sans-ijhpca.pdf">Self-adapting Numerical Software for Next Generation Applications</a>{paper}</dd>
+	<dd> <a href="http://citeseer.ist.psu.edu/chen03self.html">Self Adapting Software for Numerical Linear Algebra and LAPACK for Clusters - Chen, Dongarra, Luszczek, Roche (ResearchIndex)</a></dd>
+	<dd> <a href="http://www.netlib.org/utk/people/JackDongarra/SLIDES/howes-msri.ppt">The Impact Of Computer Architectures On Linear Algebra and Numerical Libraries (2001)</a></dd>
+	<dd> <a href="http://www.netlib.org/utk/people/JackDongarra/la-sw.html">FREELY AVAILABLE SOFTWARE FOR LINEAR ALGEBRA ON THE WEB (April 2003)</a></dd>
+	<dd> <a href="http://www.cs.utk.edu/%7Edongarra/WEB-PAGES/cs594-2003.html">Understanding Parallel Architectures</a> {Slides for course at UTK by Dongarra}</dd>
+    </dl>
+    <dd> <a href="http://www.cs.utexas.edu/users/rvdg">Robert A. van de Geijn</a></dd>
+    <dd> <a href="http://cr.yp.to/djb.html">D. J. Bernstein</a></dd>
+    <dd> <a href="http://perso.ens-lyon.fr/sylvie.boldo/research.html">Sylvie Boldo</a></dd>
+    <dd> <a href="http://perso.ens-lyon.fr/jean-michel.muller/publications.html">Jean-Michel Muller</a></dd>
+    <dl>
+	<dd> <a href="http://cr.yp.to/lineartime.html">Computing everything in essentially linear time</a></dd>
+	<dd> <a href="http://cr.yp.to/arith.html">Fast arithmetic</a></dd>
+    </dl>
+    <dd> <a href="http://www.cs.toronto.edu/~krj/publications.html">Kenneth R. Jackson - Selected Publications</a></dd>
+    <dl>
+	<dd> <a href="http://www.cs.toronto.edu/~krj/courses/2307/index.html">CSC 2307f -- Numerical Software</a></dd>
+	<dd> <a href="http://www.cs.toronto.edu/~krj/courses/282/index.html">CSC 282S: Computation and Numerical Methods</a></dd>
+    </dl>
+</dl>
+<h3>Big Iron</h3>
+<dl>
+    <dd> <a href="http://www.top500.org">TOP500 SUPERCOMPUTER SITES</a></dd>
+    <dl>
+	<dd> <a href="http://www.top500.org/main/Books">Supercomputing Books</a></dd>
+	<dd> <a href="http://www.top500.org/ORSC/2003">Overview of Recent Supercomputers</a></dd>
+	<dl>
+	    <dd> <a href="http://www.top500.org/ORSC/2003/comes.html">Systems under development</a></dd>
+	    <dd> <a href="http://www.top500.org/ORSC/2003/x1.html">The Cray Inc. X1</a></dd>
+	    <dd> <a href="http://www.top500.org/ORSC/2003/sv1.html">The Cray Inc. SV1ex</a></dd>
+	    <dd> <a href="http://www.top500.org/ORSC/2003/mta-2.html">The Cray Inc. MTA-2</a> (multithreaded arch.)</dd>
+	    <dd> <a href="http://www.top500.org/ORSC/2003/p690.html">The IBM eServer p690</a></dd>
+	    <dd> <a href="http://www.top500.org/ORSC/2003/sx-6.html">The NEC SX-6</a></dd>
+	    <dd> <a href="http://www.top500.org/ORSC/2003/sr8000.html">The Hitachi SR8000</a></dd>
+	    <dd> <a href="http://www.top500.org/ORSC/2003/quadrics.html">The Quadrics Apemille</a></dd>
+	</dl>
+    </dl>
+    <h5>Virginia Tech's Apple based supercomputer</h5>
+    <dl>
+	<dd> <a href="http://www.apple.com/hardware/video/virginiatech">Apple - Hardware - Video - Virginia Tech&#146;s Supercomputer</a></dd>
+    </dl>
+	<dd> <a href="http://news.com.com/2100-7337_3-5163239.html">Hey, gang, let's make our own supercomputer - CNET</a> (flashmob computing)</dd>
+</dl>
+<h3>Matrix Equations</h3>
+<dl>
+    <dd> <a href="http://www.ee.ic.ac.uk/hp/staff/dmb/matrix/equation.html">Matrix Manual: Matrix Equations</a></dd>
+    <dd> <a href="http://gams.nist.gov/serve.cgi/Class/D8">GAMS: Class D8 ... Other matrix equations (e.g., AX+XB=C)</a></dd>
+</dl>
+<h3>Numerical Software Repositories, Libraries, and References</h3>
+<dl>
+    <dd> <a href="http://www.nr.com/oldverswitcher.html">Numerical Recipes: Older Books On-Line</a> (caution: primary use for learning algorithms.  More reliable software below)</dd>
+    <dd> <a href="http://www.netlib.org">The Netlib</a></dd>
+    <dl>
+	<dd> <a href="http://www.netlib.org/lapack/lawns/downloads">LAPACK -- Working Notes</a></dd>
+    </dl>
+    <dd> <a href="http://gams.nist.gov">GAMS : Guide to Available Mathematical Software</a></dd>
+    <dl>
+	<dd> <a href="http://gams.nist.gov/Classes.html">GAMS : Problem Taxonomy</a></dd>
+    </dl>
+    <dd> <a href="http://ftp.llp.fu-berlin.de/lsoft/index.shtml">Scientific Applications on Linux (SAL)</a></dd>
+    <dd> <a href="http://www.portalux.com/applications/scientific/mathematics">Linux Center: Mathematics</a></dd>
+</dl>
+<h3>Misc.</h3>
+<dl>
+    <dd> <a href="http://web.stcloudstate.edu/aanda/AAA-thesis.ps">Instructor's Dissertation</a></dd>
+</dl>
+<h3>Other Resources for Fast Hacks (mostly non-fp)</h3>
+<dl>
+    <dd> <a href="http://www.hackersdelight.org">Hacker's Delight</a></dd>
+    <dd> <a href="http://tog.acm.org/GraphicsGems">Graphics Gems</a></dd>
+</dl>
+<h2>Utility Software</h2>
+<dl>
+    <dd> <a href="http://www.cs.wisc.edu/%7Eghost">Ghostscript, Ghostview and GSview</a></dd>
+    <dd> <a href="http://gnuwin32.sourceforge.net/packages/gzip.htm">Gzip for Windows</a> {seems only to work at command line</dd>
+    <dd> <a href="http://www.7-zip.org">7-Zip</a>{File archiver which can handle .gz extensions}</dd>
+    <ol type=I>
+	<li> Once installed,
+	<ol>
+	    <li> <i>open</i> the <b><tt>File Manager</tt></b>.
+	    <li> <i>select</i> <tt>Tools</tt>
+	    <li> <i>select</i> <tt>Options</tt>
+	    <li> <i>select</i> <tt>System</tt> tab
+	    <li> <i>associate</i> the <b>.gz</b> extension with 7-zip.
+	</ol>
+	<li> To use w. a browser, 
+	<ol>
+	    <li> <i>open</i> the link to the gzipped file.  (<i>The 7-zip manager will open with the file highlighted.</i>)
+	    <li> <i>select</i> <tt>File</tt>
+	    <li> <i>select</i> <tt>Open Outside</tt>
+	</ol>
+    </ol>
+</dl>
+
+
+</body></html>

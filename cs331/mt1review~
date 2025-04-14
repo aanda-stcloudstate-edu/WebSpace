@@ -1,0 +1,84 @@
+CS 331 Midterm 1 Review Topics
+
+Chapter 1  Intro
+
+	Disk I/O slow
+
+	New design work uses same tools in new ways
+
+	OOP integrates content & behavior
+		and enhances data protection & control of behaviour
+
+	Glossary
+
+Chapter 2  Fundamental file processing ops
+
+	Fundamental file operations
+		open
+		create
+		close
+		read
+		write
+		seek
+
+	Physical vs Logical file
+
+	I/O linkage:
+		logical file name
+		address in memory
+		how much data
+
+	Unix file system
+	
+	Glossary
+
+Chapter 3 Secondary storage & system SW
+
+	Disks
+		organization
+		estimating capacities
+		sector vs block organization of tracks
+		non-data overhead
+		disk access costs
+		block size performance effects
+		disk as bottleneck
+			RAID
+			RAM disk
+			disk cache
+			pages
+	Tapes
+		types
+		9-track organization
+		checksums
+		estimating requirements
+
+	Disk vs tape
+
+	CD-Roms
+		organization
+		access costs and performance
+
+	Buffers
+		Gather / Scatter
+
+	I/O in Unix
+		Inodes
+		descriptor table
+		open file table
+		Kernel
+		processes
+		device drivers
+
+	Glossary
+
+Chapter 4  File structure concepts
+
+	Glossary
+
+Chapter 5 Files of records management
+
+	Glossary
+
+Chapter 6  Organizing files for performance
+
+	Glossary

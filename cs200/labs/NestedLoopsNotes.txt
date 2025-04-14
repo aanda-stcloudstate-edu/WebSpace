@@ -1,0 +1,31 @@
+Nested Loops Lab Notes:
+
+* Each nested loop uses its own counter variable
+
+* The starting or ending value of the inner loop counter variable
+  can be dependent on the current value of the outer loop counter variable
+  
+* The OUTER loop prints ROWS
+      The INNER loop prints COLUMNS
+	  
+* Compare loop counter variables to determine whether a blank or an asterisk is printed
+
+* Use the newline character '\n' for new lines (see Reed, 2nd, pp. 160-161
+
+* The triangle size can be an input parameter to a triangle generating function
+
+* Preliminary tasks/shapes:
+
+	****
+	
+	*
+	*
+	*
+	*
+	
+	****
+	****
+	****
+	****
+	
+	

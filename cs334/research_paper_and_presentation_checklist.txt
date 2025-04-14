@@ -1,0 +1,49 @@
+Research paper checklist:
+
+* If conducting a numerical experiment use a table to describe your system parameters 
+	(e.g. clock, cores, memory, caches, OS version, language, compiler version)
+
+* Use Courier New (or other non-proportional font) for computer I/O, code, URLs, etc.)
+
+* Number & syntax-highlight code
+
+* Use a math environment for all math (only variables are italicized). Number only equations you refer to.
+
+* Use capitolization only for acronyms and proper nouns -- use italics for emphasis
+
+* All floats must be referred to explicitly by name and number (e.g. in Figure 4, ...). No reference --> no float.
+
+* Floats must each fit on only one page.
+
+* All bibliographic entries must be referenced in your text.  No reference --> no entry in bib.
+
+* Hyperlink URLs in your bibliography. (use your favorite narrow non-proportional font)
+
+* No references in the abstract.
+
+* Use active present tense, except for conclusion.  (e.g. in abstract: "We show ..."; in conclusion: "We showed ...")
+
+* Double spaced, ragged right margin, 10--12 pt. font preferred.
+
+* Page numbers!!!
+
+* After a heading, text should be written as if the heading didn't appear.
+
+* Tables: use consistent and modest number of significant digits -- use scientific notation for better scaling.
+
+* Charts: no information should be represented by color only.
+
+* Eliminate potential ambiguous or faulty reference (.e.g. "its")
+
+Slide presentation checklist:
+
+* Each slide self-contained, i.e. no references off the slide -- explicit URLs
+
+* Readable from a relatively long distance.  Terse bullet points in lists.
+
+* Avoid using complete sentences and paragraphs which could tempt you to read them verbatim.
+
+* Prioritize visuals.
+
+* Content should be a significant subset of the research paper content.
+

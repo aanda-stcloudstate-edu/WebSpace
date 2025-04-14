@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title>X:\WebSpace\cs200\syllabus200f13.txt.html</title>
+<style>
+<!--
+pre { font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+-->
+    code {font-family: courier; font-weight: bold; color:MidnightBlue}
+</style>
+</head>
+<body>
+<center>
+    CSCI 200 (Section 01) [002950]<br>
+    Elements of Computing [LEP Goal 4]<br>
+    Spring 2024<br>
+    SYLLABUS
+
+</center>
+<pre>
+INSTRUCTOR:     Andrew A. Anda, Ph.D., Professor of Computer Science
+OFFICE:         ECC-223          Telephone:     (320)308-2044
+E-MAIL:         aanda@stcloudstate.edu [CSCI 200 must prefix the Subject heading]
+Instructor Schedule: <a href="http://web.stcloudstate.edu/aanda/Wkly-sched-w24.html">http://web.stcloudstate.edu/aanda/Wkly-sched-w24.html</a>
+(and by appointment)
+Student Office Hours: <A HREF="https://minnstate.zoom.us/j/91845917984">https://minnstate.zoom.us/j/91845917984</A>
+        Invitation:   <A HREF="http://web.stcloudstate.edu/aanda/Covid/StudentOfficeHoursZoom.txt">Student Office Hours Zoom invitation text</A>
+{I sometimes won't be available for an office hour - this will usually be because I'm attending a meeting}
+
+Web Site: <a href="http://web.stcloudstate.edu/aanda/cs200.html">http://web.stcloudstate.edu/aanda/cs200.html</a>
+D2L
+CLASS TIME AND LOCATION:
+    Class: MW: 10:00 - 10:50 in ECC 130
+    Lab:    F: 09:00 - 10:50 in ECC 127
+
+Lecture Zoom meeting link &amp; invitation: <A HREF="https://minnstate.zoom.us/j/92905514944">https://minnstate.zoom.us/j/92905514944</A>; <A HREF="http://web.stcloudstate.edu/aanda/Zoom/invitations/Spring2024/CSCI200.txt">Lecture Zoom Invitation</A>
+
+CONTENT DELIVERY AND ACCESSIBILITY:
+The delivery method is <b>"Hyflex"</b>
+
+Hyflex Content Delivery and Accessibility:
+I plan to teach Hyflex using a blend of synchronous and asynchronous delivery via Zoom and D2L,
+where it should make no effective and essential difference whether at any time you are F2F or remote.
+I intend to record all lectures.  And, most materials will be available through D2L.
+Student submissions of quizzes, assignments, notes, etc. will be via D2L.
+This plan should maximize flexibility for both you and me to adapt to whatever factors change progressively
+or suddenly for either you or me.
+You will never be expected to be F2F in our classroom.
+My default mode of presentation is synchronous.
+Your default Zoom mode of access should be with your camera on, and your mute must be on (unless commenting or asking a question).
+If you are connecting synchronously through Zoom, you are encouraged to contribute at any time by unmuting, or by Zoom text.
+Here's the SCSU definition of Hyflex (from the Provost's Fall 2021 Instructional Resource and Support Guide):
+    Hyflex Course - Course activity is both online and in-person, at the same time, offering students flexibility with their learning.
+    In a hyflex course, all learning activities are delivered via asynchronous online, synchronous online, and in-person.
+    With faculty consultation, a student may choose which mode of learning works best for their circumstance.
+    Although there are asynchronous learning activities, the course is not self-paced.
+    Meetings are online (both synchronous (scheduled) and asynchronous) and in-person.
+    Exams are typically in-person and synchronous online (not asynchronous).
+    In-person and synchronous meeting/exam dates and times are often scheduled in ISRS (registration system) and in the syllabus.
+    Media code 14.
+
+REQUIRED TEXT:  * A Balanced Introduction to Computer Science, 3rd Ed.
+                  by David Reed, Prentice Hall, 2011. ISBN 978-0-13-216675-1
+
+COURSE CATALOG DESCRIPTION:
+    Web markup languages (e.g. HTML). Problem-solving strategies, top-down design, and computer algorithms. 
+    Files and editing. Documentation and testing.
+    Control structures, input and output, and functions, using a web scripting language (e.g. JavaScript).
+    Introduction to Boolean functions and circuits. Social considerations. Lab. 3 Cr.
+
+COURSE SPECIFICS:
+    This course uses the markup language HTML and the scripting programming
+    language JavaScript in conjunction with appropriate mathematical concepts
+    to introduce the fundamentals of computer science, problem-solving
+    strategies, top-down (hierarchical) design, and computer algorithms.
+    In particular, this course presents editing and running programs;
+    documentation and testing; control structures; input and output;
+    Boolean functions and circuits.
+
+LEARNING OUTCOMES:
+    * Students will develop and implement solutions to problems design and implement programs to solve problems using top-down and modular design techniques
+    * Students will apply appropriate standard algorithm, functions and control structures to the solutions to problems
+    * Students will create and organize programs and data files using appropriate software tools
+    * Students will test and document code
+    * Students will build and test simple Boolean circuits using logic gates, Boolean functions, and truth tables
+    * Students will recognize the ethical and social issues connected to computing with examples from the history of computing
+
+COURSE OUTLINE:
+    * 10%       Creating files, editing, and debugging code
+    * 05%       Introduction to computers, formal algorithms, strategies for problem solving
+    * 10%       Professional, social, and ethical considerations
+    * 10%       Top-down and modular design techniques, documentation and testing
+    * 15%       Control structures: loops, branching, Boolean expressions and cases
+    * 10%       Terminal and text file input and output
+    * 05%       Functions and sets
+    * 15%       Logic gates, Boolean functions, and truth tables
+    * 15%       Building and testing simple Boolean circuits
+    * 05%       Exams
+
+TEXTBOOK TOPICS:
+    * Computer basics (Chapter 1)
+    * History of computers (Chapter 6)
+    * Creating a Web page, HTML, lists, images (Chapter 2)
+    * Web &amp; Internet History (Chapter 3)
+    * Interactive Web pages, user input, assignments, expressions
+        (Chapter 4 and 5)
+    * Problem solving &amp; algorithms (Chapter 8)
+    * Abstract thinking, functions, modularity, reuse (Chapter 7)
+    * Design &amp; interfaces (Chapter 9)
+    * Control structures, decision making, if statements, counters (Chapter 11)
+    * Data representation (Chapter 12)
+    * Conditional Repetition (Chapter 13)
+    * Inside the Computer -- The von Neumann Architecture (Chapter 14)
+    * Logic gates, Boolean functions and truth table, Boolean circuits
+        (Chapter 16)
+    * Computers in Society (Chapter 18)
+    * Computers Science as Discipline (Chapter 10)
+
+
+PREREQUISITES:
+    (This course assumes no prior programming experience)
+    Complete ANY of the following Courses:
+	MATH072 - Intermediate Algebra
+	OR MATH112 - College Algebra
+	OR MATH115 - Precalculus
+
+CLOSED LABS:
+    We will spend time working on lab assignments on Friday every week.
+    The instructor and lab assistants will be available to assist you.
+    We encourage you to work in pairs on the lab assignments.
+    Lab assignments are due as specified in the D2L Calendar.
+
+ASSIGNMENTS:
+    In addition to the projects assigned during the closed labs, you will
+    also be expected to complete programming projects on your own outside
+    of class time.
+    Programs are due as specified in the D2L Calendar.
+    Late work may be marked down or not accepted.
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.  Use of recording devices during exams is prohibited.
+    If you must quote or paraphrase another source, citation is essential,
+    otherwise plagiarism has been committed.  You are expected to be familiar
+    with your rights and obligations as outlined in the &quot;Code of Conduct&quot;
+    [<a href="http://www.stcloudstate.edu/studenthandbook/code/default.asp]">http://www.stcloudstate.edu/studenthandbook/code/default.asp]</a>
+
+STUDYING IN GROUPS:
+    I encourage you to study with someone else in the class, but when you
+    prepare the final documents to turn in be sure that it is your own words,
+    code, and sentences, and that you understand what you are submitting.
+    If you represent someone else’s work as your own or allow someone else to
+    turn your work in as theirs you will be turned in for cheating and you will
+    will have earned a grade of F.
+
+
+DECORUM: Conduct yourself so as not to distract others. In particular
+    * Turn off all cell phones, watch alarms, and similar devices.
+    * Do not engage in distracting activities like reading a newspaper
+      or sleeping. (some of you snore...)
+    * Arrive for class on time, and be ready to begin.
+      If you must be late, be quiet as you enter.
+    * If you are early, sit toward the middle of a row.
+    * Do not start packing up before class ends.
+
+ATTENDANCE:
+    You are responsible for knowing what happens at each class meeting.
+    If you are having trouble in class please see me in my office.
+    (If you don't tell me you're having troubles how do you expect me to know?)
+    If you can't come during my office hours, make an appointment for
+    another time.
+
+
+QUIZZES:
+    There will be a sequence of quizzes of assigned reading prior to the
+    coverage of most chapters we'll cover.
+
+EXAMS:
+    There will be a small set of intermediate exams and a comprehensive
+    final exam.
+    Exams will be based on the notes; that is, on the presentations in class
+    as well as on the content in the assigned readings.
+    Calculators will be neither necessary nor allowed.
+    Make-up exams will be given in only in extreme (or university
+    sanctioned) circumstances and only with prior notice.
+
+GRADING:
+        Your grade will be determined by the contributions of your scores
+        on assignments,  quizzes, intermediate and final exams.
+        Makeup of tests, quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE WEIGHTING FOR GRADING:
+        Labs:                   20%
+        Assignments             20%
+        Hour Exams              25%
+        Final Exam              35%
+
+FINAL EXAM: Wednesday, May 1, 9:55 AM - 12:10 AM 
+(The final exam will be comprehensive)
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************
+</pre>
+</body>
+</html>

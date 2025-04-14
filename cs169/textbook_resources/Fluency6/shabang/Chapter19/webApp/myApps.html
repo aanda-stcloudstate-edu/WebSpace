@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"><title>myApps</title>
+    <style>
+        body   {background-color:black; color:cyan;font-family:helvetica}
+        h2       {color:white;text-align:center;}
+        table   {margin-left:auto;margin-right:auto;}
+        td        {background-color:orangered; color:white;min-width:100px;
+                       text-align:center; padding:20px;}
+        td.alta {background-color:deeppink;}
+        td.altb {background-color:fuchsia;}
+        a         {text-decoration:none;color:white;}
+    </style>
+  </head>
+  <body>
+    <h2>myApps</h2>
+    <table border="0">
+       <tr><td><a href="bmi.html"> bmi </a></td>
+               <td><a href="temperature.html"> C° ≈ F°</a></td></tr>
+       <tr><td class="alta"><a href="counter.html"> counter </a></td>
+               <td class="alta"><a href="rps.html"> RPS</a></td></tr>
+       <tr><td class="altb"><a href="flipOut.html">coin flip</a></td>
+               <td class="altb"><a href="itsMagic.html"> magic 8</a></td></tr>
+    </table>
+      <script type="text/javascript">
+		var today = new Date( );	// Get today's date
+		var myBdate = new Date( );	// Get a date object to modify
+		var difference;	// Declare a temporary variable
+		myBdate.setFullYear(1995);	// Set my birth year to 1993
+		myBdate.setMonth(6);	// Set my birth mo to July (mos start at 0)
+		myBdate.setDate(4);	// Set my birth day to 4th
+		myBdate.setHours(12);	// Set my hour of birth to noon
+		myBdate.setMinutes(0);	// Set my minute of birth to o'clock
+		myBdate.setSeconds(0);	// Set my second of birth on the hour
+		difference = today.getTime( ) - myBdate.getTime( );
+		difference = Math.floor(difference/1000);
+		document.write(" <p style='text-align:center'> my age: " + difference +
+			" seconds </p>");
+      </script>
+  </body>
+</html>

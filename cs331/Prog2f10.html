@@ -1,0 +1,69 @@
+<html>
+
+    <head>
+	<title>CSCI 331, Assignment 4, Program 2 2010</title>
+    </head>
+
+    <body>
+
+
+<h1>CSCI 331 - Software Systems</h1>
+<h2>Assignment 4, Program 2</h2>
+
+<h3><span style='font-size:10.5pt'>PROGRAM 2</span></h3> 
+<h3>PROJECT COLLABORATION TYPE:  <u>Individual</u>.<BR>
+	That means you should do the work on your own. <br>
+	(<i>However, you may discuss with others</i>)</h3>
+
+<p>
+<h2>THE PROGRAM:</h2>
+Implement a two heap, back-to-back, replacement selection algorithm.
+</p>
+
+<ol>
+    <li>Initialize:
+    <ul>
+	<li>a vector to serve as the replacement selection container.
+	<ul>
+	    <li>Once the vector size has been set, it should stay that way.
+	    <li>The type should be templated.
+	</ul>
+	<li>a list of sorted lists to receive the sorted output.
+	<ul>
+	    <li> each new list will be pushed onto the list of sorted lists as a new element
+	</ul>
+	<li>a first list in the list of sorted lists
+	<li>the last element value to be max small.
+	<li>a heap direction flag.
+	<ul>
+	    <li>If TRUE,  the active heap's head is on the left end, and the pending heap's head is on the right end.
+	    <li>If FALSE, the active heap's head is on the right end, and the pending heap's head is on the left end.
+	</ul>
+    </ul>
+    <li>While the replacement selection vector is not full:
+    <ul>
+	<li> heapify a new element
+    </ul>
+    <li>While there's a new element:
+    <ul>
+	<li>Pop the smallest element (head) of the current (min) heap, adding it to the current list.
+	<li>If the new element is greater than or equal to the last element popped, push it onto the current heap<br>
+	<li>If the new element is less than or equal to the last element popped,
+	<ul>
+	    <li>push it onto the pending heap
+	    <li>decrement the current heap size counter, and increment the pending heap size counter.
+	    <li>If the current heap size is zero,
+	    <ul>
+		<li>terminate the current sorted list
+		<li>initialize a new sorted list
+		<li>toggle the heap direction flag
+	    </ul>
+	</ul>
+	<ul>
+	    <li>you should have both current_heap_push() and pending_heap_push() methods, as they'll operate differently.
+	</ul>
+    <li>Pop the remaining elements into the current and then the possibly next and final list
+    </ul>
+</body>
+
+</html>

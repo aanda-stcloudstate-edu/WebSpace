@@ -1,0 +1,10 @@
+        body {background-color : white; color : darkslateblue; 
+                  font-family : helvetica}
+        ul     {list-style:none; text-align:right; float:left; padding:8px;}
+        li      {font-size:small}
+        h2    {color : navy}
+        p      {font-size : large}
+        span.years {font-size:x-small;}
+        a:link {color : darkviolet; text-decoration : none}
+        a.me:link {color : gray; text-decoration : none}
+        a:hover {color:red}

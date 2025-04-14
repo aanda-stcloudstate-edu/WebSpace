@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<TITLE>limits.cpp</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#1F00FF" ALINK="#FF0000" VLINK="#9900DD">
+<A NAME="top">
+<A NAME="file1">
+<H1>writelimits.cpp</H1>
+
+<PRE>
+<I><FONT COLOR="#B22222">// This program writes out local limits.
+</FONT></I>#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;iostream&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;iomanip&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;limits.h&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;float.h&gt;</FONT></B>
+
+using namespace std;
+
+<FONT COLOR="#228B22"><B>int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>()
+{
+<I><FONT COLOR="#B22222">// Internal limits
+</FONT></I>   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Name: A. Anda&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Section: Professor&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Date: &lt;today's date here&gt;&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;CSCI 201 Lab 4: writelimits&quot;</FONT></B> &lt;&lt; endl &lt;&lt; endl &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Meaning                 | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Identifier       |&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Value&quot;</FONT></B>
+        &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 |&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 &quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;       INTEGERS         | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 |&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 &quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 |&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 &quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;bits in a char          | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;CHAR_BIT         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; CHAR_BIT &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;short char minimum      | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;SCHAR_MIN        |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; SCHAR_MIN &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;short char maximum      | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;SCHAR_MAX        |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; SCHAR_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;unsigned char maximum   | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;UCHAR_MAX        |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; UCHAR_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;char minimum            | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;CHAR_MIN         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; SCHAR_MIN &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;char maximum            | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;CHAR_MAX         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; SCHAR_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;short int minimum       | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;SHRT_MIN         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; SHRT_MIN &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;short int maximum       | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;SHRT_MAX         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; SHRT_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;unsigned short maximum  | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;USHRT_MAX        |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; USHRT_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;int minimum             | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;INT_MIN          |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; INT_MIN &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;int maximum             | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;INT_MAX          |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; INT_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;unsigned int maximum    | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;UINT_MAX         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; UINT_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;long minimum            | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LONG_MIN         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LONG_MIN &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;long maximum            | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LONG_MAX         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LONG_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;unsigned long maximum   | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;ULONG_MAX        |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; ULONG_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 |&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 &quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;       FLOATS           | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 |&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 &quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 |&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                 &quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;digits of precision     | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_DIG          |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_DIG &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_DIG          |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_DIG &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_DIG         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_DIG &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;size of mantissa        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_MANT_DIG     |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_MANT_DIG &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_MANT_DIG     |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_MANT_DIG &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_MANT_DIG    |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_MANT_DIG &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;largest integer for     | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_MIN_EXP      |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_MIN_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;negative exponent       | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_MIN_EXP      |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_MIN_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;(float radix)           | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_MIN_EXP     |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_MIN_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;largest integer for     | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_MIN_10_EXP   |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_MIN_10_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;negative exponent       | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_MIN_10_EXP   |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_MIN_10_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;(base 10)               | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_MIN_10_EXP  |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_MIN_10_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;largest integer for     | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_MAX_EXP      |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_MAX_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;positive exponent       | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_MAX_EXP      |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_MAX_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;(float radix)           | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_MAX_EXP     |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_MAX_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;largest integer for     | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_MAX_10_EXP   |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_MAX_10_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;positive exponent       | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_MAX_10_EXP   |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_MAX_10_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;(base 10)               | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_MAX_10_EXP  |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_MAX_10_EXP &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;largest possible real   | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_MAX          |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;number                  | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_MAX          |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_MAX         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_MAX &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;smallest possible real  | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_MIN          |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_MIN &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;number                  | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_MIN          |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_MIN &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_MIN         |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_MIN &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;smallest possible       | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;FLT_EPSILON      |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; FLT_EPSILON &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;fraction                | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;DBL_EPSILON      |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; DBL_EPSILON &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;                        | &quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;LDBL_EPSILON     |&quot;</FONT></B> &lt;&lt; setw(15)
+        &lt;&lt; LDBL_EPSILON &lt;&lt; endl;
+   cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;------------------------|-&quot;</FONT></B> &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------|&quot;</FONT></B>
+        &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;-----------------&quot;</FONT></B> &lt;&lt; endl;
+   <B><FONT COLOR="#A020F0">return</FONT></B> 0;
+}<I><FONT COLOR="#B22222">// main
+</FONT></I></PRE>
+<HR>
+<ADDRESS>Generated by <A HREF="http://www.iki.fi/~mtr/genscript/">GNU enscript 1.6.1</A>.</ADDRESS>
+</BODY>
+</HTML>

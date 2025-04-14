@@ -1,0 +1,53 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+       <title>CSCI 200 Lab 12 Spring 2010 [A. A. Anda]</title>
+    </head>
+
+    <body>
+	<center>
+	    <h1>
+		CSCI 200
+	    </h1> 
+
+	    <h2> 
+		Lab 12
+	    </h2> 
+ 
+	    <h3> 
+		[A. A. Anda]<br> 
+		Spring 2011
+	    </h3> 
+	</center>
+
+
+<hr WIDTH="100%">
+<h2>Introduction:</h2>
+This lab exercises the ability to:
+<ul>
+    <li>Write, run, and test an assembly language program for Reed's
+	<a href="http://balance3e.com/Ch14/machine.html">Complete Knob&amp;Switch Computer Simulator</a>.</li>
+</ul>
+<h2>Lab Assignment:</h2>
+
+Perform the following Exercise in Reed:
+<ol>
+    <li> <u>Exercise 14.13</u> with the following modification
+    <ul>
+	<li>use the memory location immediately following the <tt>HALT</tt> instruction as your (<i>input</i>) operand.
+	<li>use the memory location immediately following the input operand as your (<i>output</i> result) product destination.
+	<li>use only one register.
+    </ul>
+    <li> <b>extra credit:</b> Multiply together the positive integers in the first two memory locations follwing the <tt>HALT</tt> 
+    command.  Store the (result) product in the third memory location following the <tt>HALT</tt> instruction.<br>
+    [<i>HINT</i>: create a loop for which every iteration adds one operand to a running sum (<i>which will represent the product at the end</i>) while decrementing the other operand.
+    Stop the loop and store the (resulting) product when the decremented value is zero. (consider using the <tt>BZERO</tt> instruction)]
+</ol>
+    <p>
+    <b>Note</b>: the assembly language manual for the Complete Knob&amp;Switch Computer Simulator is
+    <a href="http://balance3e.com/Ch14/instructions.html">here</a>.
+    <p>
+    When correct, submit <u>screenshots</u> of the simulator, <i>before</i> and <i>after</i> the your assembly language program runs on the simulator, to the appropriate D2L dropbox.
+</body>
+</html>

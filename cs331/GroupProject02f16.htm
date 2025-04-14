@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="UTF-8">
+	    <title>CSCI 331 Replacement-Selection Programming Project Fall 2016</title>
+
+	<style>
+	    code{font-weight:bold; color:MidnightBlue}
+	</style>
+    </head>
+
+    <body lang=EN-US style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<h1><span style='font-size:10.5pt;font-family:"Lucida Sans Unicode"'>CSCI 331 -
+Software Systems Fall 2016</span></h1>
+
+<h3><span style='font-size:10.5pt'>Group Project</span></h3> 
+<h3>PROJECT COLLABORATION TYPE: <u>Group</u></h3>
+
+<p>
+<h2>THE PROGRAM:</h2>  This project is the first in a two-phase project.
+<br>
+Your team will implement:
+<h3>Component A.1</h3>
+<p>
+Implement in C++ a <i>back-to-back</i>, <i>dual heap</i>, <b>replacement selection</b> algorithm.
+</p>
+<ol>
+    <li>Initialize:
+    <ul>
+	<li>a vector to serve as the replacement selection container.
+	<ul>
+	    <li>Once the vector size (default to 10 fixed-size records) has been set, the vector size will be fixed at that value for its lifetime.
+	    <li>The vector's type should be <u>template</u>d.
+	</ul>
+	<li>files:
+	<ul>
+	    <li>a file to receive the sequence of sorted lists.
+	    <li>a file to receive the byte offsets (or RRNs) of the sequence of sorted lists.
+	</ul>
+	<li>a heap direction flag.
+	<ul>
+	    <li>If <code>TRUE</code>,  the active heap's head is on the left end, and the pending heap's head is on the right end.
+		<li>If <code>FALSE</code>, the active heap's head is on the right end, and the pending heap's head is on the left end.
+	    <li>The default value is <code>TRUE</code>
+	</ul>
+    </ul>
+    <li>While the replacement selection vector is not full:
+    <ul>
+	<li> <i>heapify</i> a new element
+    </ul>
+    <li>While there's a new element:
+    <ul>
+	<li>Pop the <i>root</i> of the current heap, adding it to the current sorted list.
+	<li>If the new element is (<i>for a min-heap</i>) greater than or equal to the last element popped, push it onto the current heap<br>
+	<li>If the new element is (<i>for a min-heap</i>) less than the last element popped,
+	<ul>
+	    <li>push it onto the pending heap
+	    <li>decrement the current heap size counter, and increment the pending heap size counter.
+	    <li>If the current heap size is zero,
+	    <ul>
+		<li><i>terminate</i> the current sorted list
+		<li><i>initialize</i> a new sorted list
+		<li><i>toggle</i> the heap direction flag
+	    </ul>
+	</ul>
+	<ul>
+	    <li>you will have <code>current_heap_push()</code>, <code>current_heap_pop()</code>, and <code>pending_heap_push()</code> methods, as they'll operate differently.
+	<li>When the input is exhausted, pop the remaining elements of the active heap into the current list and then then (if not empty) pop the remaining elements of the pending heap into the final list
+	</ul>
+    </ul>
+    <li>Finishing (consistency checks):
+    <ul>
+	<li>Check that the number of records in the entry-sequenced file is equivalent to the number of records in the set of sorted lists file.
+	<li>Check that each sorted list is monotonically ordered.
+    </ul>
+</ol>
+<h3>Component A.2</h3>
+Create a <u>sorted</u> <u>file</u> of <u>records</u> via <i>k</i>-way
+<i>tournament</i>, <i>heap</i>-mediated, merging of <u>replacement selection</u> sorted lists.<br>
+<ul>
+    <li>This method should work with at least the following record types:
+    <ul>
+	<li>random integer valued keys
+	<li>random string valued keys
+    </ul>
+    <li>You should provide a <i>comparison method</i> for each record type. 
+    <li>When we sort our records we will use replacement selection <i>then</i> merge.</li>
+    <li>The number of entries in the <i>k</i>-way tournament sort (<i>k</i>) will be the number of sorted runs.
+    <li>Write the following statistics to a log file:</li>
+    <ol>
+	<li>an identification of which file the (input) unsorted records are from,</li>
+	<li>an identification of which file the (output) sorted records are placed in,</li>
+	<li>the number of records that can fit in memory,</li>
+	<li>the number of records,</li>
+	<li>the number of runs,</li>
+	<li>the smallest, largest and arithmetic mean number or records in all of the runs,</li>
+    </ol>
+    <li>A sorted file of records will be generated for each of our categories of record.</li>
+    <li>Write a program that demonstrates that your file sorter works for a sufficiently large count of records in memory</li>
+</ul>
+<b>Component A</b> lays the foundation for the next team component which implements a B+Tree.
+
+<h2>WHAT TO TURN IN:</h2>
+Each of the items below should be submitted to the D2L group dropbox.
+
+<ol>
+    <li><u>Design document for the classes</u>.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    Also, show data revealing the effect, on the replacement selection algorithm generated list lengths,
+    of partial and complete forward and backwards sorting.<br>
+
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Via Doxygen.
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<code>pwd</code> will answer this for you)
+	<li>How to compile and run the program. (use a <u>makefile</u>)
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+    <li>The group leader should schedule a 20-minute meeting with the instructor to demonstrate the project.  The group leader must also show their group log, and the group member evaluations.
+</ol>
+
+</div>
+
+</body>
+
+</html>

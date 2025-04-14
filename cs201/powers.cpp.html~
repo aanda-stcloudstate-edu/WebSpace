@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<TITLE>Integer Power Functions</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#1F00FF" ALINK="#FF0000" VLINK="#9900DD">
+<A NAME="top">
+<A NAME="file1">
+<H1>lab11.cpp</H1>
+
+<PRE>
+<I><FONT COLOR="#B22222">// This program experiments with integer power functions
+</FONT></I>
+<I><FONT COLOR="#B22222">// A. A. Anda
+</FONT></I>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;iostream.h&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;math.h&gt;</FONT></B>
+using namespace std;
+
+<FONT COLOR="#228B22"><B>int</FONT></B> counterI; <I><FONT COLOR="#B22222">//global counter variable for the iterative function
+</FONT></I><FONT COLOR="#228B22"><B>int</FONT></B> counterR; <I><FONT COLOR="#B22222">//global counter variable for the recursive function
+</FONT></I><FONT COLOR="#228B22"><B>int</FONT></B> counterB; <I><FONT COLOR="#B22222">//global counter variable for the binary function
+</FONT></I><FONT COLOR="#228B22"><B>int</FONT></B> counterRB; <I><FONT COLOR="#B22222">//global counter variable for the recursive binary function
+</FONT></I><FONT COLOR="#228B22"><B>int</FONT></B> counterIRB; <I><FONT COLOR="#B22222">//global counter variable for the improved recursive binary function
+</FONT></I><FONT COLOR="#228B22"><B>void</FONT></B> <B><FONT COLOR="#0000FF">resetCounters</FONT></B>(<FONT COLOR="#228B22"><B>void</FONT></B>); <I><FONT COLOR="#B22222">// reset the counters
+</FONT></I>
+<FONT COLOR="#228B22"><B>inline</FONT></B> <FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">sqr</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number);
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">iterativePow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power);
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">recursivePow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power);
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">binaryAlgPow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power);
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">recursiveBinaryAlgPow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power);
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">ImpRecursiveBinaryAlgPow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power);
+
+<FONT COLOR="#228B22"><B>int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>(<FONT COLOR="#228B22"><B>void</FONT></B>)
+{
+    <I><FONT COLOR="#B22222">// Local Declarations
+</FONT></I>
+<FONT COLOR="#228B22"><B>double</FONT></B> number;
+<FONT COLOR="#228B22"><B>int</FONT></B> power;
+    
+
+    <I><FONT COLOR="#B22222">// Statements
+</FONT></I>
+
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;This program computes and compares several functions &quot;</FONT></B> &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;for computing the integer power of a number.&quot;</FONT></B> &lt;&lt; endl &lt;&lt; endl;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Enter a number (&lt;EOF&gt; to stop)&quot;</FONT></B>
+         &lt;&lt; endl &lt;&lt; endl;
+
+    <B><FONT COLOR="#A020F0">while</FONT></B> (cin &gt;&gt; number)
+	{
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Enter the power it is raised to &quot;</FONT></B> &lt;&lt; endl;
+	cin &gt;&gt; power;
+
+	resetCounters(); <I><FONT COLOR="#B22222">// reset the counters
+</FONT></I>	cout &lt;&lt; number &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; raised to the power of &quot;</FONT></B> &lt;&lt; power &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; is:&quot;</FONT></B> &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Iterative   Value: &quot;</FONT></B> &lt;&lt; iterativePow(number,power) &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Iterative   mults: &quot;</FONT></B> &lt;&lt; counterI &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Recursive   Value: &quot;</FONT></B> &lt;&lt; recursivePow(number,power) &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Recursive   mults: &quot;</FONT></B> &lt;&lt; counterR &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Binary Alg. Value: &quot;</FONT></B> &lt;&lt; binaryAlgPow(number,power) &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Binary Alg. mults: &quot;</FONT></B> &lt;&lt; counterB &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Recursive Binary Alg. Value: &quot;</FONT></B>
+	     &lt;&lt; recursiveBinaryAlgPow(number,power) &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Recursive Binary Alg. mults: &quot;</FONT></B> &lt;&lt; counterRB &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Improved Recursive Binary Alg. Value: &quot;</FONT></B>
+	     &lt;&lt; ImpRecursiveBinaryAlgPow(number,power) &lt;&lt; endl;
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Improved Recursive Binary Alg. mults: &quot;</FONT></B> &lt;&lt; counterIRB &lt;&lt; endl;
+
+	cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Enter a number (&lt;EOF&gt; to stop)&quot;</FONT></B>;
+	}
+
+
+
+    <B><FONT COLOR="#A020F0">return</FONT></B> 0;
+} <I><FONT COLOR="#B22222">// main
+</FONT></I>
+<FONT COLOR="#228B22"><B>void</FONT></B> <B><FONT COLOR="#0000FF">resetCounters</FONT></B>(<FONT COLOR="#228B22"><B>void</FONT></B>) <I><FONT COLOR="#B22222">// reset the counters
+</FONT></I>{
+counterI=0; <I><FONT COLOR="#B22222">//global counter variable for the iterative function
+</FONT></I>counterR=0; <I><FONT COLOR="#B22222">//global counter variable for the recursive function
+</FONT></I>counterB=0; <I><FONT COLOR="#B22222">//global counter variable for the binary function
+</FONT></I>counterRB=0; <I><FONT COLOR="#B22222">//global counter variable for the recursive binary function
+</FONT></I>counterIRB=0; <I><FONT COLOR="#B22222">//global counter variable for the improved recursive binary function
+</FONT></I>}
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">iterativePow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power)
+{
+    <FONT COLOR="#228B22"><B>double</FONT></B> product = number;
+    <B><FONT COLOR="#A020F0">for</FONT></B>(<FONT COLOR="#228B22"><B>int</FONT></B> i=1; i&lt;power;i++)
+	{
+	 counterI++;
+	 product*=number;
+	}
+    <B><FONT COLOR="#A020F0">return</FONT></B> product;
+}
+
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">recursivePow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power)
+{
+<B><FONT COLOR="#0000FF">if</FONT></B>(power == 1) <B><FONT COLOR="#A020F0">return</FONT></B> number;
+<B><FONT COLOR="#A020F0">else</FONT></B>
+    {
+     counterR++;
+     <B><FONT COLOR="#A020F0">return</FONT></B> (number * recursivePow(number, power - 1));
+    }
+}
+
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">binaryAlgPow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power)
+{
+<FONT COLOR="#228B22"><B>double</FONT></B> r = 1;
+<FONT COLOR="#228B22"><B>double</FONT></B> y = number;
+<B><FONT COLOR="#0000FF">while</FONT></B> (power &gt; 1)
+  { 
+    <B><FONT COLOR="#A020F0">if</FONT></B> (power%2==1)
+	{
+	 counterB++;
+	 r = r*y;
+	}
+    power = power/2;
+    counterB++;
+    y = y*y;
+  }
+r = r*y;
+counterB++;
+<B><FONT COLOR="#0000FF">return</FONT></B>(r);
+}
+
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">recursiveBinaryAlgPow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power)
+{
+    <B><FONT COLOR="#A020F0">if</FONT></B>(1 == power) <I><FONT COLOR="#B22222">//handle base case
+</FONT></I>	<B><FONT COLOR="#A020F0">return</FONT></B> number;
+    <B><FONT COLOR="#A020F0">else</FONT></B> <B><FONT COLOR="#A020F0">if</FONT></B> (0 == power % 2) <I><FONT COLOR="#B22222">// handle even powers
+</FONT></I>    {
+	counterRB++;
+	<B><FONT COLOR="#A020F0">return</FONT></B> recursiveBinaryAlgPow(number, power / 2) *
+	       recursiveBinaryAlgPow(number, power / 2);
+    }
+    <B><FONT COLOR="#A020F0">else</FONT></B> <I><FONT COLOR="#B22222">// handle odd powers
+</FONT></I>    {
+	counterRB+=2;
+	<B><FONT COLOR="#A020F0">return</FONT></B> recursiveBinaryAlgPow(number, power / 2) *
+	       recursiveBinaryAlgPow(number, power / 2) * number;
+    }
+}
+
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">ImpRecursiveBinaryAlgPow</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number, <FONT COLOR="#228B22"><B>int</FONT></B> power)
+{
+    <B><FONT COLOR="#A020F0">if</FONT></B>(1 == power) <I><FONT COLOR="#B22222">//handle base case
+</FONT></I>	<B><FONT COLOR="#A020F0">return</FONT></B> number;
+    <B><FONT COLOR="#A020F0">else</FONT></B> <B><FONT COLOR="#A020F0">if</FONT></B> (0 == power % 2) <I><FONT COLOR="#B22222">// handle even powers
+</FONT></I>    {
+	counterIRB++;
+	<B><FONT COLOR="#A020F0">return</FONT></B> sqr(ImpRecursiveBinaryAlgPow(number, power / 2));
+    }
+    <B><FONT COLOR="#A020F0">else</FONT></B> <I><FONT COLOR="#B22222">// handle odd powers
+</FONT></I>    {
+	counterIRB+=2;
+	<B><FONT COLOR="#A020F0">return</FONT></B> number * sqr(ImpRecursiveBinaryAlgPow(number, power / 2));
+    }
+}
+
+<FONT COLOR="#228B22"><B>double</FONT></B> <B><FONT COLOR="#0000FF">sqr</FONT></B>(<FONT COLOR="#228B22"><B>double</FONT></B> number)
+{
+    <B><FONT COLOR="#A020F0">return</FONT></B> number * number;
+}
+
+</PRE>
+<h3>
+Output
+</h3>
+<PRE>
+This program computes and compares several functions
+for computing the integer power of a number.
+
+Enter a number (<EOF> to stop)
+
+1.01
+Enter the power it is raised to
+1000
+1.01 raised to the power of 1000 is:
+Iterative   Value: 20959.2
+Iterative   mults: 999
+Recursive   Value: 20959.2
+Recursive   mults: 999
+Binary Alg. Value: 20959.2
+Binary Alg. mults: 15
+Recursive Binary Alg. Value: 20959.2
+Recursive Binary Alg. mults: 999
+Improved Recursive Binary Alg. Value: 20959.2
+Improved Recursive Binary Alg. mults: 14
+Enter a number (<EOF> to stop)
+</PRE>
+<HR>
+<ADDRESS>Generated by <A HREF="http://www.iki.fi/~mtr/genscript/">GNU enscript 1.6.1</A>.</ADDRESS>
+</BODY>
+</HTML>

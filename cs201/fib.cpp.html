@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<TITLE>fib.cpp A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#1F00FF" ALINK="#FF0000" VLINK="#9900DD">
+<A NAME="top">
+<A NAME="file1">
+<H1>fib.cpp</H1>
+
+<PRE>
+<I><FONT COLOR="#B22222">// CSCI 201 A.A.Anda Fibonacci Demo
+</FONT></I><I><FONT COLOR="#B22222">// This program experiments with iterative and recursive Fibonacci functions,
+</FONT></I><I><FONT COLOR="#B22222">// monitoring the amount of work performed.
+</FONT></I><I><FONT COLOR="#B22222">// The solution to the problem of an exponentially expanding set of
+</FONT></I><I><FONT COLOR="#B22222">// function calls in the recursive case is to use the dynamic programming
+</FONT></I><I><FONT COLOR="#B22222">// technique of memoization - the storage &amp; reuse of intermediate results.
+</FONT></I>
+<I><FONT COLOR="#B22222">// &lt;your name and date here&gt;
+</FONT></I>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;iostream&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;cmath&gt;</FONT></B>
+using namespace std;
+
+<FONT COLOR="#228B22"><B>int</FONT></B> counterI = 0; <I><FONT COLOR="#B22222">//global counter variable for the iterative function
+</FONT></I><FONT COLOR="#228B22"><B>int</FONT></B> counterR = 0; <I><FONT COLOR="#B22222">//global counter variable for the recursive function
+</FONT></I><FONT COLOR="#228B22"><B>int</FONT></B> counterIR = 0; <I><FONT COLOR="#B22222">//global counter variable for the improved recursive function
+</FONT></I>
+<FONT COLOR="#228B22"><B>long</FONT></B> <B><FONT COLOR="#0000FF">iterativeFib</FONT></B>(<FONT COLOR="#228B22"><B>long</FONT></B> n);
+<FONT COLOR="#228B22"><B>long</FONT></B> <B><FONT COLOR="#0000FF">recursiveFib</FONT></B>(<FONT COLOR="#228B22"><B>long</FONT></B> n);
+<FONT COLOR="#228B22"><B>long</FONT></B> <B><FONT COLOR="#0000FF">ImpRecursiveFib</FONT></B>(<FONT COLOR="#228B22"><B>long</FONT></B> n);
+<FONT COLOR="#228B22"><B>long</FONT></B> Fib[1001] = {0,1};
+
+<FONT COLOR="#228B22"><B>int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>()
+{
+    <I><FONT COLOR="#B22222">// Local Declarations
+</FONT></I>
+<FONT COLOR="#228B22"><B>long</FONT></B> number;
+    
+
+    <I><FONT COLOR="#B22222">// Statements
+</FONT></I>
+
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;This program computes and compares several categories of functions for computing Fibonacci numbers&quot;</FONT></B> &lt;&lt; endl;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Enter a number:&quot;</FONT></B>
+         &lt;&lt; endl &lt;&lt; endl;
+
+    cin &gt;&gt; number;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Fibonacci(&quot;</FONT></B> &lt;&lt;  number &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;) is:&quot;</FONT></B> &lt;&lt; endl;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Iterative Value: &quot;</FONT></B> &lt;&lt; iterativeFib(number) &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Iterative adds.: &quot;</FONT></B> &lt;&lt; counterI &lt;&lt; endl;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Recursive Value: &quot;</FONT></B> &lt;&lt; recursiveFib(number) &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Recursive   adds.: &quot;</FONT></B> &lt;&lt; counterR &lt;&lt; endl;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Improved Recursive Value: &quot;</FONT></B> &lt;&lt; ImpRecursiveFib(number) &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Improved Recursive adds.: &quot;</FONT></B> &lt;&lt; counterIR &lt;&lt; endl;
+
+    <B><FONT COLOR="#A020F0">return</FONT></B> 0;
+} <I><FONT COLOR="#B22222">// main
+</FONT></I>
+<FONT COLOR="#228B22"><B>long</FONT></B> <B><FONT COLOR="#0000FF">iterativeFib</FONT></B>(<FONT COLOR="#228B22"><B>long</FONT></B> n)
+{
+    <B><FONT COLOR="#A020F0">if</FONT></B>(2 &gt; n)
+	{
+	<B><FONT COLOR="#A020F0">return</FONT></B> n;
+	}
+    <B><FONT COLOR="#A020F0">else</FONT></B>
+	{
+	<FONT COLOR="#228B22"><B>long</FONT></B> fnm2;
+	<FONT COLOR="#228B22"><B>long</FONT></B> fnm1 = 0;
+	<FONT COLOR="#228B22"><B>long</FONT></B> fn = 1;
+
+	<B><FONT COLOR="#A020F0">for</FONT></B>(<FONT COLOR="#228B22"><B>int</FONT></B> i=2; i &lt;= n; i++)
+	    {
+	     fnm2=fnm1;
+	     fnm1=fn;
+	     fn = fnm1 + fnm2;
+	     counterI++;
+	    }
+	<B><FONT COLOR="#A020F0">return</FONT></B> fn;
+	}
+}
+
+<FONT COLOR="#228B22"><B>long</FONT></B> <B><FONT COLOR="#0000FF">recursiveFib</FONT></B>(<FONT COLOR="#228B22"><B>long</FONT></B> n)
+{
+    <B><FONT COLOR="#A020F0">if</FONT></B>(2 &gt; n)
+	{
+	<B><FONT COLOR="#A020F0">return</FONT></B> n;
+	}
+    <B><FONT COLOR="#A020F0">else</FONT></B>
+    {
+     counterR++;
+     <B><FONT COLOR="#A020F0">return</FONT></B> recursiveFib(n-1) + recursiveFib(n-2);
+    }
+}
+
+<FONT COLOR="#228B22"><B>long</FONT></B> <B><FONT COLOR="#0000FF">ImpRecursiveFib</FONT></B>(<FONT COLOR="#228B22"><B>long</FONT></B> n)
+{
+    <B><FONT COLOR="#A020F0">if</FONT></B>(2 &gt; n)
+	{
+	<B><FONT COLOR="#A020F0">return</FONT></B> n;
+	}
+    <B><FONT COLOR="#A020F0">else</FONT></B> <B><FONT COLOR="#A020F0">if</FONT></B> (0 == Fib[n])
+    {
+     counterIR++;
+     <B><FONT COLOR="#A020F0">return</FONT></B> Fib[n] = ImpRecursiveFib(n-1) + ImpRecursiveFib(n-2);
+    }
+    <B><FONT COLOR="#A020F0">else</FONT></B>
+	<B><FONT COLOR="#A020F0">return</FONT></B> Fib[n];
+}
+</PRE>
+<HR>
+<pre>
+<tt>
+csci[~/cs201/labs]26>fib
+This program computes and compares several categories of functions for computing Fibonacci numbers
+Enter a number:
+
+5
+Fibonacci(5) is:
+Iterative Value: 5
+Iterative adds.: 4
+Recursive Value: 5
+Recursive   adds.: 7
+Improved Recursive Value: 5
+Improved Recursive adds.: 4
+csci[~/cs201/labs]27>fib
+This program computes and compares several categories of functions for computing Fibonacci numbers
+Enter a number:
+
+10
+Fibonacci(10) is:
+Iterative Value: 55
+Iterative adds.: 9
+Recursive Value: 55
+Recursive   adds.: 88
+Improved Recursive Value: 55
+Improved Recursive adds.: 9
+csci[~/cs201/labs]28>fib
+This program computes and compares several categories of functions for computing Fibonacci numbers
+Enter a number:
+
+15
+Fibonacci(15) is:
+Iterative Value: 610
+Iterative adds.: 14
+Recursive Value: 610
+Recursive   adds.: 986
+Improved Recursive Value: 610
+Improved Recursive adds.: 14
+csci[~/cs201/labs]29>fib
+This program computes and compares several categories of functions for computing Fibonacci numbers
+Enter a number:
+
+20
+Fibonacci(20) is:
+Iterative Value: 6765
+Iterative adds.: 19
+Recursive Value: 6765
+Recursive   adds.: 10945
+Improved Recursive Value: 6765
+Improved Recursive adds.: 19
+csci[~/cs201/labs]30>fib
+This program computes and compares several categories of functions for computing Fibonacci numbers
+Enter a number:
+
+25
+Fibonacci(25) is:
+Iterative Value: 75025
+Iterative adds.: 24
+Recursive Value: 75025
+Recursive   adds.: 121392
+Improved Recursive Value: 75025
+Improved Recursive adds.: 24
+csci[~/cs201/labs]31>fib
+This program computes and compares several categories of functions for computing Fibonacci numbers
+Enter a number:
+
+30
+Fibonacci(30) is:
+Iterative Value: 832040
+Iterative adds.: 29
+Recursive Value: 832040
+Recursive   adds.: 1346268
+Improved Recursive Value: 832040
+Improved Recursive adds.: 29
+csci[~/cs201/labs]32>^Dexit
+</tt>
+</pre>
+<HR>
+<ADDRESS>Generated by <A HREF="http://www.iki.fi/~mtr/genscript/">GNU enscript 1.6.1</A>.</ADDRESS>
+</BODY>
+</HTML>

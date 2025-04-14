@@ -1,0 +1,31 @@
+<html>
+ <!-- slots.html    Dave Reed    davereed@creighton.edu -->
+ <!-- This page simulates a slot machine.               -->
+ <!-- ================================================= -->
+
+ <head>
+   <title> Online Slots </title>
+   <script type="text/javascript" 
+           src="http://dave-reed.com/book/random.js">
+   </script>
+   <script type="text/javascript">
+     function DoSpin()
+     // Assumes: the page contains an image (slot1) 
+     // Results: displays a random spin as the slot1 image
+     {
+       var pick;
+       pick = RandomOneOf(["cherry.jpg", "lemon.jpg", "bar.jpg", "donut.jpg"]);
+       document.getElementById('slot1').src = "http://dave-reed.com/book/Images/" + pick;
+     }
+   </script>
+ </head>
+
+ <body>
+   <div style="text-align:center"> 
+     <img id="slot1" alt="slot image" border=1 
+          src="http://dave-reed.com/book/Images/cherry.jpg" />
+     <br /><br />
+     <input type="button" value="Click to Spin" onclick="DoSpin();" />
+   </div>
+ </body>
+ </html>

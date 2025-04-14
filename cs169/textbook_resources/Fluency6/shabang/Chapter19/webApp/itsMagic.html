@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"><title>The Decider</title>
+    <style>
+       body {background-color:black; color:orange;
+                text-align:center; font-family:helvetica}
+        button {margin:0; padding:0; background-color:black; 
+        		 border-style:none}
+        p       {font-size:x-large; }
+    </style>
+    <script>
+       var respond = new Array(
+          "It is certain", "It is decidedly so", "Without a doubt",
+          "Yes, definitely", "You may rely on it", "As I see it, yes",
+          "Most likely", "Outlook good", "Yes", "Signs point to yes",
+          "Reply hazy, try again", "Concentrate, and ask again",
+          "Better not tell you now", "Cannot predict now",
+          "Concentrate and ask again", "Don't count on it", 
+          "My reply is, no", "My sources say, no", "Outlook not so good",
+          "Very doubtful");
+        function randNum( range ) {
+   				return Math.floor( range * Math.random( ));
+		}
+    </script>
+  </head>
+  <body>
+   <p id="ask"> Say Your Question</p>
+   <p><button
+        onclick="document.getElementById('ask').innerHTML='... and your answer is ... ';
+                       document.getElementById('tell').innerHTML=respond[randNum(20)]">
+        <img src="8_ball.jpg" alt="8 Ball" width="300"/></button></p>
+    <p id="tell" > </p>
+  </body>
+</html>
+

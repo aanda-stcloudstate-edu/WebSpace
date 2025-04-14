@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="UTF-8"/>
+	<title>
+	    CSCI 169 Webpage Project
+	</title>
+	<style>
+	    body{background-color:LightCyan}
+	    table{border: 1px solid gray; text-align: center; margin-left: auto;margin-right: auto}
+	</style>
+    </head>
+    <body>
+	<h1 style="text-align:center">
+	    CSCI 169 Webpage Project
+	</h1>
+	<h2 style="text-align:right">
+	    <i>Your Name and seat ID</i><br/>
+	    <i>Date this file last modified</i><br/>
+	    <i>Hyperlinked URL for this page</i><br/>
+	</h2>
+	<h3 style="text-align:left">
+	    My SCSU links
+	</h3>
+	<ul>
+	    <li>
+		<a href="http://huskynet.stcloudstate.edu/instructional/d2l/">D2L Brightspace</a>
+	    </li>
+	    <li>
+		&hellip;
+	    </li>
+	</ul>
+	<hr/>
+	<table>
+	    <caption>
+		<b>Three of my Favorite Musical Groups</b>
+	    </caption>
+	    <tr>
+		<th>
+		    Punch Brothers
+		</th>
+		<th>
+		    Davina and the Vagabonds
+		</th>
+		<th>
+		    Lake Street Dive
+		</th>
+	    </tr>
+	    <tr>
+		<td>
+		    <a href="http://www.punchbrothers.com/home/"><img src="http://saradobie.files.wordpress.com/2012/02/punchbros1.jpg" alt="Punch Brothers image" width="200" /></a>
+		</td>
+		<td>
+		    <a href="http://davinaandthevagabonds.com/"><img src="http://d2nire92986lzz.cloudfront.net/files/2014/06/davina-and-the-vegabonds.jpg" alt="Davina and the Vagabonds image" width="200" /></a>
+		</td>
+		<td>
+		    <a href="http://www.lakestreetdive.com/"><img src="http://localspins.s3.amazonaws.com/wp-content/uploads/2014/08/29115005/lake_street_drive_MG_2014-4-622x415.jpg" alt="Lake Street Dive image" width="200" /></a>
+		</td>
+	    </tr>
+	    <tr>
+		<td>
+		    <a href="http://www.punchbrothers.com/tour/">Calendar</a>
+		</td>
+		<td>
+		    <a href="http://davinaandthevagabonds.com/calendar/">Calendar</a>
+		</td>
+		<td>
+		    <a href="http://www.bandsintown.com/LakeStreetDive">Calendar</a>
+		</td>
+	    </tr>
+	</table>
+    </body>
+</html>

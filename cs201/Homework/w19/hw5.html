@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <TITLE>CSCI 201 - Programming Assignment 5 - Spring 2019; Professor A. A. Anda</TITLE>
+    <style>
+	code {font-family: courier; font-weight: bold; color:MidnightBlue}
+    </style>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2019<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 5</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For this assignment:
+<ol type=I>
+    <h5>General Documentation</h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names</h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><code>:set sw=4</code>
+	<li><code>:set cindent</code>
+    </ul>
+    
+    <li>compile your code with <br><br><code>g++  -Wall </code> <i>filename</i><code>.cpp -o</code> <i>filename</i><br><br>(ensure that there are no compiler warnings or errors)
+    
+    
+    <li>For your source file, submit a PDF file.
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<ul>
+    <li>For the following project, exploit <code>functions()</code> as much as possible to enhance the modularization of your design.<br>
+    <li>Your <code>main()</code> function body should consist primarily of declarations, initializations, and function calls.<br>
+    <li>Start coding by implementing a top-down design exploiting stubs which you will replace with working functions after each is unit tested.<br>
+    <li>Each function should use comments to specify its <u>preconditions</u> &amp; <u>postconditions</u>, and document its <u>parameters</u> (e.g. <code>in</code>, <code>out</code>, or <code>in/out</code>)
+    <li>If you pass an array parameter to a function, and you don't intend to modify any of that array's elements, ensure that that array is passed <code>const</code>. (<i>see Gaddis p. 418 [8th ed. p. 412]</i>)
+</ul>
+<P>
+<ol>
+    <li><i>Birthday Paradox</i> Simulation<br>
+    The
+    <a href="http://en.wikipedia.org/wiki/Birthday_paradox"><i>birthday paradox</i></a>,
+    states that given a group of 23 (or more) randomly chosen people, the
+    probability is more than 50% that at least two of them will have the same
+    birthday.<br>
+    Your task is to use simulation to corroborate the mathematical analysis.<br>
+    Algorithm:
+    <ol>
+	<li>Include the following libraries: <code>&lt;iostream&gt;,&lt;iomanip&gt;,&lt;cstdlib&gt;,&lt;cmath&gt;,</code>.
+	<li>Input (and echo to the output):
+	<ul>
+	    <li>the number of times to run the simulation
+	    <li>a non-negative integer seed value to be used as the input parameter for <code>srand()</code>.
+	</ul>
+	<li>Repeat the following simulation the number of times specified by the input: 
+	<ol>
+	    <li>Initialize a 365 (<i>no leap day</i>) element Boolean array to all <code>false</code>.
+	    <li>Declare and initialize a 365 element integer frequency array.
+	    <li><u>Randomly</u> mark birthdays (<code>true</code>) in the 365 element Boolean array until there's a duplicate.
+	    <li>Every time there's not a duplicate birthday, increment the frequency array element whose index is the current number of unmatched birthdays. 
+	    <li>When there is a duplicate, break out of the loop.
+	</ol>
+	<li>When finished, store, in a new (<code>double</code>) array, the ratio of each value
+	 in the frequency array to the total number of runs.<br>
+       	This value will be a the simulated probability of not-matching for that many birthdays.
+	<li>In another array of the same size and type, store the theoretical probability of not-matching.
+	( N = number of birthdays not-matching) computed via the relations:
+	<ul>
+	    <li> The probability that 0 or 1 birthday won't match is 1.
+	    <li> The probability that 2 birthdays won't match is (1 - 1/365) = (1 - ({<i>N</i>=2} - 1)/365) = <i>P</i>(2).
+	    <li> The probability that 3 birthdays won't match is (1 - 1/365)*(1 - 2/365) = <i>P</i>(2)*(1 - ({<i>N</i>=3} -1)/365).
+	<li> The probability that <i>N</i> &gt; 0 birthdays won't match is <i>P</i>(<i>N</i> - 1)*(1 - (<i>N</i> -1)/365).
+	</ul>
+	<li>output a table where for each row:
+	<ul>
+	    <li>column 1 is the number of birthdays not-matching (<i>starting with 2</i>),
+	    <li>column 2 is the respective theoretical probability
+	    <li>column 3 is the respective simulated probability
+	    <li>column 4 is the respective absolute error {theoretical - simulated}
+	    <li>column 5 is the respective relative error {<code>fabs(</code>(theoretical - simulated) / theoretical<code>)</code>}
+	</ul>
+	<li>Can you duplicate the <a href="http://web.stcloudstate.edu/aanda/cs201/homework/birthdays.w13.txt">instructors output</a>?<br>
+	(You'll need to use the following I/O manipulators: <code>scientific, setw(), setprecision()</code>)
+	<li>Answer the following questions:
+	<ol>
+	    <li>What happens to the magnitudes of the absolute and relative errors when you significantly increase the number of runs?
+	    <li>Run your simulations using different random seeds.  What happens?
+	    <li>Does your simulation verify that the smallest number of people for which there is a greater than 50% chance of having at least one common birthday is 23?
+	    
+	</ol>
+    </ol>
+</ol>
+<HR>
+<h3>Extra Credit:</h3>
+10% extra credit when you <i>also</i> submit an equivalent program and output which substitutes <code>vector</code>s for c-arrays.
+<HR>
+Use the following function to compute a <u>random integer</u> in the interval [0, bound):
+<pre>
+<code>
+int irand2bound(int bound)
+{
+    return static_cast&lt;int&gt;( rand() / (RAND_MAX + 1.0) * bound );
+}
+</code>
+</pre>
+
+<P>
+<HR>
+</BODY>
+</HTML>
+

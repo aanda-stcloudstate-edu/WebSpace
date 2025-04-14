@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 13</h1>
+    <p align="center"><a href="#Listing_13-1_A_C_interface_for">Listing 13-1</a><br>
+    <a href="#Listing 13-A  Final Pseudocode for Event-Driven Simulation">
+    Listing 13-A</a></p>
+      <p align="center">&nbsp;</p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a
+                      name="Listing_13-1_A_C_interface_for"></a>Listing
+                    13-1&nbsp; A&nbsp; C++ interface for queues</h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b><font color="#3333ff" size="+1">/** @file QueueInterface.h */<br>#ifndef _QUEUE_INTERFACE<br>#define _QUEUE_INTERFACE<br>template &lt; class ItemType &gt; class QueueInterface<br>{<br>public:<br>/** Sees whether this queue is empty.<br>@return True if the queue is empty, or false if not. */<br>  virtual bool isEmpty ()const = 0;<br><br>/** Adds a new entry to the back of this queue.<br>@post If the operation was successful, newEntry is at the<br>back of the queue.<br>@param newEntry The object to be added as a new entry.<br>@return True if the addition is successful or false if not. */<br>  virtual bool enqueue (const ItemType &amp; newEntry) = 0;<br><br>/** Removes the front of this queue.<br>@post If the operation was successful, the front of the queue<br>has been removed.<br>@return True if the removal is successful or false if not. */<br>  virtual bool dequeue () = 0;<br><br>/** Returns the front of this queue.<br>@pre The queue is not empty.<br>@post The front of the queue has been returned, and the<br>queue is unchanged.<br>@return The front of the queue. */<br>  virtual ItemType peekFront () const = 0;<br>};				// end QueueInterface<br>#endif</font>
+</b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 13-A  Final Pseudocode for Event-Driven Simulation">
+                Listing 13-A&nbsp; Final Pseudocode for Event-Driven Simulation</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font color="#3333ff" size="+1">// Performs the simulation.
+   simulate ():void </font></b></pre>
+              <pre><b><font color="#3333ff" size="+1">     Create an empty queue bankQueue to represent the bank line
+     Create an empty priority queue eventListPQueue for the event list
+     
+	tellerAvailable = true
+
+// Create and add arrival events to event list
+  while (data file is not empty)
+  {
+    	Get next arrival time a and transaction time t from file 
+	newArrivalEvent = a new arrival event containing a and t 
+	eventListPQueue.add (newArrivalEvent)
+  }
+
+// Event loop
+while (eventListPQueue is not empty)
+  	{
+    newEvent = eventListPQueue.peek ()
+	// Get current time
+      currentTime = time of newEvent 
+	if (newEvent is an arrival event)
+      	processArrival (newEvent, eventListPQueue, bankQueue)
+      else
+      	processDeparture (newEvent, eventListPQueue, bankQueue)
+      }
+
+	// Processes an arrival event.
+    processArrival (arrivalEvent: Event, eventListPQueue:PriorityQueue,
+    bankQueue:Queue)
+
+	// Remove this event from the event list
+	eventListPQueue.remove ()
+	customer = customer referenced in arrivalEvent 
+	if (bankQueue.isEmpty () &amp;&amp; tellerAvailable)
+	{
+	  departureTime = currentTime + transaction time in arrivalEvent 
+	  newDepartureEvent =
+	  a new departure event with departureTime 
+	  eventListPQueue.add (newDepartureEvent) tellerAvailable = false
+	}
+      else
+
+	bankQueue.enqueue (customer)
+
+	// Processes a departure event .
+      + processDeparture (departureEvent: Event, eventListPQueue:PriorityQueue,
+      	bankQueue:Queue)
+
+	// Remove this event from the event list
+	eventListPQueue.remove ()
+
+	if (!bankQueue.isEmpty ())
+	{
+	// Customer at front of line begins transaction
+	  customer = bankQueue.peek ()
+	  bankQueue.dequeue ()
+	  departureTime = currentTime + transaction time in customer 
+	  newDepartureEvent = a new departure event with departureTime 
+	  eventListPQueue.add (newDepartureEvent)
+	}
+      else
+	  tellerAvailable = true</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    </body>
+</html>

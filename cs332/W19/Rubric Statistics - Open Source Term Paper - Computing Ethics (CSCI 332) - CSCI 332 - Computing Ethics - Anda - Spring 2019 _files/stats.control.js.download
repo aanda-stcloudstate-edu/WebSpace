@@ -1,0 +1,6 @@
+
+function GoToTab( tab ) {
+	var ni = new D2L.NavInfo();
+	ni.SetParam( 'selectedTab', tab );
+	Nav.Go( ni );
+}

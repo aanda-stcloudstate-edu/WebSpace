@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>bubble.cpp</title>
+<meta name="Generator" content="Vim/6.1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+<font color="#0000ff">//      P08-06 bubbleSort</font>
+
+<font color="#0000ff">/*</font><font color="#0000ff">      Test driver for sorting. Includes Program 8-7, bubbleUp.</font>
+<font color="#0000ff">        Written by: Anda</font>
+<font color="#0000ff">        Date:           12-10</font>
+<font color="#0000ff">*/</font>
+<font color="#a020f0">#include </font><font color="#ff00ff">&lt;iostream.h&gt;</font>
+<font color="#a020f0">#include </font><font color="#ff00ff">&lt;iomanip.h&gt;</font>
+<font color="#a020f0">#include </font><font color="#ff00ff">&lt;stdlib.h&gt;</font>
+
+<font color="#2e8b57"><b>const</b></font> <font color="#2e8b57"><b>int</b></font> MAX_ARY_SIZE = <font color="#ff00ff">50</font>;
+<font color="#2e8b57"><b>const</b></font> <font color="#2e8b57"><b>int</b></font> COLUMNS = <font color="#ff00ff">10</font>;
+<font color="#2e8b57"><b>int</b></font> comparisons = <font color="#ff00ff">0</font>;
+<font color="#2e8b57"><b>int</b></font> exchanges = <font color="#ff00ff">0</font>;
+
+<font color="#0000ff">//      Prototype Declarations </font>
+        <font color="#2e8b57"><b>void</b></font> bubbleSort (<font color="#2e8b57"><b>int</b></font> list [ ], <font color="#2e8b57"><b>int</b></font> last, <font color="#2e8b57"><b>char</b></font> sortDirection);
+        <font color="#2e8b57"><b>void</b></font> bubbleUp (<font color="#2e8b57"><b>int</b></font> list[ ], <font color="#2e8b57"><b>int</b></font> first, <font color="#2e8b57"><b>int</b></font> last, <font color="#2e8b57"><b>char</b></font> sortDirection);
+
+<font color="#2e8b57"><b>int</b></font> main (<font color="#2e8b57"><b>void</b></font>)
+{
+<font color="#0000ff">//      Local Declarations </font>
+        <font color="#2e8b57"><b>int</b></font> i;
+        <font color="#2e8b57"><b>int</b></font> counter;
+        <font color="#2e8b57"><b>char</b></font> sortDirection;
+        <font color="#2e8b57"><b>int</b></font> ary[ MAX_ARY_SIZE ];
+
+<font color="#0000ff">//      Statements </font>
+
+        cout &lt;&lt; <font color="#ff00ff">&quot;</font><font color="#6a5acd">\n</font><font color="#ff00ff">Enter the character 'a' to select an ascending sort,</font><font color="#6a5acd">\n</font><font color="#ff00ff">&quot;</font> &lt;&lt;
+        <font color="#ff00ff">&quot;else enter the character 'd' for a descending sort: &quot;</font> &lt;&lt; endl;
+        cin &gt;&gt; sortDirection;
+
+        counter = <font color="#ff00ff">0</font>;
+        cout &lt;&lt; <font color="#ff00ff">&quot;</font><font color="#6a5acd">\n</font><font color="#ff00ff">Unsorted array: &quot;</font> &lt;&lt; endl;
+        <font color="#804040"><b>for</b></font> (i = <font color="#ff00ff">0</font>; i &lt; MAX_ARY_SIZE; i++)
+            {
+             ary[i] = rand()%<font color="#ff00ff">100</font>;
+             counter++;
+             cout &lt;&lt; setw(<font color="#ff00ff">3</font>) &lt;&lt; ary[i];
+             <font color="#804040"><b>if</b></font> (counter &gt;= COLUMNS)
+                {
+                 counter = <font color="#ff00ff">0</font>;
+                 cout &lt;&lt; endl;
+                }
+            }
+        cout &lt;&lt; endl;
+
+        bubbleSort (ary, MAX_ARY_SIZE - <font color="#ff00ff">1</font>, sortDirection);
+
+        counter = <font color="#ff00ff">0</font>;
+        cout &lt;&lt; <font color="#ff00ff">&quot;</font><font color="#6a5acd">\n</font><font color="#ff00ff">Sorted array:   &quot;</font> &lt;&lt; endl;
+        <font color="#804040"><b>for</b></font> (i = <font color="#ff00ff">0</font>; i &lt; MAX_ARY_SIZE; i++)
+            {
+             counter++;
+             cout &lt;&lt; setw(<font color="#ff00ff">3</font>) &lt;&lt; ary[i];
+             <font color="#804040"><b>if</b></font> (counter &gt;= COLUMNS)
+                {
+                 counter = <font color="#ff00ff">0</font>;
+                 cout &lt;&lt; endl;
+                }
+            }
+        cout &lt;&lt; endl;
+        cout &lt;&lt; <font color="#ff00ff">&quot;There were &quot;</font> &lt;&lt; comparisons &lt;&lt; <font color="#ff00ff">&quot; comparisons.&quot;</font> &lt;&lt; endl;
+        cout &lt;&lt; <font color="#ff00ff">&quot;There were &quot;</font> &lt;&lt; exchanges &lt;&lt; <font color="#ff00ff">&quot; exchanges.&quot;</font> &lt;&lt; endl;
+
+        <font color="#804040"><b>return</b></font> <font color="#ff00ff">0</font>;
+}       <font color="#0000ff">// main </font>
+
+
+
+<font color="#0000ff">/*</font><font color="#0000ff">      Sort list using bubble sort. Adjacent elements are </font>
+<font color="#0000ff">        compared and exchanged until list is completely ordered.</font>
+<font color="#0000ff">        Pre  The list must contain at least one item.</font>
+<font color="#0000ff">             last contains index to last element in list.</font>
+<font color="#0000ff">        Post List has been rearranged in sequence low to high.</font>
+<font color="#0000ff">*/</font>
+<font color="#2e8b57"><b>void</b></font> bubbleSort (<font color="#2e8b57"><b>int</b></font> list [ ],
+                 <font color="#2e8b57"><b>int</b></font> last, <font color="#2e8b57"><b>char</b></font> sortDirection)
+{
+<font color="#0000ff">//       Local Declarations </font>
+        <font color="#2e8b57"><b>int</b></font> current;
+
+<font color="#0000ff">//      Statements </font>
+         <font color="#804040"><b>for</b></font>(current = <font color="#ff00ff">0</font>; current &lt; last; current++)
+            bubbleUp (list, current, last, sortDirection);
+        <font color="#804040"><b>return</b></font>;
+}       <font color="#0000ff">// bubbleSort </font>
+
+<font color="#0000ff">/*</font><font color="#0000ff">      Move the lowest element in unsorted portion of an array</font>
+<font color="#0000ff">        to the current element in the unsorted portion</font>
+<font color="#0000ff">        Pre   list must contain at least one element</font>
+<font color="#0000ff">              current identifies start of unsorted data</font>
+<font color="#0000ff">              last identifies end of the unsorted data</font>
+<font color="#0000ff">        Post  Array segment has been rearranged so that lowest </font>
+<font color="#0000ff">              element now at beginning of unsorted portion.</font>
+<font color="#0000ff">*/</font>
+<font color="#2e8b57"><b>void</b></font> bubbleUp (<font color="#2e8b57"><b>int</b></font> list[ ],
+               <font color="#2e8b57"><b>int</b></font> current,
+               <font color="#2e8b57"><b>int</b></font> last, <font color="#2e8b57"><b>char</b></font> sortDirection)
+{
+<font color="#0000ff">//      Local Declarations </font>
+        <font color="#2e8b57"><b>int</b></font> walker;
+        <font color="#2e8b57"><b>int</b></font> temp;
+
+<font color="#0000ff">//      Statements </font>
+        <font color="#804040"><b>for</b></font> (walker = last; walker &gt; current; walker--)
+
+           {
+           comparisons++;
+           <font color="#804040"><b>if</b></font> (sortDirection == <font color="#ff00ff">'a'</font> ? list[ walker ]  &lt; list[ walker - <font color="#ff00ff">1</font> ]
+                                    : list[ walker ]  &gt; list[ walker - <font color="#ff00ff">1</font> ])
+             {
+               exchanges++;
+               temp             = list[walker];
+               list[walker]     = list[walker - <font color="#ff00ff">1</font>];
+               list[walker - <font color="#ff00ff">1</font>] = temp;
+              } <font color="#0000ff">// if </font>
+           }
+        <font color="#804040"><b>return</b></font>;
+}       <font color="#0000ff">// bubbleUp </font>
+</pre>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 2 - Spring 2014 A. A. Anda</TITLE>
+</HEAD>
+<style type="text/css">
+code{font-weight:bolder}
+</style>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2014<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 2</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For each of the following problems you will solve:
+<ol type=I>
+    <h5>General Documentation <i>(see Sect. 2-10 &amp; Program 2-14)</i></h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names <i>(see Sect. 2-10 Pages 66-67 &amp; Table 2-14)</i></h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><code>:set sw=4</code>
+	<li><code>:set cindent</code>
+    </ul>
+    <P>
+    <li>At least a day prior to submission of your source code and test script, submit to your D2L dropbox a flowchart for each problem in this assignment.
+    <P>
+    <li>compile your code with <br><br><code>g++  -Wall </code> <i>filename</i><code>.cpp -o</code> <i>filename</i><br><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <code>script</code> on <span style="font-variant: small-caps;">csci2</span> to generate a file which contains
+    a (<code>script</code> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br><br>
+    <code>enscript -Ecpp --color -Whtml -p</code><i>file_name</i><code>.cpp.html</code> <i>file_name</i><code>.cpp</code><br><br>
+    (for each program) You will submit these files.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<OL>
+    <li>Write a program to print, using asterisk '*' characters, a solid diamond shape followed by a hollow diamond shape.</li>
+    <ul>
+	<li><b>input:</b> the number of asterisks on a side
+	<li><b>output:</b> an ASCII art triangle of the appropriate dimensions.<br>
+	[<b>note:</b> the height and width will be twice that, minus one]</li>
+	<li> Ensure that the minimum size will be two.<br>
+	     Else, display a message, and let the user re-enter.</li>
+	<li> Print two diamonds on successive sets of lines.
+	<ul>
+	    <li>the first will be solid asterisks.
+	    <li>the second will be an outline of asterisks only.
+	</ul>
+    </ul>
+<P>
+<HR>
+<h4>For Example:</h4>
+For a size of 4:
+
+<code><pre>
+
+   *   
+  ***  
+ ***** 
+*******
+ ***** 
+  ***  
+   *   
+
+   *   
+  * *  
+ *   * 
+*     *
+ *   * 
+  * *  
+   *   
+
+</pre></code>
+<P>
+<HR>
+After testing thoroughly (<i>especially the set of alerts generated when <u>any</u> of the preconditions are violated</i>), submit this file to its D2L Dropbox.
+<HR>
+
+
+    </ul>
+    <P>
+    <li>Write a program to <a href="http://en.wikipedia.org/wiki/Base_conversion#Base_conversion">convert between integer bases</a> from using loops.
+    <ul>
+	<li><b>input:</b>
+	<ul>
+	    <li>A base to convert from. [range: 2 - 10]
+	    <ul>
+		<li>Prompt the user for this value.
+		<li>If the number is not in this range, output a descriptive
+		    error message (to <code>cerr</code>) then prompt the user for
+		    this value again.  (this requires a loop)
+	    </ul>
+	    <li>An integer to convert. [range: 0 - (2<sup>10</sup>-1)]<br>
+	    <ul>
+		<li>Prompt the user for this value.
+		<li>(<u>note</u>: each digit must be less than the base.
+		    Use a loop to validate this.)
+		<li>If the number is not in this range, output a descriptive
+		    error message (to <code>cerr</code>) then prompt the user for
+		    this value again.
+	    </ul>
+	    <li>A target base to convert to. [range: 2 - 10]
+	    <ul>
+		<li>Prompt the user for this value.
+		<li>If the number is not in this range, output a descriptive
+		    error message (to <code>cerr</code>) then prompt the user for
+		    this value again.
+	    </ul>
+	</ul>
+	<li><b>output:</b> the number represented in the target base.
+	<ul>
+	    <li>Note: Display this number using decimal digits, e.g. 234<sub>5</sub> will be displayed using the decimal value:
+	        
+	        2 &times; 10<sup>2</sup> + 3 &times; 10<sup>1</sup> + 4 &times; 10<sup>0</sup>
+	</ul>
+	<li>Your <code>typescript</code> file demonstrating the testing of this
+	    program should show the same value when converted from one base to
+	    another <i>and then back again</i>.
+    </ul>
+</OL>
+<P>
+<HR>
+</BODY>
+</HTML>
+

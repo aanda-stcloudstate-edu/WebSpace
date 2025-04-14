@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	   <title>Memory Bank of Computations</title>
+	   <style type="text/css">
+	      body {background-color : papayawhip; color : brown; 
+	                font-family : optima; text-align : center}
+	      table {margin-left : auto; margin-right : auto}
+	      td     {padding-left : 14px; padding-right : 14px}
+	      td.right {color:orangered; font-weight : lighter}
+	      p      {color : black}
+	      a:link {color : chocolate; text-decoration : none}
+	      a:hover {color : red; text-decoration : none}
+	      a:visited {color : chocolate; text-decoration : none}
+	   </style>
+	</head>
+   <body>
+      <h1 style="color : lightslategray">  Memory Bank</h1>
+      <hr style="width : 50%" /> <b><p style="color : red">
+         a convenient table of all the computations I can never
+         remember </p>
+      <script type="text/javascript">
+         var scale='E'; var numHeads = 0, numTails = 0; var topEnd = 10;
+         document.write('<p>' +  (Date().toString()) + '</p>');
+
+         function bmiM ( weightKg, heightCm ) {		//Metric BMI
+            var heightM = heightCm / 100; //Change to meters
+            return weightKg / (heightM * heightM);
+         }
+         function bmiE ( weightLbs, heightIn ) {	//English BMI
+            var heightFt = heightIn / 12; //Change to feet
+            return 4.89 * weightLbs / (heightFt * heightFt);
+         }
+         function BMI ( units, weight, height ) {
+            if (units == 'E')
+               return bmiE( weight, height);		//Answer in English
+            else
+               return bmiM( weight, height);		//Answer in Metric
+         }
+         function randNum (range) { 
+               return Math.floor(range*Math.random()); 
+         }
+         function flipCoin () {
+            if (randNum(2)==0) {
+               document.forms[0].oc.value="Heads";
+               numHeads=numHeads+1;
+               document.forms[0].nH.value=numHeads;
+            }
+           else {
+               document.forms[0].oc.value="Tails";
+               numTails=numTails+1;
+               document.forms[0].nT.value=numTails;
+            }
+         }
+         
+      </script>
+      <form activity="">
+         <table border="2">
+         <tr><td><b>Body Mass Index </b>
+            <input type="radio" name="unit" checked="checked"
+               onclick='scale="E"'/> English
+            <input type="radio" name="unit"
+               onclick='scale="M"'/> Metric </td>
+            <td class="right">Height: <input type="text" name="hgt" size="4"
+                onchange ='if (document.forms[0].wgt.value!=0)
+                  document.forms[0].ans.value= BMI(scale,
+                         document.forms[0].wgt.value,
+                         document.forms[0].hgt.value)'/>
+                  Weight: <input type="text" name="wgt" size="4"
+                onchange = 'if (document.forms[0].hgt.value!=0)
+                  document.forms[0].ans.value= BMI(scale,
+                         document.forms[0].wgt.value,
+                         document.forms[0].hgt.value)'/>
+                BMI: <input type="text" name="ans" size="4"/>
+            </td></tr>
+           <tr><td><b> Electronic Coin Flip </b></td>
+               <td class="right"> 
+                       <input type="button" value="Flip" onclick='flipCoin()'/>
+                       Outcome: <input type="text" name="oc" size="4"/>
+                       Heads: <input type="text" name="nH" size="3" value="0"/>
+                       Tails: <input type="text" name="nT" size="3" value="0"/>
+               </td></tr>
+           <tr><td><b> I'm thinking of a number from 1 to </b>
+                       <input type="text" name='limit' size="2" value="10"
+                          onchange='if (document.forms[0].limit.value > 0)
+                                                 topEnd=document.forms[0].limit.value;
+                                             else
+                                                 document.forms[0].limit.value="?"'/></td>
+                   <td class="right"><input type="button" value="Pick"
+                          onclick='document.forms[0].res.value=randNum(topEnd)+1'/>
+                          a number from the range:
+                          <input type="text" name="res" size="4"/>
+            <tr><td><b>Convert between Fahrenheit and Celsius</b></td>
+                   <td class="right"><input type="button" value="     Convert     "
+                          onclick="window.open('temperature.html', 'jack', 'resizable=yes')"/>
+                   </td></tr>
+            <tr><td><b> Count and Score </b></td>
+                   <td class="right"><input type="button" value="       Count      " 
+                            onclick="window.open('counter.html', 'jill', 'resizable=yes')"/>
+                   </td></tr>
+            <tr>
+                  <!-- The standard form for the links is...
+                    <br /><b>topic name . . . </b>
+                    <a href='http:// url goes here'>anchor term(s) here</a> |
+                So, just copy/paste/edit it.-->
+                <td colspan = "2" style="text-align:left"><h4>IMPORTANT LINKS</h4>
+                           <b> Resource Links ...</b>
+                           <a href='http://dictionary.cambridge.org'>Cambridge Dictionary</a> |
+                           <a href='http://www.wordsmyth.net'>Thesaurus</a> |
+                           <a href="http://www.etymonline.com/">Etymology Dictionary</a>
+                <br /><b>Classes...</b>
+                          <a href='http://www.cs.washington.edu/100/'>Fluency Home Page</a> |
+                          <a href='http://www.chemsoc.org/viselements/pages/pertable_j.htm'>Periodic Table</a> |
+                          <a href='https://www.cia.gov/library/publications/the-world-factbook/'> CIA Fact Book</a>
+                <br /><b>XHTML References ...</b>
+                          <a href="http://www.w3schools.com/css/css_reference.asp">CSS Ref</a> |
+                          <a href="http://www.w3schools.com/css/css_colornames.asp">Color Names</a> |
+                          <a href="http://www.w3schools.com/tags/default.asp">XHTML Tags</a> |
+                          <a href="http://http://www.w3schools.com/tags/ref_symbols.asp">Odd Symbols</a> 
+                 </td>
+            </tr>
+         </table>
+      </form>
+      <script type="text/javascript">
+          var today = new Date();	// Get today's date
+          var myBdate = new Date();	// Get a date object to modify
+          var difference;	// Declare a temporary variable
+          myBdate.setFullYear(1990);	// Set my birth year to 1990
+          myBdate.setMonth(6);	// Set my birth mo to July (mos start at 0)
+          myBdate.setDate(4);	// Set my birth day to 4th
+          myBdate.setHours(12);	// Set my hour of birth to noon
+          myBdate.setMinutes(0);	// Set my minute of birth to o'clock
+          myBdate.setSeconds(0);	// Set my second of birth on the hour
+          difference = today.getTime() - myBdate.getTime();
+          difference = Math.floor(difference/1000);
+          document.write("<p> I'm " + difference + " seconds old. What <i>am</i> I doing with my life?</p>");
+     </script>
+   </body>
+</html>

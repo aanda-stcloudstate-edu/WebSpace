@@ -1,0 +1,1468 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="Lab11f06_files/filelist.xml">
+<link rel=Edit-Time-Data href="Lab11f06_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>CSCI 200 Lab 13 Spring 2011 [A. A. Anda]</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>A. A. Anda</o:Author>
+  <o:Description>From Jie Hu Lab 8 Summer 2006</o:Description>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Andrew Anda</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>12</o:TotalTime>
+  <o:LastPrinted>2006-11-21T14:53:00Z</o:LastPrinted>
+  <o:Created>2006-11-21T14:56:00Z</o:Created>
+  <o:LastSaved>2006-11-21T14:56:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1075</o:Words>
+  <o:Characters>6131</o:Characters>
+  <o:Company>St. Cloud State University</o:Company>
+  <o:Lines>51</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>7192</o:CharactersWithSpaces>
+  <o:Version>11.8107</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2002TableStyleRules/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"\FF2D\FF33 \660E\671D";
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:Times;
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-language:JA;}
+h1
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	tab-stops:list 1.75in;
+	font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h2
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	tab-stops:list .25in;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	text-transform:uppercase;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-language:JA;
+	font-weight:bold;}
+h4
+	{mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.1in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	tab-stops:list .6in;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h5
+	{mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:-.3in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	tab-stops:list .7in;
+	font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+h6
+	{mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.8in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	tab-stops:list .8in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-indent:-.2in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:7;
+	tab-stops:list .9in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-.3in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:8;
+	tab-stops:list 1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-indent:-.1in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:9;
+	tab-stops:list 1.1in;
+	font-size:11.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-language:JA;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-language:JA;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:28.05pt;
+	margin-bottom:.0001pt;
+	text-indent:-28.05pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("Lab11f06_files/header.htm") fs;
+	mso-footnote-continuation-separator:url("Lab11f06_files/header.htm") fcs;
+	mso-endnote-separator:url("Lab11f06_files/header.htm") es;
+	mso-endnote-continuation-separator:url("Lab11f06_files/header.htm") ecs;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-header:url("Lab11f06_files/header.htm") h1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:58335245;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-855573774 -1 67698689 -1 -1 -1 -1 -1 -1 -1;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:257719947;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-438903238 67698689 -1461788598 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:306976683;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1861019424 1069468786 -1110422238 -1618341938 -999796522 2069692186 253948444 -1303897646 -409057262 1646952530;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A1;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A1;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:443111554;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1702612126 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:485632974;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1835817638 507953106 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:0in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l5
+	{mso-list-id:516314608;
+	mso-list-type:hybrid;
+	mso-list-template-ids:975191438 507953106 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:0in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6
+	{mso-list-id:607156324;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-422158132 39105334 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l6:level1
+	{mso-level-text:"\(%1\)";
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l7
+	{mso-list-id:931663544;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1508492828 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:993071150;
+	mso-list-type:hybrid;
+	mso-list-template-ids:867193374 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l9
+	{mso-list-id:1043602596;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-520079418 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l9:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10
+	{mso-list-id:1059858949;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1906668226 507953106 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:0in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l11
+	{mso-list-id:1135561147;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2000645180 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l12
+	{mso-list-id:1320040720;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1387248524 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l12:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l13
+	{mso-list-id:1454667349;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1685965612 -1461788598 794572300 -760976738 -1351159642 -1793967356 1474573736 -850867610 1213860130 -504045254;}
+@list l13:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l13:level2
+	{mso-level-start-at:178;
+	mso-level-number-format:bullet;
+	mso-level-text:\F0A1;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l14
+	{mso-list-id:1494443709;
+	mso-list-template-ids:1422697296;}
+@list l14:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l14:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l14:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l14:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l14:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l14:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l14:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l14:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l14:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l15
+	{mso-list-id:1499343807;
+	mso-list-type:simple;
+	mso-list-template-ids:67698703;}
+@list l15:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l16
+	{mso-list-id:1607539235;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1381367426 67698703 67698689 -1 -1 -1 -1 -1 -1 -1;}
+@list l16:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l16:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l17
+	{mso-list-id:1676760128;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-875907720 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l17:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l18
+	{mso-list-id:1681394923;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1423315606 39105334 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l18:level1
+	{mso-level-text:"\(%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l19
+	{mso-list-id:1842962042;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2123589088;}
+@list l19:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:0in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20
+	{mso-list-id:2004164081;
+	mso-list-template-ids:1835817638;}
+@list l20:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:0in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l20:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l20:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l20:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l20:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l20:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l20:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l20:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'>CSCI 200</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Lab 13</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Spring 2011</p>
+
+<p class=MsoNormal align=center style='text-align:center'>[A. A. Anda]</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<h3>Objectives</h3>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l9 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>To
+study the characteristics of basic digital gates (AND, OR and NOT).</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l9 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>To
+use the logic gates to build and test simple logic circuits.</p>
+
+<h3>Equipment</h3>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'>1.
+PROTO-BOARD PB-503 (breadboard)</p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'>2. 7404<span
+style='mso-spacerun:yes'>  </span>NOT gate, 7408 – 2 input AND gate, 7432
+2-intput OR gate</p>
+
+<h3>Pre-Laboratory Preparation&nbsp;</h3>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'>There
+are several tasks that you must perform prior to this laboratory:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     mso-list:l0 level1 lfo16;tab-stops:list .5in'><span style='color:black'>Draw
+     the truth table of a </span><span style='color:navy'>NOT</span><span
+     style='color:black'> gate</span></li>
+ <li class=MsoNormal style='color:black;text-align:justify;text-justify:inter-ideograph;
+     mso-list:l0 level1 lfo16;tab-stops:list .5in'>Draw the truth table of a
+     2-input <span style='color:navy'>AND</span> gate <o:p></o:p></li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     mso-list:l0 level1 lfo16;tab-stops:list .5in'><span style='color:black'>Draw
+     the truth table of a 2-input </span><span style='color:navy'>OR</span><span
+     style='color:black'> gate</span></li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     mso-list:l0 level1 lfo16;tab-stops:list .5in'><span style='color:black'>Draw
+     the </span><span style='color:navy'>HALF-ADDER</span><span
+     style='color:black'> circuit and its truth table</span></li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     mso-list:l0 level1 lfo16;tab-stops:list .5in'><span style='color:black'>Draw
+     the </span><span style='color:navy'>FULL-ADDER</span><span
+     style='color:black'> circuit (comprising two HALF-ADDERs [Figure 16.14, p. 295 Reed, 2nd]) and its truth table</span></li>
+</ul>
+
+<h3>Tasks</h3>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     mso-list:l16 level1 lfo21;tab-stops:list .5in'><span style='color:black'>First
+     test AND, OR, and NOT gates to learn how to use the PROTO-BOARD.</span></li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     mso-list:l16 level1 lfo21;tab-stops:list .5in'><span style='color:black'>Build
+     a HALF-ADDER circuit and test it by the truth table you prepared.</span></li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     mso-list:l16 level1 lfo21;tab-stops:list .5in'><span style='color:black'>Build
+     a second HALF-ADDER circuit replicating the design of the first (and test it).</span></li>
+ <li class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+     mso-list:l16 level1 lfo21;tab-stops:list .5in'><span style='color:black'>Build
+     a FULL-ADDER circuit (from your two HALF-ADDER circuits) and test it by the truth table you prepared.</span></li>
+</ol>
+
+<h3>Circuit Construction Breadboard<span style='font-weight:normal;mso-bidi-font-weight:
+bold'><o:p></o:p></span></h3>
+
+<p class=MsoBodyText>A circuit construction breadboard allows the user to
+conveniently build an experimental circuit (as opposed to a permanent one,
+meant for repeated use) without having to solder components. Figure 1 shows a
+photograph of the PB-503 PROTO-BOARD breadboard used in this laboratory. </p>
+
+<p class=MsoBodyText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'>Figure 2(a) shows a portion of
+the breadboard outlined in Figure 1.<span style='font-family:Times;mso-bidi-font-family:
+"Times New Roman"'> The main part of the board consists of sets of holes. The
+holes are actually sockets that have spring clips inside in order to make
+electrical contact with any component lead that may be inserted into the hole.
+Each set of holes is connected internally. Figure 2(b) schematically
+illustrates by means of lines which sets of holes are connected together
+internally. The two sets of horizontal sockets at the top of the board
+(designated by +5V, +V, -V and GND signs) are commonly called “<span
+style='color:blue'>Power Bars</span>,” and <b><u>are internally connected</u></b>
+to the built-in power supplies. Notice that the socket interconnections for the
+“<span style='color:blue'>Components Fields</span>” run only horizontally.
+Vertical connections exist only in “<span style='color:blue'>Vertical Bars</span>”
+below the power bars. The vertical bars are used to supply power to your
+circuits however they <b><u>are not internally connected</u></b> to the
+built-in power supplies. Therefore you could use the vertical bars to supply
+power to your circuit both from the internal and the external power sources. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
+none;text-autospace:none'><!--[if gte vml 1]><v:group id="_x0000_s1041"
+ style='position:absolute;left:0;text-align:left;margin-left:0;margin-top:4.65pt;
+ width:341.2pt;height:285.85pt;z-index:4' coordorigin="2115,7494" coordsize="7759,6509">
+ <v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+  <v:stroke joinstyle="miter"/>
+  <v:path gradientshapeok="t" o:connecttype="rect"/>
+ </v:shapetype><v:shape id="_x0000_s1042" type="#_x0000_t202" style='position:absolute;
+  left:2115;top:7494;width:7759;height:6509'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1042'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+      o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+      stroked="f">
+      <v:stroke joinstyle="miter"/>
+      <v:formulas>
+       <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+       <v:f eqn="sum @0 1 0"/>
+       <v:f eqn="sum 0 0 @1"/>
+       <v:f eqn="prod @2 1 2"/>
+       <v:f eqn="prod @3 21600 pixelWidth"/>
+       <v:f eqn="prod @3 21600 pixelHeight"/>
+       <v:f eqn="sum @0 0 1"/>
+       <v:f eqn="prod @6 1 2"/>
+       <v:f eqn="prod @7 21600 pixelWidth"/>
+       <v:f eqn="sum @8 21600 0"/>
+       <v:f eqn="prod @7 21600 pixelHeight"/>
+       <v:f eqn="sum @10 21600 0"/>
+      </v:formulas>
+      <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+      <o:lock v:ext="edit" aspectratio="t"/>
+     </v:shapetype><v:shape id="_x0000_i1027" type="#_x0000_t75" style='width:326.25pt;
+      height:278.25pt' fillcolor="window">
+      <v:imagedata src="Lab11f06_files/image001.jpg" o:title="P0000819" gain="96376f"
+       blacklevel="5898f"/>
+     </v:shape></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1043" style='position:absolute' from="5525,8490"
+  to="5525,9852" strokeweight="3pt"/>
+ <v:line id="_x0000_s1044" style='position:absolute' from="5530,9841" to="7920,9841"
+  strokeweight="3pt"/>
+ <v:line id="_x0000_s1045" style='position:absolute' from="5530,8479" to="7920,8479"
+  strokeweight="3pt"/>
+ <v:line id="_x0000_s1046" style='position:absolute' from="7890,8490" to="7890,9852"
+  strokeweight="3pt"/>
+</v:group><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+relative;z-index:4;left:-1px;top:5px;width:461px;height:392px'><img width=461
+height=387 src="Lab11f06_files/image002.gif" v:shapes="_x0000_s1041 _x0000_s1042 _x0000_s1043 _x0000_s1044 _x0000_s1045 _x0000_s1046"></span><![endif]><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoFooter style='text-align:justify;text-justify:inter-ideograph;
+tab-stops:.5in;mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
+none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:.5in;mso-layout-grid-align:
+none;text-autospace:none'><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:.5in;mso-layout-grid-align:
+none;text-autospace:none'><b style='mso-bidi-font-weight:normal'>Figure 1</b> <i
+style='mso-bidi-font-style:normal'>PB-503 PROTO-BOARD</i></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:Times;mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:Times;mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1028" type="#_x0000_t75" style='width:225pt;height:156pt'
+ fillcolor="window">
+ <v:imagedata src="Lab11f06_files/image003.jpg" o:title="P0000820" gain="1.25"
+  blacklevel="1966f"/>
+</v:shape><![endif]--><![if !vml]><img width=300 height=208
+src="Lab11f06_files/image004.jpg" v:shapes="_x0000_i1028"><![endif]><span
+style='mso-spacerun:yes'>     </span><!--[if gte vml 1]><v:shape id="_x0000_i1029"
+ type="#_x0000_t75" style='width:191.25pt;height:157.5pt' fillcolor="window">
+ <v:imagedata src="Lab11f06_files/image005.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=255 height=210
+src="Lab11f06_files/image006.gif" v:shapes="_x0000_i1029"><![endif]><b
+style='mso-bidi-font-weight:normal'><span style='font-family:Times;mso-bidi-font-family:
+"Times New Roman"'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:Times;mso-bidi-font-family:"Times New Roman"'>(a)</span></b>
+<i style='mso-bidi-font-style:normal'>Section of breadboard outlined in Figure
+1</i>.<span style='font-family:Times;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>         </span><b style='mso-bidi-font-weight:normal'>(b)</b></span>
+<i style='mso-bidi-font-style:normal'>Internal breadboard connections</i>.</p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:.5in;mso-layout-grid-align:none;text-autospace:none'><b
+style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:.5in;mso-layout-grid-align:none;text-autospace:none'><b
+style='mso-bidi-font-weight:normal'>Figure 2</b> <i style='mso-bidi-font-style:
+normal'>Schematic illustration of a generic circuit construction breadboard.</i><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+style='font-family:Times;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></i></b></p>
+
+<h4><span style='font-style:normal'><o:p>&nbsp;</o:p></span></h4>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h3>Key Features Of PB-503 PROTO-BOARD</h3>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+tab-stops:4.5in;mso-layout-grid-align:none;text-autospace:none'>The PB-503
+PROTO-BOARD is a complete design workstation, including instrumentation,
+breadboarding, and a rugged DC regulated triple power supply. </p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+tab-stops:4.5in;mso-layout-grid-align:none;text-autospace:none'>The
+instrumentation features:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>eight individual selectable logic switches
+(offering settings of +5volts / +V and ground);</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>eight individual red (high) and green (low)
+buffered logic LED indicators;</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>100KHz function generator with continuously
+variable sine, square, and triangle waveforms plus TTL pulse;<b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>triple output power supply (one fixed at +5VDC
+and two variable from ±1.3 to ±15VDC). All three supplies are short-circuit
+protected, automatically current limiting the output to a safe level.<b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>two digital pulse generators;<b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>audio experimentation 8 <span style='font-family:
+Symbol'>W</span> speaker;<b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>SPDT switches;<b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Potentiometers;<b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l8 level1 lfo18;tab-stops:list .5in left 4.5in;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>debounced pushbutton switches.<b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'>The breadboarding area has a
+total of 2520 uncommitted tie points, enough space for circuits containing 24
+IC's of 14 pins or equivalent.</p>
+
+<h3><u><span style='color:red'>Guidelines For Building Logic Circuits<o:p></o:p></span></u></h3>
+
+<p class=MsoNormal>Throughout these experiments we will use CMOS chips to build
+circuits. The steps for wiring a circuit should be completed in the order
+described below:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l11 level1 lfo20;tab-stops:list .5in'>Turn
+     off the power of the PROTO-BOARD before you build anything! </li>
+ <li class=MsoNormal style='mso-list:l11 level1 lfo20;tab-stops:list .5in'><b
+     style='mso-bidi-font-weight:normal'>MAKE SURE THE POWER IS OFF BEFORE YOU
+     BUILD ANYTHING! <o:p></o:p></b></li>
+ <li class=MsoNormal style='mso-list:l11 level1 lfo20;tab-stops:list .5in'>Plug
+     the chips you will be using into the breadboard. Point all the chips in
+     the same direction with pin 1 at the upper-left corner. (Pin 1 is <span
+     style='mso-spacerun:yes'> </span>identified by a notch next to it on the
+     chip package.)</li>
+ <li class=MsoNormal style='mso-list:l11 level1 lfo20;tab-stops:list .5in'>Build
+     the circuit neatly. It will be easier to troubleshoot the circuits if they
+     are neatly built.</li>
+ <li class=MsoNormal style='mso-list:l11 level1 lfo20;tab-stops:list .5in'>Connect
+     +5V and GND pins of each chip to the power and ground bus strips on top of
+     the PROTO-BOARD. </li>
+ <li class=MsoNormal style='mso-list:l11 level1 lfo20;tab-stops:list .5in'>Select
+     a connection on your schematic and place a piece of hook-up wire between
+     corresponding pins of the chips on your breadboard. It is better to make
+     the short connections before the longer ones. Mark each connection on your
+     schematic as you go, so you do not attempt to make the same connection
+     again at a later stage. </li>
+ <li class=MsoNormal style='mso-list:l11 level1 lfo20;tab-stops:list .5in'>If
+     an error is made and is not spotted before you turn the power on. Turn the
+     power off immediately before you begin to rewire the circuit. </li>
+ <li class=MsoNormal style='mso-list:l11 level1 lfo20;tab-stops:list .5in'>Tidy
+     the area that you were working in and leave it in the same condition as it
+     was before you started. </li>
+</ul>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify;
+text-justify:inter-ideograph;text-indent:0in'><b style='mso-bidi-font-weight:
+normal'><span style='color:red'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify;
+text-justify:inter-ideograph;text-indent:0in'><b style='mso-bidi-font-weight:
+normal'><span style='color:red'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify;
+text-justify:inter-ideograph;text-indent:0in'><b style='mso-bidi-font-weight:
+normal'><span style='color:red'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify;
+text-justify:inter-ideograph;text-indent:0in'><b style='mso-bidi-font-weight:
+normal'><span style='color:red'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify;
+text-justify:inter-ideograph;text-indent:0in'><b style='mso-bidi-font-weight:
+normal'><span style='color:red'><o:p>&nbsp;</o:p></span></b></p>
+
+<h3><span style='color:red'>Common Causes Of Problems<o:p></o:p></span></h3>
+
+<p class=MsoBodyTextIndent style='margin-left:.5in;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in;mso-list:l3 level1 lfo17;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Not connecting the ground and/or power pins for
+all chips. </p>
+
+<p class=MsoBodyTextIndent style='margin-left:.5in;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in;mso-list:l3 level1 lfo17;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Leaving out wires. </p>
+
+<p class=MsoBodyTextIndent style='margin-left:.5in;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in;mso-list:l3 level1 lfo17;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Plugging wires into the wrong holes. </p>
+
+<p class=MsoBodyTextIndent style='margin-left:.5in;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in;mso-list:l3 level1 lfo17;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Driving a single gate input with the outputs of
+two or more gates </p>
+
+<p class=MsoBodyTextIndent style='margin-left:.5in;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in;mso-list:l3 level1 lfo17;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Modifying the circuit with the power on.&nbsp; </p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'>In
+all experiments you will be expected to obtain all instruments, leads,
+components at the start of the experiment and return them to their proper place
+after you have finished the experiment. If you damage a chip, inform me, don't
+put it back in the box of chips for somebody else to use: Chips are inexpensive
+so it is best to discard chips that may cause problems.</p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b
+style='mso-bidi-font-weight:normal'>Example Implementation of a Logic Circuit:<o:p></o:p></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><!--[if gte vml 1]><v:group
+ id="_x0000_s1034" style='position:absolute;left:0;text-align:left;
+ margin-left:9.35pt;margin-top:4.9pt;width:439.45pt;height:206.1pt;z-index:2'
+ coordorigin="1627,1382" coordsize="8789,4122" o:allowincell="f">
+ <v:shape id="_x0000_s1035" type="#_x0000_t202" style='position:absolute;
+  left:1627;top:1382;width:8789;height:4122'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:273.75pt;
+      height:198pt' fillcolor="window">
+      <v:imagedata src="Lab11f06_files/image007.wmz" o:title=""/>
+     </v:shape></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1036" type="#_x0000_t202" style='position:absolute;
+  left:7237;top:2504;width:2989;height:2244' stroked="f">
+  <v:textbox style='mso-next-textbox:#_x0000_s1036'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><v:shape id="_x0000_i1026" type="#_x0000_t75" style='width:134.25pt;
+      height:104.25pt' fillcolor="window">
+      <v:imagedata src="Lab11f06_files/image008.wmz" o:title=""/>
+     </v:shape></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1037" style='position:absolute;flip:y' from="7202,3244"
+  to="8019,3545" strokeweight="1.75pt"/>
+</v:group><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=11 height=6></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=592 height=280 src="Lab11f06_files/image009.gif" v:shapes="_x0000_s1034 _x0000_s1035 _x0000_s1036 _x0000_s1037"></td>
+ </tr>
+</table>
+
+</span><![endif]><o:p>&nbsp;</o:p></p>
+
+<p style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'>Figure 3</b> <i style='mso-bidi-font-style:normal'>A completely
+designed and connected circuit.<o:p></o:p></i></p>
+
+<h3>Logic Level Indicators</h3>
+
+<p class=MsoBodyText>There are digital logic level indicators built on the
+right side of your Proto-Board as shown in Figure 4. There are eight
+independently operating channels that are able to show the logic levels of
+digital signals connected to them. Each channel has two indicating LEDs. The
+Red LED will light up when the output voltage of the measured circuit is
+sufficiently high and it could be considered as a logic level of “1”. The green
+LED will light up when the output voltage of the measured circuit voltage is
+sufficiently low and it could be considered as a logic level of “0”.</p>
+
+<p class=MsoBodyText>There are two switches assigned to the logic indicator.
+One is to change the power supply of the indicator from +5(V) to +V(V)
+depending of what power supply source is connected to your circuit. The second
+switch position determines what kind of digital logic levels are supplied to
+the indicator. If the tested circuit is built using TTL ICs, the switch should
+be in the “TTL” position. If the tested circuit is built using CMOS ICs, the
+switch should be in the “CMOS” position. During the experiments, it is
+necessary to turn switch 1 to the “+5 V” position and switch 2 to the “CMOS”
+position.</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_s1033" type="#_x0000_t202"
+ style='position:absolute;margin-left:146.2pt;margin-top:9.55pt;width:181.7pt;
+ height:137.55pt;z-index:1'/><![endif]--><![if !vml]><span style='mso-ignore:
+vglayout'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=194 height=12></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td width=248 height=189 bgcolor=white style='border:.75pt solid black;
+  vertical-align:top;background:white'><![endif]><![if !mso]><span
+  style='position:absolute;mso-ignore:vglayout;z-index:1'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div v:shape="_x0000_s1033" style='padding:4.35pt 7.95pt 4.35pt 7.95pt'
+    class=shape>
+    <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1030" type="#_x0000_t75"
+     style='width:166.5pt;height:129.75pt' fillcolor="window">
+     <v:imagedata src="Lab11f06_files/image010.wmz" o:title=""/>
+    </v:shape><![endif]--><![if !vml]><img width=222 height=173
+    src="Lab11f06_files/image011.gif" v:shapes="_x0000_i1030"><![endif]></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  </span><![endif]><![if !mso & !vml]>&nbsp;<![endif]><![if !vml]></td>
+ </tr>
+</table>
+
+</span><![endif]><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p style='text-align:justify;text-justify:inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'>Figure 4</b> <i style='mso-bidi-font-style:normal'>Logic Level Indicators
+on Proto-Board<o:p></o:p></i></p>
+
+<h3>Logic Switches</h3>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'>There
+are eight digital logic switches (SW1 to SW8) built on the bottom left of your
+Proto-Board as shown in Figure 5 and each one is able to apply logic levels of
+0 and 1 to the connected digital circuits. Another switch is assigned to change
+the voltage levels of the logic signals from +5(V) to +V(V) depending on what
+power supply source is connected to your circuit. During the experiments, it is
+necessary to turn the switch to the “+5 V” position.</p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_s1038" type="#_x0000_t202"
+ style='position:absolute;margin-left:146.2pt;margin-top:2.85pt;width:193.45pt;
+ height:112.3pt;z-index:3' o:allowincell="f"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=194 height=3></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td width=264 height=156 bgcolor=white style='border:.75pt solid black;
+  vertical-align:top;background:white'><![endif]><![if !mso]><span
+  style='position:absolute;mso-ignore:vglayout;z-index:3'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div v:shape="_x0000_s1038" style='padding:4.35pt 7.95pt 4.35pt 7.95pt'
+    class=shape>
+    <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1031" type="#_x0000_t75"
+     style='width:178.5pt;height:104.25pt' fillcolor="window">
+     <v:imagedata src="Lab11f06_files/image012.wmz" o:title=""/>
+    </v:shape><![endif]--><![if !vml]><img width=238 height=139
+    src="Lab11f06_files/image013.gif" v:shapes="_x0000_i1031"><![endif]></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  </span><![endif]><![if !mso & !vml]>&nbsp;<![endif]><![if !vml]></td>
+ </tr>
+</table>
+
+</span><![endif]><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'>Figure 5 </b><i style='mso-bidi-font-style:normal'>Logic Switches on
+Proto-Board<o:p></o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+mso-layout-grid-align:none;text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='margin-left:.5in;text-align:center;
+text-indent:-.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.25in'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

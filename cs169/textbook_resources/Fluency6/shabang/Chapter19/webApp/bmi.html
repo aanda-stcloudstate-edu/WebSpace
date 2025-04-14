@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+   <head> 
+     <meta charset="UTF-8"/>
+	   <title>Figure BMI</title><style>
+	      body {background-color : indigo; color : white; font-family : verdana}
+	      p    {text-align : right}</style>
+	</head>
+	<body>
+      <script>
+         var scale='E';
+         function bmiM( weightKg, heightCm ) {
+            var heightM = heightCm / 100;
+            return weightKg / (heightM * heightM);
+         }
+         function bmiE( weightLbs, heightIn ) {
+            return 703 * weightLbs / (heightIn * heightIn);
+         }
+         function BMI( units, weight, height) {
+            if (units == "E")
+               return bmiE( weight, height);   // English
+            else
+               return bmiM( weight, height);   // Metric
+         }
+      </script>
+      <form name="mass">
+         <p> What units do you use:
+            <input type="radio" id="unit" onclick='scale="E"'
+               checked/> English
+            <input type="radio" id="unit" onclick='scale="M"'/>
+               Metric</p>
+         <p>Enter your weight (<i>lbs</i> or <i>kg</i>):
+            <input type="text" id="wgt" size="4"/></p>
+         <p> Enter your height (<i>in</i> or <i>cm</i>):
+            <input type="text" id="hgt" size="4"/> </p>
+         <p> Your 
+            <input type="button" value="Body Mass Index" id="figure"
+               onclick="ans.value= BMI( scale, wgt.value, hgt.value)"/> is:
+            <input type="text" id="ans" size="4"/></p>
+      </form>
+   </body>
+</html>
+
+
+

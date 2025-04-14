@@ -1,0 +1,27 @@
+<html>
+<!-- pirate1.html    Dave Reed    davereed@creighton.edu -->
+<!-- =================================================== -->
+<head>
+  <title> Pirate Translator </title>
+</head>
+
+<body>
+  <div style="text-align:center">
+    <h3>Land Lubber's Pirate Translator</h3>
+    <p>Simply click on the buttons to translate<br />
+       words and/or phrases from English to pirate talk.
+    <hr />
+    <p>
+      <input type="button" value="hello" 
+             onclick="document.getElementById('outputArea').value = 
+                        document.getElementById('outputArea').value + 'ahoy ';" />
+      <input type="button" value="stranger" 
+             onclick="document.getElementById('outputArea').value = 
+                        document.getElementById('outputArea').value + 'scurvy dog ';" />
+    </p>
+    <p> 
+      <textarea id="outputArea" rows="10" cols="40"></textarea>
+    </p>
+  </div>
+</body>
+</html>

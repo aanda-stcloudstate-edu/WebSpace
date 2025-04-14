@@ -1,0 +1,217 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 1 - Spring 2007 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2007<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Homework Assignment 1</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For each of the following problems you will solve:
+<ol type=I>
+    <h5>General Documentation <i>(see Sect. 2-10 &amp; Program 2-14)</i></h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names <i>(see Sect. 2-10 Pages 66-67 &amp; Table 2-14)</i></h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<tt>enscript -Ecpp --color -Whtml -p</tt><i>file_name</i><tt>.cpp.html</tt> <i>file_name</i><tt>.cpp</tt>
+    </center>
+    (for each program) You will submit these files.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<OL>
+    <li>Write a program to perform <b>carbon-14 dating</b>.
+    <ul>
+	<li> See <a href="http://science.howstuffworks.com/carbon-142.htm">Howstuffworks "How Carbon-14 Dating Works"</a> for what, why, and how to do this.
+	<li><b>input:</b> prompt the user for:
+	<ul>
+	    <li> a carbon-14 percentage from the sample
+	    <li> a carbon-14 percentage from living tissue<br>
+	    (<i>will be the larger value</i>)
+	</ul>
+	<li><b>output:</b> the estimated age of the sample.<br>
+	(display the age in <u>years</u>)
+	<li> use named global constants where appropriate.
+	<li> the natural logarithm in C++ is <tt>log(<i>double number</i>)</tt>
+	<br>(to use <tt>log()</tt>, you must link the <tt>&lt;cmath&gt;</tt> library)
+    </ul>
+    <P>
+    <li>Write a program to compute the area of a triangle.
+    <ul>
+	<li><b>input:</b> three pair of (<i>x,y</i>) coordinates.
+	<li>(<i>prompt</i> the user for the three points)
+	<li><b>output:</b> the area of the triangle.
+	<li> (find the formulae using your own research [hint: determinant])
+	<li>Attach a consistent set of <b>units</b>, of your choice,
+	    to the input request and to each result,<br>
+	    e.g. <i>&aring;ngstroms</i> or <i>light-years</i>.
+    </ul>
+    <P>
+    <li>Write a program to convert between integer bases.
+    <ul>
+	<li><b>input:</b>
+	<ul>
+	    <li>A base to convert from. [range: 2 - 10]
+	    <li>A number to convert. [range: 0 - 255<sub>10</sub>]<br>
+	    (<u>note</u>: each digit must be less than the base.)
+	    <li>A base to convert to. [range: 2 - 10]
+	</ul>
+	<li><b>output:</b> the number represented in the target base.
+	<li><u>discussion:</u> This algorithm exercises use and understanding
+	    of the two integer division operators, "/" &amp; "%".<br>
+	    The complication for this algorithm is that (for the purposes of
+	    this assignment) we can only input and display numeric values in
+	    decimal (base 10) format.<br>
+	    A straightforward algorithm for tackling this problem is to solve
+	    the problem in two steps:<br>
+	    <ol>
+		<li>Convert the number to decimal (even if the source base
+		    is already decimal, because we want to handle all cases
+		    equally)
+		<ol>
+		    <li>take the <i>modulus</i> base 10
+		    <li>divide the number by 10.
+		    <li>multiply the remainder by the appropriate power of the
+		        <i>from</i> base.
+		    <li>add it to a running sum.
+		</ol>
+		<pre>
+		    e.g. 1234<sub>5</sub> <i>to</i> base 10:
+		    sum &lt;- 0
+		    power &lt;- 1
+		    4 &lt;- 1234%10
+		    123 &lt;- 1234/10
+		4   sum &lt;- sum + 4 * power
+
+		    power &lt;- power * 5
+		    3 &lt;- 123%10
+		    12 &lt;- 123/10
+		19  sum &lt;- sum + 3 * power
+
+		    power &lt;- power * 5
+		    2 &lt;- 12%10
+		    1 &lt;- 12/10
+		69  sum &lt;- sum + 2 * power
+
+		    power &lt;- power * 5
+		    1 &lt;- 1%10
+		    0 &lt;- 1/10
+		194 sum &lt;- sum + 1 * power
+
+		    power &lt;- power * 5
+		    0 &lt;- 0%10
+		    0 &lt;- 0/10
+		194 sum &lt;- sum + 0 * power
+
+		    power &lt;- power * 5
+		    0 &lt;- 0%10
+		    0 &lt;- 0/10
+		194 sum &lt;- sum + 0 * power
+		</pre>
+		<li>Convert the number from decimal to the target base
+		    (even if the target base is already decimal)
+		<ol>
+		    <li>take the <i>modulus</i> of the <i>to</i> base
+		    <li>divide the number by the <i>to</i> base
+		    <li>multiply the modulus by the appropriate power of 10.
+		    <li>add it to a running sum.
+		</ol>
+		<pre>
+		    e.g. 194<sub>10</sub> (decimal) <i>to</i> base 2 (binary):
+
+		    sum &lt;- 0
+		    power &lt;- 1
+		    0 &lt;- 194%2
+		    97 &lt;- 194/2
+		0   sum &lt;- sum + 0 * power
+
+		    power &lt;- power * 10
+		    1 &lt;- 97%2
+		    48 &lt;- 97/2
+		10  sum &lt;- sum + 1 * power
+
+		    power &lt;- power * 10
+		    0 &lt;- 48%2
+		    24 &lt;- 48/2
+		010 sum &lt;- sum + 0 * power
+
+		    power &lt;- power * 10
+		    0 &lt;- 24%2
+		    12 &lt;- 24/2
+		0010 sum &lt;- sum + 0 * power
+
+		    power &lt;- power * 10
+		    0 &lt;- 12%2
+		    6 &lt;- 12/2
+		00010 sum &lt;- sum + 0 * power
+
+		    power &lt;- power * 10
+		    0 &lt;- 6%2
+		    3 &lt;- 6/2
+		000010 sum &lt;- sum + 0 * power
+
+		    power &lt;- power * 10
+		    1 &lt;- 3%2
+		    1 &lt;- 3/2
+		1000010 sum &lt;- sum + 1 * power
+
+		    power &lt;- power * 10
+		    1 &lt;- 1%2
+		    0 &lt;- 1/2
+		11000010 sum &lt;- sum + 1 * power
+
+                ...
+
+		</pre>
+	    </ol>
+	    We will revisit this problem again in a subsequent assignment where
+	    we will use loops to encapsulate repeated code and use conditionals
+	    to ensure that the input meets specifications.
+    </ul>
+</OL>
+<P>
+<HR>
+</BODY>
+</HTML>
+

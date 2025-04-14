@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta8 (1.43)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>hw7</TITLE>
+<META NAME="description" CONTENT="hw7">
+<META NAME="keywords" CONTENT="hw7">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta8">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hw7.css">
+
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="file:/usr/lib/latex2html/icons/nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev_g.png">   
+<BR>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+Programming assignment 7</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00011000000000000000">
+CSCI 201 [1,3] Fall 2002</A>
+</H2>
+
+<P>
+
+<H3><A NAME="SECTION00011100000000000000">
+Due Wednesday, December 11, 2002</A>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION00011110000000000000">
+Objective:</A>
+</H4>
+
+<P>
+This assignment is designed to exercise your facility with one and
+two dimensional arrays.
+
+<P>
+
+<H4><A NAME="SECTION00011120000000000000">
+0.0.0.1 Problem:</A>
+</H4>
+
+<P>
+Design a program which reads daily temperature lows for a year from
+a text file, computes summary statistics from the file, and then writes
+its contents and its summary statistics to another text file.
+
+<P>
+
+<H4><A NAME="SECTION00011130000000000000">
+Specifications:</A>
+</H4>
+
+<P>
+
+<OL>
+<LI>Copy the temperature file from cs201400/FAI1965.txt
+to your directory
+</LI>
+<LI>Your program will:
+
+<P>
+
+<OL>
+<LI>read in the file
+</LI>
+<LI>print the file to the output changing the month numbers in the top
+line to the respective three character month names. Also, print the
+999 values, which indicate no day of that month in the table, as a
+tripple of asterisks.
+</LI>
+<LI>under each month, your program will print that month's:
+
+<P>
+
+<OL>
+<LI>minimum
+</LI>
+<LI>maximum
+</LI>
+<LI>arithmetic mean (average)
+</LI>
+<LI>standard deviation
+</LI>
+<LI>median
+</LI>
+<LI>mode
+</LI>
+</OL>
+</LI>
+<LI>In the first column, your program will print the labels for the above
+statistics
+</LI>
+<LI>On lines following the above statistics, your program will print,
+with adequate labeling, the global statistics for the file (e.g. maximum
+temp. for the year)
+</LI>
+</OL>
+</LI>
+<LI>You will then turn in a typescript of the program source and the output
+file.
+</LI>
+</OL>
+
+<P>
+
+<H4><A NAME="SECTION00011140000000000000">
+Notes:</A>
+</H4>
+
+<P>
+
+<UL>
+<LI>The standard deviation, <IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="\( \sigma , \)"> is derived from the arithmetic
+mean, <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\( \overline{x} \)">, using the following formula: <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sigma =\sqrt{\frac{1}{n-1}\left( \begin{array}{c}
+n\\
+\sum \\
+i=1
+\end{array}(x_{i}-\overline{x})^{2}\right) }
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="398" HEIGHT="74" BORDER="0"
+ SRC="img3.png"
+ ALT="\begin{displaymath}
+\sigma =\sqrt{\frac{1}{n-1}\left( \begin{array}{c}
+n\\
+\sum \\
+i=1
+\end{array}(x_{i}-\overline{x})^{2}\right) }\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+</LI>
+<LI>The months have different counts of days. You can use the 999 values
+of extra days in the month as a sentinal, but don't include them in
+your calculations. The <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="\( n \)"> in the above formula and the formulae
+for the other statistics will represent the number of actual days
+in each respective month, or the number of days in the year.
+</LI>
+<LI>The mode and median are described in problem 8-36 in the text. You
+may use any sort in computing the median.
+</LI>
+</UL>
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+About this document ...</A>
+</H1>
+ <P>
+This document was generated using the
+<A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 99.2beta8 (1.43)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996,
+<A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, 
+Computer Based Learning Unit, University of Leeds.
+<BR>
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT>-no_subdir -split 0 -show_section_numbers /tmp/lyx_tmpdir4293uFOStS/lyx_tmpbuf4293qgP32y/hw7.tex</TT>
+<P>
+The translation was initiated by Andy Anda on 2002-12-06<HR>
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="file:/usr/lib/latex2html/icons/nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev_g.png">   
+<BR>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Andy Anda
+2002-12-06
+</ADDRESS>
+</BODY>
+</HTML>

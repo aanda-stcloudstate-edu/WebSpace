@@ -1,0 +1,249 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 5 - Spring 2009 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2009<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 5</B><BR>
+  <small><i>Capstone Project</i></small>
+</DIV>
+<P>
+<HR>
+<P>
+For the following problem you will solve:
+<ol type=I>
+    <h5>General Documentation </h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<tt>enscript -Ecpp --color -W html -p</tt><i>file_name</i><tt>.cpp.html</tt> <i>file_name</i><tt>.cpp</tt>
+    </center>
+    (for each program) You will submit these files.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+This final assignment serves as a <i>capstone</i> of the programming skills you have learned in this course.<br>
+The over-all objective of this assignment is to first develop, test, and document a <tt>class</tt>.
+Then, write programs solving two related problems using that same class.<br>
+This exercise will demonstrate the utility of classes for providing reliable code reuse.
+<P>
+The first program will be a refactorization of the previous programming assignment where you modelled a poker game.<br>
+The essential functionality of a deck of cards will be extracted into a <tt>Deck</tt> class. <br>
+You will write, test, and document the Deck class.
+You will then write, test, and document a program which models a poker game using the Deck class.<br>
+You will then write, test, and document another program, using the Deck class, which compares the expected probabilities of 5-card poker hands with their computed experimental frequencies. (<i>this comparison is similar to that which you performed in Assingment 3</i>)
+<P>
+For each of the two programs and the poker class, provide a document which describes how to use it including all of its functions.
+<P>
+<h3>Deck Class</h3>
+<h5>Class Data Members</h5>
+Your Deck class will have the following data members:
+<ul>
+    <li>a random seed (=1)
+    <li>the number of cards per hand (=1)
+    <li>the number of hands (=1)
+    <li>whether Ace is <u>high</u> or <u>low</u> (=<i>high</i>)
+    <li>whether to sort each hand first by suit or by rank (<i>rank</i>)
+    <li>a <tt>static</tt> array containing the integers from 0:51<br>
+    (represents the deck of cards)
+    <li>an array containing <u>pointers</u> to the integers in the static array.<br>
+	(the array will be initialized so that each element of the pointer array points to the
+	corresponding element of the static array having the same index.)
+    <li>a hands array containing either (<i>your choice</i>)
+    <ul>
+	<li>the starting (leftmost) index of each hand, <i>or</i>
+	<li>the starting (leftmost) address of each hand
+    </ul>
+</ul>
+All of the data members will have default values.
+<h5>Class Function Members</h5>
+Your Deck class will have the following function members:
+<ul>
+    <li>default constructor<br>
+    (initializes the data members to their default values)
+    <li>default destructor
+    <li>accessors:<br>
+    <ul>
+	<li>each of the singleton data members will have their own accessors
+	<li><u>suit</u>: given a <u>Deck index</u>, returns the card's suit. (<i>uses one of the integer division operators</i>)
+	<li><u>rank</u>: given a <u>Deck index</u>, returns the card's rank. (<i>uses one of the integer division operators</i>)
+	<li>Boolean function that returns True if the set of data members is valid (e.g. cards/hand * hands &le; 52)
+    </ul>
+    <ul>
+	<li><u>hand string</u>: given a <u>hand index</u>, returns a (C++) <tt>string</tt> (<i>class</i>) that can be used to print the hand<br>
+	(e.g. "Ks Kh Kc 2c 2d" for a 5 card hand)<br>
+	(used as: <tt>cout &lt;&lt; Deck::handStr(0) &lt;&lt; " | " &lt;&lt; Deck::handStr(1) &lt;&lt; endl;</tt> which prints hands 0 &amp; 1)
+    </ul>
+    <li>mutators:<br>
+    <ul>
+	<li>each of the singleton data members will have their own mutators
+	<li><u>shuffle Deck</u>: uses the <i>selection sort</i> based permutation algorithm
+	    (<i>as described in class</i>) to <i>shuffle</i> the <i>deck</i>
+	    <li><u>sort hand</u>: given a <u>hand index</u>, <i>sorts</i> the hand by suit and rank<br>
+	    (Assume: Spade (=3) &gt; Heart (=2) &gt; Club (=1) &gt; Diamond (=0))
+    </ul>
+</ul>
+
+The Deck class will consist of a <u>class specification file</u>, <tt>Deck.h</tt>, and a <u>class implementation file</u>, <tt>Deck.cpp</tt>.
+<HR>
+For the following two programs:<br>
+
+Use modular design.<br>
+
+Write a complete set of Boolean inquiry functions to determine whether a hand is of a given type (e.g. <tt>is_flush(hand_index)</tt>)
+
+<HR>
+<h3>5 Card Stud Poker <u>Game</u> Program</h3>
+Use the <tt>Deck</tt> class to play a hand of poker.<br>
+
+Write a function which returns the index of the higher ranking of two hands (e.g. <tt>hand_compare(hand_index_1, hand_index_2)</tt>)<br>
+
+<h5>Input</h5>
+Uses flags on the command line (<i>in any order and number</i>)to set values for the Deck class data members. (<i>else they take their default values</i>)<br>
+(e.g <tt>PokerGame -r99 -h4 -A -S</tt> <br>
+specifies: a seed of 99,  4 hands, <u>Ace low</u>, and sort by <u>suit first</u> )<br>
+{<i>See your command line hand-out for an example of how to <u>parse</u> the command line</i>}<br>
+[ensure that the flag values are valid, else quit after printing an error message]
+<h5>Output</h5>
+Print out all of the hands ranking from highest to lowest identifying the type of hand from
+<a href="http://www.pagat.com/vying/pokerrank.html"><i>Ranking of Poker Hands</i></a>.<br>
+E.g.:
+<tt>
+    <pre>
+______________________________________________
+
+Five Card Stud Poker
+--------------------
+
+Settings:
+
+    Random Seed: 99
+
+    Hands: 4
+
+    Ace: high
+
+    Sort: rank first
+
+--------------------
+Game 1:
+
+Player 2: Ks Kh Kc 2c 2d | Full House
+
+Player 0: Jh Td 4h 4s 4h | Three of a kind
+
+Player 1: Qs Qd 7h 3s 3h | Two Pair
+
+Player 3: Td 8d 6d 4c 2s | Ten high
+
+--------------------
+
+Play again? Y
+
+Game 2:
+
+Player 3: Jh Th 8h 5h 4h | Flush
+
+Player 1: 8d 7h 6c 5c 4d | Straight
+
+Player 0: Js 9d 8h 8s 5h | Pair
+
+Player 2: 9d 8d 7d 6c 2s | Nine high
+
+--------------------
+
+Play again? N
+
+Thanks for Playing!
+______________________________________________
+    </pre>
+</tt>
+
+Note: the Player number is simply the hand index.
+
+<h3>5 Card Stud Poker <u>Frequencies</u> Program</h3>
+Compare the <a href="http://wizardofodds.com/poker">expected probabilities</a> with your computed frequencies for each type of hand for a specified large number of runs.
+<h5>Input</h5>
+Uses flags on the command line (<i>in any order and number</i>)to set values for the <u>random seed</u> value and the <u>number of runs</u>.
+(e.g <tt>PokerGame -s42 -r123456</tt> <br>
+specifies: a seed of 42,   and 123456 runs )
+<h5>Output</h5>
+<tt>
+    <pre>
+Five Card Stud Poker Computed Probabilities
+-------------------------------------------------
+
+Settings:
+
+    Random Seed: 42
+
+    Runs: 123456
+
+Hand 		  Probability     Computed	  Rel. Error
+____________________________________________________________
+
+Royal flush	| 0.00000154	| 0.########	| 0.########
+
+Straight flush	| 0.00001385	| 0.########	| 0.########
+
+Four of a kind	| 0.00024010	| 0.########	| 0.########
+
+Full house	| 0.00144058	| 0.########	| 0.########
+
+Flush		| 0.00196540	| 0.########	| 0.########
+
+Straight	| 0.00392465	| 0.########	| 0.########
+
+Three of a kind	| 0.02112845	| 0.########	| 0.########
+
+Two pair	| 0.04753902	| 0.########	| 0.########
+
+Pair		| 0.42256903	| 0.########	| 0.########
+
+Nothing		| 0.501177394	| 0.########	| 0.########
+____________________________________________________________
+    </pre>
+</tt>
+<HR>
+</BODY>
+</HTML>
+

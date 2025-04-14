@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<TITLE>Harmonic Sums with timing</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#1F00FF" ALINK="#FF0000" VLINK="#9900DD">
+<A NAME="top">
+<A NAME="file1">
+<H1>Harmonic Sums with timing</H1>
+
+<PRE>
+<I><FONT COLOR="#B22222">// This program experiments with harmonic sums
+</FONT></I>
+<I><FONT COLOR="#B22222">// A. Anda;
+</FONT></I>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;iostream&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;iomanip&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;float&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;math&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <FONT COLOR="#BC8F8F"><B>&lt;time&gt;</FONT></B>
+
+<I><FONT COLOR="#B22222">// Global Declarations
+</FONT></I><FONT COLOR="#228B22"><B>const</FONT></B> <FONT COLOR="#228B22"><B>long</FONT></B> <FONT COLOR="#228B22"><B>double</FONT></B> Eulers = 0.57721566490153286060651209008240243L;
+
+<FONT COLOR="#228B22"><B>int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>()
+{
+    <I><FONT COLOR="#B22222">// Local Declarations
+</FONT></I>
+<FONT COLOR="#228B22"><B>int</FONT></B> i;
+<FONT COLOR="#228B22"><B>int</FONT></B> terms = 0;
+<FONT COLOR="#228B22"><B>float</FONT></B> ffsum = 0;
+<FONT COLOR="#228B22"><B>float</FONT></B> fbsum;
+<FONT COLOR="#228B22"><B>float</FONT></B> oldsum = 0;
+<FONT COLOR="#228B22"><B>float</FONT></B> newsum = 0;
+<FONT COLOR="#228B22"><B>double</FONT></B> dfsum;
+<FONT COLOR="#228B22"><B>double</FONT></B> dbsum;
+<FONT COLOR="#228B22"><B>long</FONT></B> <FONT COLOR="#228B22"><B>double</FONT></B> ldfsum;
+<FONT COLOR="#228B22"><B>long</FONT></B> <FONT COLOR="#228B22"><B>double</FONT></B> ldbsum;
+<FONT COLOR="#228B22"><B>long</FONT></B> <FONT COLOR="#228B22"><B>double</FONT></B> formula;
+<FONT COLOR="#228B22"><B>long</FONT></B> <FONT COLOR="#228B22"><B>double</FONT></B> err;
+
+    
+
+<I><FONT COLOR="#B22222">// Statements
+</FONT></I>
+	clock_t time_ffsum_start = clock(); <I><FONT COLOR="#B22222">// begin timing ffsum loop
+</FONT></I>    <I><FONT COLOR="#B22222">// Compute forward sum using float 
+</FONT></I>    <I><FONT COLOR="#B22222">//    and maintaining a loop counter, terms
+</FONT></I>    <B><FONT COLOR="#A020F0">do</FONT></B>
+	{
+	 oldsum = newsum;
+	 newsum = oldsum + 1.0f / ++terms;
+	} <B><FONT COLOR="#A020F0">while</FONT></B> (oldsum != newsum);
+    ffsum = newsum;
+
+    <I><FONT COLOR="#B22222">// decrementing the loop counter, terms
+</FONT></I>
+    terms--;
+	clock_t time_ffsum_end = clock(); <I><FONT COLOR="#B22222">// end timing ffsum loop
+</FONT></I>
+
+
+	clock_t time_dfsum_start = clock(); <I><FONT COLOR="#B22222">// begin timing dfsum loop
+</FONT></I>    <I><FONT COLOR="#B22222">// Computing forward sum using double for terms iterations
+</FONT></I>    <B><FONT COLOR="#A020F0">for</FONT></B> (dfsum = 0, i = 1; i &lt;= terms; i++)
+    {
+	dfsum  += 1.0 / i;
+    }
+	clock_t time_dfsum_end = clock(); <I><FONT COLOR="#B22222">// end timing dfsum loop
+</FONT></I>
+
+	clock_t time_ldfsum_start = clock(); <I><FONT COLOR="#B22222">// begin timing ldfsum loop
+</FONT></I>    <I><FONT COLOR="#B22222">// Computing forward sum using long double for terms iterations
+</FONT></I>    <B><FONT COLOR="#A020F0">for</FONT></B> ( ldfsum = 0, i = 1; i &lt;= terms; i++)
+    {
+	ldfsum += 1.0L / i;
+    }
+	clock_t time_ldfsum_end = clock(); <I><FONT COLOR="#B22222">// end timing ldfsum loop
+</FONT></I>
+	clock_t time_fbsum_start = clock(); <I><FONT COLOR="#B22222">// begin timing fbsum loop
+</FONT></I>    <I><FONT COLOR="#B22222">// Computing backward sum using float for terms iterations
+</FONT></I>    <B><FONT COLOR="#A020F0">for</FONT></B> (fbsum  = 0, i = terms; i &gt;= 1; i--)
+	{
+	 fbsum  += 1.0f / i;
+	} <I><FONT COLOR="#B22222">// for
+</FONT></I>	clock_t time_fbsum_end = clock(); <I><FONT COLOR="#B22222">// end timing fbsum loop
+</FONT></I>
+	clock_t time_dbsum_start = clock(); <I><FONT COLOR="#B22222">// begin timing dbsum loop
+</FONT></I>    <I><FONT COLOR="#B22222">// Computing backward sum using double for terms iterations
+</FONT></I>    <B><FONT COLOR="#A020F0">for</FONT></B> (dbsum  = 0, i = terms; i &gt;= 1; i--)
+	{
+	 dbsum  += 1.0 / i;
+	} <I><FONT COLOR="#B22222">// for
+</FONT></I>	clock_t time_dbsum_end = clock(); <I><FONT COLOR="#B22222">// end timing dbsum loop
+</FONT></I>
+	clock_t time_ldbsum_start = clock(); <I><FONT COLOR="#B22222">// begin timing ldbsum loop
+</FONT></I>    <I><FONT COLOR="#B22222">// Computing backward sum using long double for terms iterations
+</FONT></I>    <B><FONT COLOR="#A020F0">for</FONT></B> (ldbsum = 0, i = terms; i &gt;= 1; i--)
+	{
+	 ldbsum += 1.0L / i;
+	} <I><FONT COLOR="#B22222">// for
+</FONT></I>	clock_t time_ldbsum_end = clock(); <I><FONT COLOR="#B22222">// end timing ldbsum loop
+</FONT></I>
+
+    <I><FONT COLOR="#B22222">// Computing formula value using double
+</FONT></I>     <FONT COLOR="#228B22"><B>long</FONT></B> <FONT COLOR="#228B22"><B>double</FONT></B> terms2 = terms * terms;
+     formula = log(static_cast&lt;<FONT COLOR="#228B22"><B>long</FONT></B> <FONT COLOR="#228B22"><B>double</FONT></B>&gt;(terms)) + Eulers
+                + 1 / ( 2.0L * terms)
+		- 1 / ( 12.0L * terms2)
+		+ 1 / ( 120.0L * terms2 * terms2);
+
+    cout &lt;&lt; setprecision(8);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;This program computes the differences in ordering &quot;</FONT></B> &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;and precision of harmonic sums&quot;</FONT></B> &lt;&lt; endl &lt;&lt; endl;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The number of terms is :&quot;</FONT></B> &lt;&lt; terms &lt;&lt; endl &lt;&lt; endl;
+
+    err = fabs((ldbsum - ffsum) / ldbsum);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The forward sum in FLOAT precision is &quot;</FONT></B> &lt;&lt; ffsum &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;It is within &quot;</FONT></B> &lt;&lt; err * 100
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;% of the backward sum in LONG DOUBLE precision&quot;</FONT></B> &lt;&lt; endl
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;and the err is &quot;</FONT></B> &lt;&lt; err / FLT_EPSILON
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; times the smallest possible FLOAT fraction, &quot;</FONT></B> &lt;&lt; FLT_EPSILON
+	 &lt;&lt; endl &lt;&lt; endl;
+
+<I><FONT COLOR="#B22222">// Begin Timing Calculations
+</FONT></I>    <FONT COLOR="#228B22"><B>double</FONT></B> looptime_ffsum = static_cast&lt;<FONT COLOR="#228B22"><B>double</FONT></B>&gt;(time_ffsum_end - time_ffsum_start);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The ffsum loop required &quot;</FONT></B>
+         &lt;&lt; looptime_ffsum/CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; (measurement granularity: &quot;</FONT></B> &lt;&lt; CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; of a second)\n\n&quot;</FONT></B>;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Each interation of the ffsum loop required &quot;</FONT></B>
+	 &lt;&lt; looptime_ffsum/CLOCKS_PER_SEC/terms &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;or &quot;</FONT></B> &lt;&lt; 1/(looptime_ffsum/CLOCKS_PER_SEC/terms)
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; iterations / second\n\n\n&quot;</FONT></B>;
+<I><FONT COLOR="#B22222">// End Timing Calculations
+</FONT></I>
+    err = fabs((ldbsum - fbsum) / ldbsum);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The backward sum in FLOAT precision is &quot;</FONT></B> &lt;&lt; fbsum &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;It is within &quot;</FONT></B> &lt;&lt; err * 100
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;% of the backward sum in LONG DOUBLE precision&quot;</FONT></B> &lt;&lt; endl
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;and the err is &quot;</FONT></B> &lt;&lt; err / FLT_EPSILON
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; times the smallest possible FLOAT fraction, &quot;</FONT></B> &lt;&lt; FLT_EPSILON
+	 &lt;&lt; endl &lt;&lt; endl;
+
+<I><FONT COLOR="#B22222">// Begin Timing Calculations
+</FONT></I>    <FONT COLOR="#228B22"><B>double</FONT></B> looptime_fbsum = static_cast&lt;<FONT COLOR="#228B22"><B>double</FONT></B>&gt;(time_fbsum_end - time_fbsum_start);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The fbsum loop required &quot;</FONT></B>
+         &lt;&lt; looptime_fbsum/CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; (measurement granularity: &quot;</FONT></B> &lt;&lt; CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; of a second)\n\n&quot;</FONT></B>;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Each interation of the dbsum loop required &quot;</FONT></B>
+	 &lt;&lt; looptime_fbsum/CLOCKS_PER_SEC/terms &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;or &quot;</FONT></B> &lt;&lt; 1/(looptime_fbsum/CLOCKS_PER_SEC/terms)
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; iterations / second\n\n\n&quot;</FONT></B>;
+<I><FONT COLOR="#B22222">// End Timing Calculations
+</FONT></I>
+    err = fabs((ldbsum - dfsum) / ldbsum);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The forward sum in DOUBLE precision is &quot;</FONT></B> &lt;&lt; dfsum &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;It is within &quot;</FONT></B> &lt;&lt; err * 100
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;% of the backward sum in LONG DOUBLE precision&quot;</FONT></B> &lt;&lt; endl
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;and the err is &quot;</FONT></B> &lt;&lt; err / DBL_EPSILON
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; times the smallest possible DOUBLE fraction, &quot;</FONT></B> &lt;&lt; DBL_EPSILON
+	 &lt;&lt; endl &lt;&lt; endl;
+
+<I><FONT COLOR="#B22222">// Begin Timing Calculations
+</FONT></I>    <FONT COLOR="#228B22"><B>double</FONT></B> looptime_dfsum = static_cast&lt;<FONT COLOR="#228B22"><B>double</FONT></B>&gt;(time_dfsum_end - time_dfsum_start);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The dfsum loop required &quot;</FONT></B>
+         &lt;&lt; looptime_dfsum/CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; (measurement granularity: &quot;</FONT></B> &lt;&lt; CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; of a second)\n\n&quot;</FONT></B>;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Each interation of the dbsum loop required &quot;</FONT></B>
+	 &lt;&lt; looptime_dfsum/CLOCKS_PER_SEC/terms &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;or &quot;</FONT></B> &lt;&lt; 1/(looptime_dfsum/CLOCKS_PER_SEC/terms)
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; iterations / second\n\n\n&quot;</FONT></B>;
+<I><FONT COLOR="#B22222">// End Timing Calculations
+</FONT></I>
+    err = fabs((ldbsum - dbsum) / ldbsum);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The backward sum in DOUBLE precision is &quot;</FONT></B> &lt;&lt; dbsum &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;It is within &quot;</FONT></B> &lt;&lt; err * 100
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;% of the backward sum in LONG DOUBLE precision&quot;</FONT></B> &lt;&lt; endl
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;and the err is &quot;</FONT></B> &lt;&lt; err / DBL_EPSILON
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; times the smallest possible DOUBLE fraction, &quot;</FONT></B> &lt;&lt; DBL_EPSILON
+	 &lt;&lt; endl &lt;&lt; endl;
+
+<I><FONT COLOR="#B22222">// Begin Timing Calculations
+</FONT></I>    <FONT COLOR="#228B22"><B>double</FONT></B> looptime_dbsum = static_cast&lt;<FONT COLOR="#228B22"><B>double</FONT></B>&gt;(time_dbsum_end - time_dbsum_start);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The dbsum loop required &quot;</FONT></B>
+         &lt;&lt; looptime_dbsum/CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; (measurement granularity: &quot;</FONT></B> &lt;&lt; CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; of a second)\n\n&quot;</FONT></B>;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Each interation of the dbsum loop required &quot;</FONT></B>
+	 &lt;&lt; looptime_dbsum/CLOCKS_PER_SEC/terms &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;or &quot;</FONT></B> &lt;&lt; 1/(looptime_dbsum/CLOCKS_PER_SEC/terms)
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; iterations / second\n\n\n&quot;</FONT></B>;
+<I><FONT COLOR="#B22222">// End Timing Calculations
+</FONT></I>
+    err = fabs((ldbsum - ldfsum) / ldbsum);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The forward sum in LONG DOUBLE precision is &quot;</FONT></B> &lt;&lt; ldfsum &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;It is within &quot;</FONT></B> &lt;&lt; err * 100
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;% of the backward sum in LONG DOUBLE precision&quot;</FONT></B> &lt;&lt; endl
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;and the err is &quot;</FONT></B> &lt;&lt; err / LDBL_EPSILON
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; times the smallest possible LONG DOUBLE fraction, &quot;</FONT></B> &lt;&lt; LDBL_EPSILON
+	 &lt;&lt; endl &lt;&lt; endl;
+
+<I><FONT COLOR="#B22222">// Begin Timing Calculations
+</FONT></I>    <FONT COLOR="#228B22"><B>double</FONT></B> looptime_ldfsum = static_cast&lt;<FONT COLOR="#228B22"><B>double</FONT></B>&gt;(time_ldfsum_end - time_ldfsum_start);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The ldfsum loop required &quot;</FONT></B>
+         &lt;&lt; looptime_ldfsum/CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; (measurement granularity: &quot;</FONT></B> &lt;&lt; CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; of a second)\n\n&quot;</FONT></B>;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Each interation of the ldfsum loop required &quot;</FONT></B>
+	 &lt;&lt; looptime_ldfsum/CLOCKS_PER_SEC/terms &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;or &quot;</FONT></B> &lt;&lt; 1/(looptime_ldfsum/CLOCKS_PER_SEC/terms)
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; iterations / second\n\n\n&quot;</FONT></B>;
+<I><FONT COLOR="#B22222">// End Timing Calculations
+</FONT></I>
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The backward sum in long double precision is &quot;</FONT></B> &lt;&lt; ldbsum &lt;&lt; endl &lt;&lt; endl;
+
+<I><FONT COLOR="#B22222">// Begin Timing Calculations
+</FONT></I>    <FONT COLOR="#228B22"><B>double</FONT></B> looptime_ldbsum = static_cast&lt;<FONT COLOR="#228B22"><B>double</FONT></B>&gt;(time_ldbsum_end - time_ldbsum_start);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The ldbsum loop required &quot;</FONT></B>
+         &lt;&lt; looptime_ldbsum/CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; (measurement granularity: &quot;</FONT></B> &lt;&lt; CLOCKS_PER_SEC
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; of a second)\n\n&quot;</FONT></B>;
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;Each interation of the ldbsum loop required &quot;</FONT></B>
+	 &lt;&lt; looptime_ldbsum/CLOCKS_PER_SEC/terms &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; seconds\n&quot;</FONT></B>
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;or &quot;</FONT></B> &lt;&lt; 1/(looptime_ldbsum/CLOCKS_PER_SEC/terms)
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; iterations / second\n\n\n&quot;</FONT></B>;
+<I><FONT COLOR="#B22222">// End Timing Calculations
+</FONT></I>
+    err = fabs((ldbsum - formula) / ldbsum);
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The formula value in LONG DOUBLE precision is &quot;</FONT></B> &lt;&lt; formula &lt;&lt; endl;
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;It is within &quot;</FONT></B> &lt;&lt; err * 100
+         &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;% of the backward sum in LONG DOUBLE precision&quot;</FONT></B> &lt;&lt; endl
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;and the err is &quot;</FONT></B> &lt;&lt; err / LDBL_EPSILON
+	 &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot; times the smallest possible LONG DOUBLE fraction, &quot;</FONT></B> &lt;&lt; LDBL_EPSILON
+	 &lt;&lt; endl &lt;&lt; endl;
+
+
+    cout &lt;&lt; <FONT COLOR="#BC8F8F"><B>&quot;The ratio of long double times to double times is: &quot;</FONT></B>
+         &lt;&lt; looptime_ldfsum/looptime_dfsum &lt;&lt; endl;
+
+    <B><FONT COLOR="#A020F0">return</FONT></B> 0;
+} <I><FONT COLOR="#B22222">// main
+</FONT></I></PRE>
+<h3>Output</h3>
+<pre>
+This program computes the differences in ordering 
+and precision of harmonic sums
+
+The number of terms is :2097151
+
+The forward sum in FLOAT precision is 15.403683
+It is within 1.786632% of the backward sum in LONG DOUBLE precision
+and the err is 149873.55 times the smallest possible FLOAT fraction, 1.1920929e-07
+
+The ffsum loop required 0.13 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the ffsum loop required 6.198886e-08 seconds
+or 16131931 iterations / second
+
+
+The backward sum in FLOAT precision is 15.132898
+It is within 0.002695297% of the backward sum in LONG DOUBLE precision
+and the err is 226.0979 times the smallest possible FLOAT fraction, 1.1920929e-07
+
+The fbsum loop required 0.07 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the dbsum loop required 3.3378617e-08 seconds
+or 29959300 iterations / second
+
+
+The forward sum in DOUBLE precision is 15.133306
+It is within 4.9634947e-12% of the backward sum in LONG DOUBLE precision
+and the err is 223.53593 times the smallest possible DOUBLE fraction, 2.220446e-16
+
+The dfsum loop required 0.09 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the dbsum loop required 4.2915365e-08 seconds
+or 23301678 iterations / second
+
+
+The backward sum in DOUBLE precision is 15.133306
+It is within 1.1908607e-13% of the backward sum in LONG DOUBLE precision
+and the err is 5.36316 times the smallest possible DOUBLE fraction, 2.220446e-16
+
+The dbsum loop required 0.08 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the dbsum loop required 3.8146991e-08 seconds
+or 26214388 iterations / second
+
+
+The forward sum in LONG DOUBLE precision is 15.133306
+It is within 3.2885101e-30% of the backward sum in LONG DOUBLE precision
+and the err is 170.7492 times the smallest possible LONG DOUBLE fraction, 1.9259299e-34
+
+The ldfsum loop required 2.31 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the ldfsum loop required 1.1014944e-06 seconds
+or 907857.58 iterations / second
+
+
+The backward sum in long double precision is 15.133306
+
+The ldbsum loop required 2.29 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the ldbsum loop required 1.0919576e-06 seconds
+or 915786.46 iterations / second
+
+
+The formula value in LONG DOUBLE precision is 15.133306
+It is within 1.3128816e-07% of the backward sum in LONG DOUBLE precision
+and the err is 6.816871e+24 times the smallest possible LONG DOUBLE fraction, 1.9259299e-34
+
+The ratio of long double times to double times is: 25.666667
+</pre>
+<HR>
+<ADDRESS>Generated by <A HREF="http://www.iki.fi/~mtr/genscript/">GNU enscript 1.6.1</A>.</ADDRESS>
+</BODY>
+</HTML>

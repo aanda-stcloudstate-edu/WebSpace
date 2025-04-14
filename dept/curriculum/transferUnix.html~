@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+  <title>Transfer Unix Course Proposal Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+   <br><div align="center"><h1>Transfer Unix Course Proposal Content</h1></div> <hr>
+   <br><div align="center"><h2>(Fall 2006 A. A. Anda)</h2></div> <hr>
+   <h2>Unix</h2>
+  <ul>
+    <li>Definition and overview of an <i>operating system</i></li>
+     <li>Hierachical File Structure
+     <ul>
+       <li><u>Creation</u>, <u>deletion</u>, <u>renaming</u> and
+       <u>movement</u> of<br>
+        <i><u>files</u></i> and <i><u>directories</u></i>
+       </li>
+       <li>Absolute and relative <i>pathnames</i></li>
+	<li><u>Wildcards</u> for filename generation (<i>globbing</i>)</li>
+       <li>Links</li>
+     </ul>
+     </li>
+     <li>Editing</li>
+     <ul>
+	 <li>vi, vim, gvim</li>
+	 <li>emacs</li>
+     </ul>
+     <li>Utility Programs (<i>Filters</i>)</li>
+     <ul>
+	 <li><tt>sort</tt></li>
+	 <li><tt>which</tt></li>
+	 <li><tt>touch</tt></li>
+	 <li><tt>split</tt></li>
+	 <li><tt>strings</tt></li>
+	 <li><i>Regular Expressions</i> for <tt>grep</tt> and <tt>sed</tt></li> 
+	 <li><tt>enscript</tt></li>
+	 <li><tt>less, head, tail</tt></li>
+	 <li>compression utilities</li>
+	 <li><tt>diff, uniq, cmp,</tt> etc.</li>
+	 <li><tt>awk?</tt></li>
+     </ul>
+     <li><u>Octal</u> Permissions for <b>chmod</b></li>
+     <li><u>Redirecting</u> Standard I/O to and from <i>files</i>
+      and <i>programs</i></li>
+     <li>Essential control characters (e.g. ^C, ^D, ^Z, ^X, ^S, ^Q)</li>
+     <li>File transfer and <tt>tar</tt></li>
+     <li>Essential <i>dot files</i></li>
+     <li>Using <i>Makefiles</i> for conditional
+     <u>compiling</u>, <u>linking</u>, and <u>loading</u></li>
+     <li>Shells</li>
+     <ul>
+	 <li>using history</li>
+	 <li>command line editing</li>
+	 <li>special variables</li>
+	 <li>variables</li>
+	 <li>pathname variable modifiers</li>
+	 <li>command line substitution</li>
+	 <li>quoting</li>
+	 <li>conditionals &amp; iteration</li>
+	 <li>scripting and command line arguments <tt>$argv</tt> <i>(C++ tie-in)</i></li>
+	 <li>useful built-in commands</li>
+	 <ul>
+	     <li><tt>alias</tt></li>
+	     <li><tt>set, setenv</tt></li>
+	     <li><tt>bg, fg</tt></li>
+	     <li><tt>dirs, pushd, popd</tt></li>
+	     <li><tt>kill</tt></li>
+	     <li><tt>date &amp; time</tt></li>
+	     <li><tt>jobs</tt></li>
+	     <li><tt>umask</tt></li>
+	     <li><tt>limit</tt> (e.g. coredump size)</li>
+	     <li>Priorities and the <tt>nice</tt> command</li>
+	     <li><tt>eval</tt></li>
+	 </ul>
+     </ul>
+     <li> Misc. useful utilities
+  </ul>
+
+</body>
+</html>

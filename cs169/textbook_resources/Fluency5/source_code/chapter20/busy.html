@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <title>Busy</title>
+   </head>
+   <body style="text-align : center">
+        <img src="gifpix/Busy0.gif"/>
+        <script type="text/javascript">
+              var i, frame = 0;			                        			//Iteration vars
+              var timerID;				                            		//Timer handle
+              var pics = new Array (12);			                	//Array to prefetch into
+              for (i=0;i<pics.length ; i++) {		                	//Init. array for images
+                      pics[i] = new Image();
+              }
+             for (i=0;i<pics.length; i++) {	                		//Prefetch images
+                      pics[i].src = "gifpix/Busy" + i + ".gif";
+             }
+             function animate () {				                    	//Draw pic, call self
+                 document.images[0].src = pics[frame].src;	//Change pic
+                 frame = (1+frame)%12;				                //Move to next frame
+                 timerID = setTimeout("animate()", 100);   	//Schedule next tick
+             }
+         </script>
+         <form activity="">
+              <input type="button" value="Start" onclick='timerID=setTimeout("animate()",30)'/>
+              <input type="button" value="Stop" onclick='clearTimeout(timerID)'/>
+         </form>
+      </body>
+</html>

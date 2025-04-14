@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI 331 Sequence Set Group Project Fall 2019</title>
+    <style>
+	code{font-family: courier; font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems Fall 2019</h1>
+
+<h2><u>Sequence Set</u> Group Project</h2> 
+
+<p>
+This project is the first in a multi-component, multi-phase, project.
+<h3>Objective</h3>
+Generate a <u>sequence set</u> as a file composed of (doubly) linked blocks of fixed-sized records comprising fixed-sized fields.<br>
+(based on <i>Programming Exercises</i> 10.19 in the Folk textbook)
+<h3>Requirements</h3>
+Teams will each implement a <b>Sequence Set Class</b> that generates and uses a blocked sequence set file and affilliated (primary key) index file having the following attributes:
+<ul>
+    <li> Your data set will be:
+    <ul>
+	<li> From this <a href="http://web.stcloudstate.edu/aanda/cs331/w19/us_postal_codes.xlsx">XLSX file</a> which
+	can be saved as this <a href="http://web.stcloudstate.edu/aanda/cs331/w19/us_postal_codes.txt">TXT file</a>
+	as <b>fixed-size</b> fields and records.
+	<li> For final testing, use about half, or half of any system-dependent size limit you may have, so that you have a reserve for adding records.
+	<li>Your records will be sorted by your key field.
+    </ul>
+    <li> Your sequence set <u>file</u> will start with a <u>header record</u> followed by the <b>fixed-size</b> sequence set blocks.<br>
+    (See Figure 10.1 on page 427 of Folk)
+    <li> Your header record should include the following components:
+    <ul>
+        <li>sequence set file type
+        <li>header record size
+        <li>block size
+        <li>maximum count of records per block
+        <ul>
+            <li>minimum capacity: 50%
+            <li>(<i>for simplicity, require an <u>even</u> number</i>)
+        </ul>
+        <li>record size
+        <li>count of fields per record
+        <li>field info triple (tuple) {AoS or SoA}
+        <ul>
+            <li>name or ID
+            <li>size
+            <li>type schema 
+            <ul>
+                (<i><u>format</u> to read or write</i>)
+            </ul>
+        </ul>
+        <li>indicate field which serves as the primary key
+        <li><u>pointer</u> to the block avail-list
+        <li><u>pointer</u> to the active sequence set list
+        <li>block count
+        <li>record count
+        <li>stale flag
+        <li>Simple Index (10.3)
+        <ul>
+            <li>file name
+            <li>schema information
+        </ul>
+    </ul>
+    <li> Each active block should include the following components:
+    <ul>
+	<li>count of records ( > 0 )
+	<li>pointers to preceding &amp; succeeding active blocks
+	<li>set of records ordered by key
+    </ul>
+    <li> Each avail block should include the following components:
+    <ul>
+	<li>count of records ( == 0 )
+	<li>pointer to succeeding avail block
+    </ul>
+    <li> Your program's </u>command line</u> options should include:
+    <ul>
+	<li>source file
+	<li>destination file
+	<li>all other information necessary for the header file
+    </ul>
+</ul>
+At a minimum your program should be able to:
+<ul>
+    <li>build the sequence set
+    <li>given a block pointer and a key:
+    <ul>
+	<li>display a record
+	<li>display a specific field in a record
+	<li>modify a field in a record 
+	<li>insert records
+	<li>delete records
+    </ul>
+    <li>verify that the sequence set file is consistent
+    <li>rebuild the sequence set
+    <li>any other useful operations you think of that you can implement and test
+</ul>
+</p>
+You should have a method of printing (dumping) the intermediate contents of the sequence set
+so that you can determine whether your implementations for building, insertion and
+deletion are functioning properly.  This dump should be sufficiently readable to help
+facilitate debugging.
+
+Write a test driver that demonstrates that your sequence set works.<br>
+</ol>
+
+<h2>WHAT TO TURN IN:</h2>
+
+<ol>
+    <li><u>Design document for the classes</u>.<br>
+	(Consider using facilities in, e.g. Jgrasp or Doxygen)
+    (<font color="teal">25% of your grade</font>)
+
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Also, leave a copy of the source file in your account until the graded
+    program is returned to you.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to compile and run the program. (use a <u>makefile</u>)
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+</ol>
+
+</div>
+
+</body>
+
+</html>

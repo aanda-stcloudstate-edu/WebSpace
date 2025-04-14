@@ -1,0 +1,136 @@
+			CSCI 301 (Sec. 2) [001175]
+ 		   Introduction to Algorithms and Data Structures
+		        Fall 2003 SYLLABUS
+
+INSTRUCTOR:	Andrew A. Anda, Ph.D., Asst. Prof. of Computer Science
+
+OFFICE:		ECC-223		 Telephone:	(320)308-2044
+
+E-MAIL:		TBD	Web Site: http://web.stcloudstate.edu/aanda/cs301.html
+
+OFFICE HOURS:	M: 10:00AM - 11:50AM 
+                T:  1:30PM - 3:20PM 
+                W: 10:00AM - 11:50AM 
+                F: 10:00AM - 11:50AM 
+                (and by appointment)
+
+CLASS TIME AND LOCATION:
+
+    Class: MWF: 3:00PM -  3:50AM in ECC 108
+             T: 3:30PM - 4:20PM in ECC 108
+
+REQUIRED TEXT:	* Data Structures and other Objects Using C++ (Second Edition),
+		    by Michael Main and Walter Savitch, Addison-Wesley, 2001.
+
+REFERENCE:      * A Practical Guide to the UNIX System,
+                    by Mark G. Sobell, Benjamin/Cummings, 1995.
+
+OBJECTIVES:
+
+CSCI 301 continues the introduction to computer science begun in CSCI 201.
+In this course, we will manipulate more complex data structures, and continue
+to program in C++. 
+
+The course begins with the definition of a fundamental idea, the abstract data
+type (ADT). We implement ADTs with data structures and functions that operate
+on those structures, and we encapsulate these implementations in C++ classes. 
+
+An important construct for building data structures is the pointer, the address
+of a location in memory. The linked list is an implementation of a list ADT
+built using pointers. The stack and queue ADTs can be implemented using arrays
+or pointer-based linked structures. Recursion, in which functions call
+themselves, is another way to repeat computations. Recursion often allows
+elegant implementations of algorithms. We consider binary trees, and sorting
+algorithms that are more efficient than the double-loop sorts with which you
+are already familiar. Indeed, we are always concerned with the time complexity
+of our algorithms. We introduce graphs and some fundamental algorithms for them. 
+The course emphasizes abstraction and problem decomposition, especially distinguishing and separating the definition, implementation,
+and use of abstract data types. 
+
+TOPICS:
+
+    *  An introduction to the course: Abstract data types and data structures 
+
+    *  Strings in C++ 
+
+    *  Review of analysis of programs (Chapter 1) 
+
+    *  Encapsulating ADT implementations in C++ classes (Chapter 2) 
+
+    *  Review of parameter passing and operator overloading (Chapter 2) 
+
+    *  Container classes (Chapter 3) 
+
+    *  Pointers and dynamic arrays (Chapter 4) 
+
+    *  Linked lists (Chapter 5) 
+
+    *  Templates (Chapter 6) 
+
+    *  Stacks (Chapter 7) 
+
+    *  Queues (Chapter 8) 
+
+    *  Recursion (Chapter 9), binary search (Section 12.1) 
+
+    *  Binary trees (Chapter 10) 
+
+    *  Heaps and priority queues (Chapter 11); Heap Sort (Section 13.3) 
+
+    *  Graphs and their representations; minimum spanning trees and traversals
+       (Chapter 15) 
+
+    *  Two more sorting algorithms: Merge Sort and Quick Sort (Chapter 13) 
+
+
+PREREQUISITES:
+    All students in this class should have passed (with a C {not C-} or better)
+    the prerequisite courses as listed in the course description: CSCI 201,
+    MATH 221 {Calculus & Analytical Geometry I}.
+COREQUISITES:
+    MATH 253 {Discrete Mathematics}.
+
+CLASS ACCOUNTS:
+    All submitted work (programs) for this class must be compiled using the
+    system specified for this class.
+
+ASSIGNMENTS:
+    You will be expected to complete programming projects on your own outside
+    of class time.  The programs are due at the beginning of class on the
+    due date.  No allowance will be made for computer down time, so plan
+    ahead.  Late work will not be accepted.
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.
+
+ATTENDANCE & CONDUCT:
+    You are responsible for knowing what happens at each class meeting.
+    Do not engage in disruptive or distracting activities. (this includes
+    allowing your cell phone to ring audibly during class)
+
+EXAMS:
+    There will be two 45 minute exams and a comprehensive final exam.
+    Make-up exams will be given in only in extreme (or university
+    sanctioned) circumstances and only with prior notice.
+
+GRADING:
+	Your grade will be determined by the contributions of your scores
+	on assignments,  a midterm and a final exam.  Makeup of tests,
+	quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE POINTS:
+	Assignments		20%
+	Hour Exams		40%
+	Final Exam		40%
+
+FINAL EXAM: Monday, December 15 3:45PM - 6:15PM in ECC-108.
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	   <title>Smooth Motion Application</title>
+	   <style type="text/css">
+	      body {background-color : white; color : #ff6600; font-family : helvetica;
+	                text-align : center}
+	      table {margin-left : auto; margin-right : auto; background-color : #a80000;
+	               padding : 5%}
+	      td     {padding : 15px}
+	   </style>
+	</head>
+	<body>
+	<table border="2">
+		<tr> <td>
+			<h1>Smooth Motion</h1>
+		</td></tr>
+		<tr> <td>
+			<script type="text/javascript">
+				var j;	//Declare iter var
+				var duration = 125, timerId;			// vars
+				var pics = new Array(8);				// array
+				var keypix = new Array(2);
+				var next1 = 0, frame = -1;
+				for (j = 0; j < 8; j++) {				//Initial img array
+					pics[j] = new Image();
+				}
+				for (j = 0; j < 8; j++) {				//Prefetch images
+					pics[j].src = "gifpix/Stack" + j + ".gif";
+				}
+				for (j = 0; j < 20; j++) {			//Place grid imgs
+					document.write('<img src="gifpix/Stack0.gif" alt=" "/>');
+				}
+			</script>
+		</td></tr>
+		<tr> <td>
+			<script type="text/javascript">
+				keypix[0] = new Image();
+				keypix[1] = new Image();
+				keypix[0].src = "gifpix/OrangeBox.gif";
+				keypix[1].src = "gifpix/YellowBox.gif";
+				for (j = 0; j < 7; j++) {
+					document.write('<img src="gifpix/OrangeBox.gif" ' +
+					'onmouseover = "here(' + j + ')" ' +
+					'onmouseout = "gone(' + j + ')"  alt=" "/>');
+				}
+			</script>
+		</td></tr>
+		<tr> <td>
+			<form action="">
+				<input type="button" value="Go"
+					onclick='timerId=setTimeout("animate()",duration)'/>
+				<input type="button" value="Stop"
+					onclick="clearTimeout(timerId)"/>
+				<input type="radio" name="speed" onclick="duration=25"/> 25
+				<input type="radio" name="speed" onclick="duration=50"/> 50
+				<input type="radio" name="speed" onclick="duration=75"/> 75
+				<input type="radio" name="speed" onclick="duration=100"/> 100
+				<input type="radio" name="speed"
+					onclick="duration=125" checked="checked"/> 125
+			</form>
+		</td></tr>
+		<tr> <td>
+			<p style="color : black"><b>
+			Move the cursor across the brown boxes smoothly <br/>
+			to make a rising 'staircase' pattern in the
+			window.</b></p>
+		</td></tr>
+	</table>
+		<script type="text/javascript">
+			timerId = setTimeout("animate()", 5000);		//Initial timer
+			function animate() {
+				shiftGrid ()
+				checkStairAndContinue ();
+			}
+			function shiftGrid() {
+				for (j = 0; j < 19; j++) {
+					document.images[j].src = document.images[j+1].src;
+				}
+				if (frame == -1)
+					document.images[19].src = pics[randNum(8)].src;
+				else
+					document.images[19].src = pics[frame].src;
+			}
+			function checkStairAndContinue() {
+				if (frame == next1)
+					next1 = next1 + 1;
+				else
+					next1 = 1;
+				if (next1 != 8)
+					timerId = setTimeout("animate()",duration);
+				}
+				function here (pos) {
+					document.images[20+pos].src = "gifpix/YellowBox.gif";
+					frame = pos + 1;
+				}
+				function gone (pos) {
+					document.images[20+pos].src = "gifpix/OrangeBox.gif";
+					frame = 0;
+				}
+				function randNum (range) {							//Rand No. fcn from
+					return Math.floor(range * Math.random());	// Chapter 20
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="UTF-8">
+	<title>Midterm 1 Review (CSCI 201 Spring 2020 - Professor A. A. Anda)</title>
+	<style>
+	    code{font-weight:bold; color:MidnightBlue}
+	</style>
+    </head>
+<body bgcolor="#FFFFFF">
+  <div align="center"><h1>Midterm 1 Review</h1></div>
+   <br><div align="center"><h2>(CSCI 201 Spring 2020 - Professor A. A. Anda)</h2></div> <hr>
+   This exam will be closed book/closed notes with the exception of a review sheet of your own design, and supplements mentioned below.
+   <h2>Unix</h2>
+  <ul>
+    <li>Definition of an <i>operating system</i></li>
+     <li>Hierachical File Structure
+     <ul>
+       <li>Unix: <u>Creation</u>, <u>deletion</u>, <u>renaming</u> and
+       <u>movement</u> of<br>
+        <i><u>files</u></i> and <i><u>directories</u></i>
+       </li>
+       <li>Absolute and relative <i>pathnames</i></li>
+     </ul>
+     </li>
+     <li>Utility Programs</li>
+     <li><u>Octal</u> Permissions for <b>chmod</b></li>
+     <li><u>Redirecting</u> Standard I/O to and from <i>files</i>
+      and <i>programs</i></li>
+     <li> Misc. useful utilities
+  </ul>
+
+ <h2>C++</h2>
+  <ul>
+    <li><h4>Chapter 1 - 5</h4>
+    </li>
+    <ul>
+	<li>Origins of the C++ langugage
+      <li>Structure of a program</li>
+      <li>Identifiers</li>
+      <ul>
+	  <li>rules</li>
+	  <li>reserved words</li>
+	  <li>conventions</li>
+      </ul>
+      <li>Simple Data Types (data types define:)
+    <ul>
+	  <li> size </li>
+	  <li> location </li>
+	  <li> functions </li>
+	  <li> interpretation </li>
+    </ul>
+	<li>Variables
+	<ul>
+	    <li>declaration and definition</li>
+	    <li>initialization</li>
+	    <ul>
+		<li><code>auto</code></li>
+	    </ul>
+	    <li><b>lvalue</b> vs. <b>rvalue</b></li>
+	    <ul>
+		<li><i>only</i> lvalues can be assigned to</li>
+	    </ul>
+	    <li>variables with the same name</li>
+	</ul>
+      <li>Constants and literals</li>
+	<ul>
+	    <li>default sizes</li>
+	    <li>indicating octal and hexadecimal</li>
+	    <li>string <i>vs.</i> character literals</li>
+	</ul>
+	<li>Standard stream I/O
+	<ul>
+	    <li>standard streams</li>
+	    <li>manipulators and flags</li>
+	</ul>
+      </li>
+      <li>General syntactic rules, e.g.
+	    <ul>
+	      <li>cAsE sensitivity</li>
+	      <li>(<i>most</i>) statements terminated by semicolons</li>
+	    </ul>
+      <li>Libraries and namespaces
+      </li>
+    </ul>
+    </li>
+    <ul>
+      <li>expression categories:
+	    <ul>
+	      <li>primary</li>
+	      <li>compound</li>
+	      <li>assignment</li>
+	      <li>operators and operands:</li>
+		    <ul>
+		      <li>unary (1)</li>
+		      <li>binary (2)</li>
+		      <ul>
+			  <li>especially the <i>two</i> integer division operators and their applications and cautions (e.g. % applied last to enforce a range)</li>
+			  <ul>
+			      <li>What are range of values of <code>a % b</code> when, respectively:<br>
+			      <code>a &lt; b</code>, <code>a == b</code>, &amp; <code>a &gt; b</code></li>
+			  </ul>
+		      </ul>
+		      <li>ternary (3)</li>
+		      <li><i>pre</i>fix, <i>in</i>fix, <i>post</i>fix</li>
+		      <li>associativity and precedence<br>
+		    </ul>
+	      <li>side effects</li>
+	      <ul>
+		  <li>Note caution against multiple side effects per variable per expression (e.g. <code>i++ + i++</code>) </li>
+	      </ul>
+	      <li>promotion hierarchy and <code>static_cast</code>ing</li>
+	      <ul>
+		  <li>Note caution against casting too late, e.g. after an integer division</li>
+		  <li>Can cast implicitly to <code>double</code> by multiplying an operand by (1.0).
+	      </ul>
+	    </ul>
+      </li>
+      <li>Statements:
+	    <ul>
+	      <li>null</li>
+	      <li>compound [block], <i>scope</i>,
+	      and the <i>scope resolution operator</i> (<code>::</code>)</li>
+	    </ul>
+      </li>
+      <li>Boolean Expressions</li>
+      <ul>
+	  <li>integral type equivalence</li>
+	  <li>complements</li>
+	  <li>DeMorgan's rule/law</li>
+	  <ul>
+	      <li>before applying DeMorgan's rule to a mixed expression ( <code>&amp;&amp;</code> and <code>||</code> ), remember to first protect with parentheses the operators with the higher precedence (<code>&amp;&amp;</code>).
+	  </ul>
+	  <li>ranges: open vs. closed intervals; expressions for testing inclusion vs. exclusion
+      </ul>
+      <li>Branching Mechanisms</li>
+      <ul>
+	  <li>pairing <code>else</code>s with respective <code>if</code>s</li>
+	  <li>when to use <code>switch</code> vs. <code>if-else</code> statements</li>
+	  <li>when to use <code>break</code>s in <code>switch</code> statements</li>
+      </ul>
+      <li>Loops</li>
+      <ul>
+	  <li><code>while</code> vs. <code>do-while</code> loops</li>
+	  <li><code>while</code> vs. <code>for</code> loops</li>
+	  <li><code>for</code> loops</li>
+	  <ul>
+	      <li><code>break</code> vs <code>continue</code></li>
+	      <ul>
+		  <li><code>continue</code> in a <code>for</code> loop goes directly to the <u>update</u> expression</li>
+		  <li>convert to equivalent <code>while</code> loops</li>
+	      </ul>
+	      <!--
+	      <li>use of <code>enum</code> types as switch statement targets and as loop index variables</li>
+	      -->
+	  </ul>
+	  <li><i>semicolons</i>: after <code>do-while</code> and two as separators in parentheses in head of the <code>for</code> loop
+	  <li>sentinels</li>
+	  <li>nested loops</li>
+	  <li>standard loop applications: <u>sum</u>, <u>product</u>, <u>min</u>, <u>max</u>, <u>any</u>, <u>all</u></li>
+	  <li>use of input stream in <code>while</code> test</li>
+      </ul>
+      <li></li>
+    </ul>
+    </ul>
+    </li>
+    
+    <li><h4>computer number systems</h4>
+    <ul>
+      <li><u>binary</u>, <u>octal</u>, <u>decimal</u>, and
+      <u>hexadecimal</u> systems, their <i>notation</i>
+          and <i>conversion</i></li>
+      <li><u>signed</u> vs. <u>unsigned</u> integers</li>
+      <li>how size relates to range</li>
+      <li>signed and unsigned integers overflow and underflow <u>circularly</u> and <u>silently</u>.
+      <li>floats:
+	      <ul>
+	         <li>how the <u>mantissa</u> and <u>exponent</u> relate to the
+		     <u>precision</u> and <u>range</u></li>
+                <li>how <i>size</i> relates to <u>precision</u> and </li>
+	         <li>how some rules of integer arithmetic don't hold
+		     for floating point types in all cases</li>
+		  <ul>
+		      <li>e.g. floating-point addition is <u>non-associative</u>.  [(big + tiny) + tiny != big + (tiny + tiny)] in all cases.
+		  </ul>
+	      </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4><code>&lt;limits&gt;</code> &amp; <code>&lt;float&gt;</code> libraries</h4>
+    <ul>
+      <li>understand what each constant means</li>
+    </ul>
+    </li>
+    </li>
+    <li><h4>File I/O</h4>
+    <ul>
+	<li>opening files and testing for errors
+	<li>user-specified file names
+	<li>reading from a file
+	<ul>
+	    <li>detecting end-of-file
+	</ul>
+	<li>writing to a file
+    </ul>
+    <li><h4>Preprocessor directives</h4>
+    <ul>
+	<li><code>#include</code></li>
+    </ul>
+    </li>
+    </li>
+  </ul>
+</body>
+</html>

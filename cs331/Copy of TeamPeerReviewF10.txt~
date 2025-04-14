@@ -1,0 +1,47 @@
+CSCI 331 Fall 2010
+		Team peer-reviewing Teams
+
+For each of the following four categories:
+1) rank the projects in quality from 1 (highest) to N (lowest).
+2) state:
+    a) deficiencies
+    b) compliments and remarkable features
+    c) other comments
+
+
+I. 	User Manual
+	a) Presentation Quality
+	b) Accuracy (i.e. did the compile & run instructions & tools, e.g.
+	             makefiles, work properly as described in the manual?)
+	c) Requirements met?
+
+II.	Design Document
+	a) Requirements met?
+	b) In sync w. the code?
+
+III.	Testing
+	a) Requirements met?
+	b) Could you replicate the test results?
+	c) Boundary testing?
+	d) Detects & corrects incomplete or bad indices on startup?
+	e) Data saved at program stop?
+	f) Untested methods?
+
+IV.	Source Code
+	a) Requirements met?
+	b) In sync w. the design document?
+	c) Internal documentation
+	     i) function & file headers
+	    ii) embedded in code
+	d) Incomplete classes (missing methods?)
+	e) C++ (not C) syntax where required
+
+
+Email this to aanda@stcloudstate.edu for each team.
+
+Ensure that each has your team name as reviewer and the team name you are
+reviewing.
+
+For each team you are reviewing, bring to class your ANONYMOUS review on a
+separate sheet of paper (it should differ from what you emailed by only your
+team name.

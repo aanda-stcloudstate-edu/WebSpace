@@ -1,0 +1,182 @@
+<html>
+
+    <head>
+	<title>CSCI 331, Fall 2014, Programming Assignment 1</title>
+    </head>
+
+    <body>
+
+
+<h1>CSCI 331 - Software Systems - Fall 2014</h1>
+<h2>Programming Assignment 1</h2>
+
+<h3><span style='font-size:10.5pt'>PROGRAM 1</span></h3> 
+<h3>PROJECT COLLABORATION TYPE:  <u>Individual</u>.<BR>
+	That means you should do the work on your own. <br>
+	(<i>However, you may discuss this assignment with others</i>)</h3>
+
+<p>
+<h2>THE PROGRAM:</h2>  This is the first and foundational 
+installment of the object-oriented programming (OOP) project for this class.
+It is modeled after the project described in the text book.
+You will need to use the results of this project in subsequent projects so do
+this one carefully and design for change since you will certainly want to
+change what you do here.
+</p>
+
+<ol>
+    <li>Design a class <b>journal</b>.
+    <br>Each object represents a single journal.
+    <br>Members should include:
+    <ul>
+	<li>Data Members
+	<ul>
+	    <li>journal ID key
+	    <li>journal name
+	</ul>
+	<li>Special Methods
+	<ul>
+	    <li>Will display a journal's full name given the ID key, and respond appropriately if no such key exists.
+	</ul>
+    </ul>
+
+    <li>Design a class <b>article_date</b>.
+    <br>Each object represents a single journal article date.
+    <br>Members should include:
+    <ul>
+	<li>month {<i>exploit</i> <a href="http://www.codeproject.com/cpp/EnumerationTypes.asp"><u>enumeration</u></a> <i>here</i>}
+	<li>year
+    </ul>
+
+    <li>Design a class <b>author</b>.
+    <br>Each object represents information about a single person.
+    <br>Members should include
+    <ul>
+	<li>Data Members
+	<ul>
+	    <li>author ID key
+	    <li>last name
+	    <li>first name
+	    <li>middle name (or initial)
+	</ul>
+	<li>Special Methods
+	<ul>
+	    <li>Will display an author's full name given the ID key, and respond appropriately if no such key exists.
+	</ul>
+    </ul>
+
+    <li>Design a class <b>article</b>.
+    <br>Each object represents information about a single article.
+    <br>Members should include:
+    <ul>
+	<li>Data Members
+	<ul>
+	    <li>article ID key
+	    <li>author ID key <u>list</u>
+	    <li>title
+	    <li>journal ID key
+	    <li>volume
+	    <li>number
+	    <li>first page
+	    <li>last page
+	    <li>article_date
+	</ul>
+	<li>Special Methods
+	<ul>
+	    <li>Will display an article's full citation given the ID key, and respond appropriately if no such key exists.
+	</ul>
+    </ul>
+
+    <li>Design a class <b>BibList</b>.
+    <br>Each object represents a list of articles, e.g. those in a journal.
+    <br>Members should include:
+    <ul>
+	<li>Data Members
+	<ul>
+	    <li>BibList identification key
+	    <li>list of article ID keys
+	</ul>
+	<li>Special Methods
+	<ul>
+	    <li>count of articles
+	    <li>count of authors (don't count duplicates - an author listed in more than one article)
+	    <li>output a sorted list of authors, with each author listed only once.  Follow each author's name with the count of articles they appear in.
+	    <li>earliest article_date
+	    <li>latest article_date
+	</ul>
+    </ul>
+
+    <br>For each class, methods should include:
+
+    <ul>
+	<li>constructors
+	<li>destructors
+	<li>assignment (<i>overloaded </i><b><tt>'='</tt></b> <i>operator</i>)
+	<li>mutators (<i>allow modification of each respective field</i>)
+	<li>accessors (<i>allow change-free access to each respective field</i>)
+	<li>dump (<i>for debugging</i>)
+	<li><i>any other methods you think would be useful</i>
+    </ul>
+</ol>
+
+
+<ul>
+    <li>Implement your classes and create a list of <u>authors</u>,
+    a list of <u>articles</u>, and a <u>BibList</u>.
+    <ul>
+	<li>This will be used in subsequent programming projects.
+    </ul>
+    <li>Add methods to the classes to read field values from an input stream and to write the fields of an object to an output stream nicely formatted.
+    <li>You may also want create a function which will prompt a user for all of the field values.
+    <li>Use the C++ stream operations to implement these methods.<br>
+    <li>Use only C++ STL strings and STL vectors (<i>not C array and character arrays</i>), or other STL containers, to implement these methods.<br>
+    <li>Write a driver program to verify that the class along with its methods has been correctly implemented.<br>
+    <li>Use <a href="http://www.stack.nl/~dimitri/doxygen">Doxygen</a> to help document your code.
+    <li>Use <u>makefiles</u> to automate your compilation and testing on <tt>CSCI2</tt> .
+</ul>
+
+<p>
+<h2>WHAT TO SUBMIT:</h2>
+<ol>
+    <li><u>The test document </u>.<br>
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Leave a copy of the source file in your account.<br>
+    The source code should be documented liberally using good style.<br>
+    (<font color="teal">45% of your grade</font>)
+
+    <li><u>The design document</u>.<br>
+    This should be created using <i>Doxygen</i> and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer. (The <tt>CSCI2</tt> system path)<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to make/compile the program. (using a makefile)
+	<li>How to run the program.
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+	<li>A short paragraph describing what you learned from this assignment.
+    </ol>
+	<li>Try to answer the questions:
+	<br>(<font color="teal">5% of your grade</font>)
+    <ul>
+	<li>How much time did you spend on the program?
+	<li>Did you plan well before going to the computer?
+	<li>Did you test the program completely? 
+	<li>Did you learn anything new about the language?
+    </ul>
+</ol>
+
+
+</body>
+
+</html>

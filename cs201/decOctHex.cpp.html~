@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>W:\cs201\decOctHex.cpp.html</title>
+<meta name="Generator" content="Vim/6.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+<font color="#0000ff">/*</font><font color="#0000ff"> Demonstrate numeric literals and manimulators for dec, oct, &amp; hex</font>
+<font color="#0000ff"> * Prof. Anda</font>
+<font color="#0000ff"> * Fall 2003</font>
+<font color="#0000ff"> * csci 201</font>
+<font color="#0000ff"> </font><font color="#0000ff">*/</font>
+<font color="#a020f0">#include </font><font color="#ff00ff">&lt;iostream&gt;</font>
+<font color="#a020f0">#include </font><font color="#ff00ff">&lt;iomanip&gt;</font>
+<font color="#804040"><b>using</b></font> <font color="#2e8b57"><b>namespace</b></font> std;
+<font color="#2e8b57"><b>int</b></font> main ()
+{
+    cout &lt;&lt; oct;
+    cout &lt;&lt; <font color="#ff00ff">&quot;11 in oct: &quot;</font> &lt;&lt; <font color="#ff00ff">11</font> &lt;&lt; endl;
+    cout &lt;&lt; dec;
+    cout &lt;&lt; <font color="#ff00ff">&quot;11 in dec: &quot;</font> &lt;&lt; <font color="#ff00ff">11</font> &lt;&lt; endl;
+    cout &lt;&lt; hex;
+    cout &lt;&lt; <font color="#ff00ff">&quot;11 in hex: &quot;</font> &lt;&lt; <font color="#ff00ff">11</font> &lt;&lt; endl;
+    cout &lt;&lt; oct;
+    cout &lt;&lt; <font color="#ff00ff">&quot;011 in oct: &quot;</font> &lt;&lt; <font color="#a020f0">0</font><font color="#ff00ff">11</font> &lt;&lt; endl;
+    cout &lt;&lt; dec;
+    cout &lt;&lt; <font color="#ff00ff">&quot;011 in dec: &quot;</font> &lt;&lt; <font color="#a020f0">0</font><font color="#ff00ff">11</font> &lt;&lt; endl;
+    cout &lt;&lt; hex;
+    cout &lt;&lt; <font color="#ff00ff">&quot;011 in hex: &quot;</font> &lt;&lt; <font color="#a020f0">0</font><font color="#ff00ff">11</font> &lt;&lt; endl;
+    cout &lt;&lt; oct;
+    cout &lt;&lt; <font color="#ff00ff">&quot;0x11 in oct: &quot;</font> &lt;&lt; <font color="#ff00ff">0x11</font> &lt;&lt; endl;
+    cout &lt;&lt; dec;
+    cout &lt;&lt; <font color="#ff00ff">&quot;0x11 in dec: &quot;</font> &lt;&lt; <font color="#ff00ff">0x11</font> &lt;&lt; endl;
+    cout &lt;&lt; hex;
+    cout &lt;&lt; <font color="#ff00ff">&quot;0x11 in hex: &quot;</font> &lt;&lt; <font color="#ff00ff">0x11</font> &lt;&lt; endl;
+    <font color="#804040"><b>return</b></font> <font color="#ff00ff">0</font>;
+} <font color="#0000ff">// main</font>
+
+</pre>
+<h3>Output</h3>
+<pre>
+11 in oct: 13
+11 in dec: 11
+11 in hex: b
+011 in oct: 11
+011 in dec: 9
+011 in hex: 9
+0x11 in oct: 21
+0x11 in dec: 17
+0x11 in hex: 11
+</pre>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>CSCI 331 Program 1 Assignment 2007</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Lucida Sans Unicode";
+	panose-1:2 11 6 2 3 5 4 2 2 4;}
+@font-face
+	{font-family:"MS Sans Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"MS Sans Serif";}
+h1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;}
+h2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.5in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+h3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Lucida Sans Unicode";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Lucida Sans Unicode";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	background:navy;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Tahoma;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:.5in .9in .6in 1.1in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<h1><span style='font-size:10.5pt;font-family:"Lucida Sans Unicode"'>CSCI 331 -
+Software Systems                                                                                </span></h1>
+
+<h3><span style='font-size:10.5pt'>PROGRAM 1</span></h3> 
+<h3>PROJECT COLLABORATION TYPE:  <u>Individual</u>.<BR>
+	That means you should do the work on your own. <br>
+	(<i>However, you may discuss with others</i>)</h3>
+
+<p>
+<h2>THE PROGRAM:</h2>  This is the first and foundational 
+installment of the object-oriented programming (OOP) project for this class.
+It is modeled after the project described in the text book.
+You will need to use the results of this project in subsequent projects so do
+this one carefully and design for change since you will certainly want to
+change what you do here.
+</p>
+
+<ol>
+    <li>Design a class <b>journal</b>.
+    <br>Each object represents a single journal.
+    <br>Members should include:
+    <ul>
+	<li>journal identification key
+	<li>journal name
+    </ul>
+
+    <li>Design a class <b>article_date</b>.
+    <br>Each object represents a single journal article date.
+    <br>Members should include:
+    <ul>
+	<li>month {<i>exploit</i> <a href="http://www.codeproject.com/cpp/EnumerationTypes.asp"><u>enumeration</u></a> <i>here</i>}
+	<li>year
+    </ul>
+
+    <li>Design a class <b>author</b>.
+    <br>Each object represents information about a single person.
+    <br>Members should include
+    <ul>
+	<li>author identification key
+	<li>last name
+	<li>first name
+	<li>middle name (or initial)
+    </ul>
+
+    <li>Design a class <b>article</b>.
+    <br>Each object represents information about a single article.
+    <br>Members should include:
+    <ul>
+	<li> Mandatory Fields
+	<ul>
+	    <li>article identification key
+	    <li>author ID list
+	    <li>count of authors
+	    <li>title
+	    <li>journal identification key
+	    <li>volume
+	    <li>number
+	    <li>pages
+	    <li>count of pages
+	    <li>article_date
+	</ul>
+    </ul>
+
+    <li>Design a class <b>BibList</b>.
+    <br>Each object represents a list of articles in a journal.
+    <br>Members should include:
+    <ul>
+	<li>BibList identification key
+	<li>list of article ID keys
+	<li>count of articles
+	<li>initial article_date
+	<li>terminal article_date
+	<li><font color="cyan">[EXTRA CREDIT:] count of authors (<i>each author contributes to count once and only once</i>)</font>
+    </ul>
+
+    <br>For each class, methods should include:
+
+    <ul>
+	<li>constructors
+	<li>destructors
+	<li>assignment (<i>overloaded </i><b><tt>'='</tt></b> <i>operator</i>)
+	<li>mutators (<i>allow modification of each respective field</i>)
+	<li>accessors (<i>allow change-free access to each respective field</i>)
+	<li>dump (<i>for debugging</i>)
+    </ul>
+</ol>
+
+
+<ul>
+    <li>Implement your classes and create a list of <u>authors</u>,
+    a list of <u>articles</u>, and a <u>BibList</u>.
+    <ul>
+	<li>This will be used in subsequent programming projects.
+    </ul>
+    <li>Add methods to the classes to read field values from an input stream
+    and to write the fields of an object to an output stream nicely formatted.<br>
+    <li>You may also want to be able to prompt a user to enter the field values.<br>
+    <li>Use the C++ stream operations to implement these methods.<br>
+    <li>Use only C++ strings (<i>not C character arrays</i>) to implement these methods.<br>
+    <li>Write a driver program to verify that the class along with its
+    methods has been correctly implemented.<br>
+</ul>
+
+<p>
+<h2>WHAT TO SUBMIT:</h2>
+<ol>
+    <li><u>The test document </u>.<br>
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Leave a copy of the source file in your account.<br>
+    The source code should be documented liberally using good style.<br>
+    (see the <tt>enscript</tt> manpage to see how to generate a color HTML
+    syntax highlighted display copy of your code)
+    (<font color="teal">45% of your grade</font>)
+
+    <li><u>The design document</u>.<br>
+    This should be created using <i>Doxygen</i> and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer. (The <tt>csci</tt> system path)<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to make/compile the program. (using a makefile)
+	<li>How to run the program.
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+	<li>A short paragraph describing what you learned from this assignment.
+    </ol>
+	<li>Try to answer the questions:
+	<br>(<font color="teal">5% of your grade</font>)
+    <ul>
+	<li>How much time did you spend on the program?
+	<li>Did you plan well before going to the computer?
+	<li>Did you test the program completely? 
+	<li>Did you learn anything new about the language?
+    </ul>
+</ol>
+
+</div>
+
+</body>
+
+</html>

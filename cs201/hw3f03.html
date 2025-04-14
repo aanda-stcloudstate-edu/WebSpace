@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Homework Assignment 3: Chapter 3 [A. A. Anda]</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Fall, 2003<br>
+  [A. A. Anda]
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Homework Assignment 3: Chapter 3 </b><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For the following problem which you will solve:
+<ol type=I>
+    <li>your <b>name</b>, <b>section</b>, <b>course</b>, <b>date</b>, and <b>assignment number</b> will appear as comments at the top of your source code.
+    <P>
+    <li>the <b>purpose</b> of the program will also appear as comments at the top of your source code.
+    <P>
+    <li>follow closely the coding style of the text (e.g. programs 2-10 -- 2-13).
+    <P>
+    <li>compile your code with <tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i> (ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains the source code followed by a demonstration of the (possibly interactive) running of your program (on good test data). (for each program) You will print out and hand in these three files.
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<h3>Objective:</h3>
+
+This assignment is designed to provide you with problem solving experience
+involving writing a program which includes a wide variety of more
+complicated expressions and input and output.
+No functions, conditionals, loops, or user defined data structures are
+necessary to solve this problem.
+
+<h3>Problem:</h3>
+
+Design a program which approximates the <u>sine</u> and <u>cosine</u>
+function for an arbitrary <u>positive integer degree</u> argument.
+
+<h3>Specifications:</h3>
+
+The size of the integer argument may be up to the limit for the int type size.
+The interactive output will conform to the following example:
+
+<P>
+<HR>
+<tt><pre>
+    CSCI 201 [&lt;sect. # here&gt;]
+    Programmer: &lt;your name here&gt;
+    Program 2 output
+    
+    Enter degrees as a non-negative integer
+
+    719
+
+    The exact value of sin(719) is -0.0174524
+
+    The 5 term expansion sine approximation is -0.0175487
+    This approximation is within -0.551745% of the true value
+
+    The exact value of cos(719) is 0.999848
+
+    The 5 term expansion cosine approximation is 0.999846
+    This approximation is within 0.00016846% of the true value
+		
+</pre></tt>
+<HR>
+<ul>
+    <li> Use compound assignment expressions whenever possible.
+
+    <li> Use the Unix command [ script -a script_file_name] to generate
+	a copy of your I/O from running your program.
+    <br>(refer to: [man script] for usage instructions)
+
+    <li> To get the most accurate value of Pi, first include the <math.h>
+    library.  Then place the statement:
+    <br><tt>const double Pi = 4 * atan(1.0)</tt>;
+	<br>in the global declaration section of your program.
+	<br>{<tt>atan()</tt> is the C++ library function for the inverse tangent.
+	<br>Can you deduce why the above formula yields a representation of Pi?}
+
+	<li> Use <b>double</b>, rather than <b>float</b>, for your floating point variable type.
+
+    <li> Use the following algorithm to compute sine and cosine:
+    <ol>
+	<li> Convert degrees to radians: <br>
+	{We will <i>divide by 4</i> to reduce the angle for accuracy.  We'll then
+	<i>restore</i> the angle after computing the reduced angle approximation}
+	<ol>
+	    <li> reduce degrees to the unit circle <br>
+		( remainder of dividing degrees by 360)
+	    <li> convert to radians divided by 4 ( multiply the above by Pi/720)
+	</ol>
+	(this value will be the &quot;x&quot; in the following formulae)
+	<li> Use a 5 term series expansion for approximating the angle's <u>sine</u>:
+	<br>{&quot;^&quot; indicates power or exponentiation, e.g.,
+	<tt>x^5 = x*x*x*x*x</tt>}
+	    <br>{&quot;!&quot; indicates factorial, e.g., <tt>5! = 1*2*3*4*5</tt>}
+	    <br>{neither &quot;!&quot; nor &quot;^&quot; are operators in C++}<br>
+	    <br><tt>sinx = sin(x) = x - (x^3)/(3!) + (x^5)/(5!) - (x^7)/(7!) + (x^9)/(9!)</tt><br><br>
+	<li> Use a 5 term series expansion for approximating the angle's <u>cosine</u>:<br>
+	    <br><tt>cosx = cos(x) = 1 - (x^2)/(2!) + (x^4)/(4!) - (x^6)/(6!) + (x^8)/(8!)</tt><br><br>
+	<li> <i>Express the above series in a manner such that each term is
+		a product of the previous term times another factor.</i>
+	<li> Compute the approximations to the original angles by using the
+	    following formulae for 4 times the angle:
+	<ol>
+	    <li> <tt>sin4x = sin(4x) = 8 sin(x) cos^3(x) - 4 sin(x) cos(x)</tt>
+	    <li> <tt>cos4x = cos(4x) = 1 - 8 cos^2(x) + 8 cos^4(x)</tt>
+	</ol>
+	{ <i>Using factorization, can you write the each of the above formulae
+	    using fewer operations?</i>}
+	<li> Compute the <i>true</i> <u>Sine</u> and <u>Cosine</u>
+	    using the <math.h> library functions:<br>
+	<tt> trueSine = sin(4 * x), and trueCosine = cos(4 * x)</tt>.
+	<li> Compute the closeness percentage for each using the following
+	    formula:<br>
+
+	    <tt>approxPercent = 100 * (true - approx)/true </tt><br>
+    </ol>
+    <li> Maximize the readability of your program.  Follow the guidelines in
+      [Appendix H] unless you can apply a more readable alternative in a
+      particular context in your program.
+	  <ul>
+	      <li> Use comments to identify yourself, the date, the course and section, and the purpose of the program -- all at the top of your program.
+
+	      <li> Use descriptive comments and identifiers throughout your code.
+      </ul>
+
+</ul>
+<h3>SUBMIT:</h3>
+
+<ul>
+    <li> A listing of your source.
+    <li> A copy {using the Unix [script] command} of your programs output for the following data values: <u>359</u>, <u>719</u>, <u>1</u>, <u>35641</u>, <u>35639</u>.
+
+</ul>
+<HR>
+<DIV ALIGN=center>
+   All pages should be stapled together.
+</DIV>
+<HR>
+</BODY>
+</HTML>
+

@@ -1,0 +1,113 @@
+/*	This program tests the binary search with pointers.
+	   Written by:
+	   Date written:
+*/
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+const int SIZE = 9;
+
+//	Prototype Declarations 
+bool binarySearch (int   list[ ], int*  endPtr,
+                   int   target,  int** locnPtr);
+
+int main ()
+{
+
+//	Local Declarations 
+	int * pLocn;
+	int ary[ SIZE ] = {1, 9, 10, 13, 14, 19, 21, 58, 64};
+	
+//	Statements 
+	cout << "\nIndexes  : ";
+	for (int i = 0; i < SIZE; i++) 
+		cout << setw(3) << i;
+
+	cout << "\nList data: ";
+ 	for (int i = 0; i < SIZE; i++) 
+		cout << setw(3) << ary[i];
+	cout << endl;
+ 	 	
+ 	if (binarySearch (ary, ary + SIZE - 1,  1, &pLocn)) 	
+		cout << "Found  1 at location " << pLocn - ary << endl;
+ 	else
+ 		cout << " 1 Not Found at      " << pLocn - ary << endl;
+
+ 	if (binarySearch (ary, ary + SIZE - 1,  9, &pLocn)) 
+		cout << "Found  9 at location " << pLocn - ary << endl;
+ 	else
+ 		cout << " 9 Not Found at      " << pLocn - ary << endl;
+ 	
+ 	if (binarySearch (ary, ary + SIZE - 1,  64, &pLocn)) 
+		cout << "Found 64 at location " << pLocn - ary << endl;
+ 	else
+ 		cout << "64 Not Found at      " << pLocn - ary << endl;
+
+ 	if (binarySearch (ary, ary + SIZE - 1,  -4, &pLocn)) 	
+		cout << "Found -4 at location " << pLocn - ary << endl;
+ 	else
+ 		cout << "-4 Not Found at      " << ary - pLocn << endl;
+
+ 	if (binarySearch (ary, ary + SIZE - 1,  33, &pLocn)) 	
+		cout << "Found 33 at location " << pLocn - ary << endl;
+ 	else
+ 		cout << "33 Not Found at      " << pLocn - ary << endl;
+
+ 	if (binarySearch (ary, ary + SIZE - 1,  93, &pLocn)) 
+		cout << "Found 93 at location " << pLocn - ary << endl;
+	else
+ 		cout << "93 Not Found at      " << pLocn - ary << endl;
+
+	 return 0;
+}  // main 
+
+/*	Search an ordered list using binary search. 
+	Pre  list: must contain at least one element
+	     endPtr: pointer to largest element in list
+	     target: is the value of element being sought
+	Post FOUND: locnPtr pointer to target element 
+	            return true (found)
+	     NOT FOUND: locnPtr = element below|above target 
+	            return false (not found)
+*/
+bool binarySearch (int list[ ], int*  endPtr,
+                   int target,  int** locnPtr)
+{
+	int* midPtr;
+	
+	int* firstPtr = list;
+	int* lastPtr = endPtr;
+	while (firstPtr <= lastPtr)
+	   {
+	    midPtr = firstPtr + (lastPtr - firstPtr) / 2;
+	    if (target > *midPtr)
+	      // look in upper half 
+	      firstPtr = midPtr + 1;
+	    else if (target < *midPtr)
+	         // look in lower half 
+	         lastPtr = midPtr - 1;
+	    else
+	         // found equal: force exit 
+	         firstPtr = lastPtr + 1;
+	   } // end while 
+	*locnPtr = midPtr;
+	return (target == *midPtr);
+}	// binarySearch 
+
+//	================= End of Program ================= 
+
+
+/*
+Results:
+
+Indexes  :   0  1  2  3  4  5  6  7  8
+List data:   1  9 10 13 14 19 21 58 64
+Found  1 at location 0
+Found  9 at location 1
+Found 64 at location 8
+-4 Not Found at      0
+33 Not Found at      7
+93 Not Found at      8
+
+*/

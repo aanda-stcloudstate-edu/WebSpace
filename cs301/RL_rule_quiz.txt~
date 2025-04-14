@@ -1,0 +1,52 @@
+CSCI 201 A.A.Anda  In Class Right-Left Rule Exercises
+
+1) Declare a 9 element array of pointers to int type
+
+    ___________________________________
+
+2) Declare a pointer to a 9 element array of int type
+
+    ___________________________________
+
+3) Declare a pointer to a 9 element array of pointers to int type
+
+    ___________________________________
+
+4) Declare a function returning a pointer to a int type
+
+    ___________________________________
+
+5) Declare a pointer to a function returning int type
+
+    ___________________________________
+
+6) Declare a function returning a pointer to an array of int type
+
+    ___________________________________
+
+7) Declare an array of functions returning a pointer of int type
+
+    ___________________________________
+
+8) Declare a pointer to an array of functions returning int type
+
+    ___________________________________
+
+9) Declare a pointer to an array of functions returning a pointer to int type
+
+    ___________________________________
+
+10) Declare both valid orderings for a pointer to a const int type
+
+    ___________________________________
+
+    ___________________________________
+
+11) Declare (and initialize) a const pointer to an int type
+
+    ___________________________________
+
+12) Declare (and initialize) a const pointer to a const int type
+
+    ___________________________________
+

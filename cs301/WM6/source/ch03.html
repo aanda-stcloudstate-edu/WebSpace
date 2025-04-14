@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+  <meta name="ProgId" content="FrontPage.Editor.Document">
+  <title>Code Listings Chapter 2</title>
+  <meta name="Microsoft Theme" content="glacier 011">
+</head>
+<body vlink="#999999" alink="#66cccc" background="glabkgnd.jpg"
+ bgcolor="#99ccff" link="#006666" text="#000000">
+<h1 align="center">Code Listings Chapter 3</h1>
+<div style="text-align: center;"><a
+ href="#Listing%203-1%20The%20header%20file%20for%20the%20class%20ArrayBag">Listing
+3-1</a><br>
+<a
+ href="#Listing%203-2%20A%20program%20that%20tests%20the%20core%20methods%20of%20the%20class%20ArrayBag">Listing
+3-2</a><br>
+<a href="#Output,%203-2">Output 3-2</a><br>
+</div>
+<br>
+<p align="center">&nbsp;</p>
+<div align="center">
+<center>
+<table bordercolorlight="#99CCCC" bordercolordark="#000000" width="65%"
+ border="1">
+  <tbody>
+    <tr>
+      <td width="100%">
+      <h3 align="center"> <a
+ name="Listing 3-1 The header file for the class ArrayBag">Listing 3-1
+The header file for the class <font face="Courier New">ArrayBag</font></a></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font color="#0000ff" size="3">/** Header file for an array-based implementation of the ADT bag.<br>@file ArrayBag.h */<br># ifndef _ARRAY_BAG<br># define _ARRAY_BAG<br># include "BagInterface.h"<br>template &lt; class ItemType &gt;<br>class ArrayBag:<br>public BagInterface &lt; ItemType &gt;<br>{<br>    private:<br>    static const int DEFAULT_CAPACITY = 6; // Small size to test for a full bag<br>    ItemType items [DEFAULT_CAPACITY]; // Array of bag items<br>    int itemCount; // Current count of bag items<br>    int maxItems; // Max capacity of the bag<br>    // Returns either the index of the element in the array items that<br>    // contains the given target or -1, if the array does not contain<br>    // the target.<br>    int getIndexOf (const ItemType &amp; target) const;<br>    public:<br>    ArrayBag ();<br>    int getCurrentSize () const;<br>    bool isEmpty () const;<br>    bool add (const ItemType &amp; newEntry);<br>    bool remove (const ItemType &amp; anEntry);<br>    void clear ();<br>    bool contains (const ItemType &amp; anEntry) const;<br>    int getFrequencyOf (const ItemType &amp; anEntry) const;<br>    vector &lt; ItemType &gt; toVector () const;<br>}<br>;  // end ArrayBag<br># include "ArrayBag.cpp"<br># endif</font></b></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+</div>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+<center>
+<table bordercolorlight="#99CCCC" bordercolordark="#000000" width="65%"
+ border="1">
+  <tbody>
+    <tr>
+      <td width="100%">
+      <h3 align="center"> <a
+ name="Listing 3-2 A program that tests the core methods of the class ArrayBag">
+Listing 3-2 A program that tests the core methods of the class <font
+ face="Courier New">ArrayBag</font></a></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font color="#0000ff" size="3"># include &lt; iostream &gt;<br>    # include &lt; string &gt;<br>    # include "ArrayBag.h"<br>    using namespace std;<br>void displayBag (ArrayBag &lt; string &gt; &amp; bag)<br>{<br>    cout &lt;&lt; "The bag contains " &lt;&lt; bag.getCurrentSize ()<br>        &lt;&lt; " items:" &lt;&lt; endl;<br>    vector &lt; string &gt; bagItems bag.toVector ();<br>    int numberOfEntries = (int) bagItems.size ();<br>    for (int i = 0 ; i &lt; numberOfEntries ; i++)<br>    {<br>        cout &lt;&lt; bagItems [i] &lt;&lt; " ";<br>    } // end for<br>    cout &lt;&lt; endl &lt;&lt; endl;<br>} // end displayBag</font></b></pre>
+      <pre><b><font color="#0000ff" size="3">
+void bagTester (ArrayBag &lt; string &gt; &amp; bag)
+{
+    cout &lt;&lt; "isEmpty: returns " &lt;&lt; bag.isEmpty ()
+        &lt;&lt; "; should be 1 (true)" &lt;&lt; endl;
+    displayBag (bag);
+    string items [] = {"one", "two", "three", "four", "five", "one"};
+    cout &lt;&lt; "Add 6 items to the bag: " &lt;&lt; endl;
+    for (int i = 0 ; i &lt; 6 ; i++)
+    {
+        bag.add (items [i]);
+    } // end for
+
+
+    displayBag (bag);
+    cout &lt;&lt; "isEmpty: returns " &lt;&lt; bag.isEmpty ()
+        &lt;&lt; "; should be 0 (false)" &lt;&lt; endl;
+    cout &lt;&lt; "getCurrentSize: returns " &lt;&lt; bag.getCurrentSize ()
+        &lt;&lt; "; should be 6" &lt;&lt; endl;
+    cout &lt;&lt; "Try to add another entry: add(\"extra\") returns "
+        &lt;&lt; bag.add ("extra") &lt;&lt; endl;
+} // end bagTester</font></b></pre>
+      <pre><b><font color="#0000ff" size="3">
+int main ()
+{
+    ArrayBag &lt; string &gt; bag;
+    cout &lt;&lt; "Testing the Array-Based Bag:" &lt;&lt; endl;
+    cout &lt;&lt; "The initial bag is empty." &lt;&lt; endl;
+    bagTester (bag);
+    cout &lt;&lt; "All done!" &lt;&lt; endl;
+    return 0;
+} // end main</font></b></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+</div>
+<p>&nbsp;</p>
+<div align="center">
+<center>
+<table bordercolorlight="#99CCCC" bordercolordark="#000000" width="48%"
+ border="1">
+  <tbody>
+    <tr>
+      <td width="100%">
+      <h3 align="center"><a name="Output, 3-2">Output, 3-2</a></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#000000">
+      <pre><b><font color="#ffffff" face="Courier New" size="4">Testing the Array-Based Bag:<br>The initial bag is empty.<br>isEmpty: returns 1; should be 1 (true)<br>The bag contains 0 items:<br>Add 6 items to the bag:<br>The bag contains 6 items:<br>one two three four five one<br>isEmpty: returns 0; should be 0 (false)<br>getCurrentSize: returns 6; should be 6<br>Try to add another entry: add("extra") returns 0<br>All done!<br></font></b></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+</div>
+<p>&nbsp;</p>
+<br>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+<title>SCSU CSCI Computing Ethics 332 Spring 2022 Syllabus</title>
+<meta name="Generator" content="Vim/6.3">
+<meta charset="UTF-8">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+                        CSCI 332 (Secs. [1 &amp; 2])
+			Course IDs: [001363 &amp; 001368]
+                        Computing Ethics
+                        Spring 2022 SYLLABUS
+
+INSTRUCTOR:     Andrew A. Anda, Ph.D., Professor of Computer Science
+OFFICE:         ECC-223          Telephone:     (320) 308-2044
+E-MAIL:         aanda@stcloudstate.edu      (prefix all "<b>Subject:</b>" text with "<b>CSCI 332:</b>" for emails relating to this class)
+Web Site:       <A HREF="http://web.stcloudstate.edu/aanda/cs332.html">http://web.stcloudstate.edu/aanda/cs332.html</A>
+INSTRUCTOR'S WEEKLY SCHEDULE:
+                <A HREF="http://web.stcloudstate.edu/aanda/Wkly-sched-w22.pdf">http://web.stcloudstate.edu/aanda/Wkly-sched-w22.pdf</A>
+    (and by appointment)
+Student Office Hours: <A HREF="https://minnstate.zoom.us/j/91845917984">https://minnstate.zoom.us/j/91845917984</A>
+        Invitation:   <A HREF="http://web.stcloudstate.edu/aanda/Covid/StudentOfficeHoursZoom.txt">Student Office Hours Zoom invitation text</A>
+	{I sometimes won't be available for an office hour - this will usually be because I'm attending a meeting}
+
+Content Delivery and Accessibility:
+I plan to teach Hyflex using a blend of synchronous and asynchronous delivery via Zoom and D2L,
+where it should make no effective and essential difference whether at any time you are F2F or remote.
+I intend to record and post all lectures.  And, most materials will be available through D2L.
+Student submissions of quizzes, assignments, notes, etc. will be via a D2L dropbox.
+This plan should maximize flexibility for both you and me to adapt to whatever factors change progressively
+or suddenly for either you or me.
+You will never be expected to be F2F in our classroom.
+I default to synchronous delivery.
+
+
+CLASS TIME AND LOCATION:
+
+    {Lecture recordings will be posted to the D2L Discussion forum}
+
+    <b>Sec 1</b>: T Th  9:30 -  10:45 in ECC-117
+
+	Lecture Zoom Meeting ID: <A HREF="https://minnstate.zoom.us/j/91914059200">https://minnstate.zoom.us/j/91914059200</A>
+	    Invitation:   <A HREF="http://web.stcloudstate.edu/aanda/Covid/Spring2022/CSCI332S1_Zoom_invitation.txt">CSCI 332 Sect. 1 Lecture Zoom invitation text</A>
+
+    <b>Sec 2</b>: T Th  11:00 - 12:15 in ECC-117
+
+	Lecture Zoom Meeting ID: <A HREF="https://minnstate.zoom.us/j/98805900170">https://minnstate.zoom.us/j/98805900170</A>
+	    Invitation:   <A HREF="http://web.stcloudstate.edu/aanda/Covid/Spring2022/CSCI332S2_Zoom_invitation.txt">CSCI 332 Sect. 2 Lecture Zoom invitation text</A>
+
+
+REQUIRED TEXTS: * A Gift of Fire: Social, Legal, and Ethical Issues for
+                Computing and the Internet, 5th Ed. [paperback], Sara Baase &amp; Timothy M. Henry,
+                    Prentice Hall, 2018; ISBN-13: 9780134615394.
+                * Infotopia: How Many Minds Produce Knowledge [paperback],
+                    Cass R. Sunstein, Oxford U. Press, 2008; ISBN-13: 978-0195340679
+                * The Origins of Virtue: Human Instincts and the Evolution of
+                    Cooperation [paperback], Matt Ridley, Penguin, 1996; ISBN-13: 978-0140264456
+                * additional materials posted in D2L
+		* CSCI332 Website
+
+COURSE DESCRIPTION:
+    Issues of software reliability and risk, private property, gender,
+    minority, multicultural perspectives, privacy, the effect of value
+    systems of computer science.  Issues of computer ethics affecting
+    individuals and society.
+
+COURSE GOALS:
+    * History of computing: Prehistory -- the world before 1946; history
+      of computer hardware, software, networking; pioneers of computing.
+    * Social context of computing: introduction to the social implications of
+      computing; social implications of networked communication; growth of,
+      control of, and access to the Internet; gender-related issues;
+      international issues.
+    * Methods and tools of analysis: Making and evaluating ethical arguments;
+      identifying and evaluating ethical choices; understanding the social
+      context of design; identifying assumptions and values.
+    * Professional and ethical responsibilities: Community values and the
+      laws by which we live; the nature of professionalism; various forms of
+      professional credentialing and the advantages and disadvantages; the
+      role of the professional in public policy; maintaining awareness of
+      consequences; ethical dissent and whistle-blowing; codes of ethics,
+      conduct, and practice; dealing with harrassment and discrimination;
+      &quot;acceptable use&quot; policies for computing in the workplace.
+    * Risks and liabilities of computer-based systems: Historical examples of
+      software risks; implications of software complexity; risk assessment
+      and management.
+    * Intellectual property: Foundations of intellectual property; copyrights,
+      patents, and trade secrets; software piracy; software patents;
+      transnational issues concerning intellectual property.
+    * Privacy and civil liberties: Ethical and legal bases for privacy
+      protection; privacy implications of massive database systems;
+      technological strategies for privacy protection; freedom of expression
+      in cyberspace; international and intercultural implications.
+    * Computer crime: History and examples of computer crime; &quot;Cracking&quot;
+      and its effects; viruses, worms, and Trojan horses; crime prevention
+      strategies.
+    * Economic issues in computing: Monopolies and their ec:onomic implications;
+      effect of skilled labor supply and demand on the quality of computing
+      products; pricing strategies in the computing domain; differences in
+      access to computing resources and the possible effects thereof.
+    * Philosophical frameworks: philosophical frameworks, particularly
+      utilitarianism and deontological theories; problems of ethical
+      relativism; scientific ethics in historical perspective; differences
+      in scientific and philosophical approaches.
+    * Cognitive factors: heuristics and cognitive biases. 
+      Factors which affect our cognition and rationality.
+
+PREREQUISITES:
+    Computer Science majors: CSCI 331 and CSCI 310 and CSCI 320
+    Cybersecurity majors: CNA 425 and CNA 426 and CNA 438 and CNA 430.
+    Senior-level standing encouraged.
+
+ASSIGNMENTS:
+    Assignments are due at the beginning of class on the due-date or in their
+    D2L dropbox by their due-date and time.
+    Late work will be accepted only by prior arrangement.
+
+ACADEMIC HONESTY:
+    You are expected to do your own work.  If you copy someone else's work
+    or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.
+
+ATTENDANCE &amp; CONDUCT:
+    You are responsible for knowing what happens at each class meeting.
+    Do not engage in disruptive or distracting activities. (this includes
+    allowing your cell phone to ring audibly during class)
+
+EXAMS:
+    Make-up exams will be given in only in extreme (or university sanctioned)
+    circumstances, and only with prior notice.
+
+GRADING:
+    Your grade will be determined by the contributions of your scores
+    on recorded notes, assignments, and D2L Quizes. 
+
+APPROXIMATE POINTS:
+        Weekly Notes            15%
+        D2L Quizes              70%
+        Final Exam (D2l Quiz)   15%
+
+
+FINAL EXAM SCHEDULE: Sec. 1: Tuesday,  May 3 9:55 - 12:10 in ECC-117 (D2L Quiz).
+                     Sec. 2: Thursday, May 5 9:55 - 12:10 in ECC-117 (D2L Quiz).
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************
+*******************************************************************************
+<h2>Student Resource and Support Guide</h2>
+<a HREF="https://web.stcloudstate.edu/aanda/Covid/Spring2022/Spring2022StudentResourceSupportGuide.pdf">Student Resource and Support Guide for Spring 2022</a>
+*******************************************************************************
+<h3>Peer Wellness Coaching</h3>
+<a HREF="https://www.stcloudstate.edu/healthwellness/get-healthy/peer-coaching.aspx">https://www.stcloudstate.edu/healthwellness/get-healthy/peer-coaching.aspx</a>
+*******************************************************************************
+<h3>Accommodations Statement</h3>
+St. Cloud State is an affirmative action, equal opportunity employer and educator.
+
+SCSU is committed to a policy of nondiscrimination in employment and education opportunity and works
+    to provide reasonable accommodations for all persons with disabilities.
+
+Accommodations are provided on an individualized, as-needed basis,
+    determined through appropriate documentation of need.
+
+Please contact Student Disability Services, sds@stcloudstate.edu,  or 320.308.4080, office CH 202
+    to meet and discuss reasonable and appropriate accommodations. 
+
+The accommodations authorized may be discussed with your instructor.
+
+All discussions will remain confidential.
+*******************************************************************************
+</pre>
+SAFETY:
+    What to do if you have experienced sexual assault, rape, domestic violence, sexual harassment or stalking:
+    Please read this resource: 
+    [<A HREF="https://www5.stcloudstate.edu/Policies/SCSU/Viewer.aspx?id=60">https://www5.stcloudstate.edu/Policies/SCSU/Viewer.aspx?id=60</A>]
+    Your professors fulfil the role of mandatory reporters.  If you want to speak confidentially, see the above link for
+    a list of confidential options.
+<h3>Violence Statement</h3>
+<pre>
+In the event that you choose to write or speak about having survived sexualized violence,
+including rape, sexual assault, dating violence, domestic violence, or stalking,
+and specify that this violence occurred while you were an SCSU student,
+federal and state education laws require that, as your instructor,
+I notify the Title IX officer, Ellyn Bartges. 
+
+She (or her designee), will contact you to let you know about accommodations and
+support services at SCSU and possibilities for holding accountable the person who harmed you.
+
+If you do not want the Title IX Officer notified, instead of disclosing this information to your instructor,
+you can speak confidentially with the following people on campus and in the community. 
+
+They can connect you with support services and discuss options for holding the perpetrator accountable.
+ 
+SCSU's Gender Violence Prevention Program      320.308.3995      Lee LaDue
+ 
+Central Mn Sexual Assault Center (Community program)    320.251.4357      24-hour hotline
+  
+SCSU's Counseling and Psychological Services       320-308-3171
+ 
+If you are a survivor or someone concerned about a survivor and need immediate information on what to do, please go to: <A HREF="http://www.stcloudstate.edu/womenscenter/">http://www.stcloudstate.edu/womenscenter/</A>
+</pre>
+</body>
+</html>

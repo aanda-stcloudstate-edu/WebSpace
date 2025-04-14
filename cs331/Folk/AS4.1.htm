@@ -1,0 +1,545 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Chapter 7</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Comic Sans MS";
+	panose-1:3 15 7 2 3 3 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:150%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Comic Sans MS";
+	font-weight:normal;}
+h2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Comic Sans MS";
+	font-weight:normal;}
+h3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:150%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Comic Sans MS";}
+h4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:121.5pt;
+	margin-bottom:.0001pt;
+	text-indent:-121.5pt;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Comic Sans MS";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	line-height:150%;
+	font-size:14.0pt;
+	font-family:"Comic Sans MS";}
+ /* Page Definitions */
+ @page Section1
+	{size:11.0in 8.5in;
+	margin:1.0in 1.2in 1.0in 1.2in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Chapter 4 Fundamental File Structure Concepts</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Fields and Records</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Classes for buffers of records</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>A stream:  &lt;&lt;  ( in C++)</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Just put the characters to the file
+designated.  </span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>There is no way to get it apart once the data
+is in the stream</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>We loose the fundamental pieces</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Fields:  The smallest meaningful unit of
+information in a file</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>So how do we change the way we view data or
+write it out so we can get it back?</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>This is the question we need to answer in
+this class.</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>There are 4 basic methods for organizing
+fields so we can retrieve the data.</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:20.25pt;text-indent:-20.25pt;line-height:150%'><span
+style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Each
+field is given a fixed length</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=672 height=132
+src="AS4.1_files/image001.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>We
+have to pad (with blanks) when the contents does not need all the space</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>We
+have to truncate when the data is too long for the space.</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>This
+is the easiest technique so it is appropriate to use if the data has a natural
+size.</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:20.25pt;text-indent:-20.25pt;line-height:150%'><span
+style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Each
+field begins with a length indicator (Length-Based)</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=672 height=132
+src="AS4.1_files/image002.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>If
+we are lucky we can store the length in 2 bytes (256)</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>It
+takes time to calculate the lengths</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>This
+works well for data that has a natural wide variation in size</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:20.25pt;text-indent:-20.25pt;line-height:150%'><span
+style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Separate
+the fields with delimiters</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=672 height=132
+src="AS4.1_files/image003.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>the
+delimiter cannot be something that would occur in the data</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>white-space,
+blank, newline, tab can often be used in character data</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>but
+can’t be used in addresses</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:20.25pt;text-indent:-20.25pt;line-height:150%'><span
+style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Use
+“Keyword = Value” expressions</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=720 height=180
+src="AS4.1_files/image004.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Still
+requires a delimiter but the fields can be written in any order</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Takes
+a lot of space</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>looking
+at a dump will tell you what is in the file</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>programs
+don’t have to know how the data is stored</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Records:  Collection of fields that we want,
+sometimes, to treat as an aggregate.</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:1.0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Records can be fixed in length or variable in
+length.</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>How do we organize the records so that we
+know when one record stops and the next begins?</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Fixed
+Length Records</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:1.0in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Requires
+the records be a fixed number of bytes in length</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:1.0in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Most
+common because they are the easiest</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:1.0in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Within
+each record we can use any of the field storage techniques</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.75in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.75in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.75in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=672 height=126
+src="AS4.1_files/image005.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.75in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Use fixed length fields</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=672 height=132
+src="AS4.1_files/image006.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.75in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Use delimited fields</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=672 height=126
+src="AS4.1_files/image007.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.75in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Use field counts</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Variable
+length record fixed number of fields</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>uses delimiters or counts to distinguish the
+fields</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=768 height=132
+src="AS4.1_files/image008.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=822 height=126
+src="AS4.1_files/image009.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Each
+record has a length indicator</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>can use counts or delimiters to distinguish
+the fields</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>you don’t need a fixed number of fields</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=768 height=132
+src="AS4.1_files/image010.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>Use
+an index to keep track of the start of each record</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>You can use this to figure out how long the record
+is</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'>Fields use delimiters or counts</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=900 height=198
+src="AS4.1_files/image011.gif"></span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:150%'><span style='font-size:
+16.0pt;line-height:150%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:16.0pt;line-height:150%;font-family:"Comic Sans MS"'>End
+each record with a delimiter</span></p>
+
+<p class=MsoHeader style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;line-height:150%'><span style='font-size:16.0pt;line-height:
+150%;font-family:"Comic Sans MS"'><img width=768 height=132
+src="AS4.1_files/image012.gif"></span></p>
+
+</div>
+
+</body>
+
+</html>

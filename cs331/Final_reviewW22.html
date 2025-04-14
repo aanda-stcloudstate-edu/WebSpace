@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>CSCI 331 - Final Review (Spring 2022)</title>
+<meta name="Generator" content="Vim/6.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+CSCI 331, Spring 2022, Final Review Topics
+
+(Ignore discussion of <u>tapes</u> in all chapters)
+
+All topics covered by the midterm exam, and: 
+
+* Linear Sorts
+    details &amp; criteria (use primarily for which special data conditions?)
+    * bucket
+    * counting
+    * radix
+
+* Command line processing &amp; makefiles
+
+* Robust bisection formula {e.g. [L + (R - L)/2] }
+    * won't overflow
+    * L &amp; R can be pointers to a type
+
+Chapter 8  
+
+        K-way merge
+	    selection tree functioning (can be replaced by a priority queue w. tuple [key, list_ID] values)
+		complexities for operations
+
+        Heaps &amp; replacement selection
+	    (used for most efficient implementation of a priority queue)
+	    complexities for operations
+	    algorithms for operations
+	    parent/child indexing for array representation of <em>complete tree</em>
+	    buffering differences
+	    multiple drives
+	    expected run lengths for different input data ordering characteristics
+	    <i>stable</i> heap effected by altering to heap of queues
+
+	Out-of-core merging
+	    computational complexities
+	    multi-step
+		latency trade-offs
+
+	Unix cosequential utilities
+
+        Glossary
+
+Chapter 9 Multilevel Indexing &amp; B-Trees
+
+        Search Trees (STs)
+	    BSTs
+	    complexity extrema when dynamic
+	    paged
+	    (<i>recursive</i>) algorithm for to turning a <u>sorted</u> list into a <u>balanced</u> BST
+	    problems using BSTs vs related STs
+	    augmenting to yield an order-statistic tree
+
+        AVL trees
+	    properties, complexities, &amp; identification
+
+	<span style="color:red;">In Carrano text:</span>
+	2-3, 2-3-4, &amp; red-black trees 
+	    properties &amp; complexities
+
+        B-trees, B*trees, &amp; B+trees
+	    definitions
+	    search
+	    insertion
+	    deletion
+	    splitting, merging &amp; redistribution
+	    virtual &amp; buffering strategies (LRU &amp; height)
+	    how much larger should the B*tree root be?
+
+        Glossary
+
+Chapter 10  Indexed Sequential File Access and Prefix B+Trees
+
+        Sequence sets
+	    blocking
+	    insertions &amp; deletions
+	    minimum separators vs full keys
+	    loading B+tree issues
+		when to use load capacities of 50%, 75%, or 100%
+
+        Glossary
+
+Chapter 11 Hashing
+
+        Pseudo- &amp; Quasi- random number generator issues
+	source of true randomness (radioactive decay)
+
+	Hash functions
+	    perfect
+
+	Buckets
+
+        Collisions
+
+        Predicting distribution of records
+	    which formula is appropriate for answering specific questions?
+		in terms of functions of <i>p</i>(<i>x</i>) &amp; <i>N</i>
+		use summation formulae where possible (pp. 482-484)
+	    effects of buckets on packing density
+
+	Collision resolution heuristics
+	    progressive overflow
+		search lengths
+		buckets
+		implementation
+		deletions
+	    tombstones
+		insertions &amp; deletions
+		    (when to apply tombstones?)
+	    double hashing
+		(when to apply 2nd hash?)
+	    chaining w. separate overflow area
+		best location in disk system for overflow area?
+	    scatter tables and uses (variable length records, etc.)
+	    exploiting patterns of record access
+		Pareto Principle
+
+        Glossary
+
+</pre>
+</body>
+</html>

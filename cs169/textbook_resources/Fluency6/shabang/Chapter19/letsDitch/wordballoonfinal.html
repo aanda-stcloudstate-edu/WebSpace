@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+ <head>
+<meta charset="UTF-8"/><title>Word Balloon Page</title>
+  <script>
+function draw(x, y) {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    // Quadratric curves example
+    ctx.beginPath();
+    ctx.moveTo(75+x,25+y);
+    ctx.quadraticCurveTo(25+x,25+y,25+x,62.5+y);
+    ctx.quadraticCurveTo(25+x,100+y,50+x,100+y);
+    ctx.quadraticCurveTo(50+x,120+y,30+x,125+y);
+    ctx.quadraticCurveTo(60+x,120+y,65+x,100+y);
+    ctx.quadraticCurveTo(125+x,100+y,125+x,62.5+y);
+    ctx.quadraticCurveTo(125+x,25+y,75+x,25+y);
+    ctx.stroke();
+    ctx.fillStyle = "rgb(255,255,255)";
+    ctx.fill();
+  }
+}
+function comment(x, y, remark) {
+   document.write('<p style="position:absolute; left:' + (40+x) 
+      + 'px; top:' + (45+y) + 'px;">' + remark + '</p>');
+}
+</script>
+   <style>
+      body {background-image:url('emperor.jpg');background-repeat:no-repeat; }
+   </style>
+ </head>
+ <body onload="draw(700,10);">
+  <script>
+     document.write('<canvas id="canvas" width="' + window.innerWidth
+        + '" height="' + window.innerHeight + '"></canvas>');        
+     comment(700,10,"Let's Ditch.");
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,148 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 3 - Fall 2005 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Fall, 2005<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 3</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For each of the following problems you will solve:
+<ol type=I>
+    <li>Before you begin writing code, design an appropriate algorithm using
+	the <i>top-down</i> method.
+    <li>Your <b>name</b>, <b>course</b>, <b>section</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top of
+	your source code.
+    <P>
+    <li>The <b>purpose</b> of the program will also appear as <u>comments</u>
+	at the top of your source code.
+    <P>
+    <li>Follow closely the coding style of the text.<br>
+	<u>Indent subordinate statements</u> and include comments explaining
+	what the different parts of your program do.
+    <P>
+    <li>Compile your code with <tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i> (ensure that there are no compiler warnings or errors)
+    <P>
+    <li>Use <b>script</b> on <i>csci</i> to generate a file which contains
+    the source code followed by a demonstration of the (possibly
+    interactive) running of your program (on on at least three examples of
+    good test data, using data other than those in the examples below).
+    (for each program) You will print out and hand in these files.
+    <P>
+    <li>Also, print and turn in copies of your <b>stubs</b> and
+    <a href="#driver"><b>test driver</b> program</a>s.
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<OL>
+    <li>Write a program which makes change from a dollar using the
+    <u><i>fewest</i></u> number of bills and coins.<br>
+      The function will fulfill the following specifications:
+    <ul>
+	<li>The <u>input</u> function will prompt the user for a <u>charge</u>
+	(&lt; $500.00) and a <u>payment</u> (&lt;= $500.00)
+	such that the payment exceeds the charge.
+	<li>The <u>calculation</u> function will return the number of
+	<ul>
+	    <li>Hundreds
+	    <li>Twenties
+	    <li>Tens
+	    <li>Fives
+	    <li>Ones
+	    <li>Quarters
+	    <li>Dimes
+	    <li>Nickels
+	    <li>Pennies
+	</ul>
+	<li>The <u>output</u> function will output the change, listing the
+	quantity of each denomination on its own line. 
+    </ul>
+    <li>Write a function which returns the <b>wind chill index</b> using the
+    following formula [valid for Celsius temperatures of &lt;=10 degrees]:<br>
+    <center>
+	<tt><b>W</b> = 13.12 + 0.6215 * <b>t</b>
+	    - 11.37 * <b>v</b><sup>0.16</sup>
+	    + 0.3965 * <b>t</b> * <b>v</b><sup>0.16</sup></tt>
+      </center>
+      <br>
+      where the variables are defined as:
+    <ul>
+	<li><tt><b>W</b></tt> is the wind chill index, based on the
+	    <u>Celsius</u> temperature scale,
+	<li><tt><b>t</b></tt> is the air temperature in
+	    <i>degrees Celsius</i> (°C), 
+	<li><tt><b>v</b></tt> is the air wind speed in
+	    <i>kilometers-per-hour</i> (km/h), 
+    </ul>
+      <br>
+      The function will fulfill the following specifications:
+    <ul>
+	<li> The function will expect and return temperatures in
+	    <i>Fahrenheit</i> units.
+	<li> The function will expect wind speeds in
+	    <i>miles-per-hour</i> units.
+	<li> The function will call helper functions to perform the 
+	    units conversions
+	    <li> The header documentation for each file will include a
+	    listing of its
+	    <a href="http://www.cs.ucf.edu/~reinhard/classes/cop3503/notes01.pdf"> preconditions and postconditions</a>.
+    </ul>
+      <br>
+      Use the following <i>software engineering</i> techniques when developing
+      your program:
+    <ol>
+	<li> Use <b>stubs</b> (as in <i>lab 5</i>) to validate your
+	    program's structure.
+	    <br>[this provides the <i>top-down</i> structure]
+	<li> For each function that is represented by a stub, write and
+	use a small <a href="#driver"><b>test driver</b> program</a>
+	to validate
+	    that the new function you have written to replace the stub is
+	    working correctly before you replace the stub with that new
+	    function.
+	    <br> [this builds the program, ensuring correctness, from the
+	    <i>bottom-up</i>]
+	    <li> You can use tables from the Web for reference values to
+	    test your functions, e.g.
+	    <ul>
+
+		<li><a href="http://www.msc.ec.gc.ca/education/windchill/windchill_chart_e.cfm">(Celsius -- kph) Wind-chill chart</a>.
+		<li><a href="http://www.nws.noaa.gov/om/windchill/windchillchart3.pdf">(Fahrenheit -- mph) Wind-chill chart</a>.
+		<li><a href="http://www.onlineconversion.com">Online Conversion</a>.
+		<li><a href="http://www.sciencemadesimple.com/conversions.html">Online Metric Conversions</a>.
+	    </ul>
+    </ol>
+</OL>
+<P>
+<h4><a name="driver">Test Driver Programs</a></h4>
+<b>Test Driver Program</b>s are special programs whose only purpose is to test
+functions.  They are very small.  They perform the following three tasks:
+<ol>
+    <li>Input values to test the function
+    <li>Call the function with those input values
+    <li>Output values from the function
+</ol>
+Ensure that you check that the input tests the <u>range</u> of the
+preconditions and corresponds correctly with the output.<p>
+
+<HR>
+<DIV ALIGN=center>
+   All pages should be stapled together.
+</DIV>
+<HR>
+</BODY>
+</HTML>
+

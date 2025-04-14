@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 7 - Fall 2005 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Fall, 2005<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 7</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For the following problem you will solve:
+<ol type=I>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and <b>assignment number</b> will appear as comments at the top of your source code.
+    <P>
+    <li>the <b>purpose</b> of the program will also appear as comments at the top of your source code.
+    <P>
+    <li>use <b>comments</b> <i>throughout</i> your code to describe what your code is doing.
+    <P>
+    <li>follow closely the coding style of the text.
+    <P>
+    <li>compile your code with <tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i> (ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains the source code followed by a demonstration of the interactive running of your program on <u>good test data</u>.  You will print out and hand in these files.
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<OL>
+	<LI>Chapter 9: <b>Pointers</b> (and <i>dynamic</i> arrays)
+</OL>
+<P>
+Write a program to rank months by their temperature variability.<br>
+<P>
+
+Specifications:
+<ol>
+    <li>You will read the program data from a <u>text file</u> (see Ch. 7)
+    which contains daily
+    temperatures for a year (Fairbanks, AK, 1965).<br>
+    (the file uses "999" to indicate an entry for a non-existent day of the
+    month)<br>
+    The file is on <tt>csci</tt> at [<tt>~aanda/cs201/FAI1965.txt</tt>].</li>
+    <li>Store the temperatures in a <u>ragged</u> array with each <i>row</i>
+    holding all of the temperatures for a month.</li>
+    <li>Write a function to compute the <u>standard deviation</u> of the
+    temperatures for a month and save the results in a new array.</li>
+    <li>Without reordering the std. dev. array, sort the months,
+    with respect to their standard deviation,
+    in ascending and descending order
+    <br>[See Project 9.83 on Page 486].</li>
+    <li>Print a pair of listings of the months
+    (use their names not their ordinal numbers)
+    alongside their respective standard deviations
+    <ol>
+	<li>In descending order, and
+	<li>In ascending order.
+    </ol>
+    <li> Before the program exits, be sure to close any open files
+    and to release back to the <i>heap</i> all dynamic memory objects.</li>
+    <li> You can check your results via a spreadsheet.</li>
+    <li> <i>Extra Credit</i>: Do the same for as many as possible of the
+    following other statistical measures:
+    <ul>
+	<li>max,
+	<li>min,
+	<li>average,
+	<li>median,
+	<li>mode
+    <ul>
+</ol>
+<P>
+<HR>
+<DIV ALIGN=center>
+   All pages should be stapled together.
+</DIV>
+<HR>
+</BODY>
+</HTML>
+

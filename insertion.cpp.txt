@@ -1,0 +1,129 @@
+//	P08-08 insertionSort
+
+/*	Test driver for sorting. Combines Program P8-9, insertOne.
+	Written by: Anda
+	Date:		12/10
+*/
+#include <iostream.h>
+#include <iomanip.h>
+#include <stdlib.h>
+
+const int MAX_ARY_SIZE = 50;
+const int COLUMNS = 10;
+#ifndef TRUE
+const int TRUE         =  1;
+const int FALSE        =  0;
+#endif
+int compares = 0;
+int exchanges = 0;
+
+/*	Prototype Declarations */
+void insertionSort (int list[ ], int last, char sortDirection);
+void insertOne (int list[ ], int first, char sortDirection);
+	
+int main (void) 
+{
+/*	Local Declarations */
+        int counter;
+        char sortDirection;
+	int i;
+	int ary[ MAX_ARY_SIZE ];
+
+/*	Statements */
+
+        cout << "\nEnter the character 'a' to select an ascending sort,\n" <<
+        "else enter the character 'd' for a descending sort: " << endl;
+        cin >> sortDirection;
+
+        counter = 0;
+	cout << "Unsorted array:\n";
+	for (i = 0; i < MAX_ARY_SIZE; i++)
+            {
+             ary[i] = rand()%100;
+             counter++;
+             cout << setw(3) << ary[i];
+             if (counter >= COLUMNS)
+                {
+                 counter = 0;
+                 cout << endl;
+                }
+            }
+        cout << endl;
+
+		
+	insertionSort (ary, MAX_ARY_SIZE - 1, sortDirection);
+
+        counter = 0;
+	cout << "\nSorted array:\n";
+	for (i = 0; i < MAX_ARY_SIZE; i++)
+            {
+             counter++;
+             cout << setw(3) << ary[i];
+             if (counter >= COLUMNS)
+                {
+                 counter = 0;
+                 cout << endl;
+                }
+            }
+	cout << endl;
+
+        cout << "There were " << compares << " compares." << endl;
+        cout << "There were " << exchanges << " exchanges." << endl;
+
+	return 0;
+}	/* main */
+
+/*	Sort list using Insertion Sort. The list is divided into 
+	sorted and unsorted list. With each pass, first element 
+	in unsorted list is inserted into sorted list.
+	Pre   List must contain at least one element.
+	      last contains index to last element in the list
+	Post  List has been rearranged.
+*/
+void insertionSort (int list[ ], int last, char sortDirection) 
+{
+//	Local Declarations 
+	int current;
+
+//	Statements 
+	for (current = 1; current <= last; current++)
+	   insertOne(list, current, sortDirection);
+	return;
+}	// insertionSort 
+
+
+
+/*	Sorts current element in unsorted list into its proper
+	location in sorted portion of the list--one sort pass.
+	Pre   list must contain at least one element
+	      current identifies beginning of unsorted list.
+	Post  next element placed into its proper location
+*/
+void insertOne (int list[ ], int current, char sortDirection)
+{
+//	Local Declarations 
+	bool located;
+	int  walker;
+	int  temp;
+
+//	Statements 
+	located = false;
+	temp = list[current];
+	for  (walker = current - 1; walker >= 0 && !located;)
+           {
+	   compares++;
+	   if (sortDirection == 'a' ? temp < list[walker]
+                                    : temp > list[walker])
+	      {
+	       exchanges++;
+	       list[walker + 1] = list[walker];
+	       walker--;
+	      } // if 
+	   else
+	      located = true;
+           }
+	
+	exchanges++;
+	list [walker + 1] = temp;
+	return;
+}	// insertOne 

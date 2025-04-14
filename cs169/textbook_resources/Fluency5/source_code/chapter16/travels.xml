@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="travelSS.xsl"?>
+
+<travels>
+  <country>
+     <name flag="ja-flag.gif">Japan</name>
+     <tour>
+        <sight>Tokyo</sight>
+        <sight>Kyoto</sight>
+        <sight>Mt. Fuji</sight>
+        <sight>Osaka</sight>        
+        <sight>Hiroshima</sight>
+     </tour>
+  </country>
+  
+  <country>
+     <name flag="fr-flag.gif">France</name>
+     <tour>
+        <sight>Paris</sight>
+     </tour>
+  </country>
+  
+  <country>
+     <name flag="it-flag.gif">Italy</name>
+     <tour>
+       <sight>Rome</sight>
+       <sight>Naples</sight>
+       <sight>Florence</sight>
+       <sight>Milan</sight>
+      </tour>
+  </country>
+  
+  <country>
+     <name flag="sz-flag.gif">Switzerland</name>
+     <tour>
+        <sight>Zurich</sight>
+        <sight>Lausanne</sight>
+        <sight>Luzerne</sight>
+        <sight>Berne</sight>
+     </tour>
+  </country>
+
+</travels>

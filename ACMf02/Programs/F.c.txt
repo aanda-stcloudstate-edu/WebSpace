@@ -1,0 +1,185 @@
+/*******************************************************************
+	Pgm:	Square Cipher
+   file:	decode.cpp source code     	ver:	01/11/1999A
+   		decode.dat input data
+         decode.out expected results
+   Pgmr:	RAude email: jpsmith@ior.com
+
+Description:  See 1999 Pacific Northwest Regional Programming Contest.
+Problem was submitted by Matthew Merzbacher (matthew@mills.edu).
+********************************************************************/
+#include<stdio.h>
+#include<stdlib.h>				//used for 'exit' in error statements
+#include<string.h>
+
+#define INPUT "F.txt"
+
+FILE *ifp;
+char codebox[5][5];
+char keyword[256], cleartxt[256], codestr[26];
+char parstxt[512][2];
+int i, j, len, x, y, x1, y1, x2, y2, chInt;
+char ch, first, second, last;
+
+void
+main(void)
+{	if ( (ifp=fopen(INPUT,"r")) == NULL)
+   	{printf("Cannot open %s file.\n",INPUT); exit;}
+
+	fgets(keyword, 200, ifp);
+   while (strcmp(keyword,"999"))
+   {  //convert J to I in the keyword and the text strings
+   	i = 0;
+      while (keyword[i]!= '\0')
+      {  if (keyword[i] == 'J')
+      		keyword[i] = 'I';
+            i++;
+      }
+      fgets(cleartxt, 256, ifp);
+      i = 0;
+      while (cleartxt[i]!= '\0')
+      {  if (cleartxt[i] == 'J')
+      		cleartxt[i] = 'I';
+            i++;
+      }
+
+      //Create the Codebox
+      for (i=0;i<5;i++)
+      	for (j=0;j<5;j++)
+         	codebox[i][j] = '0';
+		//Init the alpha string to be loaded following the keyword
+      for (i=0;i<=26;i++)
+      	codestr[i] = 'A'+i;
+      codestr[9] = '0';		  //Deletes 'J' from the alpha string
+      len = strlen(keyword);
+      for (i=0;i<len-1;i++)  //Load the keyword in to the codebox
+      {	ch = keyword[i];
+      	chInt = ch - 65;
+      	if (codestr[chInt] != '0')  //check the letter hasn't been used
+         {	codestr[chInt] = '0';
+         	x = y =0;
+            while (codebox[x][y] != '0')
+				{	y = (y+1)%5;
+            	if (y==0)
+               	x++;
+            }
+            codebox[x][y] = ch;
+         }
+      }
+     	//Load the codestr into the Codebox
+		i=0;
+      while (codestr[i] == '0')  //find first codestr character to load
+      	i++;
+      x=y=0;
+      while (codebox[x][y] != '0') //find first available codebox cell
+      {	y++;
+      	if (y%5 == 0)
+         {	x++;
+         	y=0;
+         }
+      }
+      codebox[x][y] = codestr[i];
+      while (i<26)
+		{  i++;
+      	while (codestr[i] == '0')  //find next codesrt character to load
+      		i++;
+         y++;
+         if (y%5 == 0)
+         {	x++;
+         	y=0;
+         }
+         codebox[x][y] = codestr[i];
+      }
+
+      //Parse the cleartxt string into letter pairs, deleting whitespace, &
+      //inserting a Q(or Z) between double letters.
+      for (x=0;x<512;x++)
+        	for (y=0;y<2;y++)
+           	parstxt[x][y] = '\0';
+
+      len = strlen(cleartxt);
+      last = parstxt[0][0] = cleartxt[0];
+      x = 0;
+      y = 0;
+      i = 1;
+      while (i<len-1)
+      {	if (cleartxt[i] == ' ')		//get rid of white space
+      		i++;
+      	else
+         {	if (cleartxt[i] == last)	//need to insert a Q or Z
+         	{	if (last=='Q')
+            		ch='Z';
+            	else
+               	ch='Q';
+               //get the next available posn. in parstxt & add ch
+               if (y%2 == 1)
+               {	x++;
+               	y=0;
+               }
+               else y++;
+               parstxt[x][y] = ch;
+               //now get the next position & add cleartxt[i]
+               if (y%2 == 1)
+               {	x++;
+               	y=0;
+               }
+               else y++;
+               last = parstxt[x][y] = cleartxt[i];
+            }
+            else		//just add cleartxt[i]
+            {	if (y%2 == 1)
+               {	x++;
+               	y=0;
+               }
+               else y++;
+               last = parstxt[x][y] = cleartxt[i];
+            }
+            i++;
+         }		//end if (cleartxt[i] == last) else
+      }		//end while (i<len-1)
+
+      //finish the parsed text
+      if (y%2 == 0)
+      	if (last == 'Q')
+         	parstxt[x][y+1] = 'Z';
+         else
+         	parstxt[x][y+1] ='Q';
+
+		//Encode the parsed text and print the result.
+      len = x;
+      for (i=0;i<=len;i++)
+      {	first = parstxt[i][0];
+      	second = parstxt[i][1];
+         x1 = y1 = 0;
+         while (codebox[x1][y1] != first)
+         {	y1++;
+         	if (y1>4)
+            {	y1 = 0;
+            	x1++;
+            }
+            if (x1>4)
+            	{printf("Error in codebox"); exit;}
+         }
+         x2 = y2 = 0;
+         while (codebox[x2][y2] != second)
+         {	y2++;
+         	if (y2>4)
+            {	y2 = 0;
+            	x2++;
+            }
+            if (x2>4)
+            	{printf("Error in codebox"); exit;}
+         }
+         if (x1==x2)			//in the same row
+         	printf("%c%c ",codebox[x1][(y1+1)%5],codebox[x2][(y2+1)%5]);
+         else
+         	if (y1==y2)			//in the same column
+            	printf("%c%c ",codebox[(x1+1)%5][y1],codebox[(x2+1)%5][y2]);
+         	else
+         		printf("%c%c ",codebox[x1][y2],codebox[x2][y1]);
+      }
+      printf("\n");
+      fgets(keyword, 256, ifp);	//get a new keyword to repeat process
+   }
+}
+

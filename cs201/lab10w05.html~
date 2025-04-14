@@ -1,0 +1,166 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab10 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 10</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with using repetition and generating
+pseudo-random distributions.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+<P> Many simulations of physical systems with random components can be effected
+by generating and using pseudo-random numbers from a specified distribution.
+
+<P> We will write and demonstrate a program which accepts a random seed value.
+Our program will then use the seed to generate a sequence of random values from
+the <i>integer</i> distribution, [1,6].  We will simulate the throwing of two 
+six-sided dice.  We will then compare the number times we get a two die sum to
+that predicted by <i>Table 1</i>.  We will run the program twice using a
+different seed in the second run than was used in the first run.
+
+<p><table border="0" width="64%">
+        <tr>
+
+          <td width="32%" align="center" bgcolor="#B7CAC8"><b>2D6</b></td>
+          <td width="96%" align="center" bgcolor="#B7CAC8"><b>Number of
+            combinations</b></td>
+          <td width="47%" align="center" bgcolor="#B7CAC8"><b>Probability</b></td>
+        </tr>
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">2</td>
+          <td width="96%" align="right">1</td>
+
+          <td width="47%" align="center">1/36</td>
+        </tr>
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">3</td>
+          <td width="96%" align="right">2</td>
+          <td width="47%" align="center">2/36</td>
+        </tr>
+
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">4</td>
+          <td width="96%" align="right">3</td>
+          <td width="47%" align="center">3/36</td>
+        </tr>
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">5</td>
+
+          <td width="96%" align="right">4</td>
+          <td width="47%" align="center">4/36</td>
+        </tr>
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">6</td>
+          <td width="96%" align="right">5</td>
+          <td width="47%" align="center">5/36</td>
+
+        </tr>
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">7</td>
+          <td width="96%" align="right">6</td>
+          <td width="47%" align="center">6/36 = 1/6</td>
+        </tr>
+        <tr>
+
+          <td width="32%" align="right" bgcolor="#B7CAC8">8</td>
+          <td width="96%" align="right">5</td>
+          <td width="47%" align="center">5/36</td>
+        </tr>
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">9</td>
+          <td width="96%" align="right">4</td>
+
+          <td width="47%" align="center">4/36</td>
+        </tr>
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">10</td>
+          <td width="96%" align="right">3</td>
+          <td width="47%" align="center">3/36</td>
+        </tr>
+
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">11</td>
+          <td width="96%" align="right">2</td>
+          <td width="47%" align="center">2/36</td>
+        </tr>
+        <tr>
+          <td width="32%" align="right" bgcolor="#B7CAC8">12</td>
+
+          <td width="96%" align="right">1</td>
+          <td width="47%" align="center">1/36</td>
+        </tr>
+      </table>
+      <p><i>Table 1: Probability of the sum of dots for 2 six-sided dice (2D6).</i></p>
+      
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab10</i>, and move to it.</li>
+
+<li>
+For each sum of the values of the two dice, <i>from 2 through 12</i>,
+increment a counter for that sum.<br>
+(A <i>switch</i> statement would be appropriate here.)
+</li>
+
+<li>
+<u>Computationally</u>, <i>throw</i> the pair of dice 36,000 times.
+</li>
+
+<li>
+For each of the 11 sums, print the expected sum, the computed sum, and the
+relative error, where the relative error is computed by the following formula: <br>
+<center>
+	<tt>abs(expected - computed)/expected</tt>
+</center>
+This shows how close we got to the expected distribution.<br>
+</li>
+
+<li>
+Save the set of results in a file.
+</li>
+
+<li>
+Rerun with another seed.
+</li>
+
+<li>
+Save the second set of results in another file.
+</li>
+
+<li>
+Compare the two files of results.<br>
+Are there any differences between the results of the two runs?
+</li>
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the source and the running of the program data.
+</li>
+
+</ol>
+
+
+</body>
+</html>

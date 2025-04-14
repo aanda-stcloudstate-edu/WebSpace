@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" 
+                content="text/html; charset=utf-8"/>
+	   <title>eCoin Flipping</title>
+	   <style type="text/css">
+	      body {background-color : #ccffcc; color : green; 
+	               font-family : verdana; text-align : center}
+	   </style>
+	</head>
+   <body>
+      <script type="text/javascript">
+         function coinFlip() {
+            return Math.round(Math.random());
+         }
+         function flipText() {
+            if (coinFlip()==0)
+                return 'Tails';
+            else
+                return 'Heads';
+         }
+      </script>
+      <form action="">
+         <h2>Heads or Tails? <br/>
+         <input type="button" value="Flip"
+            onclick='document.forms[0].ans.value=flipText()'/>
+            <input type="text" name="ans" size="5"/></h2>
+      </form>
+   </body>
+</html>
+
+

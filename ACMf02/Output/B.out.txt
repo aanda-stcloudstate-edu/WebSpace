@@ -1,0 +1,29 @@
+45, 5
+Number of fish expected: 31
+
+240, 0, 0, 0
+Number of fish expected: 480
+
+115, 10, 50, 35
+Number of fish expected: 724
+
+60, 0
+Number of fish expected: 156
+
+20, 25, 0
+Number of fish expected: 112
+
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 780, 0, 0, 0, 0, 0, 0, 0, 0
+Number of fish expected: 13884
+
+30, 25, 10, 15, 25, 80, 10, 15, 15, 10, 15, 55, 10, 10, 10, 15, 10, 5, 10, 70, 35, 15, 50, 10
+Number of fish expected: 2266
+
+305, 10, 10, 0, 0, 0, 0, 0, 0, 0
+Number of fish expected: 2408
+
+345, 20, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+Number of fish expected: 792
+
+65, 55, 10, 0, 0, 0, 0, 0
+Number of fish expected: 422

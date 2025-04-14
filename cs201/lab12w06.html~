@@ -1,0 +1,53 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab 12 Spring 2006 [A. A. Anda]</title>
+</head>
+<body>
+
+<center> <h1> CSCI 201</h1></center>
+
+<center> <h2> Lab 12 Spring 2006</h2></center>
+
+<center> <h3> [A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with <b>pointers</b> <i>to</i> <b>pointers</b>.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+This lab is intended to provide experience with delaring and defining,
+initializing, <i>dereferencing</i>, I/O, <u>pointers</u> <i>to</i>
+<u>pointers</u> of different data types.<br>
+(This lab reinforces Section 9-7.  See Program 9-6.)<br>
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+	<li> Create a new directory, <i>lab12</i>, and move to it.</li>
+
+	<li> Solve Project 9-79 through 9-81 on page 485 of our C++ text.</li>
+
+	<li> For each project, write a version that works for
+	<tt><u>float</u></tt>s, <tt><u>int</u></tt>s, and
+	<tt><u>char</u></tt>s, respectively
+	<br>(<b>Note:</b> this can be easily accomplished by first yanking
+	and pasting a block of code, then using the <tt>vim/ex</tt>
+	<i>global substitute</i> command {p. 319 Unix text}<br>
+	[<tt><b>:</b><i>{start,end}</i><b>s/</b><i>pattern</i><b>/</b><i>replacelment-pattern</i><b>/g</b></tt>])</li>
+	<li> Solve Problem 9-71 on page 484 using your code for lab 11.</li>
+
+
+<li>
+When correct, demonstrate, via typescript, the running of the program for
+the test data.
+</li>
+
+</ol>
+
+
+</body>
+</html>

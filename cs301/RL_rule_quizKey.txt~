@@ -1,0 +1,55 @@
+CSCI 301 A.A.Anda  Right-Left Rule Exercises   Name:__________________________
+
+1) Declare a 9 element array of pointers to int type
+
+    int * x[9];
+
+2) Declare a pointer to a 9 element array of int type
+
+    int ( * x)[9];
+
+3) Declare a pointer to a 9 element array of pointers to int type
+
+    int * ( * x)[9];
+
+4) Declare a function returning a pointer to a int type
+
+    int * x();
+
+5) Declare a pointer to a function returning int type
+
+    int ( * x)();
+
+6) Declare a function returning a pointer to an array of int type
+
+    int ( * x() )[];
+
+7) Declare an array of functions returning a pointer of int type
+
+    int ( * x[]() );
+
+8) Declare a pointer to an array of functions returning int type
+
+    int ( * x)[]();
+
+9) Declare a pointer to an array of functions returning a pointer to int type
+
+    int * ( * x)[]();
+
+10) Declare both valid orderings for a pointer to a const int type
+
+    const int * x;
+
+    int const * x;
+
+11) Declare (and initialize) a const pointer to an int type
+
+    int * const x = &y; // y has been declared as an int
+
+12) Declare (and initialize) a const pointer to a const int type
+
+    int const * const x = &z; // z has been declared as a const int
+
+    OR
+    
+    const int * const x = &z; // z has been declared as a const int

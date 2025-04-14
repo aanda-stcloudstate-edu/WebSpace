@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI 331 Sequence Set Group Project Prliminary Documents Drafts Spring 2020</title>
+    <style>
+	code{font-family: courier; font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems Spring 2020</h1>
+
+<h2><u>Sequence Set</u> Group Project</h2> 
+<h3>Preliminary Documents Drafts</h3> 
+
+<p>
+Prior to commencing coding for the Sequence Set Class assignment, your group will submit a set of preliminary documents which specify clearly
+the components of the Sequence Set project and who is responsible for which parts.
+</p>
+
+
+<h2>WHAT TO TURN IN:</h2>
+
+<ul>
+    <li><b>Design Document</b> for the <u>Sequence Set Class</u>.<br>
+	(Consider using facilities in, e.g. Jgrasp or Doxygen)<br>
+    <ul>
+        <li>Describe the architecture of:<br>
+        (<i>both as objects in memory and as corresponding entities in a file</i>)<br>
+        {For entities in files, include and describe all of the non-data overhead}
+        <ul>
+            <li>the input data file
+            <li>the blocked record file
+            <li>the index file (maps primary keys to RBNs)
+            <li>the header record
+            <li>a block containing records
+            <li>a record (&amp; its fields)
+        </ul>
+        <li>Describe the <i>methods</i> of the SS class:
+        <ul>
+            <li>constructor(s) / destructor (etc. for in-RAM objects)
+            <li><code>create</code>
+            <li><code>open/load</code> (necessary components of an existing SS {i.e. header record &amp; index file into memory)
+            <ul>
+                <li>consider optionally running the <code>validate</code> method
+            </ul>
+            <li><code>close</code>
+            <li><code>is_empty</code> (via a flag, can be applied to either file, a block, a record slot in a block, or a field within a record)
+            <li><code>search</code> (for a record)
+            <li><code>populate</code> (populate the blocked record file from the input data file)
+            <ul>
+                <li>consider populating to 3/4 capacity as a default parameter<br> (can be changed for testing block merging, splitting, &amp; record redistribution)
+            </ul>
+            <li><code>insert</code> (a record)
+            <li><code>delete</code> (a record)
+            <li><code>update</code> (a field of a record)
+            <li><code>display_record</code>
+            <li><code>diplay_SS</code> (parameterized to display the whole record or a subset of fields)
+            <li><code>validate</code> (is your sequence set ordered by primary key?  Can you get to each record via the index file?)
+            <li>(...<i>private helper</i> functions/methods)
+            <li>(...<i>debug</i> functions/methods) {consider using a static debug flag for the class}
+        </ul>
+    </ul>
+    
+
+    <li> <b>Test Document</b>
+    <ul>
+        <li>Describe the test driver program
+        <ul>
+            <li>describe how to use the command line options
+        </ul>
+        <li>Describe the details and purpose of each running of the test driver program in the test script
+        <ul>
+            <li>describe the method/functionality that will be tested
+            <ul>
+                <li>For verifying correct performance of record deletion or insertion, include tests which demonstrate (each of) these effects:
+                <ol>
+                    <li>no structural change, &amp; the operation is confined to that block 
+                    <ul>
+                        <li>this <i>may</i> require an update to the index
+                        <li>(this will be the norm for larger capacity blocks filled initially to 75%)
+                    </ul>
+                    <li>no structural change, but there is <u>redistribution</u> operation performed with one of the two logically adjacent blocks
+                    <ul>
+                        <li>this <i>will</i> require an update to the index
+                    </ul>
+                    <li>a structural change occurs &mdash; either a <u>merge</u> or a <u>split</u>
+                    <ul>
+                        <li>this <i>will</i> require an update to the index
+                    </ul>
+                    <li>how do you handle a failed deletion search?
+                </ol>
+                <li>(suggestion:) an insertion or a deletion test can have the following sequential structure:
+                <ol>
+                    <li><code>populate</code>
+                    <li>display structure and/or run <code>validate</code>
+                    <li>perform insertion or deletion
+                    <li>display structure and/or run <code>validate</code>
+                </ol>
+            </ul>
+            <li>Suggested command line structure:
+            <ul>
+                <li>must have the filename for that subset of the full data set which will be used for initially populating the sequence set file for this test
+                <li>can additionally have a list of one or more primary keys, each prefaced with either a delete flag or an insert flag, which will be performed, in sequence, after the SS is populated.
+                For insertion, the primary key will be used to provide the full record for that key.
+            </ul>
+        </ul>
+    </ul>
+    
+    <li><u>The users manual</u>.<br>
+    There should be a section for each of the following:<br>
+
+    <ul>
+        <li>Describe what the SS Class is supposed to do, and what the syntax is to use its methods.
+        <li>Describe the tests that the driver is performing, and what the syntax is for its command line interface.
+        <li>Describe the set of tests in the test script.
+    </ul>
+    
+    <li> <b>Scheduling Document</b>
+    <ul>
+        <li>Who is serving as <i>team leader</i>?
+        <li>Create a table to indicate the ordering of tasks and that subset of team members responsible for that task<br>
+        (some tasks can be performed simultaneously or in any order, other tasks must be completed before other tasks can be completed.<br>  
+        There can be significant overlaps.<br>
+    </ul>
+
+
+    
+</ul>
+<hr>
+<b>Recommendation:</b> <u>Log</u> changes or additions you'll have to make these documents as you proceed to implement this class and its testing framework.
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+  <title>Final Review (CSCI 201 Spring 2013) [A. A. Anda]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+</head>
+<body bgcolor="#FFFFFF">
+	<div align="center"><h1>Final Review</h1></div><br>
+	<div align="center"><h2>(CSCI 201 Spring 2013)</h2></div>
+	<div align="center"><h3>A. A. Anda</h3></div> <hr>
+
+<hr>
+This final is comprehensive. It includes content from the first midterm,<br>
+<li><a href="http://web.stcloudstate.edu/aanda/cs201/Midterm1ReviewW13.html">Midterm I Review</a>,<br>
+from the second midterm,<br>
+<a href="http://web.stcloudstate.edu/aanda/cs201/Midterm2ReviewW13.html">Midterm 2 Review</a><br>
+and the following new topics:
+
+<h2>Classes</h2>
+  <ul>
+      <li>OOP motivation &amp; theory<br>
+      (e.g. relationship with ADTs)
+      <li>OOP nomenclature
+      <li>class usage
+      <li>class declaration
+      <li>access specification
+      <ul>
+	  <li>public
+	  <li>private
+      </ul>
+      <li>const methods
+      <li>accessors
+      <li>mutators
+      <li>class instantiation
+      <li>member access
+      <li>avoiding stale data
+      <li>pointers to objects
+      <li>private member functions (i.e. <i>helper functions</i>)
+      <li>separating <u>specification</u> from <u>implementation</u><br>
+      (<i>class_name</i><tt>.h</tt> &amp; <i>class_name</i><tt>.cpp</tt> files)
+      <li>inline member functions (<i>why</i>?)
+      <li>constructors
+      <ul>
+	  <li>default constructor &amp; default arguments
+	  <li>overloading
+      </ul>
+      <li>destructor
+      <ul>
+	  <li>dynamically allocated object &amp; object member handling
+      </ul>
+      <li>UML class diagrams
+      <li><tt>static</tt> members
+      <li><tt>friend</tt>ship
+      <li>memberwise assignment
+      <li>copy constructors
+      <ul>
+	  <li>shallow copy
+	  <li>deep copy
+      </ul>
+      <li>operator overloading
+      <li><tt>this</tt> pointer
+      <li>object conversion
+      <li>class aggregation
+  </ul>
+</body>
+</html>

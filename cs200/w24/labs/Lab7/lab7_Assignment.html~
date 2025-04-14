@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+       <title>CSCI 200 lab7 Spring 2024 [Professor A. A. Anda]</title>
+       <style type="text/css"> 
+	   BODY TT {color:maroon}
+       </style>
+       
+    </head>
+    <body>
+
+	<center>
+	    <h1>CSCI 200</h1>
+
+	    <h2>Lab 7</h2>
+
+	    <h3>
+		[Professor A. A. Anda]<br>
+		Spring 2024
+	    </h3>
+	</center>
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li>Use the conditional execution of <i>Boolean expressions</i> to control the which statements are executed.</li>
+	</ul>
+	<h2>Lab Assignment:</h2>
+
+	<ol>
+	    <li> Create a new folder, <b><tt>Lab7</tt></b>, in your <b><tt>labs</tt></b> folder.</li>
+	    <li> Move into your <b><tt>Lab7</tt></b> folder</li>
+	</ol>
+	<p>
+	Create a Web page Create a Web page for <i>each</i> of the following <u>Exercises</u> in Reed:<br>
+
+	Define &amp; call user-defined functions wherever possible.<br>
+
+	Use <i>global</i> variables only for values that are constants (these constant values, specific to an application, should be defined in your user-defined library files)<br>
+
+	For non-trivial functions, please follow Dr. Anda's <a href="http://web.stcloudstate.edu/aanda/cs200/functionTemplate.js.html">function template</a><br>
+	Please read this presentation on what <a href="https://web.archive.org/web/20201101041243/http://www.cs.colorado.edu/~main/supplements/chapt01.ppt">preconditions and postconditions</a> are, then include them in your function comments.
+
+	<ol>
+	    <li> <u>Exercise 11.12</u></li>
+		<ul>
+		    <li>Requires code written to perform Exercises 11.10 &amp; 11.11</li>
+		</ul>
+	    <li> <u>Exercise 11.15</u></li>
+	    <li> <u>Exercise 11.19</u></li>
+	    <li> <u>Exercise 11.20</u></li>
+		<ul>
+			<li>In a text file, <tt>Ex11.20answers.txt</tt>, write each question asked in this exercie followed by your answer to that question.</li>
+		</ul>
+	</ol>
+	When finished (after you&rsquo;ve tested and proofread each of your Web pages),<br>
+	then submit your (Zipped) source files and answer file to the Lab7 D2L dropbox, and add working URL links for these source files.
+	</p>
+    </body>
+</html>

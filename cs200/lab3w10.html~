@@ -1,0 +1,60 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 200 lab3 Fall 2009 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 200</h1></center>
+
+<center>
+<h2>
+Lab 3</h2></center>
+
+<center>
+<h3>
+    [A. A. Anda]<br>
+    Fall 2009
+</h3></center>
+
+<hr WIDTH="100%">
+<h2>Introduction:</h2>
+This lab exercises the ability to:
+<ul>
+    <li>Use predefined JavaScript Functions to solve problems.</li>
+</ul>
+<h2>Lab Assignment:</h2>
+
+<ol>
+    <li> Create a new directory, <b><tt>Lab3</tt></b>, in your class account directory.</li>
+    <li> Move into your Lab3 directory</li>
+    <li> Using a syntax-highlighting editor, open a new file to edit.  Save it as <tt>Lab3.html</tt>.</li>
+    <li> For each of the following tasks,</li>
+    <ol>
+	<li> modify your Web page file via the editor</li>
+	<li> save the file</li>
+	<li> refresh the browser open to your Web page</li>
+	<li> verify that your modifications did what you've intended</li>
+    </ol>
+</ol>
+<dl>
+    <dt><b>Task</b> - Perform <i>all</i> of the requirements in <u>Exercise 4.9</u> in Reed.
+    <dd>This kind of interactive story is also known as a
+    <i><a href="http://en.wikipedia.org/wiki/Mad_Libs">MadLib</a></i>.
+    <dd>Prompt for all missing words before you begin to display the story.
+    <dd>Use the term for what you are prompting for as a default value in each case (e.g. the default value would be "<i>animal</i>" if you are prompting for an animal).
+    <dd>Additionally, prompt for at least one of each of the following:
+    <ul>
+	<li>noun
+	<li>adjective (<i>modifies a noun</i>)
+	<li>verb
+	<li>adverb (<i>modifies a verb</i>)
+    </ul>
+</dl>
+    <p>
+When finished (after you’ve proofread your Web page), submit your file to the appropriate D2L dropbox.
+</body>
+</html>

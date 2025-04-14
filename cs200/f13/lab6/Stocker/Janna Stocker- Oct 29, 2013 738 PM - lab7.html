@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- C:\Users\Janna\Desktop\Fall 2013\CSCI 200 Elments of Computing\lab\lab7\lab7.html         Janna Stocker -->
+<!-- section 3                                                                  Date Lasted Edited: 10/29/13 -->
+<!-- This webpage allows the user to input an (x,y) and determine if they are inside a box or not.           -->
+<!-- ======================================================================================================= -->
+
+<html>
+ <head>
+   <title>Lab 7</title>
+   <script type="text/javascript" src="rectangle.js"></script>
+   <script type="text/javascript">
+     function InPointLineSegment(leftBoundary, rightBoundary, point, boundariesAreIn, orientationString)
+     // Assumes: 
+     // Results: 
+     {
+		var left, right, top, bottom, XCoord, YCoord;
+		
+		left = parseFloat(document.getElementById('leftBox').value);
+	    right = parseFloat(document.getElementById('rightBox').value);
+	    top = parseFloat(document.getElementById('topBox').value);
+	    bottom = parseFloat(document.getElementById('bottomBox').value);
+	    LeftBoundary = parseFloat(left < top);
+	    RightBoundary = parseFloat(bottom < right);
+	    XCoord = parseFloat(document.getElementById('xBox').value);
+	    YCoord = parseFloat(document.getElementById('yBox').value);
+	    point = (XCoord, YCoord);
+		
+		insideRec = IsPointInRectangle();
+		outsideRec = IsPointInRectangle();
+		
+		HorizontalAlert = OrientationString();
+		VerticalAlert = OrientationString();
+		Alert = OrientationString();
+		
+		if ((XCoord == left && YCoord == top) || (XCoord == right && YCoord == top) || (XCoord == left && YCoord == bottom) || (XCoord == right && YCoord == bottom))
+		{
+		document.getElementById('outputDiv').innerHTML =
+		    document.getElementById('outputDiv').innerHTML +  '<br><br>The point is on a corner of the box.';
+		}
+		
+		 else if (XCoord == left && (YCoord >= bottom && YCoord <= top)|| XCoord == right && (YCoord >= bottom && YCoord <= top))
+		{
+		document.getElementById('outputDiv').innerHTML =
+		    document.getElementById('outputDiv').innerHTML + '<br><br>The point is on the vertical line segment of the box.';
+		}
+		
+		 else if (YCoord == top && (XCoord >= left && XCoord <= right)||YCoord == bottom && (XCoord >= left && XCoord <= right))
+		{
+		document.getElementById('outputDiv').innerHTML =
+		    document.getElementById('outputDiv').innerHTML +  '<br><br>The point is on the horizontal line segment of the box.';
+		}	
+     }
+	 </script>
+ </head>
+ 
+ <body>
+   <h2>Inside or Outside a Box</h2>
+   <p> Enter values in boxes below to create a box</p>
+   <table> <tr><td></td><td>Top:</td>
+	  <td><input type="text" id="topBox" size=6 value=10></td></tr>
+	  <tr><td>Left:</td>
+      <td><input type="text" id="leftBox" size=6 value=0></td>
+	  <td>Right:</td>
+      <td><input type="text" id="rightBox" size=6 value=10></td></tr>
+      <tr><td></td><td>Bottom:</td>
+      <td><input type="text" id="bottomBox" size=6 value=0></td></tr>
+   </table>   
+   <hr>
+   <p> Enter values for your point</p>
+   <table>
+      <tr><td>X-Coordinate:</td>
+      <td><input type="text" id="xBox" size=6 value=5></td></tr>
+	  <tr><td>Y-Coordinate:</td>
+      <td><input type="text" id="yBox" size=6 value=5></td></tr>
+   </table>
+   <br>
+	<input type="button" value="Click to evaluate coordinates"
+		onclick="InPointLineSegment();"><br><hr><br>
+	<input type="text" id="toggleBorderBox" size="34" value="The box border is outside the box."><br>
+	<input type="button" id="toggleButton" value="Click to include or exclude borders"
+		onclick="BoundariesAreIn();">
+   <hr>
+   <div id="outputDiv"></div>
+ </body>
+</html> 

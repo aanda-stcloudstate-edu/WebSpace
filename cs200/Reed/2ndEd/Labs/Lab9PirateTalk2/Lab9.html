@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+   <TITLE>Lab 9: Arrays and Pirate Talk Revisited</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="white" LINK="blue" VLINK="darkblue" ALINK="red">
+
+<P ALIGN="right">Name: 
+_________________________________________</P>
+
+<P><BR><BR></P>
+
+<center><h2>Lab 9: Arrays and Pirate Talk Revisited</h2>
+        <h3>Lab to accompany <a href="http://dave-reed.com/book">
+        A Balanced Introduction to Computer Science, 2nd ed.</a><br />
+        by David Reed, Pearson Prentice-Hall, &copy;2008.</h3></center>
+
+<P><BR></P>
+
+<p>In Lab 5, you wrote an interactive Web page that translated English words and 
+phrases into Pirate talk.  By 
+clicking on a button labeled in English, the user could see the corresponding Pirate 
+word or phrase in a text area.  
+While this page made it simple to add new words and phrases to the translation, it 
+limited the user to the English 
+words that appeared on the buttons.  A more useful (and perhaps, entertaining) page 
+might allow the user to enter any 
+text for translation.  Then, words and phrases that were in the translator's vocabulary 
+would be replaced with their 
+Pirate equivalents, leaving all other words alone. Thus, text containing names and 
+modern words (with no Pirate 
+equivalents) could still be translated.  Using some of the more advanced methods 
+associated with JavaScript strings, 
+it is possible to design and develop such a translator.  
+
+<p><br />
+<h3>PART 1:</h3>
+<p>You are to design and implement a better Web page for translating English text into 
+Pirate 
+talk.  JavaScript code for performing a simple translation is provided below.  The  
+<tt>PHRASES</tt> array contains English words/phrases and their pirate translations.  
+The 
+array is used by the  <tt>Translate</tt> function, which takes a string as input, 
+searches 
+that string for substrings from <tt>PHRASES</tt>, and replaces the English phrases with 
+their 
+pirate translations.  Your Web page should include a text area where the user can enter 
+text, 
+a button or clickable image to initiate the translation, and another text area where 
+the 
+translated text will appear.  Feel free to be creative, adding images or embellishments 
+to 
+the page and expanding the English-Pirate vocabulary in <tt>PHRASES</tt>.
+
+<p>
+<table border=1>
+<tr><td><font size=-1><xmp>
+
+    PHRASES = [["hello", "ahoy"], ["hi", "yo-ho-ho"], ["pardon me", "avast"], 
+               ["excuse me", "arrr"], 
+               ["my", "me"], ["friend", "me bucko"], ["sir", "matey"], 
+               ["madam", "proud beauty"], ["miss", "comely wench"], 
+               ["stranger", "scurvy dog"], ["officer", "foul blaggart"], 
+               ["where", "whar"], ["is", "be"], ["are", "be"], ["the", "th'"], 
+               ["you", "ye"], ["tell", "be tellin'"], ["know", "be knowin'"],
+               ["how far", "how many leagues"], ["old", "barnacle-covered"],
+               ["attractive", "comely"], ["happy", "grog-filled"], 
+               ["nearby", "broadside"], ["restroom", "head"], ["restaurant", "galley"],
+               ["hotel", "fleabag inn"], ["pub", "Skull & Scuppers"],
+               ["bank", "buried treasure"]
+              ];
+                
+    function Translate(text)
+    // Returns: a copy of text with English phrases replaced by piratey equivalents 
+    {
+        var i, toReplace, index;
+        
+        i = 0;
+        while (i < PHRASES.length) {
+            toReplace = new RegExp("\\b"+PHRASES[i][0]+"\\b", "i");
+            
+            index = text.search(toReplace);
+            while (index != -1) {
+               text = text.replace(toReplace, PHRASES[i][1]);
+               index = text.search(toReplace);
+            }
+            i = i + 1;
+        }
+        return text;
+    }
+</xmp></font></table>
+
+<P><br />
+<H3>PART 2:</H3>
+<P>When searching for an English word or phrase to translate, the above code is 
+case-insensitive.  Thus, a search for 
+"excuse me" would match whether that phrase occurred at the beginning, middle, or end 
+of a 
+sentence.  Since the 
+pirate phrase to be substituted is always lowercase, this can yield inconsistent 
+results.
+Modify the JavaScript code so that if a match occurs and the first letter in the phrase 
+to be 
+replaced is uppercase, 
+then the first letter in the substituted pirate phrase is likewise capitalized.  Thus, 
+"Excuse 
+me, sir." would be 
+translated as "Arrr, matey.", while "Sir, excuse me." would be translated as "Matey, 
+arrr."
+
+
+<P><br />
+<H3>PART 3:</H3>
+<P>As we all know from watching too many bad pirate movies, pirates had a penchant for 
+saying 
+"Arrr".  Add an 
+additional feature to the <tt>Translate</tt> function so that it randomly inserts 
+"Arrr."  into 
+the text between 
+sentences.  Your new code should be added at the end of the function, after the text 
+substitutions have been 
+completed (but before returning the modified text).  Your code should traverse the text 
+looking 
+for periods, and 
+after each period  randomly decide (with a 50/50 chance) whether to insert an "Arrr."  
+At no 
+time should consecutive 
+"Arrr."s be inserted, however.
+
+
+<P><HR></P>
+
+<BLOCKQUOTE><i>
+Hand in a printout of your Pirate translator page, attached to these sheets.</i> 
+</BLOCKQUOTE>
+</BODY>
+</HTML>

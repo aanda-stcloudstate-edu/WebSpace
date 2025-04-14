@@ -1,0 +1,60 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab 10 [A. A. Anda]</title>
+</head>
+<body>
+
+<center> <h1> CSCI 201</h1></center>
+
+<center> <h2> Lab 10</h2></center>
+
+<center> <h3> [A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with file I/O.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+This lab is intended to provide experience with text file I/O.<p>
+We want to write a program which will behave like the Unix <b>wc</b>
+utility.
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab10</i>, and move to it.</li>
+
+<li>
+Copy <tt>~cs201300/lab10/HappyFunBall.txt</tt> to your lab10 directory.
+</li>
+
+<li>
+Combining the functionality of programs 7-11 and 7-12 in Forouzan, write a
+program which counts <u>characters</u>, <u>words</u>, and <u>lines</u>
+of a file and then writes the totals to standard output.
+</li>
+
+<li>
+Use the <tt>HappyFunBall.txt</tt> file as your input file (do not read it from
+standard input).
+</li>
+
+<li>
+Compare your results with those of the Unix <b>wc</b> command run on the same file.
+</li>
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the source and the running of the program data.
+</li>
+
+</ol>
+
+
+</body>
+</html>

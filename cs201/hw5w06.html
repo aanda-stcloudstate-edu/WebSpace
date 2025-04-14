@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 5 - Spring 2006 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2006<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 5</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For each of the following problems you will solve:
+<ol type=I>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and <b>assignment number</b> will appear as comments at the top of your source code.
+    <P>
+    <li>the <b>purpose</b> of the program will also appear as comments at the top of your source code.
+    <P>
+    <li>follow closely the coding style of the text.
+    <P>
+    <li>compile your code with <tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i> (ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains the source code followed by a demonstration of the (possibly interactive) running of your program (on good test data). (for each program) You will hand in these files.
+    <P>
+    <li>Also, turn in copies of your <b>stubs</b> and
+    <a href="#driver"><b>test driver</b> program</a>s.
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<OL>
+    <li>Perform project 57 in Chapter 5.<br>
+    Verify your project by checking your results via the
+    <tt>cal</tt> facility in Unix.
+    <li>Modify the function from Lab 7 (which finds the roots of a quadratic
+    equation) to yield complex and imaginary roots as well for certain
+    real coefficients such that the <i>discriminant</i> is negative.<br>
+    If the discriminant is negative, and <b>a</b> &amp; <b>c</b> are nonzero,
+    then the complex roots occur as a conjugate pair.  Therefore we can alter
+    the intent of our output (reference) parameters to indicate and return the
+    real and imaginary components:
+    <ul>
+	<li>set <tt><b>nrr</b> = -1</tt>,
+	<li>set <tt><b>rr1</b> = </tt> the <u>real</u> part,
+	<li>set <tt><b>rr2</b> = </tt> the <u>imaginary</u> part.
+    </ul>
+    Note: if <tt><b>b</b> == 0</tt> then the real part, <tt><b>rr1</b></tt> 
+    will be zero, leaving the only the pure imaginary part, <tt><b>rr2</b></tt>,
+    nonzero.<br>
+    Your output function should then examine <tt><b>nrr</b></tt> to know how
+    to print the result.
+</OL>
+<HR>
+      Use the following <i>software engineering</i> techniques when developing
+      your program:
+<ol>
+    <li> Use <b>stubs</b> (as in <i>lab 5</i>) to validate your
+	program's structure.
+	<br>[this provides the <i>top-down</i> structure]
+    <li> For each function that is represented by a stub, write and
+	use a small <a href="#driver"><b>test driver</b> program</a>
+	to validate
+	that the new function you have written to replace the stub is
+	working correctly before you replace the stub with that new
+	function.
+	<br> [this builds the program, ensuring correctness, from the
+	<i>bottom-up</i>]
+</ol>
+<HR>
+<h4><a name="driver">Test Driver Programs</a></h4>
+<b>Test Driver Program</b>s are special programs whose only purpose is to test
+functions.  They are very small.  They perform the following three tasks:
+<ol>
+    <li>Input values to test the function
+    <li>Call the function with those input values
+    <li>Output values from the function
+</ol>
+Ensure that you check that the input tests the <u>range</u> of the
+preconditions and corresponds correctly with the output.
+</BODY>
+</HTML>
+

@@ -1,0 +1,102 @@
+<HTML>
+    <HEAD>
+	<TITLE>CSCI 200 - Spring, 2024, Professor A. A. Anda,  Homework Assignment 1: <i>Let's Make a Deal</i></TITLE>
+	<style type="text/css"> 
+	   BODY TT {color:maroon}
+	   BODY XMP {color:maroon}
+       </style>
+    </HEAD>
+    <BODY BGCOLOR=white TEXT=black>
+	<H3>
+	  CSCI 200<BR>
+	  Elements of Computing<BR>
+	  Spring, 2024<br>
+	  Professor A. A. Anda
+	</H3>
+	<P>
+	<DIV ALIGN=center>
+		<b>Homework Assignment 1: <i>Let's Make a Deal</i></b><BR>
+	</DIV>
+	<P>
+	<HR>
+	This assignment is an exercise in
+	<a href="http://en.wikipedia.org/wiki/Stochastic">stochastic</a>
+	<a href="http://en.wikipedia.org/wiki/Discrete_event_simulation">discrete event simulation</a>
+	demonstrating &amp;
+	<a href="http://en.wikipedia.org/wiki/Computer_model"> computer modeling</a> a seemingly paradoxical principle of probability as embodied in
+	the <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall problem</a> which emerged from a mathematical analysis of the optimal strategy
+	for winning the best prize on the television game show, <i>Let's Make a Deal</i>.<br><br>
+	<b>Conditional execution</b> statements (<i>introduced in Chapter 11 of Reed</i>) will be required to perform this homework.
+	<HR>
+	<P>
+	You will borrow and adapt code from <tt><a href="http://balance3e.com/Ch11/slots.html">slots.html</a></tt> in <b>Figure 11.10</b> on page 207 of Reed,<br>
+	and from your solution to <b>Exercise 11.19</b> on pages 213&ndash;214.
+	<P>
+	Create a Webpage with the following elements:
+	<ol type=I>
+	    <li> Standard identifying information.
+	    <ol>
+		<li> The title (what's displayed on the top bar of the browser window)
+		     will include:
+		 <ul>
+		     <li>Your name
+		     <li>the course
+		     <li>the assignment &amp; number
+		     <li>the date
+		 </ul>
+		 <li> Centered at the top of the Webpage will be the same information
+		     that is in the title.
+	    </ol>
+	    <li> As closely as possible, <i><a href="http://foldoc.org/?query=reverse+engineer">reverse engineer</a></i> the appearance and functionality of the
+	    <a href="https://www.statcrunch.com/applets/type1&deal">Let's Make a Deal Applet</a> using JavaScript: 
+	    <li>Design your page using:<br>
+	    <ul>
+		<li>HTML Tables [p. 364]</li>
+		<li>The following code can be used for clicking on the images:
+			<xmp>
+			    <script type="text/javascript">
+				DOOR1 = 0; DOOR2 = 1; DOOR3 = 2; // Assign symbolic identifiers to door number constants.
+				state = 0; // Initialize the state variable.  The simulation goes (for each click respectively)
+				           // from state == 0, to state == 1, to state == 2, then back to state == 0.
+				winning_door = RandomInt(0,2);  // Initialize the winning door variable. 
+                                           // Also place this statement in your reset() function which is called when any door is clicked in state == 2.
+			    </script>
+			    <div style="text-align:center">
+				<img id="door1Img" border=1 src="http://web.stcloudstate.edu/aanda/cs200/LMaD_images/door1.gif" alt="Door 1 image"
+				     onclick="click_action(DOOR1);">
+				<img id="door2Img" border=1 src="http://web.stcloudstate.edu/aanda/cs200/LMaD_images/door2.gif" alt="Door 2 image"
+				     onclick="click_action(DOOR2);">
+				<img id="door3Img" border=1 src="http://web.stcloudstate.edu/aanda/cs200/LMaD_images/door3.gif" alt="Door 3 image"
+				     onclick="click_action(DOOR3);">
+			    </div>
+			</xmp>
+		    <li> The other two images are at: <tt>"http://web.stcloudstate.edu/aanda/cs200/LMaD_images/donkey.gif"</tt> &amp; <tt>"http://web.stcloudstate.edu/aanda/cs200/LMaD_images/prizemoney.gif"</tt>.
+		    <li> <i>You</i> write the <tt>click_action()</tt> function.
+		    <li>If in <tt>state == 0</tt> and the user selects the winning door, either of the other two doors can be opened to reveal the donkey.<br>
+			The code to do this is (remembering to include Reed's <tt>random.js</tt> library):
+			<xmp>
+			    door_to_open = (winning_door + RandomInt(1, 2)) % 3;
+			</xmp>
+		</ul>
+		<li>Use <i>comments</i> in your code to both:</li>
+		<ul>
+		    <li>state function <u>preconditions</u> &amp; <u>postconditions</u>;</li>
+		    <li>describe the <i>logic</i> of your program.</li>
+		</ul>
+	    </ul>
+	</ol>
+	<P>
+	<HR>
+	<ol>
+	    <li>After testing thoroughly, Zip &amp; submit this file to its D2L Dropbox.</li>
+	    <li>Also, submit a screenshot after playing 60 times, switching doors 30 times, and not switching doors the other 30 times.</li>
+	</ol>
+	<HR>
+	<div style="text-align:center">
+	    <b>XKCD Comic</b><br>
+	<a href="http://xkcd.com/1282/"><img src="http://imgs.xkcd.com/comics/monty_hall.png" alt="xkcd: Monty Hall"></a>
+	</div>
+	<HR>
+    </BODY>
+</HTML>
+

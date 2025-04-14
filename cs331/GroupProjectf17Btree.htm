@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI 331 B+Tree Group Project Fall 2017</title>
+    <style>
+	code{font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems Fall 2017</h1>
+
+<h2>B+Tree Group Project</h2> 
+
+<p>
+Your team has previously implemented <b>Component A</b>:
+<h3>Component A</h3>
+The generation of a <u>sorted</u> <u>file</u> of <u>records</u> via
+merging of <u>replacement selection</u> generated sorted lists.<br>
+<b>Component A</b> lays the foundation for the second team component which implements:
+<h3>Component B</h3>
+The creation of a <u>B+tree index</u> of that list.<br>
+You will implement a B+tree having the following attributes:
+<ul>
+    <li> use a configurable order B+tree (defaulting to a block capacity of 6)
+    <li> records will reside in the <u>leaves</u> <i>only</i> in a seqence of
+    <u>linked blocks</u>.  Higher order nodes will contain <i>only</i> <u>keys</u>.<br>
+    (We are borrowing the idea of linked blocked records from Chapter 10.1 &amp; 10.2, and introduced
+    in the first paragraph of p. 401 in Section 9.9, and defined in Section 9.10)
+    <ul>
+	<li>A more robust design allows for there to be two block capacities: one for the blocks containing records,
+	    and a another (smaller) capacity for non-leaf-level blocks containing keys only.
+    </ul>
+    <li>Essentially, we are implimenting Programming Exercises 10.19, 10.21, and 10.22, and <i>optionally</i>, 10.20</li>
+    <li>Records will consist of records comprising at least an integer field and a string field (<i>your choice of order</i>)
+</ul>
+Write a test driver that demonstrates that your B+tree works.<br>
+At a minimum your program should be able to:
+<ul>
+    <li>open the files of records along with their B+tree indices
+    <li>print all the information about a record
+    <li>modify fields in any record 
+    <li>insert records
+    <li>delete records
+    <li>verify that the B+Tree file is consistent, but rebuild if inconsistent
+    <li>rebuild the B+Tree
+    <li>any other useful operations you think of that you can implement and test
+</ul>
+</p>
+You should have a method of printing (dumping) the intermediate contents of the B+tree
+so that you can determine whether your implementations for building, insertion and
+deletion are functioning properly.  This dump should be sufficiently readable to help
+facilitate debugging.
+
+<p>
+<h5>Both Team Components</h5>
+<ol>
+    <li>Work together to on specifying the data interface to ensure that each <b>component</b> can work
+	seamlessly with the other.</li>
+    <li>Reserve an hour during finals week for the team to collectively make an oral
+	presentation and demonstration of their project to the professor.</li>
+</ol>
+
+<h2>WHAT TO TURN IN:</h2>
+
+<ol>
+    <li><u>Design document for the classes</u>.<br>
+	(Consider using facilities in, e.g. Jgrasp or Doxygen)
+    (<font color="teal">25% of your grade</font>)
+
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Also, leave a copy of the source file in your account until the graded
+    program is returned to you.<br>
+    (<font color="teal">20% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to compile and run the program. (use a <u>makefile</u>)
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+    <li>Reflection: all group members will write their own paragraph describing
+	what they learned from these two group assignments.  
+	<br>(<font color="teal">5% of your grade</font>)
+    <ul>
+	<li>How much time did you spend on the program?
+	<li>Did you plan well before going to the computer?
+	<li>Did you test the program completely? 
+	<li>Did you learn anything new about the language?
+	<li>Did you learn anything new about the way you study or should study?
+    </ul>
+    <li>Everyone in the group should turn in their peer evaluations to the instructor separately.
+    <li>The group leader should schedule a 30-minute meeting with me to
+	demonstrate the project.  The group leader must also turn in their
+	group log, the group member evaluations and the summary of the PSP data.
+</ol>
+
+</div>
+
+</body>
+
+</html>

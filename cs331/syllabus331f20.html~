@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<title>Syllabus: SCSU CSCI 331, Software Systems, Fall 2020, Section 1 &amp; 2</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+                        CSCI 331 (Section 1 &amp; 2) [001557 &amp; 001559]
+                        Software Systems
+                        Fall 2020 SYLLABUS
+
+INSTRUCTOR:     Andrew A. Anda, Ph.D., Professor of Computer Science
+OFFICE:         ECC-223          Telephone:     (320)308-2044
+E-MAIL:         aanda@stcloudstate.edu  (please use "CSCI331: " in the Subject field)
+Web Site: <A HREF="http://web.stcloudstate.edu/aanda/cs331.html">http://web.stcloudstate.edu/aanda/cs331.html</A>
+Instructor Schedule: <A HREF="http://web.stcloudstate.edu/aanda/Wkly-sched-f20.pdf">http://web.stcloudstate.edu/aanda/Wkly-sched-f20.pdf</A>
+(and by appointment)
+Covid Statement: <A HREF="http://web.stcloudstate.edu/aanda/Covid/Covid_Syllabus_Statement_8-21-20.pdf">http://web.stcloudstate.edu/aanda/Covid/Covid_Syllabus_Statement_8-21-20.pdf</A>
+	{I sometimes won't be available for an office hour - this will usually be because I'm attending a meeting}
+
+CLASS TIME AND LOCATION:
+    Class: MWF: 14:00 - 14:50 in ECC 116 Section 1
+                15:00 - 15:50 in ECC 116 Section 2
+
+Special Covid-19 Content Delivery and Accessibility:
+I plan to teach using a blend of synchronous and asynchronous delivery via Zoom and D2L,
+where it should make no effective and essential difference whether at any time you are F2F or remote.
+I intend to record all lectures.  And, most materials will be available through D2L.
+Student submissions of quizzes, assignments, notes, etc. will be via a D2L dropbox.
+This plan should maximize flexibility for both you and me to adapt to whatever factors change progressively
+or suddenly for either you or me.
+You will never be expected to be F2F in our classroom.
+
+
+REQUIRED TEXT:  * File Structures: An Object-Oriented Approach with C++,
+                  M.J. Folk, B. Zoellick, G. Riccardi, Addison Wesley Longman, 1998.
+
+                  A PDF copy of this text (which is out-of-print) accessible is on our course D2L page in Materials/Content/Primary Textbook: FZR. (Please use this copy only for this course)
+				  You may also buy the text (used) from a Web-based merchant
+                  or you can follow the following instructions on how to buy the electronic version from the publisher which includes the source code:
+		  <A HREF="http://web.stcloudstate.edu/aanda/cs331/Folk/CSCI331CustomBook.txt">http://web.stcloudstate.edu/aanda/cs331/Folk/CSCI331CustomBook.txt</A>
+
+SUPPLEMENTARY TEXTS * Applied Data Structures with C++, Peter Smith, Jones and Bartlett, 2004.
+		    * (With your CSCI 201 &amp; 301 textbooks)
+			
+			   A PDF copy of the Smith text and the Carrano &amp; Henry text are accessible is on our course D2L page in Materials/Content/Reference Books. (Please use this copy only for this course)
+
+<A HREF="https://catalog.stcloudstate.edu/Catalog/ViewCatalog.aspx?pageid=viewcatalog&topicgroupid=1964&entitytype=CID&entitycode=CSCI+331">COURSE DESCRIPTION:</A>
+    Problem solving strategies and concepts applied in the context of issues
+    associated with the design and implementation of software systems using
+    a combination of current software packages/environments. Subjects
+    addressed include file processing, data modeling and mapping to storage
+    structures, data base systems, and software design and implementation.
+
+STUDENT LEARNING GOALS:
+    1. gain experience working in a group in various roles on a technical project.
+    2. gain knowledge updating sequential files as related to data base systems.
+    3. gain experience designing software systems through a software engineering process including designing algorithms, coding, and testing.
+    4. write programs and software systems involving trees, blocking/deblocking, sort/merge, updating sequential files, and B+trees.
+
+I Student Outcomes as defined by ABET (CAC):
+    a) An ability to apply knowledge of computing and mathematics appropriate to the discipline.
+    c) An ability to design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs.
+    d) An ability to function effectively on teams to accomplish a common goal.
+    e) An understanding of professional, ethical, legal, security and social issues and responsibilities.
+    f) An ability to communicate effectively with a range of audiences.
+    i) An ability to use current techniques, skills, and tools necessary for computing practice.
+    j) An ability to apply mathematical foundations, algorithmic principles, and computer science theory in the modeling and design of computer-based systems
+       in a way that demonstrates comprehension of the tradeoffs involved in design choices.
+    k) An ability to apply design and development principles in the construction of software systems of varying complexity.
+
+II Student Outcomes (Sos) for the Computer Science Program (applicable to this course):
+    Students will be able to:
+	1. apply structured principles and good practices to the task of developing software systems.
+	4. communicate both technical and non-technical aspects of their work in formal and informal situations.
+	5. apply formal methods to the process of constructing a system and an appreciation of the need to study and develop such methods.
+	7. analyze various aspects of the process used when designing a system and employ established frameworks to evaluate the completed work.
+
+TOPICS (not necessarily in order of coverage):
+    * Sequential file processing
+    * Indexed Files
+    * Hashed Files
+    * Tree Structured Files
+    * Secondary storage media
+    * Introduction to database
+    * Software Design Processes and Principles
+    * Software Development Processes and Principles
+    * and more...
+    * (I will expect students to learn the complexities {bigO} of the
+        operations on the data structures we discuss and to be able
+        to select, based on those complexities, the most appropriate ADT
+        considering the nature of the data and how it will be accessed.)
+
+PREREQUISITES:
+    [Prereq.: CSCI 220 or ECE 221; CSCI 301 (301 coreq: Math 271)]
+    I assume that all students in this class have passed the prerequisite CSCI and MATH courses, or their equivalents.
+    We also assume that you have an operational facility with Unix.
+    If you have not had ALL of these courses you should drop this course until you have passed all of the prerequisites.
+    We do not have time for an extensive recapitulation of topics covered in the prerequisite courses.
+
+CLASS ACCOUNTS:
+    
+    You have the option of having student ID magnetic access to our computer lab.
+
+PROGRAMMING ASSIGNMENTS HOMEWORK AND IN CLASS WORK:
+    There will be a sequence of programming assignments. 
+    These must be submitted by the time and date as indicated on the respective D2L DropBox.
+    No allowances will be made for down time on the computer, so I suggest you
+    begin each assignment as soon as you receive it.
+    Programs not submitted by their deadline will be penalized.
+
+    A program must compile to receive any credit. 
+	(Which implies that a successful strategy is to always maintain available the
+	 last successfully compiling version as you are developing incrementally)
+    Keep in mind that I expect all programs to produce correct output given error-free input. 
+	Check your output before submitting your final copy (The grader will ignore all but your final submission.
+	Don't assume that a program which produces any output, without terminating abnormally, is correct. 
+	Are the output and test results what you expected?
+	Test your program carefully and extensively. 
+	You have not fully tested your program if you have not executed every line of code.
+    Preconditions and postconditions must be consistent and well-defined. 
+    The code should satisfy the postconditions if the preconditions are met.
+    Conversely, if a precondition is violated, that exception should be detected and handled.
+
+    The grade you get on a program is based on the code, the documentation and
+    how well it is tested.  To receive better than a C on a program it must do
+    more than produce correct output given correct input.  By this I mean your
+    program must be robust, well documented, well tested and well written.
+
+    You will be assigned membership in a group/team.
+    Most of the projects will have a significant group deliverable.
+    Your grade on the group projects will also be based on how well you
+    cooperate with, contribute to, and participate in the group you are
+    assigned to.  Your contributions to your group's efforts will be assessed
+    by your peers.
+    * &quot;Boat anchors&quot; will be significantly penalized up to a whole letter grade.
+    * &quot;Heroes&quot; will be significantly rewarded  up to a whole letter grade.
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.  Use of recording devices during exams is prohibited.
+    If you must quote or paraphrase another source, citation is essential,
+    otherwise plagiarism has been committed.  You are expected to be familiar
+    with your rights and obligations as outlined in the 
+    <A HREF="https://www.stcloudstate.edu/studenthandbook/code/default.aspx">Student Code of Conduct</A> - specifically the <A HREF="https://www.stcloudstate.edu/studenthandbook/code/prohibited.aspx">Prohibited Student Conduct</A> section, and the <A HREF="https://www5.stcloudstate.edu/Policies/SCSU/Viewer.aspx?id=6">Academic Integrity policy</A> within.
+
+STUDYING IN GROUPS:
+    I encourage you to study with someone else in the class, but when you
+    prepare the final documents to turn in be sure that it is your own work and that you understand it.  
+	If you represent someone else's work as your own (without citing them as a source), or allow someone else to turn your work in as
+    theirs (without citing you as a source), you will have committed academic dishonesty and will receive an F.
+
+DECORUM: Conduct yourself so as not to distract others. In particular
+    * Do not wear clothing that includes images or text that could be offensive to a classmate.
+    * Ensure that your devices are in silent mode
+    * Do not engage in distracting activities like reading a newspaper
+      or sleeping. [ the snoring can be so distracting... :^) ]
+    * Arrive for class on time, and be ready to begin.
+      If you must be late, enter and seat yourself stealthily.
+    * If you are early, sit toward the middle of a row.
+    * Do not start packing up before class ends.
+
+SAFETY:
+    What to do if you have experienced sexual assault, rape, domestic violence, sexual harassment or stalking:
+    Please read this resource: 
+    [<A HREF="https://www5.stcloudstate.edu/Policies/SCSU/Viewer.aspx?id=60">https://www5.stcloudstate.edu/Policies/SCSU/Viewer.aspx?id=60</A>]
+    Your professors fulfil the role of mandatory reporters.  If you want to speak confidentially, see the above link for
+    a list of confidential options.
+
+ATTENDANCE:
+    You are responsible for knowing what happens at each class meeting.
+    You should expect to spend a lot of time on this class.  It is not an
+    easy class.  If you are having trouble in class I expect to see you at
+    my office hours.  If you don't tell me you are having troubles how do you
+    expect me to know?  If you can't access me during my office hours, make an
+    appointment for another time.
+
+QUIZZES:
+    There may be a sequence of quizzes of assigned readings (usually prior to that chapter's coverage in class).
+EXAMS:
+    * There will be a set of midterm exams and a <b>comprehensive</b> final exam.
+    * Exams will be based on the notes; that is, on the presentations in class
+		as well as on the assigned readings and the assignments.
+    * Calculators will be neither necessary nor allowed.
+    * For each exam, a new review sheet (8.5"x11' front &amp; back) will be allowed;
+		** Make a prior photocopy of your review sheet as it will be collected with the exam.
+		** Two review sheets will be allowed on the final exam.
+		** Only material from lecture notes (slides and written in lecture), instructor provided supplements,
+			or the course textbooks are allowed on each review sheet.
+		** Each review sheet must be a unique hand-written original copy.
+		** Any answers to questions from exams for this course given in previous semesters which appear on your
+			review sheet are considered to be examples of academic dishonesty. 
+	* Make-up exams will be given in only in extreme (or university sanctioned) circumstances and only with prior notification to the instructor.
+
+GRADING:
+        Your grade will be determined by the contributions of your scores
+        on assignments,  quizzes, intermediate and final exams.
+        Makeup of tests, quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE POINTS:
+        Assignments             35%
+        Sectional Exam(s)       25%
+        Final Exam              40%
+
+FINAL EXAM: Monday, December 14, 12:20 - 14:35 as a D2L Quiz;
+	    Monday, December 14, 14:45 - 17:00 as a D2L Quiz.
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************
+<h3>Peer Wellness Coaching</h3>
+<a HREF="https://www.stcloudstate.edu/healthwellness/get-healthy/peer-coaching.aspx">https://www.stcloudstate.edu/healthwellness/get-healthy/peer-coaching.aspx</a>
+*******************************************************************************
+<h3>Accommodations Statement</h3>
+St. Cloud State is an affirmative action, equal opportunity employer and educator.
+
+SCSU is committed to a policy of nondiscrimination in employment and education opportunity and works
+    to provide reasonable accommodations for all persons with disabilities.
+
+Accommodations are provided on an individualized, as-needed basis,
+    determined through appropriate documentation of need.
+
+Please contact Student Disability Services, sds@stcloudstate.edu,  or 320.308.4080, office CH 202
+    to meet and discuss reasonable and appropriate accommodations. 
+
+The accommodations authorized may be discussed with your instructor.
+
+All discussions will remain confidential.
+*******************************************************************************
+</pre>
+<h3>Violence Statement</h3>
+<pre>
+In the event that you choose to write or speak about having survived sexualized violence,
+including rape, sexual assault, dating violence, domestic violence, or stalking,
+and specify that this violence occurred while you were an SCSU student,
+federal and state education laws require that, as your instructor,
+I notify the Title IX officer, Ellyn Bartges. 
+
+She (or her designee), will contact you to let you know about accommodations and
+support services at SCSU and possibilities for holding accountable the person who harmed you.
+
+If you do not want the Title IX Officer notified, instead of disclosing this information to your instructor,
+you can speak confidentially with the following people on campus and in the community. 
+
+They can connect you with support services and discuss options for holding the perpetrator accountable.
+ 
+SCSU's Gender Violence Prevention Program      320.308.3995      Lee LaDue
+ 
+Central Mn Sexual Assault Center (Community program)    320.251.4357      24-hour hotline
+  
+SCSU's Counseling and Psychological Services       320-308-3171
+ 
+If you are a survivor or someone concerned about a survivor and need immediate information on what to do, please go to: <A HREF="http://www.stcloudstate.edu/womenscenter/">http://www.stcloudstate.edu/womenscenter/</A>
+</pre>
+</body>
+</html>

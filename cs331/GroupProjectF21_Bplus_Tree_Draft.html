@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI 331 B+ Tree Group Project Fall 2021 (<i>Draft</i>)</title>
+    <style>
+	code{font-family: courier; font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems Fall 2021</h1>
+
+<h2><u>B+ Tree</u> Group Project (<i>Draft</i>)</h2> 
+
+<p>
+This project is the final phase of a four-phase scalable <u>sequence-set with index</u> project resulting in a <i>dynamic, secondary storage-based</i>, <b>B+tree</b>.
+<h3>Objective</h3>
+Generate a <u>B+tree</u> as a file composed of (doubly) linked, fixed-size blocks, of variable-sized records.<br>
+(based on <i>Programming Exercises</i> 10.19 in the Folk textbook).
+<br><br>
+You will design your B+tree using the specifications in Folk Section 9.10,
+with the sequence set of pages/blocks (containing records) being doubly linked,
+as you produced in the final Sequence Set project.
+<br>
+The B-Tree pages/blocks, growing up from the sequence set leaves,
+will contain only lists of ordered pairs of the largest keys of each child page/block with the relative block number of that child, sorted by key.
+<br>
+The B-tree index (growing up from the sequence set leaves) will <i>replace</i> the simple index file (from the previous project),
+with the crucial factors being that the B-tree index will use the <i>same</i> page/block size as the sequence set,
+and the B-tree index pages/blocks will be <i>interleaved</i> with the sequence set pages/blocks in the <i>same</i> file.
+<br><br>
+Teams will each implement a dynamic <b>B+tree Class</b> that generates and uses a paged/blocked B+tree file.<br>
+Only the minimum set of block and record objects will be kept in RAM at any one time.
+<br><br>
+The same US Postal Code data file will be used (from the previous project),<br>
+however, you should test the flexibility of your design by successfully processing a column-reordered version of the data file, and one with fewer fields.
+<br><br>
+Consider developing and testing, <i>first</i>, a <u>static</u> version of the B+tree Class which can generate a B+tree file,<br>
+then verify that the file can be used as a sequence set <i>and</i> as an index to access any record through the <u>root</u> via the record's primary key.
+<br>
+<i>Then</i>, add <i>dynamic</i> functionality to be able to insert and delete records.
+<br><br>
+</p>
+You should have a method of printing (dumping) the contents and shape of your B-tree file
+so that you can determine whether your implementations for building, insertion and
+deletion are functioning properly. 
+This dump should be sufficiently readable to help facilitate debugging.
+
+Write a test driver that demonstrates that your B+tree Class and file work properly and robustly.<br>
+</ol>
+<hr>
+<h4>Development tips</h4>
+<ul>
+    <li>Even though the sequence-set and index-set blocks are the same size, each block type has a different architecture.  Therefore, I recommend using a differnt buffer type for each to allow and facilitate each block type having its own specialized pack and unpack methods.</li>
+    <li>If the primary key and the RBN fields are fixed length, then the index set blocks can have a fixed well-defined order.</li>
+</ul>
+<h5>Sequencing</h5>
+Loading a B+tree (See Folk 10.9):<br>
+I list three methods for loading a B+tree from a sorted list of records.<br>
+<ol>
+    <li>(from largest to smallest key) Build the sequence-set blocks and index set blocks simultaneously</li>
+    <li>First build the sequence-set. Then (from largest) build the index-set</li>
+    <li>First build the sequence-set. Then (from largest) build the index-set layer-by-layer</li>
+</ol>
+<hr>
+<h3>Specifications for a program which uses the B+tree Class:</h3>
+The application program will iterate through the B+tree displaying (<i>neatly</i>) the
+Northern<i>most</i>, Southern<i>most</i>, Eastern<i>most</i>, and Western<i>most</i> zip code for a specified state.<br>
+{You can verify the results by sorting the Excel source data file <i>first</i> by state, <i>then</i> by longitude or by latitude}<br><br>
+
+Also, the application program, using a different set of command line flags, will display (<i>neatly</i>) the
+ <u>State</u> and <u>Place&nbsp;Name</u> for a specified <u>Zip&nbsp;Code</u> (or set of Zip Codes).
+<ol>
+    <li>Run the test driver program to build the <i>full</i> B+tree file;
+	<li>Run the application program specifying the <u>B+tree&nbsp;file</u> and the <u>State</u> on the <u>command&nbsp;line</u>;
+    <li>Use the Unix <code>script</code> command to show:
+    <ol>
+	<li>the building of the Sequence Set file,
+	<li>the repeated running of the application program and its output for several states, 
+	<li>the repeated running the application program to display the <u>State</u> and <u>Place&nbsp;Name</u> for several <u>Zip&nbsp;Code</u>s.
+    </ol>
+</ol>
+
+<hr>
+<h2>WHAT TO TURN IN:</h2>
+
+<ol>
+    <li><u>A Design Document for the B+tree Class and for its test driver program</u>.<br>
+
+    <li> <u>A Test Document for the B+tree Class</u>,<br>
+    Describe each test along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what was the result of each test</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated in the script file. (preceding each test, use <code>%echo "&lt;test description&gt;"</code>)<br>
+
+    <li><u>A User Manual</u>.<br>
+    This should describe:<br>
+    <ol>
+	<li>The name of the class.
+	<li>Describe how to use the public methods.
+	<li>How to compile the class and program which uses the class. (use a <u>makefile</u>)
+	<li>Examples of using the methods.
+	<li>How to use the test driver program.
+	<li>Note the known errors and deficiencies for the class?
+    </ol>
+    
+    <li><u>Source files</u><br>
+	Include:
+	<ul>
+	    <li>a Doxygen PDF to display the B+tree Class (and subordinate classes), its source code, and its UML class diagrams
+	    <li>the <code>.cpp</code> files for the:
+	    <ul>
+		<li>B+tree Class;
+		<li>the test driver program;
+		<li>the application program.
+	    </ul>
+	    <li>the script file that was generated to show the running of the application program.
+	    <li>the class' <u>makefile</u> if you used one to compile the class.
+	</ul>
+	(zip the source files: {see <a href="https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files">https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files</a>})<br>
+
+
+</ol>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Code Listings Chapter 2</title>
+<meta name="Microsoft Theme" content="glacier 011">
+</head>
+
+<body background="glabkgnd.jpg" bgcolor="#99CCFF" text="#000000" link="#006666" vlink="#999999" alink="#66CCCC">
+
+<h1 align="center">Code Listings Chapter 8</h1>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 8-1 A C++ interface for lists">Listing 8-1 A C++ 
+        interface for lists</a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** Interface for the ADT list
+@file ListInterface.h */
+#ifndef _LIST_INTERFACE
+#define _LIST_INTERFACE
+template &lt; class ItemType &gt; class ListInterface
+{
+public:
+/** Sees whether this list is empty.
+@return True if the list is empty; otherwise returns false. */
+  virtual bool isEmpty ()const = 0;
+
+/** Gets the current number of entries in this list.
+@return The integer number of entries currently in the list. */
+  virtual int getLength () const = 0;
+
+/** Inserts an entry into this list at a given position.
+@pre None.
+@post If 1 &lt;= position &lt;= getLength() + 1 and the insertion is
+successful, newEntry is at the given position in the list,
+other entries are renumbered accordingly, and the returned
+value is true.
+@param newPosition The list position at which to insert newEntry.
+@param newEntry The entry to insert into the list.
+@return True if insertion is successful, or false if not. */
+  virtual bool insert (int newPosition, const ItemType &amp; newEntry) = 0;
+
+/** Removes the entry at a given position from this list.
+@pre None.
+@post If 1 &lt;= position &lt;= getLength() and the removal is successful,
+the entry at the given position in the list is removed, other
+items are renumbered accordingly, and the returned value is true.
+@param position The list position of the entry to remove.
+@return True if removal is successful, or false if not. */
+  virtual bool remove (int position) = 0;
+
+/** Removes all entries from this list.
+@post List contains no entries and the count of items is 0. */
+  virtual void clear () = 0;
+
+/** Gets the entry at the given position in this list.
+@pre 1 &lt;= position &lt;= getLength().
+@post The desired entry has been returned.
+@param position The list position of the desired entry.
+@return The entry at the given position. */
+  virtual ItemType getEntry (int position) const = 0;
+
+/** Replaces the entry at the given position in this list.
+@pre 1 &lt;= position &lt;= getLength().
+@post The entry at the given position is newEntry.
+@param position The list position of the entry to replace.
+@param newEntry The replacement entry. */
+  virtual void setEntry (int position, const ItemType &amp; newEntry) = 0;
+};  // end ListInterface
+#endif</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

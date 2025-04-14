@@ -1,0 +1,507 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title> SCSU CSCI 201 [2], Fall '04, A. A. Anda</title>
+</head>
+<body bgcolor="#EEEEEE">
+
+<center>
+<h1>
+SCSU CSCI 201&nbsp;<br>
+<i>Fundamentals of Computer Science</i>
+</h1>
+<h2>
+Section 2<br>
+Fall 2004<br>
+</h2>
+<h3>
+A. A. Anda, Ph.D.
+</h3>
+</center>
+
+<h2>
+SYLLABUS:</h2>
+<a href="http://web.stcloudstate.edu/aanda/cs201/syllabus201f04.html">Section 2</a>,<br>
+<a href="http://web.stcloudstate.edu/aanda/Wkly-sched-f04.html">Instructor's Class Schedule</a><br>
+<a href="http://web.stcloudstate.edu/aanda/cs201/LabSchedulef04.htm">Lab Tutors Schedule</a>
+<h2> LABS:</h2>
+
+<ol>
+    <li> [UNIX text] Section 1.14: perform Sessions I-V.  Ensure that you can correctly answer Exercises 1.23 - 1.34.
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab2f04.html">Lab 2</a> {9/16/04}
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab3f04.html">Lab 3</a> {9/23/04}
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab4f04.html">Lab 4</a> {9/30/04}
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab5f04.html">Lab 5</a> {10/07/04}
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab6f04.html">Lab 6</a> {10/14/04}
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab7f04.html">Lab 7</a> {10/21/04}</dd>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab8f04.html">Lab 8</a> {10/28/04}</dd>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab9f04.html">Lab 9</a> {11/11/04}</dd>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab10f04.html">Lab 10</a> {11/18/04}</dd>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab11f04.html">Lab 11</a> {12/02/04}</dd>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/lab12f04.html">Lab 12</a> {12/09/04}</dd>
+<!--
+<a href="http://web.stcloudstate.edu/aanda/cs201/convert2to10.html">example solution</a>
+</dd>
+<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/lab8f03.html">Lab 8</a> {10/28/03}</dd>
+<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/lab9f03.html">Lab 9</a> {11/04/03}</dd>
+<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/lab10f03.html">Lab 10</a> {11/11/03}</dd>
+<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/lab11f03.html">Lab 11</a> {11/18/03}</dd>
+<dd> Lab 12 {11/25/03}: copy ~cs201400/lab12/lab12.txt to your lab12 directory and edit it.
+<dd> Lab 13 {12/02/03} quadratic sort algorithm examples:
+    <ul>
+      <li><a href="http://web.stcloudstate.edu/aanda/cs201/bubble.cpp.html">bubble.cpp</a>
+      <li><a href="http://web.stcloudstate.edu/aanda/cs201/insertion.cpp.html">insertion.cpp</a>
+      <li><a href="http://web.stcloudstate.edu/aanda/cs201/selection.cpp.html">selection.cpp</a>
+    </ul>
+-->
+</ol>
+
+<h2> Reading Quizes: <i>(given at start of class period)</i></h2>
+<ol>
+    <li> Fri. Sept. 10: C++ Ch. 1
+    <li> Wed. Sept. 15: C++ Ch. 2 <b>AND</b> Unix Ch. 3
+    <li> Mon. Sept. 27: C++ Ch. 3 <b>AND</b> Unix Ch. 6
+    <li> Mon. Oct.  11: C++ Ch. 4 
+    <li> Mon. Oct.  25: C++ Ch. 5 
+    <li> Wed. Nov.  03: C++ Ch. 6 
+    <li> Wed. Nov.  17: C++ Ch. 7 
+    <li> Mon. Nov.  22: C++ Ch. 8 
+    <li> Mon. Dec.  06: C++ Ch. 9 
+</ol>
+<h2> EXAMS:</h2>
+<dl>
+    <dd>Midterm 1 {Friday, 10/08/04}
+    <dl>
+	<dd> Unix </dd>
+	<dd> C++: Chapters 1-3 &amp; select appendices</dd>
+	<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/Midterm1ReviewF04.html">Midterm 1 Review</a></dd>
+    </dl>
+    <dd>Midterm 2 {Monday, 11/15/04}
+    <dl>
+	<dd> C++: Chapters 4-6 &amp; select appendices</dd>
+	<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/bigO.html">big O() exercises</a></dd>
+	<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/Midterm2ReviewF04.html">Midterm 2 Review</a></dd>
+	<dd> Closed book (<i> You may use another note sheet in addition to the that you prepared for the first midterm</i>)</dd>
+    </dl>
+    </dd>
+<!--
+    <dl>
+	<dd> C++: Chapters 4-7 </dd>
+	<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/midterm2review.html">Midterm 2 Review</a></dd>
+	<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/bigO.html">big O() exercises</a></dd>
+	<dd> Closed book (<i> You may use another note sheet in addition to the that you prepared for the first midterm</i>)</dd>
+    </dl>
+    </dd>
+-->
+    <dd><b>Final</b> {Friday 12/17/04 - 10:15 <-> 12:45 - ECC-115}
+	<dl>
+	    <dd> <b>Comprehensive</b> </dd>
+	<dd> <a href="http://web.stcloudstate.edu/aanda/cs201/finalreviewf04.html">Final Review</a></dd>
+	<dd> Closed book (<i> You may use another note sheet in addition to those that you prepared for the first two midterms</i>)</dd>
+	</dl>
+    </dd>
+    <dd><b>Course Assessment</b> 
+	<dl>
+	    <dd> Please take the time to complete the online course assessment:
+	    (<i>set aside an hour or so for this before the end of finals week</i>)</dd>
+	    <dl>
+	    <dd> Go to: <a href="http://www.wcer.wisc.edu/salgains/student/default.asp">Course Assessment Page</a></dd>
+	    <dd> The <u>Course ID</u> is: <b>714711625</b></dd>
+	<dd> The <u>Course Password</u> is: <b>Pascal</b></dd>
+	<dd> Enter your <u>CSCI system login ID</u> as your <u>Student ID</u> (<i>The assessment system will ensure your annonymity</i>)</dd>
+	    </dl>
+	</dl>
+    <dd><b>Important Note:</b> 
+	<dl>
+	    <dd>Your csci accounts will be expunged shortly after finals week.
+	    <dd>ASAP, copy your files to removable media and/or your Huskynet File Space.
+	    <dl>
+		<dd><i>Study the <tt>tar</tt> command to learn how to perform this quickly and easily.</i>
+	    </dl>
+	</dl>
+</dl>
+
+<h2> EXERCISES:</h2>
+
+<ol>
+</ol>
+
+<h2> Homework Assignments:</h2>
+
+<ol>
+    <li> [UNIX text] Section 2.11: perform Sessions I-III.  Ensure that you can correctly answer Exercises 2.21 - 2.39. Practice all commands in table on page 58. Due by Wed. Sept. 15
+    <li><a href="http://web.stcloudstate.edu/aanda/cs201/hw1f04.html">Designing Algorithms</a>, Due Wed. Sept. 29, 2004.
+    <li><a href="http://web.stcloudstate.edu/aanda/cs201/hw2f04.html">Elementary I/O</a>, Due Wed. Oct. 6, 2004.
+    <ul>
+	<li><b>NOTE:</b> to print the floating-point representation of an integer, type <br>
+	    "<tt>cout &lt;&lt; (float)</tt><i>int_ident</i>", where <i>int_ident</i> is the identifier of an integer variable. <br>
+	    Be sure to precede this statement with an appropriate floating-point output manipulator.
+    </ul>
+    <li><a href="http://web.stcloudstate.edu/aanda/cs201/hw3f04.html">Expressions</a>, Due Wed. Oct. 13, 2004.
+    <li><a href="http://web.stcloudstate.edu/aanda/cs201/hw4f04.html">Functions</a>, Due Wed. Oct. 20, 2004.
+    <li>Chapter 5 Project 57
+    <li>Chapter 6 Project 55, Due Wed. Nov. 17.
+    <ul>
+	<li> <b>Note</b>: Change <u><tt>%7b</u></tt> typo to <u><tt>%7</u></tt>
+    </ul>
+    <li>Chapter 8 Project 51, Due ...
+    <ul>
+	<li> Also, use the average to compute the standard deviation too.
+	<li> Print the number of entries, mean, median, mode, and st. dev.
+	<li> Exception handling: (Chapter 7)
+	<ul>
+	    <li> handle file errors (Sections 7-3 and 7-8)
+	    <li> Warn the user if there are no entries in the file
+	    <li> Warn the user if there are more than 50 entries in the file
+	    <br> and that only the first 50 will be used
+	</ul>
+	<li> Show that your program will work properly for:
+	<ul>
+	    <li> a missing data file
+	    <li> an empty data file
+	    <li> a data file with one entry (st. dev. = 0)
+	    <li> a data file with two entries
+	    <li> a data file with three entries
+	    <li> a data file with 49 entries
+	    <li> a data file with 50 entries
+	    <li> a data file with 51 entries
+	</ul>
+	<li> You can check your results using a spreadsheet
+    </ul>
+    <li>Chapter 9 Project 83 Due by Final
+</ol>
+
+<h2> READ:</h2>
+
+<ul>
+   <li>
+	 <a href="http://www.cse.buffalo.edu/~rapaport/howtostudy.html">HOW TO STUDY</a>
+	 ( Go <a href="http://www.stcloudstate.edu/alc">Here</a> for further on-campus help and info.)
+   </li>
+   <li>
+	 <a href="http://www.howtostudy.org/resources/howcomp/">How to Study Computer Science</a>
+   </li>
+
+   <li>
+   UNIX text: Chapters {
+      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/01.ppt">1</a>, 
+      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/02.ppt">2</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/03.ppt">3</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/05.ppt">5</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/08.ppt">8</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/04.ppt">4</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/06.ppt">6</a>
+      }
+      <ul>
+	  <li> to read ahead: Chapters{
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/07.ppt">7</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/09.ppt">9</a> 
+      }
+	   <li>
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/unix/StudentSolutions.pdf">Solutions to odd numbered exercises</a>, 
+       </li>
+      </ul>
+   </li>
+
+   <li>
+   C++ text: Chapters {
+      <a href="http://web.stcloudstate.edu/aanda/cs201/01.ppt">1</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/02.ppt">2</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/03.ppt">3</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/04.ppt">4</a>,
+      <a href="http://home1.gte.net/deleyd/random/crandom.html">rand()</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/05.ppt">5</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/06.ppt">6</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/07.ppt">7</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/08.ppt">8</a>,
+      <a href="http://web.stcloudstate.edu/aanda/cs201/09.ppt">9</a>
+      (
+      <a href="http://www.thecodeproject.com/cpp/complex_declarations.asp">How to interpret complex C/C++ declarations</a>,
+      <a href="http://www.informit.com/articles/article.asp?p=31783">Understanding C++ Program Structure</a>,
+      <i>or</i>
+      <a href="http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html">The <i>right-left</i> rule</a>
+      ), 
+      Appendix A, B, C, D, E, F, G-1, I, J 
+      <!--
+      Appendix A, B, C, D, E, F, G (), I, J (Tables J-4 and J-5 for now), H
+      -->
+      }
+      <ul>
+	  <li> to read ahead: Chapters{
+	  }
+	 <li> <a href="http://www.course.com/downloads/Update_sl/37480-8errata_3-04.pdf">Errata</a>
+	 </li>
+	 <li>
+	    Solutions to odd numbered exercises for Chapters:[
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter01.pdf">1</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter02.pdf">2</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter03.pdf">3</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter04.pdf">4</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter05.pdf">5</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter06.pdf">6</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter07.pdf">7</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter08.pdf">8</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter09.pdf">9</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter10.pdf">10</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter11.pdf">11</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter12.pdf">12</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter13.pdf">13</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter14.pdf">14</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter15.pdf">15</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter16.pdf">16</a>,
+	      <a href="http://web.stcloudstate.edu/aanda/cs201/StuSol/Chapter17.pdf">17</a>
+	    ]
+	 </li>
+      </ul>
+   </li>
+    <h4> Before taking 301:</h4>
+    We covered almost all of the syllabus topics this semester except for <i>ennumerated types</i>(Chapter 11-10).
+    However, There are a few other topics which you should read, either if you are continuing on to CSCI 301 or if this is your last formal C++ course.  Here
+    are the topics I suggest:
+    <ul>
+	<li><b>ennumerated type</b>: Ch. 11-10 (<i>a way to label a set of integers</i>)
+	<li><b>typedef</b>: Ch. 11-11 (<i>rename and often simplify an existing type</i>)
+	<li><b>Structure</b>: Ch. 11-8 (<i>a means of referring to a collection of objects such as variables and functions using a single identifier</i>)
+	<li><b>Unions</b>: Ch. 11-9 (<i>reinterpret a variable of one type as another -- not convert -- not a cast</i>)
+	<li><b>Strings</b>: Ch. 14
+	<li><b>Adv. File I/O</b>: Ch. 16 (<i>including binary files</i>)
+	<li><b>C style I/O</b>: Appendix k (<i>You should be able to read it even if you don't write it</i>)
+	<li><b>Bitwise Operators</b>: Appendix H 
+	<li><b>Command-Line Arguments</b>: Appendix L (<i>useful at the very least for specifying which files your program will read and write to and from, when and where you call your program</i>)
+	<li><b>Pointers to Functions</b>: Appendix M (<i>can be used to pass a function as a parameter to another function</i>) 
+    </ul>
+</ul>
+	
+
+<h3> Demo Code:</h3>
+<ul>
+   <li><a href="http://web.stcloudstate.edu/aanda/cs201/decOctHex.cpp.html">Demo of numeric literals and manimulators for dec, oct, & hex</a>
+   <li><a href="http://web.stcloudstate.edu/aanda/cs201/testmod.html">Demo of the integer division operators</a>
+   <li><a href="http://web.stcloudstate.edu/aanda/cs201/diamond.cpp.html">diamond.cpp</a>{builds a diamond shape based on programs 6-10, 6-11}
+   <li><a href="http://web.stcloudstate.edu/aanda/cs201/powers.cpp.html">Integer Power Functions</a>{recursive and nonrecursive versions of the pow() function for positive integer arguments, each having O(n) and O(lg(n)) versions}
+   <li><a href="http://web.stcloudstate.edu/aanda/cs201/lab10mod.cpp.html">lab10 (Harmonic Sums) with timing</a>
+</ul>
+
+<h3> DISCUSSIONS:</h3>
+<ul>
+   <li>
+   <h4> Freshman Comp. &amp Programming</h4>
+   The ability to express oneself in a logical and organized manner, in
+   support of some well defined objective, is a skill not restricted to
+   only the disciplined programmer.
+   Your freshman composition course laid many of the foundations you can
+   exploit in your development and engineering of software, specifically
+   the skills to organize and structure your thoughts in the context of
+   the formal essay and research paper.  Here are some links which
+   exemplify these organizational ideas:
+   <ul>
+   <li> <a href="http://leo.stcloudstate.edu/acadwrite/writeproc.html">The Writing Process</a></dd> (analogous to the s.w. engineering process)
+   <li> <a href="http://www.tulane.edu/~uc/writing/organizing.htm">Essay Organization</a></dd> (analogous to the structured programming paradigm)
+   <li> <a href="http://www.gc.maricopa.edu/English/essay/">Structure of the Five Paragraph Essay</a></dd>
+   <li> <a href="http://web.uvic.ca/wguide/Pages/EssayOrgOutStruct.html">The Structure Of The Essay Outline</a></dd>
+   <li> <a href="http://www.cs.unc.edu/~jbs/sm/Part1_organizetd.html">Organize Top-Down</a></dd>
+   <li> <a href="http://ec.hku.hk/acadgrammar/general/organize/outline.htm">Outlining: Form and function</a></dd>
+   <li> <a href="http://www.epcc.edu/Student/Tutorial/Writingcenter/Handouts/paragraphessaystructure/essaystructure/Handouts/OutlineChecklist.pdf">Outline Checklist</a></dd> (.pdf)
+   </ul>
+   </li>
+</ul>
+<h5>Artistic Concepts of Variables</h5>
+<ul>
+    <li> <a href="http://www.atara.net/magritte/20s/treason.html">The Treason of Pictures <i>(Magritte's Pipe)</i></a></dd>
+   <li> <a href="http://www.profittools.com/d/dists/billmain/common/archives/2000-48/title.gif">A Rose</a></dd>
+</ul>
+   <h4>Big O() Analysis </h4>
+<ul>
+   <li> <a href="http://www.nist.gov/dads/HTML/bigOnotation.html">big-O notation</a>
+   <li> <a href="http://www.cs.strath.ac.uk/~mdd/teaching/alg&comp/big_oh.html">A rough guide to big-oh notation</a>
+   <li> <a href="http://www.wikipedia.org/wiki/Big_O_notation">Big O notation - Wikipedia</a>
+   <li> <a href="http://www.cs.utk.edu/~plank/plank/classes/cs140/Spring-1999/notes/BigO/">CS140 Lecture notes - Big O</a>
+   <li> <a href="http://courses.cs.vt.edu/~cs2604/spring02/Notes/C03.Asymptotics.pdf">Big-O Analysis</a>
+   <li> <a href="http://www.troyhigh.com/wittry/ap/misc/BIG-O.pdf">Big-O Notation - Analysis of Algorithms</a>
+   <li> <a href="http://www.stedwards.edu/science/baker/cosc2325/big-o.html">Big O Analysis Table</a>
+   <li> <a href="http://www.cs.wisc.edu/~hasti/cs367-common/notes/COMPLEXITY.html">Complexity and Big-O Notation</a>
+</ul>
+
+
+<h3> Professional Organizations:</h3>
+<dl>
+    <dd> <a href="http://studentorg.stcloudstate.edu/acm">SCSU student chapter of the ACM</a></dd>
+    <dd> <a href="http://www.acm.org/membership/student">ACM Student Member Center</a></dd>
+    <dd> <a href="http://www.awc-hq.org">Association for Women in Computing (AWC)</a></dd>
+    <dd> <a href="http://tap.mills.edu/index.jsp">The Ada Project (TAP)</a></dd>
+    <dd> <a href="http://women.acm.org">ACM-W: the ACM committee on Women in Computing</a></dd>
+    <dd> <a href="http://www.acm.org">ACM: Association for Computing Machinery, the world's first educational and scientific computing society</a></dd>
+</dl>
+
+<h3> REFERENCES:</h3>
+
+<dl>
+<dd> <a href="http://foldoc.doc.ic.ac.uk/foldoc/index.html">FOLDOC - Computing Dictionary</a></dd>
+<dd> <a href="http://www.wikipedia.com/">Wikipedia, the free encyclopedia</a></dd>
+<dd> <a href="http://www.natural-innovations.com/boo/asciiebcdic.html">ASCII-EBCDIC</a></dd>
+<dd> <a href="http://research.microsoft.com/~hollasch/cgindex/coding/ieeefloat.html">IEEE Standard 754 Floating Point Numbers</a></dd>
+<dd> <a href="http://www.psc.edu/general/software/packages/ieee/ieee.html">The IEEE standard for floating point arithmetic</a></dd>
+<dd> <a href="http://babbage.cs.qc.edu/courses/cs341/IEEE-754.html">IEEE-754 Floating-Point Conversion from Floating-Point to Hexadecimal</a></dd>
+<dd> <a href="http://www.scri.fsu.edu/~jac/MAD3401/Backgrnd/ieee.html">IEEE Floating-Point Notes</a></dd>
+<dd> <a href="http://cch.loria.fr/documentation/IEEE754/">EEE standard 754 for binary floating-point arithmetic </a></dd>
+
+<dl>
+<h3> C++ </h3>
+<dd> <a href="http://www.accu.org/resources/public/terse/cpp.htm">ACCU C/C++ Resources</a></dd>
+<dd> <a href="http://oopweb.com/CPP/Files/CPP.html">OOPWeb.com - C / C++ Directory - Programming Tutorials, STL, References, Guides...</a></dd>
+<h4> FAQs </h4>
+<dl>
+<dd> <a href="http://www.parashift.com/c++-faq-lite/">C++ FAQ LITE - Frequently Asked Questions</a></dd>
+</dl>
+<h4> Topics </h4>
+<dl>
+   <li> <a href="http://www.acm.org/crossroads/xrds3-1/ovp3-1.html">Casting in C++: Bringing Safety and Smartness to Your Programs</a></dd>
+</dl>
+</dl>
+</dl>
+
+<h3> Demonstrations:</h3>
+<h4> Sorting:</h3>
+<dd> <a href="http://en.wikipedia.org/wiki/Sort_algorithm">Sorting algorithm - Wikipedia</a></dd> {many sorts}
+<dd> <a href="http://www.cs.hope.edu/~alganim/ccaa/sorting.html">CCAA - Sorting Algorithms</a></dd> {many sorts}
+<dd> <a href="http://www.cs.ubc.ca/spider/harrison/Java/sorting-demo.html">Sorting Algorithms Demo</a></dd> {many sorts}
+<dd> <a href="http://www.student.seas.gwu.edu/~idsv/idsv.html">Interactive Data Structure Visualizations: Quadratic Sorts</a></dd>
+
+<h3> Tutorials:</h3>
+
+<dl>
+<dd><h4> Unix </h4></dd>
+
+<dd> <a href="http://condor.stcloudstate.edu/~julstrom/cs201/intro.html">UNIX/VI
+<dd> <a href="http://www.math.utah.edu/lab/unix/unix-commands.html">Unix Command
+Summary</a></dd>
+<dd> <a href="http://www.emba.uvm.edu/CF/basic.html">Basic Unix Commands</a></dd>
+<dd> <a href="http://unix.t-a-y-l-o-r.com/index.html">Unix is a Four Letter Word...</a></dd>
+<dd> <a href="http://www.seas.rochester.edu/CNG/docs/InterUnix.html">Intermediate UNIX Tutorial Notes</a></dd>
+<dd> <a href="http://directory.google.com/Top/Computers/Software/Operating_Systems/Unix/Documentation/Tutorials/">Google Directory - Computers; Software; Operating Systems; Unix; Documentation; Tutorials</a></dd>
+<dd> <a href="http://directory.google.com/Top/Computers/Software/Operating_Systems/Unix/Documentation/">Google Directory - Computers; Software; Operating Systems; Unix; Documentation</a></dd>
+</dl>
+
+<dl>
+<dd><h4> vi</h4></dd>
+
+<dd> <a href="http://www.cs.colostate.edu/helpdocs/vi.html">Basic vi Commands</a></dd>
+<dd> <a href="http://condor.stcloudstate.edu/~julstrom/cs201/vied.html">VI ESSENTIALS</a></dd>
+<dd> <a href="http://www.eng.hawaii.edu/Tutor/vi.html">Mastering the VI editor</a></dd>
+<dd> <a href="http://www.thomer.com/vi/vi.html">Vi Lovers Home Page</a> {<i>Lots
+of resources</i>}</dd>
+<dd> <a href="http://vh224401.truman.edu/~dbindner/mirror/vi-ref.pdf">Vi Reference Card</a> [.pdf]</dd>
+<dd> <a href="http://docs.freebsd.org/44doc/usd/12.vi/paper.html">An Introduction to Display Editing with Vi</a> {<i> by the creator of Vi, Bill Joy</i>}</dd>
+<dd> <a href="http://www.networkcomputing.com/unixworld/tutorial/009/009.html">The Vi/Ex Editor</a></dd>
+<dd> <a href="http://vim.sourceforge.net/htmldoc/">Vim documentation: index</a></dd>
+<dd> <a href="http://www.newriders.com/books/opl/ebooks/0735710015.html">Vim book online</a></dd>
+<dd> <a href="http://www.vim.org/docs.php">Vim documentation</a></dd>
+<dd> <a href="http://www.vim.org">Vim online</a></dd>
+<dd> Use <tt>vimtutor</tt> on <i>csci</i>.
+</dl>
+<dl>
+
+<dd><h4> Emacs</h4></dd>
+
+<dd> <a href="http://www.cs.colostate.edu/helpdocs/emacs.html">Basic Emacs Editor Commands</a></dd>
+<dd> <a href="http://www.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></dd>
+<dd> <a href="http://yoda.cis.temple.edu:8080/UGAIWWW/help/emacs-tutorial.html">Emacs Tutorial</a></dd>
+<dd> <a href="http://vertigo.hsrl.rutgers.edu/ug/emacs_tutorial.html">Emacs
+Tutorial</a> {another}</dd>
+<dd> <a href="http://jeremy.zawodny.com/emacs/emacs.html">Emacs Beginner's HOWTO</a></dd>
+<dd> <a href="http://www.math.utah.edu/lab/unix/emacs-brief-tutorial.html">Brief
+Emacs Tutorial</a></dd>
+<dd> <a href="http://www.gnu.org/manual/emacs/html_node/emacs.html#SEC_Top">GNU
+Emacs Manual</a></dd>
+<dd> <a href="http://www.gnu.org/manual/emacs/html_chapter/emacs_toc.html">GNU
+Emacs Manual: Table of Contents</a></dd>
+</dl>
+
+<dl>
+
+<dd><h4> Computer number systems</h4></dd>
+
+<dd> <a href="http://www.bdexx.com/edpsy387/intro.html">The Binary Number System</a><i>interactive</i></dd>
+<dd><a href="http://198.164.154.3/~DEI/2NUMSYS.HTM">Number Systems</a></dd>
+<dd> <a href="http://www.math.grin.edu/~rebelsky/Courses/152/97F/Readings/student-binary.html">A tutorial on binary numbers</a></dd>
+<dd> <a href="http://www.math.grin.edu/~rebelsky/Courses/152/97F/Readings/machine-data.html">Machine-level data type</a></dd>
+<dd><a href="http://www.mindspring.com/~mfamiglietti/netmath1.html">Hex, Decimal, Binary Shortcuts</a></dd>
+<dd><a href="http://home.pacbell.net/pyaray/articles/hex.htm">Hexadecimal and Binary Primer</a></dd>
+<dd><a href="http://physics.concordia.ca/~eddy/391/Chap1.html">Binary and Hex Calculations</a></dd>
+<dd><a href="http://www.howstuffworks.com/bytes4.htm">Binary Math</a></dd>
+<dd><a href="http://www.danbbs.dk/~erikoest/hex.htm">Hexadecimal Number System</a></dd>
+<dd><a href="http://forum.swarthmore.edu/dr.math/problems/terri3.22.98.html">Another look at Hex</a></dd>
+<dd><a href="http://forum.swarthmore.edu/dr.math/problems/frieden2.2.96.html">Base Conversion Formula</a></dd>
+<dd><a href="http://forum.swarthmore.edu/dr.math/problems/stirling1.7.98.html">Binary Conversion</a></dd>
+<dd><a href="http://forum.swarthmore.edu/dr.math/problems/hamilton12.8.98.html">Binary to Hex Conversion</a></dd>
+<dd><a href="http://forum.swarthmore.edu/dr.math/problems/stirling1.7.98.html">Binary to Decimal Conversion</a></dd>
+<dd><a href="http://blacksun.box.sk/numbers.txt">Basic Bases</a></dd>
+<dd><a href="http://www.psinvention.com/zoetic/k12addm.htm">Practice Base Math</a></dd>
+<dd><a href="http://www.myhome.org/pg/numbers.html">Even more examples...</a></dd>
+<dd><a href="http://www.vancouver.wsu.edu/fac/rice/lecture.html">And some more...</a></dd>
+<dd><a href="http://www.cscene.org/CS9/CS9-02.html">"Bit-wise" explanation</a></dd>
+<dd><a href="http://dogbert.comsc.ucok.edu/~mcdaniel/bin-dec.html">Interesting
+Online Converter</a></dd>
+</dl>
+<dl>
+<dd><h4> C++ language</h4></dd>
+<dd> <a href="http://clio.mit.csu.edu.au/TTT/stdcpp/">TTT System: an interactive C++ tutorial</a></dd>
+<dd> <a href="http://library.thinkquest.org/3074/Index.html">From The Ground Up: A Guide to C++</a></dd>
+<dd> <a href="http://oopweb.com/CPP/Documents/ThinkCScpp/VolumeFrames.html">How To Think Like A Computer Scientist with C++</a></dd>
+<dd> <a href="http://gcc.gnu.org/onlinedocs/gccint">GNU Compiler Collection (GCC) Internals</a></dd>
+<dd> <a href="http://www.circlemud.org/~jelson/560">C++ For C Programmers</a></dd>
+<dl>
+<dd><h5> Anatomy of the g++ compiler </h5></dd>
+<dd> <a href="http://gcc.gnu.org/onlinedocs/cppinternals/index.html#Top">The GNU C Preprocessor Internals</a></dd>
+<dd> <a href="http://gcc.gnu.org/onlinedocs/gccint/Passes.html#Passes">Passes and Files of the Compiler</a></dd>
+</dl>
+</dl>
+<h3> Histories:</h3>
+<dl>
+<dd> <a href="http://dekalb.dc.peachnet.edu/~jbenson/csci1401/history.htm">Computing History -- Brief Timeline and Facts</a></dd>
+<dd> <a href="http://www.computer.org/computer/timeline">Timeline of Computing
+History</a></dd>
+<dd> <a href="http://www.computerhistory.org/timeline/index.page">CHM: Timeline
+of Computer History</a></dd>
+<dd> <a href="http://carbon.cudenver.edu/~traup/fa00/read/history.html">UNIX
+History</a></dd>
+<dd> <a href="http://cm.bell-labs.com/cm/cs/who/dmr/hist.html">The Evolution
+of the Unix Time-sharing System</a></dd>
+<dd> <a href="http://carbon.cudenver.edu/~traup/fa00/read/history.html">Unix
+History</a></dd>
+<dd> <a href="http://www.netzmafia.de/skripten/unix/chist.html">The Development
+of the C Language</a></dd>
+<dd> <a href="http://www.byte.com/art/9509/sec7/art19.htm">A Brief History of
+Programming Languages</a></dd>
+<dd> <a href="http://www.levenez.com/lang/">Computer Languages History</a></dd>
+</dl>
+
+<h3> Supplementary Books:</h3>
+<dl>
+<dd> <a href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130653942,00.htm">Practical Debugging in C++</a></dd>
+<dd> <a href="http://www.accu.org/bookreviews/public/reviews/0hr/beginner_s_c__.htm">ACCU - Highly Recommended by subject: beginner's c++</a></dd>
+<dd> <a href="http://www.accu.org/bookreviews/public/reviews/0hr/debuggers.htm">ACCU - Highly Recommended by subject: debuggers</a></dd>
+</dl>
+
+<h3> Computing News:</h3>
+
+<dl>
+<dd> <a href="http://www.freshnews.org/">freshnews.org - fresh tech news from around the net</a></dd>
+</dl>
+
+<h3> Computing Humor:</h3>
+
+<dl>
+<dd> <a href="http://www.gnu.org/fun/jokes/error-haiku.html">Error messages in Haiku</a></dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/helloworld.html">Hello World</a></dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/unix.errors.html">Unix Error Messages</a></dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/vi.song.html">Addicted to vi</a> (lyrics)</dd>
+<dd> <a href="http://www.gnu.org/music/blues-song.html">The Programmer's Blues</a> (lyrics)</dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/last.bug.html">The Last Bug</a> (poem)</dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/midnight.dreary.html">Midnight Dreary</a> (poem)</dd>
+</dl>
+
+</body>
+</html>

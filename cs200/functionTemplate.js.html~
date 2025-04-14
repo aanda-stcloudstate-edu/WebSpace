@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title>X:\WebSpace\cs200\functionTemplate.js.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v6">
+<meta name="syntax" content="javascript">
+<meta name="settings" content="use_css">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+.Statement { color: #804040; font-weight: bold; }
+.Identifier { color: #008080; }
+.Comment { color: #0000ff; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Comment">// Function Template</span>
+<span class="Comment">//</span>
+<span class="Comment">// Purpose of FUNCTION_NAME</span>
+<span class="Comment">//</span>
+<span class="Comment">// Author info.</span>
+<span class="Comment">// Date info.</span>
+<span class="Comment">//</span>
+<span class="Identifier">function</span> FUNCTION_NAME( PARAMETER1, <span class="Comment">// information regarding PARAMETER1</span>
+                        PARAMETER2, <span class="Comment">// information regarding PARAMETER2</span>
+                                    <span class="Comment">// continued comment</span>
+                        PARAMETER3, <span class="Comment">// information regarding PARAMETER3</span>
+                        <span class="Comment">// ...</span>
+                        PARAMETERn, <span class="Comment">// information regarding PARAMETERn</span>
+                      )
+<span class="Comment">// preconditions</span>
+<span class="Comment">// postconditions</span>
+<span class="Identifier">{</span>
+    <span class="Identifier">var</span> LOCAL1; <span class="Comment">// information regarding LOCAL1</span>
+    <span class="Identifier">var</span> LOCAL2; <span class="Comment">// information regarding LOCAL2</span>
+    <span class="Comment">// ...</span>
+    <span class="Identifier">var</span> LOCALm; <span class="Comment">// information regarding LOCALm</span>
+
+    <span class="Comment">// information regarding statements</span>
+    STATEMENT1;  <span class="Comment">// information regarding STATEMENT1</span>
+    STATEMENT2;  <span class="Comment">// information regarding STATEMENT2</span>
+    <span class="Comment">// ...</span>
+    STATEMENTq;  <span class="Comment">// information regarding STATEMENTq</span>
+
+    <span class="Statement">return</span> OUTPUT_EXPRESSION;
+<span class="Identifier">}</span>
+</pre>
+</body>
+</html>

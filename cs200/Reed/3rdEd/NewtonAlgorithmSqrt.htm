@@ -1,0 +1,63 @@
+
+<!-- saved from url=(0036)http://balance3e.com/Ch8/Newton.html -->
+<html><!-- Newton.html                                      8/25/09 --><!-- This visualization tool was written to accompany         --><!-- A Balanced Introduction to Computer Science, 3rd ed. by  --><!-- David Reed (davereed@creighton.edu), Prentice Hall, 2010 --><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title> Newton's Algorithm</title>
+  <script type="text/javascript">
+    function nextNewton(number, guess)
+    // Assumes: guess is an estimate of the square root of number
+    // Returns: the next (improved) guess using Newton's method
+    {
+        return (guess + number/guess)/2;
+    }
+  </script>
+</head>
+
+<body>
+<div style="text-align:center">
+  <h3>Newton's Square Root Algorithm</h3>
+  <h3>Visualization Tool to Accompany <br>
+  <a href="http://balance3e.com/">A Balanced Introduction to Computer 
+Science, 3rd ed.</a><br>David Reed, Prentice Hall, © 2010.</h3>
+</div>
+
+  <p>In order to approximate the square root of some number N, Newton's algorithm 
+starts with an initial approximation of 1, then repeatedly refines the 
+approximation 
+by averaging the old approximation with N over the old approximation.  More 
+succinctly,
+
+</p><xmp>
+    newApproximation =  (oldApproximation + N/oldApproximation)/2
+</xmp>
+
+<p>To see  Newton's algorithm in action, enter the number for which you want to 
+compute the square root, then click the button to see each successive 
+approximation. 
+
+</p><p></p><hr>
+
+  Find the square root of: 
+  <input type="text" id="numberBox" size="8" value="100" onchange="document.getElementById(&#39;guessBox&#39;).value=1;
+                   document.getElementById(&#39;countBox&#39;).value=1;
+		           document.getElementById(&#39;outputDiv&#39;).innerHTML=&#39;&#39;;">
+				   
+  <input type="hidden" id="guessBox" value="1">
+  <input type="hidden" id="countBox" value="1">
+  <p>
+  <input type="button" value="Get next approximation" onclick="document.getElementById(&#39;outputDiv&#39;).innerHTML +=
+				      &#39;approximation &#39; + document.getElementById(&#39;countBox&#39;).value + &#39; = &#39; + 
+				      document.getElementById(&#39;guessBox&#39;).value + &#39;&lt;br&gt;&#39;;
+				  document.getElementById(&#39;guessBox&#39;).value =
+		               nextNewton(parseFloat(document.getElementById(&#39;numberBox&#39;).value),
+		                          parseFloat(document.getElementById(&#39;guessBox&#39;).value));
+				  document.getElementById(&#39;countBox&#39;).value =  
+				      parseFloat(document.getElementById(&#39;countBox&#39;).value) + 1;">
+  <input type="button" value="Clear" onclick="document.getElementById(&#39;guessBox&#39;).value=1;
+                   document.getElementById(&#39;countBox&#39;).value=1;
+                   document.getElementById(&#39;outputDiv&#39;).innerHTML=&#39;&#39;;">
+  </p><p>				  
+  </p><div id="outputDiv"></div>
+
+
+
+</body></html>

@@ -1,0 +1,136 @@
+			CSCI 201 (Sec. 2) [000165]
+ 		   Fundamentals of Computer Science
+		        Spring 2006 SYLLABUS
+
+INSTRUCTOR:	Andrew A. Anda, Ph.D., Asst. Prof. of Computer Science
+OFFICE:		ECC-223		 Telephone:	(320)308-2044
+E-MAIL:		aanda@stcloudstate.edu
+Web Site: http://web.stcloudstate.edu/aanda/cs201.html
+OFFICE HOURS:	M: 14:00 - 14:50 
+                T: 10:00 - 11:50 
+                   13:00 - 14:50 
+                W: 14:00 - 14:50 
+                H: 10:00 - 10:50 
+                   13:00 - 14:50 
+                F: 14:00 - 14:50 
+                (and by appointment)
+
+CLASS TIME AND LOCATION:
+    Class: MWF: 11:00 - 11:50 in ECC 135
+    Lab:     T: 11:00 - 12:15 in ECC 102
+
+REQUIRED TEXT:	* A Structured Programming Approach Using C++, 2nd Ed.
+		    by Forouzan & Gilberg, Brooks/Cole, 2004.
+		* UNIX and Shell programming: a textbook,
+		    by Forouzan & Gilberg, Brooks/Cole, 2004.
+OBJECTIVES:
+    This course uses the high-level computer programming language, C++,
+    and appropriate mathematical concepts to introduce the fundamentals
+    of computer science, algorithm design, problem solving, and elementary
+    data structures and algorithms.
+
+TOPICS:
+    * A basic working knowledge of the UNIX operating system, including the
+      use of files and an editor (vi/vim).
+    * The logical structure of a digital computer.
+    * An introduction to algorithms.
+    * An introduction and brief survey of programming languages.
+    * Entering, editing, compiling, debugging, and running C++ programs.
+    * Program development and top-down design.
+    * Reading and writing data: standard input and standard output.
+    * Expressions and their evaluation; statements.
+    * Subprograms and program modularity: functions, parameter passing,
+      and default arguments; the scope of variables and functions.
+    * Boolean expressions, selection statements, and DeMorgan's law.
+    * Iteration (looping).
+    * Reading and writing text files.
+    * Time complexity and algorithm analysis.
+    * Pointers and their manipulation; Passing arrays as parameters;
+      memory allocation and de-allocation.
+    * Enumerated types.
+
+PREREQUISITES:
+    All students in this class must have either:
+    * passed the prerequisite course as listed in the course description,
+      MATH 112 {College Algebra}, or higher.
+    * received transfer credit for MATH 112 or higher
+    * been certified by the MATH department that they have math readiness
+      for math classes which list MATH 112 or higher as a prerequisite.
+      This is usually accomplished by scoring higher than 11 on the Calculus
+      Readiness Placement Exam offered by the MATH department.
+    If you are taking this course for your major, you should at least
+    be enrolled in MATH 221 {Calculus & Analytical Geometry I} (although it
+    is preferable to have completed MATH 221 prior to undertaking CSCI 201).
+
+CLASS ACCOUNTS:
+    All submitted work for this class must be done using the [CSCI] account
+    assigned for this class.
+
+CLOSED LABS:
+    We will spend time in the lab on Thursday every week.  These labs cannot
+    be made up.  Attendance will be taken.
+
+ASSIGNMENTS:
+    In addition to the projects assigned during the closed labs, you will
+    also be expected to complete programming projects on your own outside
+    of class time.  The programs are due at the beginning of class on the
+    due date.  No allowance will be made for computer down time, so plan
+    ahead.  Late work may not be accepted.
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.  Use of recording devices during exams is prohibited.
+    If you must quote or paraphrase another source, citation is essential,
+    otherwise plagiarism has been committed.  You are expected to be familiar
+    with your rights and obligations as outlined in the "Code of Conduct"
+    [http://www.stcloudstate.edu/studenthandbook/code]  See also:
+    [http://www.stcloudstate.edu/studenthandbook/policies/cheating.asp]
+    [http://www.stcloudstate.edu/studenthandbook/academic_policies/honesty.asp]
+
+DECORUM: Conduct yourself so as not to distract others. In particular
+    * Turn off all cell phones, watch alarms, and similar devices.
+    * Do not engage in distracting activities like reading a newspaper
+      or sleeping. (some of you snore...)
+    * Arrive for class on time, and be ready to begin.
+      If you must be late, be quiet.
+    * If you are early, sit toward the middle of a row.
+    * Do not start packing up before class ends.
+
+ATTENDANCE:
+    You are responsible for knowing what happens at each class meeting.
+
+QUIZZES:
+    There will be a sequence of quizzes of assigned reading prior to the
+    coverage of a chapter.  There will be exit quizes as well.
+
+EXAMS:
+    There will be a small set of intermediate exams and a comprehensive
+    final exam.
+    Exams will be based on the notes; that is, on the presentations in class
+    as well as on the content in the assigned readings.
+    Calculators will be neither necessary nor allowed.
+    Make-up exams will be given in only in extreme (or university
+    sanctioned) circumstances and only with prior notice.
+
+GRADING:
+	Your grade will be determined by the contributions of your scores
+	on assignments,  quizzes, intermediate and final exams.
+	Makeup of tests, quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE POINTS:
+	Assignments		20%
+	Quizzes 		10%
+	Hour Exams		30%
+	Final Exam		30%
+	Labs:			10%
+
+FINAL EXAM: Friday, May 12 10:15AM - 12:45PM in ECC 135.
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************

@@ -1,0 +1,318 @@
+<html>
+<head>
+<title>\\myweb.stcloudstate.edu\aanda\cs301\poly1.h.html</title>
+<meta name="Generator" content="Vim/6.1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+<font color="#0000ff">// FILE: poly1.h</font>
+<font color="#0000ff">// CLASS PROVIDED:</font>
+<font color="#0000ff">//   class polynomial</font>
+<font color="#0000ff">//     A polynomial has one variable x, real number coefficients, and</font>
+<font color="#0000ff">//     non-negative integer exponents. Such a polynomial can be viewed</font>
+<font color="#0000ff">//     as having the form:</font>
+<font color="#0000ff">//       A[n]*x^n + A[n-1]*x^(n-1) + ... A[2]*x^2 + A[1]*x + A[0]</font>
+<font color="#0000ff">//     where the A[n] are the real number coefficients and x^i represents</font>
+<font color="#0000ff">//     the variable x raised to the i power. The coefficient A[0] is</font>
+<font color="#0000ff">//     called the &quot;constant&quot; or &quot;zeroth&quot; term of the polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// NOTES:</font>
+<font color="#0000ff">//   This poly1.h version works by storing the coefficients in</font>
+<font color="#0000ff">//   a dynamic array, as described in Section 4.6 of</font>
+<font color="#0000ff">//   &quot;Data Structures and Other Objects&quot; (2nd edition) by</font>
+<font color="#0000ff">//   Michael Main and Walter Savitch</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// CONSTRUCTORS for the polynomial class</font>
+<font color="#0000ff">//   polynomial( )</font>
+<font color="#0000ff">//     POSTCONDITION: This polynomial has been created with all zero</font>
+<font color="#0000ff">//     coefficients.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial(double c, unsigned int exponent = 0)</font>
+<font color="#0000ff">//     POSTCONDITION: This polynomial has been created with all zero</font>
+<font color="#0000ff">//     coefficients, except for coefficient c for the specified exponent.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial(const polynomial&amp; source)</font>
+<font color="#0000ff">//     POSTCONDITION: This polynomial has been created as a copy of the source.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// MODIFICATION MEMBER FUNCTIONS for the polynomial class</font>
+<font color="#0000ff">//   void add_to_coef(double amount, unsigned int exponent)</font>
+<font color="#0000ff">//     POSTCONDITION: Adds the given amount to the coefficient of the</font>
+<font color="#0000ff">//     specified exponent.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   void assign_coef(double coefficient, unsigned int exponent)</font>
+<font color="#0000ff">//     POSTCONDITION: Sets the coefficient for the specified exponent.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   void clear( )</font>
+<font color="#0000ff">//     POSTCONDITION: All coefficients of this polynomial are set to zero.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   void reserve(size_t number)</font>
+<font color="#0000ff">//     POSTCONDITION: The size of the array for coefficients has been changed to</font>
+<font color="#0000ff">//     the requested number (but not less that the size needed to store the</font>
+<font color="#0000ff">//     current non-zero coefficients). In effect, this guarantees that member</font>
+<font color="#0000ff">//     functions will not need to allocate new memory for exponents through</font>
+<font color="#0000ff">//     at least number-1.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   void trim( )</font>
+<font color="#0000ff">//     POSTCONDITION: Releases dynamic memory as much as possible.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// MODIFICATION OPERATORS for the polynomial class</font>
+<font color="#0000ff">//   polynomial&amp; operator =(const polynomial&amp; source)</font>
+<font color="#0000ff">//     POSTCONDITION: This polynomial is exactly the same as the</font>
+<font color="#0000ff">//     parameter. The return value is a reference to this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial&amp; operator =(double c)</font>
+<font color="#0000ff">//     POSTCONDITION: This polynomial is set to the polynomial with only the</font>
+<font color="#0000ff">//     constant term c. The other coefficients (for x, x^2, x^3...) are all zero.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial&amp; operator -=(const polynomial&amp; p)</font>
+<font color="#0000ff">//     POSTCONDITION: The terms of p have been subtracted from</font>
+<font color="#0000ff">//     the terms of this polynomial, and the result is stored back in this polynomial.</font>
+<font color="#0000ff">//     The return value is a reference to this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial&amp; operator -=(double c)</font>
+<font color="#0000ff">//     POSTCONDITION: The value c has been subtracted from the constant (zeroth)</font>
+<font color="#0000ff">//     term of this polynomial, and the result is stored back in this polynomial.</font>
+<font color="#0000ff">//     The return value is a reference to this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial&amp; operator +=(const polynomial&amp; p)</font>
+<font color="#0000ff">//     POSTCONDITION: The terms of p are added to the terms of this</font>
+<font color="#0000ff">//     polynomial, and the result is stored back in this polynomial.</font>
+<font color="#0000ff">//     The return value is a reference to this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial&amp; operator +=(double c)</font>
+<font color="#0000ff">//     POSTCONDITION: The value c has been added from the constant (zeroth)</font>
+<font color="#0000ff">//     term of this polynomial, and the result is stored back in this polynomial.</font>
+<font color="#0000ff">//     The return value is a reference to this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial&amp; operator *=(const polynomial&amp; p)</font>
+<font color="#0000ff">//     POSTCONDITION: Each term of the this polynomial has been multiplied by</font>
+<font color="#0000ff">//     each term of p, and this polynomial has been replaced by the sum of all</font>
+<font color="#0000ff">//     these term-by-term products. For example, if this polynomial is</font>
+<font color="#0000ff">//     2x^2 + 3x + 4 and p is 5x^2 - 1x + 7, then at the end of this function</font>
+<font color="#0000ff">//     this polynomial will contain 10x^4 + 13x^3 + 31x^2 + 17x + 28.</font>
+<font color="#0000ff">//     The return value is a reference to this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial&amp; operator *=(double c)</font>
+<font color="#0000ff">//     POSTCONDITION: Every coefficient of this polynomial has been multiplied</font>
+<font color="#0000ff">//     by c and the results stored back in this polynomial.</font>
+<font color="#0000ff">//     The return value is a reference to this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// CONSTANT MEMBER FUNCTIONS for the polynomial class</font>
+<font color="#0000ff">//   double coefficient(unsigned int exponent) const</font>
+<font color="#0000ff">//     POSTCONDITION: Returns coefficient at specified exponent of this</font>
+<font color="#0000ff">//     polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   double definite_integral(double low_bound, double high_bound) const</font>
+<font color="#0000ff">//     POSTCONDITION: The value returned is the definite integral from</font>
+<font color="#0000ff">//     low_bound to high_bound.</font>
+<font color="#0000ff">//     NOTE: If low_bound is not the smaller of the two bounds, then the answer</font>
+<font color="#0000ff">//     returned is -1 * definite_integral(high_bound, low_bound).</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   unsigned int degree( ) const</font>
+<font color="#0000ff">//     POSTCONDITION: The function returns the value of the largest exponent</font>
+<font color="#0000ff">//     with a non-zero coefficient.</font>
+<font color="#0000ff">//     If all coefficients are zero, then the function returns zero.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial derivative(unsigned int n = 1) const</font>
+<font color="#0000ff">//     POSTCONDITION: The return value is the n-th derivative of this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   double eval(double x) const</font>
+<font color="#0000ff">//     POSTCONDITION: The return value is the value of this polynomial with the</font>
+<font color="#0000ff">//     given value for the variable x.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial integral(unsigned int n = 1) const</font>
+<font color="#0000ff">//     POSTCONDITION: The return value is the n-th integral of this polynomial.</font>
+<font color="#0000ff">//     Set the constant coefficient to zero.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   unsigned int next_term(unsigned int e) const</font>
+<font color="#0000ff">//     POSTCONDITION: If e is less than the degree, then the return value is</font>
+<font color="#0000ff">//     the next exponent n which is after e such that coefficient(n) != 0.</font>
+<font color="#0000ff">//     If e is greater than or equal to the degree, then the return value is</font>
+<font color="#0000ff">//     std::UINT_MAX from &lt;climits&gt;.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   unsigned int previous_term(unsigned int e) const</font>
+<font color="#0000ff">//     POSTCONDITION: The return value is the next exponent n which is SMALLER</font>
+<font color="#0000ff">//     than e such that coefficient(n) != 0.</font>
+<font color="#0000ff">//     If there is no such term, then the return value is UINT_MAX</font>
+<font color="#0000ff">//     from &lt;climits&gt;.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial substitution(polynomial p) const</font>
+<font color="#0000ff">//     POSTCONDITION: The return value is a polynomial in which the parameter p</font>
+<font color="#0000ff">//     has been substituted for every value of x in this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// CONSTANT OPERATORS for the polynomial class</font>
+<font color="#0000ff">//   double operator( ) (double x) const</font>
+<font color="#0000ff">//     Same as the eval member function.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial operator( ) (const polynomial&amp; p) const</font>
+<font color="#0000ff">//     Same as the substitution function.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial operator -( ) const</font>
+<font color="#0000ff">//     POSTCONDITION: The return value is -1 times this polynomial.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial operator +( ) const</font>
+<font color="#0000ff">//     POSTCONDITION: The return value is +1 times this polynomial.</font>
+<font color="#0000ff">//     I can't think of any case where this would be needed, but I put it in for</font>
+<font color="#0000ff">//     symmetry with the unary operator -.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// NON-MEMBER BINARY OPERATORS for the polynomial Class</font>
+<font color="#0000ff">//   NOTE: For operators - + and *, one of the arguments is allowed</font>
+<font color="#0000ff">//   to be a double number rather than a polynomial. In this case, the double</font>
+<font color="#0000ff">//   number is treated as if it was a polynomial with only a constant term</font>
+<font color="#0000ff">//   equal to the double number (and all coefficients are zero for</font>
+<font color="#0000ff">//   the terms x, x^2, x^3, ...).  We considered handling this situation</font>
+<font color="#0000ff">//   with a constructor-generated conversion that would actually convert</font>
+<font color="#0000ff">//   the double number into a polynomial, but actually going through the</font>
+<font color="#0000ff">//   conversion and creating an actual polynomial seemed inefficient.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial operator -(const polynomial&amp; p1, const polynomial&amp; p2)</font>
+<font color="#0000ff">//     POSTCONDITION: return-value is a polynomial with each coefficient</font>
+<font color="#0000ff">//     equal the difference of the coefficients of p1 &amp; p2 for any given</font>
+<font color="#0000ff">//     exponent.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial operator +(const polynomial&amp; p1, const polynomial&amp; p2)</font>
+<font color="#0000ff">//     POSTCONDITION: return-value is a polynomial with each coefficient</font>
+<font color="#0000ff">//     equal the sum of the coefficients of p1 &amp; p2 for any given</font>
+<font color="#0000ff">//     exponent.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial operator *(const polynomial&amp; p1, const polynomial&amp; p2)</font>
+<font color="#0000ff">//     POSTCONDITION: Each term of p1 has been multiplied by each term of p2,</font>
+<font color="#0000ff">//     and the answer is the sum of all these term-by-term products.</font>
+<font color="#0000ff">//     For example, if p1 is 2x^2 + 3x + 4 and p2 is 5x^2 - 1x + 7, then the</font>
+<font color="#0000ff">//     return value is 10x^4 + 13x^3 + 31x^2 + 17x + 28.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   polynomial operator ^(const polynomial&amp; p, unsigned int n)</font>
+<font color="#0000ff">//     POSTCONDITION: The return value is p raised to the n-th power.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// NON-MEMBER INPUT/OUTPUT FUNCTIONS for the polynomial Class</font>
+<font color="#0000ff">//   istream&amp; operator &gt;&gt; (istream&amp; in, polynomial&amp; p)</font>
+<font color="#0000ff">//     POSTCONDITION: A polynomial has read from a single line of istream in.</font>
+<font color="#0000ff">//     Specifically:</font>
+<font color="#0000ff">//     1. All initial whitespace is read and discarded.</font>
+<font color="#0000ff">//     2. One or more terms are then read from a single line of input.</font>
+<font color="#0000ff">//        Each term has the form:</font>
+<font color="#0000ff">//        a. SIGN: + or -.</font>
+<font color="#0000ff">//        b. COEF: an unsigned double constant</font>
+<font color="#0000ff">//        c. VARIABLE: the letter x or X</font>
+<font color="#0000ff">//        d. CAROT: the character ^</font>
+<font color="#0000ff">//        e. EXPONENT: an integer</font>
+<font color="#0000ff">//        Each piece may be preceeded or followed by blanks.</font>
+<font color="#0000ff">//        Also, some pieces are optional:</font>
+<font color="#0000ff">//        For the first term or any term preceeded by blanks,</font>
+<font color="#0000ff">//        any positive SIGN is optional;</font>
+<font color="#0000ff">//        if at least one of parts c-f is present, then a COEF of 1 is optional;</font>
+<font color="#0000ff">//        if the EXPONENT is zero, then all of parts c-e may be omitted;</font>
+<font color="#0000ff">//        if the EXPONENT is one, then all of parts d-e may be omitted.</font>
+<font color="#0000ff">//     3. The newline at the end of the line is read and discarded.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   ostream&amp; operator &lt;&lt; (ostream&amp; out, const polynomial&amp; p)</font>
+<font color="#0000ff">//     POSTCONDITION: The polynomial has been printed to ostream out, which,</font>
+<font color="#0000ff">//     in turn, has been returned to the calling function.</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">//   void make_gif(</font>
+<font color="#0000ff">//     const polynomial&amp; p,</font>
+<font color="#0000ff">//     const char filename[ ],</font>
+<font color="#0000ff">//     double low_x,</font>
+<font color="#0000ff">//     double high_x,</font>
+<font color="#0000ff">//     double low_y,</font>
+<font color="#0000ff">//     double high_y</font>
+<font color="#0000ff">//     )</font>
+<font color="#0000ff">//     PRECONDITION: filename is a legal filename for a gif file.</font>
+<font color="#0000ff">//     Also (low_x &lt; high_x) &amp;&amp; (low_y &lt; high_y).</font>
+<font color="#0000ff">//     POSTCONDITION: A gif file has been written to the specified filename</font>
+<font color="#0000ff">//     with a graphical representation of the polynomial in the specified</font>
+<font color="#0000ff">//     ranges (low_x...high_x and low_y...high_y).</font>
+<font color="#0000ff">//</font>
+<font color="#0000ff">// DYNAMIC MEMORY usage by the polynomial class</font>
+<font color="#0000ff">//    If there is insufficient dynamic memory, the following functions throw a</font>
+<font color="#0000ff">//    bad_alloc exception:</font>
+<font color="#0000ff">//    the constructors, add_to_coef, assign_coef, reserve, trim,</font>
+<font color="#0000ff">//    derivative, find_root, integral, make_gif, substitution, </font>
+<font color="#0000ff">//    and any of the operators with a polynomial parameter.</font>
+
+<font color="#a020f0">#ifndef POLY1_H</font>
+<font color="#a020f0">#define POLY1_H</font>
+<font color="#a020f0">#include </font><font color="#ff00ff">&lt;cstdlib&gt;</font>      <font color="#0000ff">// Provides size_t type</font>
+<font color="#a020f0">#include </font><font color="#ff00ff">&lt;iostream&gt;</font>   <font color="#0000ff">// Provides istream and ostream </font>
+
+<font color="#0000ff">// If your compiler does not support namespaces, then please delete the</font>
+<font color="#0000ff">// following line and the set of brackets that follow.</font>
+<font color="#2e8b57"><b>namespace</b></font> main_savitch_4
+{
+
+    <font color="#2e8b57"><b>class</b></font> polynomial
+    {
+    <font color="#804040"><b>public</b></font>:
+        <font color="#0000ff">// CONSTRUCTORS and DESTRUCTOR</font>
+        polynomial( );
+        polynomial(<font color="#2e8b57"><b>const</b></font> polynomial&amp; source);
+        polynomial(<font color="#2e8b57"><b>double</b></font> c, <font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> exponent = <font color="#ff00ff">0</font>);
+        ~polynomial( );
+
+        <font color="#0000ff">// MODIFICATION MEMBER FUNCTIONS</font>
+        <font color="#2e8b57"><b>void</b></font> add_to_coef(<font color="#2e8b57"><b>double</b></font> amount, <font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> exponent);
+        <font color="#2e8b57"><b>void</b></font> assign_coef(<font color="#2e8b57"><b>double</b></font> coefficient, <font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> exponent);
+        <font color="#2e8b57"><b>void</b></font> clear( );
+        <font color="#2e8b57"><b>void</b></font> reserve(<font color="#2e8b57"><b>size_t</b></font> number);
+        <font color="#2e8b57"><b>void</b></font> trim();
+
+        <font color="#0000ff">// MODIFICATION OPERATORS</font>
+        polynomial&amp; <font color="#804040"><b>operator</b></font> =(<font color="#2e8b57"><b>const</b></font> polynomial&amp; source);
+        polynomial&amp; <font color="#804040"><b>operator</b></font> =(<font color="#2e8b57"><b>double</b></font> c)
+            { clear( ); assign_coef(c, <font color="#ff00ff">0</font>); <font color="#804040"><b>return</b></font> *<font color="#804040"><b>this</b></font>; }
+        polynomial&amp; <font color="#804040"><b>operator</b></font> -=(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p);
+        polynomial&amp; <font color="#804040"><b>operator</b></font> -=(<font color="#2e8b57"><b>double</b></font> c)
+            { add_to_coef(-c, <font color="#ff00ff">0</font>); <font color="#804040"><b>return</b></font> *<font color="#804040"><b>this</b></font>; };
+        polynomial&amp; <font color="#804040"><b>operator</b></font> +=(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p);
+        polynomial&amp; <font color="#804040"><b>operator</b></font> +=(<font color="#2e8b57"><b>double</b></font> c)
+            { add_to_coef(c, <font color="#ff00ff">0</font>); <font color="#804040"><b>return</b></font> *<font color="#804040"><b>this</b></font>; };
+        polynomial&amp; <font color="#804040"><b>operator</b></font> *=(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p);
+        polynomial&amp; <font color="#804040"><b>operator</b></font> *=(<font color="#2e8b57"><b>double</b></font> c);
+
+        <font color="#0000ff">// CONSTANT MEMBER FUNCTIONS</font>
+        <font color="#2e8b57"><b>double</b></font> coefficient(<font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> exponent) <font color="#2e8b57"><b>const</b></font>;
+        <font color="#2e8b57"><b>double</b></font> definite_integral(<font color="#2e8b57"><b>double</b></font> low_bound, <font color="#2e8b57"><b>double</b></font> high_bound) <font color="#2e8b57"><b>const</b></font>;
+        <font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> degree( ) <font color="#2e8b57"><b>const</b></font>;
+        polynomial derivative(<font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> n = <font color="#ff00ff">1</font>) <font color="#2e8b57"><b>const</b></font>;
+        <font color="#2e8b57"><b>double</b></font> eval(<font color="#2e8b57"><b>double</b></font> x) <font color="#2e8b57"><b>const</b></font>;
+        polynomial integral(<font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> n = <font color="#ff00ff">1</font>) <font color="#2e8b57"><b>const</b></font>;
+        <font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> next_term(<font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> e) <font color="#2e8b57"><b>const</b></font>;
+        <font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> previous_term(<font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> e) <font color="#2e8b57"><b>const</b></font>;
+        polynomial substitution(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p) <font color="#2e8b57"><b>const</b></font>;
+
+        <font color="#0000ff">// CONSTANT OPERATORS</font>
+        <font color="#2e8b57"><b>double</b></font> <font color="#804040"><b>operator</b></font>( ) (<font color="#2e8b57"><b>double</b></font> x) <font color="#2e8b57"><b>const</b></font> { <font color="#804040"><b>return</b></font> eval(x); }
+        polynomial <font color="#804040"><b>operator</b></font>( ) (<font color="#2e8b57"><b>const</b></font> polynomial&amp; p) <font color="#2e8b57"><b>const</b></font> { <font color="#804040"><b>return</b></font> substitution(p); }
+        polynomial <font color="#804040"><b>operator</b></font> -( ) <font color="#2e8b57"><b>const</b></font>;
+        polynomial <font color="#804040"><b>operator</b></font> +( ) <font color="#2e8b57"><b>const</b></font> { <font color="#804040"><b>return</b></font> (*<font color="#804040"><b>this</b></font>); };
+
+    <font color="#804040"><b>private</b></font>:
+        <font color="#2e8b57"><b>size_t</b></font> current_array_size;
+        <font color="#2e8b57"><b>double</b></font> *coef;
+    };
+
+    <font color="#0000ff">// NON-MEMBER BINARY OPERATORS</font>
+    polynomial <font color="#804040"><b>operator</b></font> +(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p1, <font color="#2e8b57"><b>const</b></font> polynomial&amp; p2);
+    polynomial <font color="#804040"><b>operator</b></font> +(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p, <font color="#2e8b57"><b>double</b></font> c);
+    <font color="#2e8b57"><b>inline</b></font>
+    polynomial <font color="#804040"><b>operator</b></font> +(<font color="#2e8b57"><b>double</b></font> c, <font color="#2e8b57"><b>const</b></font> polynomial&amp; p) { <font color="#804040"><b>return</b></font> p + c; };
+    polynomial <font color="#804040"><b>operator</b></font> -(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p1, <font color="#2e8b57"><b>const</b></font> polynomial&amp; p2);
+    <font color="#2e8b57"><b>inline</b></font>
+    polynomial <font color="#804040"><b>operator</b></font> -(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p, <font color="#2e8b57"><b>double</b></font> c) { <font color="#804040"><b>return</b></font> p + (-c); };
+    <font color="#2e8b57"><b>inline</b></font>
+    polynomial <font color="#804040"><b>operator</b></font> -(<font color="#2e8b57"><b>double</b></font> c, <font color="#2e8b57"><b>const</b></font> polynomial&amp; p) { <font color="#804040"><b>return</b></font> p + (-c); };
+    polynomial <font color="#804040"><b>operator</b></font> *(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p1, <font color="#2e8b57"><b>const</b></font> polynomial&amp; p2);
+    polynomial <font color="#804040"><b>operator</b></font> *(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p, <font color="#2e8b57"><b>double</b></font> c);
+    <font color="#2e8b57"><b>inline</b></font>
+    polynomial <font color="#804040"><b>operator</b></font> *(<font color="#2e8b57"><b>double</b></font> c, <font color="#2e8b57"><b>const</b></font> polynomial&amp; p) { <font color="#804040"><b>return</b></font> p * c; };
+    polynomial <font color="#804040"><b>operator</b></font> ^(<font color="#2e8b57"><b>const</b></font> polynomial&amp; p, <font color="#2e8b57"><b>unsigned</b></font> <font color="#2e8b57"><b>int</b></font> n);
+
+    <font color="#0000ff">// NON-MEMBER INPUT/OUTPUT FUNCTIONS</font>
+    istream&amp; <font color="#804040"><b>operator</b></font> &gt;&gt; (istream&amp; in, polynomial&amp; p);
+    ostream&amp; <font color="#804040"><b>operator</b></font> &lt;&lt; (ostream&amp; out, <font color="#2e8b57"><b>const</b></font> polynomial&amp; p);
+
+}
+<font color="#a020f0">#endif</font>
+</pre>
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+CSCI 201 [3] Fall 2002 Midterm 1 Oct. 15      Name_Solution Key_______________
+
+
+1) Use wildcards to create a single Unix command to:
+
+    a) list only files whose names are AT LEAST 9 characters long and have
+       the 4 character suffix, ".cpp".
+
+    ls *?????.cpp
+
+    b) display the contents of only the 47 files "hw0.cpp" through "hw46.cpp";
+
+    cat hw[0-9].cpp hw[1-3][0-9].cpp hw4[0-6].cpp
+
+2) Provide an example for the Unix redirection operator which:
+
+    a) appends the output of a command to an existing file;
+
+    ls >> listing
+
+    b) reads a file into a command without using the "cat" command.
+
+    sort < listing
+
+    c) sends the output of one command into the input of another;
+
+    ls | sort
+
+3) Set the permissions of the file "myprogram.exe" to have read, write,
+   and execute permission for yourself, with only read and execute
+   permission for others.
+
+    chmod 755 myprogram.exe
+
+4) Provide a Unix command to extract the lines with "//" comments from
+   only files with the ".cpp" suffix.
+
+    grep // *.cpp
+
+5) Write four different C++ statements, each demonstrating a
+    different way to add 1 to the integer variable, "foo".
+
+    ++foo; foo++; foo += 1; foo = foo + 1;
+
+6) Provide 8 digit binary values for the following C++ literals:
+
+    a) 011   00001001
+
+    b) 11    00001011
+
+    c) 0x11  00010001
+
+7) For the binary number 01010101:
+
+    a) provide its one's complement;
+
+    10101010
+
+    b) provide its two's complement.
+
+    10101011
+
+CSCI 201  Fall 2002 Midterm 1 Oct. 15                 Page 2
+
+
+ 8) Provide a C++ expression which computes the resultant angle (in degrees),
+    in the interval [0, 360) of the sum of two non-negative integer angles
+    where each angle could be >= 360 degrees:
+
+    int angle1, angle2, sumAngle;
+
+    sumAngle = (angle1 + angle2) % 360
+
+ 9) The size of what part of a floating point number determines its:
+
+    a) range?      exponent
+
+    b) precision?  mantissa
+
+10) Describe, in one sentence, what a compiler does:
+
+     A compiler translates a source language into a machine language.
+
+11) Declare and initialize the smallest types that can hold the following
+    literal values on eeyore without underflow or overflow:
+    (use your own variable names)
+
+    a) 50000U       unsigned short int afoo = 50000U;
+
+    b) 3000000000   long int bfoo = 3000000000;
+
+    c) 2.0e-38      float cfoo = 2.0e-38;
+
+    d) 4.0e+38      double dfoo = 4.0e+38;
+
+12) What is the difference between the literals, 'a' and "a"?
+
+    'a' is a character, whereas "a" is a string.
+
+13) Provide a C++ statement which accurately computes the following
+    batting average (ratio of hits to atbats):
+
+    int hits, atbats;
+    double batAve;
+    
+    batAve = (float) hits / atbats;
+
+14) What is the value of each of v, w, x, y, and z, after the
+    following statements are executed?
+
+    int v = 0; int w = 1; int x = 2; int y = 3; int z =4;
+
+    w = x % y + y / x - --v * z++;
+
+    v == -1 , w == 7 , x == 2 , y == 3 , z == 5
+
+15) Write a c++ expression for the following reciprocal quadratic:
+
+    1/(a*((x+b/(2*a))(x+b/(2*a))-(b*b/(4*a*a)-c/a)))
+

@@ -1,0 +1,89 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>SCSU CSCI 201 [1 &amp; 2] Lab 8, Computer Science 1, Spring 2014, A. A. Anda</TITLE>
+<style>
+    span {font-style: italic; font-variant: small-caps}
+</style>
+</head>
+<style type="text/css">
+    code{font-weight:bolder}
+</style>
+<body BGCOLOR=white TEXT=black>
+
+<center>
+    <h3>SCSU CSCI 201 [1 &amp; 2], Computer Science 1, Spring 2014, A. A. Anda</h3>
+</center>
+
+<center> <h1> Lab 8</h1></center>
+
+<hr WIDTH="100%">
+
+<h3>Lab Assignment:</h3>
+
+Note: Everything in this lab assignment, unless otherwise stated, must be performed on the <span style="font-variant: small-caps;">csci2</span> server.
+
+<ol TYPE=I>
+
+    <li>
+	Create the directory <code>lab8</code> in your <code>labs</code> directory, then move to it (you can use the <code>mv</code> or <code>pushd</code> command in Unix to move to a directory).
+    </li>
+
+    <li>
+	Perform LAB 8.1, 8.2, 8.3, and LAB 8.4 <i>i</i> - <i>iv</i>.
+    </li>
+    <li>
+	<u>Extra credit</u>: refactor 8.4<i>iv</i> using vectors rather than arrays.
+    </li>
+
+    <li>
+	Use your editor to write the answers to the questions and exercises in
+	<a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/LM_Chapter08.pdf">Lab 8</a>
+	in the file <code>Lab8answers.txt</code>
+	locating it in directory <code>lab8</code></li>. Then submit the file to your lab8 dropbox in D2L.<br>
+	As with all assignments submitted to a dropbox, your name, <span style="font-variant: small-caps;">csci2</span> login, assignment category &amp; number [e.g. Lab 8],
+	and date must be included at the top of your file.
+    </li>
+
+    <li>
+    Note: for each lab program, rewrite the equivalence test expression if the second operand for a equivalence operator is a constant (literal) so that instead the first operand is the literal.<br>
+    (When the first operand is a literal, see what effect that has on the compilation if you remove one of the equals signs ['='].)
+    </li>
+
+    <li>
+    When you are sure that each program is working correctly, use the <code>script</code> command to display first the source file, then execution, 
+    of each lab assignment program.  The <code><b>^D</b></code> character will end the <code>script</code> session.<br>
+    What you enter into your <code>script</code> session will look like this:
+    <code>
+    <pre>
+	&gt;script -a Lab8typescript.txt
+	&gt;cat program1.cpp
+	&gt;program1
+	    (your input to program 1 is here)
+	&gt;cat program1.cpp
+	&gt;program2
+	    (your input to program 2 is here)
+	    .
+	     .
+	      .
+	&gt;^D
+    </pre>
+    </code>
+    Submit <code>Lab8typescript.txt</code> to the D2L Dropbox.
+    </li>
+
+</ol>
+Here are the authors' source files for this lab:
+<code>
+    <ul>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab8/linear_search.cpp">linear_search.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab8/binary_search.cpp">binary_search.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab8/bubble_sort.cpp">bubble_sort.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab8/selection_sort.cpp">selection_sort.cpp</a>
+    </ul>
+</code>
+
+
+</body>
+</html>

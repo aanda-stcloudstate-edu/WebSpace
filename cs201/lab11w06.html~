@@ -1,0 +1,94 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab 11  Spring 2006 [A. A. Anda]</title>
+</head>
+<body>
+
+<center> <h1> CSCI 201</h1></center>
+
+<center> <h2> Lab 11 Spring 2006</h2></center>
+
+<center> <h3> [A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with two-dimensional arrays.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+This lab is intended to provide experience with initializing, printing, and
+indexing of two-dimensional arrays.<p>
+We want to write a program which will initialize and print a two-dimensional
+array.  The array will be filled with a Pascal triangle.  Pascal's triangle
+provides a simple means of calculating a wealth of well known and useful series
+including <u>binomial coefficients</u> and  <u>Fibonacci numbers</u>
+(see p. 269) as well as for counting certain <u>combinations</u>.<br>
+Please refer to the following references for the details:
+<ul>
+    <li><a href="http://www.krysstal.com/binomial.html">Pascal's Triangle</a></li>
+    <li><a href="http://mathworld.wolfram.com/PascalsTriangle.html">Pascal's Triangle -- from MathWorld</a></li>
+    <li><a href="http://mathworld.wolfram.com/BinomialCoefficient.html">Binomial Coefficient -- from MathWorld</a></li>
+</ul>
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li> Create a new directory, <i>lab11</i>, and move to it.</li>
+
+<li>
+Solve Problem 8-30 from page 407 of our C++ text.<br>
+</li>
+
+<ol>
+
+<li>
+Initialize a 20X20 integer array to all zeros.
+</li>
+
+<li>
+Read in a size for the triangle.
+</li>
+
+<li>
+Implement the pseudocode from the problem to generate a Pascal's triangle of
+the size you read in.<br>
+<b>Note:</b>(<i>in line 4, the first right-square-angle-bracket is a typo</i>)
+</li>
+
+<li>
+Print the triangle using the size you read in.<br>
+(<i>Modify lines 24-29 of Program 8-17 on p. 391 so it will print to the
+    correct size, will separate all values by at least one blank, and won't
+    print trailing zeros</i><br>
+[csci.stcloudstate.edu/~aanda/cs201/source/CHO8/P08-17.c++])
+</li>
+
+</ol>
+
+<li>
+Test with sizes = {1, 3, 12, 20}
+</li>
+
+<li>
+When correct, demonstrate, via typescript, the running of the
+program for the test data.<br>
+</li>
+<h4>Extending the Lab</h4>
+<ol>
+<li>
+Pad with blanks on the left so that the printout is symmetrical (use three digit
+field widths for the values)
+</li>
+<li>
+Exploit patterns and symmetry to store as few values in the array as possible.
+</li>
+</ol>
+
+</ol>
+
+
+</body>
+</html>

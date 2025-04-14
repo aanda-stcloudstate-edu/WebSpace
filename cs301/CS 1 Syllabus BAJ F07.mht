@@ -1,0 +1,105 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: CSCI 201 Syllabus
+Date: Wed, 16 Jan 2008 10:42:38 -0600
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C8582C.837F6A30"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3198
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C8582C.837F6A30
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://web.stcloudstate.edu/bajulstrom/cs201/syl-f07.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>CSCI 201 Syllabus</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.6000.16587" name=3DGENERATOR></HEAD>
+<BODY text=3Dblack bgColor=3Dwhite>
+<H3>CSCI 201<BR>Computer Science 1<BR>Fall, 2007 </H3>
+<P>
+<DIV align=3Dcenter>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><IMG =
+src=3D"http://web.stcloudstate.edu/bajulstrom/icons/note04.gif">=20
+    <TD align=3Dmiddle width=3D140><FONT=20
+      face=3Darial><BIG><B>SYLLABUS</BIG><BR>(tentative)</B></FONT>=20
+    <TD><IMG =
+src=3D"http://web.stcloudstate.edu/bajulstrom/icons/note04.gif">=20
+  </TR></TBODY></TABLE></DIV>
+<P>
+<HR>
+
+<P>We will address the following topics in approximately the order =
+listed. Note=20
+the corresponding sections of the texts.=20
+<P>
+<UL>
+  <LI>UNIX essentials=20
+  <UL type=3Dsquare>
+    <LI>Accessing <TT>csci</TT> and manipulating files.=20
+    <LI>Editing files with the VI editor.=20
+    <LI>Compiling and running C++ programs on <TT>csci</TT>. </LI></UL>
+  <LI>Introduction to C++: Program elements and structure. Variables,=20
+  assignment, and arithmetic operators. (Gaddis, Chs. 1, 2)=20
+  <LI>Introduction to the Personal Software Process (PSP). (Humphrey, =
+Chs. 1, 2)=20
+
+  <LI>Expressions and data types. (Gaddis, Ch. 3)=20
+  <LI>Control flow in C++: <TT>if</TT> statements. (Gaddis, Ch. 4)=20
+  <LI>Control flow: Loops. (Gaddis, Ch. 5)=20
+  <LI>Functions, parameters, returned values, and more. (Gaddis, Ch. 6)=20
+  <LI>Arrays. (Gaddis, Ch. 7)=20
+  <LI>Sorting and searching in arrays. (Gaddis, Ch. 8)=20
+  <LI>Time complexity and the big-<I>O</I> notation.=20
+  <LI>Pointers. (Gaddis, Ch. 9)=20
+  <LI>Characters and strings. (Gaddis, Ch. 10)=20
+  <LI>Records (structs) and arrays of records. (Gaddis, Ch. 11)=20
+  <LI>Classes. (Gaddis, Ch. 13)=20
+  <LI>Linked lists. (Gaddis, Ch. 17)=20
+  <LI>Stacks and queues. (Gaddis, Ch. 18)=20
+  <LI>Recursion. (Gaddis, Ch. 19)=20
+  <LI>Two recursive sorting algorithms: Merge Sort and Quick Sort. =
+</LI></UL>
+<HR>
+</BODY></HTML>
+
+------=_NextPart_000_0000_01C8582C.837F6A30
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://web.stcloudstate.edu/bajulstrom/icons/note04.gif
+
+R0lGODdhIAAgAPf/AAAAAICAgD0Auf/j1DsAtDUApP/i0//i0v/h0f/g0P/fz//ezv/dzP/cy//b
+yv/ayf+rjjkArzwAtjgAqy4Aj//h0v/ZyP/Xxf/Vw//TwP/RvjsAszQAnicAev/////dzf/Xxv/V
+wv/Sv//Pu//MuP/JtDYApjoAsC8AkSAAZf7+/v/f0P/Twf/QvP/Mt//Is//ErjUAojkArSsAhBkA
+UP39/YAAAP/ezf/Uwv/Ltv/GsP/Cqv+9pPz8/P/by//g0f/Hsf/Bqv+7o/+2nDMAnSYAd//Ww//C
+q/+9pf+4nzEAmS4AjSIAavv7+//Bqf+5oP+2mzAAlCgAfR0AXfr6+v/Qu8DAwP/Js//Isv++pi4A
+kCMAbvn5+f/Aqf+7oi0AjP+0mf+zl/j4+FAAAOfn5/f39+Tk5Pb29uHh4ebm5uLi4t/f3/X19fT0
+9PDw8O3t7enp6dzc3PHx8erq6uPj49nZ2d3d3dra2tfX1/Pz8/Ly8uDg4NTU1O/v7+7u7t7e3tvb
+29jY2NXV1dLS0s/Pz+zs7Ovr6+jo6MzMzOXl5crKysnJycfHx83NzcXFxcTExMLCwtHR0QAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAJIALAAAAAAgACAA
+Bwj/ACUJHEiQYICDCBMKFMBQAICCBRMGGECxosWDBBgWeAhx4MQBAQwYGHAAQQIFCxg0cPAAQgQJ
+Eyg8lEgzQAWRAxAoYODAwgUMGTRAmLCBQ4eZHpIqVRogAQIIAAYk+PAARAgRI0iUgGDiBIoUM1WI
+HSs2gIIVUEcqcHCBRQsXL2BAgBBDxgwaM2vUsMHXhooADG5ARXAAqgUcLXLo2MFjbt27M3tI1lsj
+wAMfUBX8gPoBhAgSQIIIGTKXCJEieCUFkNxDbwAMRqBeAGEYB1QdR5AkmQtByRImqQM0Ge4hgAgR
+UAHMBdCiBVQYTpA8gQIhAIAoUqYEp0KlSfEqUK1Y/7F+BQvUIFl4VwcQQMsWGsG5cKHiwQoAAOLF
+B+gC1cuT5PexF8AX8MU3X1L5qVDfeACAEUZ49iUU4H2qiSFGX2NkyFeGYwSwnHhkCKiaRKqVUYYY
+8zXRmoIe9CDefSCawZFAJAZwxokprphUE2LkZwUZZqAxY0c2ltHXkUj2lYYaawwJUQBssHEjjik2
+UUYbbrwBx5JrxOFkRG2EGeUZU1rYhhxvzJEGHV3W8aVBYSYpJ1923IHHmx7loceeesjh559pArlH
+nXjwgSeNfcrhhht99OHHo37MASQafwASiCCDHKpan3PKiSkhmgYgh6NvFGLIHHAcQsaklV46CCGI
+hGbqhh+lonpIGomYEWSrnyKiiKx+dJokIoswEmofbxgCBxmJ0IHGGnYQ+mkjijDiSKh+KMusGnv8
+EccddvLxqq+MPAIJtobc6qy3deBRaCSwVusIJPZ1NNCE+Oarr7389uvvvwD7GxAAOw==
+
+------=_NextPart_000_0000_01C8582C.837F6A30--

@@ -1,0 +1,81 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>SCSU CSCI 201 [1 &amp; 2] Lab 12, Computer Science 1, Spring 2014, A. A. Anda</TITLE>
+<style>
+    span {font-style: italic; font-variant: small-caps}
+</style>
+<style type="text/css">
+    code{font-weight:bolder}
+</style>
+</head>
+<body BGCOLOR=white TEXT=black>
+
+<center>
+    <h3>SCSU CSCI 201 [1 &amp; 2], Computer Science 1, Spring 2014, A. A. Anda</h3>
+</center>
+
+<center> <h1> Lab 12</h1></center>
+
+<hr WIDTH="100%">
+
+<h3>Lab Assignment:</h3>
+
+Note: Everything in this lab assignment, unless otherwise stated, must be performed on the <span style="font-variant: small-caps;">csci2</span> server.
+
+<ol TYPE=I>
+
+    <li>
+	Create the directory <code>lab12</code> in your <code>labs</code> directory, then move to it (you can use the <code>cd</code> or <code>pushd</code> command in Unix to move to a directory).
+    </li>
+
+    <li>
+	Perform LAB 12.1, 12.2, 12.3, 12.4 and LAB 12.5 [Option 3].
+    </li>
+
+    <li>
+	Use your editor to write the answers to the questions and exercises in
+	<a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/LM_Chapter12.pdf">Chapter 12 Lab</a>
+	in the file <code>Lab12answers.txt</code>
+	locating it in directory <code>lab12</code></li>. Then submit the file to your lab12 dropbox in D2L.<br>
+	As with all assignments submitted to a dropbox, your name, <span style="font-variant: small-caps;">csci2</span> login, assignment category &amp; number [e.g. Lab 12],
+	and date must be included at the top of your file.
+    </li>
+
+    <li>
+    When you are sure that each program is working correctly, use the <code>script</code> command to display first the source file, then execution, 
+    of each lab assignment program.  The <code><b>^D</b></code> character will end the <code>script</code> session.<br>
+    What you enter into your <code>script</code> session will look like this:
+    <code>
+    <pre>
+	&gt;script -a Lab12typescript.txt
+	&gt;cat program1.cpp
+	&gt;program1
+	    (your input to program 1 is here)
+	&gt;cat program1.cpp
+	&gt;program2
+	    (your input to program 2 is here)
+	    .
+	     .
+	      .
+	&gt;^D
+    </pre>
+    </code>
+    Submit <code>Lab12typescript.txt</code> to the D2L Dropbox.
+    </li>
+
+</ol>
+Here are the authors' source files for this lab:
+<ul>
+    <li> <code><a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab12/files.cpp">files.cpp</a></code>
+    <li> <code><a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab12/Grades.cpp">Grades.cpp</a></code>
+    <li> <code><a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab12/graderoll.txt">graderoll.txt</a></code> {rename extension from <code>.txt</code> to <code>.dat</code>}
+    <li> <code><a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab12/budget.cpp">budget.cpp</a></code>
+    <li> <code><a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab12/randomAccess.cpp">randomAccess.cpp</a></code>
+    <li> <code><a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab12/proverb.txt">proverb.txt</a></code>
+    <li> <code><a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab12/employee.txt">employee.txt</a></code> {rename extension from <code>.txt</code> to <code>.in</code>}
+</ul>
+
+</body>
+</html>

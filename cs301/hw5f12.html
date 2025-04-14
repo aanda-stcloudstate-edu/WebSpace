@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 301 - Programming Assignment 5 - Fall 2012, A. A. Anda</TITLE>
+    <style>
+	P {font-family: "Times New Roman"}
+    </style>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 301<BR>
+  Computer Science 2<BR>
+  Fall, 2012<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 5</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+<HR>
+<h3>Implement a sparse polynomial class based on linked list classes</h3>
+    <i>P</i>(<i>x</i>) =  <i>a<sub>n</sub> x<sup>n</sup></i> + 
+    <i>a</i><sub><i>n</i> - 1</sub><i>x</i><sup><i>n</i> - 1</sup> + 
+    &#x22EF; +
+    <i>a</i><sub>1</sub> <i>x</i> + <i>a</i><sub>0</sub>, &sdot;&ni;&sdot;
+    <ul>
+	<li><i>a<sub>i</sub></i> &isin; <code>Polynomial_coefficient_type</code>
+	<li><i>x</i> &isin; <code>Indeterminate_type</code>
+	<li><i>n</i> &isin; <code>Polynomial_index_type</code>
+    </ul>
+<P>
+This project should be performed using three linked list classes having the same interfaces:
+<ol>
+    <li><b>Stage 1</b>: Use wrappers to give the STL List class the same method interfaces as the two classes in Assignment 4.<br>
+    <li><b>Stage 2</b>: implement the sparse polynomial class <u>via the <code>public</code> methods</u> (which should all share identical interfaces) of the sorted linked list classes developed in <b>Stage 1</b> and in Assignment 4.<br>
+    (This is based on <u>Programming problem 4.8</u>)<br>
+    Note: See {Carrano pages 305 - 308} for an example of the implementation of an ADT class via the use of a pre-existing ADT class.
+    <li><b>Stage 3</b>: Test each sorted linked list implementation with the sparse polynomial class.
+</ol>
+<P>
+
+Recommended methods for the polynomial class:<br>
+<ul>
+    <li>default &amp; copy constructor
+    <li>destructor
+    <li><code>save(stream_type outFile)</code> &amp; 
+    <code>restore(stream_type inFile, poly_type p)</code><br>
+    These methods dump to and restore from a file.<br>
+    See {Carrano pages 205 - 208} for a discussion of the implementations of these methods.
+    <li>Inquiry functions (<i>must not change the polynomial data</i>):
+    <ul>
+	<li><code>bool isEmpty()</code>  // Determines whether the polynomial is empty
+	<li><code>bool isInOrder()</code> // Determines whether the polynomial is stored having the terms ordered from greatest to least exponent.
+	<li><code>bool isSimplified()</code> // Assumes isInOrder(). Determines whether the polynomial is simplified.  Is <code>false</code> if multiple terms share an exponent.
+	<li><code>bool isSparse()</code> // Is <code>false</code> if any (stored) term has a zero valued coefficient.
+	<li><code>bool isDivisionAlgebra()</code> // Is <code>false</code> if the coefficients are of a type that has no inverse.<br>
+	{e.g. floating point (real and complex), and rational types have inverses, but integer types don't}
+	<li><code>Polynomial_coefficient_type coef(Polynomial_index_type i)</code> // Returns the coefficient of the <i>x<sup>i</sup></i> term.<br>
+	<li><code>bool isMonic()</code> // Is the leading coefficient the multiplicative identity (usually 1 or 1.0)
+	(ensure that you handle the case where the coefficient is <u>zero</u>, i.e. there is no node for this term)
+	<li><code>Polynomial_index_type degree()</code> // Returns the value of the greatest exponent
+	<li><code>isNextTerm(Polynomial_index_type i)</code> // Is there a greatest exponent less than <code>i</code> having a non-zero coefficient.
+	<li><code>Polynomial_index_type nextTerm(Polynomial_index_type i)</code> // Returns the value of the greatest exponent less than <code>i</code> having a non-zero coefficient.
+	<li><code>print(char x = 'x')</code> // Pretty-print the polynomial to <code>stdout</code> using the specified character, defaulting to <code>'x'</code> to represent the indeterminate (variable). E.g.<br>
+	<code>4 x^8 + 2 x^5 - 7 x^2 - 3</code>
+	<li><code>eval(Indeterminate_type x)</code> // Evaluate the polynomial at a point using
+	<a href="http://www2.lv.psu.edu/ojj/courses/cmpsc-201/numerical/horners.html">Horner's method</a><br>
+	{Note that you can compute powers when there are zero valued coefficients.<br>
+	You can use one of the binary power algorithms that you've written and tested}<br>
+	e.g.  <tt>4 x^8 + 2 x^5 - 7 x^2 - 3</tt> -&gt;<br>
+	<tt>( ( 4 x^3 + 2 ) x^3 - 7 ) x^2 - 3</tt> -&gt;<br>
+	<tt>( ( 4 pow(x, 3) + 2 ) pow(x, 3) - 7 ) pow(x, 2) - 3</tt> <br>
+	<li><code>derivative(Polynomial p)</code> // Set <code>p</code> to be the first derivative of the polynomial.
+	<li><code>derivative()</code> // Transform a polynomial to be its first derivative.<br>
+	{<i>how might you implement a related function which yields an n<sup>th</sup> derivative?</i>}
+    </ul>
+    <li>Mutator functions (<i>they change the polynomial data</i>):
+    <ul>
+	<li><code>clear()</code> // Sets all coefficients to zero (delete all nodes).  Postcondition: <code>isEmpty()</code> is <code>true</code>.
+	<li><code>clear(Polynomial_index_type i)</code> // Set the coefficient of the <i>x<sup>i</sup></i> term to zero (and delete that node).
+	<li><code>setCoefficient(Polynomial_index_type i, Polynomial_coefficient_type a)</code> // Set the coefficient of the <i>x<sup>i</sup></i> term to <code>a</code>.
+	<li><code>setInOrder()</code> // Orders exponents from greatest to least.
+	<li><code>setSparse()</code> // Delete any (stored) terms having a zero coefficient.
+	<li><code>simplify()</code> // Adds together all terms sharing an exponent.
+	<li><code>setMonic()</code> // Assumes isDivisionAlgebra().  If not IsMonic(), divide polynomial by leading coefficient.
+    </ul>
+    <li>Operator functions:<br>
+    {Note: all operator functions should be <u>inorder</u>, <u>sparse</u>, and <u>simplified</u> as <u>pre</u>conditions and <u>post</u>conditions}
+    <ul>
+	<li> <code>add(Polynomial b)</code> // Addition: <code>a += b</code>
+	<li> <code>add(Polynomial c, Polynomial a, Polynomial b)</code> // Addition: <code>c = a + b</code>
+	<li> <code>subtract(Polynomial b)</code> // Subtraction: <code>a -= b</code> {<i>consider using a helper function which reverses the signs of all nonzero coefficients</i>}
+	<li> <code>subtract(Polynomial c, Polynomial a, Polynomial b)</code> // Subtraction: <code>c = a - b</code> {<i>consider using a helper function which reverses the signs of all nonzero coefficients</i>}
+	<li> <code>product(Polynomial_coefficient_type b)</code> // Product: <code>a *= b</code> // a is a polynomial and b is a scalar.
+	<li> <code>product(Polynomial b)</code> // Product: <code>a *= b</code>
+	<li> <code>product(Polynomial c, Polynomial a, Polynomial b)</code> // Product: <code>c = a * b</code>
+	<li> <i>extra credit</i>: <code>divide(Polynomial q, Polynomial r, Polynomial a, Polynomial b)</code> // Quotient and remainder: <code>a / b -&gt; q + r / b</code> <br>
+	{see this resource on
+	<a href="http://www.sosmath.com/algebra/factor/fac01/fac01.html">polynomial long division</a>}
+    </ul>
+</ul>
+<ul>
+
+    <li>Ensure that your program detects bad, undefined, and out-of-range input errors both on the command line and during execution.  Error messages should go to <u>standard error</u>.
+    <li>Focus on the modularity of your design.  Try to maximize <i>cohesion</i> and minimize <i>coupling</i>.
+    
+    <li> Before the program exits, be sure to release back to the <i>heap</i> all dynamic memory objects.</li>
+    <li> Use <code>typedef</code> to establish the types for the exponent, the coefficient and the independent variable
+</ul>
+
+<HR>
+For the above problem, please follow these guidelines:
+<ol type=I>
+    <h5>General Documentation </h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+	<li> Fully document <b>preconditions</b>, <b>invariants</b> and <b>postconditions</b> 
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    <li>follow the guidelines in <a href="http://web.stcloudstate.edu/bajulstrom/cs301/handin.html">What to hand in</a>.
+    <li>use <u>doxygen</u> to help generate your documentation.
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+</BODY>
+</HTML>
+

@@ -1,0 +1,83 @@
+<HTML>
+    <HEAD>
+	<TITLE>CSCI 301 - Programming Assignment 2 - Fall 2012 Dr. A. A. Anda</TITLE>
+	<style>
+	    P {font-family: "Cambria"}
+	</style>
+	</HEAD>
+    <BODY BGCOLOR=white TEXT=black>
+    <H3>
+        CSCI 301<BR>
+        Computer Science 2<BR>
+        Fall, 2012<BR>
+        Dr. A. A. Anda
+    </H3>
+    <P>
+    <DIV ALIGN=center>
+        <B>Programming Assignment 2</B><BR>
+    </DIV>
+    <P>
+<HR>
+<P>
+<HR>
+<h3>Recursion Exercises</h3>
+<P>
+Write programs that demonstrate the following <u>recursive</u> and <u>iterative</u> <b>functions</b>.
+<P>
+For the following recursion exercises:
+<ul>
+    <li>Create an output (text) file to submit by using the Unix <tt>script</tt> command to iteratively display each problem solution in the following order:
+    <ol>
+	<li> the function source code [include the problem number as a header comment in each function. (e.g. "Problem 2.3" for the third problem of this homework)]
+	<li> white space
+	<li> a few runs of the function's test driver using good, representative, test data <br> (i.e. the output should not be a palindrome, or all the same characters, if ordering is a concern)
+	<li> white space
+    </ol>
+</ul>
+<P>
+We want these recursive functions to be lightweight and as terse as possible (but readable), so for each recursive function,
+<ol>
+    <li>have a header comment line stating your name, course, semester &amp; year
+    <li>have a header comment line stating the problem number
+    <li>have a header comment line stating what the recursive function does
+    <li>have a header comment line for each parameter stating its preconditions
+    <li>have an in-line comment identifying the base case. (even if the base case is to <i>do nothing</i>)
+    <li>use <tt>assert()</tt> to enforce the preconditions. (see p. 881, Appendix C)
+    <li>use descriptive identifiers
+</ol>
+<P>
+Here are your problems:
+<ol>
+    <li> Exercise 7 (there should be a space following each integer value)
+    <li> Exercise 8
+    <li> Exercise 4
+    <li> Exercise 9
+    <li> Write a void recursive function which accepts the two parameters, a non-negative integer value (base 10) and a destination base,
+	and writes the value of the input integer in the destination base (2 &le; base &le; 10) <br>
+	(e.g.) "<tt>base10convert 30 3</tt>" writes "<tt>1012</tt>"
+    <li> Develop the following functions which will perform integer powers of a <tt>double</tt><br>
+    Count &amp; print the number of multiplications &amp; (<i>for the recursive functions</i>) stack depth in each case.<br>
+    Test on 1.01^1000
+    <ol>
+	<li>iterative linear
+	<li>recursive linear
+	<li><a href="http://primes.utm.edu/glossary/page.php?sort=BinaryExponentiation">iterative binary</a>
+	<li>recursive binary <i>{be sure not to call twice}</i> See Ex 2.18
+    </ol>
+    <li> Exercise 3
+    <li> Programming Problem (p. 120) 2
+    <li> Programming Problem (p. 120) 4
+    <li>Develop <i>Ackerman's function</i> (Ex.25) and test  with <tt>Acker</tt>(<i>m,n</i>) for {0 &le; <i>m</i> &le; 3} &amp; {0 &le; <i>n</i> &le; 4}<br>
+    Count &amp; print the number of calls &amp; maximum stack depth in each case.<br>
+</ol>
+<P>
+<b><i>Testing hint</i>:</b> create a single test data file containing an unsorted array of integers which you can use for Exercise 3 and Programming Problems 2 and 4. (<tt>cat</tt> this file in your script)
+<P>
+<HR>
+<P>
+<b>Note:</b> because these are exercises, only internal comments and output comments will be expected as documentation for this assignment.
+<P>
+<HR>
+</BODY>
+</HTML>
+

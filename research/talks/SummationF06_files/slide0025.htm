@@ -1,0 +1,331 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+xmlns:oa="urn:schemas-microsoft-com:office:activation"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 11">
+<link id=Main-File rel=Main-File href="../SummationF06.htm">
+<link rel=Preview href=preview.wmf>
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+p\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+v\:textbox {display:none;}
+</style>
+<![endif]-->
+<title>&#931;&#8217;s Enigmas or Some Sums  Andrew A. Anda, Ph.D.</title>
+<meta name=Description content="11/29/2006: Kahan&#8217;s Compensated Summation">
+<link rel=Stylesheet href="master26_stylesheet.css">
+<![if !ppt]>
+<style media=print>
+<!--.sld
+	{left:0px !important;
+	width:6.0in !important;
+	height:4.5in !important;
+	font-size:107% !important;}
+-->
+</style>
+<script src=script.js></script><script><!--
+if( !IsNts() ) Redirect( "PPTSld" );
+//--></script><!--[if vml]><script>g_vml = 1;
+</script><![endif]--><![endif]>
+</head>
+
+<body lang=EN-US style='margin:0px;background-color:black'
+onclick="DocumentOnClick()" onresize="_RSW()" onload="LoadSld()"
+onkeypress="_KPH()">
+
+<div id=SlideObj class=sld style='position:absolute;top:0px;left:0px;
+width:534px;height:400px;font-size:16px;background-color:#FFFFD9;clip:rect(0%, 101%, 101%, 0%);
+visibility:hidden'><p:slide coordsize="720,540"
+ colors="#ffffd9,#000000,#777777,#000000,#fffff7,#33cccc,#ff5050,#ff9900"
+ masterhref="master26.xml" href="slide0025.xml">
+ <p:shaperange href="master26.xml#_x0000_s206849"/><![if !ppt]><p:shaperange
+  href="master26.xml#_x0000_s206852"/><p:shaperange
+  href="master26.xml#_x0000_s206853"/>
+ <div v:shape="_x0000_s206853" class=O style='text-align:center'><span
+ style='position:absolute;top:92.0%;left:33.7%;width:32.77%;height:3.25%'><span
+ style='font-size:78%;mso-field-code:meta15'>SCSU Mathematics Colloquium </span></span><span
+ style='position:absolute;top:95.0%;left:35.2%;width:29.77%;height:3.25%'><![if !ppt]><span
+ style='font-size:78%'>11/29/2006</span><![endif]><span style='font-size:78%;
+ mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ <p:shaperange href="master26.xml#_x0000_s206854"/>
+ <div v:shape="_x0000_s206854" class=O>
+ <div style='text-align:right;position:absolute;top:92.0%;left:72.65%;
+ width:21.53%;height:3.25%'><span style='font-size:78%;mso-field-code:meta16'>27</span><span
+ style='font-size:78%;mso-special-format:lastCR;display:none'>&#13;</span></div>
+ </div>
+ <![endif]><p:shaperange href="master26.xml#_x0000_m206850"/><p:shaperange
+  href="slide0025.xml#_x0000_s257026"/><![if !vml]><img border=0
+ v:shapes="_x0000_s257217,_x0000_s257058,_x0000_s257057,_x0000_s257056,_x0000_s257055,_x0000_s257054,_x0000_s257053,_x0000_s257052,_x0000_s257051,_x0000_s257050,_x0000_s257049,_x0000_s257048,_x0000_s257047,_x0000_s257046,_x0000_s257045,_x0000_s257044,_x0000_s257043,_x0000_s257042,_x0000_s257041,_x0000_s257040,_x0000_s257039,_x0000_s257038,_x0000_s257037,_x0000_s257036,_x0000_s257035,_x0000_s257034,_x0000_s257033,_x0000_s257032,_x0000_s257031,_x0000_s257030,_x0000_s257029,_x0000_s257064,_x0000_s257065,_x0000_s257071,_x0000_s257079,_x0000_s257092,_x0000_s257118,_x0000_s257083,_x0000_s257128,_x0000_s257129,_x0000_s257131,_x0000_s257138,_x0000_s257143,_x0000_s257149,_x0000_s257155,_x0000_s257160,_x0000_s257163,_x0000_s257164,_x0000_s257166,_x0000_s257167,_x0000_s257170,_x0000_s257059,_x0000_s257176,_x0000_s257180,_x0000_s257111,_x0000_s257187,_x0000_s257173,_x0000_s257200,_x0000_s257202,_x0000_s257196,_x0000_s257185,_x0000_s257210,_x0000_s257192,_x0000_s257216"
+ src="slide0025_image014.gif" style='position:absolute;top:23.25%;left:5.05%;
+ width:90.26%;height:38.25%'><![endif]>
+ <div v:shape="_x0000_s257026" class=T style='position:absolute;top:8.5%;
+ left:-1.49%;width:103.18%;height:8.5%'><span style='font-size:91%'>Kahan&#8217;s
+ Compensated Summation</span></div>
+ <div v:shape="_x0000_s257058">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:54.5%;left:86.32%;width:8.42%;height:6.0%'>= -e</div>
+ </div>
+ <div v:shape="_x0000_s257057">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:54.5%;left:70.97%;width:14.04%;height:6.0%'>0</div>
+ </div>
+ <div v:shape="_x0000_s257056">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:54.5%;left:50.93%;width:18.16%;height:6.0%'>-b2</div>
+ </div>
+ <div v:shape="_x0000_s257055">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:54.5%;left:35.95%;width:13.1%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257054">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:54.5%;left:14.41%;width:19.85%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257053">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:right;mso-margin-left-alt:0;position:absolute;
+ top:54.5%;left:5.99%;width:6.55%;height:6.0%'>-b</div>
+ </div>
+ <div v:shape="_x0000_s257052">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:47.0%;left:86.89%;width:7.3%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257051">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:47.0%;left:70.97%;width:14.04%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257050">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:47.0%;left:50.93%;width:18.16%;height:6.0%'>0</div>
+ </div>
+ <div v:shape="_x0000_s257049">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:47.0%;left:35.95%;width:13.1%;height:6.0%'>b1</div>
+ </div>
+ <div v:shape="_x0000_s257048">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:47.0%;left:14.41%;width:19.85%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257047">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:right;mso-margin-left-alt:0;position:absolute;
+ top:47.0%;left:5.99%;width:6.55%;height:6.0%'>-a</div>
+ </div>
+ <div v:shape="_x0000_s257046">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:39.5%;left:86.89%;width:7.3%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257045">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:39.5%;left:70.97%;width:14.04%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257044">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:39.5%;left:50.93%;width:18.16%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257043">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:39.5%;left:35.95%;width:13.29%;height:6.0%'>a2+b1</div>
+ </div>
+ <div v:shape="_x0000_s257042">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:39.5%;left:14.41%;width:19.85%;height:6.0%'>a1</div>
+ </div>
+ <div v:shape="_x0000_s257041">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:right;mso-margin-left-alt:0;position:absolute;
+ top:39.5%;left:5.99%;width:6.55%;height:6.0%'>=s</div>
+ </div>
+ <div v:shape="_x0000_s257040">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:32.0%;left:86.89%;width:7.3%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257039">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:32.0%;left:70.97%;width:14.04%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257038">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:32.0%;left:50.93%;width:18.16%;height:6.0%'>b2</div>
+ </div>
+ <div v:shape="_x0000_s257037">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:32.0%;left:35.95%;width:13.1%;height:6.0%'>b1</div>
+ </div>
+ <div v:shape="_x0000_s257036">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:32.0%;left:14.41%;width:19.85%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257035">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:right;mso-margin-left-alt:0;position:absolute;
+ top:32.0%;left:5.99%;width:6.55%;height:6.0%'>+b</div>
+ </div>
+ <div v:shape="_x0000_s257034">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:24.25%;left:86.89%;width:7.3%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257033">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:24.25%;left:70.97%;width:14.04%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257032">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0'><span
+ style='position:absolute;top:24.25%;left:50.93%;width:18.16%;height:6.0%'><span
+ style='mso-special-format:lastCR;display:none'>&#13;</span></span></div>
+ </div>
+ <div v:shape="_x0000_s257031">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:24.25%;left:35.95%;width:13.1%;height:6.0%'>a2</div>
+ </div>
+ <div v:shape="_x0000_s257030">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:center;mso-margin-left-alt:0;position:absolute;
+ top:24.25%;left:14.41%;width:19.85%;height:6.0%'>a1</div>
+ </div>
+ <div v:shape="_x0000_s257029">
+ <div class=Tbl1 style='mso-margin-left-alt:288'></div>
+ <div class=Tbl2 style='mso-margin-left-alt:576'></div>
+ <div class=Tbl3 style='mso-margin-left-alt:864'></div>
+ <div class=Tbl4 style='mso-margin-left-alt:1152'></div>
+ <div class=Tbl style='text-align:right;mso-margin-left-alt:0;position:absolute;
+ top:24.25%;left:5.99%;width:6.55%;height:6.0%'>a</div>
+ </div>
+</p:slide>
+</div>
+
+</body>
+
+</html>

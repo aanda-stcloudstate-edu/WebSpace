@@ -1,0 +1,42 @@
+CSCI 301
+Computer Science 2
+Project EXAMPLE: User Document
+Formatting text is arranging it on the screen or page. The program format is a text formatter. 
+It reads a file of text and prints a new file containing the same text, but formatted into lines no longer than a maximum length. 
+The user enters the names of the input and output files and the maximum line length, which must fall between 30 and 80. 
+The program inserts line breaks in the white space between words, which are defined to be blocks of contiguous non-blank characters.
+
+The program's name is format.cxx; to compile and link it, simply enter:
+
+g++ -o format format.cxx
+To run the program, enter format, then respond to the program's prompts to specify the input and output files and the maximum line length. 
+The program will continue to prompt for input should it be unable to open a file or should the entered maximum line length not fall between 30 and 80. 
+The program assumes that no word is longer than the entered line length.
+
+For example, if an input file called inp.dat contains this text:
+
+   Genetic algorithms (GAs) are population-based search procedures
+   inspired by the mechanisms that drive biological evolution:
+   natural selection and genetic recombination and mutation.
+   GAs are thus characterized by selection
+   algorithms that favor the more fit
+   chromosomes in their populations and by crossover and
+   mutation operators that combine and modify existing chromosomes
+   to generate novel offspring.
+the following exchange will run the program on this file:
+   prompt> format
+   Enter input file name: inp.dat
+   Enter output file name: out.dat
+   Enter an integer value between 30 and 80: 48
+When the program terminates, the output file out.dat will contain the following:
+   Genetic algorithms (GAs) are population-based 
+   search procedures inspired by the mechanisms 
+   that drive biological evolution: natural 
+   selection and genetic recombination and 
+   mutation. GAs are thus characterized by 
+   selection algorithms that favor the more fit 
+   chromosomes in their populations and by 
+   crossover and mutation operators that combine 
+   and modify existing chromosomes to generate 
+   novel offspring. 
+Note that no line in the output file contains more than 48 characters, corresponding to the value entered in response to the program's prompt.

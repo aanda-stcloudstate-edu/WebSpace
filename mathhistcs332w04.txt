@@ -1,0 +1,26 @@
+Mathematical Developments
+
+Mathematical Development Stages
+leading to the development of the modern computer:
+
+1. Zero and the development of place-value notation and 
+  arithmetic
+
+2. Development of algebraic thought: abstraction and 
+  generalization
+
+3. Development of logical thought: diagrams, graphs, 
+  and rules & methodology of formal logic
+
+4. From classical logic to algebraic and binary logic: 
+  algebra of propositional logic
+
+5. Development of artificial logical calculation: 
+  Shannon's thesis on the theory of switching
+
+6. From algebra to set theory: Cantor to G ^{..}o del.
+
+7. From philosophical logic to mathematical logic
+
+8. Development of symbolic calculus: recursive function 
+  theory, automata and formal languages

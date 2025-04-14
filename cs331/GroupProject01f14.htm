@@ -1,0 +1,146 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>CSCI 331 First Group Project Fall 2014</title>
+
+</head>
+
+<body lang=EN-US style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<h1><span style='font-size:10.5pt;font-family:"Lucida Sans Unicode"'>CSCI 331 -
+Software Systems  Fall 2014</span></h1>
+
+<h3><span style='font-size:10.5pt'>First Group Project</span></h3> 
+<h3>PROJECT COLLABORATION TYPE:  <u>Group</u></h3>
+
+<p>
+<h2>THE PROGRAM:</h2>  This project is the first in a two-phase project.
+<br>
+Your team will implement:
+<h3>Component A.1</h3>
+<p>
+Implement a two heap, back-to-back, replacement selection algorithm.
+</p>
+<ol>
+    <li>Initialize:
+    <ul>
+	<li>a vector to serve as the replacement selection container.
+	<ul>
+	    <li>Once the vector size has been set, it should stay that way.
+	    <li>The type should be templated.
+	</ul>
+	<li>a list of sorted lists to receive each of the sorted output lists.
+	<ul>
+	    <li> each new list will be pushed onto the list of sorted lists as a new element
+	</ul>
+	<li>a first list in the list of sorted lists
+	<li>the last element value to be max small.
+	<li>a heap direction flag.
+	<ul>
+	    <li>If TRUE,  the active heap's head is on the left end, and the pending heap's head is on the right end.
+	    <li>If FALSE, the active heap's head is on the right end, and the pending heap's head is on the left end.
+	</ul>
+    </ul>
+    <li>While the replacement selection vector is not full:
+    <ul>
+	<li> heapify a new element
+    </ul>
+    <li>While there's a new element:
+    <ul>
+	<li>Pop the smallest element (<i>head</i>) of the current (<i>min</i>) heap, adding it to the current list.
+	<li>If the new element is greater than or equal to the last element popped, push it onto the current heap<br>
+	<li>If the new element is less than or equal to the last element popped,
+	<ul>
+	    <li>push it onto the pending heap
+	    <li>decrement the current heap size counter, and increment the pending heap size counter.
+	    <li>If the current heap size is zero,
+	    <ul>
+		<li>terminate the current sorted list
+		<li>initialize a new sorted list
+		<li>toggle the heap direction flag
+	    </ul>
+	</ul>
+	<ul>
+	    <li>you should have both <code>current_heap_push()</code> and <code>pending_heap_push()</code> methods, as they'll operate differently.
+	</ul>
+    <li>Pop the remaining elements into the current and then the possibly next and final list
+    </ul>
+</ol>
+<h3>Component A.2</h3>
+the creation of a <u>sorted</u> <u>file</u> of <u>records</u> via <i>k</i>-way
+(<i>tournament</i>) merging of <u>replacement selection</u> sorted lists.<br>
+<ul>
+    <li>This method should work with at least the following record types:
+    <ul>
+	<li>random integer valued (a <i>large</i> number of records)
+	<li>random string valued (a <i>medium</i> number of records)
+    </ul>
+    <li>You should provide a <i>comparison method</i> for each record type. 
+    <li>When we sort our records we will use replacement selection <i>then</i> merge.</li>
+    <li>Our replacement selection algorithm will assume a reset-able value
+    for the number of records that can fit in memory (defaulting to 10)
+    <li>The number of entries in the <i>k</i>-way tournament sort (<i>k</i>) will be the number of runs.
+    <li>Write the following statistics to a log file:</li>
+    <ol>
+	<li>an identification of which file the (input) unsorted records are from,</li>
+	<li>an identification of which file the (output) sorted records are placed in,</li>
+	<li>the number of records that can fit in memory,</li>
+	<li>the number of records,</li>
+	<li>the number of runs,</li>
+	<li>the smallest, largest and arithmetic mean number or records in all of the runs,</li>
+	<li>the height of the tournament tree for the merge</li>
+    </ol>
+    <li>A sorted file of records will be generated for each of our categories of record.</li>
+    <li>Write a program that demonstrates that your file sorter works for a sufficiently large count
+	of records in memory and <i>k</i>'s for the <i>k</i>-ary heap trees.</li>
+</ul>
+<b>Component A</b> will lay the foundation for the second team component which will implement a B+Tree.
+
+<h2>WHAT TO TURN IN:</h2>
+Each of the items below should be saved on a CD.
+Each team will have available at the due date a CD for the instructor.
+
+<ol>
+    <li><u>Design document for the classes</u>.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    Also, show data revealing the effect, on the replacement selection algorithm generated list lengths,
+    of partial and complete forward and backwards sorting.<br>
+
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Via Doxygen.
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<code>pwd</code> will answer this for you)
+	<li>How to compile and run the program. (use a <u>makefile</u>)
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+    <li>The group leader should schedule a 10-minute meeting with me to
+	demonstrate the project.  The group leader must also show their
+	group log, the group member evaluations and the summary of the PSP data.
+</ol>
+
+</div>
+
+</body>
+
+</html>

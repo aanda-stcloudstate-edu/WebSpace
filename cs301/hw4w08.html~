@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 301 - Programming Assignment 4 - Spring 2008 A. A. Anda</TITLE>
+    <style>
+	P {font-family: "Cambria"}
+    </style>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 301<BR>
+  Computer Science 2<BR>
+  Spring, 2008<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 4</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+<HR>
+<h3>Implement a sparse polynomial class based on a doubly linked list class</h3>
+P(x) =  a<sub>n</sub> x<sup>n</sup> + 
+	a<sub>n - 1</sub> x<sup>n - 1</sup> + 
+	... +
+	a<sub>1</sub> x + a<sub>0</sub>
+<P>
+This project should be performed in two stages:
+<ol>
+    <li><b>Stage 1</b>: implement a circular doubly linked list with dummy head node class<br>
+    This is <u>Programming problem 4.5</u>
+    <li><b>Stage 2</b>: implement the sparse polynomial class via the doubly linked list class developed in <b>Stage 1</b>.<br>
+    This is based on <u>Programming problem 4.8</u><br>
+    See {Carrano pages 305 - 308} for an example of the implementation of an ADT class via the use of a pre-existing ADT class.
+</ol>
+<P>
+
+Recommended methods for the polynomial class:<br>
+<ul>
+    <li>default &amp; copy constructor
+    <li>destructor
+    <li><code>save(stream_type outFile)</code> &amp; 
+    <code>restore(stream_type inFile, poly_type p)</code><br>
+    These methods dump to and restore from a file.<br>
+    See {Carrano pages 205 - 208} for a discussion of the implementations of these methods.
+    <li>Inquiry functions (<i>must not change the polynomial data</i>):
+    <ul>
+	<li><code>isEmpty()</code>
+	<li><code>isInOrder()</code> // determines whether the polynomial is stored having the terms ordered from highest to lowest exponent.
+	<li><code>coef(int i)</code> // returns the coefficient of the x<sup>i</sup> term.
+	(ensure that you handle the case where the coefficient is zero)
+	<li><code>degree()</code> // returns the value of the highest exponent
+	<li><code>isNextTerm(int i)</code> // is there a highest exponent less than <code>i</code> having a non-zero coefficient.
+	<li><code>nextTerm(int i)</code> // returns the value of the highest exponent less than <code>i</code> having a non-zero coefficient.
+	<li><code>print(char x = 'x')</code> // pretty-print the polynomial to <tt>stdout</tt>. E.g.<br>
+	<tt>4 x^8 + 2 x^5 - 7 x^2 - 3</tt><br>
+	{defaults to 'x' to represent the independent variable}
+	<li><code>eval(x_type x)</code> // evaluate the polynomial at a point using
+	<a href="http://www2.lv.psu.edu/ojj/courses/cmpsc-201/numerical/horners.html">Horner's method</a><br>
+	{Note that you can compute powers when there are zero valued coefficients.<br>
+	You can use one of the binary power algorithms that you've written and tested}<br>
+	e.g.  <tt>4 x^8 + 2 x^5 - 7 x^2 - 3</tt> -&gt;<br>
+	<tt>( ( 4 x^3 + 2 ) x^3 - 7 ) x^2 - 3</tt> -&gt;<br>
+	<tt>( ( 4 pow(x, 3) + 2 ) pow(x, 3) - 7 ) pow(x, 2) - 3</tt> <br>
+	<li><code>derivative(poly_type p)</code> // set <code>p</code> to be the first derivative of the polynomial.<br>
+	{<i>how might you implement function that yields an n<sup>th</sup> derivative?</i>}
+    </ul>
+    <li>Mutator functions (<i>they change the polynomial data</i>):
+    <ul>
+	<li><code>clear()</code> // sets all coefficients to zero.
+	<li><code>clear(int i)</code> // set the coefficient of the x<sup>i</sup> term to zero.
+	<li><code>setCoef(int i, coef_type a)</code> // set the coefficient of the x<sup>i</sup> term to <code>a</code>.
+	<li><code>inOrder()</code> // orders exponents from highest to lowest
+    </ul>
+    <li>Operator functions:
+    <ul>
+	<li> <code>add(poly c, poly a, poly b)</code> // addition: c = a + b
+	<li> <code>subtract(poly c, poly a, poly b)</code> // subtraction: c = a - b {<i>consider using a helper function which reverses the signs of all nonzero coefficients</i>}
+	<li> <code>times(poly c, poly a, poly b)</code> // product: c = a * b
+	<li> <i>extra credit</i>: <code>divide(poly q, poly r, poly a, poly b)</code> // quotient and remainder: a / b -&gt; q + r / b <br>
+	{see this resource on
+	<a href="http://www.sosmath.com/algebra/factor/fac01/fac01.html">polynomial long division</a>}
+    </ul>
+</ul>
+
+    <li>Ensure that your program detects bad, undefined, and out-of-range input errors both on the command line and during execution.  Error messages should go to <u>standard error</u>.
+    <li>Focus on the modularity of your design.  Try to maximize <i>cohesion</i> and minimize <i>coupling</i>.
+    
+    <li> Before the program exits, be sure to release back to the <i>heap</i> all dynamic memory objects.</li>
+    <li> Use <code>typedef</code> to establish the types for the exponent, the coefficient and the independent variable
+</ol>
+
+<HR>
+For the above problem, please follow these guidelines:
+<ol type=I>
+    <h5>General Documentation </h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+	<li> Fully document <b>preconditions</b>, <b>invariants</b> and <b>postconditions</b> 
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    <li>follow the guidelines in <a href="http://web.stcloudstate.edu/bajulstrom/cs301/handin.html">What to hand in</a>.
+    <li>use <u>doxygen</u> to help generate your documentation.
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+</BODY>
+</HTML>
+

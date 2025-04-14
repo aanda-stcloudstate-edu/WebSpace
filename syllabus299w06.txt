@@ -1,0 +1,107 @@
+			CSCI 299 (Sec. 1) [000181]
+		        Modeling Reality
+		        Spring 2006 SYLLABUS
+
+INSTRUCTOR:	Andrew A. Anda, Ph.D., Asst. Prof. of Computer Science
+OFFICE:		ECC-223		 Telephone:	(320)308-2044
+E-MAIL:		aanda@stcloudstate.edu
+Web Site: http://web.stcloudstate.edu/aanda/cs299.html
+OFFICE HOURS:	M: 14:00 - 14:50 
+                T: 10:00 - 11:50 
+                   13:00 - 14:50 
+                W: 14:00 - 14:50 
+                H: 10:00 - 10:50 
+                   13:00 - 14:50 
+                F: 14:00 - 14:50 
+                (and by appointment)
+
+CLASS TIME AND LOCATION:
+    Class: MWF: 15:00 - 15:50 in MC 206
+
+REQUIRED TEXT:	* Modeling Reality: How Computers Mirror Life.
+		    by Bialynicki-Birula & Bialynicki-Birula, Oxford, 2004.
+		* Nexus: Small Worlds and the Groundbreaking Theory of Networks,
+		    by Mark Buchanan, Norton, 2002.
+Supplemental TEXT: * The Computational Beauty of Nature: Computer Explorations
+		    of Fractals, Chaos, Complex Systems, and Adaptation.
+		    by Gary William Flake, MIT, 2000.
+OBJECTIVES:
+    For well over a century, the method we use to learn about the world
+    around us, the scientific method, consisted of two principal components:
+    theory and experiment. Beginning in the mid-20th century, a third principal
+    component emerged: Computational Science. Computational Science can be
+    defined as the computer simulation of (usually) simplified models of how
+    real world physical or social systems work to better understand those
+    systems. E.g. one may computationally model evolution to test evolutionary
+    theories in biology: Computational Evolution. Or conversely, one may use
+    models of evolution to better solve problems in mathematics and computer
+    science: Evolutionary Computation. This course will explore how computer
+    models of reality are developed, and survey a number of diverse
+    applications. For example, we'll discuss why weather prediction, and some
+    other predictions about the future, can be not just hard, but impossible,
+    no matter how powerful a computer one uses -- why whether or not a
+    butterfly flaps it wings might possibly be the determining factor with
+    respect to whether a tornado forms. There will be guest lecturers and a
+    possible field trip to an important computing site.
+
+TOPICS:
+    * TBD
+
+PREREQUISITES:
+    Because mathematical notation will be used in the course, the student
+    must at least have mastered MATH 072 level material (intermediate algebra).
+    Readiness to take calculus would be better still. Computer Science majors
+    in the course may serve as mentors to students less familiar with
+    computational ideas.  Thus, working groups may mix Honors students and
+    Computer Science students, thereby promoting good learning for everyone in
+    the class.
+
+ASSIGNMENTS:
+    There will be a modeling project.
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.  Use of recording devices during exams is prohibited.
+    If you must quote or paraphrase another source, citation is essential,
+    otherwise plagiarism has been committed.  You are expected to be familiar
+    with your rights and obligations as outlined in the "Code of Conduct"
+    [http://www.stcloudstate.edu/studenthandbook/code]  See also:
+    [http://www.stcloudstate.edu/studenthandbook/policies/cheating.asp]
+    [http://www.stcloudstate.edu/studenthandbook/academic_policies/honesty.asp]
+
+DECORUM: Conduct yourself so as not to distract others. In particular
+    * Turn off all cell phones, watch alarms, and similar devices.
+    * Do not engage in distracting activities like reading a newspaper
+      or sleeping. (some of you snore...)
+    * Arrive for class on time, and be ready to begin.
+      If you must be late, be quiet.
+    * If you are early, sit toward the middle of a row.
+    * Do not start packing up before class ends.
+
+ATTENDANCE:
+    You are responsible for knowing what happens at each class meeting.
+
+EXAMS:
+    There will be a small set of intermediate exams and a comprehensive
+    final exam.
+    Exams will be based on the notes; that is, on the presentations in class
+    as well as on the content in the assigned readings.
+    Make-up exams will be given in only in extreme (or university
+    sanctioned) circumstances and only with prior notice.
+
+GRADING:
+	Your grade will be determined by the contributions of your scores
+	on assignments,  quizzes, intermediate and final exams.
+	Makeup of tests, quizzes, and exams are by prior arrangement only.
+
+
+FINAL EXAM: Monday, May 8 15:45AM - 18:15PM in MC 206.
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************

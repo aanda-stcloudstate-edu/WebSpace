@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI 331 Inverted List Project Fall 2020</title>
+    <style>
+	code{font-family: courier; font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems Fall 2020</h1>
+
+<h2><u>Inverted List</u> Project</h2> 
+
+<p>
+<h3>Objective</h3>
+Generate an <u>Inverted List</u> as a set of files.<br>
+<h3>Requirements</h3>
+<ol>
+    <li>Create a CSV (comma separated) file from this <a href="http://web.stcloudstate.edu/aanda/cs331/w19/us_postal_codes.xlsx">XLSX file</a>.</li>
+    <li>Write a function (or method) that generates an index (primary key) file {see Figure 7.3 on Folk page 251} into this CSV file</li>
+    <ul>
+	<li>this index file will be composed of a sequence of fixed-length triples:
+	    a 5 digit ASCII Zip Code field, followed by an (byte offset) integer reference field, followed by an integer relative record number (link) field</li>
+	<li>this function will populate the second field (byte offset) of the primary index file</li>
+    </ul>
+    <li>Write a C++ function (or method) that generates a secondary index file {see Figure 7.13 on Folk page 276} for the state</li>
+    <ul>
+	<li>this secondary index file will be composed of a sequence of fixed-length doubles:
+	    a two character state code, followed by an integer relative record number (link) field (into the Zip Code index)</li>
+	<li>this function will populate the third (link) field of the primary index file {the second field of the <i>Label ID List file</i> as shown in Figure 7.13}</li>
+    </ul>
+    <li>Write an application program using those functions/methods that:</li>
+    <ol>
+	<li>generates the primary index (Zip Code) file</li>
+	<li>generates the secondary index (State ID) file and populates the link field in the primary index file</li>
+	<li>uses the CSV data file, secondary index file, and primary index file to generate {directed to standard output} a table comprising
+	    an alphabetical listing of states with the Northernmost (greatest latitude) Zip Code in that state </li>
+    </ol>
+    <li>Document (<i>extensively</i>) your C++ source code with comments and Doxygen tags.
+    <li>Create a Doxygen PDF of your functions (or Inverted List class)</li>
+</ol>
+<hr>
+<h2>WHAT TO TURN IN:</h2>
+	<ul>
+	    <li>the CSV file
+	    <li>the primary index file (.txt)
+	    <li>the secondary index file (.txt)
+	    <li>the Doxygen PDF
+	    <li>the <code>.cpp</code> source files 
+	    <li>the script file that was generated to demonstrate the running of the application program.
+	</ul>
+	(zip the <code>.cpp</code> source files: {see <a href="https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files">https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files</a>})<br>
+
+
+
+</div>
+
+</body>
+
+</html>

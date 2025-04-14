@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 17</h1>
+      <p align="center"><a href="#LISTING 17-1 An interface for the ADT heap">
+      Listing 17-1</a><br>
+      <a href="#Listing 17-2 The header file for the class ArrayMaxHeap">Listing 
+      17-2</a><br>
+      <a href="#Listing 17-3  A header file for the class Heap_PriorityQueue">
+      Listing 17-3</a><br>
+      <a href="#Listing 17-4  An implementation of the class Heap_PriorityQueue">
+      Listing 17-4</a><br>
+      <a href="#Listing 17-A  Algorithm to convert semiheap into a heap">Listing 
+      17-A</a><br>
+      <a href="#Listing 17-B Heap Sort algorithm">Listing 17-B</a></p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+              <div align="center">
+                <center>
+                <h3 align="center">
+                <a name="LISTING 17-1 An interface for the ADT heap">LISTING 
+                17-1 An interface for the ADT heap</a></h3>
+                </center>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">/** Interface for the ADT heap.
+@file HeapInterface.h */
+#ifndef _HEAP_INTERFACE
+#define _HEAP_INTERFACE
+template &lt; class ItemType &gt; class HeapInterface
+{
+public:
+/** Sees whether this heap is empty.
+@return True if the heap is empty, or false if not. */
+  virtual bool isEmpty ()const = 0;
+
+/** Gets the number of nodes in this heap.
+@return The number of nodes in the heap. */
+  virtual int getNumberOfNodes () const = 0;
+
+/** Gets the height of this heap.
+@return The height of the heap. */
+  virtual int getHeight () const = 0;
+
+/** Gets the data that is in the root (top) of this heap.
+For a maxheap, the data is the largest value in the heap;
+for a minheap, the data is the smallest value in the heap.
+@pre The heap is not empty.
+@post The roots data has been returned, and the heap is unchanged.
+@return The data in the root of the heap. */
+  virtual ItemType peekTop () const = 0;
+
+/** Adds a new node containing the given data to this heap.
+@param newData The data for the new node.
+@post The heap contains a new node.
+@return True if the addition is successful, or false if not. */
+  virtual bool add (const ItemType &amp; newData) = 0;
+
+/** Removes the root node from this heap.
+@return True if the removal is successful, or false if not. */
+  virtual bool remove () = 0;
+
+/** Removes all nodes from this heap. */
+  virtual void clear () = 0;
+};  // end HeapInterface
+#endif</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 17-A  Algorithm to convert semiheap into a heap">
+                Listing 17-A&nbsp; Algorithm to convert semiheap into a heap</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">// Converts a semiheap rooted at index root into a heap.
+heapRebuild (root: integer, items: ArrayType, itemCount:integer)
+// Recursively trickle the item at index root down to its proper position by
+// swapping it with its larger child, if the child is larger than the item.
+// If the item is at a leaf, nothing needs to be done.
+  if (the root is not a leaf)
+  {
+// The root must have a left child; assume it is the larger child
+    largerChildIndex = 2 * rootIndex + 1	// Left child index
+      if (the root has a right child)
+      {
+	rightChildIndex = largerChildIndex + 1	// Right child index
+	  if (items[rightChildIndex] &gt; items[largerChildIndex])
+	  largerChildIndex = rightChildIndex	// Larger child index
+	  }
+// If the item in the root is smaller than the item in the larger child, swap items
+	  if (items[rootIndex] &lt; items[largerChildIndex])
+	    {
+	      Swap items[rootIndex] and items[largerChildIndex]
+// Transform the semiheap rooted at largerChildIndex into a heap
+	      heapRebuild (largerChildIndex, items, itemCount)}
+      }
+// Else root is a leaf, so you are done</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 17-2 The header file for the class ArrayMaxHeap">
+                Listing 17-2 The header file for the class
+                <font face="Courier New">ArrayMaxHeap</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">/** Array-based implementation of the ADT heap.
+@file ArrayMaxHeap.h */
+#ifndef _ARRAY_MAX_HEAP
+#define _ARRAY_MAX_HEAP
+#include &quot;HeapInterface.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+template &lt; class ItemType &gt; class ArrayMaxHeap:public HeapInterface &lt; ItemType &gt;
+{
+private:
+  static const int ROOT_INDEX = 0;	// Helps with readability
+
+  static const int DEFAULT_CAPACITY = 21;	// Small capacity to test for a full heap
+
+  ItemType *items;		// Array of heap items
+
+  int itemCount;		// Current count of heap items
+
+  int maxItems;			// Maximum capacity of the heap
+
+// ---------------------------------------------------------------------
+// Most of the private utility methods use an array index as a parameter
+// and in calculations. This should be safe, even though the array is an
+// implementation detail, since the methods are private.
+// ---------------------------------------------------------------------
+// Returns the array index of the left child (if it exists).
+  int getLeftChildIndex (const int nodeIndex) const;
+
+// Returns the array index of the right child (if it exists).
+  int getRightChildIndex (int nodeIndex) const;
+
+// Returns the array index of the parent node.
+  int getParentIndex (int nodeIndex) const;
+
+// Tests whether this node is a leaf.
+  bool isLeaf (int nodeIndex) const;
+
+// Converts a semiheap to a heap.
+  void heapRebuild (int subTreeRootIndex);
+
+// Creates a heap from an unordered array.
+  void heapCreate ();
+
+public:
+  ArrayMaxHeap ();
+  ArrayMaxHeap (const ItemType someArray[], const int arraySize);
+
+  virtual ~ ArrayMaxHeap ();
+// HeapInterface Public Methods:
+  bool isEmpty () const;
+
+  int getNumberOfNodes () const;
+
+  int getHeight () const;
+
+  ItemType peekTop () const throw (PrecondViolatedExcep);
+
+  bool add (const ItemType &amp; newData);
+
+  bool remove ();
+
+  void clear ();
+};  // end ArrayMaxHeap
+
+#include &quot;ArrayMaxHeap.cpp&quot;
+#endif</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 17-3  A header file for the class Heap_PriorityQueue">
+                Listing 17-3&nbsp; A header file for the class
+                <font face="Courier New">Heap_PriorityQueue</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">/** ADT priority queue: Heap-based implementation.
+@file Heap_PriorityQueue.h */
+#ifndef _HEAP_PRIORITY_QUEUE
+#define _HEAP_PRIORITY_QUEUE
+#include &quot;ArrayMaxHeap.h&quot;
+#include &quot;PriorityQueueInterface.h&quot;
+template &lt; class ItemType &gt; class Heap_PriorityQueue:public PriorityQueueInterface &lt; ItemType &gt;,
+  private ArrayMaxHeap &lt; ItemType &gt;
+{
+public:
+  Heap_PriorityQueue ();
+  bool isEmpty () const;
+
+  bool add (const ItemType &amp; newEntry);
+
+  bool remove ();
+
+/** @pre The priority queue is not empty. */
+  ItemType peek () const throw (PrecondViolatedExcep);
+};  // end Heap_PriorityQueue
+
+#include &quot;Heap_PriorityQueue.cpp&quot;
+#endif</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 17-4  An implementation of the class Heap_PriorityQueue">
+                Listing 17-4&nbsp; An implementation of the class
+                <font face="Courier New">Heap_PriorityQueue</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">/** Heap-based implementation of the ADT priority queue.
+@file Heap_PriorityQueue.cpp */
+#include &quot;Heap_PriorityQueue.h&quot;
+template &lt; class ItemType &gt; Heap_PriorityQueue &lt; ItemType &gt;::Heap_PriorityQueue ()
+{
+  ArrayMaxHeap &lt; ItemType &gt; ();
+}   // end constructor
+
+template &lt; class ItemType &gt; bool Heap_PriorityQueue &lt; ItemType &gt;::isEmpty () constconst
+{
+  return ArrayMaxHeap &lt; ItemType &gt;::isEmpty ();
+}   // end isEmpty
+
+template &lt; class ItemType &gt; bool Heap_PriorityQueue &lt; ItemType &gt;::add (const ItemType &amp; newEntry)
+{
+  return ArrayMaxHeap &lt; ItemType &gt;::add (newEntry);
+}   // end add
+
+template &lt; class ItemType &gt; bool Heap_PriorityQueue &lt; ItemType &gt;::remove ()
+{
+  return ArrayMaxHeap &lt; ItemType &gt;::remove ();
+}   // end remove
+
+template &lt; class ItemType &gt; ItemType Heap_PriorityQueue &lt; ItemType &gt;::peek () constconst throw (PrecondViolatedExcep)
+{
+  try
+  {
+    return ArrayMaxHeap &lt; ItemType &gt;::peekTop ();
+  }
+  catch (PrecondViolatedExcep e)
+  {
+    throw PrecondViolatedExcep (&quot;Attempted peek into an empty priority queue.&quot;);
+  } // end try/catch
+}   // end peek</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a name="Listing 17-B Heap Sort algorithm">
+                Listing 17-B Heap Sort algorithm</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">// Sorts anArray[0..n-1].
+heapSort (anArray: ArrayType, n:integer)
+// Build initial heap
+  for (index = n / 2 down to 0)
+  {
+// Assertion: The tree rooted at index is a semiheap
+    heapRebuild (index, anArray, n)
+// Assertion: The tree rooted at index is a heap
+  }
+
+// Assertion: anArray[0] is the largest item in heap anArray[0..n-1]
+// Move the largest item in the Heap regionthe root anArray[0] to the beginning
+// of the Sorted region by swapping items and then adjusting the size of the regions
+Swap anArray[0]
+     and
+       anArray[n - 1]
+       heapSize = n - 1		// Decrease the size of the Heap region, expand the Sorted region
+       while (heapSize &gt; 1)
+  {
+// Make the Heap region a heap again
+    heapRebuild (0, anArray, heapSize)
+// Move the largest item in the Heap regionthe root anArray[0] to the beginning
+// of the Sorted region by swapping items and then adjusting the size of the regions
+      Swap anArray[0] and anArray[heapSize - 1] heapSize	
+// Decrease the size of the Heap region, expand the Sorted region
+  }</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    </body>
+</html>

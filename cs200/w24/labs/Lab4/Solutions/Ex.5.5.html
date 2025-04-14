@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- story.html Dave Reed -->
+<!-- Web page that displays an interactive story. -->
+<!-- =============================================== -->
+<html>
+<head>
+<title> Dave's Story Time </title>
+</head>
+<body>
+<h2>Dave's Story Time</h2>
+<p>
+Enter an adjective: <input type="text" id="adjectiveBox" value="smarmy">
+<br>
+Enter a boy's name: <input type="text" id="boyBox" value="Leopold">
+<br>
+Enter a color: <input type="text" id="colorBox" value="mauve">
+<br>
+Enter a type of animal: <input type="text" id="animalBox" value="lemur">
+<br>
+Enter a swear word or exclamation:
+<input type="text" id="swearBox" value="Dagnabit">
+<br>
+Enter a type of building: <input type="text" id="buildingBox" value="teepee">
+</p>
+<input type="button" value="Click for Story"
+	onclick="adjective = document.getElementById('adjectiveBox').value;
+			boy = document.getElementById('boyBox').value;
+			color = document.getElementById('colorBox').value;
+			animal = document.getElementById('animalBox').value;
+			swear = document.getElementById('swearBox').value;
+			building = document.getElementById('buildingBox').value;
+			document.getElementById('outputDiv').innerHTML=
+			'<p>It was a ' + adjective + ' kind of day when ' + boy +
+			' walked out into the street. The sky was a deep ' + color +
+			' and ' + boy + ' was walking his pet ' + animal + '.</p>' +
+			'<p><i>' + swear +'</i>, exclaimed ' + boy + ' as he stepped off' +
+			' the curb and into a large pile of ' + animal + ' excrement.' +
+			' Disgusted, he returned to his ' + building +
+			' and went back to bed.</i></p>'; " />
+<hr>
+<div id="outputDiv"></div>
+</body>
+</html>

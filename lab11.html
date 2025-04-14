@@ -1,0 +1,94 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab 11</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 11</h2></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab implements file I/O and uses multidimensional arrays.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+<P> Standard I/O is useful, but sometimes limiting.  Our programs can be
+more flexible if we are able to read and write to files directly without
+having to rely on the file redirection operators in UNIX.
+
+<P> We will modify program 8-15 in the text to read and write from files.
+Program 8-15 reads and writes two dimensional tables using two dimensional
+arrays and calculates and displays row and column averages.
+<br>The dimensions of the tables will be read from the first line of the input file.
+
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab11</i>, and move to it.</li>
+
+<li>
+Copy ~cs201400/p15mod.cpp, ~cs201400/data15.txt, and ~cs201400/data15a.txt to
+your lab11 directory.
+</li>
+
+<li>
+Modify program p15mod.cpp to read from <b>infile15.txt</b> and write to
+<b>outfile15.txt</b>. 
+<br>[See <b>Program 7-8</b> in the text for examples]
+</li>
+
+<li>
+Also, perform the following modifications:
+<ol>
+    <li>
+    Reset <b>MAX_ROWS</b> and <b>MAX_COLS</b> to be 12 and 10 respectively.
+    <br>These will be the largest possible dimensions of our input table.
+    </li>
+    <li>
+    Read the number of rows and columns from the first line of the input
+    file.
+    <br>They will be ordered with the row count preceding the column count.
+    <br>Your program will use these values as the limit in the terminating
+    expression of the respective <b>for</b> loops.
+    </li>
+    <li>
+    Modify the <i>printTables</i> function so that the line of underscores
+    is adjusted to match the number of columns input.
+    </li>
+    <li>
+    Place column headers over each column. E.g., COL0  COL2 ... COLn  AVG 
+    <br>Place another row of underscores between the column headers and the
+    top row of the output table.
+    </li>
+</ol>
+</li>
+<li>
+Run the program twice: once for the data in data15.txt and
+once for the data in data15a.txt.
+<br>You will need to copy each input file to <b>infile15.txt</b>
+prior to running the program. 
+<br>After each run terminates, rename the output to be
+<b>output15.txt</b> and <b>output15a.txt</b> respectively.
+</li>
+
+<li>
+When correct, generate a printout of the source and the two ouput files.
+</li>
+
+</ol>
+
+
+</body>
+</html>

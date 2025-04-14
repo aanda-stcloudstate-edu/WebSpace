@@ -1,0 +1,276 @@
+CSCI 201 [1] Fall 2002 Midterm 2 Nov. 19      Name_____KEY____________________
+
+1) Using if-then-else statement(s), rewrite:
+
+    x == y ? 0 : ( x > y ? 1 : -1 )
+
+if (x == y)
+    0;
+else if (x > y)
+    1;
+else
+    -1;
+
+2) Construct a Boolean expression that is TRUE if and only if the
+   integer n is in the interval [-100, 100], but is not even.
+
+n >= -100 && n <= 100 && n % 2 != 0
+
+
+
+3) Use de Morgan's Rule to complement the following Boolean expression:
+   (use no "!"s in the final expression, and show your work)
+
+   x != 0 || x > -1 && x < 1
+
+!(x != 0 || x > -1 && x < 1) ==>
+
+!(x != 0) && !( x > -1 && x < 1) ==>
+
+x == 0 && (!(x > -1) || !(x < 1)) ==>
+
+x == 0 && ( x <= -1 || x >= 1 )  {parentheses necessary to protect
+				  associative relationships}
+
+4) char foo(int x, int y, int z)
+   {
+    return ( ( x < y < z ) ? 'p' : 'q');
+   }
+   
+   For the above function, what would the following calls evaluate to?
+
+   (a) foo(1,1,1): _'p'____
+
+      {1<1<1 ==>
+       0<1  ==>
+       TRUE}
+
+   (b) foo(0,0,0): _'q'____
+
+      {0<0<0 ==>
+       0<0  ==>
+       FALSE}
+
+5) Let x = y = 1; what is the value of x and y after the following
+   statement is executed?
+
+   x++ <= 1 || y++ < 1;
+
+   (a) x? __2____
+
+   (b) y? __1____ {because of short circuit evaluation)
+
+
+ 6) A function, frand(), returns a pseudo-random float value in the
+    interval [0, 1).  Use frand() in an expression which changes the
+    interval to [-n, n].
+
+2 * n * (frand() - 0.5)
+
+
+ 7) Let x = 0, and y = 1:
+
+    a) What will be the value of the variables x and y after executing:
+
+	switch (x)
+	 {
+	  case 0: x = 2;
+		  y = 3;
+	  case 1: x = 4;
+		  break;
+	  default: y = 5;
+		   x = 6;
+	 } // end switch
+
+	 (i)  x =? _4____
+
+	 (ii) y =? _3____
+
+    b) Write the above switch statement as an equivalent set of else-if
+       statements
+
+temp = x;
+if (temp == 0)
+    {
+     x = 2;
+     y = 3;
+    }
+if (temp == 1 || temp == 0)
+    x = 4;
+else
+    {
+     y = 5;
+     x = 6;
+    }
+
+ 8) Translate the following for statement to an equivalent while statement,
+    without using a "continue":  **********************************
+                                 *                                *
+    for(i=0, j=1; i <= 99; i++)  *  i = 0; j = 1;                 *
+     {                           *  while (i <= 99)               *
+      if (i % 2) continue;       *    {                           *
+      cin >> k;                  *     if (!(i % 2))              *
+      if ( k < 0 ) break;        *        {                       *
+      j *= 2;                    *         cin >> k;              *
+     } //end for                 *         if ( k < 0 ) break;    *
+                                 *         j *= 2;                *
+				 *        }                       *
+				 *     i++;                       *
+				 *    }                           *
+				 *                                *
+				 **********************************
+ 9) float x, y, z; // (all != 0)
+
+    (a) Can (x + y) + z == x + (y + z) ever be FALSE?  How?
+
+Yes.  If x or z is much larger than the other two.
+e.g. if the maginitude of x is much larger than that of y and much larger
+than that of z, such that x + y == x and x + z == x, but x + (y + z) != x.
+
+    (b) Can 1 == 1 + x ever be TRUE?  How?
+
+Yes.  If the magnitude of x is much smaller than one, then for the add
+operation, all nonzero digits are shifted away.
+e.g.
+      1.000000
+     +0.000000009
+      ___________
+      1.000000
+
+10) Find and identify any errors in the following function calls:
+
+    (a) void foob(float a, float b);
+    
+type specifications not allowed in actual parameters or return values.
+
+    (b) void foob();
+    
+type specification not allowed part of function call to indicate return value.
+
+    (c) foob();
+    
+OK
+
+    (d) foob(void);
+
+type specifications not allowed in actual parameters.
+
+
+11) Find and identify any errors in the following prototype declarations:
+    
+    (a) void boof(a int, b int);
+    
+identifier and type transposed for each parameter.
+    
+    (b) char boof(char a, b);
+    
+separate type required for each identifier.
+
+    (c) void boof(void, void);
+
+there should be only one void as the parameter list.
+
+    (d) boof('p', 'q');
+
+literals illegal as parameters.
+
+
+12) What is printed by the following?
+
+    int x = 1;
+    int y = 2;
+    {int x = 3;
+     cout << x << ":" << y << endl;}
+    cout << x << ":" << y << endl;
+
+    ___3:2___  {within inner scope}
+
+    ___1:2___  {within outer scope}
+
+13) Which loop construct executes its body at least once?
+
+do while
+
+14) What is O( f(n) ) if f(n) = 
+
+    (a) 100 * n * log10(n)? 
+    
+O(n*log10(n))
+
+    (b) 100 * n + log10(n)? 
+
+O(n)
+
+    (c) 1.0/100 * n^6 + 1.0/10 * n^3 + n?
+
+O(n^6)
+
+    (d) 2^n + n^3?
+
+O(2^n)
+
+15) What is O( f(n) ) if f(n) = 
+
+    (a) for (i=1; i <= n; i++)
+	    for (j=1; j <= n; j*=2)
+		for (k=n; k >= 1; k--)
+		    {BODY}
+
+: O(n^2 * log2(n))
+
+    (b) for (i=1; i <= n; i++)
+	    for (j=i; j <= n; j++)
+		for (k=1; k <= j; k++)
+		    {BODY}
+
+: O(n^3)
+
+    (c) for (i=1; i <= n; i++);
+	for (j=1; j <= n; j++);
+	for (k=1; k <= n; k++)
+	    {BODY}
+
+: O(n)
+
+16) Define a function which swaps the values of its two integer parameters
+    and returns the value of the largest:
+
+int foo(int& a, int& b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+    return (a >= b ? a : b);
+}
+
+
+17) Which of the following recursions will terminate?
+
+    (a) _No_; (b) _No_; (c)_Yes_; (d) _Yes_;
+
+
+    (a) foo1(int n)
+         {
+	  if (n < 1) return 0;
+	  else return (n + foo1(n + 1));
+	 }
+
+
+    (b) foo2(int n)
+         {
+	  if (n < 1) return 0;
+	  else return (n + foo2(n) - 1);
+	 }
+
+    (c) foo3(int n)
+         {
+	  if (n > 1) return 0;
+	  else return (n + foo3(n + 1));
+	 }
+
+    (d) foo4(int n)
+         {
+	  if (n >= 1) return (n + foo4(n - 1));
+	  else return 0;
+	 }
+

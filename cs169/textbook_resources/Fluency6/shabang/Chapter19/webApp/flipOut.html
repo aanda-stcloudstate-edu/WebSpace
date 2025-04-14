@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+   <head> 
+     <meta charset="UTF-8"/><title>eCoin Flipping</title>
+      <script>
+         function coinFlip( ) {
+            return Math.round(Math.random());
+         }
+         function flipOut( ) {
+            if (coinFlip( )==0) 
+                return "us1tails.jpg";
+            else
+                return "us1heads.jpg";
+         }
+      </script>
+	   <style>
+	      body {background-color : black; color : goldenrod; 
+	               font-family : verdana; text-align : center}
+	   </style>
+	</head>
+   <body>
+         <h2>Heads or Tails? </h2>
+         <script>document.write('<img src=" ' +
+               flipOut( ) + ' " alt="coin" width="150"/>');
+         </script>
+   </body>
+</html>
+
+

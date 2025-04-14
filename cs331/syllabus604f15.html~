@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>http::/web.stcloudstate.edu/aanda/cs331/syllabus604f15.html</title>
+<meta name="Generator" content="Vim/6.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+                        CSCI 604 [003508]
+                        Advanced Data Structures
+                        Fall 2015 SYLLABUS
+
+INSTRUCTOR:     Andrew A. Anda, Ph.D., Assoc. Prof. of Computer Science
+OFFICE:         ECC-223          Telephone:     (320)308-2044
+E-MAIL:         aanda@stcloudstate.edu
+Web Site: <A HREF="http://web.stcloudstate.edu/aanda/cs331.html">http://web.stcloudstate.edu/aanda/cs331.html</A>
+Instructor Schedule: <A HREF="http://web.stcloudstate.edu/aanda/Wkly-sched-f15.html">http://web.stcloudstate.edu/aanda/Wkly-sched-f15.html</A>
+(and by appointment)
+
+
+CLASS TIME AND LOCATION:
+    Class: MWF: 15:00 - 15:50 in ECC 135
+
+REQUIRED TEXT:  * File Structures: An Object-Oriented Approach with C++,
+                  M.J. Folk, B. Zoellick, G. Riccardi, Addison Wesley Longman, 1998.
+
+                  You may buy the text (used) from a campus bookstore (or from a Web-based merchant)
+                  or you can follow the following instructions on how to buy the electronic version from the publisher which includes the source code:
+		  <A HREF="http://web.stcloudstate.edu/aanda/cs331/Folk/CSCI331CustomBook.txt">http://web.stcloudstate.edu/aanda/cs331/Folk/CSCI331CustomBook.txt</A>
+
+RECOMMENDED TEXT * Introduction to the Personal Software Process, W. S. Humphrey, Addison Wesley, 1997.
+
+SUPPLEMENTARY TEXTS * Applied Data Structures with C++, Peter Smith, Jones and Bartlett, 2004.
+		    * (your CSCI 591 text, or equivalent text covering data structures in C++)
+
+COURSE DESCRIPTION:
+    Problem solving strategies and concepts applied in the context of issues
+    associated with the design and implementation of software systems using
+    a combination of current software packages/environments. Subjects
+    addressed include file processing, data modeling and mapping to storage
+    structures, data base systems, and software design and implementation.
+
+STUDENT LEARNING GOALS:
+    1. gain experience working in a group in various roles on a technical project.
+    2. gain knowledge updating sequential files as related to data base systems.
+    3. gain experience designing software systems through a software engineering process including designing algorithms, coding, and testing.
+    4. write programs and software systems involving trees, blocking/deblocking, sort/merge, updating sequential files, and b-trees.
+
+I Student Outcomes as defined by ABET (CAC):
+    a) An ability to apply knowledge of computing and mathematics appropriate to the discipline.
+    c) An ability to design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs.
+    d) An ability to function effectively on teams to accomplish a common goal.
+    e) An understanding of professional, ethical, legal, security and social issues and responsibilities.
+    f) An ability to communicate effectively with a range of audiences.
+    i) An ability to use current techniques, skills, and tools necessary for computing practice.
+    j) An ability to apply mathematical foundations, algorithmic principles, and computer science theory in the modeling and design of computer-based systems
+       in a way that demonstrates comprehension of the tradeoffs involved in design choices.
+    k) An ability to apply design and development principles in the construction of software systems of varying complexity.
+
+II Student Outcomes (Sos) for the Computer Science Program:
+    Students will be able to:
+	1. apply structured principles and good practices to the task of developing software systems.
+	4. communicate both technical and non-technical aspects of their work in formal and informal situations.
+	5. apply formal methods to the process of constructing a system and an appreciation of the need to study and develop such methods.
+	7. analyze various aspects of the process used when designing a system and employ established frameworks to evaluate the completed work.
+
+TOPICS (not necessarily in order of coverage):
+    * Sequential file processing
+    * Indexed Files
+    * Hashed Files
+    * Tree Structured Files
+    * Secondary storage media
+    * Introduction to database
+    * Software Design Processes and Principles
+    * Software Development Processes and Principles
+    * and more...
+    * (I will expect students to learn the complexities {bigO} of the
+        operations on the data structures we discuss and to be able
+        to select, based on those complexities, the most appropriate ADT
+        considering the nature of the data and how it will be accessed.)
+
+PREREQUISITES:
+    [Prereq.: CSCI 591 or equivalent (A course in data structures using C++)]
+    I assume that all students in this class have passed the prerequisite CSCI and MATH courses, or their equivalents.
+    We also assume that you have an operational facility with Unix.
+    If you have not had ALL of these courses you should drop this course until you have passed all of the prerequisites.
+    We do not have time for an extensive recapitulation of topics covered in the prerequisite courses.
+
+CLASS ACCOUNTS:
+    You will be given an account (on our csci2.stcloudstate.edu Solaris (Unix) server) for use in this class.
+    All work for this class must be done in this account and the account must not be used for any other class.
+    You may not let anyone else use the account unless that person is a student in this class and is working
+    on a class project with you.
+    You also have the option of being issued a magnetic access card for our computer labs.
+    These are to be returned at the final. 
+    If you fail to return your access card, we will fail to issue you a final passing grade.
+
+PROGRAMMING ASSIGNMENTS HOMEWORK AND IN CLASS WORK:
+    There will be a sequence of programming assignments. 
+    These must be submitted at the beginning of class on the day they are due.
+    No allowances will be made for down time on the computer, so I suggest you
+    begin each assignment as soon as you receive it.
+    Programs not submitted on the Due date will be penalized.
+    A program is late if it is submitted after the beginning of class on the due date.
+
+    A program must compile to receive any credit. 
+	(Which implies that a successful strategy is to always maintain available the
+	 last successfully compiling version as you are developing incrementally)
+    Keep in mind that I expect all programs to produce correct output given error free input. 
+	Check your output before getting the final copy to turn in.
+	Don't assume that a program that produces some output without terminating abnormally
+	is correct. 
+	Are the output and test results what you expected?
+	Test your program carefully and extensively. 
+	You have not fully tested your program if you have not executed every line of code.
+    Preconditions and postconditions must be consistent and well-defined. 
+    The code should satisfy the postconditions if the preconditions are met.
+    Conversely, if a precondition is violated, that exception should be detected and handled.
+
+    The grade you get on a program is based on the code, the documentation and
+    how well it is tested.  To receive better than a C on a program it must do
+    more than produce correct output given correct input.  By this I mean your
+    program must be robust, well documented, well tested and well written.
+
+    Your grade on the group projects will also be based on how well you
+    cooperate with, contribute to and participate in the group you are
+    assigned to.  Your contributions to your group's efforts will be assessed
+    by your peers.
+    * &quot;Boat anchors&quot; will be significantly penalized.
+    * &quot;Heroes&quot; will be significantly rewarded.
+
+    Missing class on days that we have in-class assignments will result in a
+    zero for that assignment.  These assignments cannot be made up.  If you
+    have trouble getting to class drop now so that someone else can use the
+    spot.
+
+    All homework, documentation and programs must be neat.
+    All homework is due before class starts on the due date and the same
+        rules apply for late homework as for late programs.
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.  Use of recording devices during exams is prohibited.
+    If you must quote or paraphrase another source, citation is essential,
+    otherwise plagiarism has been committed.  You are expected to be familiar
+    with your rights and obligations as outlined in the &quot;Code of Conduct&quot;
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/documents/2013_14_codeofconduct.pdf">http://www.stcloudstate.edu/studenthandbook/documents/2013_14_codeofconduct.pdf</A>]  See also:
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/code/prohibited.asp">http://www.stcloudstate.edu/studenthandbook/code/prohibited.asp</A>]
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/code/rights_responsibilities.asp">http://www.stcloudstate.edu/studenthandbook/code/rights_responsibilities.asp</A>]
+
+STUDYING IN GROUPS:
+    I encourage you to study with someone else in the class, but when you
+    prepare the final documents to turn in be sure that it is your own words
+    and sentences and that you understand it.  If you represent someone
+    else’s work as your own or allow someone else to turn your work in as
+    theirs you will be turned in for cheating and will be given an F.
+
+DECORUM: Conduct yourself so as not to distract others. In particular
+    * Turn off all cell phones, watch alarms, and similar devices.
+    * Do not engage in distracting activities like reading a newspaper
+      or sleeping. [ the snoring can be so distracting... :^) ]
+    * Arrive for class on time, and be ready to begin.
+      If you must be late, be quiet.
+    * If you are early, sit toward the middle of a row.
+    * Do not start packing up before class ends.
+
+ATTENDANCE:
+    You are responsible for knowing what happens at each class meeting.
+    You should expect to spend a lot of time on this class.  It is not an
+    easy class.  If you are having trouble in class I expect to see you in
+    my office.  If you don't tell me you are having troubles how do you
+    expect me to know?  If you can't come during my office hours, make an
+    appointment for another time.
+
+QUIZZES:
+    There will be a sequence of quizzes of assigned readings.
+EXAMS:
+    There will be a small set of intermediate exams and a comprehensive
+    final exam.
+    Exams will be based on the notes; that is, on the presentations in class,
+    as well as on the assigned readings and assignments.
+    Calculators will be neither necessary nor allowed.
+    Make-up exams will be given in only in extreme (or university sanctioned) circumstances and only with prior notice.
+
+GRADING:
+        Your grade will be determined by the contributions of your scores
+        on assignments,  quizzes, intermediate and final exams.
+        Makeup of tests, quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE POINTS:
+        Assignments             30%
+        Quizzes                 10%
+        Hour Exams              30%
+        Final Exam              30%
+
+FINAL EXAM: Wednesday, December 16, 14:45 - 17:00 in ECC 135.
+            Wednesday, December 16, 12:20 - 14:35 in ECC 135 (331 Section 1).
+            Monday, December 14, 14:45 - 17:00 in ECC 135 (331 Section 2).
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************
+</pre>
+</body>
+</html>

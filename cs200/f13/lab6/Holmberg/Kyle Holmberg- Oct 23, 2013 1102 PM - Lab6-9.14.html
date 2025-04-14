@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- /export/home/cs200/cs200104/Documents/labs/Lab6/Lab6-9.14.html -->
+<!-- Kyle Holmberg -->
+<!-- CSCI 200 -->
+<!-- Created 10/23/13 -->
+<!-- Last Edited: 10/23/13 -->
+<!-- The purpose of this webpage is to practice using javascript libraries. -->
+<html>
+    <head>
+        <title>Lab 6 9.8</title>
+        
+        <script type="text/javascript" src="http://balance3e.com/random.js"></script>
+        <script type="text/javascript">
+            function RandomResult()
+            // Assumes: The user enters a question
+            // Results: The function returns a random answer
+            {
+				randomAnswer = RandomOneOf(['Signs point to yes.', 'Yes.', 'Reply hazy, try again.', 'Without a doubt.', 'My sources say no.', 
+											'As I see it, yes.', 'You may rely on it.' , 'Concentrate and ask again.', 'Outlook not so good.', 
+											'It is decidedly so.', 'Better not tell you now.', 'Very doubtful.', 'Yes - definitely.', 'It is certain.', 
+											'Cannot predict now.', 'Most likely.', 'Ask again later.', 'My reply is no.', 'Outlook good.', 
+											'Don\'t count on it.']);
+                document.getElementById('outputDiv').innerHTML = 'The Magic 8-ball says: ' + randomAnswer;
+            } 
+        </script>
+    </head>
+    
+    <body>
+        <h1 style="text-align:center"> Magic 8-ball(Mattel, Inc.)</h1>
+		
+		<div id="imageArea" style="text-align:center">
+        
+        <p>Enter a question below, then click on the Magic 8-Ball to recieve its wisdom.</p>
+		<input type="text" id="heightBox" value="" size=100>
+        
+		<br><br>
+		
+        <img id="8ball" src="http://balance3e.com/Images/8ball.gif"
+                onclick="RandomResult();">
+				
+        <div id="outputDiv"></div>
+    </body>
+</html>

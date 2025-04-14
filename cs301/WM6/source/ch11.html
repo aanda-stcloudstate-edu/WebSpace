@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code
+        Listings Chapter 11</h1>
+      <p align="center"><a href="#Listing_11-1">Listing 11-1</a><br>
+      <a href="#Listing_11-2_An_implementation_of_the">Listing 11-2</a><br>
+      <a href="#Listing_11-3_An_implementation_of_the">Listing 11-3</a><br>
+      <a href="#Listing_11-4_An_implementation_of_the">Listing 11-4</a><br>
+      <a href="#Listing 11-5 A function that performs a quick sort">Listing 11-5</a></p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a
+                      name="Listing_11-1"></a>Listing 11-1 An
+                    implementation of the selection sort</h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><big><font color="#3333ff" size="3"><big><b><span class="sh_comment" style="font-style: italic;">/** Finds the largest item in an array.</span>
+<span class="sh_type">@pre</span><span class="sh_comment" style="font-style: italic;"> The size of the array is &gt;= 1.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> The arguments are unchanged.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> theArray The given array.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> size The number of elements in theArray.</span>
+<span class="sh_type">@return</span><span class="sh_comment" style="font-style: italic;"> The index of the largest entry in the array. */</span>
+<span class="sh_type">int</span> <span class="sh_function" style="font-weight: bold;">findIndexofLargest</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>theArray<span class="sh_symbol">[],</span> <span class="sh_type">int</span> size<span class="sh_symbol">);</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Sorts the items in an array into ascending order.</span>
+<span class="sh_type">@pre</span><span class="sh_comment" style="font-style: italic;"> None.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> The array is sorted into ascending order; the size of the array</span>
+<span class="sh_comment" style="font-style: italic;">is unchanged.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> theArray The array to sort.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> n The size of theArray. */<br></span>
+<span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">selectionSort</span> <span class="sh_symbol">(</span><span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>theArray<span class="sh_symbol">[],</span> <span class="sh_type">int</span> n<span class="sh_symbol">)</span>
+<span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// last = index of the last item in the subarray of items yet</span>
+<span class="sh_comment" style="font-style: italic;">// to be sorted;</span>
+<span class="sh_comment" style="font-style: italic;">// largest = index of the largest item found</span>
+  <span class="sh_keyword" style="font-weight: bold;">for</span> <span class="sh_symbol">(</span><span class="sh_type">int</span> last <span class="sh_symbol">=</span> n <span class="sh_symbol">-</span> <span class="sh_number">1</span><span class="sh_symbol">;</span> last <span class="sh_symbol">&gt;=</span> <span class="sh_number">1</span><span class="sh_symbol">;</span> last<span class="sh_symbol">)</span>
+    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, theArray[last+1..n-1] is sorted, and its</span>
+<span class="sh_comment" style="font-style: italic;">// entries are greater than those in theArray[0..last].</span>
+<span class="sh_comment" style="font-style: italic;">// Select the largest entry in theArray[0..last]</span>
+      <span class="sh_type">int</span> largest <span class="sh_symbol">=</span> <span class="sh_function" style="font-weight: bold;">findIndexofLargest</span> <span class="sh_symbol">(</span>theArray<span class="sh_symbol">,</span> last <span class="sh_symbol">+</span> <span class="sh_number">1</span><span class="sh_symbol">);</span>
+<span class="sh_comment" style="font-style: italic;">// Swap the largest entry, theArray[largest], with</span>
+<span class="sh_comment" style="font-style: italic;">// theArray[last]</span>
+      std<span class="sh_symbol">::</span><span class="sh_function" style="font-weight: bold;">swap</span> <span class="sh_symbol">(</span>theArray<span class="sh_symbol">[</span>largest<span class="sh_symbol">],</span> theArray<span class="sh_symbol">[</span>last<span class="sh_symbol">]);</span>
+    <span class="sh_cbracket">}</span>	<span class="sh_comment" style="font-style: italic;">// end for</span>
+<span class="sh_cbracket">}</span>   <span class="sh_comment" style="font-style: italic;">// end selectionSort</span>
+
+<span class="sh_type">int</span> <span class="sh_function" style="font-weight: bold;">findIndexofLargest</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>theArray<span class="sh_symbol">[],</span> <span class="sh_type">int</span> size<span class="sh_symbol">)</span>
+<span class="sh_cbracket">{</span>
+  <span class="sh_type">int</span> indexSoFar <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>	<span class="sh_comment" style="font-style: italic;">// Index of largest entry found so far</span>
+  <span class="sh_keyword" style="font-weight: bold;">for</span> <span class="sh_symbol">(</span><span class="sh_type">int</span> currentIndex <span class="sh_symbol">=</span> <span class="sh_number">1</span><span class="sh_symbol">;</span> currentIndex <span class="sh_symbol">&lt;</span> size<span class="sh_symbol">;</span> currentIndex<span class="sh_symbol">++)</span>
+    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, theArray[indexSoFar] &gt;= all entries in</span>
+<span class="sh_comment" style="font-style: italic;">// theArray[0..currentIndex - 1]</span>
+      <span class="sh_keyword" style="font-weight: bold;">if</span> <span class="sh_symbol">(</span>theArray<span class="sh_symbol">[</span>currentIndex<span class="sh_symbol">]</span> <span class="sh_symbol">&gt;</span> theArray<span class="sh_symbol">[</span>indexSoFar<span class="sh_symbol">])</span>
+	indexSoFar <span class="sh_symbol">=</span> currentIndex<span class="sh_symbol">;</span>
+    <span class="sh_cbracket">}</span>	<span class="sh_comment" style="font-style: italic;">// end for</span>
+  <span class="sh_keyword" style="font-weight: bold;">return</span> indexSoFar<span class="sh_symbol">;</span>	<span class="sh_comment" style="font-style: italic;">// Index of largest entry</span>
+<span class="sh_cbracket">}</span>   <span class="sh_comment" style="font-style: italic;">// end findIndexofLargest</span>
+</b></big></font></big></pre>
+                <big></big></td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <big><font face="Arial, Arial, Helvetica">
+        </font></big></div>
+    <font face="Arial, Arial, Helvetica">
+      <p> </p>
+    </font><font face="Arial, Arial, Helvetica"><br>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a
+                      name="Listing_11-2_An_implementation_of_the"></a>Listing
+                    11-2 An implementation of the bubble sort</h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font color="#3333ff" size="3"><b><big><span class="sh_comment" style="font-style: italic;">/** Sorts the items in an array into ascending order.</span>
+<span class="sh_type">@pre</span><span class="sh_comment" style="font-style: italic;"> None.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> theArray is sorted into ascending order; n is unchanged.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> theArray The given array.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> n The size of theArray. */</span>
+<span class="sh_type"><br>void</span> <span class="sh_function" style="font-weight: bold;">bubbleSort</span> <span class="sh_symbol">(</span><span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>theArray<span class="sh_symbol">[],</span> <span class="sh_type">int</span> n<span class="sh_symbol">)</span>
+<span class="sh_cbracket">{</span>
+  <span class="sh_type">bool</span> sorted <span class="sh_symbol">=</span> <span class="sh_keyword" style="font-weight: bold;">false</span><span class="sh_symbol">;</span>		<span class="sh_comment" style="font-style: italic;">// False when swaps occur</span>
+  <span class="sh_type">int</span> pass <span class="sh_symbol">=</span> <span class="sh_number">1</span><span class="sh_symbol">;</span>
+  <span class="sh_keyword" style="font-weight: bold;">while</span> <span class="sh_symbol">(!</span>sorted <span class="sh_symbol">&amp;&amp;</span> <span class="sh_symbol">(</span>pass <span class="sh_symbol">&lt;</span> n<span class="sh_symbol">))</span>
+    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, theArray[n+1-pass..n-1] is sorted</span>
+<span class="sh_comment" style="font-style: italic;">// and all of its entries are &gt; the entries in theArray[0..n-pass]</span>
+      sorted <span class="sh_symbol">=</span> <span class="sh_keyword" style="font-weight: bold;">true</span><span class="sh_symbol">;</span>		<span class="sh_comment" style="font-style: italic;">// Assume sorted</span>
+      <span class="sh_keyword" style="font-weight: bold;">for</span> <span class="sh_symbol">(</span><span class="sh_type">int</span> index <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span> index <span class="sh_symbol">&lt;</span> n <span class="sh_symbol">-</span> pass<span class="sh_symbol">;</span> index<span class="sh_symbol">++)</span>
+	<span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, all entries in theArray[0..index-1]</span>
+<span class="sh_comment" style="font-style: italic;">// are &lt;= theArray[index]</span>
+	  <span class="sh_type">int</span> nextIndex <span class="sh_symbol">=</span> index <span class="sh_symbol">+</span> <span class="sh_number">1</span><span class="sh_symbol">;</span>
+	  <span class="sh_keyword" style="font-weight: bold;">if</span> <span class="sh_symbol">(</span>theArray<span class="sh_symbol">[</span>index<span class="sh_symbol">]</span> <span class="sh_symbol">&gt;</span> theArray<span class="sh_symbol">[</span>nextIndex<span class="sh_symbol">])</span>
+	    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// Exchange entries</span>
+	      std<span class="sh_symbol">::</span><span class="sh_function" style="font-weight: bold;">swap</span> <span class="sh_symbol">(</span>theArray<span class="sh_symbol">[</span>index<span class="sh_symbol">],</span> theArray<span class="sh_symbol">[</span>nextIndex<span class="sh_symbol">]);</span>
+	      sorted <span class="sh_symbol">=</span> <span class="sh_keyword" style="font-weight: bold;">false</span><span class="sh_symbol">;</span>	<span class="sh_comment" style="font-style: italic;">// Signal exchange</span>
+	    <span class="sh_cbracket">}</span>			<span class="sh_comment" style="font-style: italic;">// end if</span>
+	<span class="sh_cbracket">}</span>			<span class="sh_comment" style="font-style: italic;">// end for</span>
+<span class="sh_comment" style="font-style: italic;">// Assertion: theArray[0..n-pass-1] &lt; theArray[n-pass]</span>
+      pass<span class="sh_symbol">++;</span>
+    <span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end while</span>
+<span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end bubbleSort</span></big>
+</b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p> </p>
+    </font><font face="Arial, Arial, Helvetica"><br>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a
+                      name="Listing_11-3_An_implementation_of_the"></a><a
+                      name="Listing_11-3_An_implementation_of_the_"></a>Listing
+                    11-3&nbsp; An implementation of the insertion sort</h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><big><b><font color="#3333ff" size="3"><big><span class="sh_comment" style="font-style: italic;">/** Sorts the items in an array into ascending order.</span>
+<span class="sh_type">@pre</span><span class="sh_comment" style="font-style: italic;"> None.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> theArray is sorted into ascending order; n is unchanged.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> theArray The given array.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> n The size of theArray. */</span>
+<span class="sh_type"><br>void i</span><span class="sh_function">nsertionSort</span> <span class="sh_symbol">(</span><span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>theArray<span class="sh_symbol">[],</span> <span class="sh_type">int</span> n<span class="sh_symbol">)</span>
+<span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// unsorted = first index of the unsorted region,</span>
+<span class="sh_comment" style="font-style: italic;">// loc = index of insertion in the sorted region,</span>
+<span class="sh_comment" style="font-style: italic;">// nextItem = next item in the unsorted region.</span>
+<span class="sh_comment" style="font-style: italic;">// Initially, sorted region is theArray[0],</span>
+<span class="sh_comment" style="font-style: italic;">// unsorted region is theArray[1..n-1].</span>
+<span class="sh_comment" style="font-style: italic;">// In general, sorted region is theArray[0..unsorted-1],</span>
+<span class="sh_comment" style="font-style: italic;">// unsorted region theArray[unsorted..n-1]</span>
+  <span class="sh_keyword">for</span> <span class="sh_symbol">(</span><span class="sh_type">int</span> unsorted <span class="sh_symbol">=</span> <span class="sh_number">1</span><span class="sh_symbol">;</span> unsorted <span class="sh_symbol">&lt;</span> n<span class="sh_symbol">;</span> unsorted<span class="sh_symbol">++)</span>
+    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, theArray[0..unsorted-1] is sorted.</span>
+<span class="sh_comment" style="font-style: italic;">// Find the right position (loc) in theArray[0..unsorted]</span>
+<span class="sh_comment" style="font-style: italic;">// for theArray[unsorted], which is the first entry in the</span>
+<span class="sh_comment" style="font-style: italic;">// unsorted region; shift, if necessary, to make room</span>
+      <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>nextItem <span class="sh_symbol">=</span> theArray<span class="sh_symbol">[</span>unsorted<span class="sh_symbol">];</span>
+      <span class="sh_type">int</span> loc <span class="sh_symbol">=</span> unsorted<span class="sh_symbol">;</span>
+      <span class="sh_keyword">while</span> <span class="sh_symbol">((</span>loc <span class="sh_symbol">&gt;</span> <span class="sh_number">0</span><span class="sh_symbol">)</span> <span class="sh_symbol">&amp;&amp;</span> <span class="sh_symbol">(</span>theArray<span class="sh_symbol">[</span>loc <span class="sh_symbol">-</span> <span class="sh_number">1</span><span class="sh_symbol">]</span> <span class="sh_symbol">&gt;</span> nextItem<span class="sh_symbol">))</span>
+	<span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// Shift theArray[loc - 1] to the right</span>
+	  theArray<span class="sh_symbol">[</span>loc<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> theArray<span class="sh_symbol">[</span>loc <span class="sh_symbol">-</span> <span class="sh_number">1</span><span class="sh_symbol">];</span>
+	<span class="sh_cbracket">}</span>			<span class="sh_comment" style="font-style: italic;">// end for</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, theArray[loc] is where nextItem belongs</span>
+      theArray<span class="sh_symbol">[</span>loc<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> nextItem<span class="sh_symbol">;</span>	<span class="sh_comment" style="font-style: italic;">// Insert nextItem into sorted region</span>
+      loc<span class="sh_symbol">--;</span>
+    <span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end while</span>
+<span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end insertionSort</span>
+</big></font></b></big></pre>
+                <big><b></b></big></td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <big><b><font color="#3333ff" face="Arial, Arial, Helvetica">
+          </font></b></big></div>
+    <big><b><font color="#3333ff" face="Arial, Arial, Helvetica">
+          <p> </p>
+        </font></b></big><font face="Arial, Arial, Helvetica"><br>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a
+                      name="Listing_11-4_An_implementation_of_the"></a>Listing
+                    11-4 An implementation of the merge sort</h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b><font color="#3333ff"><big><span class="sh_comment" style="font-style: italic;">/** Merges two sorted array segments theArray[first..mid] and</span>
+<span class="sh_comment" style="font-style: italic;">theArray[mid+1..last] into one sorted array.</span>
+<span class="sh_type">@pre</span><span class="sh_comment" style="font-style: italic;"> first &lt;= mid &lt;= last. The subarrays theArray[first..mid] and</span>
+<span class="sh_comment" style="font-style: italic;">theArray[mid+1..last] are each sorted in increasing order.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> theArray[first..last] is sorted.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> theArray The given array.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> first The index of the beginning of the first segment in</span>
+<span class="sh_comment" style="font-style: italic;">theArray.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> mid The index of the end of the first segment in theArray;</span>
+<span class="sh_comment" style="font-style: italic;">mid + 1 marks the beginning of the second segment.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> last The index of the last element in the second segment in</span>
+<span class="sh_comment" style="font-style: italic;">theArray.</span>
+<span class="sh_type">@note</span><span class="sh_comment" style="font-style: italic;"> This function merges the two subarrays into a temporary</span>
+<span class="sh_comment" style="font-style: italic;">array and copies the result into the original array theArray. */</span>
+<span class="sh_type"><br>void</span> <span class="sh_function" style="font-weight: bold;">merge</span> <span class="sh_symbol">(</span><span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>theArray<span class="sh_symbol">[],</span> <span class="sh_type">int</span> first<span class="sh_symbol">,</span> <span class="sh_type">int</span> mid<span class="sh_symbol">,</span> <span class="sh_type">int</span> last<span class="sh_symbol">)</span>
+<span class="sh_cbracket">{</span>
+  <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>tempArray<span class="sh_symbol">[</span>MAX_SIZE<span class="sh_symbol">];</span>	<span class="sh_comment" style="font-style: italic;">// Temporary array</span>
+<span class="sh_comment" style="font-style: italic;">// Initialize the local indices to indicate the subarrays</span>
+  <span class="sh_type">int</span> first1 <span class="sh_symbol">=</span> first<span class="sh_symbol">;</span>		<span class="sh_comment" style="font-style: italic;">// Beginning of first subarray</span>
+  <span class="sh_type">int</span> last1 <span class="sh_symbol">=</span> mid<span class="sh_symbol">;</span>		<span class="sh_comment" style="font-style: italic;">// End of first subarray</span>
+  <span class="sh_type">int</span> first2 <span class="sh_symbol">=</span> mid <span class="sh_symbol">+</span> <span class="sh_number">1</span><span class="sh_symbol">;</span>		<span class="sh_comment" style="font-style: italic;">// Beginning of second subarray</span>
+  <span class="sh_type">int</span> last2 <span class="sh_symbol">=</span> last<span class="sh_symbol">;</span>		<span class="sh_comment" style="font-style: italic;">// End of second subarray</span>
+<span class="sh_comment" style="font-style: italic;">// While both subarrays are not empty, copy the</span>
+<span class="sh_comment" style="font-style: italic;">// smaller item into the temporary array</span>
+  <span class="sh_type">int</span> index <span class="sh_symbol">=</span> first1<span class="sh_symbol">;</span>		<span class="sh_comment" style="font-style: italic;">// Next available location in tempArray</span>
+  <span class="sh_keyword" style="font-weight: bold;">while</span> <span class="sh_symbol">((</span>first1 <span class="sh_symbol">&lt;=</span> last1<span class="sh_symbol">)</span> <span class="sh_symbol">&amp;&amp;</span> <span class="sh_symbol">(</span>first2 <span class="sh_symbol">&lt;=</span> last2<span class="sh_symbol">))</span>
+    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, tempArray[first..index-1] is in order</span>
+      <span class="sh_keyword" style="font-weight: bold;">if</span> <span class="sh_symbol">(</span>theArray<span class="sh_symbol">[</span>first1<span class="sh_symbol">]</span> <span class="sh_symbol">&lt;=</span> theArray<span class="sh_symbol">[</span>first2<span class="sh_symbol">])</span>
+	<span class="sh_cbracket">{</span>
+	  tempArray<span class="sh_symbol">[</span>index<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> theArray<span class="sh_symbol">[</span>first1<span class="sh_symbol">];</span>
+	  first1<span class="sh_symbol">++;</span>
+	<span class="sh_cbracket">}</span>
+      <span class="sh_keyword" style="font-weight: bold;">else</span>
+	<span class="sh_cbracket">{</span>
+	  tempArray<span class="sh_symbol">[</span>index<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> theArray<span class="sh_symbol">[</span>first2<span class="sh_symbol">];</span>
+	  first2<span class="sh_symbol">++;</span>
+	<span class="sh_cbracket">}</span>			<span class="sh_comment" style="font-style: italic;">// end if</span>
+      index<span class="sh_symbol">++;</span>
+    <span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end while</span>
+<span class="sh_comment" style="font-style: italic;">// Finish off the first subarray, if necessary</span>
+  <span class="sh_keyword" style="font-weight: bold;">while</span> <span class="sh_symbol">(</span>first1 <span class="sh_symbol">&lt;=</span> last1<span class="sh_symbol">)</span>
+    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, tempArray[first..index-1] is in order</span>
+      tempArray<span class="sh_symbol">[</span>index<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> theArray<span class="sh_symbol">[</span>first1<span class="sh_symbol">];</span>
+      first1<span class="sh_symbol">++;</span>
+      index<span class="sh_symbol">++;</span>
+    <span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end while</span>
+<span class="sh_comment" style="font-style: italic;">// Finish off the second subarray, if necessary</span>
+  <span class="sh_keyword" style="font-weight: bold;">while</span> <span class="sh_symbol">(</span>first2 <span class="sh_symbol">&lt;=</span> last2<span class="sh_symbol">)</span>
+    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// At this point, tempArray[first..index-1] is in order</span>
+      tempArray<span class="sh_symbol">[</span>index<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> theArray<span class="sh_symbol">[</span>first2<span class="sh_symbol">];</span>
+      first2<span class="sh_symbol">++;</span>
+      index<span class="sh_symbol">++;</span>
+    <span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end for</span>
+<span class="sh_comment" style="font-style: italic;">// Copy the result back into the original array</span>
+  <span class="sh_keyword" style="font-weight: bold;">for</span> <span class="sh_symbol">(</span>index <span class="sh_symbol">=</span> first<span class="sh_symbol">;</span> index <span class="sh_symbol">&lt;=</span> last<span class="sh_symbol">;</span> index<span class="sh_symbol">++)</span>
+    theArray<span class="sh_symbol">[</span>index<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> tempArray<span class="sh_symbol">[</span>index<span class="sh_symbol">];</span>
+<span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end merge</span></big></font>
+</b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 11-5 A function that performs a quick sort">
+                Listing 11-5 A function that performs a quick sort</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><font color="#3333ff" size="3"><b><big>/** Sorts an array into ascending order. Uses the quick sort with
+median-of-three pivot selection for arrays of at least MIN_SIZE
+entries, and uses the insertion sort for other arrays.
+@pre theArray[first..last] is an array.
+@post theArray[first..last] is sorted.
+@param theArray The given array.
+@param first The first element to consider in theArray.
+@param last The last element to consider in theArray. */
+
+void quickSort (ItemType theArray[], int first, int last)
+{
+  if (last - first + 1 &lt; MIN_SIZE)
+    {
+      insertionSort (theArray, first, last);
+    }
+  else
+    {
+        // Create the partition: S1 | Pivot | S2
+      int pivotIndex = partition (theArray, first, last);
+        // Sort subarrays S1 and S2
+      quickSort (theArray, first, pivotIndex - 1);
+      quickSort (theArray, pivotIndex + 1, last);
+    }	// end if
+}   // end quickSort
+</big></b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+      </body>
+</html>

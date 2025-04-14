@@ -1,0 +1,61 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab 9 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 9</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+
+This lab provides experience with stream file I/O.<br>
+
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+The stream flags and operators apply to more than just the four standard files.
+<br>(<tt>cout, cin, cerr, clog</tt>)<br>
+They apply to any file you can name.
+
+<h4> Solution Specification:</h4>
+<ol>
+    <li> Create a new directory, <tt>lab9</tt>, and move to it.
+
+    <li> Perform Programming Project 12.19
+
+    <ol>
+	<li>Use the &lt;tt&gt; font for the program characters.
+	<li>The HTML title should be the name of the program.
+	<li>Transform other characters valid in C++ programs which have 
+	    special meanings in HTML.
+	<li>Number the statements consecutively from 1 in a field six characters wide.
+	<li>Append the program's output to the source code (in the style of the
+	<b>Demo Code</b> on our course Website).<br>
+	{Note: <i>this must be done within the HTML body</i>}
+	<li>Use the command line to enter
+	the program to transform, it's output to append, and the resultant HTML file.
+    </ol>
+
+    <li> When correct, generate via <tt>enscript</tt> an HTML printout of the
+    sources, and demonstrate, via <tt>script</tt>, the sources and the
+    running of the program data.<br>
+    Submit to D2L.
+</ol>
+
+</body>
+</html>

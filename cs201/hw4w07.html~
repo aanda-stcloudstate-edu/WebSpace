@@ -1,0 +1,183 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 4 - Spring 2007 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2007<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 4</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For the following problem you will solve:
+<ol type=I>
+    <h5>General Documentation <i>(see Sect. 2-10 &amp; Program 2-14)</i></h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names <i>(see Sect. 2-10 Pages 66-67 &amp; Table 2-14)</i></h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<tt>enscript -Ecpp --color -W html -p</tt><i>file_name</i><tt>.cpp.html</tt> <i>file_name</i><tt>.cpp</tt>
+    </center>
+    (for each program) You will submit these files.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<ul>
+    <li>Quadratic Equation Solver</li>
+    <ul>
+<li>
+Write a working program, and <tt>void</tt> function
+
+<center>
+<tt><u>quad_roots(a,b,c,nrr,rr1,rr2)</u></tt>
+</center>
+which it calls, which requests from the user an <i>ordered triple</i> of
+<tt>double</tt> floating point numbers.
+These provide the coefficients of the quadratic equation,
+<center><b><i>ax<sup>2</sup> + bx + c</i> = 0</b>.</center><br>
+
+<b><tt>nrr</tt></b> returns the number of <i>real</i> roots of the
+quadratic equation.<br>
+<b><tt>rr1</tt></b> and <b><tt>rr2</tt></b> return the real roots of the
+quadratic equation
+computed by the following formulae:<br>
+<ol>
+    <li><i>Compute the discriminant: </i> <b>d = b<sup>2</sup> - 4ac</b> </li>
+
+	    <ul>
+		<li><i>if</i> <b>a</b> &amp; <b>b</b> &amp; <b>c</b> are zero</li>
+		<ul>
+
+		    <li> This is the trivial case -- there are an infinite
+			 number of solutions (roots).
+		    <li> Print a descriptive message to stderr
+		    <li> <tt><b>nrr</b> = 0</tt>
+		</ul>
+		<li><i>else if</i> <b>a</b> &amp; <b>b</b> are zero</li>
+
+		<ul>
+		    <li> There is no solution
+		    <li> Print a descriptive message to stderr
+		    <li> <tt><b>nrr</b> = 0</tt>
+		</ul>
+		<li><i>else if</i> <b>d &lt; 0</b></li>
+
+		<ul>
+		    <li>if <b><tt>b</tt> == 0</b>
+		    <ul>
+			<li> Solution is pure imaginary
+			<li> <tt><b>nrr</b> = -1 </tt>
+			<li> <tt><b>rr1</b> = 0 </tt>
+			<li> <tt><b>rr2</b></tt> =
+			    <tt>sqrt(abs(<b>d</b>))</tt>/<tt>(<b>2a</b>)</tt> 
+
+		    </ul>
+		    <li> <i>else</i>
+		    <ul>
+			<li> Solution is complex
+			<li> <tt><b>nrr</b> = -</tt>
+			<li> <tt><b>rr2</b></tt> =<b>-b</b>/(2<b>a</b>)
+			    <tt>sqrt(abs(</tt><b>d</b><tt>))/(2</tt><b>a</b>) 
+
+		    </ul>
+		</ul>
+		<li><i>else if</i> <b>a == 0</b>
+		<ul>
+		    <li>Single solution
+		    <li> <tt><b>rr1</b></tt> and <tt><b>rr2</b></tt>
+
+		    are <b>(-c/b)</b> <i>if</i> <b>b != 0</b>
+		    <li> <tt><b>nrr</b> = 1</tt>
+		    <li> print descriptive message to stderr <i>if</i>
+
+			<b><tt>b</tt> == 0</b>
+		</ul>
+		<li><i>else if</i> <b>d == 0</b>
+		<ul>
+		    <li> Doubled root solution
+		    <li> <tt><b>rr1</b></tt> and <tt><b>rr2</b></tt>
+
+			are both <b>-b/(2a)</b> <i>if</i> <b>a != 0</b>
+		    <li> <tt><b>nrr</b> = 2</tt>
+		    <li> print a descriptive message to stderr <i>if</i>
+
+			<b><tt>a</tt> == 0</b>
+		</ul>
+		<li><i>else</i> {<b>d</b> must be &gt; <b>0</b>}
+		<ul>
+
+		    <li> Create <u>sign</u> function:
+			<tt>sign(x) = -1</tt> <i>if</i> <tt>x&lt;0</tt>,
+			<i>else</i> <tt>sign(x) = 1</tt><br>
+
+			<i>{use a ternary expression}</i></li><br>
+			[future note: good case for writing as an
+			<i>inline</i> function]
+			<li>s = -(<tt><b>b</b></tt> + d<sup>1/2</sup> *
+			    sign(<tt><b>b</b></tt>)) / 2
+		    <li> <tt><b>rr1</b></tt> = s / <tt><b>a</b></tt>
+
+		    <li> <tt><b>rr2</b></tt> = <tt><b>c</b></tt> / s
+		    <li> <tt><b>nrr</b> = 2</tt>
+		</ul>
+	    </ul>
+	    <li>Extra credit: implement the a function using the formula taught in math classes.  Show examples where one of the roots is more accurate using the better formula.</li>
+    </ul>
+    <li><i>Let's Make a Deal</i> Simulation<br>
+    The American game show,
+    <a href="http://en.wikipedia.org/wiki/Let%27s_Make_a_Deal"><i>Let's Make a Deal</i></a>,
+    had contestants selecting one door from among three.  After a door not
+    chosen was opened to reveal a losing prize, the contestant was asked
+    whether they wanted to switch their selection.  Mathematical analysis shows
+    that one has a significantly better chance of winning if one then switches.
+    This is known as
+    <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem"><i>the Monty Hall Paradox</i></a>, named after the show's host.<br>
+    Your task is to use simulation to corroborate the analysis.
+    <ul>
+	<li>See <a href="http://www.stat.sc.edu/~west/javahtml/LetsMakeaDeal.html">the Let's Make a Deal Applet</a> for an example of an application which simulates <i>Let's Make a Deal</i> one game at a time, interactively.
+	<li>via iterated simulation, show that switching is the best strategy.
+	<li>run the simulation, 10, 100, 1000, and 10,000 times yielding the percentage of wins.
+    </ul>
+</ul>
+<HR>
+</BODY>
+</HTML>
+

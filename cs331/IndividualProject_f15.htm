@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+	<title>CSCI 331 Replacement-Selection Programming Project Fall 2015</title>
+
+    <style>
+	code{font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body BGCOLOR=white TEXT=black lang=EN-US style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<h1><span style='font-size:10.5pt;font-family:"Lucida Sans Unicode"'>CSCI 331 -
+Software Systems - Fall 2015</span></h1>
+
+<h2>Replacement-Selection Programming Project</span></h2> 
+<h4>PROJECT COLLABORATION TYPE:  <u>Individual</u>.<br>
+	That means you should do the work on your own. <br>
+	(<i>However, you may discuss with others</i>)</h4>
+
+<p>
+<h2>THE PROGRAM:</h2>
+Implement in C++ a <i>back-to-back</i>, <i>dual heap</i>, <b>replacement selection</b> algorithm.
+</p>
+<ol>
+    <li>Initialize:
+    <ul>
+	<li>a vector to serve as the replacement selection container.
+	<ul>
+	    <li>Once the vector size has been set, the vector size will be fixed at that value for its lifetime.
+	    <li>The vector's type will be <u>template</u>d.
+	</ul>
+	<li>a <u>template</u>d list of sorted lists to receive each of the sorted output lists.
+	<ul>
+	    <li> each new list will be pushed onto the list of sorted lists as a new element
+	</ul>
+	<li>a heap direction flag.
+	<ul>
+	    <li>If <code>TRUE</code>,  the active heap's root is on the left end, and the pending heap's root is on the right end.
+	    <li>If <code>FALSE</code>, the active heap's root is on the right end, and the pending heap's root is on the left end.
+	    <li>The initial value (the default) is <code>TRUE</code>
+	</ul>
+	<li>a sort direction flag.
+	<ul>
+	    <li>If <code>TRUE</code>,  the resulting lists exhibit <u>ascending</u> ordering.
+	    <li>If <code>FALSE</code>, the resulting lists exhibit <u>descending</u> ordering.
+	    <li>The default value is <code>TRUE</code>
+	</ul>
+    </ul>
+    <li>While the replacement selection vector is not full:
+    <ul>
+	<li> <i>heapify</i> a new element
+    </ul>
+    <li>While there is a new element:
+    <ul>
+	<li>Pop the <i>root</i> of the current heap, adding it to the current list.
+	<li>If the new element is greater than or equal to the last element popped, push it onto the current heap<br>
+	<li>If the new element is less than or equal (<i>for a min-heap</i>) to the last element popped,
+	<ul>
+	    <li>push it onto the pending heap
+	    <li>decrement the current heap size counter, and increment the pending heap size counter.
+	    <li>If the current heap size is zero,
+	    <ul>
+		<li><i>terminate</i> the current sorted list
+		<li><i>initialize</i> a new sorted list
+		<li><i>toggle</i> the heap direction flag
+	    </ul>
+	</ul>
+	<ul>
+	    <li>you should have both <code>current_heap_push()</code> and <code>pending_heap_push()</code> methods, as they'll operate differently.
+	</ul>
+    <li>Pop the remaining elements into the current and possibly into the next, and final, list.
+    </ul>
+</ol>
+This program will lay the foundation for a merge sort.
+
+<h2>WHAT TO TURN IN:</h2>
+
+<ol>
+
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a <code>script</code>file from the test runs.<br>
+    Each test should be annotated on the <code>script</code> file.<br>
+    Also, show data revealing the effect, on the replacement selection algorithm generated list lengths,
+    of partial and complete forward and backwards sorting.<br>
+    Automating your testing process will help save you development and testing time ultimately.<br>
+    Consider generating the following statistics:
+    <ul>
+	<li>the size of your replacement-selection container (number of elements)</li>
+	<li>the number of runs generated, and their respective sizes</li>
+	<li>state whether all of the runs are sorted</li>
+	<li>state whether the number of input elements equals the sum of the run sizes</li>
+    </ul>
+
+
+    <li><u>The source file of the replacement selection method and driver program</u>.<br>
+    Via Doxygen.
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<code>pwd</code> will answer this for you)
+	<li>How to compile and run the program. (use a <u>makefile</u>)
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+</ol>
+
+</div>
+
+</body>
+
+</html>

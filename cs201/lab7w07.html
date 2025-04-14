@@ -1,0 +1,89 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab 7 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 7</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with two-dimensional arrays (<i>matrices</i>) and iteration.
+The task is to write functions for several routine (integer valued)
+matrix operations:
+<ol>
+    <li>initialize a matrix with random values
+    <li>display a matrix
+    <li>scalar * matrix
+    <li>matrix + matrix
+    <li>matrix * vector (2 possible loop orderings)
+    <li>matrix * matrix (6 possible loop orderings)
+</ol>
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+<P> <i>Matrix arithmetic operations</i> are found in a wide variety of applications.  It is important to understand how they work.
+finding primes.<br>
+This algorithm will require 1-D and 2-D <b>arrays</b> and <b>iteration</b> through those arrays.<br>
+See <a href="http://www.mai.liu.se/~halun/matrix/">Matrix multiplication: an interactive micro-course for beginners</a>
+
+<h4> Solution Specification:</h4>
+<ol>
+    <li> Create a new directory, <tt>lab7</tt>, and move to it.
+
+    <li> Declare a set of 101 element 1-D int arrays and a set of
+    (101 X 101) 2-D int arrays.<br>
+    Be sure to use a <i>symbolic constant</i> for the 101 value.
+
+    <li> For each of the following functions, ensure that for each array passed
+    into a function, you must also pass the <i>declared</i> dimensions
+    as well as the <i>used</i> dimensions.<br>
+    Each result will always go into a <i>new</i> matrix whose elements will be 
+    initialized to zero at the start of the function.<br>
+    Write the following functions:
+    <ol>
+	<li> Initialize each element of a matrix to zero.<br>
+	<li> Initialize a matrix with <i>random</i> values.<br>
+	    Also pass in the <i>limits</i> of the random distribution.
+	<li> Display a matrix.
+	<li> scalar * matrix
+	<li> matrix + matrix
+	<li> matrix * vector<br>
+	(use <tt>assert</tt> when checking that the <i>used</i> dimensions match)
+	<li> matrix * matrix
+	(use <tt>assert</tt> when checking that the <i>used</i> dimensions match)
+    </ol>
+    <li> Test your functions with various sizes of <i>rectangular</i> matrices.
+    <li> Show that matrix multiplication is not </i>commutative</i>, i.e.
+    A*B != B*A, in general.
+    <li> Show that matrix multiplication is </i>associative</i>, i.e.
+    A*(B*C) == (A*B)*C.
+    <li> Show that both loop orderings give the same result for
+    matrix * vector operations.<br>
+    (you will have to write two versions of the function, an <i>ij</i> version and a <i>ji</i> version)
+    <li> Show that all six loop orderings give the same result for
+    matrix * matrix operations.<br>
+    (you will have to write six versions of the function:
+    {<i>ijk, ikj, jik, jki, kij, kji</i>} version and a <i>ji</i>)
+    <li> When correct, generate via <tt>enscript</tt> an HTML printout of the
+    source, and demonstrate, via <tt>script</tt>, the source and the
+    running of the program data.<br>
+    Submit to D2L.
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 200; lab 10; Spring 2010[A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 200</h1></center>
+
+<center>
+<h2>
+Lab 10</h2></center>
+
+<center>
+<h3>
+    [A. A. Anda]<br>
+    Spring 2010
+</h3></center>
+
+<hr WIDTH="100%">
+<h2>Introduction:</h2>
+This lab exercises the ability to:
+<ul>
+    <li>perform I/O via <u>ONCHANGE</u> <i>text box</i>es in the context of <i><u>event driven</u> programming</i>
+    <li>use the two division operators to implement conversion between binary and decimal in both directions
+    <li>use conditional logic to validate input
+    <li>define and use functions
+</ul>
+
+<h2>Lab Assignment:</h2>
+
+Create a new folder, <i>lab10</i>, and move to it.
+<p>
+Create a new Webpage, <tt>BinaryDecimalConverter.html</tt>, following these instructions:
+<p>
+Title your Webpage appropriately.
+<p>
+Create two appropriately <i>labeled</i> textboxes on your Webpage.
+<p>
+Use the <u>ONCHANGE</u> attribute to convert the binary number in one box to the decimal in the other, and vice versa.<br>
+<p>
+The binary number will have to be stored and represented as a <i>decimal</i> whose digits are constrained to the values of <i>zero</i> and <i>one</i>.<br>
+E.g. binary <i>five</i> [ 101 ] is stored as decimal <i>one hundred one</i>.<br>
+<p>
+The numeric value is constrained to one byte of storage so that the maximum 
+is a non-negative decimal integer between zero and 255 inclusive [0 .. 255].<br>
+The maximum binary representation is therefore 11111111.<br>
+Therefore, use the <tt>alert()</tt> function to complain to the user that their <u>input</u> data is <u>outside</u> the specified <u>range</u>s.<br>
+(<i>Because we have restricted the number of binary digits to a maximum of eight, there is no need to use a repetition statement.</i>)
+<p>
+Use another <tt>alert()</tt> to indicate that a value containing an illegal digit ( [2 .. 9] ) was entered into the binary number field
+<p>
+Label the text boxes appropriately, i.e. each textbox should be labeled with its respective <u>base</u> and <u>valid input range</u>.<br>
+E.g. <tt>Base 10 [0 .. 255]</tt>
+<p>
+
+Ensure that identifiers in your code (e.g. variable and function names) are labeled appropriately.
+<p>
+
+You should use a separate function for base conversion in each direction respectively.
+
+<p>
+<b><i>Extra Credit:</i></b> use the <a href="http://www.javascriptkit.com/javatutors/switch.shtml">JavaScript <tt>switch</tt> statement</a> to
+convert either the decimal or binary value additionally to and from <u>hexadecimal</u> via two single-character text boxes.
+<p>
+
+For this exercise:
+<ol>
+    <li>The Web page file name should indicate the lab number.</li>
+    <li>change the <u><tt>&lt;TITLE&gt;</tt></u> to consist of:</li>
+    <ol>
+	<li>Your name</li>
+	<li>The lab number</li>
+    </ol>
+</ol>
+
+<p>
+
+<u>Test</u> your code using either the conversion tool on the
+<a href="http://www.dave-reed.com/book/Chapter12/data.html">Data Representation Page</a>
+from Reed's <a href="http://www.dave-reed.com/book/source.html">resource page</a> or 
+use the conversion tool on <a href="http://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html">this page</a>.
+
+<p>
+
+When finished, submit your Lab 10 solution Webpage to the appropriate dropbox.
+
+</body>
+</html>

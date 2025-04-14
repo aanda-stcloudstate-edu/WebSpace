@@ -1,0 +1,173 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>CSCI 201 Lab1</TITLE>
+<style>
+    span {font-style: italic; font-variant: small-caps}
+</style>
+</head>
+<body BGCOLOR=white TEXT=black>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 1</h2></center>
+
+<hr WIDTH="100%">
+<h1>
+Introduction:</h1>
+This lab will exercise your newly acquired command of Unix and its commands.
+<br>&nbsp;Before writing out answers to the assigned questions, test them
+yourself.
+<br>Follow all instructions carefully.
+<br>You may work together to find the answers.
+<br>&nbsp;
+<h3>
+Useful tools:</h3>
+
+<ul>
+<li>
+<tt>touch: "</tt>touch foo" creates the empty file <u>foo</u>.</li>
+
+
+<li>
+<tt>Wildcards</tt>:  special characters that the shell uses to search for classes of filenames</li>
+
+<ul>
+    <li>
+    "<tt>?</tt>": replace with <i>any</i> one text character.
+    </li>
+
+    <li>
+"<tt>*</tt>": replace with <i>zero or more</i> arbitrary characters.</li>
+
+    <li>
+"<tt>[...]</tt>": replace with <i>any one of the characters</i> enclosed
+in the brackets.</li>
+
+    <ul>
+	<li>
+	    A range can be indicated: e.g. <tt>[A-Z]</tt> means <i>any upper case alphabetic character</i>.
+	</li>
+	<li>
+	    Except for ranges, the order of the characters is ignored.
+	</li>
+	<li>
+	    There are no separators between characters, e.g., <tt>[a,b]</tt>
+	    matches the three characters, "a", "b", and ","(comma).
+	</li>
+    </ul>
+</ul>
+
+<li>
+    <tt>Pipes</tt>:  a pipe, indicated by the vertical bar character "|",&nbsp;
+    sends the output of the preceding program in the the input of the successive
+    program.
+</li>
+
+<ul>
+    <li>
+	e.g. "prog1 | prog2" has <u>prog2</u> processing the output of <u>prog1</u>
+    </li>
+</ul>
+</ul>
+
+<h3>Lab Assignment:</h3>
+
+<ol TYPE=I>
+
+<li>
+    Create the directory <tt>labs</tt> in your home directory.
+</li>
+<li>
+    Create the directory <tt>lab1</tt> in your <tt>labs</tt> directory.
+</li>
+
+<li>
+Write the answers to the following questions in the file <tt>answers.txt
+</tt>located in directory <tt>lab1</tt></li> then submit the file to your lab1 dropbox in D2L.
+
+<ol>
+<li>
+What is your name, course, and date? </li>
+<li>
+What command lists all of the files in a directory including
+those prefixed with the period character?
+</li>
+
+
+
+<li>
+Write a command to print a file <tt>homework1</tt> to the terminal.</li>
+
+<li>
+Write a command to list all the files in your current working directory whose
+names are exactly eight characters long where the last four characters
+are ".cpp"</li>
+
+<li>
+Write a command to list all the file names which end in an <i>even</i>
+number.</li>
+
+<li>
+copy the file <tt>~aanda/cs201/labs/lab1w07.cpp</tt> into your <tt>lab1</tt>
+directory.
+</li>
+
+<li>
+Write a command to change the name of the file <tt>lab1w07.cpp</tt> to
+<tt>lab1.cpp</tt></li>
+
+<li>
+Compile <tt>lab1.cpp</tt> with g++
+</li>
+
+<li>
+Write a command to change the name of the file <tt>a.out</tt> to
+<tt>program1</tt></li>
+
+<li>
+Write a command to compile <tt>lab1.cpp</tt> with g++ where the executable is automatically labeled <tt>prog1</tt>
+</li>
+
+<li>
+Use <tt>enscript -Ecpp -W html --color -o lab1.cpp.html lab1.cpp</tt> to create a color syntax highlighted HTML version of <tt>lab1.cpp</tt> then submit it to your lab 1 dropbox in D2L
+</li>
+
+<li>
+Write a command to list all the file names which&nbsp; contain
+an upper case alphabetic character anywhere.</li>
+
+<li>
+Write a command to move the file <u>upone.ps</u> up one directory
+level (towards the root).</li>
+
+<li>
+<i>using the </i> <tt>grep</tt> <i>command</i><br>
+Write a command to copy all of the lines in the file <u>source.c</u>
+containing the string "//"&nbsp;in them into a new file named <u>comments</u>
+.</li>
+
+<li>
+Write a command to copy all of the lines in the file <u>source.c
+</u><i>not </i>containing the string "//"&nbsp;in them into a new file
+named <u>codeonly</u> .</li>
+
+<li>
+<i>using the </i> <tt><tt>sort</tt></tt> <i>command</i>
+Write a command which sorts all of the lines containing the string
+"Smith" of those files ending in ".addresses"</li>
+</ol>
+
+
+<li> 
+With time left over or after lab, run and follow the instructions in the
+<tt>vimtutor</tt> command on <span>csci</span>.
+</ol>
+
+</body>
+</html>

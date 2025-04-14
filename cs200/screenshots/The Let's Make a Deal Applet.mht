@@ -1,0 +1,109 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: The Let's Make a Deal Applet
+Date: Mon, 30 Oct 2006 01:45:21 -0600
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.stat.sc.edu/~west/javahtml/LetsMakeaDeal.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2962
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>The Let's Make a Deal Applet</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.5730.11" name=3DGENERATOR></HEAD>
+<BODY bgColor=3D#ffffff><BR><!-- Changed by: Webster West, 20-Aug-1996 =
+-->
+<H1>The Let's Make a Deal Applet</H1>As a motivating example behind the=20
+discussion of probability, an applet has been developed which allows =
+students to=20
+investigate the Let's Make a Deal Paradox. This paradox is related to a =
+popular=20
+television show in the 1970's. In the show, a contestant was given a =
+choice of=20
+three doors of which one contained a prize. The other two doors =
+contained gag=20
+gifts like a chicken or a donkey. After the contestant chose an initial =
+door,=20
+the host of the show then revealed an empty door among the two unchosen =
+doors,=20
+and asks the contestant if he or she would like to switch to the other =
+unchosen=20
+door. The question is should the contestant switch. Do the odds of =
+winning=20
+increase by switching to the remaining door?=20
+<P>The intuition of most students tells them that each of the doors, the =
+chosen=20
+door and the unchosen door, are equally likely to contain the prize so =
+that=20
+there is a 50-50 chance of winning with either selection. This, however, =
+is not=20
+the case. The probability of winning by using the switching technique is =
+2/3=20
+while the odds of winning by not switching is 1/3. The easiest way to =
+explain=20
+this to students is as follows. The probability of picking the wrong =
+door in the=20
+initial stage of the game is 2/3. If the contestant picks the wrong door =
+
+initially, the host must reveal the remaining empty door in the second =
+stage of=20
+the game. Thus, if the contestant switches after picking the wrong door=20
+initially, the contestant will win the prize. The probability of winning =
+by=20
+switching then reduces to the probability of picking the wrong door in =
+the=20
+initial stage which is clearly 2/3.=20
+<P>Despite a very clear explanation of this paradox, most students have =
+a=20
+difficulty understanding the problem. It is very difficult to conquer =
+the strong=20
+intuition which most students have in this case. As a challenge to =
+students who=20
+don't believe the explanation, an instructor may ask the students to =
+actually=20
+play the game a number of times by switching and by not switching and to =
+keep=20
+track of the relative frequency of wins with each strategy. An applet =
+has=20
+developed which allows students to repeatedly play the game and keep =
+track of=20
+the results. The applet is given below.=20
+<P>
+<CENTER><APPLET codeBase=3Dclasses height=3D350 width=3D500=20
+code=3DLetsMakeaDeal.class></APPLET> </CENTER>
+<P>Within the applet, the computer plays the role of the host. Upon =
+loading the=20
+applet, students are asked to pick a door by clicking the mouse on the =
+proper=20
+region. After the initial pick, the computer reveals an empty door by =
+displaying=20
+a picture of a donkey behind one of the numbers. The students then have =
+the=20
+option of staying with their initial selection or switching to the =
+remaining=20
+door. The computer keeps track of the number of times the game is played =
+with=20
+each strategy and the number of times the game is won with each =
+strategy. This=20
+information is displayed at the bottom of the applet after each game. =
+Using=20
+empirical techniques, the student is then able to see the strategy with =
+the=20
+highest probability of winning as the relative frequencies converge to =
+the true=20
+probabilities. An instructor may use this game to motivate the ideas of =
+repeated=20
+trials as a means for investigating a random phenomena.=20
+<HR>
+<FONT size=3D-1>by <A href=3D"http://www.stat.sc.edu/~west/">R. Webster =
+West</A>,=20
+Dept. of Statistics, Univ. of South Carolina </FONT><BR><FONT =
+size=3D-1>Graphics=20
+by <A href=3D"http://www.stat.sc.edu/~street/">Scott Street</A>, Dept. =
+of=20
+Statistics, Univ. of South Carolina </FONT><BR><A=20
+href=3D"mailto:west@stat.sc.edu"><TT>west@stat.sc.edu</TT></A>=20
+<HR>
+</BODY></HTML>

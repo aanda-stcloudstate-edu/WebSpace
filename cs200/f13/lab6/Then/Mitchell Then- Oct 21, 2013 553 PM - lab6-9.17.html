@@ -1,0 +1,58 @@
+<!doctype=html>
+<!-- /export/home/cs200/cs200119/documents/labs/lab6/lab6-9.17.html -->
+<!-- Created by: Mitchell Then -->
+<!-- The purpose of this program is to exhibit the use of functions -->
+<!-- File Created: 10/17/13 -->
+<!-- Last Edited: 10/21/13 -->
+
+<html>
+
+	<head>
+		<title>Weather</title>
+		<script type="text/javascript" src="weather.js"></script>
+	
+		<script type="text/javascript">
+			function outputDewPoint()
+			{
+				return dewPoint(parseFloat(document.getElementById('tempBox').value), parseFloat(document.getElementById('humidityBox').value));
+			}
+		</script>
+		
+		<script type="text/javascript">
+			function outputWindChill()
+			{
+				return windChill(parseFloat(document.getElementById('tempBox').value), parseFloat(document.getElementById('windBox').value));
+			}
+		</script>
+		
+	</head>
+
+	<body>
+		<table style="margin:0px auto; text-align:right">
+			<tr><td>
+					Humidity:
+				</td><td>
+					<input type="text" id="humidityBox">
+			</td></tr>
+			<tr><td>
+					Temperature:
+				</td><td>
+					<input type="text" id="tempBox">
+			</td></tr>
+			<tr><td>
+					Wind Speed:
+				</td><td>
+					<input type="text" id="windBox">
+			</td></tr>
+			<tr><td>
+					<input type="button" value="Calculate Dew Point"
+						onclick="document.getElementById('outputDiv').innerHTML = outputDewPoint();">
+				</td><td>
+					<input type="button" value="Calculate Wind Chill"
+						onclick="document.getElementById('outputDiv').innerHTML = outputWindChill();">
+			</td></tr>
+		</table>
+
+		<div id="outputDiv" style="text-align:center"></div>
+	</body>
+</html>

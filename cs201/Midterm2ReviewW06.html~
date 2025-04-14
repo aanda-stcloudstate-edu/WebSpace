@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+  <title>Midterm 2 Review (CSCI 201 Fall 2005 A. A. Anda)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+</head>
+<body bgcolor="#FFFFFF">
+  <div align="center"><h1>Midterm 2 Review</h1></div>
+   <br><div align="center"><h2>(CSCI 201 Fall 2005 A. A. Anda)</h2></div> <hr>
+    <li><h4>Chapter 4 [functions]</h4>
+    <ul>
+      <li>top-down design</li>
+      <li><u>defining</u>, <u>declaring</u>, and <u>calling</u></li>
+      <li>parameter rules
+	    <ul>
+	      <li><u>formal</u> and <u>actual</u> parameters</li>
+	      <li>calling by <u>value</u> or <u>reference</u></li>
+	      <li><u>default</u></li>
+	    </ul>
+      </li>
+      <li>standard library
+	    <ul>
+	      <li><b>floor</b> and <b>ceiling</b></li>
+	      <li><b>pow</b></li>
+	      <li><b>srand</b> and <b>rand</b> --
+              <i>shifting</i> and <i>scaling</i></li>
+	    </ul>
+      </li>
+      <li><i>scoping</i></li>
+    </ul>
+    </li>
+    <li><h4>Chapter 5 [selection]</h4>
+    <ul>
+      <li><u>integer</u> and <u>boolean</u> representations of <i>logical</i> data</li>
+      <li><i>logical</i> operators (<u>and</u>, <u>or</u>, <u>not</u>, xor)
+	    <ul>
+	      <li>complement</li>
+	      <li>short ciruit</li>
+	      <li>De Morgan's Rule</li>
+	    </ul>
+      <li>relational operators  </li>
+      <li><b>if</b> statements
+	    <ul>
+	      <li>null <b>else</b></li>
+	      <li>nested</li>
+	      <li>simplified</li>
+	      <li><b>else if</b></li>
+	    </ul>
+      </li>
+      <li><i>ternary</i> conditional expressions</li>
+      <li><b>switch</b> statements
+	    <ul>
+	      <li>control expression rules</li>
+	      <li><i>fall through</i> cases</li>
+	      <li><i>disjoint</i> cases via <b>break</b></li>
+	      <li><b>default</b> <u>case</u></li>
+	    </ul>
+      </li>
+      <li>indentation conventions (whitespace for readability)
+	    <ul>
+	      <li><i>beware</i> of misleading indentation</li>
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Chapter 6 [repetition -- loops and recursion]</h4>
+    <ul>
+      <li><u>event</u> and <u>counter</u> based <i>control</i></li>
+      <li><i>pre</i>-test and <i>post</i>-test</li>
+      <li><u>initialization</u>, <u>test</u>, and <u>update</u></li>
+      <li>using <b>EOF</b> for file I/O</li>
+      <li>conversion between while and for loops</li>
+      <li><i>comma</i> expression</li>
+      <li><b>break</b> vs. <b>continue</b></li>
+      <li>nesting</li>
+      <li>common applications:
+	    <ul>
+	      <li><i>summation</i> or <i>product</i></li>
+	      <li><i>min</i> or <i>max</i></li>
+	      <li><i>any</i> or <i>all</i></li>
+	    </ul>
+      </li>
+      <li>recursion
+	    <ul>
+	      <li><u>base</u> and <u>general</u> case</li>
+	      <li><i>termination</i> analysis</li>
+	    </ul>
+      </li>
+      <li>algorithm efficiency analysis [complexity]
+	    <ul>
+	      <li><i>growth rate</i> <u>ranking</u> of (univariate) functions</li>
+	      <li><b>big-O</b> analysis</li>
+	      <li>common names for function families,
+	          e.g. <i>linear</i>, <i>quadratic</i>, or <i>exponential</i></li>
+	      <li>loop and nested loop analysis</li>
+	      <li>what is the effect on the complexity when the amount
+		  of work is <i>halved</i> for <i>each</i> successive iteration of a
+		  loop</li>
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Appendix A (can bring copy to exam)</h4>
+    <ul>
+      <li><b>ASCII</b> character encoding</li>
+    </ul>
+    </li>
+    <li><h4>Appendix B (can bring copy to exam)</h4>
+    <ul>
+      <li><u>Reserved</u> Words</li>
+    </ul>
+    </li>
+    
+    <li><h4>Appendix F [standard functions]</h4>
+    (can bring function index F-1 copy to exam)
+    <ul>
+      <li>be able to link correct library</li>
+    </ul>
+    </li>
+    <li><h4>Appendix G [preprocessor directives]</h4>
+    <ul>
+      <li>simple define</li>
+      <li>include</li>
+    </ul>
+    </li>
+    </li>
+  </ul>
+</body>
+</html>

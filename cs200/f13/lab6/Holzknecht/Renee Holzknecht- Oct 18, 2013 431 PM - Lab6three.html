@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+		Lab 6 (Exercise 9.14)
+		</title>
+		<script type="text/javascript" src="http://balance3e.com/random.js"></script>
+	</head>
+	<body>
+		<h1 style="text-align:center">
+		Lab 6 (Exercise 9.14)
+		</h1>
+		<hr>
+		<h2 style="text-align:center">
+		Magic 8-Ball (Mattel, Inc.)
+		</h2>
+		<hr>
+		<div style="text-align:center">
+		Enter a question, then click on the magic 8-ball.  The magic 8-ball sees aaalllllll.
+		<br>
+		<input type="text" id="daquestion" size=40 value="">
+		<br>
+		<img id="MAGIC" src="omgthemagiceightball.png" onclick="document.getElementById('outputDiv').innerHTML='The magic 8-ball says, ' + RandomOneOf(['Yes.', 'No.', 'Maybe.', 'The magic 8-ball is drunk and needs time to think.', 'Definitely.', 'Insert two credits for an answer.', 'lol I\'m just a ball.', 'Ha HAHAHA no.', 'Why would you even ask such a thing??']);">
+		<br>
+		<div id="outputDiv"></div>
+		</div>
+	</body>
+</html>

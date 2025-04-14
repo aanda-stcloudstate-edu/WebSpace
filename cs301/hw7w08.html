@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 301 - Programming Assignment 7 - Spring 2008 A. A. Anda</TITLE>
+    <style>
+	P {font-family: "Cambria"}
+    </style>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 301<BR>
+  Computer Science 2<BR>
+  Spring, 2008<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 7</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+<HR>
+<h3>Implement Programming Problem 10.3: write a <u>template</u> version of the pointer -based Binary Search Tree (BST)</h3>
+<P>
+<ul>
+    <li>For this assignment, you will refactor the Carrano text's BST source.
+    <li>Start by refactoring the binary tree (BT) code to use <u>templates</u>.
+    <li>Implement BST methods via BT methods wherever appropriate.
+    <li>Implement the following additional methods for the BT class:<br>
+    (<i>Throw exceptions where appropriate</i>)
+    <ul>
+	<li>Count number of nodes
+	<li>Compute the tree height
+	<li>Determine if one item is an ancestor of another
+	<li>Find a minimum element
+	<li>Find a maximum element
+	<li>Find a specific element
+	<li>Overload the == operator (<i>both shape and values</i>)
+	<li><i>Extra Credit</i>: Display the shape and optionally the contents<br>
+	(<i>useful for debugging and demonstrations</i>)
+	<ul>
+	    <li>Print consecutive integers indicating index values
+	    <li>The root will be alone on the first row
+	    <li>Print each subsequent level from left to right on its own row
+	    <li>Optionally follow with the listing of values, one per line in index order.
+	</ul>
+    </ul>
+    <li>Implement the following additional methods for the BST class:<br>
+    (<i>Throw exceptions where appropriate</i>)
+    <ul>
+	<li>Save to a file (<i>preserving shape</i>)
+	<li>Restore from a file (<i>preserving shape</i>)
+	<li>Treesort
+	<li>Balance
+    </ul>
+</ul>
+<P>
+<HR>
+
+<ul>
+    <li>Ensure that your program detects bad, undefined, and out-of-range input errors both on the command line and during execution.  Error messages should go to <u>standard error</u>.
+    <li>Focus on the modularity of your design.  Try to maximize <i>cohesion</i> and minimize <i>coupling</i>.
+    
+    <li> Before the program exits, be sure to release back to the <i>heap</i> all dynamic memory objects.</li>
+    <li> Use <code>typedef</code> to establish the types for the exponent, the coefficient and the independent variable
+</ul>
+
+<HR>
+For the above problem, please follow these guidelines:
+<ol type=I>
+    <h5>General Documentation </h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+	<li> Fully document <b>preconditions</b>, <b>invariants</b> and <b>postconditions</b> 
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    <li>follow the guidelines in <a href="http://web.stcloudstate.edu/bajulstrom/cs301/handin.html">What to hand in</a>.
+    <li>use <u>doxygen</u> to help generate your documentation.
+    <li>include a PSP <u>project plan summary</u>, <u>time in phase log</u> and a <u>defect recording log</u> for this project.
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+</BODY>
+</HTML>
+

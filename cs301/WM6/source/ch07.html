@@ -1,0 +1,345 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Code Listings Chapter 2</title>
+<meta name="Microsoft Theme" content="glacier 011">
+</head>
+
+<body background="glabkgnd.jpg" bgcolor="#99CCFF" text="#000000" link="#006666" vlink="#999999" alink="#66CCCC">
+
+<h1 align="center">Code Listings Chapter 7</h1>
+<p align="center">
+<a href="#Listing 7-1  The header file for an array-based stack">Listing 7-1</a><br>
+<a href="#Listing 7-2  The implementation fi le for an array-based stack">
+Listing 7-2</a><br>
+<a href="#Listing 7-3  The header file for the class LinkedStack">Listing 7-3</a><br>
+<a href="#Listing 7-4   The implementation fi le for the class LinkedStack">
+Listing 7-4</a><br>
+<a href="#Listing 7-5 The header fi le for the class PrecondViolatedExcep">
+Listing 7-5</a><br>
+<a href="#Listing 7-6 The implementation file for the class PrecondViolatedExcep">
+Listing 7-6</a></p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 7-1  The header file for an array-based stack">Listing 
+        7-1&nbsp; The header file for an array-based stack</a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** ADT stack: Array-based implementation.
+@file ArrayStack.h */
+#ifndef _ARRAY_STACK
+#define _ARRAY_STACK
+#include &quot;StackInterface.h&quot;
+const int MAX_STACK = maximum - size - of - stack;
+
+template &lt; class ItemType &gt; class ArrayStack:public StackInterface &lt; ItemType &gt;
+{
+private:
+  ItemType items[MAX_STACK];	// Array of stack items
+  int top;	// Index to top of stack
+
+public:
+  ArrayStack ();	// Default constructor
+  bool isEmpty () const;
+
+  bool push (const ItemType &amp; newEntry);
+
+  bool pop ();
+
+  ItemType peek () const;
+};  // end ArrayStack
+
+#include &quot;ArrayStack.cpp&quot;
+#endif</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 7-2  The implementation fi le for an array-based stack">
+        Listing 7-2&nbsp; The implementation file for an array-based stack</a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** @file ArrayStack.cpp */
+#include &lt;cassert&gt; 	// For assert
+#include &quot;ArrayStack.h&quot;	// Header file
+template &lt; class ItemType &gt; ArrayStack &lt; ItemType &gt;::ArrayStack ():top (-1)
+{
+}   // end default constructor
+
+// Copy constructor and destructor are supplied by the compiler
+template &lt; class ItemType &gt; bool ArrayStack &lt; ItemType &gt;::isEmpty () constconst
+{
+  return top &lt; 0;
+}   // end isEmpty
+
+template &lt; class ItemType &gt; bool ArrayStack &lt; ItemType &gt;::push (const ItemType &amp; newEntry)
+{
+  bool result = false;
+
+  if (top &lt; MAX_STACK - 1)	// Does stack have room for newEntry?
+    {
+      top++;
+      items[top] = newEntry;
+      result = true;
+    }	// end if
+  return result;
+}   // end push
+
+template &lt; class ItemType &gt; bool ArrayStack &lt; ItemType &gt;::pop ()
+{
+  bool result = false;
+
+  if (!isEmpty ())
+    {
+      top--;
+      result = true;
+    }	// end if
+  return result;
+}   // end pop
+
+template &lt; class ItemType &gt; ItemType ArrayStack &lt; ItemType &gt;::peek () constconst
+{
+  assert (!isEmpty ());	// Enforce precondition
+// Stack is not empty; return top
+  return items[top];
+}   // end peek
+
+// end of implementation file</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 7-3  The header file for the class LinkedStack">Listing 
+        7-3&nbsp; <font FACE="TimesNewRomanPS-Bold"><b>The header file for the 
+        class </b></font><font FACE="Courier New">LinkedStack</font></a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** ADT stack: Link-based implementation.
+@file LinkedStack.h */
+#ifndef _LINKED_STACK
+#define _LINKED_STACK
+#include &quot;StackInterface.h&quot;
+#include &quot;Node.h&quot;
+template &lt; class ItemType &gt; class LinkedStack:public StackInterface &lt; ItemType &gt;
+{
+private:
+  Node &lt; ItemType &gt; *topPtr;	// Pointer to first node in the chain;
+// this node contains the stacks top
+public:
+// Constructors and destructor:
+  LinkedStack ();	// Default constructor
+  LinkedStack (const LinkedStack &lt; ItemType &gt; &amp;aStack);	// Copy constructor
+
+  virtual ~ LinkedStack ();	// Destructor
+// Stack operations:
+  bool isEmpty () const;
+
+  bool push (const ItemType &amp; newItem);
+
+  bool pop ();
+
+  ItemType peek () const;
+};  // end LinkedStack
+
+#include &quot;LinkedStack.cpp&quot;
+#endif</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 7-4   The implementation fi le for the class LinkedStack">
+        Listing 7-4&nbsp;&nbsp; The implementation file for the class
+        <font face="Courier New">LinkedStack</font></a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** @file LinkedStack.cpp */
+#include &lt;cassert&gt; 	// For assert
+#include &quot;LinkedStack.h&quot;	// Header file
+template &lt; class ItemType &gt; LinkedStack &lt; ItemType &gt;::LinkedStack ():topPtr (nullptr)
+{
+}   // end default constructor
+
+template &lt; class ItemType &gt; LinkedStack &lt; ItemType &gt;::LinkedStack (const LinkedStack &lt; ItemType &gt; &amp;aStack)
+{
+// Point to nodes in original chain
+  Node &lt; ItemType &gt; *origChainPtr = aStack-&gt;topPtr;
+  if (origChainPtr == nullptr)
+    topPtr = nullptr;	// Original bag is empty
+  else
+    {
+// Copy first node
+      topPtr = new Node &lt; ItemType &gt; ();
+      topPtr-&gt;setItem (origChainPtr-&gt;getItem ());
+// Point to first node in new chain
+      Node &lt; ItemType &gt; *newChainPtr = topPtr;
+// Copy remaining nodes
+      while (origChainPtr != nullptr)
+	{
+// Advance original-chain pointer
+	  origChainPtr = origChainPtr-&gt;getNext ();
+// Get next item from original chain
+	  ItemType nextItem = origChainPtr-&gt;getItem ();
+
+// Create a new node containing the next item
+	  Node &lt; ItemType &gt; *newNodePtr = new Node &lt; ItemType &gt; (nextItem);
+// Link new node to end of new chain
+	  newChainPtr-&gt;setNext (newNodePtr);
+// Advance pointer to new last node
+	  newChainPtr = newChainPtr-&gt;getNext ();
+	}	// end while
+      newChainPtr-&gt;setNext (nullptr);	// Flag end of chain
+    }	// end if
+}   // end copy constructor
+
+template &lt; class ItemType &gt; LinkedStack &lt; ItemType &gt;::~LinkedStack ()
+{
+// Pop until stack is empty
+  while (!isEmpty ())
+    pop ();
+}   // end destructor
+
+template &lt; class ItemType &gt; bool LinkedStack &lt; ItemType &gt;::isEmpty () constconst
+{
+  return topPtr == nullptr;
+}   // end isEmpty
+
+template &lt; class ItemType &gt; bool LinkedStack &lt; ItemType &gt;::push (const ItemType &amp; newItem)
+{
+  Node &lt; ItemType &gt; *newNodePtr = new Node &lt; ItemType &gt; (newItem, topPtr);
+  topPtr = newNodePtr;
+  newNodePtr = nullptr;
+// end push
+  template &lt; class ItemType &gt; bool LinkedStack &lt; ItemType &gt;::pop ()
+  {
+    bool result = false;
+
+    if (!isEmpty ())
+      {
+// Stack is not empty; delete top
+	Node &lt; ItemType &gt; *nodeToDeletePtr = topPtr;
+	topPtr = topPtr-&gt;getNext ();
+// Return deleted node to system
+	nodeToDeletePtr-&gt;setNext (nullptr);
+	delete nodeToDeletePtr;
+
+	nodeToDeletePtr = nullptr;
+	result = true;
+      }	// end if
+    return result;
+  } // end pop
+  template &lt; class ItemType &gt; ItemType LinkedStack &lt; ItemType &gt;::peek ()const
+  {
+    assert (!isEmpty ());	// Enforce precondition
+// Stack is not empty; return top
+    return topPtr-&gt;getItem ();
+  } // end getTop
+// end of implementation file</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 7-5 The header fi le for the class PrecondViolatedExcep">
+        Listing 7-5 The header file for the class <font face="Courier New">
+        PrecondViolatedExcep</font></a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** @file PrecondViolatedExcep.h */
+#ifndef _PRECOND_VIOLATED_EXCEP
+#define _PRECOND_VIOLATED_EXCEP
+#include 
+#include 
+using namespace std;
+
+class PrecondViolatedExcep:public logic_error
+{
+  public:PrecondViolatedExcep (const string &amp; message = &quot;&quot;);
+};  // end PrecondViolatedExcep
+#endif</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 7-6 The implementation file for the class PrecondViolatedExcep">
+        Listing 7-6 The implementation file for the class
+        <font face="Courier New">PrecondViolatedExcep</font></a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** @file PrecondViolatedExcep .cpp */
+#include &quot; PrecondViolatedExcep .h&quot;
+PrecondViolatedExcep::PrecondViolatedExcep (const string &amp; message):
+     logic_error (&quot;Precondition Violated Exception: &quot; + message)
+{
+}   // end constructor</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

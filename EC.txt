@@ -1,0 +1,26 @@
+CSCI 201 [1,3] Fall 2002
+
+ Extra Credit
+
+Due Friday, Dec. 20, 2002
+
+Objective:
+
+This assignment is designed to provide you with problem solving experience
+involving writing a program which uses dynamic memory for arrays.
+
+Problem:
+
+Modify the program from hw7 to use dynamic rather than static arrays.
+
+Partial credit Problem:
+
+Use the smallest possible dynamic array for use as the frequency array in
+computing the mode.
+
+
+SUBMIT:
+
+* A listing of your source.
+
+* A copy {using the Unix [script] command} of your programs output.

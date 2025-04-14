@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 15</h1>
+    <p align="center">&nbsp;</p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a
+                    name="LISTING_15-1_An_interface_template_for"></a>LISTING
+                  15-1 An interface template for the ADT binary tree</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font color="#3333ff" size="+1"><b>/** Interface for the ADT binary tree.<br>@file BinaryTreeInterface.h */<br>#ifndef _BINARY_TREE_INTERFACE<br>#define _BINARY_TREE_INTERFACE<br>template &lt; class ItemType &gt; class BinaryTreeInterface<br>{<br>public:<br>/** Tests whether this binary tree is empty.<br>@return True if the binary tree is empty, or false if not. */<br>  virtual bool isEmpty ()const = 0;<br><br>/** Gets the height of this binary tree.<br>@return The height of the binary tree. */<br>  virtual int getHeight () const = 0;<br><br>/** Gets the number of nodes in this binary tree.<br>@return The number of nodes in the binary tree. */<br>  virtual int getNumberOfNodes () const = 0;<br><br>/** Gets the data that is in the root of this binary tree.<br>@pre The binary tree is not empty.<br>@post The roots data has been returned, and the binary tree is unchanged.<br>@return The data in the root of the binary tree. */<br>  virtual ItemType getRootData () const = 0;<br><br>/** Replaces the data item in the root of this binary tree<br>with the given data, if the tree is not empty. However, if<br>the tree is empty, inserts a new root node containing the<br>given data into the tree.<br>@pre None.<br>@post The data in the root of the binary tree is as given.<br>@param newData The data for the root. */<br>  virtual void setRootData (const ItemType &amp; newData) = 0;<br><br>/** Adds a new node containing the given data to this binary tree.<br>@param newData The data for the new node. */<br>  @post The binary tree contains a new node. @ return True if the<br>    addition is successful, or false not. * /virtual bool add (const ItemType &amp; newData) = 0;<br><br>/** Removes the node containing the given data item from this binary tree.<br>@param data The data value to remove from the binary tree. */<br>  @return True if the<br>    removal is successful, or false not. * /virtual bool remove (const ItemType &amp; data) = 0;<br><br>/** Removes all nodes from this binary tree. */<br>  virtual void clear () = 0;<br><br>/** Gets a specific entry in this binary tree.<br>@post The desired entry has been returned, and the binary tree<br>is unchanged. If no such entry was found, an exception is thrown.<br>@param anEntry The entry to locate.<br>@return The entry in the binary tree that matches the given entry.<br>@throw NotFoundException if the given entry is not in the tree. */<br>  virtual ItemType getEntry (const ItemType &amp; anEntry) const throw (NotFoundException) = 0;<br><br>/** Tests whether a given entry occurs in this binary tree.<br>@post The binary search tree is unchanged.<br>@param anEntry The entry to find.<br>@return True if the entry occurs in the tree, or false if not. */<br>  virtual bool contains (const ItemType &amp; anEntry) const = 0;<br><br>/** Traverses this binary tree in preorder (inorder, postorder) and<br>calls the function visit once for each node.<br>@param visit A client-defined function that performs an operation on<br>or with the data in each visited node. */<br>  virtual void preorderTraverse (void visit (ItemType &amp;)) const = 0;<br><br>  virtual void inorderTraverse (void visit (ItemType &amp;)) const = 0;<br><br>  virtual void postorderTraverse (void visit (ItemType &amp;)) const = 0;<br>};  // end BinaryTreeInterface<br>#endif
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p> </p>
+    </font><font face="Arial, Arial, Helvetica"><br>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Listing 9-9</h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b>// sample.java by F. M. Carrano
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="48%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">Output</h3>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#000000" width="100%">
+                <pre><b><font color="#FFFFFF" face="Courier New" size="4">Th</font><font color="#FFFFFF" size="3">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </body>
+</html>

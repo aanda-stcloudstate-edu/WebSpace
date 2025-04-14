@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>ECE 102 - Engineering Problem Solving - Syllabus - Fall 2016 - A. A. Anda, Ph.D.</title>
+<meta name="Generator" content="Vim/6.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+                        ECE 102 (Sections 4 &amp; 5) [000838 &amp; 002686]
+                        Engineering Problem Solving
+                        Fall 2016 SYLLABUS
+
+INSTRUCTOR:     Andrew A. Anda, Ph.D., Assoc. Prof. of Computer Science
+OFFICE:         ECC-223          Telephone:     (320)308-2044
+E-MAIL:         aanda@stcloudstate.edu
+<!--
+Web Site: <A HREF="http://web.stcloudstate.edu/aanda/ece102.html">http://web.stcloudstate.edu/aanda/ece102.html</A>
+-->
+Instructor Schedule: <A HREF="http://web.stcloudstate.edu/aanda/Wkly-sched-f16.html">http://web.stcloudstate.edu/aanda/Wkly-sched-f16.html</A>
+(and by appointment)
+
+
+CLASS TIME AND LOCATION:
+    Class:
+	lecture: MW: 11:00 - 11:50 in EB A119 
+        lab:     H:  14:30 - 16:10 in HH 114 Section 4
+        lab:     H:  09:30 - 11:10 in ECE 127 Section 5
+
+REQUIRED TEXT:  * Matlab: A Practical Introduction to Programming and Problem Solving, 3rd Ed.,
+                  Stormy Attaway, Butterworth-Heinemann, 2013. ISBN-13:  860-1300090009
+
+COURSE DESCRIPTION:
+    A programming language appropriate to engineering, such as FORTRAN or C, will be used to model
+    and simulate problems drawn from the engineering disciplines. 3cr.
+
+
+I Student Learning Outcomes:
+</pre>
+<ol>
+    <li>Apply their knowledge of mathematics, science, and engineering to engineering problems. Students should have a disciplined approach, a problem solving method, to solve engineering problems. </li>
+    <li>Use the techniques, skills, and modern engineering tools necessary for engineering practice. Students will solve basic problems from mathematics and sciences using computer programming language (such as MATLAB programming) to obtain problem solutions.</li>
+    <li>Design and write a computer program to solve problems containing a few realistic specifications. </li>
+    <li>Write well documented programming codes.</li>
+</ol>
+<pre>
+
+PREREQUISITES:
+* MATH 112 - College Algebra (minimum grade: 1.67 GPA equivalent); OR 
+* MATH 115 - Precalculus (minimum grade: 1.67 GPA equivalent); OR 
+* MATH 221 - Calculus and Analytic Geometry I (minimum grade: 1.67 GPA equivalent) 
+* Requires the prerequisites above OR any one of the following tests 
+* Requires a score of 550 or better on test SAT Math. Test results for SAT Math are valid for 4 years. 
+* Requires a score of 50 or better on test Accuplacer College Level Math. Test results for Accuplacer College Level Math are valid indefinitely. 
+* Requires a score of 16 or better on test DTMS Functions and Graphs. Test results for DTMS Functions and Graphs are valid for 2 years. 
+* Requires a score of 20 or better on test DTMS Intermediate Algebra Skills. Test results for DTMS Intermediate Algebra Skills are valid for 2 years. 
+* Requires a score of 24 or better on test ACT Math. Test results for ACT Math are valid for 4 years. 
+* Requires a score of 16 or better on test Calculus Readiness (local test A). Test results for Calculus Readiness (local test A) are valid for 2 years.
+    
+COREQUISITE: MATH 113
+
+CLASS ACCOUNTS:
+    You will be given an account (on our csci2.stcloudstate.edu Solaris (Unix) server) for use in this class.
+    All work for this class must be done in this account and the account must not be used for any other class.
+    You may not let anyone else use the account unless that person is a student in this class and is working
+    on a class project with you.
+    You also have the option of being issued a magnetic access card for our computer labs.
+    These are to be returned at the final. 
+    If you fail to return your access card, we will fail to issue you a final passing grade.
+
+PROGRAMMING ASSIGNMENTS HOMEWORK AND IN CLASS WORK:
+    There will be a sequence of programming assignments. 
+    These must be submitted on the day they are due.
+    No allowances will be made for down time on the computer, so I suggest you
+    begin each assignment as soon as you receive it.
+    Programs not submitted on the due date will be penalized.
+
+    A program must not have run-time or syntax errors to receive any credit. 
+	(Which implies that a successful strategy is to always maintain available the
+	 last successfully working version as you are developing incrementally)
+
+    Keep in mind that I expect all programs to produce correct output given error free input. 
+	Check your output before getting the final copy to turn in.
+	Don't assume that a program that produces some output without terminating abnormally
+	is correct. 
+	Are the output and test results what you expected?
+	Test your program carefully and extensively. 
+	You have not fully tested your program if you have not executed every line of code.
+
+    The grade you get on a program is based on the code, the documentation and
+    how well it is tested.  To receive better than a C on a program it must do
+    more than produce correct output given correct input.  By this I mean your
+    program must be robust, well documented, well tested and well written.
+
+    All homework, documentation and programs must be neat.
+    All homework is due on the due date and the same rules apply for late homework as for late programs.
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.  Use of recording devices during exams is prohibited.
+    If you must quote or paraphrase another source, citation is essential,
+    otherwise plagiarism has been committed.  You are expected to be familiar
+    with your rights and obligations as outlined in the &quot;Code of Conduct&quot;
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/documents/2013_14_codeofconduct.pdf">http://www.stcloudstate.edu/studenthandbook/documents/2013_14_codeofconduct.pdf</A>]  See also:
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/code/prohibited.asp">http://www.stcloudstate.edu/studenthandbook/code/prohibited.asp</A>]
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/code/rights_responsibilities.asp">http://www.stcloudstate.edu/studenthandbook/code/rights_responsibilities.asp</A>]
+
+STUDYING IN GROUPS:
+    I encourage you to study with someone else in the class, but when you
+    prepare the final documents to turn in be sure that it is your own words
+    and sentences and that you understand it.  If you represent someone
+    else’s work as your own or allow someone else to turn your work in as
+    theirs you will be turned in for cheating and will be given an F.
+
+DECORUM: Conduct yourself so as not to distract others. In particular
+    * Do not wear clothing that includes images or text that could be offensive to a classmate.
+    * Ensure that your devices are in silent mode
+    * Do not engage in distracting activities like reading a newspaper
+      or sleeping. [ the snoring can be so distracting... :^) ]
+    * Arrive for class on time, and be ready to begin.
+      If you must be late, enter and seat yourself stealthily.
+    * If you are early, sit toward the middle of a row.
+    * Do not start packing up before class ends.
+
+SAFETY:
+    What to do if you have experienced sexual assault, rape, domestic violence, sexual harassment or stalking:
+    Please read this resource: 
+    [<A HREF="http://www.stcloudstate.edu/studenthandbook/code/rights_responsibilities.asp">http://www.stcloudstate.edu/studenthandbook/code/rights_responsibilities.asp</A>]
+    Your professors fulfil the role of mandatory reporters.  If you want to speak confidentially, see the above link for
+    a list of confidential options.
+
+ATTENDANCE:
+    The Thursday labs are mandatory.
+    You are responsible for knowing what happens at each class meeting.
+    You should expect to spend a lot of time on this class.  It is not an
+    easy class.  If you are having trouble in class I expect to see you in
+    my office.  If you don't tell me you are having troubles how do you
+    expect me to know?  If you can't come during my office hours, make an
+    appointment for another time.
+
+QUIZZES:
+    There will be a sequence of quizzes of assigned readings.
+EXAMS:
+    There will be a small set of intermediate exams and a comprehensive
+    final exam.
+    Exams will be based on the notes; that is, on the presentations in class
+    as well as on the assigned readings and assignments.
+    Calculators will be neither necessary nor allowed.
+    Make-up exams will be given in only in extreme (or university sanctioned) circumstances and only with prior notice.
+
+GRADING:
+        Your grade will be determined by the contributions of your scores
+        on assignments,  quizzes, intermediate and final exams.
+        Makeup of tests, quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE POINTS:
+        Lab Attendance          05%
+        Labs/Assignments        25%
+        Hour Exams              35%
+        Final Exam              35%
+
+FINAL EXAM: Wednesday, December 14, 09:55 - 12:10 in EB A119 (Sections 4 &amp; 5).
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************
+</pre>
+</body>
+</html>

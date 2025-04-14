@@ -1,0 +1,86 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab 13 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 13</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+
+This lab provides experience with <b>linked lists</b>.
+
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+The <u>linked list</u>, is a <i>recursive data structure</i>, i.e.<br>
+one data member of the class is a pointer to an instance of the class.<br>
+One significant value of a recursive data structure is that it is
+efficiently <i>dynamic</i>.
+
+The problem we will be solving is that of:
+<ol>
+    <li>defining a list node,
+    <li>writing a set of methods which will together generate an ordered list,
+    <li>writing a method to merge two ordered lists. 
+</ol>
+
+
+<h4> Solution Specification:</h4>
+<ol>
+    <li> Create a new directory, <tt>lab13</tt>, and move to it.
+
+    <li> Define an <b>IntNode</b> <tt>class</tt> (<i>see page 729</i>)
+
+    <li> Define <b>void headInsert()</b> a method which inserts a node at the head of
+    a list. (<i>see pages 730-731</i>)
+
+    <li> Define <b>void insert(IntNode* afterMe)</b> a method which inserts a node into a list
+    after the node pointed to by the input parameter.  (<i>see page 732</i>)
+
+    <li> Define <b>IntNode* locateAfterMe(int target)</b> a method which
+    locates a node in a sorted linked list after which the target node can
+    be inserted.<br>
+    Return the <u>null pointer</u> if target is smaller than the data in the
+    first node.
+
+    <li> Combine <b>headInsert()</b>, <b>insert()</b>,
+    and <b>locateAfterMe()</b> in the definition of a
+    <b>void insertSorted(IntNode* head, int target)</b> method.
+
+    <li>Define <b>IntNode* randomSorted(int size, int seed, int rangeL, int rangeR)</b> to create a linked list of sorted random integers having <b>size</b>
+    elements using <b>insertSorted()</b>.
+
+    <li>Define <b>void printList(IntNode* head)</b> a method which displays,
+    in a formatted list, the data of the linked list in order from the head.<br>
+
+    <li>Create two random sorted linked lists of random sizes
+    (0 &le; <b>size</b> &lt; 100).<br>
+    Display each after creation using <b>printList()</b>.
+
+    <li>Perform <u>Programming Project 2</u> on page 788.<br>
+    Display the result using <b>printList()</b>.
+
+    <li> When correct, generate via <tt>enscript</tt> an HTML printout of the
+    sources, and demonstrate, via <tt>script</tt>, the sources and the
+    running of the program data.<br>
+    Submit to D2L.
+</ol>
+
+</body>
+</html>

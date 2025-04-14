@@ -1,0 +1,120 @@
+This program computes the differences in ordering 
+and precision of harmonic sums
+
+The number of terms is :2097151
+
+The forward sum in FLOAT precision is 15.403683
+It is within 1.786632% of the backward sum in LONG DOUBLE precision
+and the err is 149873.55 times the smallest possible FLOAT fraction, 1.1920929e-07
+
+The ffsum loop required 0.13 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the ffsum loop required 6.198886e-08 seconds
+or 16131931 iterations / second
+
+
+The backward sum in FLOAT precision is 15.132898
+It is within 0.002695297% of the backward sum in LONG DOUBLE precision
+and the err is 226.0979 times the smallest possible FLOAT fraction, 1.1920929e-07
+
+The fbsum loop required 0.07 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the fbsum loop required 3.3378617e-08 seconds
+or 29959300 iterations / second
+
+
+The forward sum in DOUBLE precision is 15.133306
+It is within 4.9634947e-12% of the backward sum in LONG DOUBLE precision
+and the err is 223.53593 times the smallest possible DOUBLE fraction, 2.220446e-16
+
+The dfsum loop required 0.09 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the dfsum loop required 4.2915365e-08 seconds
+or 23301678 iterations / second
+
+
+The forward function sum in DOUBLE precision is 15.133306
+It is within 4.9634947e-12% of the backward sum in LONG DOUBLE precision
+and the err is 223.53593 times the smallest possible DOUBLE fraction, 2.220446e-16
+
+The fdfsum loop required 0.12 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the fdfsum loop required 5.7220486e-08 seconds
+or 17476258 iterations / second
+
+
+The backward sum in DOUBLE precision is 15.133306
+It is within 1.1908607e-13% of the backward sum in LONG DOUBLE precision
+and the err is 5.36316 times the smallest possible DOUBLE fraction, 2.220446e-16
+
+The dbsum loop required 0.09 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the dbsum loop required 4.2915365e-08 seconds
+or 23301678 iterations / second
+
+
+The forward sum in LONG DOUBLE precision is 15.133306
+It is within 0% of the backward sum in LONG DOUBLE precision
+and the err is 0 times the smallest possible LONG DOUBLE fraction, 1.9259299e-34
+
+The ldfsum loop required 2.31 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the ldfsum loop required 1.1014944e-06 seconds
+or 907857.58 iterations / second
+
+
+The backward sum in long double precision is 15.133306
+
+The ldbsum loop required 2.31 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the ldbsum loop required 1.1014944e-06 seconds
+or 907857.58 iterations / second
+
+
+The ldfmsum loop required 0.87 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the ldfmsum loop required 4.1484853e-07 seconds
+or 2410518.4 iterations / second
+
+
+The sfmsum loop required 0.05 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the sfmsum loop required 2.3841869e-08 seconds
+or 41943020 iterations / second
+
+
+The fdfmsum loop required 0.09 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the fdfmsum loop required 4.2915365e-08 seconds
+or 23301678 iterations / second
+
+
+The dfmsum loop required 0.05 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the dfmsum loop required 2.3841869e-08 seconds
+or 41943020 iterations / second
+
+
+The udfmsum loop required 19.2 seconds
+ (measurement granularity: 1000000 of a second)
+
+Each interation of the udfmsum loop required 9.1552778e-06 seconds
+or 109226.61 iterations / second
+
+
+The formula value in LONG DOUBLE precision is 15.133306
+It is within 1.3128816e-07% of the backward sum in LONG DOUBLE precision
+and the err is 6.816871e+24 times the smallest possible LONG DOUBLE fraction, 1.9259299e-34
+
+The ratio of long double times to double times is: 25.666667

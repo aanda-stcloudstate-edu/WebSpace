@@ -1,0 +1,93 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab8</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 8</h2></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with event-controlled AND counter-controlled
+loops, the non-associativity of floating point addition, and two different
+floating point sizes.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+<P> A harmonic series is the sum of a sequence of terms, where the terms are
+the reciprocals of all of the set of positive integers:
+1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + 1/7 + ...
+
+<P> In mathematical theory, using infinite precision arithmetic, the infinite
+sum of a harmonic series is infinite (but it grows as slowly as a log
+function), and the order in which you sum the terms is irrelevant.
+
+<P> In computing practice, using finite precision arithmetic, the order in
+which we sum the terms affects the accuracy.  Most of the significance
+of a small number is lost when it is added to a large number.  When the
+ratio of the larger number to the smaller number becomes large enough,
+the sum will be identical to the larger number.  This principle causes
+the forward sum (sum from largest to smallest terms) to be finite, and
+also to be less accurate, than the backward sum (sum from smallest to
+largest terms) of the same number of terms.  The precision of your floating
+point numbers also affects the accuracy and ultimate sum.
+
+<P> To illustrate this, your program will have four separate loops: forward
+and backward sums using <B> float </B> precision, and also forward and
+backward sums using <B> double </B> precision.
+
+<P> Because we don't know in advance the point at which the terms in the
+forward sum will cease contributing to the partial sum, we need to use
+an event-controlled loop.  When the sum stops changing, we exit the loop,
+and subtract one from the number of terms we added.
+
+<P> Now we can use the number of terms from the first loop to write
+counter-controlled loops for the other three sums.
+
+<P> We then compare the three other sums with the <B> double </B> backward sum.
+
+<P> We will also then compare the <B> double </B> backward sum with a formula
+computed value for the sum:
+
+<P> H(n) = log(n) + Eulers + 1/(2 n) - 1/(12 n^2) + 1/(120 n^4)
+
+<P> where Eulers is a const double = 0.577215664901533
+
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab8</i>, and move to it.</li>
+
+<li>
+Copy ~cs201400/lab8partial.cpp to your lab8 directory.
+</li>
+
+<li>
+Edit and complete lab8partial.cpp to solve the above problem,
+and name the working program source lab8.cpp.
+Name the executable lab8.
+</li>
+
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the source and the running of the program data for "checkout".
+</li>
+
+</ol>
+
+
+</body>
+</html>

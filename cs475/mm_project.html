@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+	<TITLE>CSCI [45]75 - Matrix Product Project - Spring 2005 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science [45]75<BR>
+  High Performance Numerical Computation<BR>
+  Spring, 2005<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Matrix Product Project</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+The objective is to compare the efficiencies of different algorithms, architectures, and architectural features and facilities for the matrix product of significantly sized matrices.
+<br>What are the fastest in different contexts?
+<br>What are the easiest/simplest for good performance?
+<br>What are the most portable for good performance?
+<p>
+When and where possible, compare (the effects of) the following:
+<ul>
+    <li>SPARC, Pentium 4, Celeron
+    <li>Fortran95/Fortran2000 vs C++
+    <li>Functional units:
+    <ul>
+	<li>FMAs
+	<li>SSE[2] (INTEL)
+	<li>Math Kernel Library (INTEL)
+    </ul>
+    <li>Loop ordering
+    <li>Optimization levels, flags, and pragmas
+    <li>Blocking
+    <li>BLAS3 (xGEMM)
+    <li>Strassen's (xGEMMW)
+    <li>Cache Conscious
+    <ul>
+	<li>ATLAS
+	<li>PHiPAC
+    </ul>
+    <li>Cache Oblivious
+    <ul>
+	<li>Morton ordering (recursive data layout)
+	<li>(is it better to stop the recursion at some point
+	to use small matrix kernels?<br>
+	 [see:  <a href="http://www.intel.com/software/products/ipp/docs/ippmman.pdf">Intel Integrated Performance Primitives (Intel IPP) for small matrix oper
+ations</a>])
+    </ul>
+</ul>
+<p>
+Whenever possible, don't reinvent the wheel.  Use pre-existing routines.<br>
+GNUPLOT is a very useful tool for displaying results.
+<p>
+Timing example:<br>
+<h5>Timing in C++:</h5>
+	<ul>
+	    <li> include time.h
+	    <li> wrap the following around a loop to time (changing variable names):
+	    <ul>
+		<li>clock_t time_ffsum_start = clock(); // begin timing ffsum loop
+		<li>clock_t time_ffsum_end = clock(); // end timing ffsum loop
+	    </ul>
+	    <li> then calculate elapsed time using the following:
+	    <pre>
+    double looptime_ffsum = static_cast<double>(time_ffsum_end - time_ffsum_start);
+	cout << "The ffsum loop required "
+	     << looptime_ffsum/CLOCKS_PER_SEC
+	     << " seconds\n"
+	     << " (measurement granularity: " << CLOCKS_PER_SEC
+	     << " of a second)\n\n";
+
+	    </pre>
+<p>
+Cite your sources.
+<HR>
+</BODY>
+</HTML>

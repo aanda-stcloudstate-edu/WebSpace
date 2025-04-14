@@ -1,0 +1,80 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>SCSU CSCI 201 [1 &amp; 2] Lab 10, Computer Science 1, Spring 2014, A. A. Anda</TITLE>
+</head>
+<style>
+    span {font-style: italic; font-variant: small-caps}
+</style>
+<style type="text/css">
+    code{font-weight:bolder}
+</style>
+<body BGCOLOR=white TEXT=black>
+
+<center>
+    <h3>SCSU CSCI 201 [1 &amp; 2], Computer Science 1, Spring 2014, A. A. Anda</h3>
+</center>
+
+<center> <h1> Lab 10</h1></center>
+
+<hr WIDTH="100%">
+
+<h3>Lab Assignment:</h3>
+
+Note: Everything in this lab assignment, unless otherwise stated, must be performed on the <span style="font-variant: small-caps;">csci2</span> server.
+
+<ol TYPE=I>
+
+    <li>
+	Create the directory <code>lab10</code> in your <code>labs</code> directory, then move to it.
+    </li>
+
+    <li>
+	Perform LAB 9.1, 9.2, 9.3, and LAB 9.4 [<i>Option</i> 2].
+    </li>
+
+    <li>
+	Use your editor to write the answers to the questions and exercises in
+	<a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/LM_Chapter09.pdf">Chapter 9 Lab</a>
+	in the file <code>Lab10answers.txt</code>
+	locating it in directory <code>lab10</code></li>. Then submit the file to your lab10 dropbox in D2L.<br>
+	As with all assignments submitted to a dropbox, your name, <span style="font-variant: small-caps;">csci2</span> login, assignment category &amp; number [e.g. Lab 10],
+	and date must be included at the top of your file.
+    </li>
+
+    <li>
+    When you are sure that each program is working correctly, use the <code>script</code> command to display first the source file, then execution, 
+    of each lab assignment program.  The <code><b>^D</b></code> character will end the <code>script</code> session.<br>
+    What you enter into your <code>script</code> session will look like this:
+    <code>
+    <pre>
+	&gt;script -a Lab10typescript.txt
+	&gt;cat program1.cpp
+	&gt;program1
+	    (your input to program 1 is here)
+	&gt;cat program1.cpp
+	&gt;program2
+	    (your input to program 2 is here)
+	    .
+	     .
+	      .
+	&gt;^D
+    </pre>
+    </code>
+    Submit <code>Lab10typescript.txt</code> to the D2L Dropbox.
+    </li>
+
+</ol>
+Here are the authors' source files for this lab:
+<code>
+    <ul>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab9/pointers.cpp">pointers.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab9/dynamic.cpp">dynamic.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab9/darray.cpp">darray.cpp</a>
+    </ul>
+</code>
+
+
+</body>
+</html>

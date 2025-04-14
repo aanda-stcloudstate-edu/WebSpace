@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66cccc" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 5</h1>
+    <p align="center">
+    <a href="#UML notation for ADT flight map possible operations">Listing 5-A</a><br>
+    <a href="#Listing 5-B   C++ implementation of searchR">Listing 5-B</a><br>
+    <a href="#Listing 5-C  Pseudocode of algorithm for placing queens in columns">
+    Listing 5-C</a><br>
+    <a href="#Listing 5-D  An implementation of placeQueens">Listing 5-D</a><br>
+    <a href="#Listing 5-1 The header file for the class Board">Listing 5-1</a><br>
+    <a href="#Listing 5-2 The class Queen">Listing 5-2</a><br>
+    </p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">Listing 5-A&nbsp;&nbsp;
+        <a name="UML notation for ADT flight map possible operations">UML 
+        notation for ADT flight map possible operations</a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">// Reads flight information into the flight map.
++readFlightMap(cityFileName: string, flightFileName: string): void
+
+// Displays flight information.
++displayFlightMap(): void
+
+// Displays the names of all cities that HPAir serves.
++displayAllCities(): void
+
+// Displays all cities that are adjacent to a given city.
++displayAdjacentCities(aCity: City): void
+
+// Marks a city as visited.
++markVisited(aCity: City): void
+
+// Clears marks on all cities.
++unvisitAll(): void
+
+// Sees whether a city was visited.
++isVisited(aCity: City): boolean
+
+// Inserts a city adjacent to another city in a flight map.
++insertAdjacent(aCity: City, adjCity: City): void
+
+// Returns the next unvisited city, if any, that is adjacent to a given city.
+// Returns a sentinel value if no unvisited adjacent city was found.
++getNextCity(fromCity: City): City
+
+// Tests whether a sequence of flights exists between two cities.
++isPath(originCity: City, destinationCity: City): boolean</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+    <p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 5-B   C++ implementation of searchR">Listing 5-B&nbsp;&nbsp; 
+        C++ implementation of <font face="Courier New">searchR</font></a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** Tests whether a sequence of flights exists between two cities.
+@pre originCity and destinationCity both exist in the flight map.
+@post Cities visited during the search are marked as visited
+in the flight map.
+@param originCity The origin city.
+@param destinationCity The destination city.
+@return True if a sequence of flights exists from originCity.
+to destinationCity; otherwise returns false. */
+
+bool Map::isPath(City originCity, City destinationCity)
+{
+    bool            result,
+                    done;
+    // Mark the current city as visited
+    markVisited(originCity);
+    // Base case: the destination is reached
+    if (originCity == destinationCity)
+	result = true;
+    else			// Try a flight to each unvisited city
+    {
+	done = false;
+	City            nextCity = getNextCity(originCity);
+	while (!done &amp;&amp; (nextCity != NO_CITY)) {
+	    done = isPath(nextCity, destinationCity);
+	    if (!done)
+		nextCity = getNextCity(originCity);
+	}			// end while
+	result = done;
+    }				// end if
+    return result;
+}				// end isPath</font></b></pre>
+        <pre><font size="3" color="#0000FF"><b>
+</b></font></pre>
+        </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 5-C  Pseudocode of algorithm for placing queens in columns">
+        Listing 5-C&nbsp; Pseudocode of algorithm for placing queens in columns</a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">// Places queens in eight columns.
+placeQueens(queen: Queen):void
+
+if (queen 's column is greater than the last column )
+     The problem is solved
+else
+{
+  while ( unconsidered squares exist in queen' s column and the problem is unsolved)
+  {
+      Find the next square in queen 's column that is
+      not under attack by a queen in an earlier column
+      if ( such a square exists )
+      {
+          Place a queen in the square
+          // Try next column
+          placeQueens( new Queen(firstRow, queen' s column + 1)) 
+          if (no queen is possible in the next column)
+	  {
+	       Delete the new  queen
+	       Remove the last queen placed on the board and
+	       consider the next square in that column
+           }
+        }
+    }
+}</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 5-1 The header file for the class Board">Listing 5-1 
+        The header file for the class <font face="Courier New">Board</font></a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">/** @file Board.h */
+#ifndef _BOARD
+#define _BOARD
+#include &quot;Queen.h&quot;
+</font><font size="3" color="#0000FF">#include &lt;vector&gt;
+#include &lt;cassert&gt;
+#include &lt;iostream&gt;
+using namespace std;
+static const int BOARD_SIZE = 8;
+class Board
+{
+  private:vector &lt; queens * &gt;queens;	// Array of pointers to queens on the board
+/** Sees whether a queen exists in position (inRow, inCol). */
+  bool isQueen (int inRow, int inCol) const;
+
+/** Attempts to place queens on board, starting with the designated queen. */
+  const placeQueens (Queen * queenPtr);
+
+/** Removes the last queen from the board, but does not deallocate it. */
+  void removeQueen ();
+
+/** Places a queen on the board. */
+  void setQueen (const Queen * queenPtr);
+
+public:
+/** Supplies the Queen class with a pointer to the board. */
+    Board ();
+
+/** Clears the board and removes pointer from queens. */
+   ~Board ();
+
+/** Clears board. */
+  void clear ();
+
+/** Displays board. */
+  void display () const;
+
+/** Initiates the Eight Queens problem. */
+  void doEightQueens ();
+
+/** @return The number of queens on the board.*/
+  int getNumQueens () const;
+
+/** @return A pointer to the queen at the designated index.*/
+  const Queen *getQueen (int index) const;
+};				// end Board
+#endif
+</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center"><a name="Listing 5-2 The class Queen">Listing 5-2 The 
+        class <font face="Courier New">Queen</font></a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">class Board;	// Forward declaration of Board class
+
+/** The Queen class. */
+class Queen
+{
+public:
+
+/** Places a queen in upper-left corner of board. */
+  Queen ();
+
+/** Places a queen in supplied location. */
+  Queen (int inRow, int inCol);
+
+/** @return Column number. */
+  int getCol () const;
+
+/** @return Row number. */
+  int getRow () const;
+
+/** Moves queen to next row. */
+  void nextRow ();
+
+/** Sees whether the queen is under attack by another queen.
+@return True if another queen is in the same row or the same
+diagonal; otherwise, returns false. */
+  bool isUnderAttack () const;
+
+/** Saves a pointer to the board for all queens. */
+  static void setBoard (const Board * bPtr);
+private:
+  int row;	// Row (or prospective row) of queen if it is on the board
+  int col;	// Column (or prospective column) of queen if it is on
+// the board
+// All queens share the same board
+  static const Board *boardPtr;
+};  // end Queen</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center">&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="1" width="65%" bordercolorlight="#99CCCC" bordercolordark="#000000">
+    <tr>
+      <td width="100%">
+        <h3 align="center">
+        <a name="Listing 5-D  An implementation of placeQueens">Listing 5-D&nbsp; 
+        An implementation of <font face="Courier New">placeQueens</font></a></h3>
+        </td>
+    </tr>
+    <tr>
+      <td width="100%">
+      <pre><b><font size="3" color="#0000FF">bool Board::placeQueens (Queen * queenPtr)
+{
+// Base case: Try to place a queen in a nonexistent column.
+  if (queenPtr-&gt;getCol () &gt;= BOARD_SIZE)
+    {
+      delete queenPtr;
+      return true;
+    }	// end if
+  bool isQueenPlaced = false;
+  while (!isQueenPlaced &amp;&amp; queenPtr-&gt;getRow () &lt; BOARD_SIZE)
+    {
+// If the queen can be attacked, try moving it
+// to the next row in the current column
+      if (queenPtr-&gt;isUnderAttack ())
+	queenPtr-&gt;nextRow ();
+      else
+	{
+// Put this queen on the board and try putting a
+// new queen in the first row of the next column
+	  setQueen (queenPtr);
+	  Queen *newQueenPtr = new Queen (0, queenPtr-&gt;getCol () + 1);
+	  isQueenPlaced = placeQueens (newQueenPtr);
+// If it wasn't possible to put the new queen in the next column,
+// backtrack by deleting the new queen and moving the last
+// queen placed down one row
+	  if (!isQueenPlaced)
+	    {
+	      delete newQueenPtr;
+	      removeQueen ();
+	      queenPtr-&gt;nextRow ();
+	    }	// end if
+	}	// end if
+    }	// end while
+  return isQueenPlaced;
+}   // end placeQueens</font></b></pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+  </body>
+</html>

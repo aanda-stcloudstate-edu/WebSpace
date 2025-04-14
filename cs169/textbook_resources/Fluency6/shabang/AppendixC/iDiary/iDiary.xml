@@ -1,0 +1,112 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="iDiarySS.xsl"?>
+
+<idiary>
+   <entry>
+      <cool><title>The Digital Diary</title>
+          This will be fun! I start my digital journal today. So, to launch it with the right sentiment,
+          I looked up what Henry David Thoreau wrote on the first day of his famous <ital>Journal.</ital> 
+          He wrote, <quote>"'What are you doing now?' he asked. 'Do you keep a journal?' So I make my 
+          first entry today."</quote> Which, I guess, is pretty much what I just said. Great minds ... !
+      </cool>           
+   </entry>
+   
+   <entry>
+     <date> 11 August 2013 </date>
+     <cool><title>Human-powered Helicopter</title>
+        It's so totally awesome! It's been a month 
+        since a Toronto team won the Sikorsky Prize, but OMG, I can't stop thinking about it! 
+        So, I start this journal with Da Vinci's dream-come-true!  
+        <ytvid file="https://www.youtube.com/embed/syJq10EQkog"/>
+        Sikorsky requires: Be aloft 60 seconds; rise to 3 m; stay inside a 10m x 10m square. In the 
+        <link url="http://youtu.be/U7ZOqYpLWJY">winning flight </link>[at 3:30], 50 seconds are
+        spent descending to avoid the perils of the downdraft! 
+     </cool>
+   </entry>
+   
+   <entry>
+     <date> 12 August 2013</date>
+       <cool>I ran across this today, and am saving it here so I don't lose track of it. It needs more reading. 
+
+        <poem>
+           <p_title>Vespertina Cognitio</p_title>
+           <poet>Natasha Trethewey</poet>
+           <line>Overhead, pelicans glide in threes—</line>
+           <line amt="2"> their shadows across the sand</line>
+           <line amt="4"> dark thoughts crossing the mind. </line>
+           <skip/>
+           <line>Beyond the fringe of coast, shrimpers</line>
+           <line amt="2"> hoist their nets, weighing the harvest</line>
+           <line amt="4"> against the day's losses. Light waning,  </line>
+           <skip/>
+           <line>concentration is a lone gull</line>
+           <line amt="2">circling what's thrown back. Debris</line>
+           <line amt="4">weights the trawl like stones.  </line>
+           <skip/>
+           <line>All day, this dredging—beneath the tug</line>
+           <line amt="2"> of waves—rhythm of what goes out,</line>
+           <line amt="4"> comes back, comes back, comes back.</line>
+        </poem>
+        
+       </cool>
+   </entry>
+   
+   <entry>
+    <date>13 August 2013</date>
+    <cool>
+       <title>Potentially Hazardous Astroids</title>
+         Wow! I read so much poetry, I missed yesterday's APOD!  
+         NASA has plotted the orbits of the inner planets, and potentially hazardous astroids. 
+         Hmm ... don't a lot of 'em cross Earth's orbit?<para>
+         <pic file="im/APODpicOfTheDay.jpg" width="350"/></para>        
+         <link url="http://apod.nasa.gov/apod/ap130812.html">Here's the high resolution 
+         image.</link> The Astronomy Picture of The Day has to be about the BEST science 
+         site on the Internet. Thanks APOD! (<ital>Sun not shown actual size.</ital>)
+    </cool>
+   </entry>
+   
+   <entry>
+     <date> 14 August 2013</date>
+     <cool>
+     <title>Science Finally Asks Permission</title>
+         Last year I read<ital>The Immortal Life of Henrietta Lacks</ital> by Rebecca Skloot. 
+         Lacks was a poor African American tobacco farmer and mother of five, who died of 
+         cervical cancer in 1951 at age 31.  Doctors at Johns Hopkins took cancer cells from 
+         her without permission.  Because her cells continue to grow in the lab, they're key to 
+         medical research. Skloot profiles her and her family, stressing their confusion and 
+         hurt because her cells cured diseases; scientists got fame, she got nothing. HeLa 
+         cells, cited in 70,000 scientific papers, are <ital>still </ital>growing 60 years later. 
+         <bold> Immortal!</bold>
+         <para>
+         <pic file="im/lacks.jpg" width = "100"/> <pic file="im/hela.jpg" width="390"/></para>
+         Her genome has now been sequenced. Today the National Institutes of Health set up a 
+         board to approve research with her genome; 2 family members sit on the board. Finally!
+         <link url="http://www.npr.org/player/v2/mediaPlayer.html?action=1&amp;t=1&amp;
+         islist=false&amp;id=209807857&amp;m=210062375"> Hear NPR Here</link>
+     </cool>
+   </entry>
+   
+   <!--The following tags are available for adding a new entry.
+      Change the places containing black letters or dashes                             
+   <entry>
+   <date> dd mm yyyy</date>
+   <cool>
+       <para>  <ital>  <bold>
+       <link url="http:// - ">anchor text</link>
+       <title> title text </title>
+       <pic file="-.jpg" width="-" />
+       <quote> blockquote text </quote>
+       <poem>
+         <p_title> poem title</p_title>
+         <poet> poet's name </poet>
+         <line amt="d"> set d to digit for d tabs </line>
+         <skip/>
+       </poem>
+       <ytvid url=" - "/>
+   </cool>
+   </entry>																																															
+   -->
+
+</idiary>
+
+ 

@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 6 - Spring 2006 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2006<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 6</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For each of the following problems you will solve:
+<ol type=I>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and <b>assignment number</b> will appear as comments at the top of your source code.
+    <P>
+    <li>the <b>purpose</b> of the program will also appear as comments at the top of your source code.
+    <P>
+    <li>use <b>comments</b> <i>throughout</i> your code to describe what your code is doing.
+    <P>
+    <li>follow closely the coding style of the text.
+    <P>
+    <li>compile your code with <tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i> (ensure that there are no compiler warnings or errors)
+    <P>
+    <li> You will submit the source code and a script file demonstrating the
+    interactive running of your program on <u>good test data</u>.
+</ol>
+<HR>
+<P>
+<OL>
+    <LI>Chapter 6: Problem 50
+    <LI>Chapter 6: Problem 51
+    <LI>Chapter 6: Project 53
+    <LI>Chapter 6: Project 55
+</OL>
+<P>
+Note: typo in leap year formula on bottom of page 295. 
+Change <b><tt>% 7d</b></tt>
+to <b><tt>% 7</b></tt>
+<P>
+Extra credit: print months with any user specified day of week as the first
+column (default is Sunday).
+<P>
+<HR>
+<HR>
+</BODY>
+</HTML>
+

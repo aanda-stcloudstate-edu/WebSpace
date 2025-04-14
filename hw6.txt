@@ -1,0 +1,41 @@
+CSCI 201 [1,3] Fall 2002
+
+Programming Assignment 6
+
+Due Friday, Nov 15, 2002
+
+Objective:
+
+This assignment is designed to provide you with problem solving experience
+involving writing a program which modifies and builds upon a previously
+solved problem.  A facility with nested loops will be exercised.
+
+Problem:
+
+Design a program which prints a calendar for a given year, by month,
+with each week beginning with a Monday.
+
+Specifications:
+
+Follow the directions in problem 6-33 on pages 283-284 with the exception
+of the following change: Start each week with Monday rather than Sunday.
+
+* Use the related program you developed in Lab 7 to help you solve this
+  problem.
+
+* Maximize the readability of your program.  Follow the guidelines in
+  [Appendix H] unless you can apply a more readable alternative in a
+  particular context in your program.
+
+    * Use comments to identify yourself, the date, the course and section, and
+      the purpose of the program -- all at the top of your program.
+      
+    * Use descriptive comments and identifiers throughout your code.
+
+* Check the correctness of your program using the Unix command "cal [year]".
+
+SUBMIT:
+
+* A listing of your source.
+
+* A copy {using the Unix [script] command} of your programs output.

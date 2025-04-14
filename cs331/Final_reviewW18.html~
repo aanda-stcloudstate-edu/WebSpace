@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>CSCI 331 - Final Review (Spring 2018)</title>
+<meta name="Generator" content="Vim/6.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+CSCI 331 Final Review Topics
+
+All topics covered by the midterm exam (Chapters 1-7)
+
+(Ignore <u>tapes</u> in all chapters)
+
+* Linear Sorts
+    details &amp; criteria (use for which data conditions?)
+
+* Command line processing &amp; makefiles
+
+* Robust bisection formula {e.g. [L + (R - L)/2] }
+
+Chapter 8  Cosequential Processing
+
+        Merging &amp; Matching
+	    worst &amp; best case space requirements
+
+        K-way merge
+	    selection tree functioning (can be replaced by a priority queue w. tuple values)
+
+        Heaps &amp; replacement selection
+	    (most efficient implementation for a priority queue)
+	    complexities for operations
+	    algorithms for operations
+	    parent/child indexing for array representation of <em>complete tree</em>
+	    buffering differences
+	    multiple drives
+	    expected run lengths for different input data ordering characteristics
+
+	Out-of-core merging
+	    computational complexities
+	    multi-step
+
+	Unix cosequential utilities
+
+        Glossary
+
+Chapter 9 Multilevel Indexing &amp; B-Trees
+
+        Search Trees &amp; BSTs
+	    complexity extrema when dynamic
+	    paged
+	    algorithm for to turning a sorted list into a balanced BST
+	    problems using BSTs vs related STs
+	    augmenting to yield an order-statistic tree
+
+        AVL trees
+	    properties &amp; identification
+
+        2-3, 2-3-4, &amp; red-black trees: properties
+
+        B-trees, B*trees, &amp; B+trees
+	    definitions
+	    search
+	    insertion
+	    deletion
+	    merging &amp; redistribution
+	    virtual &amp; buffering strategies
+
+        Glossary
+
+Chapter 10  Indexed Sequential File Access and Prefix B+Trees
+
+        Sequence sets
+	    blocking
+	    insertions &amp; deletions
+	    separators vs keys
+	    loading B+tree issues
+
+        Glossary
+
+Chapter 11 Hashing
+
+        Pseudo- &amp; Quasi- random issues
+
+	Hash functions
+	    perfect
+
+	Buckets
+
+        Collisions
+
+        Predicting distribution of records
+	    which formula is appropriate for answering specific questions?
+		in terms of functions of <i>p</i>(<i>x</i>)
+	    effects of &amp; on packing density
+
+	Collision resolution heuristics
+	    progressive overflow
+		search lengths
+		buckets
+		implementation
+		deletions
+	    tombstones
+		insertions &amp; deletions
+	    double hashing
+	    chaining w. separate overflow area
+	    scatter tables and uses
+	    exploiting patterns of record access
+		Pareto Principle
+
+        Glossary
+
+Chapter 12 Tries
+	
+        Be able to draw a trie from a list of keys
+
+</pre>
+</body>
+</html>

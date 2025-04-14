@@ -1,0 +1,43 @@
+<!doctype html>
+<!--/export/home/cs200/cs200105/Lab6/Lab6.html-->
+<!--Renee Holzknecht-->
+<!--perform functions with temp. variables-->
+<!--October 17, 2013-->
+<html>
+	<head>
+		<title>
+		Lab 6 (Exercise 9.8)
+		</title>
+		<script type="text/javascript">
+		function MostellerFormula(height, weight, button)
+		//precondition: inputs according to
+		//inches and pounds
+		//postconditions: surface area calculated
+		//correctly in terms of square feet
+		{
+			var inheight, lbsweight, kweight, cmheight
+			inheight=parseFloat(document.getElementById('heightBox').value); 
+			lbsweight=parseFloat(document.getElementById('weightBox').value); 
+			kweight=lbsweight/2.205; 
+			cmheight=inheight*2.54; 
+			msurfArea=Math.pow(((kweight*cmheight)/3600), (1/2)); 
+			ftsurfArea=msurfArea*10.764; 
+			return document.getElementById('outputDiv').innerHTML='Someone who is ' + inheight + ' inches tall and weighs ' + lbsweight + ' pounds has a surface area of ' + ftsurfArea + ' square feet.';
+		}
+		</script>
+	</head>
+	<body>
+		<h1 style="text-align:center">
+		Lab 6 (Exercise 9.8)
+		</h1>
+		Calculate your surface area!
+		<br>
+		<table>
+			<tr><td>Insert height (in.):</td><td><input type="text" id="heightBox" size=15 value=""></tr>
+			<tr><td>Insert weight (lbs.):</td><td><input type="text" id="weightBox" size=15 value=""</td></tr>
+		</table>
+		<input type="button" value="Calculate" onclick="MostellerFormula()">
+		<hr>
+		<div id="outputDiv"></div>
+	</body>
+</html>

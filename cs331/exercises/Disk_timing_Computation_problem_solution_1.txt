@@ -1,0 +1,40 @@
+CSCI 331 Ch. 3 Disk Timing Computation problem solution
+
+Professor Anda
+_________________________________________________________
+
+Specifications:
+
+Spindle speed:		6000 (6K) RPM
+Track count:		10000
+Sectors/Track:		50
+Bytes/Sector:		2000
+Records/Sector:		10
+Ave rand seek:		12 msec		[ARS]
+adjacent track seek:	1 msec		[ATS]
+
+Problem:
+	How many msec to read/write 40000 records sequentially on
+	contiguous tracks w. track skewing/staggering (to eliminate rot. delays)?
+
+Solution:
+
+Records/Track:		10 * 50 = 500
+
+msec / M:		60 * 1000 = 60K
+
+Track Transfer Time:	60K / 6K = 10 msec	[TT]
+
+Ave rot. delay:		10 / 2 = 5 msec		[ARD]
+
+used Track count:	40K / 500 = 80		[UTC]
+
+Total time:	1st track time 		+ 	time for remaining tracks
+
+	=	( TT + ARD + ARS)	+	(UTC - 1) * (TT + ATS)
+		
+	=	(10 + 5 + 12) msec 	+ 	(80 - 1) * (10 + 1) msec
+
+	=	27 msec			+	869 msec
+
+	=	896 msec

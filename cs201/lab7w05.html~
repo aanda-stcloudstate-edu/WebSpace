@@ -1,0 +1,141 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab7 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 7</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2>
+Introduction:</h2>
+This lab provides experience with <u>conditional</u> statements and expressions,and a more numerically stable algorithm for solving the <u>quadratic</u>
+equation with <i>real</i> coefficients.
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<li>
+Create a new directory, <i>lab7</i>, and move to it.</li>
+
+<li>
+Write a working program, and <tt>void</tt> function
+<center>
+<tt><u>quad_roots(a,b,c,nrr,rr1,rr2)</u></tt>
+</center>
+which it calls, which requests from the user an <i>ordered triple</i> of
+<tt>double</tt> floating point numbers.
+These provide the coefficients of the quadratic equation,
+<center><b><i>ax<sup>2</sup> + bx + c</i> = 0</b>.</center><br>
+<b><tt>nrr</tt></b> returns the number of <i>real</i> roots of the
+quadratic equation.<br>
+<b><tt>rr1</tt></b> and <b><tt>rr2</tt></b> return the real roots of the
+quadratic equation
+computed by the following formulae:<br>
+<ol>
+    <li><i>Compute the discriminant: </i> <b>d = b<sup>2</sup> - 4ac</b> </li>
+	    <ul>
+		<li>if <b>a</b> &amp; <b>b</b> &amp; <b>c</b> are zero</li>
+		<ul>
+		    <li> This is the trivial case -- there are an infinite
+			 number of solutions (roots).
+		    <li> Print a descriptive message to stderr
+		    <li> <tt><b>nrr</b> = 0</tt>
+		</ul>
+		<li>if <b>a</b> &amp; <b>b</b> are zero</li>
+		<ul>
+		    <li> There is no solution
+		    <li> Print a descriptive message to stderr
+		    <li> <tt><b>nrr</b> = 0</tt>
+		</ul>
+		<li>if <b>d &lt; 0</b></li>
+		<ul>
+		    <li>if <b><tt>b</tt> == 0</b>
+		    <ul>
+			<li> Solution is pure imaginary
+			<li> Print descriptive message to stderr
+			<li> <tt><b>nrr</b> = 0</tt>
+		    </ul>
+		    <li> <i>else</i>
+		    <ul>
+			<li> Solution is complex
+			<li> Print descriptive message to stderr
+			<li> <tt><b>nrr</b> = 0</tt>
+		    </ul>
+		</ul>
+		<li>if <b>a == 0</b>
+		<ul>
+		    <li>Single solution
+		    <li> <tt><b>rr1</b></tt> and <tt><b>rr2</b></tt>
+		    are <b>(-c/b)</b> if <b>b != 0</b>
+		    <li> <tt><b>nrr</b> = 1</tt>
+		    <li> print descriptive message to stderr if
+			<b><tt>b</tt> == 0</b>
+		</ul>
+		<li>if <b>d == 0</b>
+		<ul>
+		    <li> Doubled root solution
+		    <li> <tt><b>rr1</b></tt> and <tt><b>rr2</b></tt>
+			are both <b>-b/(2a)</b> if <b>a != 0</b>
+		    <li> <tt><b>nrr</b> = 1</tt>
+		    <li> print a descriptive message to stderr if
+			<b><tt>a</tt> == 0</b>
+		</ul>
+	    <li>if <b>d &gt; 0</b>
+		<ul>
+		    <li> Create <u>sign</u> function:
+			<tt>sign(x) = -1</tt> if <tt>x&lt;0</tt>,
+			<i>else</i> <tt>sign(x) = 1</tt><br>
+			<i>{use a ternary expression}</i></li>
+			<li>s = -(<tt><b>b</b></tt> + d<sup>1/2</sup> *
+			    sign(<tt><b>b</b></tt>)) / 2
+		    <li> <tt><b>rr1</b></tt> = s / <tt><b>a</b></tt>
+		    <li> <tt><b>rr2</b></tt> = <tt><b>c</b></tt> / s
+		    <li> <tt><b>nrr</b> = 2</tt>
+		</ul>
+	    </ul>
+</ol>
+
+
+<li>
+Ensure that your program and functions have updated <u>comment </u>headers
+describing your identifying information, the date, and the purpose of the
+program or function.<br>
+Each user defined function should document pre- and post-conditions,
+what each parameter is, and whether they are IN, OUT, or IN/OUT. <br>
+
+
+<li> Use an appropriate input and output function in your test driver program
+<b>Note</b>:
+<ul>
+<li>
+Don't forget to place the <u>prototype declaration</u>
+for each function above the function header of the main program.
+<li>
+Use <b>stubs</b> (See Program 4-13 on pg. 165) to design from the top down
+and ensure that the functional structure is working at an intermediate stage.  When the stub form is working properly, replace each with the complete code and test.
+</ul>
+</li>
+
+<li>
+Compile and run.<br>
+Ensure that the program is working correctly.<br>
+Test with values in Table 5-13 on page 225, and other values to ensure that
+there is a test for every decision branch.
+</li>
+
+
+</body>
+</html>

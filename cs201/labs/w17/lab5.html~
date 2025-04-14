@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="UTF-8">
+	<TITLE>SCSU CSCI 201 [2 &amp; 3] Lab 5, Computer Science 1, Spring 2017, A. A. Anda</TITLE>
+	<style>
+	    code {font-weight: bold; color:MidnightBlue}
+	</style>
+    </head>
+<body BGCOLOR=white TEXT=black>
+
+<center>
+    <h3>SCSU CSCI 201 [2 &amp; 3], Computer Science 1, Spring 2017, A. A. Anda</h3>
+</center>
+
+<center> <h1> Lab 5</h1></center>
+
+<hr WIDTH="100%">
+
+<h3>Lab Assignment:</h3>
+
+Note: Everything in this lab assignment, unless otherwise stated, must be performed on the <span style="font-variant: small-caps;">csci2</span> server.
+
+<ol TYPE=I>
+
+    <li>
+	Create the directory <code>lab5</code> in your <code>labs</code> directory, then move to it (you can use the <code>cd</code> or <code>pushd</code> command in Unix to move to a directory).
+    </li>
+
+    <li>
+	Perform LAB 5.1 - 5.5 and LAB 5.6 <i>Options</i> 1 &amp; 2.
+    </li>
+
+    <li>
+	Use your editor to write the answers to the questions and exercises in
+	<a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/8e/Labs/LM_Chapter05.pdf">Lab 5</a>
+	in the file <code>Lab5answers.txt</code>
+	locating it in directory <code>lab5</code></li>. Then submit the file to your lab5 dropbox in D2L.<br>
+	As with all assignments submitted to a dropbox, your name, <span style="font-variant: small-caps;">csci2</span> login, assignment category &amp; number [e.g. Lab 5],
+	and date must be included at the top of your file.
+    </li>
+
+    <li>
+    Note: for each lab program, rewrite the equivalence test expression if the second operand for a equivalence operator is a constant (literal) so that instead the first operand is the literal.<br>
+    </li>
+
+    <li>
+    When you are sure that each program is working correctly, use the <code>script</code> command to display first the source file, then execution, 
+    of each lab assignment program.  The <code><b>^D</b></code> character will end the <code>script</code> session.<br>
+    What you enter into your <code>script</code> session will look like this:
+    <code>
+    <pre>
+	&gt;script -a Lab5typescript.txt
+	&gt;program1
+	    (your input to program 1 is here)
+	&gt;program2
+	    (your input to program 2 is here)
+	    .
+	     .
+	      .
+	&gt;^D
+    </pre>
+    </code>
+    Submit <code>Lab5typescript.txt</code> to the D2L Dropbox.
+    Also, submit to your D2L Dropbox a syntax-highlighted PDF file for each source code that you execute and test in your script session.<br>
+    Each PDF file should have the same name as the source file with the exception of the file extension (<code>.gpp</code> &rarr; <code>.pdf</code>).
+    </li>
+
+</ol>
+Here are the authors' source files for this lab:
+<code>
+    <ul>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab5/while.cpp">while.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab5/Sentinel.cpp">Sentinel.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab5/Dowhile.cpp">Dowhile.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab5/For.cpp">For.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab5/Nested.cpp">Nested.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab5/billfile.cpp">billfile.cpp</a>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab5/transaction.dat.txt">transaction.dat</a>
+    </ul>
+</code>
+
+</body>
+</html>

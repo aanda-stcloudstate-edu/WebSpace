@@ -1,0 +1,104 @@
+			CSCI 201 (Sec. 1) [001149]
+ 		   Fundamentals of Computer Science
+		        Fall 2003 SYLLABUS
+
+INSTRUCTOR:	Andrew A. Anda, Ph.D., Asst. Prof. of Computer Science
+OFFICE:		ECC-223		 Telephone:	(320)308-2044
+E-MAIL:		TBD	Web Site: http://web.stcloudstate.edu/aanda/cs201.html
+OFFICE HOURS:	M: 10:00AM - 11:50AM 
+                T:  1:30PM - 3:20PM 
+                W: 10:00AM - 11:50AM 
+                F: 10:00AM - 11:50AM 
+                (and by appointment)
+
+CLASS TIME AND LOCATION:
+    Class: MWF: 9:00AM -  9:50AM in EB-A226
+    Lab:     T: 9:30AM - 10:45AM in ECC 102
+
+REQUIRED TEXT:	* A Structured Programming Approach Using C++,
+		    by Forouzan & Gilbert, Brooks/Cole, 2000.
+		* A Practical Guide to the UNIX System,
+                    by Mark G. Sobell, Benjamin/Cummings, 1995.
+OBJECTIVES:
+    This course uses the high-level computer programming language, C++,
+    and appropriate mathematical concepts to introduce the fundamentals
+    of computer science, algorithm design, problem solving, and elementary
+    data structures and algorithms.
+
+TOPICS:
+    * A basic working knowledge of the UNIX operating system, including the
+      use of files and an editor.
+    * The logical structure of a digital computer.
+    * An introduction to algorithms.
+    * An introduction and brief survey of programming languages.
+    * Entering, editing, compiling, debugging, and running C++ programs.
+    * Program development and top-down design.
+    * Reading and writing data: standard input and standard output.
+    * Expressions and their evaluation; statements.
+    * Subprograms and program modularity: functions, parameter passing,
+      and default arguments; the scope of variables and functions.
+    * Boolean expressions, selection statements, and DeMorgan's law.
+    * Iteration (looping).
+    * Reading and writing text files.
+    * Time complexity and algorithm analysis.
+    * Pointers and their manipulation; Passing arrays as parameters;
+      memory allocation and de-allocation.
+    * Enumerated types.
+
+PREREQUISITES:
+    All students in this class should have passed the prerequisite course
+    as listed in the course description, MATH 112 {College Algebra}, or
+    higher.  If you are taking this course for your major, you should at least
+    be enrolled in MATH 221 {Calculus & Analytical Geometry I} (although it
+    is preferable to have completed MATH 221 prior to undertaking CSCI 201).
+
+CLASS ACCOUNTS:
+    All submitted work for this class must be done using the account assigned
+    for this class.
+
+CLOSED LABS:
+    We will spend time in the lab on Tuesday every week.  These labs cannot be
+    made up.
+
+ASSIGNMENTS:
+    In addition to the projects assigned during the closed labs, you will
+    also be expected to complete programming projects on your own outside
+    of class time.  The programs are due at the beginning of class on the
+    due date.  No allowance will be made for computer down time, so plan
+    ahead.  Late work will not be accepted.
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.
+
+ATTENDANCE & CONDUCT:
+    You are responsible for knowing what happens at each class meeting.
+    Do not engage in disruptive or distracting activities. (this includes
+    allowing your cell ring audibly during class)
+
+EXAMS:
+    There will be two 45 minute exams and a comprehensive final exam.
+    Make-up exams will be given in only in extreme (or university
+    sanctioned) circumstances and only with prior notice.
+
+GRADING:
+	Your grade will be determined by the contributions of your scores
+	on assignments,  a midterm and a final exam.  Makeup of tests,
+	quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE POINTS:
+	Assignments		25%
+	Hour Exams		30%
+	Final Exam		35%
+	Labs:			10%
+
+FINAL EXAM: Monday, December 15 7:30AM - 10:00AM in EB-A226.
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************

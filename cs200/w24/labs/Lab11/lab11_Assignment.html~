@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+       <title>CSCI 200 lab11 Spring 2024 [Professor A. A. Anda]</title>
+       <style type="text/css"> 
+	   BODY TT {color:maroon}
+       </style>
+       
+    </head>
+    <body>
+
+	<center>
+	    <h1>CSCI 200</h1>
+
+	    <h2>Lab 11</h2>
+
+	    <h3>
+		[Professor A. A. Anda]<br>
+		Spring 2024
+	    </h3>
+	</center>
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to perform repetition via <i>nested</i> <b><tt>for</tt></b> loops.<br>
+	<h2>Lab Assignment:</h2>
+
+	<ol>
+	    <li> Create a new folder, <b><tt>Lab11</tt></b>, in your <b><tt>labs</tt></b> folder.</li>
+	    <li> Move into your <b><tt>Lab11</tt></b> folder</li>
+	</ol>
+	<p>
+
+	For non-trivial functions, please follow Dr. Anda's <a href="http://web.stcloudstate.edu/aanda/cs200/functionTemplate.js.html">function template</a><br>
+
+	<ul>
+	    <li>Provide a documented <u>textbox</u> for the user to enter a <b><tt>size</tt></b> indicating the number of asterisks to use on a side for the four ASCII-art right triangles.</li>
+	    <li>Use a pair of <i>nested</i> <b><tt>for</tt></b> loops to generate the following ASCII-art right triangles:<br>
+		Use an <tt>if else</tt> statement to determine whether to print an asterisk or a space based on the values of the loop indices.<br>
+		(<i>Shown using a value of 4 asterisks per side</i>)<br>
+		<pre>
+		****
+		***
+		**
+		*
+
+		*
+		**
+		***
+		****
+
+		****
+		 ***
+		  **
+		   *
+
+		   *
+		  **
+		 ***
+		****
+		</pre>
+	    Also, display the total number of asterisks used to form each shape.
+	    </li>
+	    <li>Repeat the above process making the triangles hollow instead.<br>
+		(<i>Shown using a value of 5 asterisks per side</i>)<br>
+		<pre>
+		*****
+		*  *
+		* *
+		**
+		*
+
+		*
+		**
+		* *
+		*  *
+		*****
+
+		*****
+		 *  *
+		  * *
+		   **
+		    *
+
+		    *
+		   **
+		  * *
+		 *  *
+		*****
+		</pre>
+	    </li> 
+	    And, display the total number of asterisks used to form each shape.
+	</ul>
+
+	Ensure that in your code identifiers (e.g. variable and function names) are labeled appropriately.<br>
+
+	<b>Hint:</b> <i>remember that a blank is itself a character which occupies a character's worth of space</i>.
+
+	<p>
+	When finished (after you&rsquo;ve tested and proofread each of your Web pages),<br>
+	then submit your (Zipped) source files to the Lab11 D2L dropbox, and add working URL links for these source files.
+	</p>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	   <title>Figure BMI</title><style type = "text/css">
+	      body {background-color : navajowhite; color : brown; font-family : verdana}
+	      p    {text-align : right}</style>
+	</head>
+	<body>
+      <script type="text/javascript">
+         var scale='E';
+         function bmiM ( weightKg, heightCm ) { //Metric BMI
+            var heightM = heightCm / 100;		   //Change to meters
+            return weightKg / (heightM * heightM);
+         }
+         function bmiE ( weightLbs, heightIn ) {	   //English BMI
+            return 703 * weightLbs / (heightIn * heightIn);
+         }
+         function BMI ( units, weight, height ) {
+            if (units == 'E')
+                return bmiE( weight, height);		   //English Answer  
+            else
+                return bmiM( weight, height);		   //Metric Answer  
+         }   
+      </script>
+      <form action="">
+         <p> What units do you use:
+            <input type="radio" name="unit" onclick='scale="E"'
+               checked="checked"/> English
+            <input type="radio" name="unit" onclick='scale="M"'/>
+               Metric</p>
+         <p>Enter your weight in <i>lbs</i> or <i>kg</i>:
+            <input type="text" name="wgt" size="4"/></p>
+         <p> Enter your height in <i>in</i> or <i>cm</i>:
+            <input type="text" name="hgt" size="4"
+               onchange="document.forms[0].ans.value=
+                  BMI(scale,
+                  document.forms[0].wgt.value,
+                  document.forms[0].hgt.value)"/> </p>
+         <p> Your Body Mass Index is:
+            <input type="text" name="ans" size="4"/></p>
+      </form>
+   </body>
+</html>
+
+
+

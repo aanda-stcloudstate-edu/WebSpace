@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+   <head> 
+     <meta charset="UTF-8"/><title>Counter Assistant</title>
+	   <style type="text/css">
+	      body  {background-color : blueviolet; color : white; font-family : optima;
+	                text-align : center}
+	      table {margin-left : auto; margin-right : auto}
+	   </style>
+      <script>
+         var count1=0, count2=0, count3=0, count4=0;
+         function makeTable ( ) {
+            document.write('<table> <tr><th> </th><th> Total </th>');
+            document.write('<th> Meaning </th> <th>Clear</th></tr>');
+            row(1); row(2); row(3); row(4);
+            document.write('</table>');
+         }
+         function row(num) {
+            document.write('<tr><td><input type="button" value="Count"' );
+            document.write(' onclick="count'+num+'=count'+num+'+1;' );
+            document.write('arch'+num+'.value=count'+num+'"/></td>' );
+            document.write('<td><input type="text" size="5" id="arch'+num+'"/></td>' );
+            document.write('<td><input type="text" size="20" id="what'+num+'"/></td>' );
+            document.write('<td><input type="button" value="C" ' );
+            document.write( ' onclick="arch'+num+'.value='+"' ';" );
+            document.write("what"+num+".value=' ';" );
+            document.write('count'+num+'=0"/></td></tr>' );
+         }
+      </script>
+	</head>
+	<body>
+      <h2>Every Little Bit Counts<i style="color : hotpink">!</i></h2>
+      <form>
+            <script>
+              makeTable( );
+            </script>
+      </form>
+	</body>
+</html>
+

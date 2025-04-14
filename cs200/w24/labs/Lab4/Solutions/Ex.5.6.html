@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- rotate.html Dave Reed -->
+<!-- Web page that rotates three images at the click of a button. -->
+<!-- ============================================================ -->
+<html>
+<head>
+	<title>Image Rotater</title>
+</head>
+<body>
+	<div style="text-align:center">
+	<h2>Image Rotater</h2>
+	<p>
+	<img id="faceImg1" src="happy.gif">
+	<img id="faceImg2" src="sad.gif">
+	<img id="faceImg3" src="surprised.gif">
+	</p>
+	<input type="button" value="Rotate right"
+		onclick="saved=document.getElementById('faceImg3').src;
+			document.getElementById('faceImg3').src=
+			document.getElementById('faceImg2').src;
+			document.getElementById('faceImg2').src=
+			document.getElementById('faceImg1').src;
+			document.getElementById('faceImg1').src=saved;">
+	<input type="button" value="Rotate left"
+		onclick="saved=document.getElementById('faceImg1').src;
+			document.getElementById('faceImg1').src=
+			document.getElementById('faceImg2').src;
+			document.getElementById('faceImg2').src=
+			document.getElementById('faceImg3').src;
+			document.getElementById('faceImg3').src=saved;">
+</div>
+</body>
+</html>

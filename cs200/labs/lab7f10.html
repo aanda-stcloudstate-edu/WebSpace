@@ -1,0 +1,136 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+       <title>CSCI 200 Lab 7 Fall 2010 [A. A. Anda]</title>
+       <style type="text/css">
+	   BODY TT {color:maroon}
+       </style>
+    </head>
+    <body>
+
+	<center>
+	    <h1>CSCI 200</h1>
+	</center>
+
+	<center>
+	    <h2>Lab 7</h2>
+	</center>
+
+	<center>
+	    <h3>
+		[A. A. Anda]<br>
+		Fall 2010
+	    </h3>
+	</center>
+
+	<hr WIDTH="100%">
+	<center>
+	    <h3>
+		Is a Point in a Box?
+	    </h3>
+	</center>
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li> Work with conditionals (<i>primary objective</i>) </li>
+	    <li> Define and apply parameterized functions (<i>primary objective</i>) </li>
+	    <li> Work with coordinate geometry (<i>secondary objective</i>) </li>
+	</ul>
+    <h2>Lab Assignment:</h2>
+
+    <ol>
+	<li> Create a new directory, <b><tt>Lab7</tt></b>, in your class account directory.</li> 
+	<li> Move into your <tt>Lab7</tt> directory</li> 
+	<li> Create the file <tt>pointInBox.html</tt>
+	<li> Use HTML comments at the top of this file identifying:</li> 
+	<ul> 
+	    <li>where the file is located (e.g. <tt>~/cs200999/labs/Lab7/pointInBox.html</tt>)</li> 
+	    <li>the author (<i>you</i>) </li> 
+	    <li>what the program does</li> 
+	    <li>when you created the file</li> 
+	    <li>when you last modified the file</li> 
+	</ul> 
+	<li>When implementing your program, as often as is practical, repeat the following steps:</li> 
+	<ol> 
+	    <li> modify your Web page file via the editor</li> 
+	    <li> save the file</li> 
+	    <li> refresh the browser open to your Web page</li> 
+	    <li> verify that your modifications did what you've intended</li> 
+	</ol>
+	<li> Determine whether a given point's ( <b><i>X</i></b>, <b><i>Y</i></b> ) coordinate pair is in a specified box area, using the following components:</li>
+	<ul>
+	    <li>Textboxes (<i>with default values</i>) for each of the [input] values of the box coordinates:
+	    <b>Top, Bottom, Left, and Right.</b>
+	    <li>Define, test, then use a <tt>function</tt> labeled <tt>IsPointInLineSegment()</tt> having the following properties:
+	    <ul>
+		<li>parameters:
+		<ul>
+		    <li><tt>leftBoundary</tt>
+		    <li><tt>rightBoundary</tt>
+		    <li><tt>point</tt>
+		    <li>Boolean flag <tt>boundariesAreIn</tt>
+			(will be <b><tt>true</tt></b> if the boundary points are considered part of the line segment)
+		    <li><tt>orientationString</tt> (will be <tt>"Horizontal"</tt> or <tt>"Vertical"</tt> for a rectangle)
+		</ul>
+		<li>with the following functionality:
+		<ul>
+		    <li>if the <tt>leftBoundary</tt> is not less than the <tt>rightBoundary</tt>,
+			raise an <tt><u>alert</u>()</tt> stating that the <tt>orientationString</tt> box coordinates are bad.
+		    <li><tt>return</tt> 
+		    <dl>
+			<dt>
+			    <b><tt>true</tt></b>
+			<dd>
+			<tt>If the <tt>point</tt> is <b>inside</b> the line segment</tt>
+			<dt>
+			    <b><tt>false</tt></b>
+			<dd>
+			<tt>If the <tt>point</tt> is <b>outside</b> the line segment</tt>
+		    </dl>
+		</ul>
+	    </ul>
+	    <li>Two labeled textboxes for the ( <b><i>X</i></b>, <b><i>Y</i></b> ) coordinates of the point, i.e.
+	    a textbox for the <b><i>X</i></b> coordinate, and a textbox for the <b><i>Y</i></b> coordinate.
+	    <li>A labeled button to <i>toggle</i> whether the box border is considered to be in the box. (<i>Establish and use a default value</i>)<br>
+	    This button will toggle a Boolean <i>flag</i> variable. This button will also use a textbox to display one of the following two text strings (messages) on the page in a textbox:<br>
+	    <dl>
+		<dt>
+		    <b><tt>true</tt></b>
+		<dd>
+		    <tt>The box border is <b>inside</b> the box.</tt>
+		<dt>
+		    <b><tt>false</tt></b>
+		<dd>
+		    <tt>The box border is <b>outside</b> the box.</tt>
+	    </dl>
+	    <li>Using the <tt>IsPointInLineSegment()</tt> function, implement:
+	    <ul>
+		<li>A button to test whether or not the point is in the box.
+		<li>A textbox to display and state whether the point is in the box, e.g.:
+		<dl>
+		    <dt>
+			<b><tt>true</tt></b>
+		    <dd>
+		    <tt>The point ( <b><i>X</i></b>, <b><i>Y</i></b> ) is <b>inside</b> the box.</tt>
+		    <dt>
+			<b><tt>false</tt></b>
+		    <dd>
+		    <tt>The point ( <b><i>X</i></b>, <b><i>Y</i></b> ) is <b>outside</b> the box.</tt>
+		    <dd>
+		    <br>(<b>note:</b> display the values of <b><i>X</i></b> and <b><i>Y</i></b>)
+		</dl>
+	    </ul>
+	</ul>
+	<li>Think about how you could modify and extend this program to determine whether a point
+	( <b><i>X</i></b>, <b><i>Y</i></b>, <b><i>Z</i></b> ) is inside or outside a 3D box.
+    </ol>
+
+    <p>Label descriptively all boxes and buttons (an HTML <tt>&lt;table&gt;</tt> will be useful for this).
+    <p><u>Test</u> your code.
+    <p>Try to use <u>functions</u> to help organize and simplify your code.
+    <p>When finished, submit to the dropbox.
+
+    </body>
+</html>

@@ -1,0 +1,248 @@
+<HTML
+<HEAD>
+  <TITLE>Lab 2: Monte Carlo Methods</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR="white" LINK="red" VLINK="darkred" ALINK="blue">
+
+<P ALIGN="right">Name: _________________________________________</P>
+
+<P><BR><BR></P>
+
+<center><h2>Lab 2: Monte Carlo Methods</h2>
+        <h3>Lab to accompany <a href="http://dave-reed.com/book">
+        A Balanced Introduction to Computer Science, 2nd ed.</a><br />
+        by David Reed, Pearson Prentice-Hall, &copy;2008.</h3></center>
+
+
+<P>It may surprise you to learn that random events such as coin flips, 
+dice rolls, and roulette wheel spins are central to many computer science 
+applications, such as cryptography and database management.  While events 
+such as these are random in nature, their behavior over the long run is 
+predictable and so can be used to construct deterministic solutions to 
+complex problems.  Problem solutions that use such random events are known as 
+<I>Monte Carlo methods</I>, named after the city famous for its casinos.  
+
+<P>In Lab 1, we used a Monte Carlo method to estimate word frequencies.  
+By generating letter sequences at random and keeping track of the number of 
+words obtained, we were able to estimate the total number of words.  In this 
+lab, you will use a related Monte Carlo method to approximate the value of PI.
+
+
+<P><HR></P>
+
+<H3>Monte Carlo Darts</H3>
+
+<P>
+<IMG ALIGN="right" HSPACE=10 SRC="dartboard.gif">
+
+<P>The first step in approximating PI will be in estimating the ratio of the 
+area of a circle to the area of the square that circumscribes it (see the 
+picture on the right).  This can be accomplished using a Monte Carlo method 
+involving random points.
+
+<P>Think of the square as a dart board with the a circle inscribed in it.  
+If you threw darts randomly at the board so that each dart is equally likely 
+to land at any point, then the distribution of the darts would allow you to 
+estimate the ratio of the areas of the circle and square.  For example, if you 
+threw 500 darts and 400 of them landed inside the circle, then the area of the 
+circle could be estimated as 400/500 = 0.80 = 80% of the area of the square.
+
+
+<P> The Web page <A
+HREF="MontePI.html" TARGET="_blank">MontePI.html</A> can be
+used to simulate the generation of random points (or dart holes)
+within a square, and also keep track of the number of points that land
+inside the inscribed circle.  By default, 100 random
+points will be displayed and tallied each time you click on the
+button.  The number of points can be changed, however, by entering a
+new number in the box at the top.
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 1:</FONT></B> &nbsp;&nbsp;
+Load this Web page and perform 10 different experiments.  For each experiment, 
+generate 100 random points and list the number of points that land inside the 
+circle.  Be sure to clear the display and reset the counts (by clicking on the 
+appropriate button) between experiments.  List your results below.
+
+<P><BR><BR><BR><BR><BR><BR>
+
+Due to the random nature of these experiments, there will no doubt be some 
+variability in your results.  In order to arrive at a single answer, a natural 
+approach is to average the results obtained via repeated experiments.  What is 
+the average of your results from the 10 experiments?  You may use the online 
+calculator (Start -> Programs -> Accessories -> Calculator) if you wish.
+
+<P><BR><BR><BR>
+
+How consistent were your results from the 10 different experiments?  That is, 
+did you get close to the same count each time, or were there fairly large 
+differences?  One formal way of quantifying consistency is to consider the 
+maximum relative difference between any one result and the average of the 
+results.  First, find the single result that differs most from the average of 
+the results.   Then, take the difference between those two and divide by the 
+average.  For example, suppose you conducted 4 experiments with results 60, 
+80, 75, and 85.  The average of these 4 results is 75.  The maximum difference 
+between 75 and any one of the results is 15 (i.e., 75-60), and so the maximum 
+relative difference is 15/75 = 0.20 = 20%.  What is the maximum relative 
+difference using the numbers from your 10 experiments?
+
+<P><BR><BR><BR><BR><BR><BR>
+
+</BLOCKQUOTE>
+
+<P>Monte Carlo methods rely on the fact that while the outcome of a single 
+random event cannot be predicted, the distribution of repeated random events 
+often can be.  Consider a coin flip, for example.  While it is impossible to 
+predict whether a single flip will produce heads or tails, it is extremely 
+likely that given a large number of flips, the number of heads and tails will 
+be approximately the same.  Since there are only two possible outcomes of a 
+coin flip, each equally likely, we say that the expected distribution of heads 
+and tails is 50/50.
+
+<P>A key phrase in determining the expected distribution of random events is 
+"<I>given a large number...</I>".  It shouldn't surprise you that in the short 
+run, statistical anomalies can occur.  For example, if you flipped a coin 
+twice, you might get two heads or two tails as opposed to the expected 
+distribution of one of each.  When the number of events is small, such 
+anomalies can greatly skew statistics (based on two flips, we might conclude 
+that the expected distribution is 100% heads!).  In the long run, however, 
+anomalies will balance out (e.g., streaks of heads will be counter-balanced 
+by streaks of tails) and the expected distribution will be achieved.  The 
+more flips you make, the closer you are likely to come to the expected 50/50 
+distribution.  
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 2:</FONT></B> &nbsp;&nbsp;
+Perform 10 experiments with 1,000 random points and list the results below.  
+What is the average of the 10 results?  Are the numbers you obtained more or 
+less consistent than your experiments involving 100 points?  What would you 
+expect?  Explain your answers.
+
+<P><BR>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 3:</FONT></B> &nbsp;&nbsp;
+Perform 10 experiments with 10,000 random points and list the results below.  
+What is the average of the 10 results?  Are the numbers you obtained more or 
+less consistent than your experiments involving 1,000 points?  What would 
+you expect?  Explain your answers.
+
+<P><BR><BR><BR><BR><BR><BR><BR>
+
+</BLOCKQUOTE>
+
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 4:</FONT></B> &nbsp;&nbsp;
+In the Web page for generating random points, you can add new points to the 
+square and accumulate counts by repeatedly clicking on the button.  Thus, you 
+could generate 1,000 random points by performing 10 different experiments of 
+100 points each, accumulating the point counts as you conduct each experiment.  
+Is this equivalent to conducting a single experiment with 1,000 points?  
+Explain your reasoning.  How could you go about testing your claim?
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR>
+
+</BLOCKQUOTE>
+
+<P><BR><BR><BR></P>
+
+
+<P><HR></P>
+
+<H3> Approximating PI </H3>
+
+<P>Once you have estimated the ratio of the areas of the circle and the 
+square, it is a relatively simple task to approximate PI.  The formulas for 
+the area of a square (side<small><SUP>2</SUP></small>) and circle 
+(PI*radius<small><SUP>2</SUP></small>) are taught in high school geometry.  
+In the special case of a circle inscribed in a square, the radius of that 
+circle is (side/2), making its area  
+PI*(side/2)<small><SUP>2</SUP></small> = PI*side<small><SUP>2</SUP></small>/4.  
+Thus, the ratio of the areas of the inscribed circle and the square is:
+
+<PRE>
+    (area of inscribed circle/area of square) = (PI*side<SUP>2</SUP>/4)/side<SUP>2</SUP> = PI/4
+</PRE>
+
+Solving for PI, we see that: 
+
+<PRE>
+    PI = 4*(area of inscribed circle/area of square)
+</PRE>
+ 
+Suppose that you generated a large number of random points, 75% of which 
+landed inside the circle.  Estimating that the area of the inscribed circle is 
+75% of the area of the square, the above formula would then imply that PI is 
+approximately 4 * 0.75 = 3.0. 
+
+<P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 5:</FONT></B> &nbsp;&nbsp; 
+Create a Web page named <TT>approx.html</TT> that performs this final 
+computation on experimental data to approximate the value of PI.  The page 
+should prompt the user for the results of a particular experiment, i.e., the 
+number of points that landed inside the circle and the total number of points.  
+It should then use that data to approximate the value of PI and display that 
+value in the page. 
+
+<P> For the sake of readability, your page should display the number of 
+points inside the circle and the total number of points, as well as the 
+approximation of PI.  For example,
+
+<XMP>
+    750 out of 1000 points were inside the circle.
+    Based on this data, PI is approximately: 3.0
+</XMP>
+
+</BLOCKQUOTE>
+
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 6:</FONT></B> &nbsp;&nbsp; 
+Using the average result from the experiments involving 100 points 
+(EXERCISE 1), use your Web page to approximate PI.   How accurate is the 
+result compared to the actual value of PI (3.141592653...)? 
+
+<P><BR><BR><BR>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 7:</FONT></B> &nbsp;&nbsp; Using the average 
+result from the experiments involving 1,000 points (EXERCISE 2), use your Web 
+page to approximate PI.   How accurate is the result?  
+ Is the approximation more or less accurate than the one made with only 
+ 100 points?    What would you expect?  Explain your answers.
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 8:</FONT></B> &nbsp;&nbsp; Using the average 
+result from the experiments involving 10,000 points (EXERCISE 3), use your 
+Web page to approximate PI.   How accurate is the result?  
+ Is the approximation more or less accurate than the one made with only 
+ 1,000 points?    What would you expect?  Explain your answers.
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR>
+
+</BLOCKQUOTE>
+
+<P><HR></P>
+
+<I>Hand in a printout of <TT>approx.html</TT>, attached to these sheets.</I>
+</BODY>
+</HTML>

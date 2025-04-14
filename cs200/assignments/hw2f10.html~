@@ -1,0 +1,66 @@
+<HTML>
+    <HEAD>
+	<TITLE>CSCI 200 - Fall, 2010; Homework Assignment 2: event-driven programming &amp; user-defined functions; A. A. Anda</TITLE>
+    </HEAD>
+    <BODY BGCOLOR=white TEXT=black>
+	<P>
+	<DIV ALIGN=center>
+	<H3>
+	  CSCI 200<br>
+	  Fall, 2010<br>
+	  A. A. Anda<br>
+	  <HR>
+	  Homework Assignment 2: event-driven programming &amp; user-defined functions;
+	</H3>
+	</DIV>
+	<P>
+	<HR>
+	Purpose:<br>
+	This assignment exercises the use of <u>event driven programming</u> and the use of <u>user-defined functions</u> (Chapter 7, Reed)
+	<HR>
+	<P>
+	<ol>
+	    <li><b>Task A:</b> Add the following functionality to your program for Exercise 7.18 to convert it into a restaurant diner calculator.</li>
+	    <ul>
+		<li>Add a textbox to enter the sales tax <i>percentage</i> (defaulting to the MN sales tax)</li>
+		<li>Add a textbox to enter the tip <i>percentage</i> (defaulting to 20%)</li>
+		<li>Separate the <u>sales amount</u> into two subtotal textboxes for <u>food</u> and <u>alcohol</u>, respectively (they should each default to $0.00)</li>
+		<li>Change the button to read: <b><tt>Calculate Total</tt></b> </li>
+		<li>Calculate the total to pay using the following formula:<br/>
+		    <tt>total = food * (1 + tip_percentage/100) + alchol * (1 + (tip_percentage - 5%)/100) + sales_tax * (food + alcohol)</tt>
+		</li>
+		<li><u><tt>blur()</tt></u> the <tt>total</tt></li>
+		<li>Label all boxes</li>
+	    </ul>
+	    <li><b>Task B:</b> display the roll of two six-sided dice whenever a <b><tt>Click to Roll</tt></b> <u>button</u> is pressed.</li>
+	    <ul>
+		<li>Use the following formula:<br/>
+		<tt>document.getElementById("die").src = "http://dave-reed.com/book/Images/die" + roll() + ".gif";</tt>
+		</li>
+		<li><tt>roll()</tt> should be a function you define to roll a random integer between 1 and 6 inclusive. ([1,6])</li>
+		<li>You may modify the code in  <tt><a href="http://www.dave-reed.com/book/Chapter11/dice.html">dice.html</a></tt></li>
+	    </ul>
+	</ol>
+	<P>
+	    Please follow the following guidelines in your design:
+	<ul>
+	    <li> Use HTML comments at the top of your HTML source file identifying:</li>
+	    <ul>
+		<li>where the file is located (e.g. <tt>~/cs200999/assignments/hw2A.html</tt>)</li> 
+		<li>the author (<i>you</i>) </li> 
+		<li>what the program does</li> 
+		<li>when you created the file</li> 
+		<li>when you last modified the file</li>
+	    </ul>
+	    <li>Ensure that your source code is indented to enhance readability.</li>
+	    <li>Use appropriately descriptive identifier labels for your variables.</li>
+	    <li>Save your work in your <tt>assignments</tt> folder/directory.</li>
+	</ul>
+	<P>
+	    <HR>
+	After testing thoroughly, submit these two files to the appropriate D2L Dropbox.<br>
+	Also, submit <u>screenshots</u> of a test of each Webpage.
+	<HR>
+    </BODY>
+</HTML>
+

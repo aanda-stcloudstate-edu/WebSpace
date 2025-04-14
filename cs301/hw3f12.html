@@ -1,0 +1,88 @@
+<HTML>
+    <HEAD>
+	<TITLE>CSCI 301 - Programming Assignment 3 - Fall 2012 Dr. A. A. Anda</TITLE>
+	<style>
+	    P {font-family: "Cambria"}
+	</style>
+	</HEAD>
+    <BODY BGCOLOR=white TEXT=black>
+    <H3>
+        CSCI 301<BR>
+        Computer Science 2<BR>
+        Fall, 2012<BR>
+        Dr. A. A. Anda
+    </H3>
+    <P>
+    <DIV ALIGN=center>
+        <B>Programming Assignment 3</B><BR>
+    </DIV>
+    <P>
+<HR>
+<P>
+<HR>
+<h3>ADT Specification and Implementation Exercises</h3>
+<P>
+    Specify, implement, and test <b>ADT</b>s which contribute to solutions of selected programming problems.
+<P>
+For the following ADTs:
+<ul>
+    <li>Plan and impliment a test driver file for your ADT.  Ensure that some of your tests exercise exceptional input conditions (e.g. boundaries, special cases, and precondition violations).
+    <li>Your header files should include (<i>as comments</i>) all information that the user should require to use your ADT. [use applicable Doxygen tags.  E.g. @pre and @post]<br>
+	Include your specification of how input precondition violations will be handled.
+    <li>Create an output (text) file to submit by using the Unix <tt>script</tt> command to iteratively display each problem solution in the following order:
+    <ol>
+	<li> the ADT's header file and implementation file [include the problem ID as a header comment in each function. (e.g. "Carrano Problem 3.2" [chapter#.problem#] )]
+	<li> white space
+	<li> The test driver output
+	<li> horizontal line
+	<li> white space
+    </ol>
+</ul>
+<P>
+We want these ADTs to be lightweight (but readable), so for each ADT,
+<ol>
+    <li>include all necessary methods, constructors, and destructors
+    <li>include a header comment lines each stating, respectively: 
+    <ol>
+	<li>the file name (remember to change this if you change the name of the file)
+	<li>the relative path to the directory that this file contained in (e.g. <tt>"~cs301###/Assignments/A_3/Problem_3.2/"</tt>)
+	<li>the problem ID
+	<li>your name, course, semester &amp; year
+    </ol>
+    <li>have header comments stating what the ADT does
+    <li>have a header comment line for each parameter stating its preconditions
+    <li>use descriptive identifiers
+</ol>
+<P>
+Here are your problems:
+<ol>
+    <li> Programming Problem 3.2 (&amp; 3.12);
+    <ul>
+	<li> Note that the number of <u>minutes</u> to update <i>must</i> be non-negative and could be quite large.
+	<li> Include a set of methods for the <tt>private</tt> Boolean flag determining whether a 12 or 24 hour notation is to be displayed.
+    </ul>
+    <li> Programming Problem 3.3;
+    <ul>
+	<li> <u>Ignore</u> the last sentence regarding computing the name of the day.  (<i>it's a nice exercise, but it doesn't advance the learning objectives for this assignment</i>)
+	<li> Remember to handle correctly <u>leap years</u> for <i>all</i> years (0 &le; <tt>years</tt>).
+	<li> Include a set of methods for the <tt>private</tt> Boolean flag determining whether numbers, or words, for the month are to be displayed.
+    </ul>
+    <li> Programming Problem 3.4;
+    <ul>
+	<li> Remember to handle correctly <u>insufficient payments</u>. Payments are to be non-negative counts of dollars and/or cents.
+	<li> Compute change {quarters, dimes, nickels, and pennies} using the <i>fewest</i> number of coins.
+    </ul>
+    <li> Programming Problem 3.11a;
+    <ul>
+	<li> Remember to handle correctly the case of denominators being zero.
+    </ul>
+</ol>
+<P>
+<HR>
+<P>
+<b>Note:</b> because these are lightweight exercises, only internal comments and output comments will be expected as documentation for this assignment.
+<P>
+<HR>
+</BODY>
+</HTML>
+

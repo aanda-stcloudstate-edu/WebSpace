@@ -1,0 +1,207 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<HTML>
+<HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <TITLE>CSCI 201 - Programming Assignment 6 - Spring 2014 A. A. Anda</TITLE>
+    <style>
+	span {font-style: italic; font-variant: small-caps}
+    </style>
+    <style type="text/css">
+	code{font-weight:bolder}
+    </style>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2014<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+    <h3><B>Programming Assignment 6</B></h3>
+    <h2><u>Library Book Class</u></h2>
+</DIV>
+<HR>
+You will create a class representing an Abstract Data Type for a library book.  This class will use several helper classes (via Class Collaboration [Section 14.8]).
+<P>
+The helper classes, that you will write, are a <u>date</u> class, a <u>name</u> class, and a <u>book</u> class.
+<P>
+Each of your classes will include:
+<ul>
+    <li><i>constructors</i>
+    <li><i>accessors</i>
+    <li><i>mutators</i>
+    <li>a <i>display</i> method which will use the accessor methods to neatly print its private data members.
+    <li>a method to <i>clear</i> the data fields.
+</ul>
+<P>
+The private data members of each class:
+<P>
+<pre>
+<code>
+class Name
+{
+    private:
+	string first;
+	string last;
+}
+</code>
+</pre>
+<P>
+<pre>
+<code>
+class Date
+{
+    private:
+	int day;
+	int month;
+	int year;
+}
+</code>
+</pre>
+<P>
+<pre>
+<code>
+class Book
+{
+    private:
+	string title;
+	Name   author;
+	int    year;
+}
+</code>
+</pre>
+<HR>
+<pre>
+<code>
+class LibraryBook
+{
+    private:
+	int  id;
+	Book book;
+	Name borrower;
+	Date borrowed;
+	Date due;
+	bool isLoaned;
+}
+</code>
+</pre>
+<h5><code>LibraryBook</code> methods</h5>
+<ul>
+    <li><i>constructors</i> to create a <code>LibraryBook</code> object
+    <li> <i>accessors</i> and <i>mutators</i> for each data member
+    <li>(neatly) Print all information about <i>this</i> Library Book
+    <ul>
+	<li>print <code>borrower</code> and date information only if on loan
+    </ul>
+    <li>Loan the book:
+    <ul>
+	<li>parameters include <u>borrowing date</u>, <u>due date</u>, and <u>borrower</u>
+	<li>Ensure that the due date is after the borrowing date<br>
+	    (else do nothing other than print an error message)
+	<li>if already out on loan, do nothing other than printing a message to that effect<br>
+	    (can include due date).
+    </ul>
+    <li>Return the book:
+    <ul>
+	<li><u>Expunge</u> the <code>borrower</code> name information and <u>set</u> <code>isLoaned</code> to <code>false</code><br>
+	    (if not loaned do nothing and print a message to that effect)
+    </ul>
+    <li>Renew the book:
+    <ul>
+	<li>Update the <u>borrowing date</u> and <u>due date</u>.
+    </ul>
+    <li><code>bool isOverdue(Date) const</code> {compares parameter Date with borrowed Date}
+    <ul>
+	<li>if not loaned, print a message to that effect and return <code>false</code>
+    </u>
+</ul>
+<HR>
+The following are components of your <u>test driver</u> program and not the <code>LibraryBook</code> class.<br>
+However, they will use the <code>LibraryBook</code> class.
+<p>
+<u>Declare</u> a <i>dynamic</i> array (or <code>vector</code>) of <code>LibraryBook</code> objects, where each element corresponds to a different book.
+<p>
+Write a non-class function to <u>read</u> a set of <code>Book</code>s from a file into the <code>LibraryBook</code> array/<code>vector</code>.<br>
+(This will save you from having to manually input this information every time you run your program.)
+<p>
+Using the <code>LibraryBook</code> array/<code>vector</code>, write the following set of non-class functions (which will use <code>LibraryBook</code> class methods)
+<ul>
+    <li>Print all library book record information for books out on loan
+    <li>Print all library book record information for books <i>not</i> out on loan
+    <li>Print all library book record information for books overdue
+    <li>Print the information for that library book record which has a specific ID number
+    <ul>
+	<li>Print an appropriate message if there is no library book having the specified ID number</li>
+    </ul>
+    <li>Print all library book record information (<i>if not out on loan, ignore <u>date</u> and <u>borrower</u> information</i>)
+</ul>
+<P>
+Your <u>test driver</u> program should call these functions before, during, and after you perform some borrowing and returning transactions.
+<P>
+Feel free to add to this functionality, with a menuing system, with other functions that use the <code>LibraryBook</code> class, and/or print the library book information in order sorted by some key.
+<HR>
+How would you augment these classes to handle:
+<ol>
+    <li>books with multiple authors?
+    <li>multiple copies of books in the library?
+</ol>
+<HR>
+<P>
+For the following problem you will solve:
+<ol type=I>
+    <li>At least a day prior to submission of your source code and test script, submit to your D2L dropbox <u>UML class diagrams</u> (Gaddis Section 13.15 &amp; p. 853) for your classes.
+    <h5>General Documentation </h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>User Manual</h5>
+    <li>Give examples of how to use your Library Book Class.  Include your methods.
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.  This includes substituting descriptive constant identifiers for <i>magic numbers</i></li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In <code>vim</code>:</li>
+    <ul>
+	<li><code>:set sw=4</code>
+	<li><code>:set cindent</code>
+    </ul>
+    <P>
+    <li>compile your code with <br><code>g++  -Wall </code> <i>filename</i><code>.cpp -o</code> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<code>script</code> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<code>enscript -Ecpp --color -W html -p</code><i>file_name</i><code>.cpp.html</code> <i>file_name</i><code>.cpp</code>
+    </center>
+     You will submit these files to D2L.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<ul>
+    <li>Each function/method should use comments to specify its <u>preconditions</u> &amp; <u>postconditions</u>, and document its <u>parameters</u> (e.g. <code>in</code>, <code>out</code>, or <code>in/out</code>)
+    <li>If you pass an array parameter to a function, and you don't intend to modify any of that array's elements, ensure that that array is passed <code>const</code>. (<i>see Gaddis p. 410</i>)
+</ul>
+<HR>
+<P>
+<HR>
+</BODY>
+</HTML>
+

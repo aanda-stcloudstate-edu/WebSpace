@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+  <title>Final Review (CSCI 201 Spring 2006) [A. A. Anda]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+</head>
+<body bgcolor="#FFFFFF">
+	<div align="center"><h1>Final Review</h1></div><br>
+	<div align="center"><h2>(CSCI 201 Spring 2006)</h2></div>
+	<div align="center"><h3>A. A. Anda</h3></div> <hr>
+   <h2>Unix</h2>
+  <ul>
+    <li>Definition of an <i>operating system</i></li>
+     <li>Hierachical File Structure
+     <ul>
+       <li><u>Creation</u>, <u>deletion</u>, <u>renaming</u> and
+       <u>movement</u> of<br>
+        <i><u>files</u></i> and <i><u>directories</u></i>
+       </li>
+       <li>Absolute and relative <i>pathnames</i></li>
+     </ul>
+     </li>
+     <li>Utility Programs</li>
+     <li><u>Octal</u> Permissions for <b>chmod</b></li>
+     <li><u>Redirecting</u> Standard I/O to and from <i>files</i>
+      and <i>programs</i></li>
+     <li><u>Wildcards</u> for filename generation (<i>globbing</i>)</li>
+  </ul>
+
+ <h2>C++</h2>
+  <ul>
+    <li><h4>Chapter 1</h4>
+    <ul>
+      <li>Organization and structure of a computer and its software</li>
+      <li>Computer languages</li>
+      <li>Compiling and Linking sequence and vocabulary</li>
+      <li>Software development cycle</li>
+    </ul>
+    </li>
+    <li><h4>Chapter 2</h4>
+    <ul>
+      <li>Structure of a program</li>
+      <li>Identifiers</li>
+      <li>Data Types
+      <ul>
+  <li> size </li>
+  <li> location </li>
+  <li> interpretation </li>
+</ul>
+      </li>
+      <li>Variables
+	    <ul>
+	      <li>declaration and definition</li>
+	      <li>initialization</li>
+	    </ul>
+      </li>
+      <li>Constants and literals</li>
+      <li>Standard stream I/O
+	    <ul>
+	      <li>Manipulators</li>
+	    </ul>
+      </li>
+      <li>General syntactic rules, e.g.
+	    <ul>
+	      <li>cAsE sensitivity</li>
+	      <li>statements terminated by semicolons</li>
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Chapter 3 [expressions]</h4>
+    <ul>
+      <li>expression categories:
+	    <ul>
+	      <li>primary</li>
+	      <li>compound</li>
+	      <li>assignment</li>
+	      <li>operators and operands:</li>
+		    <ul>
+		      <li>unary (1)</li>
+		      <li>binary (2)</li>
+		      <li>ternary (3)</li>
+		      <li><i>pre</i>fix, <i>in</i>fix, <i>post</i>fix</li>
+		      <li>precedence</li>
+		      <li>associativity</li>
+		      <li>integer <i>division</i> and <i>modulus</i></li>
+		    </ul>
+	      <li>side effects</li>
+	      <li>promotion hierarchy and <b>cast</b>ing</li>
+	    </ul>
+      </li>
+      <li>Statements:
+	    <ul>
+	      <li>null</li>
+	      <li>compound [block] and scope</li>
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Chapter 4 [functions]</h4>
+    <ul>
+      <li>top-down design</li>
+      <li><u>defining</u>, <u>declaring</u>, and <u>calling</u></li>
+      <li>parameter rules
+	    <ul>
+	      <li><u>formal</u> and <u>actual</u> parameters</li>
+	      <li>calling by <u>value</u> or <u>reference</u></li>
+	      <li><u>default</u></li>
+	    </ul>
+      </li>
+      <li>standard library
+	    <ul>
+	      <li><b>floor</b> and <b>ceiling</b></li>
+	      <li><b>pow</b></li>
+	      <li><b>srand</b> and <b>rand</b> --
+              <i>shifting</i> and <i>scaling</i></li>
+	    </ul>
+      </li>
+      <li><i>scoping</i></li>
+    </ul>
+    </li>
+    <li><h4>Chapter 5 [selection]</h4>
+    <ul>
+      <li><u>integer</u> and <u>boolean</u> representations of <i>logical</i> data</li>
+      <li><i>logical</i> operators (<u>and</u>, <u>or</u>, <u>not</u>, xor)
+	    <ul>
+	      <li>complement</li>
+	      <li>short ciruit</li>
+	      <li>De Morgan's Rule</li>
+	    </ul>
+      <li>relational operators  </li>
+      <li><b>if</b> statements
+	    <ul>
+	      <li>null <b>else</b></li>
+	      <li>nested</li>
+	      <li>simplified</li>
+	      <li><b>else if</b></li>
+	    </ul>
+      </li>
+      <li><i>ternary</i> conditional expressions</li>
+      <li><b>switch</b> statements
+	    <ul>
+	      <li>control expression rules</li>
+	      <li><i>fall through</i> cases</li>
+	      <li><i>disjoint</i> cases via <b>break</b></li>
+	      <li><b>default</b> <u>case</u></li>
+	    </ul>
+      </li>
+      <li>indentation conventions (whitespace for readability)
+	    <ul>
+	      <li><i>beware</i> of misleading indentation</li>
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Chapter 6 [repetition -- loops and recursion]</h4>
+    <ul>
+      <li><u>event</u> and <u>counter</u> based <i>control</i></li>
+      <li><i>pre</i>-test and <i>post</i>-test</li>
+      <li><u>initialization</u>, <u>test</u>, and <u>update</u></li>
+      <li>using <b>EOF</b> for file I/O</li>
+      <li>conversion between while and for loops</li>
+      <li><i>comma</i> expression</li>
+      <li><b>break</b> vs. <b>continue</b></li>
+      <li>nesting</li>
+      <li>common applications:
+	    <ul>
+	      <li><i>summation</i> or <i>product</i></li>
+	      <li><i>min</i> or <i>max</i></li>
+	      <li><i>any</i> or <i>all</i></li>
+	    </ul>
+      </li>
+      <li>recursion
+	    <ul>
+	      <li><u>base</u> and <u>general</u> case</li>
+	      <li><i>termination</i> analysis</li>
+	    </ul>
+      </li>
+      <li>algorithm efficiency analysis [complexity]
+	    <ul>
+	      <li><i>growth rate</i> <u>ranking</u> of (univariate) functions</li>
+	      <li><b>big-O</b> analysis</li>
+	      <li>common names for function families,
+	          e.g. <i>linear</i>, <i>quadratic</i>, or <i>exponential</i></li>
+	      <li>loop and nested loop analysis</li>
+	      <li>what is the effect on the complexity when the amount
+		  of work is <i>halved</i> for <i>each</i> successive iteration of a
+		  loop</li>
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Chapter 7 [text files]</h4>
+    <ul>
+      <li>cerr</li>
+      <li>input and output streams</li>
+      <li>user file opening and closing</li>
+      <li>initial user file input and output states</li>
+      <li>new format and syntax for using I/O functions and flags</li>
+      <li>file errors and recovery</li>
+    </ul>
+    </li>
+    <li><h4>Chapter 8 [arrays]</h4>
+    <ul>
+      <li><u>subscript</u> vs. <u>index</u></li>
+      <li>indexing <i>base</i></li>
+      <li><u>dimension</u> vs. <u>size</u></li>
+      <li><u>declaration</u>, <u>definition</u>, and <u>initialization</u></li>
+      <li>element access</li>
+      <li>passing to functions</li>
+      <li>frequency arrays and histograms</li>
+      <li>sorting algorithms:
+	    <ul>
+	      <li>selection</li>
+	      <li>insertion</li>
+	      <li>bubble</li>
+	    </ul>
+      </li>
+      <li>searching:
+	      <ul>
+	         <li>linear </li>
+	         <li>binary</li>
+	      </ul>
+      </li>
+      <li>multidimensional arrays (and how all of the above relate to them)</li>
+    </ul>
+    </li>
+    <li><h4>Chapter 9 [pointers]</h4>
+    <ul>
+      <li>pointer <u>constants</u> and <u>variables</u></li>
+      <li>pointer values and computer <i>memory addresses</i></li>
+      <li><u>address</u> and <u>indirection</u> (<i>dereference</i>) operators</li>
+      <li>pointer <u>declaration</u>, <u>definition</u>, and <u>initialization</u></li>
+      <li>pointer <i>flexibility</i></li>
+      <li>pointers and functions: as <u>parameters</u> and <u><b>return</b></u> values</li>
+      <li>pointer types, casting, levels of indirection, and compatibility</li>
+      <li><b>NULL</b> and <b>void</b> pointers</li>
+      <li><u>lvalues</u> and <u>rvalues</u> and their uses</li>
+      <li>interrelationships between <i>arrays</i> and <i>pointers</i></li>
+      <li>pointer arithmetic:
+	      <ul>
+	         <li><u>valid</u> vs. <i>invalid</i> operations </li>
+	         <li>implicit <i>offsets</i></li>
+	      </ul>
+      </li>
+      <li>using the <i>right-left</i> rule to understand (<i>disambiguate</i>) complicated
+          declarations</li>
+      <li><u><i>dynamic</i></u> memory:
+          <li><u>allocation</u> and <u>release</u> of memory from the <i>heap</i></li>
+          <li><i>ragged</i> arrays</li>
+      </li>
+    </ul>
+    <li><h4>Chapter 11.8 -- 11.11 [structs, unions, ennumerated types, typedefs]</h4>
+    </li>
+    <li><h4>Appendix A (can bring copy to exam)</h4>
+    <ul>
+      <li><b>ASCII</b> character encoding</li>
+    </ul>
+    </li>
+    <li><h4>Appendix B (can bring copy to exam)</h4>
+    <ul>
+      <li><u>Reserved</u> Words</li>
+    </ul>
+    </li>
+    
+    <li><h4>Appendix D [computer number systems]</h4>
+    <ul>
+      <li><u>binary</u>, <u>octal</u>, <u>decimal</u>, and
+      <u>hexadecimal</u> systems, their <i>notation</i>
+          and <i>conversion</i></li>
+      <li><u>signed</u> vs. <u>unsigned</u> integers</li>
+      <li>how size relates to range</li>
+      <li>4 common signed integer complement representation schemas:
+	      <ul>
+	         <li>sign and magnitude</li>
+	         <li>one's complement</li>
+	         <li>two's complement</li>
+	         <li>bias</li>
+	         <li>how many <i>zeros</i> in each</li>
+	      </ul>
+      </li>
+      <li>floating point:
+	      <ul>
+	         <li>how the <u>mantissa</u> and <u>exponent</u> relate to the
+		     <u>precision</u> and <u>range</u></li>
+                <li>how <i>size</i> relates to <u>precision</u> and </li>
+	         <li>how some rules of integer arithmetic don't hold
+		     for floats in all cases</li>
+	      </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Appendix E [limits.h and float.h] (can bring copy to exam)</h4>
+    <ul>
+      <li>understand what each constant means</li>
+    </ul>
+    </li>
+    <li><h4>Appendix F [standard functions]</h4>
+    (can bring function index F-1 copy to exam)
+    <ul>
+      <li>be able to link correct library</li>
+    </ul>
+    </li>
+    <li><h4>Appendix G [preprocessor directives]</h4>
+    <ul>
+      <li>simple define</li>
+      <li>include</li>
+    </ul>
+    </li>
+    </li>
+  </ul>
+</body>
+</html>

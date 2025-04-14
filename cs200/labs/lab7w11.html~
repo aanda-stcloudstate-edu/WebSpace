@@ -1,0 +1,50 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+    <head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <title>CSCI 200 Lab 7 Spring 2011 [A. A. Anda]</title>
+	<style type="text/css"> 
+	   BODY TT {color:maroon}
+        </style>
+    </head>
+    <body>
+	<center> 
+	    <h1>CSCI 200</h1> 
+ 
+	    <h2>Lab 7</h2> 
+ 
+	    <h3> 
+		[A. A. Anda]<br> 
+		Spring 2011
+	    </h3> 
+	</center>
+	
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li>Perform <i>abstraction</i> by defining and calling (using) <i>user-defined <tt>function</tt>s</i> with <i>parameters</i> &amp; <i><tt>return</tt> values</i> .</li>
+	</ul>
+	<h2>Lab Assignment:</h2>
+
+	Create Web pages which incorporate the requirements in each of the following Exercises in Reed:<br>
+	Define &amp; call user-defined functions wherever possible.<br>
+	Use <i>global</i> variables only for values that are constants (these constant values, specific to an application, should be defined in your user-defined library files)
+	<ol>
+	    <li> <u>Exercise 9.8</u> </li>
+	    <ul>
+		<li>Requires code written to perform Exercises 9.6 &amp; 9.7</li>
+	    </ul>
+	    <li> <u>Exercise 9.17</u> </li>
+	    <li> <u>Exercise 9.14</u> </li>
+	    <ul>
+		<li>Add to your set of responses from <a href="http://8ball.ofb.net/answers.html">here</a>.</li>
+	    </ul>
+	</ol>
+	    <p>
+	    When finished (after you&rsquo;ve tested and proofread each of your Web pages),<br>
+	    demonstrate features of your Webpage to the instructor or graduate assistant,<br>
+	    then submit your files to the appropriate D2L dropbox.
+    </body>
+</html>

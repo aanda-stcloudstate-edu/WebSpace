@@ -1,0 +1,44 @@
+//      Print a diamond based on program P06-08
+
+/*	Print number series 1 to a user specified limit 
+	in the form of a diamond.
+	Written by: A. Anda
+*/
+#include <iostream.h>
+
+int main (void)
+{
+//	Local Declarations
+	int row;
+	int col;
+	int limit;
+
+//	Statements
+	// Read limit
+	cout << "\nEnter a number between 1 and 9: ";
+	cin  >> limit;
+
+	for (row = limit; row >= 1; row--) // top of diamond
+		{
+		 for  (col = 1; col <= limit; col++) // left half
+			(row >= col) ? cout << col : cout << '*';
+		 cout << '*'; // center column
+		 for  (col = limit; col >= 1; col--) // right half
+			(row >= col) ? cout << col : cout << '*';
+		 cout << endl;
+		} // for row ... 
+	for (row = 1; row <= 2*limit+1; row++) // center row
+		 cout << '*';
+	cout << endl;
+	for (row = 1; row <= limit; row++) // bottom of diamond
+		{
+		 for  (col = 1; col <= limit; col++) // left half
+			(row >= col) ? cout << col : cout << '*';
+		 cout << '*'; // center column
+		 for  (col = limit; col >= 1; col--) // right half
+			(row >= col) ? cout << col : cout << '*';
+		 cout << endl;
+		} // for row ... 
+
+	return 0;
+}	// main

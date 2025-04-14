@@ -1,0 +1,101 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab 10 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 10</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with event-controlled AND counter-controlled
+loops, the non-associativity of floating point addition, and two different
+floating point sizes.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+<P> A <a href="http://www.jimloy.com/algebra/hseries.htm">harmonic series</a>
+is the sum of a sequence of terms, where the terms are
+the reciprocals of all of the set of positive integers:
+<tt>1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + 1/7 + ...</tt>
+
+<P> In mathematical theory, using <i>infinite precision</i> arithmetic,
+the infinite sum of a harmonic series is infinite (but it grows as slowly
+as a log function), and the <i>order</i> in which you sum the terms is irrelevant.
+
+<P> In computing practice, using <i>finite precision</i> arithmetic,
+the <u>order</u> in which we sum the terms affects the <i>accuracy</i>.<br>
+Most of the <i>significance</i> of a small number is lost when it is added to a
+large number.<br>
+When the <u>ratio</u> of the larger number to the smaller number becomes large
+enough, the sum will be identical to the larger number.<br>
+This behavior causes the <i>forward sum</i> (sum from largest to smallest terms)
+to be finite, and also to be less accurate, than the <i>backward sum</i>
+(sum from smallest to largest terms) of the same number of terms.<br>
+The <i>precision</i> of your floating point numbers also affects the
+<i>accuracy</i> and ultimate sum.
+
+<P> To illustrate this, your program will have four separate loops:
+<i>forward</i> and <i>backward</i> sums using <tt><B> float </tt></B>
+precision, and also forward and backward sums using <tt><B> double </tt></B> precision.
+
+<P> Because we don't know in advance the point at which the terms in the
+forward sum will cease contributing to the partial sum, we need to use
+an <u><i>event-controlled </i>loop</u>.<br>
+When the <i>sum stops changing</i>, we exit the loop,
+and subtract one [ 1 ] from the running count of terms we have added.
+
+<P> Now we can use the number of terms from the first loop to write
+<u><i>counter-controlled</i> loops</u> for the other three sums.
+
+<P> We then compare the three other sums with the <B> double </B> backward sum.
+
+<P> We will also then compare the <B> double </B> backward sum with a formula
+computed value for the sum:
+
+<P> H(n) = <tt>log(n) + Eulers + 1/(2 n) - 1/(12 n^2) + 1/(120 n^4)</tt>
+
+<P> where <tt>Eulers</tt> is a <tt>const double = 0.577215664901533</tt>
+
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab10</i>, and move to it.</li>
+
+<li>
+Copy <tt>~cs201400/lab10partial.cpp</tt> to your lab10 directory and
+copy it to <tt>lab10.cpp</tt>.
+</li>
+
+<li>
+Edit and complete <tt>lab10.cpp</tt> to solve the above problem.
+Name the executable lab10.
+</li>
+
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the source and the running of the program data for "checkout".
+</li>
+
+</ol>
+
+
+</body>
+</html>

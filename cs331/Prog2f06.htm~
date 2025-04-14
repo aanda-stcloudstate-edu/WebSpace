@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<title>CSCI 331 Software Systems Fall 2006 Project 2</title>
+
+</head>
+
+<body lang=EN-US style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems Fall 2006</h1>
+
+<h2>Project 2</h2>
+
+<h3>
+    PROJECT COLLABORATION TYPE: Individual.<br>
+    That means you should do the work on your own.<br>
+    (<i>However, you may discuss the project with others</i>)
+</h3>
+
+<h4>THE PROJECT:</h4>
+This is the second installment of our object-oriented programming project.
+<p>
+Add <u>methods</u> to the <u>classes</u> from program 1 to <b>store</b>
+<u>objects</u> as <u>records</u> in <u>files</u> and <b>load</b> objects
+from files using the <u><tt>IOBuffer</tt></u> classes described in Chapter 4.
+<p>
+Write a test program to show that your classes and methods work.
+<p>
+You will need to add <tt>Pack </tt>and <tt>Unpack </tt>methods to the
+classes from <i>Project 1</i> and figure out how to use the
+<tt>IOBuffer</tt> classes.
+<p>
+Use classes <tt>IOBuffer</tt>, <tt>VariableLengthBuffer</tt> and
+<tt>DelimitedFieldBuffer</tt> from the buffer class hierarchy.
+<p>
+As you read the code you will see that the author uses
+<u><tt>protected</tt></u> instead of <u><tt>private</tt></u>
+for the data members.<br>
+<i>All data members should be private.</i><br>
+Make <u><tt>protected</tt></u> those methods which
+<i>access</i> and <i>mutatate</i> these data members.
+<p>
+<b>Notice:</b> that in <tt>person</tt> the author uses arrays of
+characters instead of the class string.  Be sure to convert all of the author's
+<i>C strings</i> to <i>C++ strings</i>.
+
+<h4>Tool Requirements:</h4> 
+<ul>
+    <li>Use the <a href="http://www.stack.nl/~dimitri/doxygen">Doxygen</a> documentation system.
+     (<i>or the equivalent</i>)</li>
+    <li>Use a <a href="http://web.stcloudstate.edu/aanda/cs331.html#Make">Make</a>file.
+</ul>
+
+<h4>WHAT TO TURN IN:</h4> 
+
+<ol>
+    <li>Design document for the classes.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li>
+    Test data used along with an explanation of why you chose it and the
+    results of the tests.<br>
+    This should include a script file from the test runs.<br>
+    When this gets really long you can make a table showing what you used as
+    test data, the expected results, the actual results and what you did
+    about them.<br>
+    Leave the script file in you account until the program has been graded
+    and returned.<br>
+    Each test should be annotated on the script file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+<li><u>The source file of the program</u>.<br>
+    Also, leave a copy of the source file in your account until the graded
+    program is returned to you.<br>
+    (<font color="teal">20% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to run the program.
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+    <li>A short paragraph describing what you learned from this
+	assignment.<br>
+	Some of these questions can be answered using your <b>PSP</b> data:
+	Try to answer the questions:
+	<br>(<font color="teal">5% of your grade</font>)
+    <ul>
+	<li>How much time did you spend on the program?
+	<li>Did you plan well before going to the computer?
+	<li>Did you test the program completely?
+	<li>Did you learn anything new about the language?
+	<li>Did you learn anything new about the way you study or should study? 
+    </ul>
+</ol>
+
+
+</div>
+
+</body>
+
+</html>

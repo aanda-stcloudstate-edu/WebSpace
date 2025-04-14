@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 5 - Spring 2014 A. A. Anda</TITLE>
+</HEAD>
+<style type="text/css">
+    code{font-weight:bolder}
+</style>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2014<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 5</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For the following problem you will solve:
+<ol type=I>
+    <h5>General Documentation </h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.  This includes substituting descriptive constant identifiers for <i>magic numbers</i></li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In <code>vim</code>:</li>
+    <ul>
+	<li><code>:set sw=4</code>
+	<li><code>:set cindent</code>
+    </ul>
+    <P>
+    <li>compile your code with <br><code>g++  -Wall </code> <i>filename</i><code>.cpp -o</code> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<code>script</code> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<code>enscript -Ecpp --color -W html -p</code><i>file_name</i><code>.cpp.html</code> <i>file_name</i><code>.cpp</code>
+    </center>
+     You will submit these files to D2L.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<ul>
+    <li>For the following project, exploit <u>functions</u> as much as possible to enhance the modularization of your design.</li>
+    <li>Your <code>main()</code> function body should consist primarily of declarations, initializations, and function calls.</li>
+    <li>Each function should use comments to specify its <u>preconditions</u> &amp; <u>postconditions</u>, and document its <u>parameters</u> (e.g. <code>in</code>, <code>out</code>, or <code>in/out</code>)</li>
+    <li>If you pass an array parameter to a function, and you don't intend to modify any of that array's elements, ensure that that array is passed <code>const</code>. (<i>see Gaddis p. 410</i>)</li>
+</ul>
+<HR>
+<h3><b>Pointers</b> (and <i>dynamic</i> arrays)</h3>
+<P>
+Specifications
+<ol>
+    <li>
+	Define a global named constant for the number of months in a year (e.g. <code>MONTHS_IN_YEAR</code>)
+	and a global array for the number of days in each month:<br><br>
+	<center><code>const int DAYS_IN_MONTH[]={31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</code></center><br><br>
+    </li>
+
+    <ul>
+	<li>
+	    Because February has a variable number of days depending on the year you will want to add one day to
+	    <code>DAYS_IN_MONTH[1]</code> whenever you use it in an expression if it is a leap year.  This can be
+	    facilitated by always adding the function <code>leap_day(month, year)</code> to
+	    <code>DAYS_IN_MONTH[month]</code>, for all <code>month</code>s,
+	    where <code>leap_day()</code> is defined as:<br><br>
+		<code>
+		    <pre>
+			int leap_day(int month, int year)
+			{
+			    if(1 == month &amp;&amp; ( (0 == year % 400) || ( (0 != year % 100) &amp;&amp; (0 == year % 4) ) ) return 1;
+			    else return 0;
+			}
+		    </pre>
+		</code>
+	</li>
+    </ul>
+    <li>Write and call a function to generate a <a href="http://web.stcloudstate.edu/aanda/cs201/FG9.pdf#page=71">ragged array</a> which will be used for storing the daily temperatures for the year, where each month's temperatures are in their own row.</li>
+    <li>Write and call a function which reads the temperature data from this text file which contains the daily <i>low</i> temperature for each day in 2013 for Fairbanks, Alaska: <a href="http://web.stcloudstate.edu/aanda/cs201/FLT2013.txt">http://web.stcloudstate.edu/aanda/cs201/FLT2013.txt</a> into the ragged array containing the temperatures for the year.</li>
+    <li>
+	Write and call a function to display the daily temperatures:
+	<ol type="i">
+	    <li>Write a <i>header</i> line describing what you're displaying and for which year.</li>
+	    <li>On each line, write the name of the month followed by each day's temperature for that month.</li>
+	</ol>
+    </li>
+    <li>
+	Define and call a function which displays a table of statistical measures for each month of the year, where:
+	<ol type="i">
+	    <li>The first <i>header</i> line describes what you're displaying and for which year.</li>
+	    <li>
+		The a second header line consists of the names of the statistical measures.<br>
+		&nbsp;&nbsp;&nbsp;(each statistical measure name will serve as a column header)
+	    </li>
+	    <li>
+		On each line, write the name of the month followed by each statistical measure for that month.<br>
+		&nbsp;&nbsp;&nbsp;(aligned under its respective column heading)
+	    </li>
+	    <li>
+		The statistical measures are:
+		<ul>
+		    <li><a>Maximum</a></li>
+		    <li><a>Minimum</a></li>
+		    <li><a href="http://en.wikipedia.org/wiki/Arithmetic_mean#Definition">Mean</a> (<i>arithmetic</i>)</li>
+		    <li><a href="http://www.mathsisfun.com/median.html">Median</a></li>
+		    <li><a href="http://www.investopedia.com/terms/m/mode.asp">Mode</a> (<i>lowest</i>)</li>
+		    <ol>
+			<li>Find the maximum (<code>max</code>) and minimum (<code>min</code>) values of the temperatures for that month;</li>
+			<li><i>dynamically</i> create a <u>frequency array</u> of size <code>(max - min + 1)</code>);</li>
+			<li>Declare an <code>int</code> pointer and initialize it to the <u>address</u> of the <code>[-min]</code> element of the frequency array.  Use this pointer as your frequency array;</li>
+			<li>The <u>index </u> of the <i>leftmost</i> maximum of the frequency array will be the <i>lowest</i> <u>mode</u>.</li>
+		    </ol>
+		    <li><a href="http://standard-deviation.appspot.com">&sigma;</a> (<i>Standard Deviation</i>)</li>
+		</ul>
+	    </li>
+	    <li>The calculation of each statistical measure should be encapsulated in its own <u>function</u></li>
+	</ol>
+    </li>
+    <li>At appropriate scoping levels, close any open files (<i>that you have no further use for</i>), and release back to the <i>heap</i> all dynamically allocated memory objects (<i>that you have no further use for</i>).</li>
+</ol>
+<HR>
+</BODY>
+</HTML>
+

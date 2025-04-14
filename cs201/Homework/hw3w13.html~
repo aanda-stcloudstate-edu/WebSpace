@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Assignment 3 - Spring 2013 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2013<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Assignment 3</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For the following problem you will solve:
+<ol type=I>
+    <h5>General Documentation </h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> <u>indenting</u> to enhance the
+	readability of your code.  In <tt>vim</tt>:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <li>At least a day prior to submission of your source code and test script, submit to your D2L dropbox a flowchart for each problem in this assignment.
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall -o</tt> <i>filename</i> <i>filename</i><tt>.cpp</tt><br>(ensure that there are no compiler errors and as few warnings as possible)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).<br>
+    (Compare your computed <i>day of the week</i> with the output of the Unix <tt>cal</tt> function.)<br>
+    There should be several runs.<br>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<tt>enscript -Ecpp --color -W html -p </tt><i>file_name</i><tt>.cpp.html</tt> <i>file_name</i><tt>.cpp</tt>
+    </center>
+    (for each program) You will submit these files.</li>
+</ol>
+<P>
+<HR>
+<center>
+    <h3>HW 3.1: Day of the Week</h3>
+</center>
+Write a program that, given a target date (month, day, year), will display the day of the week for that date.<br>
+
+You will need the following algorithm:
+<ol>
+    <li>Calculate the day of the week for December 31 of the preceding year by using the follwing formula:<br>
+	<center>
+	    ( (year - 1) * 365 + &lfloor; (year - 1) / 4 &rfloor; - &lfloor; (year - 1) / 100 &rfloor; + &lfloor; (year - 1) / 400 &rfloor; ) % 7
+	</center>
+	where the result has the following interpretation:
+	<ul>
+	    <li> 0: Sunday
+	    <li> 1: Monday
+	    <li> 2: Tuesday
+	    <li> 3: Wednesday
+	    <li> 4: Thursday
+	    <li> 5: Friday
+	    <li> 6: Saturday
+	</ul>
+	<li> Now that you have the day for December 31 of the preceding year,
+	    you then calculate (and add to the previous result) the sum of the total number of days in each month preceding the target month.<br>
+	    Use a <tt>switch</tt> statement having <i>fall-through</i> logic for this calculation.<br>
+	    E.g. if the target month is December,<br>
+	    the <tt>switch</tt> statement will execute the top case which adds the number of days in November to the sum,
+	    <br>then it falls down to the next case which adds the number of days in October, and so on through January.<br>
+	    For a target month of January the <tt>switch</tt> statement would add no days.<br>
+	    For February, you will need to compute whether it has 28 or 29 days by adding one if the year is divisible by 4 or by 400 but not by 100.
+	    <li> To this sum, now add the target day of the month.<br>
+	    This number, modulo seven, is the day of the week for the target date using the above encoding scheme.
+	    <li> For extra credit, use <u>Enumerated Data Types</u> (<i>see Gaddis, Chapter 11.12</i>) for the
+	    <u>days of the week</u>, the <u>months</u>, and the <u>number of days in each month</u>.
+<ol>
+<HR>
+<center>
+    <h3>HW 3.2: Quadratic Formula</h3>
+</center>
+Write a program that tries to find the roots of the quadratic polynomial [ <i>a x</i><sup>2</sup> + <i>b x + c</i> ] using the quadratic formula.<br>
+Handle the following input coefficient conditions:
+<ul>
+    <li>If both <i>a</i> and <i>b</i> are zero, output that "<tt>there is no solution</tt>".
+    <li>If <i>a</i> only is zero, then there is a single real root, ( -<i>c/b</i> ).
+    <li>If <i>b</i> only is non-zero, then there is a single real root which is <i>zero</i>.
+    <li>If the <i>discriminant</i> [ (<i>b</i><sup>2</sup> - 4<i>ac</i>)] is zero,<br>
+	then the two real roots will have the same value, ( -<i>b</i>/(2<i>a</i>) ).
+    <li>If the <i>discriminant</i> is negative, output the roots as a complex conjugate pair.
+    <li>else output the two distinct real roots.
+</ul>
+<P>
+You can check your computed results with this <a href="http://math.about.com/library/blquadraticcalc.htm"><i>quadratic equation calculator</i></a><br>
+<P>
+Make sure that your set of test data exercises every branch of the logic!<br>
+<P>
+<b>Note:</b> in practice, one would use the following more accurate <a href="http://en.wikipedia.org/wiki/Quadratic_equation#Floating_point_implementation"><i>Floating point implementation</i></a>
+<P>
+<HR>
+</BODY>
+</HTML>
+

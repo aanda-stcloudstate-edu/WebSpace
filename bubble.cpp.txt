@@ -1,0 +1,121 @@
+//	P08-06 bubbleSort
+
+/*	Test driver for sorting. Includes Program 8-7, bubbleUp.
+	Written by: Anda
+	Date:		12-10
+*/
+#include <iostream.h>
+#include <iomanip.h>
+#include <stdlib.h>
+
+const int MAX_ARY_SIZE = 50;
+const int COLUMNS = 10;
+int comparisons = 0;
+int exchanges = 0;
+
+//	Prototype Declarations 
+	void bubbleSort	(int list [ ], int last, char sortDirection);
+	void bubbleUp (int list[ ], int first, int last, char sortDirection); 
+	
+int main (void) 
+{
+//	Local Declarations 
+	int i;
+        int counter;
+        char sortDirection;
+	int ary[ MAX_ARY_SIZE ];
+
+//	Statements 
+
+        cout << "\nEnter the character 'a' to select an ascending sort,\n" <<
+        "else enter the character 'd' for a descending sort: " << endl;
+        cin >> sortDirection;
+
+        counter = 0;
+	cout << "\nUnsorted array: " << endl;
+	for (i = 0; i < MAX_ARY_SIZE; i++)
+            {
+             ary[i] = rand()%100;
+             counter++;
+             cout << setw(3) << ary[i];
+             if (counter >= COLUMNS)
+                {
+                 counter = 0;
+                 cout << endl;
+                }
+            }
+        cout << endl;
+		
+	bubbleSort (ary, MAX_ARY_SIZE - 1, sortDirection);
+
+        counter = 0;
+	cout << "\nSorted array:   " << endl;
+	for (i = 0; i < MAX_ARY_SIZE; i++)
+            {
+             counter++;
+             cout << setw(3) << ary[i];
+             if (counter >= COLUMNS)
+                {
+                 counter = 0;
+                 cout << endl;
+                }
+            }
+        cout << endl;
+        cout << "There were " << comparisons << " comparisons." << endl;
+        cout << "There were " << exchanges << " exchanges." << endl;
+
+	return 0;
+}	// main 
+
+
+ 
+/*	Sort list using bubble sort. Adjacent elements are 
+	compared and exchanged until list is completely ordered.
+	Pre  The list must contain at least one item.
+	     last contains index to last element in list.
+	Post List has been rearranged in sequence low to high.
+*/
+void bubbleSort (int list [ ],
+                 int last, char sortDirection)
+{
+//	 Local Declarations 
+	int current;
+
+//	Statements 
+	 for(current = 0; current < last; current++)
+	    bubbleUp (list, current, last, sortDirection);
+	return;
+}	// bubbleSort 
+
+/*	Move the lowest element in unsorted portion of an array
+	to the current element in the unsorted portion
+	Pre   list must contain at least one element
+	      current identifies start of unsorted data
+	      last identifies end of the unsorted data
+	Post  Array segment has been rearranged so that lowest 
+	      element now at beginning of unsorted portion.
+*/ 
+void bubbleUp (int list[ ], 
+               int current,
+               int last, char sortDirection)
+{
+//	Local Declarations 
+	int walker;
+	int temp;
+
+//	Statements 
+	for (walker = last; walker > current; walker--)
+
+	   {
+	   comparisons++;
+	   if (sortDirection == 'a' ? list[ walker ]  < list[ walker - 1 ]
+	                            : list[ walker ]  > list[ walker - 1 ])
+	     {
+	       exchanges++;
+	       temp             = list[walker];
+	       list[walker]     = list[walker - 1];
+	       list[walker - 1] = temp;
+	      } // if 
+	   }
+	return;
+}	// bubbleUp 

@@ -1,0 +1,61 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>CSCI 200 Lab 11 Spring 2010 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 200</h1></center>
+
+<center>
+<h2>
+Lab 11</h2></center>
+
+<center>
+<h3>
+    [A. A. Anda]<br>
+    Spring 2010
+</h3></center>
+
+<hr WIDTH="100%">
+<h2>Introduction:</h2>
+This lab exercises the ability to use <b>Conditional Repetition</b>.
+<h2>Lab Assignment:</h2>
+
+Create a new folder, <i>lab11</i>, and move to it.
+<p> 
+
+Using <tt> <a href="http://www.dave-reed.com/book/Chapter13/stats.html">stats.html</a>
+</tt> from Reed's
+<a href="http://www.dave-reed.com/book/source.html">resource page</a>,
+Implement Exercises:
+<ol>
+    <li>13.6 &amp; 13.7</li>
+    <ul>
+	<li>The <u>number of rolls</u> should be a <u>multiple</u> of <b>36</b>. (<i>this is so that the expected number of rolls of any specified value is a whole number</i>)</li>
+	<li>Display the expected frequency (how many times out of 36) and both the <a href="http://en.wikipedia.org/wiki/Relative_error">absolute &amp; relative error</a> from the expected frequency.</li>
+    </ul>
+    <li>13.17</li>
+</ol>
+<p>
+For this exercise:
+<ol>
+    <li>The Web page file name should indicate the lab number.</li>
+    <li>change the <u><tt>&lt;TITLE&gt;</tt></u> to consist of:</li>
+    <ol>
+	<li>Your name</li>
+	<li>The lab number</li>
+    </ol>
+</ol>
+
+When finished:
+<ul>
+    <li>After testing thoroughly, submit your exercises 13.7 &amp; 13.17 solution Web pages to the dropbox.</li>
+    <li>Also, submit a screenshot of each to the dropbox.
+</ul>
+
+</body>
+</html>

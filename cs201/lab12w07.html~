@@ -1,0 +1,85 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab 12 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 12</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+
+This lab provides experience with <tt>class</tt>es.
+
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+The <u>class</u>, a variation on the <tt>struct</tt>, encourages the OOP
+attribute of <i>data hiding</i> by having <u>data members</u> be
+<i>private</i>by default.
+<u>Methods</u> (<i>functions</i>) are <i>public</i>.<br>
+The two chief methods are <i>accessors</i>, which read the private data,
+and <i>mutators</i>, which modify the private data.
+
+The problem we will be solving is that of creating a 3D moving point class.
+
+
+<h4> Solution Specification:</h4>
+<ol>
+    <li> Create a new directory, <tt>lab12</tt>, and move to it.
+
+    <li> Declare a <tt>class</tt> (<b>particle3d</b>) containing the following
+    data members:
+    <ul>
+	<li> <tt>double</tt> x, y, and z position components
+	<li> <tt>double</tt> x, y, and z velocity components
+    </ul>
+
+    <li> Declare the following methods for this class:
+    <ul>
+	<li>An <i>accessor</i> for each component
+	<li>An <i>mutator</i> for each component
+	<li>A <i>set</i> function for the class that uses the mutators to set all data member values.
+	<li>A <i>distance</i> member that returns the point's distance from the origin
+	<li>A <i>velocity</i> member that returns the point's speed.
+	<li>A <i>movement</i> member that takes time as a parameter and moves the particle according to its speed.
+	<li>A <i>where</i> member that prints a particles position and component velocity.
+	<li>any other relavent functions that you can think of...
+    </ul>
+
+    <li> Declare the following external functions that use the class:
+    <ul>
+	<li> A function to return the distance between two particles
+	<li> A function to return the speed difference between two particles
+    </ul>
+
+
+    <li>Once working, refactor your program to create a new version using
+        <u>hierarchical</u> classes:
+	<ul>
+	    <li> the position and velocity should have their own classes
+	    and methods
+	</ul>
+
+    <li> When correct, generate via <tt>enscript</tt> an HTML printout of the
+    sources, and demonstrate, via <tt>script</tt>, the sources and the
+    running of the program data.<br>
+    Submit to D2L.
+</ol>
+
+</body>
+</html>

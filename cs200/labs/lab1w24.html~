@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+       <title>CSCI 200 lab1 Spring 2024 [Professor A. A. Anda]</title>
+       <style type="text/css"> 
+	   BODY TT {color:maroon}
+       </style>
+       
+    </head>
+    <body>
+
+	<center>
+	    <h1>CSCI 200</h1>
+
+	    <h2>Lab 1</h2>
+
+	    <h3>
+		[Professor A. A. Anda]<br>
+		Spring 2024
+	    </h3>
+	</center>
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li> Use an editor to create a Web page in your personal Web space on the Campus X-drive.</li>
+	    <li> Submit a link to this Web page to the Lab1 D2L Assignment dropbox</li>
+	</ul>
+	<h2>Lab Assignment:</h2>
+
+	<ol>
+	    <li> Create a new directory, <b><tt>Labs</tt></b>, in your class account directory.</li>
+	    <li> Create a new directory, <b><tt>Lab1</tt></b>, in your <b><tt>Labs</tt></b> directory.</li>
+	    <li> Move into your <b><tt>Lab1</tt></b> directory</li>
+	    <li> Using a <span style="color:fuchsia"><b><u><i>syntax-highlighting</i></u></b></span> (e.g. <b><u>gedit</u></b>) editor, open a new file to edit.
+		    Save it as <tt>Lab1.html</tt>.</li>
+	    <li>Type the source code from Figure 2.17 (Demo8.html) on page 32 of Reed into Lab1.html</li>
+	    <ul>
+		<li>When HTML tags {<b>&lt;</b><i>something</i><b>&gt;</b>...<b>&lt;/</b><i>something</i><b>&gt;</b>}occur in pairs, type the tag pair first, then insert their contents between them.</li>
+		<ul>
+		    <li>(<i>This ensures that you never forget to include the closing tag</i>)</li>
+		</ul>
+		<li>Change Demo8.html to Lab1.html in the source code.</li>
+		<li>Add the full pathname of this file as a comment at the top of your source code.</li>
+	    </ul>
+	</ol>
+
+	When finished (after you&rsquo;ve <u>proofread</u> your Web page), submit your file to the appropriate
+	    <a href="http://huskynet.stcloudstate.edu/instructional/d2l/default.asp">D2L</a> dropbox.
+    </body>
+</html>

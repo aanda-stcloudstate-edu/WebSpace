@@ -1,0 +1,174 @@
+			CSCI 331 (Sec. 1) [000332]
+ 		        Software Systems
+		        Fall 2005 SYLLABUS
+
+INSTRUCTOR:	Andrew A. Anda, Ph.D., Asst. Prof. of Computer Science
+OFFICE:		ECC-223		 Telephone:	(320)308-2044
+E-MAIL:		cs331100@csci.stcloudstate.edu
+Web Site: http://web.stcloudstate.edu/aanda/cs331.html
+OFFICE HOURS:	M: 10:00 - 11:50
+                   15:00 - 15:50
+                T: 10:00 - 10:50
+                   13:00 - 15:50
+                W: 10:00 - 10:50
+                   15:00 - 15:50
+                H: {By appointment only}
+                F: 10:00 - 10:50
+                   15:00 - 15:50
+                {and by appointment}
+
+CLASS TIME AND LOCATION:
+    Class: MWF: 14:00 - 14:50 in ECC 135
+
+REQUIRED TEXT:	* File Structures: An Object-Oriented Approach with C++,
+                  M.J. Fox, B. Zoellick, G. Riccardi, Addison Wesley Longman,
+                  1998.
+		* Introduction to the Personal Software Process,r
+                  W. S. Humphrey, Addison Wesley, 1997.
+
+COURSE DESCRIPTION:
+    Problem solving strategies and concepts applied in the context of issues
+    associated with the design and implementation of software systems using
+    a combination of current software packages/environments. Subjects
+    addressed include file processing, data modeling and mapping to storage
+    structures, data base systems, and software design and implementation.
+
+TOPICS (not necessarily in order of coverage):
+    * Introduction to software engineering
+    * External data structures, files, hashing, 2/3 and b-trees
+    * Sequential file processing
+    * Sorts and Merges
+    * Secondary storage media
+    * Introduction to database
+    * and more...
+
+PREREQUISITES:
+    [Prereq.: CSCI 220 or ECE 221; CSCI 301]
+    I assume that all students in this class have passed the prerequisite
+    CSCI and MATH courses, or their equivalents.
+    If you have not had ALL of these courses you should drop this course until
+    you have passed all of the prerequisites.
+    We do not have time for an extensive recapitulation of topics covered in
+    the prerequisite courses.
+
+CLASS ACCOUNTS:
+    You will be given an account for use in this class.  All work for this
+    class must be done in this account and the account must not be used for
+    any other class.  You may not let anyone else use the account unless that
+    person is a student in this class and is working on a class project
+    with you.
+    You also have the option of being issued a magnetic access card for our
+    computer labs.  These are to be returned at the final.  If you fail to
+    return your access card, we will fail to issue you a final passing grade.
+
+PROGRAMMING ASSIGNMENTS HOMEWORK AND IN CLASS WORK:
+    There will be 4 to 6 programming assignments.  These must be handed in at
+    the beginning of class on the day they are due.  No allowances will be
+    made for down time on the computer, so I suggest you begin each assignment
+    as soon as you receive it.  Programs not turned in on the Due date will be
+    penalized.  A program is late if it is turned in after the beginning of
+    class on the due date.
+
+    A program must compile to receive any credit.  Keep in mind that I expect
+    all programs to produce correct output given error free input.  Check your
+    output before getting the final copy to turn in.  Don't assume that a
+    program that produces some output without terminating abnormally is
+    correct.  Test your program carefully and extensively.  You have not
+    tested your program if you have not executed every line of code.
+
+    The grade you get on a program is based on the code, the documentation and
+    how well it is tested.  To receive better than a C on a program it must do
+    more than produce correct output given correct input.  By this I mean your
+    program must be robust, well documented, well tested and well written. 
+
+    Your grade on the group projects will also be based on how well you
+    cooperate with, contribute to and participate in the group you are
+    assigned to.  Your contributions to your group's efforts will be assessed
+    by your peers.
+    * "Boat anchors" will be significantly penalized.
+    * "Heros" will be significantly rewarded.
+
+    Missing class on days that we have in-class assignments will result in a
+    zero for that assignment.  These assignments cannot be made up.  If you
+    have trouble getting to class drop now so that someone else can use the
+    spot.
+
+    All homework, documentation and programs must be neat.  Here is how you
+    can tell if yours is neat.  All homework is due before class starts on
+    the due date and the same rules apply for late homework as for late
+    programs. I will not grade homework that is not neat.
+
+    1.	Is it written on only one side of the page?
+    2.	Is it on standard sized paper using one-inch margins?
+    3.	Are the problems presented in order and numbered?
+    4.	Is your name on each page?
+    5.	Are the pages stapled together?
+    6.	Can I read the work without taking the staples out?
+    7.	Are there no ragged edges on the papers?
+
+ACADEMIC HONESTY:
+    You are expected to do your own homework.  If you copy someone else's
+    work or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.  Use of recording devices during exams is prohibited.
+    If you must quote or paraphrase another source, citation is essential,
+    otherwise plagiarism has been committed.  You are expected to be familiar
+    with your rights and obligations as outlined in the "Code of Conduct"
+    [http://www.stcloudstate.edu/studenthandbook/code]  See also:
+    [http://www.stcloudstate.edu/studenthandbook/policies/cheating.asp]
+    [http://www.stcloudstate.edu/studenthandbook/academic_policies/honesty.asp]
+
+STUDYING IN GROUPS:
+    I encourage you to study with someone else in the class, but when you
+    prepare the final documents to turn in be sure that it is your own words
+    and sentences and that your understand it.  If you represent someone
+    else’s work as your own or allow someone else to turn your work in as
+    theirs you will be turned in for cheating and will be given an F. 
+
+DECORUM: Conduct yourself so as not to distract others. In particular
+    * Turn off all cell phones, watch alarms, and similar devices.
+    * Do not engage in distracting activities like reading a newspaper
+      or sleeping. (some of you snore...)
+    * Arrive for class on time, and be ready to begin.
+      If you must be late, be quiet.
+    * If you are early, sit toward the middle of a row.
+    * Do not start packing up before class ends.
+
+ATTENDANCE:
+    You are responsible for knowing what happens at each class meeting.
+    You should expect to spend a lot of time on this class.  It is not an
+    easy class.  If you are having trouble in class I expect to see you in
+    my office.  If you don't tell me you are having troubles how do you
+    expect me to know?  If you can't come during my office hours, make an
+    appointment for another time.
+
+QUIZZES:
+    There will be a sequence of quizzes of assigned readings.
+EXAMS:
+    There will be a small set of intermediate exams and a comprehensive
+    final exam.
+    Exams will be based on the notes; that is, on the presentations in class
+    as well as on the assigned readings and assignments.
+    Calculators will be neither necessary nor allowed.
+    Make-up exams will be given in only in extreme (or university
+    sanctioned) circumstances and only with prior notice.
+
+GRADING:
+	Your grade will be determined by the contributions of your scores
+	on assignments,  quizzes, intermediate and final exams.
+	Makeup of tests, quizzes, and exams are by prior arrangement only.
+
+APPROXIMATE POINTS:
+	Assignments		30%
+	Quizzes 		10%
+	Hour Exams		30%
+	Final Exam		30%
+
+FINAL EXAM: Wednesday, December 21 13:00 - 15:30 in ECC 135.
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************

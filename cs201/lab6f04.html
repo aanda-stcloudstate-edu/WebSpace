@@ -1,0 +1,158 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab6 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 6</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2>Introduction:</h2>
+This lab exercises the ability to:
+<ul>
+    <li> modify an existing program to solve a related problem
+    <li> exploit functions to encapsulate and, additionally, reuse code
+</ul>
+<h2>Lab Assignment:</h2>
+
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab6</i>, and move to it.</li>
+
+<li>
+Write a working program which prompts a user for an integer value in the range
+[0, 4294967295].
+The program will then print out the individual digits of the number on a line
+with three spaces between the digits.
+The first line starts with the leftmost digit and prints all ten digits.
+The second line starts with the second digit from the left and prints nine digits followed by the first digit.
+Each subsequent line is the previous line shifted one place to the left with
+the first digit of the previous line wrapped around to the end of the line.
+(<i>this is called a circular shift</i>)
+When ten lines have been printed, stop and exit.
+E.g.
+<pre>
+   1   2   3   4   5   6   7   8   9   0
+   2   3   4   5   6   7   8   9   0   1
+   3   4   5   6   7   8   9   0   1   2
+   4   5   6   7   8   9   0   1   2   3
+   5   6   7   8   9   0   1   2   3   4
+   6   7   8   9   0   1   2   3   4   5
+   7   8   9   0   1   2   3   4   5   6
+   8   9   0   1   2   3   4   5   6   7
+   9   0   1   2   3   4   5   6   7   8
+   0   1   2   3   4   5   6   7   8   9
+</pre>
+</li>
+
+<ol>
+    <li>
+	Use your program from <b>Lab 5</b> as a
+	template for this program.&nbsp; Be sure to copy it over to a new file
+	with another name.&nbsp; {<i>This is one example of code reuse</i>}</li>
+
+    <li>
+	Ensure that your program has updated <u>comment </u>headers describing
+	your identifying information, the date, and the purpose of the program.
+    </li>
+
+    <li>
+	<ul>
+	    <li>
+		<u>Prompt</u> the user with explicit instructions on entering a decimal 
+		number of up to <u>ten</u> digits long in the interval [0, 4294967295].
+		The leading digit must be nonzero. {<i>or it will
+		be interpreted as an octal number</i>}</li>
+	    </li>
+
+	    <li>
+		Use your results from <b>lab4</b> to determine the necessary
+		type for the variable which stores the input value.
+	    </li>
+	    <li>
+		Encapsulate the input statements in a function.
+		<ul>
+		    <li>
+			(Can you use <i>Pass by Value</i>?)
+		    </li>
+		</ul>
+	    </li>
+	</ul>
+    </li>
+    <li>
+	<ul>
+	    <li>
+	    Encapsulate the <u>circular shift</u> statements in a function.
+		<ul>
+		    <li>
+			(Can you use <i>Pass by Value</i>?)
+		    </li>
+		</ul>
+	    </li>
+	    <li>
+		This function then calls the output function before returning.
+	    </li>
+	</ul>
+    </li>
+
+<li>
+<ul>
+<li>
+Use an <i><u>identical</u></i> output statement for each line of digits output.
+</li>
+<li>
+Encapsulate that output statement in a function.
+</li>
+<ul>
+<li>
+(Can you use <i>Pass by Value</i>?)
+</li>
+</ul>
+</ul>
+</li>
+
+<li>
+    Prototype your program structure with <u><i><b>stubs</b></i></u>
+    before you populate your functions with code.
+    <ul>
+	<li>
+	    (<i>See Program 4-13 on p. 165</i>)
+	</li>
+    </ul>
+</li>
+
+<li>
+At this point, compile and run your program to ensure that it is working
+correctly before we move on to the next stage.&nbsp; The written bits must
+be in the <u>same order</u> as the input bits.&nbsp; Use several test numbers.</li>
+
+<li>
+Compile and run.&nbsp; make sure the program is working correctly.&nbsp;
+Use several test numbers.</li>
+
+<li>
+When correct, use <b>script</b> to generate a printout of the source followed
+by a demonstration of the execution of the program to submit.</li>
+    <ol>
+	<li>
+	Use the following data to demonstrate: [1234567890], [4294967295], [987654321], [1].
+    </ol>
+</ol>
+</ol>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta content="UTF-8">
+	<TITLE>SCSU CSCI 201 [1 &amp; 2] Lab4, Computer Science 1, Spring 2020, A. A. Anda</TITLE>
+    <style>
+	code {font-family: courier; font-weight: bold; color:MidnightBlue}
+    </style>
+    </head>
+<body BGCOLOR=white TEXT=black>
+
+<center>
+    <h3>SCSU CSCI 201 [1 &amp; 2], Computer Science 1, Spring 2020, A. A. Anda</h3>
+</center>
+
+<center> <h1> Lab 4</h1></center>
+
+<hr WIDTH="100%">
+
+<h3>Lab Assignment:</h3>
+
+Note: Everything in this lab assignment, unless otherwise stated, must be performed on the appropriate server.
+
+<ol TYPE=I>
+
+    <li>
+	Create the directory <code>lab4</code> in your <code>labs</code> directory, then move to it (you can use the <code>mv</code> <i>or</i> <code>pushd</code> command in Unix to move to a directory).
+    </li>
+
+    <li>
+	Perform LAB 4.1 - 4.4 and LAB 4.5 <i>Option</i> 2.
+    </li>
+
+    <li>
+	Use your editor to write the answers to the questions (including pre-lab) and exercises in
+	<a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/9e/Labs/PDFs/LM_Chapter04_9e.pdf">Lab 4</a>
+	in the file <code>Lab4answers.txt</code> locating it in directory <code>lab4</code>.<br>
+	Then submit the file (.txt or .doc) to your <code>lab 4</code> dropbox in D2L.<br>
+	As with all assignments submitted to a dropbox, your name, your StarID login, the assignment category &amp; number [e.g. Lab 4],
+	and the date (<i>when you completed the file</i>) must be included at the top of your file.
+    </li>
+
+    <li>
+	Compile with <code>g++ -Wall -o <i>name</i> <i>name</i>.cpp</code>
+    </li>
+
+    <li>
+    Note: for each lab program, rewrite the <u>equivalence test expression</u> if the <u><i>second</i> operand</u> for a <u>equivalence operator</u>
+    is a constant (literal) so that instead the <u><i>first</i> operand</u> is the constant.<br>
+    (When the first operand is a literal, see what effect that has on the compilation if you remove one of the equals signs ['='].)
+    </li>
+
+    <li>
+    When you are sure that each program is working correctly, use the <code>script</code> command to display first the source file, then execution, 
+    of each lab assignment program.<br>
+    If the numbered Lab (e.g. Lab 4.2) has multiple exercises, display and run only the final exercise.<br>
+    Answer any questions in a separate <code>.txt</code> file. <br><br>
+    The <code><b>^D</b></code> character will end the <code>script</code> session.<br>
+    What you enter into your <code>script</code> session will look like this:
+    <pre><code>
+	&gt;script -a Lab4typescript.txt
+	&gt;g++ -o &lt;program1&gt; &lt;program1&gt;.cpp
+	&gt;&lt;program1&gt;
+	    (input to &lt;program1&gt; here {if any})
+	&gt;g++ -o &lt;program2&gt; &lt;program2&gt;.cpp
+	&gt;program2
+	    (input to &lt;program2&gt; here {if any})
+	    .
+	     .
+	      .
+	&gt;^D
+    </code></pre>
+    Submit <code>Lab4typescript.txt</code> to the D2L Dropbox.
+    Also, submit to your D2L Dropbox a syntax-highlighted PDF file for each source code that you execute and test in your script session.<br>
+    Each PDF file should have the same name as the source file with the exception of the file extension. (<code>.gpp</code> &rarr; <code>.pdf</code>)
+    </li>
+
+</ol>
+Here are the authors' source files for this lab:
+<code>
+<ul>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab4/initialize.cpp">initialize.cpp</a>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab4/grades.cpp">grades.cpp</a>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab4/LogicalOp.cpp">LogicalOp.cpp</a>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/Gaddis/7e/Labs/SourceCode/Lab4/switch.cpp">switch.cpp</a>
+</ul>
+</code>
+
+</body>
+</html>

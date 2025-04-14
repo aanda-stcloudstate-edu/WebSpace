@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI 331 &mdash; Spring 2021 &mdash; Group Project &mdash; Zip Code 2.0</title>
+    <style>
+	code{font-family: courier; font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems &mdash; Spring 2021</h1>
+
+<h2><u>Zip Code</u> Group Project 2.0</h2> 
+
+<p>
+<h2>Objectives and Requirements</h2>
+<ol>
+    <li>Create a CSV (comma separated) file from this <a href="http://web.stcloudstate.edu/aanda/cs331/w19/us_postal_codes.xlsx">XLSX file</a>.</li>
+    <li>Create a CSV (comma separated) file from this row-<i>randomized</i> <a href="http://web.stcloudstate.edu/aanda/cs331/w19/us_postal_codes_ROWS_RANDOMIZED.xlsx">XLSX file</a>.</li>
+    <ul>
+	<li>Delete the column of random values before saving as a CSV file</li>
+    </ul>
+    <li>Process sequentially a CSV file using a buffer class. {functionality from Group Project 1.0}</li>
+    <ul>
+	<li>ensure that Group Project 1.0 works equivalently for the <i>row-randomized</i> XLSX file.</li>
+    </ul>
+    <li>Convert both CSV files to a file structure format (beginning with a header record) where the fields are still comma separated, but the records are length indicated.</li>
+    <li>Modify your <b>buffer class</b> to <u>read</u> and <u>unpack</u> a Zip Code Record from a <i>length-indicated</i> Zip Code file.
+    <li>Create a buffer class to read and write the data file header record
+    <li>Repeat Group Project 1.0 with these two new <i>length-indicated</i> files.</li>
+    <li>Create (in RAM), write (as a file), and read (back into RAM), a primary key index that can be used to display the Zip Code data for all Zip Codes listed on the command line.</li>
+    <ul>
+	<li>Use a command line flag (e.g. <code>-Z56301</code>) to indicate each Zip Code record to search for.</li>
+	<li>If the Zip Code record is not in the file, display a message to that effect.</li>
+	<li>Test Run Demonstration: for each of the two Zip Code data and index file pairs</li>
+	<ol>
+	    <li>Run the test program - include searches (on the command line) for several valid Zip Codes and at least one invalid Zip Code.</li>
+	    <li>the program will load the primary key index file into an object in RAM
+	</ol>
+    </ul>
+    <li>Document (<i>extensively</i>) your C++ source code with comments and Doxygen tags.
+    <li>Create a Doxygen PDF of your buffer class and application program code.</li>
+    <li>Create a user guide showing how to use your program (including how to use the command line options, and how the output should appear)
+</ol>
+<hr>
+<h3>Header Record Architecture:</h3>
+<ul>
+    <li>file structure type
+    <li>version of your file structure type (we may add features in subsequent versions)
+    <li>header record size
+    <li>number of bytes for each record size integer
+    <li>size format type {ASCII or binary}
+    <li>index file name
+    <li>index file schema information {how to read the index file format}
+    <li>record count
+    <li>count of fields per record
+    <li>for each field:
+    <ul>
+	<li>name or ID
+	<li>type schema 
+	<ul>
+	    <li>(<i><u>format</u> to read or write</i>)
+	</ul>
+    </ul>
+    <li>indicate (ordinally) which field serves as the primary key
+</ul>
+<hr>
+<h2>WHAT TO TURN IN:</h2>
+	<ul>
+	    <li>the user guide (<code>.txt</code>)
+	    <li>the CSV files
+	    <li>the <i>length-indicated</i> data files files (<code>.txt</code>)
+	    <li>the primary key index files (<code>.txt</code>)
+	    <li>the Doxygen PDF
+		<li>the <code>.cpp</code> and <code>.h</code> source code files 
+	    <li>the script file that was generated to demonstrate the running of the application program.
+	</ul>
+	(zip the <code>.cpp</code> source files: {see <a href="https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files">https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files</a>})<br>
+
+
+
+</div>
+
+</body>
+
+</html>

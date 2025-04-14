@@ -1,0 +1,48 @@
+<TITLE> dec, oct, and hex demo </TITLE>
+<BODY BGCOLOR="FFFFFF">
+<h3> Source Code:</h3>
+<PRE>
+/* Demonstrate numeric literals and manimulators for dec, oct, & hex
+ * Prof. Anda
+ * Fall 2003
+ * csci 201
+ */
+#include /<iostream.h/>
+#include /<iomanip.h/>
+int main (void)
+{
+    cout << oct;
+    cout << "11 in oct: " << 11 << endl;
+    cout << dec;
+    cout << "11 in dec: " << 11 << endl;
+    cout << hex;
+    cout << "11 in hex: " << 11 << endl;
+    cout << oct;
+    cout << "011 in oct: " << 011 << endl;
+    cout << dec;
+    cout << "011 in dec: " << 011 << endl;
+    cout << hex;
+    cout << "011 in hex: " << 011 << endl;
+    cout << oct;
+    cout << "0x11 in oct: " << 0x11 << endl;
+    cout << dec;
+    cout << "0x11 in dec: " << 0x11 << endl;
+    cout << hex;
+    cout << "0x11 in hex: " << 0x11 << endl;
+    return 0;
+} // main
+
+</PRE>
+<h3> Output:</h3>
+<PRE>
+11 in oct: 13
+11 in dec: 11
+11 in hex: b
+011 in oct: 11
+011 in dec: 9
+011 in hex: 9
+0x11 in oct: 21
+0x11 in dec: 17
+0x11 in hex: 11
+</PRE>
+</BODY>

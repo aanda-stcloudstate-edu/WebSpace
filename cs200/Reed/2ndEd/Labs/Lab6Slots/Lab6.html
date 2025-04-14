@@ -1,0 +1,273 @@
+<HTML
+<HEAD>
+  <TITLE>Lab 6: Interactive Pages and Slots</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR="white" LINK="red" VLINK="darkred" ALINK="blue">
+
+<P ALIGN="right">Name: 
+_________________________________________</P>
+
+<P><BR><BR></P>
+
+<center><h2>Lab 6: Interactive Pages and Slots</h2>
+        <h3>Lab to accompany <a href="http://dave-reed.com/book">
+        A Balanced Introduction to Computer Science, 2nd ed.</a><br />
+        by David Reed, Pearson Prentice-Hall, &copy;2008.</h3></center>
+
+<P><BR></P>
+
+
+<P>Up to this point, you have learned the basics of JavaScript programming and Web 
+page design.  Chapter 7 introduced the 
+event-driven programming model, using text boxes, buttons, and images to interact 
+with 
+and react to the user.  Subsequently, Chapter 11
+added conditional control, so that your code could make decisions based on events 
+such 
+as the click of a button or roll of two dice.  
+In this lab, you will apply your programming and Web skills to designing and 
+implementing an interactive Web page for playing slots. </P>
+
+
+<P><br><HR><br></P>
+
+<H3> Slot machine </H3>
+
+<P>A rapidly growing sector of electronic commerce is in the area of online 
+gambling.  
+Since the Internet crosses international borders, online casinos are often able to 
+circumvent federal gambling laws and provide unregulated gambling through the 
+Internet.  Whether for real money or just for entertainment, a multitude of online 
+gambling sites are accessible via the Web.
+
+<P>For this lab, you will implement an online slots game.  If you are not familiar 
+with the game, a slot machine contains three windows or slots in which an image is 
+shown.  To play the game, the player inserts a coin and pulls on a handle, causing 
+the 
+images in the slots to be randomized (usually by spinning the wheels on which the 
+images are printed).  If the three resulting images in the slots are identical, say 
+three lemons, then the player wins and receives some payoff.
+
+<P>For example,
+
+<p><br>
+
+<CENTER>
+<IMG SRC="slots.jpg">
+</CENTER>
+
+<P><BR>
+
+<P>The following HTML document is a start on developing a Web page for simulating a 
+slot machine.
+
+<P><BR><br>
+
+<P>
+<TABLE BORDER>
+<TR><TD><FONT SIZE=-1>
+<XMP>
+
+<html>
+ <!-- slots.html    Dave Reed    davereed@creighton.edu -->
+ <!-- This page simulates a slot machine.               -->
+ <!-- ================================================= -->
+
+ <head>
+   <title> Online Slots </title>
+   <script type="text/javascript" 
+           src="http://dave-reed.com/book/random.js">
+   </script>
+   <script type="text/javascript">
+     function DoSpin()
+     // Assumes: the page contains an image (slot1) 
+     // Results: displays a random spin as the slot1 image
+     {
+       var pick;
+       pick = RandomOneOf(["cherry.jpg", "lemon.jpg", "bar.jpg", "donut.jpg"]);
+       document.getElementById('slot1').src = "http://dave-reed.com/book/Images/" + pick;
+     }
+   </script>
+ </head>
+
+ <body>
+   <div style="text-align:center"> 
+     <img id="slot1" alt="slot image" border=1 
+          src="http://dave-reed.com/book/Images/cherry.jpg" />
+     <br /><br />
+     <input type="button" value="Click to Spin" onclick="DoSpin();" />
+   </div>
+ </body>
+ </html>
+</XMP>
+</FONT></TABLE>
+
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 1:</FONT></B> &nbsp;&nbsp;
+Cut-and-paste the <TT>slots.html</TT> text into a new Web page.  Load this page and 
+describe its behavior.  What is the initial image displayed on the screen?  What 
+other 
+images are obtainable?
+
+<P><BR><BR></P>
+
+<P>The IMG tag on this page has an attribute that we have not encountered before 
+"<TT>border=1</TT>".  What is the purpose of this attribute?  What if the number 1 
+is 
+changed, say to 2 or 3?
+
+<P><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 2:</FONT></B> &nbsp;&nbsp;
+Add two more slots images to your <TT>slots.html</TT> page, next to the current one.  
+When the user clicks on the button, all three slots images should be randomly 
+selected 
+and displayed on the page. 
+
+</BLOCKQUOTE>
+
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 3:</FONT></B> &nbsp;&nbsp;
+In a slot machine, the player wins if all three slots come out the same.  While most 
+slot machines differentiate between different matches (paying out more for matching 
+bars as opposed to matching lemons, for example), we will not make this distinction.  
+Any combination of three identical slots will be considered a winner.   
+Add code to <TT>DoSpin</TT> so that it checks for a slots winner.  If the three 
+slots 
+are identical (i.e., the images have had their SRC attributes assigned to the same 
+source file), then an alert box should display the message "A WINNER!".  
+
+<P></P>
+
+</BLOCKQUOTE>
+
+<P><HR></P>
+
+<H3>Maintaining values on the page</H3>
+
+The <TT>slots.html</TT> page that you have developed so far is sufficient for 
+simulating the behavior of a slot machine.  What it does not capture, however, is 
+the 
+monetary angle.  Slot machines are used for gambling: players must pay to spin, and 
+likewise win money if their spin turns up a winner.  Using text boxes in the page, 
+it 
+is possible to keep track of the player's winnings and losses as they play the game.
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 4:</FONT></B> &nbsp;&nbsp;
+Add a text box to your <TT>slots.html</TT> page, below the button, that will keep 
+track of player's bankroll.  The text box should have an initial value of 20, 
+representing the fact that the player starts out with $20 in their bankroll.  Each 
+spin of the wheel should cost the player $1 (resulting in the bankroll being 
+decremented by 1).  In the case of a winner, however, the player wins $13 (resulting 
+in the bankroll being increased by 13).  Of course, even a winning spin required $1 
+to 
+play, so the net gain is only $12.
+
+<P><I>Note:</I> as is the case with all organized gambling, the odds here favor the 
+house.  Since there are four different images that can appear in a slot, there is a 
+1 
+in 16 chance of all three slots coming up the same.  Thus, you would expect (in the 
+long run) for the player to win 1 out of every 16 spins.  Consequently, the payoff 
+of 
+$13 does not quite offset the $16 cost of the spins.  As a result, you are more 
+likely 
+to lose money (in the long run) than win money.  Perform numerous simulations with 
+your updated page to see if this pattern holds.  Describe your results below:
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><br><br></P>
+
+</BLOCKQUOTE>
+
+<P>As we have seen, text boxes can be used for both input and output.  The user can 
+enter values directly into a text box, and computed values can be displayed in a 
+text 
+box via a JavaScript assignment.  There are times, however, when you would like to 
+use 
+a text box for output only, forbidding the user from entering values directly.  For 
+example, the bankroll text box in your <TT>slots.html</TT> page is updated by the 
+<TT>DoSpin</TT> function on each spin.  The player does not need to enter anything 
+into the box, and indeed allowing them to alter the contents of the box is 
+tantamount 
+to theft.  
+
+<P>It is possible to forbid user input into a text box using the ONFOCUS attribute.  
+The ONFOCUS attribute specifies what is to occur when the 
+user directs their focus on the box (usually by clicking the mouse in it).   To 
+disable input in a text box, the predefined JavaScript function <TT>blur</TT> can be 
+called to immediately remove the focus from that box: &nbsp; 
+<TT>onfocus="blur();"</TT>
+ 
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 5:</FONT></B> &nbsp;&nbsp; 
+Add the attribute assignment <TT>onfocus="blur();"</TT> to the bankroll text box so 
+that the player will not be able to change the bankroll directly.  Load your page 
+and 
+verify that it behaves as desired.
+
+<P><BR></P>
+
+</BLOCKQUOTE>
+
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 6:</FONT></B> &nbsp;&nbsp; 
+As is, your page does not recognize when a player has run out of money.  It is 
+possible for the user to play your slots game even after their bankroll becomes 
+zero, 
+and the bankroll can become negative as a result.  Any smart casino owner would put 
+a 
+stop to this immediately.  Add code to <TT>DoSpin</TT> that disallows a spin if the 
+player's bankroll has reached $0.  In particular, the existing code for simulating 
+the 
+spin and displaying the results should only be executed if the player has money.  If 
+not, then an alert box should display a message stating that the spin was 
+disallowed.
+
+<P>Play the game several more times.  What is the largest amount you ever won? 
+
+<P><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 7:</FONT></B> &nbsp;&nbsp; 
+While a smart casino owner knows better than to allow negative bankrolls, most 
+casinos 
+are not above extending personal loans to gamblers who are down on their luck.  
+Augment your <TT>slots.html</TT> page so that it has capabilities for extending 
+loans 
+to the player when they run out of money. Your page should have an additional text 
+box 
+keeping track of the player's debt (initially $0).  Instead of just alerting the 
+player when they try to play with no money, the page should prompt them to see if 
+they 
+want a $20 loan.  If they respond 'yes', then their bankroll should be set to $20 
+and 
+their debt should increase by $20.  
+
+<P>Play the game several more times.  What is the largest debt you incurred?
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P><HR></P>
+
+<I>Hand in a printout of <TT>slots.html</TT> attached to these sheets.</I>
+</BODY>
+</HTML>

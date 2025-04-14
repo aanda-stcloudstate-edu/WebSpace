@@ -1,0 +1,134 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 2 - Spring 2007 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2007<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 2</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For each of the following problems you will solve:
+<ol type=I>
+    <h5>General Documentation <i>(see Sect. 2-10 &amp; Program 2-14)</i></h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names <i>(see Sect. 2-10 Pages 66-67 &amp; Table 2-14)</i></h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<tt>enscript -Ecpp --color -Whtml -p</tt><i>file_name</i><tt>.cpp.html</tt> <i>file_name</i><tt>.cpp</tt>
+    </center>
+    (for each program) You will submit these files.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<OL>
+    <li>Write a program to perform <b>carbon-14 dating</b>.
+    <ul>
+	<li> See <a href="http://science.howstuffworks.com/carbon-142.htm">Howstuffworks "How Carbon-14 Dating Works"</a> for what, why, and how to do this.
+	<li><b>input:</b> prompt the user for:
+	<ul>
+	    <li> a carbon-14 percentage from the sample
+	    <li> a carbon-14 percentage from living tissue<br>
+	    (<i>will be the larger value</i>)
+	</ul>
+	<li><b>output:</b> the estimated age of the sample.<br>
+	(display the age in <u>years</u>)
+	<li> use named global constants where appropriate.
+	<li> the natural logarithm in C++ is <tt>log(<i>double number</i>)</tt>
+	<br>(to use <tt>log()</tt>, you must link the <tt>&lt;cmath&gt;</tt> library)
+    </ul>
+    <P>
+    <li>Write a program to compute the area of a triangle.
+    <ul>
+	<li><b>input:</b> three pair of (<i>x,y</i>) coordinates.
+	<li>(<i>prompt</i> the user for the three points)
+	<li><b>output:</b> the area of the triangle.
+	<li> (find the formulae using your own research [hint: determinant])
+	<li>Attach a consistent set of <b>units</b>, of your choice,
+	    to the input request and to each result,<br>
+	    e.g. <i>&aring;ngstroms</i> or <i>light-years</i>.
+    </ul>
+    <P>
+    <li>Rewrite your program to convert between integer bases from
+	    <a href="http://web.stcloudstate.edu/aanda/cs201/hw1w07.html">Programming Assignment 1</a> using loops.
+    <ul>
+	<li><b>input:</b>
+	<ul>
+	    <li>A base to convert from. [range: 2 - 10]
+	    <ul>
+		<li>Prompt the user for this value.
+		<li>If the number is not in this range, output a descriptive
+		    error message (to cerr) then prompt the user for
+		    this value again.  (this requires a loop)
+	    </ul>
+	    <li>A number to convert. [range: 0 - (2<sup>10</sup>-1)]<br>
+	    <ul>
+		<li>Prompt the user for this value.
+		<li>(<u>note</u>: each digit must be less than the base.
+		    Use a loop to validate this.)
+		<li>If the number is not in this range, output a descriptive
+		    error message (to cerr) then prompt the user for
+		    this value again.
+	    </ul>
+	    <li>A base to convert to. [range: 2 - 10]
+	    <ul>
+		<li>Prompt the user for this value.
+		<li>If the number is not in this range, output a descriptive
+		    error message (to cerr) then prompt the user for
+		    this value again.
+	    </ul>
+	</ul>
+	<li><b>output:</b> the number represented in the target base.
+	<li>Your <tt>typescript</tt> file demonstrating the testing of this
+	    program should show the same value when converted from one base to
+	    another <i>and then back again</i>.
+	    <li><b>extra credit:</b> use a <tt>switch</tt> statement to 
+	    We will revisit this problem again in a subsequent assignment where
+	    we will use loops to encapsulate repeated code and use conditionals
+	    to ensure that the input meets specifications.
+    </ul>
+</OL>
+<P>
+<HR>
+</BODY>
+</HTML>
+

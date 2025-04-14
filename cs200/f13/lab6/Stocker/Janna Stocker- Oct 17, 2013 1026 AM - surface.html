@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- /export/home/cs200/cs200117/Documents/labs/lab6/surface.html    Janna Stocker -->
+<!-- Section 3                                        Date Lasted Edited: 10/17/13 -->
+<!-- This page allows for the user to input height & weight and get surface area.  -->
+<!-- ============================================================================= -->
+
+<html>
+ <head>
+   <title>Body Surface Area</title>
+   <script type="text/javascript" src="convert.js"></script>
+   <script type="text/javascript">
+     function BodySurfaceArea(height, weight)
+     // Assumes: the convert.js library has been loaded
+     // Results: displays the body surface area for the user after input from height & weight in outputDiv
+     {
+		var inches, pounds, centimetres, kilograms, sqM, sqft, BsArea;
+		
+	    inches = parseFloat(document.getElementById('inchBox').value);
+		pounds = parseFloat(document.getElementById('poundsBox').value);
+		centimetres = InchesToCentimetres(inches);
+		kilograms = PoundsToKilograms(pounds)
+		sqM = Math.sqrt((centimetres*kilograms)/3600);
+		sqft = SquaremetersToSquarefeet (sqM);
+		BsArea = Math.round(sqft*100)/100;
+		document.getElementById('outputDiv').innerHTML=
+		 'This is your body surface area ' + BsArea + ' sq. ft.';
+     }
+   </script>
+ </head>
+ 
+ <body>
+   <h2>Enter Your Information to Calculate Your Body Surface Area</h2>
+   <table><tr><td>Height:</td>
+	  <td><input type="text" id="inchBox" size=6 value=60>inches</td></tr>
+	  <tr><td>Weight:</td>
+      <td><input type="text" id="poundsBox" size=6 value=100>pounds</td></tr>
+   </table>
+      <input type="button" value="Calculate Body Surface Area"
+             onclick="BodySurfaceArea();">
+   <hr>
+   <div id="outputDiv"></div>
+ </body>
+</html> 

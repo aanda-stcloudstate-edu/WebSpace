@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI 331 Sequence Set Group Project Fall 2019</title>
+    <style>
+	code{font-family: courier; font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems Fall 2019</h1>
+
+<h2><u>Sequence Set</u> Group Project</h2> 
+
+<p>
+This project is the first in a multi-component, multi-phase, project.
+<h3>Objective</h3>
+Generate a <u>sequence set</u> as a file composed of (doubly) linked blocks of fixed-sized records comprising fixed-sized fields.<br>
+(based on <i>Programming Exercises</i> 10.19 in the Folk textbook)
+<h3>Requirements</h3>
+Teams will each implement a <b>Sequence Set Class</b> that generates and uses a blocked sequence set file and affilliated (primary key) index file having the following attributes:
+<ul>
+    <li> Your data set will be:
+    <ul>
+	<li> From this <a href="http://web.stcloudstate.edu/aanda/cs331/w19/us_postal_codes.xlsx">XLSX file</a> which
+	can be saved as this <a href="http://web.stcloudstate.edu/aanda/cs331/w19/us_postal_codes.txt">TXT file</a>
+	as <b>fixed-size</b> fields and records.
+	<li> For final testing, use about half, or half of any system-dependent size limit you may have, so that you have a reserve for adding records.
+	<li>Your records will be sorted by your key field.
+    </ul>
+    <li> Your sequence set <u>file</u> will start with a <u>header record</u> followed by the <b>fixed-size</b> sequence set blocks.<br>
+    (See Figure 10.1 on page 427 of Folk)
+    <li> Your header record should include the following components:
+    <ul>
+        <li>sequence set file type
+        <li>header record size
+        <li>block size
+        <li>maximum count of records per block
+        <ul>
+            <li>minimum capacity: 50%
+            <li>(<i>for simplicity, require an <u>even</u> number</i>)
+        </ul>
+        <li>record size
+        <li>count of fields per record
+        <li>field info triple (tuple) {AoS or SoA}
+        <ul>
+            <li>name or ID
+            <li>size
+            <li>type schema 
+            <ul>
+                (<i><u>format</u> to read or write</i>)
+            </ul>
+        </ul>
+        <li>indicate field which serves as the primary key
+        <li><u>pointer</u> to the block avail-list
+        <li><u>pointer</u> to the active sequence set list
+        <li>block count
+        <li>record count
+        <li>stale flag
+        <li>Simple Index (10.3)
+        <ul>
+            <li>file name
+            <li>schema information
+        </ul>
+    </ul>
+    <li> Each active block should include the following components:
+    <ul>
+	<li>count of records ( > 0 )
+	<li>pointers to preceding &amp; succeeding active blocks
+	<li>set of records ordered by key
+    </ul>
+    <li> Each avail block should include the following components:
+    <ul>
+	<li>count of records ( == 0 )
+	<li>pointer to succeeding avail block
+    </ul>
+    <li> Your program's </u>command line</u> options should include:
+    <ul>
+	<li>source file
+	<li>destination file
+	<li>all other information necessary for the header file
+    </ul>
+</ul>
+At a minimum your program should be able to:
+<ul>
+    <li>build the sequence set
+    <li>given a block pointer and a key:
+    <ul>
+	<li>display a record
+	<li>display a specific field in a record
+	<li>modify a field in a record 
+	<li>insert records
+	<li>delete records
+    </ul>
+    <li>verify that the sequence set file is consistent
+    <li>rebuild the sequence set
+    <li>any other useful operations you think of that you can implement and test
+</ul>
+</p>
+You should have a method of printing (dumping) the intermediate contents of the sequence set
+so that you can determine whether your implementations for building, insertion and
+deletion are functioning properly.  This dump should be sufficiently readable to help
+facilitate debugging.
+
+Write a test driver that demonstrates that your sequence set works.<br>
+</ol>
+<hr>
+<h3>Specifications for a program which uses the Sequence Set class:</h3>
+The application program will iterate through the sequence set displaying (<i>neatly</i>) the
+Northern<i>most</i>, Southern<i>most</i>, Eastern<i>most</i>, and Western<i>most</i> zip code for a specified state.<br>
+{You can verify the results by sorting the Excel source data file <i>first</i> by state, <i>then</i> by longitude or by latitude}<br><br>
+
+Also, the application program, using a different set of command line flags, will display (<i>neatly</i>) the
+ <u>State</u> and <u>Place&nbsp;Name</u> for a specified <u>Zip&nbsp;Code</u> (or set of Zip Codes).
+<ol>
+    <li>Run the test driver program to build the <i>full</i> Sequence Set file (and index file);
+	<li>Run the application program specifying the <u>Sequence&nbsp;Set&nbsp;file</u> and the <u>State</u> on the <u>command&nbsp;line</u>;
+    <li>Use the Unix <code>script</code> command to show:
+    <ol>
+	<li>the building of the Sequence Set file,
+	<li>the repeated running of the application program and its output for several states, 
+	<li>the repeated running the application program to display the <u>State</u> and <u>Place&nbsp;Name</u> for several <u>Zip&nbsp;Code</u>s.
+    </ol>
+</ol>
+
+<hr>
+<h2>WHAT TO TURN IN:</h2>
+
+<ol>
+    <li><u>A Design Document for the Sequence Set class and for the test driver program</u>.<br>
+
+    <li> <u>A Test Document for the Sequence Set class</u>,<br>
+    Describe each test along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what was the result of each test</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+
+    <li><u>A User Manual</u>.<br>
+    This should describe:<br>
+    <ol>
+	<li>The name of the class.
+	<li>Describe how to use the public methods.
+	<li>How to compile the class. (use a <u>makefile</u>)
+	<li>Examples of using the methods.
+	<li>How to use the test driver program.
+	<li>Note the known errors and deficiencies for the class?
+    </ol>
+    
+    <li><u>Source files</u><br>
+	Include:
+	<ul>
+	    <li>a Doxygen PDF to display the Sequence Set Class (and subordinate classes), its source code, and its UML class diagrams
+	    <li>the <code>.cpp</code> files for the Sequence Set Class, the test driver program
+	    <li>the application program.
+	    <li>the script file that was generated to show the running of the application program.
+	    <li>the class' <u>makefile</u> if you used one to compile the class.
+	</ul>
+	(zip the source files: {see <a href="https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files">https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files</a>})<br>
+
+
+</ol>
+
+</div>
+
+</body>
+
+</html>

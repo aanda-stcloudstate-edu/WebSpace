@@ -1,0 +1,73 @@
+
+<!-- saved from url=(0036)http://balance3e.com/Ch8/Newton.html -->
+<html><!-- Newton.html                                      8/25/09 --><!-- This visualization tool was written to accompany         --><!-- A Balanced Introduction to Computer Science, 3rd ed. by  --><!-- David Reed (davereed@creighton.edu), Prentice Hall, 2010 --><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title> Newton's Algorithm for Reciprocal with Errors</title>
+  <script type="text/javascript">
+    function nextNewtonReciprocal(number, guess)
+    // Assumes: guess is an estimate of the reciprocal of number
+    // Returns: the next (improved) guess using Newton's method
+    {
+        return guess * (2 - number * guess);
+    }
+  </script>
+</head>
+
+<body>
+<div style="text-align:center">
+  <h3>Newton's Reciprocal Approximation Algorithm with Errors</h3>
+  <h3>Visualization Tool to Accompany <br>
+  <a href="http://balance3e.com/">A Balanced Introduction to Computer 
+Science, 3rd ed.</a><br>David Reed, Prentice Hall, © 2010.</h3>
+</div>
+
+<p>In order to approximate the reciprocal of some number <i>N</i>, Newton's algorithm 
+starts with an initial approximation of 1,<br>
+then repeatedly refines the approximation as a function of the old approximation with <i>N</i>.<br>
+More succinctly,
+
+</p>
+<xmp>
+newApproximation =  oldApproximation * (2 - N * oldApproximation)
+</xmp>
+
+<p>To see  Newton's algorithm in action, enter the number for which you want to 
+compute the reciprocal, then click the button to see each successive 
+approximation. 
+
+</p><p></p><hr>
+
+  Find the reciprocal of: 
+  <input type="text" id="numberBox" size="8" value="0.2" 
+      onchange="document.getElementById('guessBox').value=1;
+                document.getElementById('countBox').value=1;
+		document.getElementById('outputDiv').innerHTML='';">
+    &nbsp; in the range (0, 1).
+				   
+  <input type="hidden" id="guessBox" value="1">
+  <input type="hidden" id="countBox" value="1">
+  <p>
+  <input type="button" value="Get next approximation"
+       onClick="document.getElementById('outputDiv').innerHTML +=
+	      'approximation ' + document.getElementById('countBox').value + ' = ' + 
+	      document.getElementById('guessBox').value + '<br>' +
+	      '<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;absolute error:&nbsp;</tt>' +
+		(1.0 / (parseFloat(document.getElementById('numberBox').value)) - document.getElementById('guessBox').value ) + '<br>' +
+		'<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative error:&nbsp;</tt>' +
+		(1.0 / (parseFloat(document.getElementById('numberBox').value)) - document.getElementById('guessBox').value ) / ( 1.0 / (parseFloat(document.getElementById('numberBox').value))) +
+		  '<br>';
+	      document.getElementById('guessBox').value =
+		   nextNewtonReciprocal(parseFloat(document.getElementById('numberBox').value),
+		   parseFloat(document.getElementById('guessBox').value));
+	      document.getElementById('countBox').value =  
+		   parseFloat(document.getElementById('countBox').value) + 1;">
+  <input type="button" value="Clear"
+         onclick="document.getElementById('guessBox').value=1;
+                   document.getElementById('countBox').value=1;
+                   document.getElementById('outputDiv').innerHTML='';">
+  
+  </p><p>				  
+  </p><div id="outputDiv"></div>
+
+
+
+</body></html>

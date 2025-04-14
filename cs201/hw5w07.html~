@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Programming Assignment 5 - Spring 2007 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2007<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 5</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For the following problem you will solve:
+<ol type=I>
+    <h5>General Documentation </h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).
+    There should be several runs.<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<tt>enscript -Ecpp --color -W html -p</tt><i>file_name</i><tt>.cpp.html</tt> <i>file_name</i><tt>.cpp</tt>
+    </center>
+    (for each program) You will submit these files.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+<P>
+<ol>
+    <li><i>Birthday Paradox</i> Simulation<br>
+    The
+    <a href="http://en.wikipedia.org/wiki/Birthday_paradox"><i>birthday paradox</i></a>,
+    states that given a group of 23 (or more) randomly chosen people, the
+    probability is more than 50% that at least two of them will have the same
+    birthday.<br>
+    Your task is to use simulation to corroborate the mathematical analysis.<br>
+    Algorithm:
+    <ol>
+	<li>Declare and initialize a 365 (no leap day) element integer array.
+	<li>Declare and initialize a 100 element integer frequency array.
+	<li>Randomly mark birthdays in the 365 element array until there's a duplicate.
+	<li>When there's a duplicate, increment the element of the frequency
+	    array whose index is that of the number of people it took to match.<br>
+	    Also, increment all of the elements having higher indices.
+	<li>Reset the 365 element array.
+	<li>Run the simulation a large number of times.
+	<li>When finished, store, in a new array, the ratio of each value
+	(&gt; 1) in the frequency array to the total number of runs.<br>
+       	This value will be a the simulated probability.
+	<li>In another array, store the theoretical probability for each N
+	( N = number of people) computed via the formula:
+	<center>
+	    1 - (364/365)<sup>N * (N - 1) / 2</sup>
+	</center>
+	<li>In another array, store the <i>relative error</i> of your simulated
+	probability to the theoretical probability via the formula:
+	<center>
+	    <tt>abs</tt>(theoretical - simulated) / theoretical
+	</center>
+	<li>display a table where:
+	<ul>
+	    <li>column 1 is the number of people (starting with 2),
+	    <li>column 2 is the simulated probability for that number of people,
+	    <li>column 3 is the respective theoretical probability, and
+	    <li>column 4 is the respective relative error.	
+	</ul>
+	<li>Demonstrate how significantly increasing the number of runs (e.g. by an integer factor) results in a commensurate reduction in the relative error.
+	<li>run the simulations again using different random seeds.  What happens?
+    </ol>
+    <li><i>365 Different Birthdays</i> Simulation<br>
+	A related problem is to determine the average number of people you'd have to meet before all possible birthdays were encountered.  This is the
+    <a href="http://en.wikipedia.org/wiki/Birthday_paradox#365_different_birthdays"><i>365 different birthdays problem</i></a>.
+    <ol>
+	<li>Declare and initialize a 365 (no leap day) element integer array.
+	<li>Every time a random birthday is encountered for the first time,
+	mark that spot in the array and decrement a counter that is initialized
+	to 365.<br>
+	When the counter hits zero, all slots are marked.
+	<li>Record sequentially in a 1000 element array, the number of people that
+	were required to have all possible birthdays. <br>
+	(this implies that you will perform 1000 simulation runs)
+	<li> Display the following three measures of the 1000 element distribution from your simulation:
+	<ul>
+	    <li><a href="http://en.wikipedia.org/wiki/Arithmetic_mean"><i>arithmetic mean</i></a>, (simple average)
+	    <li><a href="http://en.wikipedia.org/wiki/Median"><i>median</i></a>, (sort the 1000 element array using
+	    <a href="http://en.wikipedia.org/wiki/Selection_sort"><i>selection sort</i></a>)
+	    )
+	    <li><a href="http://en.wikipedia.org/wiki/Mode_%28statistics%29#Mode_of_a_sample"><i>mode</i></a>, (use a frequency array or use the sorted array from the median calculation)
+	</ul>
+    </ol>
+</ol>
+<HR>
+</BODY>
+</HTML>
+

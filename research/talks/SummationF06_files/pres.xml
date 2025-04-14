@@ -1,0 +1,120 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" gridspacingx="49152" gridspacingy="49152">
+  <p:master id="26" slidesn="1C7137D,43D1460" type="main" href="master26.htm"
+   xmlhref="master26.xml" template="Default Design" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#ffffff,#000000,#808080,#000000,#bbe0e3,#333399,#009999,#99cc00"/>
+    <p:colorscheme
+     colors="#ffffff,#000000,#969696,#000000,#fbdf53,#ff9966,#cc3300,#996600"/>
+    <p:colorscheme
+     colors="#ffffff,#000000,#808080,#000000,#99ccff,#ccccff,#3333cc,#af67ff"/>
+    <p:colorscheme
+     colors="#def6f1,#000000,#969696,#000000,#ffffff,#8dc6ff,#0066cc,#00a800"/>
+    <p:colorscheme
+     colors="#ffffd9,#000000,#777777,#000000,#fffff7,#33cccc,#ff5050,#ff9900"/>
+    <p:colorscheme
+     colors="#008080,#ffffff,#005a58,#ffff99,#006462,#6d6fc7,#00ffff,#00ff00"/>
+    <p:colorscheme
+     colors="#800000,#ffffff,#5c1f00,#dfd293,#cc3300,#be7960,#ffff99,#d3a219"/>
+    <p:colorscheme
+     colors="#000099,#ffffff,#003366,#ccffff,#3366cc,#00b000,#66ccff,#ffe701"/>
+    <p:colorscheme
+     colors="#000000,#ffffff,#336699,#e3ebf1,#003399,#468a4b,#66ccff,#f0e500"/>
+    <p:colorscheme
+     colors="#686b5d,#ffffff,#777777,#d1d1cb,#909082,#809ea8,#ffcc66,#e9dcb9"/>
+    <p:colorscheme
+     colors="#666699,#ffffff,#3e3e5c,#ffffff,#60597b,#6666ff,#99ccff,#ffff99"/>
+    <p:colorscheme
+     colors="#523e26,#ffffff,#2d2015,#dfc08d,#8c7b70,#8f5f2f,#ccb400,#8c9ea0"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="1" slidesn="1C71371,43497BF0" type="notes" href="master01.htm"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:slide id="1" slidesn="1C7136F,C63A36F0" href="slide0001.htm"
+   layout="title_subtitle" slots="centerTitle,subTitle">
+   <p:headersfooters slidenumber="t"
+    footerstr="SCSU Mathematics Colloquium 11/29/2006" formatid="0" noheader="t"/>
+  </p:slide>
+  <p:slide id="2" slidesn="1C71371,94F47770" href="slide0002.htm"
+   layout="2_columns" slots="title,body,object"/>
+  <p:slide id="3" slidesn="1C7137A,480A9760" href="slide0003.htm"
+   layout="title_body" slots="title,object"/>
+  <p:slide id="4" slidesn="1C7137A,480A9760" href="slide0004.htm"
+   layout="title_body" slots="title,object"/>
+  <p:slide id="5" slidesn="1C7137A,480A9760" href="slide0005.htm"
+   layout="title_body" slots="title,object"/>
+  <p:slide id="7" slidesn="1C71397,92DB1810" href="slide0007.htm"
+   layout="column_2_rows" slots="title,body,object,object"/>
+  <p:slide id="6" slidesn="1C7138F,4BD57580" href="slide0006.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="9" slidesn="1C713A3,5D6D2720" href="slide0009.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="10" slidesn="1C713A6,52925890" href="slide0010.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="30" slidesn="1C713A6,52925890" href="slide0030.htm"
+   layout="title_body" slots="title,object"/>
+  <p:slide id="31" slidesn="1C713DA,988EEB90" href="slide0031.htm"
+   layout="title_body" slots="title,object"/>
+  <p:slide id="13" slidesn="1C713AC,452B8090" href="slide0013.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="8" slidesn="1C713A1,E0912720" href="slide0008.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="11" slidesn="1C713A7,8B36D080" href="slide0011.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="12" slidesn="1C713A7,8B36D080" href="slide0012.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="14" slidesn="1C713A1,E0912720" href="slide0014.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="15" slidesn="1C71397,92DB1810" href="slide0015.htm"
+   layout="column_2_rows" slots="title,body,object,object"/>
+  <p:slide id="16" slidesn="1C713B2,94C67910" href="slide0016.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="17" slidesn="1C713B2,94C67910" href="slide0017.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="18" slidesn="1C713B2,94C67910" href="slide0018.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="19" slidesn="1C713B2,94C67910" href="slide0019.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="20" slidesn="1C713B2,94C67910" href="slide0020.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="21" slidesn="1C713B2,94C67910" href="slide0021.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="22" slidesn="1C713B2,94C67910" href="slide0022.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="23" slidesn="1C713B2,94C67910" href="slide0023.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="24" slidesn="1C713A1,E0912720" href="slide0024.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="25" slidesn="1C713C1,F2F33730" href="slide0025.htm"
+   xmlhref="slide0025.xml" layout="title_body" slots="title,object"/>
+  <p:slide id="26" slidesn="1C713C4,6849C010" href="slide0026.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="27" slidesn="1C713C4,6849C010" href="slide0027.htm"
+   layout="2_columns" slots="title,body,object"/>
+  <p:slide id="28" slidesn="1C713C4,6849C010" href="slide0028.htm"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="29" slidesn="1C713C4,6849C010" href="slide0029.htm"
+   layout="title_body" slots="title,body"/>
+  <p:viewstate type="slideView" slidehref="slide0020.htm" restoredleft="156"
+   restoredtop="946" hideoutlineicons="t"/>
+  <p:font name="Arial" charset="0" type="6" family="34"/>
+  <p:font name="Symbol" charset="2" type="6" family="18"/>
+  <p:font name="Wingdings" charset="2" type="6" family="2"/>
+  <p:font name="Castellar" charset="0" type="6" family="18"/>
+  <p:font name="Bookman Old Style" charset="0" type="6" family="18"/>
+  <p:headersfooters slidenumber="t"
+   footerstr="SCSU Mathematics Colloquium 11/29/2006" formatid="0" noheader="t"/>
+  <p:headersfooters notes="t" slidenumber="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+  <p:htmlpublishsettings browsersupport="v4"
+   href="X:\WebSpace\talks\SummationF06.htm" noloadinbrowser="t"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="274436">
+  <o:colormenu v:ext="edit" fillcolor="none [5]" strokecolor="none"/>
+ </o:shapedefaults></xml>

@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+  <title>Midterm 1 Review (CSCI 201 Spring 2009 A. A. Anda)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+  <div align="center"><h1>Midterm 1 Review</h1></div>
+   <br><div align="center"><h2>(CSCI 201 Spring 2009 A. A. Anda)</h2></div> <hr>
+   This exam will be closed book/closed notes with the exception of a review sheet of your own design, and supplements mentioned below.
+   <h2>Unix</h2>
+  <ul>
+    <li>Definition of an <i>operating system</i></li>
+     <li>Hierachical File Structure
+     <ul>
+       <li><u>Creation</u>, <u>deletion</u>, <u>renaming</u> and
+       <u>movement</u> of<br>
+        <i><u>files</u></i> and <i><u>directories</u></i>
+       </li>
+       <li>Absolute and relative <i>pathnames</i></li>
+     </ul>
+     </li>
+     <li>Utility Programs</li>
+     <li><u>Octal</u> Permissions for <b>chmod</b></li>
+     <li><u>Redirecting</u> Standard I/O to and from <i>files</i>
+      and <i>programs</i></li>
+     <li><u>Wildcards</u> for filename generation (<i>globbing</i>)</li>
+     <li> Misc. useful utilities
+  </ul>
+
+ <h2>C++</h2>
+  <ul>
+    <li><h4>Chapter 1 - 7</h4>
+    </li>
+    <ul>
+	<li>Origins of the C++ langugage
+      <li>Structure of a program</li>
+      <li>Identifiers</li>
+      <ul>
+	  <li>rules</li>
+	  <li>Reserved words</li>
+      </ul>
+      <li>Simple Data Types (data types define:)
+      <ul>
+	  <li> size </li>
+	  <li> location </li>
+	  <li>functions </li>
+	  <li> interpretation </li>
+	</ul>
+      </li>
+      <li>Variables
+	<ul>
+	  <li>declaration and definition</li>
+	  <li>initialization</li>
+	  <li><b>lvalue</b> vs. <b>rvalue</b></li>
+	</ul>
+      </li>
+      <li>Constants and literals</li>
+	<ul>
+	    <li>default sizes</li>
+	    <li>indicating octal and hexadecimal</li>
+	    <li>strings <i>vs.</i> characters</li>
+	</ul>
+      <li>Standard stream I/O
+	    <ul>
+		<li>standard streams</li>
+	      <li>Manipulators and flags</li>
+	    </ul>
+      </li>
+      <li>General syntactic rules, e.g.
+	    <ul>
+	      <li>cAsE sensitivity</li>
+	      <li>statements terminated by semicolons</li>
+	    </ul>
+      <li>Libraries and namespaces
+      </li>
+    </ul>
+    </li>
+    <ul>
+      <li>expression categories:
+	    <ul>
+	      <li>primary</li>
+	      <li>compound</li>
+	      <li>assignment</li>
+	      <li>operators and operands:</li>
+		    <ul>
+		      <li>unary (1)</li>
+		      <li>binary (2)</li>
+		      <ul>
+			  <li>especially the <i>two</i> integer division operators and their applications and cautions (e.g. % usually applied last)</li>
+		      </ul>
+		      <li>ternary (3)</li>
+		      <li><i>pre</i>fix, <i>in</i>fix, <i>post</i>fix</li>
+		      <li>associativity and precedence<br>
+			    <font color="magenta">(can bring a copy of a precedence and associativity table on inside front cover to exam)</font></li>
+		    </ul>
+	      <li>side effects</li>
+	      <ul>
+		  <li>Note caution against multiple side effects per variable per expression</li>
+	      </ul>
+	      <li>promotion hierarchy and <b>cast</b>ing</li>
+	      <ul>
+		  <li>Note caution against casting too late, e.g. after an integer division</li>
+	      </ul>
+	    </ul>
+      </li>
+      <li>Statements:
+	    <ul>
+	      <li>null</li>
+	      <li>compound [block], <i>scope</i>,
+	      and the <i>scope resolution operator</i> (::)</li>
+	    </ul>
+      </li>
+      <li>Boolean Expressions</li>
+      <ul>
+	  <li>integral type equivalence</li>
+	  <li>complements</li>
+	  <li>DeMorgan's Law</li>
+      </ul>
+      <li>Branching Mechanisms</li>
+      <ul>
+	  <li>pairing <tt>else</tt>s with respective <tt>if</tt>s</li>
+	  <li>when to use <tt>switch</tt> vs. <tt>if-else</tt> statements</li>
+	  <li>when to use <tt>break</tt>s in <tt>switch</tt> statements</li>
+      </ul>
+      <li>Loops</li>
+      <ul>
+	  <li><tt>for</tt> loops</li>
+	  <ul>
+	      <li><tt>break</tt> vs <tt>continue</tt></li>
+	      <li><tt>continue</tt> and update</li>
+	      <li>convert to <tt>while</tt></li>
+	      <li>use of <tt>enum</tt> types as loop index variables</li>
+	  </ul>
+	  <li><tt>while</tt> vs. <tt>do while</tt> loops</li>
+	  <li>nested loops</li>
+	  <li>standard loop applications: <u>sum</u>, <u>product</u>, <u>min</u>, <u>max</u>, <u>any</u>, <u>all</u></li>
+	  <li>use of input stream in <tt>while</tt> test</li>
+      </ul>
+      <li></li>
+      <li>Functions</li>
+      <ul>
+	  <li>C++ vs. mathematical functions </li>
+	  <li>predefined functions: meanings &amp; uses</li>
+	  <li><tt>srand</tt> &amp; <tt>rand</tt> function usage</li>
+	  <li><tt>void</tt></li>
+	  <li><tt>return</tt> (and restrictions on what can be returned)</li>
+	  <li>arguments vs. formal parameters</li>
+	  <li><i>declaration</i> vs. <i>definition</i></li>
+	  <li>parameter/argument rules</li>
+	  <li><i>value</i> vs. <i>reference</i> parameters (and their uses)</li>
+	  <li><tt>const</tt> reference parameters</li>
+	  <li><i>nested</i> functions:
+	      <i>Yes</i> for calling, but <i>No</i> for defining</li>
+	  <li><i>preconditions</i> &amp; <i>postconditions</i></li>
+	  <li>local variables</li>
+	  <li><i>swap</i> function</li>
+	  <li><i>default</i> parameters vs.<i>overloaded</i> function definitions</li>
+	  <li><i>assert</i> macro (and its uses)</li>
+	  <li><i>top-down &amp; modular</i> program development and <i>stubs &amp; drivers</i></li>
+      </ul>
+      <li>Arrays</li>
+      <ul>
+	  <li>initialization variations</li>
+	  <li>incrementing the index vs. the element</li>
+	  <li>no bounds checking</li>
+	  <li><u>c-strings</u> vs. <u>character arrays</u></li>
+	  <li>arrays as function arguments</li>
+	  <li>can't use arrays: * as function return types; * in I/O expression; in assignments</li>
+	  <li>parallel arrays</li>
+	  <li>multidimensional arrays</li>
+	  <li>frequency arrays</li>
+      </ul>
+    </ul>
+    </ul>
+    </li>
+    
+    <li><h4>computer number systems</h4>
+    <ul>
+      <li><u>binary</u>, <u>octal</u>, <u>decimal</u>, and
+      <u>hexadecimal</u> systems, their <i>notation</i>
+          and <i>conversion</i></li>
+      <li><u>signed</u> vs. <u>unsigned</u> integers</li>
+      <li>how size relates to range</li>
+      <li>floats:
+	      <ul>
+	         <li>how the <u>mantissa</u> and <u>exponent</u> relate to the
+		     <u>precision</u> and <u>range</u></li>
+                <li>how <i>size</i> relates to <u>precision</u> and </li>
+	         <li>how some rules of integer arithmetic don't hold
+		     for floating point types in all cases</li>
+	      </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>&lt;limits&gt; and &lt;float&gt;</h4>
+    <ul>
+      <li>understand what each constant means</li>
+    </ul>
+    </li>
+    </li>
+    <li><h4>Preprocessor directives</h4>
+    <ul>
+      <li>include</li>
+    </ul>
+    </li>
+    </li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>CSCI 331 Final Group Project Fall 2010</title>
+
+</head>
+
+<body lang=EN-US style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<h1><span style='font-size:10.5pt;font-family:"Lucida Sans Unicode"'>CSCI 331 -
+Software Systems  Fall 2010</span></h1>
+
+<h3><span style='font-size:10.5pt'>Final Group Project</span></h3> 
+<h3>PROJECT COLLABORATION TYPE:  <u>Group</u></h3>
+
+<p>
+<h2>THE PROGRAM:</h2>  This project is the second of a two phase project.
+<br>
+Your team has implemented:
+<h3>Component A</h3>
+the creation of a <u>sorted</u> <u>file</u> of <u>records</u> via
+(<i>tournament</i>) merging of <u>replacement selection</u> sorted lists.<br>
+<ul>
+    <li>When we sort our records we will use replacement selection <i>then</i> merge.</li>
+    <li>Our replacement selection algorithm will assume a reset-able value
+    for the number of records that can fit in memory (defaulting to 8)<br>
+    <b>Note:</b> Do not use the STL <i>heap</i> container.  Because you will be maintaining two heaps in the same space, write your own container class for this.</li>
+    <li>
+    <li>Write the following statistics to a log file:</li>
+    <ol>
+	<li>an identification of which file the unsorted records are from,</li>
+	<li>the number of records that can fit in memory,</li>
+	<li>the number of records,</li>
+	<li>the number of runs,</li>
+	<li>the smallest, largest and arithmetic mean number or records in all of the runs,</li>
+	<li>the height of the tournament tree for the merge</li>
+    </ol>
+    <li>A sorted file of records will be generated for each of our categories of record.</li>
+    <li>Write a program that demonstrates that your file sorter works for a reasonable set
+	of numbers of records in memory and <i>k</i>'s for the <i>k</i>-ary heap trees.</li>
+</ul>
+<b>Component A</b> lays the foundation for the second team component which will implement
+<h3>Component B</h3>
+the creation of a <u>B+tree index</u> of that list.<br>
+We are going to implement a B+tree with the following attributes:
+<ul>
+    <li> We will use a reset-able order B+tree (defaulting to a block capacity of 4)
+    <li> Our records will reside in the <i>leaves only</i> in a seqence of
+    <u>linked blocks</u>.  Higher order nodes will contain <i>only keys</i>.<br>
+    (We are borrowing the idea of linked blocked records from Chapter 10.1 &amp; 10.2)
+    <ul>
+	<li>A more robust design allows for there to be two block capacities: one for the blocks containing records,
+	    and a larger capacity for non-leaf blocks containing only keys.
+    </ul>
+</ul>
+Write a program that demonstrates that your B+tree works.<br>
+At a minimum your program should be able to:
+<ul>
+    <li>open the files of records along with their B+tree indices
+    <li>print all the information about a record
+    <li>modify fields in any record 
+    <li>insert records into any file 
+    <li>delete records from any file 
+    <li>verify that the B+Tree file is consistent, and rebuild if inconsistent
+    <li>rebuild the B+Tree
+    <li>any other useful operations you think of that you can implement and test
+</ul>
+Useful proof-of-concept operations using your B+Tree on the bibliographic data would include:
+<ul>
+    <li>list all articles by a specific author in the data
+    <li>list all authors in a specific journal and year in the data
+</ul>
+</p>
+You should have a method of printing the intermediate contents of the B+tree
+so that you can determine whether your algorithms for building, insertion and
+deletion are functioning properly.
+
+<p>
+<h5>Both Team Components</h5>
+<ol>
+    <li>Work together to on the interface to ensure that each <b>component</b> can work
+	seamlessly with the other.</li>
+    <li>Reserve an hour during finals week for the team to collectively make an oral
+	presentation and demonstration of their project to the professor.</li>
+</ol>
+
+<h2>WHAT TO TURN IN:</h2>
+Each of the items below should be saved on a CD.
+Each team will have available at the due date a CD for the instructor and a CD for the other team.
+
+<ol>
+    <li><u>Design document for the classes</u>.<br>
+	(Consider using facilities in, e.g. Jgrasp or Doxygen)
+    (<font color="teal">25% of your grade</font>)
+
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Also, leave a copy of the source file in your account until the graded
+    program is returned to you.<br>
+    (<font color="teal">20% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to compile and run the program. (use a <u>makefile</u>)
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+    <li>Everyone in the group should do their own paragraph describing
+	what you learned from this assignment.  
+	<br>(<font color="teal">5% of your grade</font>)
+    <ul>
+	<li>How much time did you spend on the program?
+	<li>Did you plan well before going to the computer?
+	<li>Did you test the program completely? 
+	<li>Did you learn anything new about the language?
+	<li>Did you learn anything new about the way you study or should study?
+    </ul>
+    <li>As a group, what did you learn to do, and not do, from the peer review
+	of other groups projects?
+    <li>Everyone in the group should turn in the peer evaluation.
+	These should be turned in to the instructor separately.
+    <li>The group leader should schedule a 30-minute meeting with me to
+	demonstrate the project.  The group leader must also turn in their
+	group log, the group member evaluations and the summary of the PSP data.
+</ol>
+
+</div>
+
+</body>
+
+</html>

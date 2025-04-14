@@ -1,0 +1,82 @@
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+       <title>
+	   CSCI 200 Lab 3 Fall 2010 [A. A. Anda]
+       </title>
+    </head>
+    <body>
+
+	<center>
+	    <h1>
+		CSCI 200
+	    </h1>
+	</center>
+
+	<center>
+	    <h2>
+		Lab 3
+	    </h2>
+	</center>
+
+	<center>
+	    <h3>
+		[A. A. Anda]<br>
+		Fall 2010
+	    </h3>
+	</center>
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li>Use predefined JavaScript Functions to solve problems.</li>
+	</ul>
+	<h2>Lab Assignment:</h2>
+
+	<hr/>
+	<ol>
+	    <li> Create a new directory, <b><tt>Lab3</tt></b>, in your class account directory.</li>
+	    <li> Move into your <tt>Lab3</tt> directory</li>
+	    <li> Using a <span style="color:fuchsia"><b><u><i>syntax-highlighting</i></u></b></span> editor,
+		    open a new file to edit.  Save it as <b><tt>Lab3.html</tt></b>.</li>
+	    <li> Use indentation to indicate and display scoping levels.</li>
+	    <li> Use HTML comment tags to identify:
+	    <ul>
+		<li>you as the author </li>
+		<li>what the program does</li>
+		<li>when you created the file</li>
+		<li>when you last modified the file</li>
+	    </ul>
+	    <li> For the following task:</li>
+	    <ol>
+		<li> modify not more than a few statements in your Web page file via the editor</li>
+		<li> save the file</li>
+		<li> refresh the browser open to your Web page</li>
+		<li> verify that your modifications did what you've intended</li>
+	    </ol>
+	</ol>
+	<hr/>
+	<dl>
+	    <dt><b><span style="color:blue">Task</span></b> - Perform <i>all</i> of the requirements in <u>Exercise 4.9</u> in Reed.
+	    <dd>(This kind of interactive story is also trademarked as a
+	    <i><a href="http://en.wikipedia.org/wiki/Mad_Libs">MadLib</a></i>.)
+	    <ul>
+		<li><u>Prompt</u> for all missing words before you begin to display the story.</li>
+		<li>Use the generic term for what you are prompting for as a <u>default value</u> in each case.<br/>
+		    &nbsp;&nbsp;&nbsp;(e.g. the default value would be "<i>animal</i>" if you are prompting for an animal)</li>
+		<li>Additionally, prompt for at least one of <u>each</u> of the following:
+		<ul>
+		    <li>noun</li>
+		    <li>adjective (<i>modifies a noun</i>)</li>
+		    <li>verb</li>
+		    <li>adverb (<i>modifies a verb</i>)</li>
+		</ul></li>
+	    </ul>
+	</dl>
+	<hr/>
+	<p>
+	    When finished (after you’ve proofread your Web page), submit your file to the appropriate D2L dropbox.
+	</p>
+    </body>
+</html>

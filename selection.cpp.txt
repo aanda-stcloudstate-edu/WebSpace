@@ -1,0 +1,122 @@
+//	P08-04 selectionSort
+
+/*	Test driver for sorting. Includes Program 8-5, exchangeSmallest 
+	Written by:  Anda
+	Date:		12-10
+*/
+#include <iostream.h>
+#include <iomanip.h>
+#include <stdlib.h>
+
+/*	Global Declarations */
+const int MAX_ARY_SIZE = 50;
+const int COLUMNS = 10;
+int comparisons = 0;
+int exchanges = 0;
+
+/*	Prototype Declarations */
+void selectionSort	(int list[ ], int last, char sortDirection);
+void exchangeExtremest (int list[], int first, int last, char sortDirection); 
+	
+int main (void) 
+{
+/*	Local Declarations */
+	int i;
+	int counter;
+	char sortDirection;
+	int ary[ MAX_ARY_SIZE ];
+
+/*	Statements */
+
+	cout << "\nEnter the character 'a' to select an ascending sort,\n" <<
+	"else enter the character 'd' for a descending sort: " << endl;
+	cin >> sortDirection;
+
+	counter = 0;
+	cout << "\nUnsorted array: " << endl;
+	for (i = 0; i < MAX_ARY_SIZE; i++)
+	    {
+	     ary[i] = rand()%100;
+	     counter++;
+	     cout << setw(3) << ary[i];
+	     if (counter >= COLUMNS)
+		{
+		 counter = 0;
+		 cout << endl;
+		}
+	    }
+	cout << endl;
+		
+	selectionSort (ary, MAX_ARY_SIZE - 1, sortDirection);
+
+	counter = 0;
+	cout << "\nSorted array:   " << endl;
+	for (i = 0; i < MAX_ARY_SIZE; i++)
+	    {
+	     counter++;
+	     cout << setw(3) << ary[i];
+	     if (counter >= COLUMNS)
+		{
+		 counter = 0;
+		 cout << endl;
+		}
+	    }
+	cout << endl;
+	cout << "There were " << comparisons << " comparisons." << endl;
+	cout << "There were " << exchanges << " exchanges." << endl;
+
+	return 0;
+}	/* main */
+
+
+/*	Sorts by selecting smallest element in unsorted portion 
+	of array and exchanging it with element at the beginning 
+	of the unsorted list.
+	Pre   list must contain at least one item.
+	      last contains index to last element in the list
+	Post  The list has been rearranged smallest to largest
+*/
+void selectionSort (int list[ ], int last, char sortDirection)
+{
+//	Local Declarations 
+	int current;
+
+//	Statements 
+	for (current = 0; current < last; current++)
+	   exchangeExtremest (list, current, last, sortDirection);
+	return;
+}	// selectionSort 
+
+void exchangeExtremest (int list[ ], int current, int last, char sortDirection )
+/*	Given array of integers, place smallest element into 
+	position in array.
+	Pre:  list must contain at least one element
+	       current is beginning of array (not necessarily 0) 
+	       last is last element in array. Must be >= current 
+	Post: returns index of smallest element in array.
+*/
+{	// exchangeExtremest 
+//	Local Declarations 
+	int walker ;
+	int extremest ;
+	int tempData ;
+
+//	Statements 
+	extremest = current;
+	for (walker = current + 1 ; walker <= last ; walker++)
+	   {
+	   comparisons++;
+	   if ( sortDirection == 'a' ? list[ walker ] < list[ extremest ]
+				     : list[ walker ] > list[ extremest ] )
+	      extremest = walker ;
+	   }
+
+	// Smallest selected: exchange with current element 
+	 exchanges++;
+	 tempData       = list[ current ] ;
+	 list[current]  = list[ extremest ] ;
+	 list[extremest] = tempData ;
+
+	return ;
+}	// exchangeExtremest 
+

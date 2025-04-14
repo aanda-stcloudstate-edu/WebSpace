@@ -1,0 +1,255 @@
+<HTML>
+
+<HEAD>
+  <TITLE>Lab 5: Interactive Pages and Pirate Talk</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="white" LINK="red" VLINK="darkred" ALINK="blue">
+
+<P ALIGN="right">Name: 
+_________________________________________</P>
+
+<P><BR><BR></P>
+
+<center><h2>Lab 5: Interactive Pages and Pirate Talk</h2>
+        <h3>Lab to accompany <a href="http://dave-reed.com/book">
+        A Balanced Introduction to Computer Science, 2nd ed.</a><br />
+        by David Reed, Pearson Prentice-Hall, &copy;2008.</h3></center>
+
+<P><BR></P>
+
+<p>In 1995, John Baur and Mark Summers invented a new holiday, 
+International Talk Like a Pirate Day.  As they proposed it, on every September 19th, 
+people all around the world would be united in common purpose by talking like a
+pirate (with lots of "Arrrrs" and "Ahoys" and the like).  Since then, International
+Talk Like a Pirate Day has received widespread publicity, especially since 
+columnist Dave Barry began lobbying for the holiday.  At the official Talk Like a 
+Pirate Day Web site, <a 
+href="http://www.talklikeapirate.com">www.talklikeapirate.com</a>,
+you can read about the history of the holiday, order official merchandise, and even
+experiment with a simple Web page that translates simple English phrases into pirate 
+talk.
+
+<p>The following Web page is a framework for an alternative English-to-Pirate
+translator.  As is, it contains two buttons, labeled "hello" and "stranger", 
+and a text area.  When the user clicks on a button, the corresponding Pirate word 
+or phrase is added to the text area.  For example, if the user were to click on 
+the "hello" button, the word "ahoy" will appear in the text area.  If she then clicks
+on the "stranger" button, then "scurvy dog" is added to the text area, resulting in the 
+phrase
+"ahoy scurvy dog."
+
+<p>
+<table border=1>
+<tr><td>
+<font size=-1><xmp>
+
+<html>
+<!-- pirate1.html    Dave Reed    davereed@creighton.edu -->
+<!-- =================================================== -->
+<head>
+  <title> Pirate Translator </title>
+</head>
+
+<body>
+  <div style="text-align:center">
+    <h3>Land Lubber's Pirate Translator</h3>
+    <p>Simply click on the buttons to translate<br />
+       words and/or phrases from English to pirate talk.
+    <hr />
+    <p>
+      <input type="button" value="hello" 
+             onclick="document.getElementById('outputArea').value = 
+                        document.getElementById('outputArea').value + 'ahoy ';" />
+      <input type="button" value="stranger" 
+             onclick="document.getElementById('outputArea').value = 
+                        document.getElementById('outputArea').value + 'scurvy dog ';" />
+    </p>
+    <p> 
+      <textarea id="outputArea" rows="10" cols="40"></textarea>
+    </p>
+  </div>
+</body>
+</html>
+</xmp></font>
+</table>
+ 
+ 
+
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 1:</FONT></B> &nbsp;&nbsp;
+Cut-and-paste this HTML text into a Web page named <tt>pirate1.html</tt> and 
+verify that it behaves as described.
+
+<p>As the page is currently written, multiple translations are awkward.  If you 
+finish translating one phrase and want to begin a new one, simply refreshing the page 
+does not suffice to clear the text area.  Instead, you must click the mouse in 
+the browser's Address box and hit enter  to reload the page and 
+reset the text area.  To make repeated translations easier, add a button directly 
+below the text area labeled "Clear".  When the user clicks on this button, a function 
+should be 
+called to clear the 
+text 
+area (i.e., set its contents to be the empty string).
+</P>
+
+<P></P>
+
+</BLOCKQUOTE>
+ 
+
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 2:</FONT></B> &nbsp;&nbsp;
+Extend <tt>pirate1.html</tt> by adding new words and phrases.  For each new word or 
+phrase, you will need to add a button with the appropriate label and translated
+pirate phrase.  At a minimum, you must add the new words and phrases below.
+However, feel free to add a larger vocabulary 
+(see <a href="http://www.talklikeapirate.com">www.talklikeapirate.com</a> for ideas).
+
+<blockquote>
+<table>
+<tr><th><th align=left><u>English word/phrase</u></th><th>&nbsp;&nbsp;&nbsp;&nbsp;<th 
+align=left><u>Pirate 
+equivalent</u></th>
+<tr><td>Greetings: &nbsp;&nbsp;<td>pardon me</td><td></td><td>avast</td>
+<tr><td><td>excuse me</td><td></td><td>arrr</td>
+<tr><td>People:<td>sir</td><td></td><td>matey</td>
+<tr><td><td>madam</td><td></td><td>proud beauty</td>
+<tr><td><td>officer</td><td></td><td>foul blaggart</td>
+<tr><td>Questions:<td>where is</td><td></td><td>whar be</td>
+<tr><td><td>can you help me find</td><td></td><td>know ye</td>
+<tr><td><td>is that</td><td></td><td>be that</td>
+<tr><td>Articles:<td>the</td><td></td><td>th'</td>
+<tr><td><td>my</td><td></td><td>me</td>
+<tr><td><td>your</td><td></td><td>yer</td>
+<tr><td>Places:<td>restroom</td><td></td><td>head</td>
+<tr><td><td>restaurant</td><td></td><td>galley</td>
+<tr><td><td>hotel</td><td></td><td>fleabag inn</td>
+</table>
+
+</table>
+</blockquote>
+
+</P>
+
+<P><BR></P>
+
+</BLOCKQUOTE>
+ 
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 3:</FONT></B> &nbsp;&nbsp;
+As the vocabulary of your pirate translator grows, the buttons in the page can appear 
+cluttered.  
+In particular, finding the button corresponding to a desired word or phrase can become 
+a chore.  
+Add an HTML table to 
+your page to organize the buttons by category.  For example, all greetings should 
+appear 
+together on the same row, with 
+the label "Greetings:" in the left column.  Similarly, all people should be grouped 
+together on 
+a row with the text 
+label "People:", and so on for each category of speech.  The screen shot below shows a 
+sample 
+page using a table to 
+organize the layout.  Feel free to add other elements to the page (e.g., pirate images) 
+to 
+improve its appearance.
+
+<p>
+<center>
+<img src="pirate1.gif" alt="Screen shot of translator page" />
+</center>
+
+
+</P>
+
+<P><BR></P>
+
+</BLOCKQUOTE>
+
+
+<h3>Automatic Code Generation</h3>
+
+<p>As you no doubt noticed, each button in the <tt>pirate1.html</tt> page is 
+of the same form.  Individual buttons differ only in the button label (the word/phrase 
+to 
+be translated) and the translated word/phrase added to the text area.  
+With a little more programming knowledge, it should be possible to automate the 
+generation of the buttons so that the programmer would not need to add new
+buttons every time the vocabulary expands.  Instead, the programmer could enter 
+the words and phrases in a single list (denoted with <tt>[</tt> and <tt>]</tt> 
+in JavaScript) and then have the buttons generated via JavaScript when the page loads.  
+This can be accomplished with the following
+code, which uses a list named PHRASES to store the English and pirate words (preceded 
+by 
+category headings).
+
+<p> 
+<table border=1>
+<tr><td>
+<font size=-1><xmp>
+
+<script type="text/javascript">
+   PHRASES = [["Greetings", "hello", "ahoy", "pardon me", "avast", 
+               "excuse me", "arrr"],
+              ["People", "stranger", "scurvy dog", "sir", "matey", 
+               "madam", "proud beauty"],
+              ["Questions", "where is", "whar be",
+               "can you help me find", "know ye", "is that", "be that"],
+              ["Articles", "the", "th'", "my", "me", "your", "yer"], 
+              ["Places", "restroom", "head", "restaurant", "galley", 
+               "hotel", "fleabag inn"] 
+             ];
+		
+   document.write("<table>");		  
+   for (var i = 0; i < PHRASES.length; i++) {
+       var category = PHRASES[i][0];
+       document.write("<tr valign='top'><td>" + category + ": <td>");
+        
+       for (var j = 1; j < PHRASES[i].length; j+=2) {
+           document.write("<input type=\"button\" value=\"" + PHRASES[i][j] +
+                          "\" onClick=\"document.getElementById(\'outputArea\').value = " + 
+                          "document.getElementById(\'outputArea\').value + \'" +
+                          PHRASES[i][j+1] + " \';\" />\n");
+       }
+       document.write("</td></tr>");
+   }
+   document.write("</table>");
+</script>
+</xmp></font>
+</table>
+</P>
+
+
+<P><br></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 4:</FONT></B> &nbsp;&nbsp;
+Save a copy of your <tt>pirate1.html</tt> page under the name <tt>pirate2.html</tt>.  
+Then, modify this new page by replacing all of the buttons in the body with  
+the above JavaScript code segment.  Once you have tested
+the page to be sure that it behaves as described, extend it by adding your new words 
+and 
+phrases to the 
+PHRASES list.  When finished, this new page should behave exactly as your 
+<tt>pirate1.html</tt> from EXERCISE 4.  However, adding additional words and phrases 
+should now be as easy as adding the new words and phrases to the PHRASES list.
+
+<P><BR></P>
+
+</BLOCKQUOTE> 
+
+
+<P><HR></P>
+
+<BLOCKQUOTE>
+<I>Hand in printouts of <TT>pirate1.html</TT> and <TT>pirate2.html</TT>, attached to 
+these 
+sheets.</I>
+</BLOCKQUOTE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+  <title>Midterm 1 Review (CSCI 201 Fall '05 A. A. Anda)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF">
+  <div align="center"><h1>Midterm 1 Review</h1></div>
+   <br><div align="center"><h2>(CSCI 201 Fall '05 A. A. Anda)</h2></div> <hr>
+   This exam will be closed book/closed notes with the exception of a review sheet of your own design, and supplements mentioned below.
+   <h2>Unix</h2>
+  <ul>
+    <li>Definition of an <i>operating system</i></li>
+     <li>Hierachical File Structure
+     <ul>
+       <li><u>Creation</u>, <u>deletion</u>, <u>renaming</u> and
+       <u>movement</u> of<br>
+        <i><u>files</u></i> and <i><u>directories</u></i>
+       </li>
+       <li>Absolute and relative <i>pathnames</i></li>
+     </ul>
+     </li>
+     <li>Utility Programs</li>
+     <li><u>Octal</u> Permissions for <b>chmod</b></li>
+     <li><u>Redirecting</u> Standard I/O to and from <i>files</i>
+      and <i>programs</i></li>
+     <li><u>Wildcards</u> for filename generation (<i>globbing</i>)</li>
+     <li> Editing with vi (vim)
+     <li> Misc. useful utilities
+  </ul>
+
+ <h2>C++</h2>
+  <ul>
+    <li><h4>Chapter 1</h4>
+    <ul>
+      <li>Organization and structure of a computer and its software</li>
+      <li>Computer languages</li>
+      <li>Compiling and Linking sequence and vocabulary</li>
+      <li>Software development cycle</li>
+      <li>Testing: whitebox <i>vs.</i> blackbox</li>
+    </ul>
+    </li>
+    <li><h4>Chapter 2</h4>
+    <ul>
+      <li>Structure of a program</li>
+      <li>Identifiers</li>
+      <li>Data Types
+      <ul>
+	  <li> size </li>
+	  <li> location </li>
+	  <li> interpretation </li>
+	</ul>
+      </li>
+      <li>Variables
+	<ul>
+	  <li>declaration and definition</li>
+	  <li>initialization</li>
+	</ul>
+      </li>
+      <li>Constants and literals</li>
+	<ul>
+	    <li>default sizes</li>
+	    <li>indicating octal and hexadecimal</li>
+	    <li>strings <i>vs.</i> characters</li>
+	</ul>
+      <li>Standard stream I/O
+	    <ul>
+	      <li>Manipulators</li>
+	    </ul>
+      </li>
+      <li>General syntactic rules, e.g.
+	    <ul>
+	      <li>cAsE sensitivity</li>
+	      <li>statements terminated by semicolons</li>
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Chapter 3 [expressions]</h4>
+    <ul>
+      <li>expression categories:
+	    <ul>
+	      <li>primary</li>
+	      <li>compound</li>
+	      <li>assignment</li>
+	      <li>operators and operands:</li>
+		    <ul>
+		      <li>unary (1)</li>
+		      <li>binary (2)</li>
+		      <ul>
+			  <li>especially the <i>two</i> integer division operators and their applications and cautions (e.g. % usually applied last)</li>
+		      </ul>
+		      <li>ternary (3)</li>
+		      <li><i>pre</i>fix, <i>in</i>fix, <i>post</i>fix</li>
+		      <li>precedence<br>
+			    <font color="magenta">(can bring copy of Precedence Table on inside front cover to exam)</font></li>
+		      <li>associativity</li>
+		      <li>integer <i>division</i> and <i>modulus</i></li>
+		    </ul>
+	      <li>side effects</li>
+	      <ul>
+		  <li>Note caution against multiple side effects per variable per expression</li>
+	      </ul>
+	      <li>promotion hierarchy and <b>cast</b>ing</li>
+	      <ul>
+		  <li>Note caution against casting too late, e.g. after an integer division</li>
+	      </ul>
+	    </ul>
+      </li>
+      <li>Statements:
+	    <ul>
+	      <li>null</li>
+	      <li>compound [block] and scope</li>
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Appendix A <font color="magenta">(can bring copy to exam)</font></h4>
+    <ul>
+      <li><b>ASCII</b> character encoding</li>
+    </ul>
+    </li>
+    <li><h4>Appendix B <font color="magenta">(can bring copy to exam)</font></h4>
+    <ul>
+      <li><u>Reserved</u> Words</li>
+    </ul>
+    </li>
+    
+    <li><h4>Appendix D [computer number systems]</h4>
+    <ul>
+      <li><u>binary</u>, <u>octal</u>, <u>decimal</u>, and
+      <u>hexadecimal</u> systems, their <i>notation</i>
+          and <i>conversion</i></li>
+      <li><u>signed</u> vs. <u>unsigned</u> integers</li>
+      <li>how size relates to range</li>
+      <li>4 common signed integer complement representation schemas:
+	      <ul>
+	         <li>sign and magnitude</li>
+	         <li>one's complement</li>
+	         <li>two's complement</li>
+	         <li>excess/bias</li>
+	         <li>how many <i>zeros</i> in each</li>
+	      </ul>
+      </li>
+      <li>floats:
+	      <ul>
+	         <li>how the <u>mantissa</u> and <u>exponent</u> relate to the
+		     <u>precision</u> and <u>range</u></li>
+                <li>how <i>size</i> relates to <u>precision</u> and </li>
+	         <li>how some rules of integer arithmetic don't hold
+		     for floats in all cases</li>
+	      </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Appendix E [limits.h and float.h] <font color="magenta">(can bring copy to exam)</font></h4>
+    <ul>
+      <li>understand what each constant means</li>
+    </ul>
+    </li>
+    </li>
+    <li><h4>Appendix G [preprocessor directives]</h4>
+    <ul>
+      <li>simple define</li>
+      <li>include</li>
+    </ul>
+    </li>
+    </li>
+  </ul>
+</body>
+</html>

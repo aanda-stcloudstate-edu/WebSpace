@@ -1,0 +1,66 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+    <head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <title>CSCI 200 Lab 4 Fall 2013 [A. A. Anda]</title>
+	<style type="text/css"> 
+	   BODY TT {color:maroon}
+        </style>
+    </head>
+    <body>
+	<center> 
+	    <h1>CSCI 200</h1> 
+ 
+	    <h2>Lab 4</h2> 
+ 
+	    <h3> 
+		[A. A. Anda]<br> 
+		Fall 2013
+	    </h3> 
+	</center>
+	
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li>incorporate user input into displayed WebPage text. </li>
+	</ul>
+	<h2>Lab Assignment:</h2>
+
+	Create a single Web page which incorporates the requirements in each of the following Exercises in Reed: <br />
+	(Please separate the display of each of your three solutions by three horizontal rules.
+	<ol>
+	    <li> <u>Exercises 5.5 &amp; 5.13</u> </li>
+	    <ul>
+		<li>Perform <i>all</i> of the requirements that the problem specifies.</li>
+		<li>(This kind of interactive story is also <i>trademarked</i> as a <i><a href="http://en.wikipedia.org/wiki/Mad_Libs">MadLib&trade;</a></i>.)</li>
+		<li><u>Prompt</u> for all missing words before you begin to display the story.</li>
+		<li>Use the <i>generic</i> term for what you are prompting for as a <u>default value</u> in each case.<br/> 
+		    &nbsp;&nbsp;&nbsp;(e.g. the default value would be "<i>animal</i>" if you are prompting for an animal)</li>
+		<li>Additionally, prompt for at least one of <u>each</u> of the following:
+		<ul> 
+		    <li>noun</li> 
+		    <li>adjective (<i>modifies a noun</i>)</li> 
+		    <li>verb</li> 
+		    <li>adverb (<i>modifies a verb</i>)</li> 
+		</ul></li>
+		<li>Below the input boxes, between two horizontal lines, write the story using <tt>innerHTML</tt> and a corresponding <tt>&lt;div&gt;</tt> region.</li>
+		<li>for Exercise 5.13, you may select between your personal preference of displaying the boxes running either across the page or down the page.</li>
+	    </ul>
+	    <li> <u>Exercise 5.6</u> </li>
+	    <ul>
+		<li>You may reuse <tt>mystery.gif</tt> as your third image. (or use an appropriate external hyperlinked image of your own choice)</li>
+	    </ul>
+	    <li> <u>Exercises 5.19 &amp; 5.20</u> </li>
+	    <ul>
+		<li>Try exploiting the <tt>*=</tt> &amp; <tt>/=</tt>
+		<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">assignment operators</a>.</li>
+	    </ul>
+	</ol>
+	    <p>
+	    When finished (after you&rsquo;ve tested and proof-read each of your Web pages),<br>
+	    demonstrate features of your Webpage to the instructor or graduate assistant,<br>
+	    then submit your files to the appropriate D2L dropbox.
+    </body>
+</html>

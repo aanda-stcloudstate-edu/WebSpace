@@ -1,0 +1,87 @@
+			    CSCI 475/575 
+		 High Performance Numerical Computation
+		        Spring 2005 SYLLABUS
+
+INSTRUCTOR:	Andrew A. Anda, Ph.D., Asst. Prof. of Computer Science
+OFFICE:		ECC-223		 Telephone:	308-2044
+E-MAIL:		aanda@csci.stcloudstate.edu
+Web Site:	http://web.stcloudstate.edu/aanda/cs475.html
+INSTRUCTOR'S WEEKLY SCHEDULE:
+                http://web.stcloudstate.edu/aanda/Wkly-sched-w05.html
+
+CLASS TIME AND LOCATION:
+    Sec 1: TH  15:30 -  16:45 in ECC-108
+
+REQUIRED TEXTS:	* Accuracy and Stability of Numerical Algorithms,
+		  Nicholas J. Higham, SIAM,
+		  2nd ed, 2002.
+		* Software Optimization for High Performance Computing,
+		  Kevin R. Wadleigh and Isom L. Crawford, Prentice Hall PTR,
+                  1st ed, 2000.
+COURSE DESCRIPTION:
+Numerical computation essentially consists of the study, and implementation
+in software on some architecture, of those algorithms which compute via finite
+precision (usually floating point) arithmetic.
+   The high-performance qualification in the course title incorporates
+the issues of relative efficiency and accuracy in comparing those algorithms
+and software.
+High-Performance computing requires an understanding of the influence of
+computer hardware, architecture, and system software resources on efficiency
+and accuracy.
+
+
+
+COURSE GOALS:
+   I would hope students who complete this course would:
+gain an understanding of how essential computer science theory and
+practice is in supporting the computational solution of science and
+engineering problems; discover how mathematically identical
+algorithms can exhibit such computationally different behaviors;
+enjoy a course which ties together and exhibits the relevance of a
+substantial amount of computer science theory and practice that they had
+been previously exposed to in a more compartmentalized manner.
+
+   My expectation for students who successfully complete the course will be
+that they can:
+* identify the kind of numerical problem they are to solve;
+* find literature and software describing its solution;
+* exploit the best existing software for solving their numerical problems;
+* program reasonably simple equations stably.
+* understand the influence of architecture on performance and software design.
+
+PREREQUISITES:
+    Undergraduate or Graduate standing in Computer Science or Computer
+    Engineering, a level of programming competence equivalent to CSCI 331,
+    and a sufficient exposure to the principles and notation of linear and
+    matrix algebra.
+
+
+ACADEMIC HONESTY:
+    You are expected to do your own work.  If you copy someone else's work
+    or allow someone else to copy your work, you are being academically
+    dishonest and will be subject to severe disciplinary action which may
+    include any or all of: no credit for the work in question, a failing grade
+    for the course, notification to the university that you have violated your
+    Code of Conduct.
+
+ATTENDANCE & CONDUCT:
+    You are responsible for knowing what happens at each class meeting.
+    Do not engage in disruptive or distracting activities. (this includes
+    allowing your cell phone to ring audibly during class)
+
+Course Plan
+   The course will be run very much like a seminar; we will all identify
+appropriate information and present it to the group.  We will also design
+and carry out assignments and projects connected to our discussions and
+write and answer exam questions.
+
+GRADING:
+Grades will be based on your contribution to developing this course:
+participation, quality of proposed assignments and exam questions, and projects.
+
+FINAL EXAM: Tuesday, May 10 15:45AM - 18:15PM in ECC-108.
+
+CAVEAT:
+    I reserve the right to amend the contents of this syllabus with
+    notification.
+*******************************************************************************

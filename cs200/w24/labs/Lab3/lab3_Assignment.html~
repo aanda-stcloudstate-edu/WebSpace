@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+       <title>CSCI 200 lab3 Spring 2024 [Professor A. A. Anda]</title>
+       <style type="text/css"> 
+	   BODY TT {color:maroon}
+       </style>
+       
+    </head>
+    <body>
+
+	<center>
+	    <h1>CSCI 200</h1>
+
+	    <h2>Lab 3</h2>
+
+	    <h3>
+		[Professor A. A. Anda]<br>
+		Spring 2024
+	    </h3>
+	</center>
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li>Implement select JavaScript/HTML <b><i>event handlers</i></b>  to enable <b><i>dynamic</i></b> Web page behavior</li>
+	</ul>
+	<h2>Lab Assignment:</h2>
+
+	<ol>
+	    <li> Create a new folder, <b><tt>Lab3</tt></b>, in your <b><tt>labs</tt></b> folder.</li>
+	    <li> Move into your <b><tt>Lab3</tt></b> folder</li>
+	    <li> Using a <span style="color:fuchsia"><b><u><i>syntax-highlighting</i></u></b></span> text editor, open a new file to edit.
+		    Save this new file as <tt>Lab3.html</tt>.</li>
+	</ol>
+	<p>
+	Create a <u>single</u> Web page (<tt>Lab3.html</tt>) which incorporates all requirements of each of the following Exercises in Reed:
+	<ol>
+	    <li> <u>Exercise 4.9</u> </li>
+	    <ul>
+		<li>This <i>help icon</i> will appear at the bottom of your Web page.</li>
+	    </ul>
+	    <li> <u>Exercise 4.10</u> </li>
+	    <ul>
+		<li>Display any three quotations from this <a href="http://www.devtopics.com/101-great-computer-programming-quotes">quotations collection</a> when you <u>click</u> on the respective <u>image</u>.</li>
+		<ul>
+		    <li>Find and link to an image on the Web which is of the person each respective quote is attributed to.</li>
+		</ul>
+	    </ul>
+	    <li> <u>Exercise 4.11</u> </li>
+	    <ul>
+		<li>Apply to each image from Exercise 4.10</li>
+	    </ul>
+	    <li> <u>Exercise 4.13</u> </li>
+	    <ul>
+		<li>Below the quotations, center an image (<i>of your choice</i>) that doubles the dimensions of the image <b><tt>ONMOUSEOVER</tt></b>, 
+		    and restores the original size <b><tt>ONMOUSEOUT</tt></b>. 
+	    </ul>
+	    <li> <u>Exercise 4.15</u> </li>
+	    <ul>
+		<li>Change the color of the centered page heading (e.g. "<b><tt>Computing Quotes</tt></b>").
+	    </ul>
+	</ol>
+	    When finished (after you&rsquo;ve tested and proofread each of your Web pages),<br>
+	    then submit your <tt>Lab3.html</tt> file to the Lab3 D2L dropbox, and add a working URL link for this file.
+	</p>
+    </body>
+</html>

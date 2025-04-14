@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+  <title>Midterm 2 Review (CSCI 301 F'03 A. A. Anda)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+</head>
+<body bgcolor="#FFFFFF">
+  <div align="center"><h1>Midterm 2 Review</h1></div>
+   <br><div align="center"><h2>(CSCI 301 F'03 A. A. Anda)</h2></div> <hr>
+    <li><h4>Complexity [See exercises]</h4>
+    <ul>
+	  <li>best
+	  <li>average
+	  <li>worst
+    </ul>
+    <li><h4>Chapter 6 [Templates, Iterators, and the STL]</h4>
+    <ul>
+	<li><h5>template functions</h5>
+	<ul>
+	  <li><u>syntax</u> and <u>semantics</u></li>
+	  <li>instantiation
+	  <li>unification failure
+	  <li>parameter matching with <tt>SizeType</tt>
+	</ul>
+	<li><h5>template classes</h5>
+	<ul>
+	  <li><u>syntax</u> and <u>semantics</u></li>
+	  <li>typename keyword
+	  <li>implementation visibility
+	  <li>container class conversion to template
+	</ul>
+	<li><h5>STL classes and iterators</h5>
+	<ul>
+	  <li>iterators and the [...) pattern
+	    <ul>
+	      <li>Strict Weak Ordering
+		<ul>
+		  <li>irreflexivity
+		  <li>antisymmetry
+		  <li>transitivity
+		</ul>
+	      <li>begin()
+	      <li>* operator
+	      <li>++ operator
+	      <li>end()
+	      <li>iterator as return value of a function
+	      <li>error dereferencing iterator when at end()
+	      <li>invalid iterators
+	      <li>const iterators
+	      <li>forward iterators
+	      <li>backward iterators
+	      <li>bidirectional iterators
+	      <li>random access iterators
+	    </ul>
+	</ul>
+	<li><h5>node template class</h5>
+	<ul>
+	  <li>[const] reference type return values
+	  <li>container class to template conversion
+	</ul>
+	<li><h5>list iterator</h5>
+	    <ul>
+	      <li>node iterator
+	      <li>prefix and postfix ++ operator
+	    </ul>
+      </li>
+    </ul>
+    </li>
+    <li><h4>Chapter 7 [Stacks]</h4>
+    <ul>
+      <li><u>LIFO</u>
+      <li>stack errors
+      <li>applications
+	<ul>
+	  <li>reversing sequences
+	  <li>balancing
+	  <li>expression evaluation
+	  <li>infix to postfix translation
+	  <li>backtracking (N queens problem)
+	</ul>
+      <li>operations (push, pop, top, etc.)
+      <li>implementations
+	<ul>
+	  <li>array
+	  <li>list
+	</ul>
+    </ul>
+    </li>
+    <li><h4>Chapter 8 [Queues]</h4>
+    <ul>
+      <li><u>FIFO</u>
+      <li>pop(), push(), empty(), size(), front()
+      <li>critical pointers
+      <li>applications
+	<ul>
+	  <li>palindrome recognition
+	  <li>buffering
+	  <li>simulation
+	</ul>
+      <li>implementations
+	<ul>
+	  <li>helper function
+	  <li>array
+	    <ul>
+	      <li>circularity
+	    </ul>
+	  <li>list
+	    <ul>
+	      <li>critical pointers
+	      <li>circular linked list
+	    </ul>
+	</ul>
+      <li>double ended queues
+	<li><h5>Priority Queues</h5>
+	<ul>
+	  <li>pop(), push(), empty(), size(), top()
+	</ul>
+    </ul>
+    <li><h4>Chapter 9 [Recursion]</h4>
+	<ul>
+	    <li><h5>Recursive Functions</h5>
+	    <ul>
+	      <li>base cases
+	      <li>recursive calls
+	      <li>activation record
+	      <li>effect of statement ordering
+	      <li>applications
+	      <li>will it terminate?
+		<ul>
+		  <li>variant expression
+		  <li>threshold
+		  <li>induction
+		  <li>necessary vs. sufficient conditions
+		</ul>
+	    </ul>
+	</ul>
+    <li><h4>Chapter 10 [Trees]</h4>
+	<ul>
+	    <li>nomenclature
+	    <ul>
+		<li>root
+		<li>node
+		<li>child
+		<li>leaf
+		<li>parent
+		<li>sibling
+		<li>ancestor
+		<li>descendant
+		<li>subtree
+		<li>depth (nodes, tree)
+		<li>complete tree
+		<li>full tree
+		<li>binary tree
+		<li>k-ary tree
+		<li>general trees
+	    </ul>
+	    <li>applications
+	    <ul>
+		<li>taxonomy
+		<li>binary search
+		<ul>
+		    <li>insertion of an item from a BST
+		    <li>removal of an item from a BST
+		</ul>
+		<li>expression evaluation
+	    </ul>
+	  <li>implementations
+	    <ul>
+		<li>array
+		<ul>
+		    <li>arithmetic traversal expressions
+		</ul>
+		<li>linked nodes
+		<ul>
+		    <li>destructor implementation
+		    <li>copy constructor implementation
+		</ul>
+	    </ul>
+	    <li>traversals
+	    <ul>
+		<li>(reverse) preorder
+		<li>(reverse) inorder
+		<li>(reverse) postorder
+		<li>printing a tree via traversal
+	    </ul>
+	    <li>passing functions as parameters
+	</ul>
+    <li><h4>Chapter 11.1 [Heaps]</h4>
+	<ul>
+	    <li>invariant (storage rules)
+	    <li>implementation
+	    <li>adding an entry
+	    <li>removing an entry
+	    <li>reheapification upward/downward
+	    <li>applications
+	    <ul>
+		<li>priority queues
+		<li>sorting
+	    </ul>
+	</ul>
+  </ul>
+</body>
+</html>

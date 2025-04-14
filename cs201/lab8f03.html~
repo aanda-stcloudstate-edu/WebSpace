@@ -1,0 +1,110 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab8 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 8</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2>
+Introduction:</h2>
+This lab provides experience with selection making decision functions.
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab8</i>, and move to it.</li>
+
+<li>
+Write a working program to determine the quadrant or axis an input degree
+falls into.  This program will call:<br>
+<ol>
+    <li> a function which requests from the user a non-negative integer
+	representing degrees.  
+    <li> a function which prints either the positive/negative axis that
+	the angle lies on or the quadrant that the angle falls into.<br>
+	(see ex. 26 on pages 214-5)
+	<ul>
+	    <li>
+		Use <i>if</i> statements, nested <i>if</i> statements
+		and <i>else if</i> statements.<br>
+		See examples in program 5-4, 5-5, and 5-10. 
+	    </li>
+	</ul>
+</ol>
+</li>
+
+
+<li>
+Ensure that your program and functions have updated <u>comment </u>headers
+describing your identifying information, the date, and the purpose of the
+program or function.<br>
+Each user defined function should document what each
+parameter is and whether they are IN, OUT, or IN/OUT. <br>
+The <u>precondition</u> (<tt>Pre</tt>) and <u>postcondition</u> (<tt>Post</tt>)  for each function must be documented as well.</li>
+
+<li>
+Use a <b>function</b> to <u>prompt</u> the user with explicit instructions to
+<u>input</u> the non-negative integer angle.
+</li>
+
+<li>
+Use a <i>second</i> <b>function</b> to perform the quadrant determination.
+</li>
+
+
+<li>
+<b>Note</b>:
+<ul>
+<li>
+Don't forget to place the <u>prototype declaration</u>
+for each function above the function header of the main program.
+<li>
+Use <b>stubs</b> (See Program 4-12 on pgs. 154-5) to design from the top down
+and ensure that the functional structure is working at an intermediate stage.  When the stub form is working properly, replace each with the complete code and test.
+</ul>
+</li>
+
+<li>
+Compile and run.<br>
+Ensure that the program is working correctly.<br>
+Use <b>0, 89, 90, 180, 186, 270, 300</b> as the input numbers.
+</li>
+
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the running of the program for "checkout".</li>
+</ol>
+
+E.g.:
+<pre>
+    Enter degrees: 90
+
+    Angle is on the positive X-axis.
+</pre>
+or
+<pre>
+    Enter degrees: 91
+
+    Angle is in Quadrant II.
+</pre>
+
+</body>
+</html>

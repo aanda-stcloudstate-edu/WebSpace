@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 201 - Homework Assignment 4 - Spring 2006 A. A. Anda</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<BR>
+  Computer Science 1<BR>
+  Spring, 2006<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Homework Assignment 4</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+For each of the following problems you will solve:
+<ol type=I>
+    <h5>General Documentation <i>(see Sect. 2-10 &amp; Program 2-14)</i></h5>
+    <li>your <b>name</b>, <b>course</b>, <b>date</b>, and
+	<b>assignment number</b> will appear as <u>comments</u> at the top
+	of your source code.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names <i>(see Sect. 2-10 Pages 66-67 &amp; Table 2-14)</i></h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> C-style <u>indenting</u> to enhance the
+    readability of your code.  In vim:</li>
+    <ul>
+	<li><tt>:set sw=4</tt>
+	<li><tt>:set cindent</tt>
+    </ul>
+    <P>
+    <li>compile your code with <br><tt>g++  -Wall </tt> <i>filename</i><tt>.cpp -o</tt> <i>filename</i><br>(ensure that there are no compiler warnings or errors)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<tt>script</tt> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).<cr>
+    To display your source code, create a web page for each source file using
+    the Unix command:<br>
+    <center>
+	<tt>enscript -Ecpp --color -Whtml -p</tt><i>file_name</i><tt>.html</tt> <i>file_name</i><tt>.cpp</tt>
+    </center>
+    (for each program) You will submit these files.</li>
+</ol>
+<P>
+Be neat.
+<P>
+<HR>
+For each <u>function</u> you write, the header documentation will include a listing of its <a href="http://www.cs.ucf.edu/~reinhard/classes/cop3503/notes01.pdf">preconditions and postconditions</a>. 
+<P>
+Use the following <i>software engineering</i> techniques when developing
+      your program:
+<ol>
+    <li> Use <b>stubs</b> (as in <i>lab 4</i>) to validate your
+	program's structure.
+	<br>[this provides the <i>top-down</i> structure]
+    <li> For each function that is represented by a stub, write and
+    use a small <a href="#driver"><b>test driver</b> program</a>
+    to validate that the new function you have written to replace the stub is
+    working correctly before you replace the stub with that new function.
+    <br> [this builds the program, ensuring correctness, from the
+	<i>bottom-up</i>]
+</ol>
+
+<HR>
+<P>
+<OL>
+    <li>Rewrite Homework Assignment 2.3 using functions, and test.
+    <P>
+    <li> Meta-Craps
+    <OL>
+	<li> Write and test a function which rolls an N-sided die.<br>
+	    Use six as a <u>default parameter</u> for the number of sides.<br>
+	    Use zero as the <u>default parameter</u> for the random <u>seed</u>.
+	    <li> Have the program prints the sum of two throws.
+	    <li> Run the program to simulate a game of Craps.<br>
+	    Do you win more than you lose?<br>
+	    Does it matter what the seed value is?<br>
+	    What is the effect of changing the number of sides?
+    </OL>
+    <li> Complex arithmetic<br>
+    Write and test functions for the following <i>complex arithmetic</i> operations (on <tt>double</tt> type data):
+    <OL>
+	<li> addition
+	<li> subtraction
+	<li> conjugate
+	<li> reciprocal
+	<li> product
+	<li> quotient
+	<li> absolute value
+	<li> [extra credit] integer power of a complex number,
+	<i>(a + bi)<sup>n</sup></i>
+    </OL>
+    [note: all but absolute value will require <u>reference parameters</u>]
+</OL>
+<P>
+<HR>
+<h4><a name="driver">Test Driver Programs</a></h4>
+<b>Test Driver Program</b>s are special programs whose only purpose is to test
+functions.  They are very small.  They perform the following three tasks:
+<ol>
+    <li>Input values to test the function
+    <li>Call the function with those input values
+    <li>Output values from the function
+</ol>
+Ensure that you check that the input tests the <u>range</u> of the
+preconditions and corresponds correctly with the output.<p>
+
+<HR>
+</BODY>
+</HTML>
+

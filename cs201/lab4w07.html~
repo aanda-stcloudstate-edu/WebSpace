@@ -1,0 +1,147 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab4 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 4</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2>
+Introduction:</h2>
+This lab provides experience <u>defining functions</u>,
+<u>significant digits</u>, and <u>rounding</u>.<p>
+<b>Rounding</b> (modifying a value to the <i>nearest</i> number having the
+specified number of digits, either after the decimal point or in total)
+is a commonly specified requirement for display of information.<br>
+We quantify our certainty regarding the measurement of some quantity by
+indicating that we are certain about its accuracy to an estimated number of
+<i>significant</i> digits.
+(<i>Displaying more digits would be misleading.</i>)<br>
+Because we do not want to ever make it look like a value has more significant
+digits than it actually does, we lop-off the all those terminal uncertain digits
+(while rounding) and replace them with zeros.
+The following functions will <i>round</i> a given value in both of the above
+ways respectively.<p>
+Let's see some examples:<br>
+Let x = 3.456789<br>
+3.0 = <tt>floor(x+0.5)</tt><br>
+3.4 = <tt>floor(x*10+0.5)/10</tt><br>
+3.46 = <tt>floor(x*100+0.5)/100</tt><br>
+3.457 = <tt>floor(x*1000+0.5)/1000</tt><br>
+-3.457 = <tt>floor((-x)*1000+0.5)/1000</tt> {Note: this works because the
+<tt>floor</tt> function rounds towards -&Inf;}<br>
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<ol>
+<li>Create a new directory, <i>lab4</i>, and move to it.</li>
+
+<li>
+Write a test driver program to verify the correct behaviour of the two
+functions,<br>
+<tt><u>round_ADP(fpnum,digits)</u></tt>
+(which <i>rounds</i> the <b>double</b> value <tt>fpnum</tt> to <tt>digits</tt>
+digits <i>after the decimal point</i>) and<br>
+<tt><u>round_SD(fpnum,digits)</u></tt> 
+(which <i>rounds</i> the <b>double</b> value <tt>fpnum</tt> to <tt>digits</tt>
+<i>significant digits</i>).<br>
+The driver program requests from the user a floating point number
+(to round) and an integer in the interval
+[0-6] specifying the number of decimal places to round to,
+or significant digits to round to.<p>
+After verifying that <tt>round_ADP()</tt> is working correctly,
+you will use it in <tt>round_SD()</tt>.
+</li>
+
+<ol>
+    <li> For <tt>round_ADP()</tt>:
+    <ul>
+	<li>Notice that the power of 10 used is equal to the number of digits to round to.
+	<br>(<b>Hint</b>: What function can you use to generate powers of 10?)
+	<li><b>Note</b>: <i>don't forget to include necessary <u>libraries</u></i>
+    </ul>
+    <li> For <tt>round_SD()</tt>:
+    <ul>
+	    <li><u>Shift</u> (<i>normalize</i>) <tt>fpnum</tt>
+	    to be, in absolute value,
+	    <i>less</i> than 1.0, but <i>greater than or equal to</i> 0.1
+	    <ul>
+		    <li>Which standard math library function
+			    indicates the number of
+		<i>decimal</i> digits that a value starts to the left or right
+		    of a decimal point?<br>
+		    (i.e. 123.45 would yield 2 and 0.012345 would yield -2)
+		<li>Take that value, plus one, as the number of digits to shift.
+	    </ul>
+	    <li>Now, call <tt>round_ADP()</tt> to shift to the specified
+	        number of digits.
+	    <li> Finally, shift the value <i>back</i> to the original scaling.
+    </ul>
+</li>
+
+<li>
+Ensure that your program and functions have updated <u>comment </u>headers
+describing your identifying information, the date, and the purpose of the
+program or function.<br>
+Each user defined function should document the preconditions &amp; postconditions, and what each parameter is.<br>
+
+<li>
+Use one <b>function</b> to <u>prompt</u> the user with explicit instructions to
+<u>input</u> the positive floating point decimal number to be rounded
+<i>and</i> the number of digits to round to.<br>
+The number of digits to round should be between zero and six inclusive <i>[0-6]</i>.
+</li>
+
+<li>
+The test driver output will display:
+    <ul>
+	<li>
+	the original number,
+	<li>
+	the number of digits to round, and
+	<li>
+	the rounded value without shifting back,
+	<li>
+	the rounded value with shifting back.
+    </ul>
+</li>
+
+<li>
+<b>Note</b>:
+<ul>
+<li>
+Don't forget to place the <u>prototype declaration</u>
+for each function above the function header of the main program.
+</ul>
+</li>
+
+<li>
+Compile and run.<br>
+Ensure that the program is working correctly using a good set of test data.<br>
+</li>
+
+
+<li>
+When correct, use <tt>enscript</tt> to generate an HTML printout of the source,
+and demonstrate, via <tt>script</tt>, the running of the program using that test data, submitting both to D2L.
+</li>
+
+</ol>
+
+</body>
+</html>

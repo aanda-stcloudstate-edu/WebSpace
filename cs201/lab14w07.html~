@@ -1,0 +1,65 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab 14 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 14</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+
+This lab provides experience with <b>exception handling</b>.
+
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+Exception handling refers to the special treatment in code of dealing with
+unusual or exceptional (not necessarily erroneous) conditions.
+
+In C++ we can partition the code for unexpected behavior away from that for
+expected behavior using the <b>try</b>, <b>throw</b>, and <b>catch</b> syntax.
+
+This partitioning allows code for each behavior to be more readable,
+maintainable, and reliable.
+
+<h4> Solution Specification:</h4>
+<ol>
+    <li> Create a new directory, <tt>lab14</tt>, and move to it.
+
+    <li> Define a <u>helper function</u> for computing the distance between particles in 3D space (<i>from Lab 12</i>).
+
+    <center>
+    {<tt>sqrt( x*x + y*y + z*z )</tt>}
+    </center>
+
+    <li> Use <tt>try</tt>, <tt>throw</tt> and <tt>catch</tt> to prevent and
+    handle underflow and overflow respectively.<br>
+    Experiment with two different ways of handling these exceptions:
+    <ol>
+	<li>use values in <cfloat> (http://www.cplusplus.com/reference/clibrary/cfloat/) to test values <i>before</i> they are used.
+	<li>use values in <limits> (http://msdn2.microsoft.com/en-us/library/yefe7a47(VS.80).aspx) to test results <i>after</i> they are computed, then recompute if necessary.
+    </ol>
+
+    <li> When correct, generate via <tt>enscript</tt> an HTML printout of the
+    sources, and demonstrate, via <tt>script</tt>, the sources and the
+    running of the program data.<br>
+    Submit to D2L.
+</ol>
+
+</body>
+</html>

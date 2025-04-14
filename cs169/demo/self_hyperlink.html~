@@ -1,0 +1,18 @@
+<!doctype html>
+<!-- Created by A. A. Anda, Ph.D., for SCSU CSCI 169 -->
+<html>
+    <head>
+	<meta charset="UTF-8"/>
+	<title>
+	    Self-Hyperlink Demo
+	</title>
+    </head>
+    <body>
+	<h1 style="text-align : center">Self-Hyperlink Demo</h1>
+	<p>
+	    The following is a hyperlink which links to this page.<br/>
+	    When you click on this hyperlink, it will re-load this page.<br/>
+	    <a href="http://web.stcloudstate.edu/aanda/cs169/demo/self_hyperlink.html">http://web.stcloudstate.edu/aanda/cs169/demo/self_hyperlink.html</a>
+	</p>
+    </body>
+</html>

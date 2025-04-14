@@ -1,0 +1,21 @@
+<html>
+ <!-- copybox.html                                                 Dave Reed -->
+ <!-- This page copies the contents of one text box to another when changed. -->
+ <!---------------------------------------------------------------------------->
+ <head>
+   <title> Click and Copy </title>
+ </head>
+
+ <body>
+   <h2>Click to copy either value</h2>
+
+   <form name="BoxForm">
+    <input type="text" name="box1" size=10 value=""
+       onChange="document.BoxForm.box2.value = document.BoxForm.box1.value;" />
+    &nbsp; <tt><----></tt> &nbsp;
+    <input type="text" name="box2" size=10 value=""
+       onChange="document.BoxForm.box1.value = document.BoxForm.box2.value;" />
+   </form>
+ </body>
+</html>
+

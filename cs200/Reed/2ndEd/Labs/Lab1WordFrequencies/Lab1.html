@@ -1,0 +1,318 @@
+<html>
+<head>
+  <title>Lab 1: Experimentation with Word Frequencies</title>
+</head>
+
+<body bgcolor="white" link="red" vlink="darkred" alink="blue">
+
+<p align="right">Name: _________________________________________</p>
+
+
+<p><br /><br /></p>
+
+<center><h2>Lab 1: Experimentation with Word Frequencies</h2>
+        <h3>Lab to accompany <a href="http://dave-reed.com/book">
+        A Balanced Introduction to Computer Science, 2nd ed.</a><br />
+        by David Reed, Pearson Prentice-Hall, &copy;2008.</h3></center>
+
+<p><br /></p>
+
+<p>This lab will demonstrate the use of computer programs as
+experimental tools for solving problems.  Utilizing a Web page with
+embedded JavaScript code, you will perform experiments with word
+distributions and attempt to estimate the number of words with certain
+properties.  Many of the labs in this course will similarly emphasize
+the use of computers for modeling complex phenomena or for analyzing
+data, and so will help to develop empirical skills such as formulating
+reasonable hypotheses, designing experiments, executing them, and
+critiquing the results. </p>
+
+<hr />
+
+<h3>JavaScript in a Web Page</h3>
+
+<p>The Web page <A HREF="randSeq.html">randSeq.html</A> contains
+JavaScript code for generating random sequences of letters.  By
+default, clicking on the button labeled "Click to generate letter
+sequences" within the page will generate and display a single sequence
+of 3 random letters, e.g., "<tt>syk</tt>".  By changing a value in the
+appropriate box, however, the number of random sequences, the length
+of each sequence, and even the possible letters in each sequence can
+be changed. </p>
+
+<p><br />
+<blockquote>
+<b><font color="red">EXERCISE 1:</font></b> &nbsp;&nbsp;
+Load this page into a separate browser window.  Generate 10 random sequences of 3 
+letters and list them 
+below.  
+Were any of the 10 sequences real English words?  Would you expect them to be? 
+
+<P><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 2:</FONT></B> &nbsp;&nbsp;
+Modify the appropriate value in the page to generate 10 random sequences of 4 
+letters and list them below.  
+Were any of the 10 sequences real English words?  Would you expect them to be? 
+Would you expect a 4-letter 
+word 
+be more or less likely than a 3-letter word?  Explain.
+
+<P><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 3:</FONT></B> &nbsp;&nbsp;
+What would you expect to happen if you changed the contents of the box labeled 
+"Letters to choose from" to 
+only 
+two letters, say "<TT>DC</TT>".  What if you changed the contents to a single 
+letter?  Verify your 
+predictions 
+in the page. 
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 4:</FONT></B> &nbsp;&nbsp;
+What would you expect to happen if you changed the number of sequences to be a 
+negative number?  What would 
+you 
+expect if the length of the sequences was specified as negative?   Verify your 
+predictions in the page. 
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P> You are not expected to understand JavaScript code yet, but you may find it 
+interesting to look at the 
+actual code for generating random letter sequences.  View the HTML source for the 
+<TT>randSeq.html</TT> page 
+(by selecting <TT>Source</TT> under the Internet Explorer <TT>View</TT> menu).  
+There are two sections of 
+code 
+in the HEAD of this page, delineated by <TT>&lt;script 
+type="text/javascript"&gt;</TT> and 
+<TT>&lt;/script&gt;</TT> tags.  The first section of code loads a library of 
+JavaScript routines called 
+<TT>random.js</TT>, including code for generating a random character.  The second 
+section of code contains 
+the 
+definitions of two functions that generate and display the random sequences that 
+appear in the page.  The 
+text in the body of 
+the page sets up the layout of the page and executes the JavaScript code when the 
+user clicks on the button.
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 5:</FONT></B> &nbsp;&nbsp;
+What are the names of the two JavaScript functions that generate and display the 
+random letter sequences?  Note that each function name 
+follows the keyword <TT>function</TT> in the code section found in the HEAD of the 
+page.
+
+<P><BR><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P><HR></P>
+
+<H3>Simple Experiments</H3>
+
+<P> Using the random sequence generator page, you can perform some interesting 
+experiments.  In particular, 
+you 
+can use this code as a tool for verifying or disproving hypotheses about word 
+distributions, and to generate 
+further data for analysis.  First, consider the total number of unique 3-letter 
+sequences that can be 
+generated.  Since each of the three positions in a sequence can be any of the 26 
+letters, there are <FONT 
+SIZE=-1>26<SUP>3</SUP></FONT> = 17,576 different sequences.  Clearly, not all of 
+these sequences form real 
+words.  The question arises:  how many random 3-letter sequences would you expect 
+to have to generate before 
+you obtain a word?   </P>
+
+<P> It so happens that there are approximately 500 3-letter words in the English 
+language (according to a 
+popular online dictionary).  Thus, if you generated a random 3-letter sequence, 
+there is a 500 out of 17,576 
+chance that it will be a word.  Since 500/17,567 is approximately 1/35, you might 
+expect 1 out of every 35 
+sequences to be a word.  More accurately, you might expect 28 out of every 1000 
+random 3-letter sequences to 
+be 
+words, since 1/35 is approximately 2.8%.  This number can be verified 
+experimentally using the 
+<tt>randSeq.html</tt> Web page. </P>
+
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 6:</FONT></B> &nbsp;&nbsp;
+Use the Web page to generate 1000 random 3-letter sequences and count how many 
+English words you obtain.  
+List 
+that number below.  <I>Hint:</I> Since 1000 sequences will not fit on the screen at 
+one time, generate the 
+sequences in 10 groups of 100.  Scanning 100 sequences for words can be done in 
+just a few seconds. </P>
+
+<P><BR><BR><BR><BR></P>
+
+<P>Is the number you obtained close to the expected value of 28?  If not, try 
+generating another 500 or 1000 
+sequences and see if the approximation (number of words / number of sequences 
+generated) improves.  
+
+<P><BR><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P> As the length of the letter sequences increases, the chances of generating a 
+word at random decreases 
+dramatically.  For example, there are 1,777 4-letter words in the online 
+dictionary.  Thus, the chances of 
+generating a 4-letter word at random are 1 in 257 (1,777/<FONT 
+SIZE=-1>26<SUP>4</SUP></FONT> = 1,777/456,976 
+= 
+1/257).  For 5-letter sequences, the chances of generating a word at random is 1 in 
+4,920 (2,415/<FONT 
+SIZE=-1>26<SUP>5</SUP></FONT> = 2,415/11,881,376 = 1/4,920) .    </P>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 7:</FONT></B> &nbsp;&nbsp;
+Use the Web page to generate 1000 random 4-letter sequences and count how many 
+English words you obtain.  
+List 
+that number below.   </P>
+
+<P><BR><BR><BR><BR></P>
+
+<P>Since there is only a 0.38% chance of generating a 4-letter word at random, you 
+would expect to obtain 
+around 4 words out of 1000 random 4-letter sequences.  Is the number you obtained 
+close to 4?  Compared to 
+the 
+case for 3-letter words, would you expect it to take more or fewer sequences to 
+obtain a number close to the 
+expected value?  Explain.
+
+<P><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P><HR></P>
+
+<H3>Problem Solving via Experimentation</H3>
+
+<P> Part of the blame for the scarcity of words among randomly generated sequences 
+falls on letters such as 
+'q' 
+and 'z'.  Since these letters are used so infrequently in English, their inclusion 
+in a random sequence of 
+letters makes a real word extremely unlikely.  If we exclude letters such as these, 
+however, we can improve 
+the 
+chances of generating words considerably.  For example, the 10 letters that appear 
+most frequently in English 
+text are "etaoinshrd".   Random sequences of these letters would appear more likely 
+to produce words.</P>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 8:</FONT></B> &nbsp;&nbsp;
+Modify the appropriate field in the Web page so that it generates random sequences 
+using only the letters 
+"etaoinshrd".  Generate 1000 random 3-letter sequences of these letters and count 
+how many English words you 
+obtain.  List that number below.
+
+<P><BR><BR><BR><BR></P>
+
+Is the number you obtained relatively consistent with the number obtained by the 
+person sitting next to you 
+(e.g., within 10% of each other)?  If not, generate more sequences and add the word 
+counts until your totals 
+are closer. 
+
+<P><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+
+<P>
+Using your experimental results from the previous exercise, you should now be able 
+to estimate the number of 
+3-letter words in the English language that use only the letters in "etaoinshrd".  
+The followng general 
+formula 
+applies:
+
+<XMP>
+    # of words = (# of possible sequences) * (chances that random sequence is word)
+</XMP>
+
+The total number of 3-letter sequences that use only 10 letters is <FONT 
+SIZE=-1>10<SUP>3</SUP></FONT> = 
+1,000.  
+As an estimate of the chances that a random sequence of these letters is a word, 
+divide the number of words 
+you 
+obtained by the total number of sequences you generated.  For example, suppose you 
+generated 1500 random 
+sequences, 150 of which were actual words.  You could then estimate the chances of 
+randomly generating a word 
+to be 150/1500 = 1/10.  Plugging these numbers into the above formula, the total 
+number of 3-letter words 
+using 
+only "etaoinshrd" is estimated to be (1,000 * 1/10) = 100.   </P>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 9:</FONT></B> &nbsp;&nbsp;
+Using the numbers you obtained in EXERCISE 8, estimate the number of 3-letter words 
+in the English language 
+that use only the letters in "etaoinshrd".  Show your work in obtaining your 
+estimate. 
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+<P><BR>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 10:</FONT></B> &nbsp;&nbsp;
+Using the same approach as above, estimate the number of 4-letter words using only 
+the letters "etaoinshrd".  
+Show your work in obtaining your estimate.
+
+<P><I>Note:</I> since there are many more 4-letter sequences than there are 
+3-letter sequences, it may take 
+many more random generations in order to obtain a reasonable estimate.  Justify 
+your data.
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR></P>
+
+<P><HR></P>
+
+<I>Hand in these sheets with your written responses.</I>
+</BODY>
+</HTML>
+</BODY>
+</HTML>

@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	   <title>The Bean Counter</title> 
+	   <style type="text/css">
+	         body {background-color : saddlebrown; color : darkorange; 
+	                   font-family : helvetica; text-align : center}
+	         table {margin-left : auto; margin-right : auto; text-align : center; 
+	                   background-color : #993300; border-style : solid;
+	                   border-color : firebrick; border-width : medium; padding : 8px }
+	   </style>
+   </head> 
+   <body> 
+   <script type = "text/javascript"> 
+           var shots = 1; 
+           var drink = "none"; 
+           var ounce = 0; 
+   </script>
+      <h1 style="color : white"> the bean counter</h1> 
+      <hr style="width : 50%; color : darkorange  "/> 
+      <p><b>figuring the price of espresso drinks<br /> 
+                    so baristas can have time to chat</b></p> 
+       <form action="" > 
+
+       <table>
+       <tr>
+          <td>
+            <input type="button" value="1" onclick='shots = 1'/>
+          </td>
+          <td>
+            <input type="button" value="S" onclick='ounce = 8'/>
+          </td>
+          <td>
+            <input type="button" value="    ESPRESSO   " onclick='drink = "espresso"'/>
+          </td>
+          <td>
+            <input type="button" value="Clear" onclick=
+                 'shots = 1;
+                 drink = "none";
+                 ounce = 0;
+                 document.forms[0].price.value = "0.00"
+               '/>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td>
+            <input type="button" value="2" onclick='shots = 2'/>
+          </td>
+          <td>
+            <input type="button" value="L" onclick='ounce = 12'/>
+          </td>
+          <td>
+            <input type="button" value="      LATTE      " onclick='drink = "latte"'/>
+          </td>
+          <td>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td>
+            <input type="button" value="3" onclick='shots = 3'/>
+          </td>
+          <td>
+            <input type="button" value="G" onclick='ounce = 16'/>
+          </td>
+          <td>
+            <input type="button" value="CAPPUCCINO" onclick='drink = "cappuccino"'/>
+          </td>
+          <td>
+            <input type="button" value="Total" onclick=
+                  ' var price; 
+					var taxRate = 0.088; 
+					if (drink == "espresso") 
+						price = 1.40; 
+					if (drink == "latte" || drink == "cappuccino") { 
+					if (ounce == 8) 
+						price = 1.95; 
+					if (ounce == 12) 
+						price = 2.35; 
+					if (ounce == 16) 
+						price = 2.75; 
+					} 
+					if (drink == "Americano") 
+						price = 1.20 + .30 * (ounce/8); 
+					price = price + (shots - 1) * .50; 
+					price = price + price * taxRate; 
+	  			    document.forms[0].price.value = price; 
+               '/>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td>
+            <input type="button" value="4" onclick='shots = 4'/>
+          </td>
+          <td>
+          </td>
+          <td>
+            <input type="button" value="  AMERICANO  " onclick='drink = "Americano"'/>
+          </td>
+          <td style="border-style : solid; border-width : medium; border-color : red">
+            <input type="text" name="price" value="0.00" size="5" onchange=' '/>
+          </td>
+        </tr>
+       </table>
+ 
+       </form> 
+</body> 
+</html>
+
+
+
+
+
+
+

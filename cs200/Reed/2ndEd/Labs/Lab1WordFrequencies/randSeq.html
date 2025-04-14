@@ -1,0 +1,77 @@
+<html>
+<!-- randSeq.html     by Dave Reed (davereed@creighton.edu)  --> 
+<!-- A lab program to accompany A Balanced Introduction to   -->
+<!-- Computer Science, 2nd ed.  Pearson Prentice Hall, 2008. -->
+<!--                                                         -->
+<!-- This page generates random sequences of letters.  The   -->
+<!-- number of sequences and their length is specified in    -->
+<!-- text boxes.                                             -->
+<!-- ======================================================= -->
+
+<head>
+<style type="text/css">
+  input {font-family : Courier, Monospace}
+</style>
+
+<title> Random Letter Sequence Generator </title>
+
+<script type="text/javascript" src="random.js"></script>
+
+<script type="text/javascript">
+  function generateRandSeq(len, letters)
+  // Assumes: len >= 0
+  // Returns: random sequence of letters, length len
+  {
+      var i, seq = "";
+      for (i = 1; i <= len; i = i + 1) {
+          seq += RandomChar(letters);
+      }
+      return seq;
+  }
+  
+  function showAllSequences()
+  // Assumes: numSeqBox specifies the number of sequences, 
+  //          lenSeqBox specifies their length, and
+  //          lettersBox specifies the letters to choose from
+  // Results: random letter sequences of the specified length are generated
+  //          and displayed in the outputArea
+  {
+      document.getElementById('outputArea').value = '';
+      for(i=1;i<=document.getElementById('numSeqBox').value;i=i+1) {
+          document.getElementById('outputArea').value += 
+              generateRandSeq(document.getElementById('lenSeqBox').value,
+                              document.getElementById('lettersBox').value) + ' ';
+      };
+  }
+</script>
+</head>
+
+<body style="text-align:center">
+<h2>Random Letter Sequence Generator</h2>
+<h3>by David Reed, for <a href="http://dave-reed.com/book">A Balanced Introduction to Computer Science, 2nd ed.</a></h3>
+
+<hr />
+
+<table>
+<tr>
+  <td>Number of random letter sequences to generate: </td>
+  <td><input type="text" id="numSeqBox" size="4" value="1" /> </td></tr>
+<tr>
+  <td>Length of each random letter sequence: </td>
+  <td><input type="text" id="lenSeqBox" size="2" value="3" /> </td></tr>
+<tr>
+  <td>Letters to choose from: </td>
+  <td><input type="text" id="lettersBox" size="26" value="abcdefghijklmnopqrstuvwxyz" />
+      </td></tr>
+</table>
+
+<p>
+<input type="button" value="Click to generate letter sequences"
+       onclick="showAllSequences()"> </p>
+
+<p>
+<textarea id="outputArea" rows="20" cols="50" value=""></textarea> </p>
+</form>
+
+</body>
+</html>

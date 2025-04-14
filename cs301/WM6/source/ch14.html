@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 14</h1>
+    <p align="center">
+    <a href="#Listing 14-1  The header file for the class ListQueue">Listing 
+    14-1</a><br>
+    <a href="#Listing 14-2 The implementation file for the class ListQueue">
+    Listing 14-2</a><br>
+    <a href="#Listing 14-3  The header file for the class LinkedQueue">Listing 
+    14-3</a><br>
+    <a href="#Listing 14-4  The header file for the class ArrayQueue">Listing 
+    14-4</a><br>
+    <a href="#Listing 14-5  The implementation fi le for the class ArrayQueue">
+    Listing 14-5</a><br>
+    <a href="#Listing 14-6 A header file for the class SL_PriorityQueue .">
+    Listing 14-6</a></p>
+      <p align="center">&nbsp;</p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 14-1  The header file for the class ListQueue">
+                Listing 14-1&nbsp; The header file for the class ListQueue</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">/** ADT queue: ADT list implementation.
+@file ListQueue.h */
+#ifndef _LIST_QUEUE
+#define _LIST_QUEUE
+#include &quot;QueueInterface.h&quot;
+#include &quot;LinkedList.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+template &lt; class ItemType &gt; class ListQueue:public QueueInterface &lt; ItemType &gt;
+{
+private:
+  LinkedList &lt; ItemType &gt; *listPtr;	// Pointer to list of queue items
+
+public:
+  ListQueue ();
+  ListQueue (const ListQueue &amp; aQueue);
+
+  ~ListQueue ();
+  bool isEmpty () const;
+
+  bool enqueue (const ItemType &amp; newEntry);
+
+  bool dequeue ();
+
+  /** @throw PrecondViolatedExcep if queue is empty. */
+  ItemType peekFront () const throw (PrecondViolatedExcep);</font></b></pre>
+              <pre><b><font size="3" color="#0000FF">
+};  // end ListQueue
+
+#include &quot;ListQueue.cpp&quot;
+#endif</font></b></pre>
+                <pre><font size="3" color="#0000FF"><b>
+</b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 14-2 The implementation file for the class ListQueue">
+                Listing 14-2 The implementation file for the class
+                <font face="Courier New">ListQueue</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">/** ADT queue: ADT list implementation.
+@file ListQueue.cpp */
+#include &quot;ListQueue.h&quot;		// Header file
+template &lt; class ItemType &gt; ListQueue &lt; ItemType &gt;::ListQueue ()
+{
+  listPtr = new LinkedList &lt; ItemType &gt; ();
+}				// end default constructor
+
+template &lt; class ItemType &gt;
+  ListQueue &lt; ItemType &gt;::ListQueue (const ListQueue &amp; aQueue):
+listPtr (aQueue.listPtr)
+{
+}				// end copy constructor
+
+template &lt; class ItemType &gt; ListQueue &lt; ItemType &gt;::~ListQueue ()
+{
+}				// end destructor
+
+template &lt; class ItemType &gt; bool ListQueue &lt; ItemType &gt;::isEmpty () constconst
+{
+  return listPtr-&gt;isEmpty ();
+}				// end isEmpty
+
+template &lt; class ItemType &gt;
+  bool ListQueue &lt; ItemType &gt;::enqueue (const ItemType &amp; newEntry)
+{
+  return listPtr-&gt;insert (listPtr-&gt;getLength () + 1, newEntry);
+}				// end enqueue
+
+template &lt; class ItemType &gt; bool ListQueue &lt; ItemType &gt;::dequeue ()
+{
+  return listPtr-&gt;remove (1);
+}				// end dequeue
+
+template &lt; class ItemType &gt;
+  ItemType ListQueue &lt; ItemType &gt;::peekFront () constconst
+throw (PrecondViolatedExcep)
+{
+  if (isEmpty ())
+    throw PrecondViolatedExcep (&quot;peekFront() called with empty queue.&quot;);
+// Queue is not empty; return front
+  return listPtr-&gt;getEntry (1);
+}				// end peekFront
+
+// end of implementation file</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <div align="center">&nbsp;</div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 14-3  The header file for the class LinkedQueue">
+                Listing 14-3&nbsp; <font FACE="TimesNewRomanPS-Bold"><b>The 
+                header file for the class </b></font><font FACE="Courier New">
+                LinkedQueue</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font size="3" color="#0000FF">/** ADT queue: Link-based implementation.
+@file LinkedQueue.h */
+#ifndef _LINKED_QUEUE
+#define _LINKED_QUEUE
+#include &quot;QueueInterface.h&quot;
+#include &quot;Node.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+template &lt; class ItemType &gt; class LinkedQueue:public QueueInterface &lt; ItemType &gt;
+{
+private:
+// The queue is implemented as a chain of linked nodes that has
+// two external pointers, a head pointer for the front of the queue
+// and a tail pointer for the back of the queue.
+  Node &lt; ItemType &gt; *backPtr;
+  Node &lt; ItemType &gt; *frontPtr;
+public:
+  LinkedQueue ();
+  LinkedQueue (const LinkedQueue &amp; aQueue);
+
+  ~LinkedQueue ();
+  bool isEmpty () const;
+
+  bool enqueue (const ItemType &amp; newEntry);
+
+  bool dequeue ();
+
+/** @throw PrecondViolatedExcep if the queue is empty */
+  ItemType peekFront () const throw (PrecondViolatedExcep);
+};				// end LinkedQueue
+
+#include &quot;LinkedQueue.cpp&quot;
+#endif</font></b></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 14-4  The header file for the class ArrayQueue">
+                Listing 14-4 <b>
+                <font FACE="TimesNewRomanPS-Bold" SIZE="2" COLOR="#00ffff">&nbsp;</font><font FACE="TimesNewRomanPS-Bold">The 
+                header file for the class </font></b><font face="Courier New">
+                ArrayQueue</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font size="3" color="#0000FF">/** ADT queue: Circular array-based implementation.
+@file ArrayQueue.h */
+#ifndef _ARRAY_QUEUE
+#define _ARRAY_QUEUE
+#include &quot;QueueInterface.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+const int MAX_QUEUE = 50;
+
+template &lt; class ItemType &gt; class ArrayQueue:public QueueInterface &lt; ItemType &gt;
+{
+private:
+  ItemType items[MAX_QUEUE];	// Array of queue items
+  int  front;			// Index to front of queue
+
+  int  back;			// Index to back of queue
+
+  int  count;			// Number of items currently in the queue
+
+public:
+  ArrayQueue ();
+// Copy constructor and destructor supplied by compiler
+  bool isEmpty () const;
+
+  bool enqueue (const ItemType &amp; newEntry);
+
+  bool dequeue ();
+
+/** @throw PrecondViolatedExcep if queue is empty. */
+  ItemType peekFront () const throw (PrecondViolatedExcep);
+};				// end ArrayQueue
+
+#include &quot;ArrayQueue.cpp&quot;
+#endif</font></b></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 14-5  The implementation fi le for the class ArrayQueue">
+                Listing 14-5&nbsp; <font FACE="TimesNewRomanPS-Bold"><b>The 
+                implementation file for the class </b></font>
+                <font face="Courier New">ArrayQueue</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font size="3" color="#0000FF">/** ADT queue: Circular array-based implementation.
+@file ArrayQueue.cpp */
+#include &quot;ArrayQueue.h&quot;		// Header file
+template &lt; class ItemType &gt; ArrayQueue &lt; ItemType &gt;::ArrayQueue ():front (0), back (MAX_QUEUE - 1), count (0)
+{
+}				// end default constructor
+
+template &lt; class ItemType &gt; bool ArrayQueue &lt; ItemType &gt;::isEmpty () constconst
+{
+  return count == 0;
+}				// end isEmpty
+
+template &lt; class ItemType &gt; bool ArrayQueue &lt; ItemType &gt;::enqueue (const ItemType &amp; newEntry)
+{
+  bool result = false;
+
+  if (count &lt; MAX_QUEUE)
+    {
+// Queue has room for another item
+      back = (back + 1) % MAX_QUEUE;
+      items[back] = newEntry;
+      count++;
+      result = true;
+    }				// end if
+  return result;
+}				// end enqueue
+
+template &lt; class ItemType &gt; bool ArrayQueue &lt; ItemType &gt;::dequeue ()
+{
+  bool result = false;
+
+  if (!isEmpty ())
+    {
+      front = (front + 1) % MAX_QUEUE;
+      count -;
+      result = true;
+    }				// end if
+  return result;
+}				// end dequeue
+
+template &lt; class ItemType &gt; ItemType ArrayQueue &lt; ItemType &gt;::peekFront () constconst throw (PrecondViolatedExcep)
+{
+// Enforce precondition
+  if (isEmpty ())
+    throw PrecondViolatedExcep (&quot;peekFront() called with empty queue&quot;);
+
+// Queue is not empty; return front
+  return items[front];
+}				// end peekFront</font></b></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 14-6 A header file for the class SL_PriorityQueue .">
+                Listing 14-6 <font FACE="TimesNewRomanPS-Bold"><b>A header file 
+                for the class </b></font><font face="Courier New">
+                SL_PriorityQueue</font><font FACE="LucidaSansTypewriter"> </font>
+                <font FACE="TimesNewRomanPS">.</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font size="3" color="#0000FF">/** ADT priority queue: ADT sorted list implementation.
+@file SL_PriorityQueue.h */
+#ifndef _PRIORITY_QUEUE
+#define _PRIORITY_QUEUE
+#include &quot;PriorityQueueInterface.h&quot;
+#include &quot;LinkedSortedList.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+template &lt; class ItemType &gt; class SL_PriorityQueue:public PriorityQueueInterface &lt; ItemType &gt;
+{
+private:
+  LinkedSortedList &lt; ItemType &gt; *slistPtr;	// Pointer to sorted list of
+							// items in the priority queue
+public:
+  SL_PriorityQueue ();
+  SL_PriorityQueue (const SL_PriorityQueue &amp; pq);
+
+  ~SL_PriorityQueue ();
+  bool isEmpty () const;
+
+  bool add (const ItemType &amp; newEntry);
+
+  bool remove ();
+
+/** @throw PrecondViolatedExcep if priority queue is empty. */
+  ItemType peek () const throw (PrecondViolatedExcep);
+};				// end SL_PriorityQueue
+
+#include &quot;SL_PriorityQueue.cpp&quot;
+#endif</font></b></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+      </body>
+</html>

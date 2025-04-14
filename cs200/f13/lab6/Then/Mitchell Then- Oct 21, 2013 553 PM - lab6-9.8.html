@@ -1,0 +1,47 @@
+<!doctype=html>
+<!-- /export/home/cs200/cs200119/documents/labs/lab6/lab6-9.8.html -->
+<!-- Created by: Mitchell Then -->
+<!-- The purpose of this program is to exhibit the use of functions -->
+<!-- File Created: 10/17/13 -->
+<!-- Last Edited: 10/21/13 -->
+
+<html>
+
+	<head>
+		<title>Mosteller Formula</title>
+		<script type="text/javascript" src="convert.js"></script>
+		<script type="text/javascript">
+			function calcMostellerFormula()
+			{
+				var height, weight;
+				
+				height = inToCm(parseFloat(document.getElementById('heightBox').value));
+				weight = lbToKg(parseFloat(document.getElementById('weightBox').value));
+				document.getElementById('outputDiv').innerHTML = ftSqToMSq(Math.sqrt((height * weight) / 3600));
+			}
+		</script>
+		
+	</head>
+
+	<body>
+		<table style="margin:0px auto">
+			<tr><td>
+					Height:
+				</td><td>
+					<input type="text" id="heightBox">
+			</td></tr>
+			<tr><td>
+					Weight:
+				</td><td>
+					<input type="text" id="weightBox">
+			</td></tr>
+		</table>
+		
+		<div style="text-align:center">
+			<input type="button" value="Calculate"
+				onclick="calcMostellerFormula();">
+		</div>
+			
+		<div id="outputDiv" style="text-align:center"></div>
+	</body>
+</html>

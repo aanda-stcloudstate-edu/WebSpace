@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+    <TITLE>CSCI 301 - Programming Assignment 8 Testing Polynomials - Spring 2013 A. A. Anda</TITLE>
+    <style>
+	P {font-family: "Times New Roman"}
+    </style>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 301<BR>
+  Computer Science 2<BR>
+  Spring, 2013<BR>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Programming Assignment 8 Testing Polynomials</B><BR>
+</DIV>
+<P>
+<HR>
+<P>
+<HR>
+<h3>Test your polynomial class by using it to generate the first ten or so polynomials from the following families of <i>orthogonal polynomials</i>.</h3>
+<P>
+<HR>
+The Hermite and Chebyshev polynomial recurrences will work for integer coefficients.
+<HR>
+<h4>Hermite polynomials</h4>
+Use the following recurrence relations:
+<h5>Probabilists' form</h5>
+\(He_{n+1}(x) = xHe_{n}(x) - nHe_{n-1}(x)\), where \(He_{0}(x) = 1\) and \(He_{1}(x) = x\)
+<p>
+or, using the 1st derivative,
+<p>
+\(He_{n+1}(x) = xHe_{n}(x) - He_{n}'(x)\)
+<h5>Physicists' form</h5>
+\(H_{n+1}(x) = 2xH_{n}(x) - 2nH_{n-1}(x)\), where \(H_{0}(x) = 1\) and \(H_{1}(x) = 2x\)
+<p>
+or, using the 1st derivative,
+<p>
+\(H_{n+1}(x) = 2xH_{n}(x) - H_{n}'(x)\)
+<p>
+The explicit sequences of these polynomials, 
+\(He_{0}(x)\) through \(He_{10}(x)\),
+and
+\(H_{0}(x)\) through \(H_{10}(x)\), are
+<a href="http://en.wikipedia.org/wiki/Hermite_polynomials#Definition">here</a>.
+<HR>
+<h4>Chebyshev polynomials</h4>
+Use the following recurrence relations:
+<h5>first kind</h5>
+\(T_{n+1}(x) = 2xT_{n}(x) - T_{n-1}(x)\), where \(T_{0}(x) = 1\) and \(T_{1}(x) = x\)
+<h5>second kind</h5>
+\(U_{n+1}(x) = 2xU_{n}(x) - U_{n-1}(x)\), where \(U_{0}(x) = 1\) and \(U_{1}(x) = 2x\)
+<p>
+The explicit sequences of these polynomials, 
+<p>
+\(T_{0}(x)\) through \(T_{11}(x)\),
+and
+\(U_{0}(x)\) through \(U_{9}(x)\) are
+<a href="http://en.wikipedia.org/wiki/Chebyshev_polynomials#Examples">here</a>.
+<P>
+<HR>
+<HR>
+</BODY>
+</HTML>
+

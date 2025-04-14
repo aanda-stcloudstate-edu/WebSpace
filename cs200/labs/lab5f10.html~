@@ -1,0 +1,64 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>CSCI 200 Lab 5 Fall 2010 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 200</h1></center>
+
+<center>
+<h2>
+Lab 5</h2></center>
+
+<center>
+<h3>
+    [A. A. Anda]<br>
+    Fall 2010
+</h3></center>
+
+<hr WIDTH="100%">
+<h2>Introduction:</h2>
+This lab exercises the ability to:
+<ul>
+    <li>Create <i>event-driven</i> Web pages.</li>
+</ul>
+<h2>Lab Assignment:</h2>
+
+<ol>
+    <li> Create a new directory, <b><tt>Lab5</tt></b>, in your class account directory.</li>
+    <li> Move into your Lab5 directory</li>
+    <li> Create files <tt>swap.html</tt> &amp; <tt>convert.html</tt>.</li>
+    <li> For each of the following tasks,
+    <ol>
+	<li> modify your Web page file via the editor</li>
+	<li> save the file</li>
+	<li> refresh the browser open to your Web page</li>
+	<li> verify that your modifications did what you've intended</li>
+	<li> Use HTML comments at the top of each file identifying:</li> 
+	<ol> 
+	    <li>where the file is located (e.g. <tt>~/cs200999/labs/Lab5/<i>filename</i>.html</tt>)</li> 
+	    <li>the author (<i>you</i>) </li> 
+	    <li>what the program does</li> 
+	    <li>when you created the file</li> 
+	    <li>when you last modified the file</li> 
+	</ol>
+    </ol>
+    </li>
+</ol>
+Perform <i>all</i> of the requirements in each of the following Exercises in Reed:
+<ol>
+    <li> <u>Exercise 7.14</u>
+    <ul>
+	<li>Use <i>only</i> <u>one</u> temporary variable to implement the <u>swap</u> algorithm.
+    </ul></li>
+    <li> <u>Exercise 7.16</u> </li>
+    <li> <u>Exercise 7.18</u> </li>
+</ol>
+    <p>
+    When finished (after you’ve tested &amp; proof-read each of your Web pages), submit your <b>three</b> sets of files to the appropriate D2L dropbox.
+</body>
+</html>

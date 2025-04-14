@@ -1,0 +1,1170 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en">
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+       <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+       <title> SCSU CSCI 301 [1], Fall 2012, A. A. Anda, Ph.D.</title>
+    </head>
+<body bgcolor="#EEEEEE">
+
+<center>
+<h1>
+    <a href="http://www.stcloudstate.edu/default.asp">SCSU</a>
+    <a href="http://www.stcloudstate.edu/computerscience/default.asp">CSCI</a>
+    <a href="http://bulletin.stcloudstate.edu/courses.asp?deptCode=csci">301</a><br>
+    <a href="http://cs.gmu.edu/cne/pjd/GP/gp_summary_toplevel.html">Computer Science 2</a> 
+</h1>
+<h2>
+Section 1<br>
+Fall 2012<br>
+</h2>
+<h3>
+    <i>Associate Professor</i> A. A. Anda, Ph.D.
+</h3>
+</center>
+
+<h2>
+SYLLABUS (etc):</h2>
+<a href="http://web.stcloudstate.edu/aanda/cs301/syllabus301f12.html">Syllabus</a> for 301 &amp; 591,<br>
+<a href="http://web.stcloudstate.edu/aanda/Wkly-sched-f12.html">Instructor's Class Schedule</a>,<br>
+<a href="http://web.stcloudstate.edu/aanda/cs301/src/Doxygen/index.html">Carrano text Doxygen commented source code</a>,<br>
+<a href="http://frank-m-carrano.com/makingitreal/2010/11/204/">Carrano text source code and errata link</a>: download then unzip
+
+
+<h2> Announcements:</h2>
+<ul>
+    <li> <a href="http://www.acm.org/membership/student/">Become an ACM student member</a>
+</ul>
+
+<h2> EXAMS:</h2>
+Each exam will be closed-book and closed-notes.<br>
+However, you can bring a single review sheet for each exam.<br>
+You may also bring review sheets from the previous exams, if any, for this class.
+<ol>
+    <li>Hourly 1: Thurs, Oct. 18
+    <ul>
+	<li>Covers Carrano chapters 1 - 7 and other topics covered in class or assignments, e.g. big-O() and complicated declarations.
+    </ul>
+    <li>Hourly 2: Thurs, Nov. 29
+    <ul>
+	<li>Covers Carrano chapters 8 - 11 and other topics covered in class or assignments.
+	<li>Closed book/notes, but bring review sheet from Hourly 1 + new review sheet for this hourly exam.
+    </ul>
+    <li><i>Comprehensive </i>Final: Tuesday, December 18, 10:15 - 12:45 
+</ol>
+
+<h2> Reading Quizes:</h2>
+<ol>
+    <li> Carrano Chapter 1: Wed. Aug. 29
+    <li> Carrano Chapter 2: Tue. Sept. 4
+    <li> Carrano Chapter 3: Wed. Sept. 5
+    <li> Carrano Chapter 4: Thu. Sept. 13
+    <li> Carrano Chapter 5: Wed. Sept. 26
+    <li> Carrano Chapter 6: Wed. Oct. 3
+    <li> Carrano Chapter 7: Tue. Oct. 9
+    <li> Carrano Chapter 10: Wed. Nov. 7 [terminology quiz]
+</ol>
+
+<h2> Tasks:</h2>
+<ol>
+    <li>Download, compile, and execute the Carrano's code for List w. Exceptions from Chapt. 3, and Linked List from Chapter 4.<br>
+	Write Driver programs to exercise the methods.  We'll discuss the results Thurs. Sept. 20.
+</ol>
+<h2> ASSIGNMENTS:</h2>
+<p>
+For all assignments, provide the full pathname of the executables on csci2.<br>
+Use <tt>chmod</tt> to ensure that your executables <i>and the directory containing them</i> must have their execute permission set for world.
+</p>
+<ol>
+    <li><a href="http://web.stcloudstate.edu/aanda/cs301/RL_rule_quiz.txt">Right-Left Rule take-home quiz</a> Due in class Thurs. August 30 (on paper)
+    <li><a href="http://web.stcloudstate.edu/aanda/cs301/hw1f12.html">Assignment 1</a> Due in D2L by Midnight Wed. Sept. 12.
+    <li><a href="http://web.stcloudstate.edu/aanda/cs301/hw2f12.html">Assignment 2</a> Due in D2L by Midnight Tue. Sept. 18.
+    <li><a href="http://web.stcloudstate.edu/aanda/cs301/hw3f12.html">Assignment 3</a> Due in D2L by Midnight Tue. Sept. 25.
+    <li><a href="http://web.stcloudstate.edu/aanda/cs301/hw4f12.html">Assignment 4</a> Due in D2L by Midnight Tue. Oct. 2.
+    <li><a href="http://web.stcloudstate.edu/aanda/cs301/hw5f12.html">Assignment 5</a> Due in D2L by Midnight Wed. Oct. 17.
+    <li> Assignment 6: Programming Problems 7.6 and 7.8 [+ 7.9b] Due in D2L by Midnight Tue. Oct. 30.
+    <li><a href="http://web.stcloudstate.edu/aanda/cs301/hw7f12.html">Assignment 7</a> Due in D2L by Midnight Tue. Nov. 6.
+    <li> Assignment 8: Refactor Assignment 7 to use <code><b>template</b>s</code> for both the independent variable and for the coefficients. Full documentation. Due in D2L by Midnight Tue. Nov. 13.<br>
+    Include <a href="http://web.stcloudstate.edu/aanda/cs301/hw8testingf12.html">these orthogonal polynomials</a> in your test suite.
+    <li> Assignment 9: Implement and test Programming Problems 9.6.a and 9.7. Your tests should include a test for <u>stability</u>. For, 9.7, implement two versions:
+    <ul>
+	<li>Counting Sort ASCII characters using a 256 element frequency array.
+	<li>Counting Sort sparse repeated data using a Binary Search Tree (BST), where each node uses STL strings as a key and maintains a count of the occurrences of that key.<br>
+	    The partial sums are then computed via an in-order traversal.
+	<li>Due in D2L by Midnight Wed. Nov. 21.
+    </ul>
+    <li><a href="http://web.stcloudstate.edu/aanda/cs301/hw10f12.html">Assignment 10</a> Due in D2L by Midnight Fri. Dec. 7.
+    <li> Assignment 11:  Implement, document, and test, Programming Problems 13.1, 13.2, &amp; 13.3, w. extra credit for 13.4.  
+    <ul>
+	<li>(I recommend doing 13.1 &amp; 13.3 before 13.2)
+	<li>Due in D2L by Midnight Fri. Dec. 14.
+    </ul>
+<!--
+-->
+</ol>
+
+<h2> READ:</h2>
+
+<ul>
+<!--
+-->
+    <li> Carrano text: Chapters {
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch01.ppt">1</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch02.ppt">2</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch03.ppt">3</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch04.ppt">4</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch05.ppt">5</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch06.ppt">6</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch07.ppt">7</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch08.ppt">8</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch09JH.ppt">9</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch10.ppt">10</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch11.ppt">11</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch12.ppt">12</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch13.ppt">13</a>,
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch14.ppt">14</a>,
+<!--
+    <a href="http://web.stcloudstate.edu/aanda/cs301/WM5/slides/ch09.ppt">9</a>,
+    Appendix A, C, D, F
+-->
+    Appendix A, C, E, F
+<!--
+-->
+      }
+      <li> <a href="http://web.stcloudstate.edu/aanda/cs331/UML.htm">UML tutorial</a>
+      <li> PSP: Chapters 1-10 review.
+      <li> PSP: Chapters 11-14
+</ul>
+
+   <!--
+   -->
+
+<h3> Advice:</h3>
+<ul>
+   <li> <a href="http://web.stcloudstate.edu/bajulstrom/cs301/hints.html">Professor Julstrom's study hints</a>
+   <li> <a href="http://www.cse.buffalo.edu/~rapaport/howtostudy.html">HOW TO STUDY</a>
+   <li> <a href="http://www.howtostudy.org/resources_subject.php?id=6">How to Study Computer Science</a>
+   <li> <a href="http://web.stcloudstate.edu/aanda/internships.html">Internships, Research, Graduate School, and Writing</a> For SCSU undergraduate and graduate students
+</ul>
+
+<h2> PSP </h2>
+<ul>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs301/PSP/Stuwbk.experimental.xls">(<i>experimental</i>) Excel PSP workbook IDE</a>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs301/PSP/PSP_materials.doc">PSP Scripts, Forms, Templates, and Standards</a> (MSWord)
+    <h4> Discrete PSP (Excel) worksheets </h4>
+    <ul>
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs331/Humphrey/TIMELOG.XLS">PSP (personal) Time Log</a> (Excel)
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs331/Humphrey/DEFECTLOG.XLS">PSP Defect Log</a> (Excel)
+	<li> <a href="http://web.stcloudstate.edu/aanda/cs331/Humphrey/PPSUMMARY.XLS">PSP Project Plan Summary</a> (Excel)
+    </ul>
+</ul>
+
+<h4> Background C++ Topics</h4>
+<h5>Coding Conventions</h5>
+<ul>
+    <li> <a href="http://www.c-xx.com/ccc/ccc.php">C++ Coding Conventions</a>
+    <li> <a href="http://www.possibility.com/Cpp/CppCodingStandard.html">C++ Coding Standard</a>
+    <li> <a href="http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml">Google C++ Style Guide</a>
+    <li> <a href="http://www.parashift.com/c++-faq/coding-standards.html">C++ FAQ C++ Coding Standards</a>
+    <li> <a href="http://www.stroustrup.com/bs_faq2.html">Bjarne Stroustrup's C++ Style and Technique FAQ</a>
+</ul>
+<h5>Definitions</h5>
+<ul>
+    <li> <a href="http://foldoc.org/?query=syntactic+sugar">syntactic sugar</a>
+    <li> <a href="http://foldoc.org/?memoization">memo function</a>
+
+    <li> <a href="http://en.wikipedia.org/wiki/Memoization">memoization</a>
+    <li> <a href="http://xlinux.nist.gov/dads/HTML/memoize.html">memoization - NIST</a> Fibonacci
+</ul>
+<h5>Preprocessor commands</h5>
+
+<ul>
+    <li> <a href="http://www.cppreference.com/preprocessor/index.html">Preprocessor commands</a>
+</ul>
+
+<h5>I/O</h5>
+<ul>
+    <li> <a href="http://www.cppreference.com/escape_sequences.html">Escape Sequences</a>
+    <li> <a href="http://www.cppreference.com/io_flags.html">C++ I/O Flags</a>
+
+    <li> <a href="http://www.augustcouncil.com/~tgibson/tutorial/iotips.html">Tips and tricks for using C++ I/O (input/output)</a>
+    <li> <a href="http://www.fredosaurus.com/notes-cpp/io/omanipulators.html">C++ Notes: I/O Manipulators</a>
+</ul>
+
+<h5>Operator precedence &amp; associativity</h5>
+<ul>
+    <li> <a href="http://www.cppreference.com/operator_precedence.html">Operator precedence &amp; associativity</a>
+
+</ul>
+
+<h5>Type promotion &amp; casting</h5>
+<ul>
+   <li> <a href="http://en.wikibooks.org/wiki/C++_Programming/Type_Casting">C++ Programming/Type Casting</a>
+</ul>
+
+<h5>standalone preincrement or postincremnt operator?</h5>
+<ul>
+   <li> <a href="http://www.parashift.com/c++-faq-lite/increment-pre-post-speed.html">Which is more efficient: i++ or ++i? </a>
+</ul>
+
+<h5>Integer overflow</h5>
+<ul>
+   <li> <a href="https://buildsecurityin.us-cert.gov/daisy/bsi/articles/knowledge/coding/312.html">Safe Integer Operations</a>
+
+   <li> <a href="http://msdn2.microsoft.com/en-us/library/ms972705.aspx">Integer Handling with the C++ SafeInt Class</a>
+</ul>
+
+<h5>Portability issues</h5>
+<ul>
+   <li> <a href="http://www.fiacopetti.it/cpp_integers01.htm">A few notes concerning C++ integral data types</a>
+   <!--
+   <li> <a href="http://www-ccs.ucsd.edu/c/portable.html">C portability issues</a>
+   -->
+
+   <li> <a href="http://www.codeproject.com/Articles/5587/Writing-Portable-Code-in-C">Writing Portable Code in C++</a>
+   <li> <a href="http://www.literateprogramming.com/portablecpp.pdf">C++ portablility guide</a>
+   <li> <a href="https://groups.google.com/forum/?fromgroups=#!topic/mozilla.dev.platform/E54jR321Aes">Updating the C++ portability guide</a>
+</ul>
+
+<h5><tt>size_t</tt></h5>
+<ul>
+    <li> <a href="http://www.cplusplus.com/reference/clibrary/cstddef/size_t"><tt>size_t</tt></a>
+    <li> <a href="http://www.cplusplus.com/reference/clibrary/cstring/size_t"><tt>size_t</tt> &amp; cstrings</a>
+    <li> <a href="http://www.embedded.com/electronics-blogs/programming-pointers/4026076/Why-size-t-matters">Why <tt>size_t</tt> matters</a>
+   <li> <a href="http://stackoverflow.com/questions/131803/unsigned-int-vs-size-t">unsigned int vs. size_t</a>
+   <li> <a href="http://www.cplusplus.com/forum/beginner/15959/">Is size_type and size_t the same?</a>
+   <li> <a href="http://stackoverflow.com/questions/918567/size-t-vs-containersize-type">size_t vs container::size_type</a>
+   <li> <a href="http://stackoverflow.com/questions/4849678/c-for-loop-size-type-vs-size-t">C++ for-loop - size_type vs. size_t</a>
+   <li> <a href="http://stackoverflow.com/questions/1951519/when-to-use-stdsize-t">When to use std::size_t?</a>
+</ul>
+<h5>Modulo and Remainder</h5>
+<ul>
+   <li> <a href="http://mathforum.org/library/drmath/view/52343.html">Mod Function and Negative Numbers</a>
+
+   <li> <a href="http://mathworld.wolfram.com/ModularArithmetic.html">Modular Arithmetic</a>
+   <li> <a href="http://mathworld.wolfram.com/Congruence.html">Congruence</a>
+   <li> <a href="http://mathworld.wolfram.com/Residue.html">Residue</a>
+   <li> <a href="http://mathworld.wolfram.com/Modulus.html">Modulus</a>
+    <h6>Applications</h6>
+
+    <ul>
+       <li> <a href="http://en.wikipedia.org/wiki/Euclidean_algorithm">Euclidean algorithm - Wiki</a></dd>
+       <li> <a href="http://mathworld.wolfram.com/ChineseRemainderTheorem.html">Chinese Remainder Theorem</a></dd>
+       <li> <a href="http://mathworld.wolfram.com/DivisibilityTests.html">Divisibility Tests</a></dd>
+       <li> <a href="http://mathworld.wolfram.com/RSAEncryption.html">RSA Encryption</a></dd>
+
+    </ul>
+</ul>
+<h5>Block Scope</h5>
+<ul>
+    <li> <a href="http://www.sis.pitt.edu/~jjoshi/IS0020/Spring2005/Lecture2.ppt">Block scope and static variable initialization examples</a>{Block scope pg. 16; static initialization pg. 18}
+</ul>
+<h5>Significant figures &amp; precision</h5>
+<ul>
+    <li> <a href="http://en.wikipedia.org/wiki/Significant_figure">Significant figures - Wikipedia</a>,
+    <li> <a href="http://en.wikipedia.org/wiki/False_precision">false precision - Wikipedia</a>,
+    <li> <a href="http://en.wikipedia.org/wiki/Accuracy_and_precision">accuracy and precision - Wikipedia</a>,
+    <li> <a href="http://en.wikipedia.org/wiki/Significand">significand - Wikipedia</a>,
+</ul>
+<h5>ennumeration types</h5>
+<ul>
+    <ul>
+<h6>lvalue/rvalue digression</h6>
+	<li> <a href="http://ieng9.ucsd.edu/~cs30x/Lvalues%20and%20Rvalues.htm">Lvalues and Rvalues</a>
+	<li> <a href="http://ieng9.ucsd.edu/~cs30x/Non-modifiable%20Lvalues.htm">Non-modifiable Lvalues</a>
+    </ul>
+
+    <li> <a href="http://www.yolinux.com/TUTORIALS/C++Enum.html">C/C++ Enum</a>
+    <ul>
+	<li> <a href="http://www.yolinux.com/TUTORIALS/C++Enum.html#CPP_ENUMERATION_CLASS">C++ Enumeration Class</a>
+    </ul>
+    <li> <a href="http://www.embedded.com/story/OEG20011129S0065">Enumeration Constants vs. Constant Objects</a>
+    <li> <a href="http://www.embedded.com/story/OEG20021114S0035">Enumerations as Counters</a>
+    <li> <a href="http://www.embedded.com/shared/printableArticle.jhtml?articleID=9901063">Well-Behaved Enumerations</a>
+    <li> <a href="http://www.embedded.com/showArticle.jhtml?articleID=12803561">Enumerations with noncontiguous values</a>
+    <li> <a href="http://www.embedded.com/showArticle.jhtml?articleID=9901155">Enumerations Q & A</a>
+
+    <li> <a href="http://www.embedded.com/showArticle.jhtml?articleID=10700613">More on enumerations</a>
+    <li> <a href="http://www.ddj.com/dept/cpp/184403744">Generic Printable ENUM++</a> {more advanced}
+</ul>
+<h5>Boolean arithmetic</h5>
+<ul>
+    <li> <a href="http://en.wikipedia.org/wiki/De_Morgan%27s_laws">De Morgan's laws - Wikipedia</a>
+
+    <li> <a href="http://lc.brooklyn.cuny.edu/smarttutor/logic/demorg.html">De Morgan's law</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Xor">eXclusive OR (XOR) - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Xor_swap_algorithm">XOR <i>swap</i> algorithm - Wikipedia</a>
+</ul>
+<h5>Right-Left Rule for Expression Evaluation</h5>
+<ul>
+    <li> <a href="http://stackoverflow.com/questions/3246804/c-multiple-single-line-declarations">C - multiple single line declarations</a>
+    <li> <a href="http://stackoverflow.com/questions/1143262/what-is-the-difference-between-const-int-const-int-const-int-const">what is the difference between const int*, const int * const, int const * ?</a>
+    <li> <a href="http://c-faq.com/decl/spiral.anderson.html">The Clockwise/Spiral Rule</a>
+    <li> <a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx">How to interpret complex C/C++ declarations</a>
+    <li> <a href="http://www.informit.com/articles/article.asp?p=31783">Understanding C++ Program Structure</a> (<i>about halfway through</i>)
+
+<!--
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs201/RLrule.html">The <i>right-left</i> rule</a>,
+-->
+    <li> <a href="http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html">The <i>right-left</i> rule</a>
+    <li> <a href="http://www.mycfiles.com/2011/12/cdecl-turn-english-to-c-or-c-and-vise.html">cdecl - turn English to C or C++ and vise versa</a>
+    <ul>
+	<li> <a href="http://www.cdecl.org/">cdecl</a>
+    </ul>
+</ul>
+
+<h5><tt>static</tt></h5>
+<ul>
+    <li> <a href="http://www.cprogramming.com/tutorial/statickeyword.html">Static: the Multi-Purpose Keyword</a>
+    <li> <a href="http://msdn2.microsoft.com/en-us/library/s1sb61xd(VS.80).aspx">Static</a>[MSDN]
+    <li> <a href="http://publib.boulder.ibm.com/infocenter/macxhelp/v6v81/index.jsp?topic=/com.ibm.vacpp6m.doc/language/ref/clrc03statdef.htm">static Storage Class Specifier</a>[IBM]
+    <li> <a href="http://www.informit.com/articles/article.aspx?p=31783&seqNum=4">Understanding C++ Program Structure: storage classes</a>[scan down to <tt>static</tt> section]
+    <li> <a href="http://books.google.com/books?id=bAFXBu1QFfQC&pg=PA85&lpg=PA85&dq=instrument+a+recursive+function+c%2B%2B+static&source=web&ots=ZgxQ1iZvr1&sig=7qHTMHpsKN-jvRN1xG6TS1d_KhQ">Static variables provide a function with a memory</a>
+    <li> <a href="http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Fcplr039.htm">Static member functions</a>
+</ul>
+<h5><tt>inline</tt></h5>
+<ul>
+    <li> <a href="http://www.cprogramming.com/tutorial/lesson13.html">Inline Functions</a>
+    <li> <a href="http://www.intap.net/~drw/cpp/cpp07_05.htm">Inline Functions</a> [online tutorial]
+    <li> <a href="http://www.parashift.com/c++-faq/inline-functions.html">Inline Functions</a> [C++ FAQ]
+    <li> <a href="http://yosefk.com/c++fqa/inline.html">Inline Functions</a> [C++ FQA]
+    <li> <a href="http://msdn.microsoft.com/en-us/library/bw1hbe6y(v=vs.80).aspx">Inline Class Member Functions</a>
+    <li> <a href="http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Finline_member.htm">the inline functions specifier</a>
+    <li> <a href="http://stackoverflow.com/questions/145838/benefits-of-inline-functions-in-c">Benefits of inline functions in C++?</a> (Discussion)
+</ul>
+
+<h5>Command Line Argument Parsing in C++</h5>
+<ul>
+    <li> <a href="http://www.site.uottawa.ca/~lucia/courses/2131-05/labs/Lab3/CommandLineArguments.html">Command Line Arguments in C++</a>
+    <li> <a href="http://www.cs.hmc.edu/~geoff/classes/hmc.cs070.200401/notes/command-args.html">C++ command-line inputs</a>
+    <li> <a href="http://www.cprogramming.com/tutorial/lesson14.html">Accepting command line arguments</a>
+    <li> <a href="http://mashmont.myftp.org/Documentation/OReilly%204%20GB%20Collection/O'Reilly%20-%20Practical%20C++%20Programming.pdf"><i>Practical C++ Programming</i>, 1st Ed., O'Reilly, 1995,  by Steve Oualline</a> (PDF) See section on Command-Line Arguments in Chapter 15.
+</ul>
+
+<h4> Chapter 1 Topics </h4>
+<ul>
+   <li> <a href="http://en.wikipedia.org/wiki/Abstract_data_type">Abstract data type - Wikipedia</a>
+</ul>
+<ul>
+    <li> <a href="http://www.cplusplus.com/doc/tutorial/structures.html">Data Structures</a> cplusplus tutorial
+    <li> <a href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">Other Data Types</a> cplusplus tutorial
+    <li> <a href="http://www.phptr.com/articles/article.asp?p=31783&seqNum=2&rl=1">Understanding C++ Program Structure > Structures and Unions</a>
+
+    <li> <a href="http://msdn2.microsoft.com/en-us/library/4a1hcx0y.aspx">Classes, Structures, and Unions</a> MSDN
+    <ul>
+	<li> <a href="http://msdn2.microsoft.com/en-us/library/ewwyfdbe.aspx">C++ Bit Fields</a>
+	<li> <a href="http://msdn2.microsoft.com/en-us/library/5dxy4b7b.aspx">C++ Unions</a>
+    </ul>
+    <li> <a href="http://www.yolinux.com/TUTORIALS/LinuxTutorialC++Structures.html">C++ Structure Example and Tutorial</a> Simple example of a program using C++, a structure and a constructor
+    <li> <a href="http://en.wikipedia.org/wiki/C++_structures_and_classes">C++ structures and classes - Wikipedia</a>
+    <li> <a href="http://carcino.gen.nz/tech/cpp/struct_vs_class.php">The difference between structs and classes in C++</a> (or the similarities thereof)
+
+    <li> <a href="http://en.wikipedia.org/wiki/Abstract_data_type">Abstract data type - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Class_%28computer_science%29">Class (computer science) - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming - Wikipedia</a>
+    <li> <a href="http://en.wikibooks.org/wiki/C%2B%2B_Programming/Structures_and_Classes">C++ Programming/Structures and Classes - Wikibooks</a>
+</ul>
+
+<h4> Chapter 5 Topics </h4>
+
+<ul>
+    <li> <a href="http://museum.mit.edu/nom150/entries/1215">Tinker Toy Computer </a>
+    <li> <a href="http://en.wikipedia.org/wiki/Sudoku_algorithms">Sudoku algorithms - Wikipedia</a>
+    <li> <a href="http://www.cs.utexas.edu/~kuipers/readings/Sudoku-sciam-06.pdf">The Science behind Sudoku - Scientific American</a>
+    <li> <a href="http://www.scientificamerican.com/article.cfm?id=dna-sudoku">DNA Sudoku - Scientific American</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Magic_square">Magic square - Wikipedia</a>
+    <li> <a href="http://www.hpcalc.org/hp48/pc/emulators/">HP Calculator Emulators for the PC</a>
+    <li> <a href="http://www.hpmuseum.org/simulate/hp35sim/hp35sim.htm">HP-35 RPN Calculator emulation</a>
+    <li> <a href="http://hp15c.com/">HP-15C RPN Calculator emulation</a>
+    <h5>Syntax </h5>
+    <ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form">Extended Backus-Naur Form - Wikipedia</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Syntax_diagram">Syntax diagram - Wikipedia</a>
+	<li> <a href="http://bcook.cs.georgiasouthern.edu/windowsce/cpp2.htm">A Closer Look At Syntax Diagrams</a>
+	<li> <a href="http://cpp.comsci.us/syntax/index.html">C++ Syntax</a>
+	<li> <a href="http://primepuzzle.com/tp2/syntax-diagrams.html">Pascal (programming language) Syntax Diagrams</a>
+    </ul>
+</ul>
+
+<h5>Pseudo-Random Numbers</h5>
+If you are using a computer to simulate either discrete or continuous systems,
+you will need to learn a little more about <i>psueudo-random</i> numbers in
+C++ and how to find high quality generators to replace the default
+<tt>rand()</tt> with.  Here are a few links to help with that.
+<ul>
+    <li> <a href="http://www.agner.org/random">Pseudo random number generators</a>{ uniform and non-uniform distributions}
+    <li> <a href="http://www.mathtools.net/C_C__/Random_numbers">Mathtools.net : C,C++/Random numbers</a>
+    <li> <a href="http://www.taygeta.com/random.xml">Random Number Generation</a>
+    <li> <a href="http://www.gnu.org/software/gsl/manual/gsl-ref_19.html">GNU Scientific Library - Reference Manual - Random Number Distributions</a>
+    <li> <a href="http://sciencenews.org/articles/20041204/bob9.asp">Take a Chance: Science News Online, Dec. 4, 2004</a>,
+    <li> <a href="http://www.taygeta.com/rwalks/node3.html"> Quasi-Random Numbers</a>,
+</ul>
+<!--
+-->
+
+
+<h4> Big-O() Analysis </h4>
+<ul>
+    <li> <a href="http://web.stcloudstate.edu/aanda/cs301/bigO.html">big-O() exercises</a>
+    <li> <a href="http://www.nist.gov/dads/HTML/bigOnotation.html">big-O notation</a>
+    <li> <a href="http://www.wikipedia.org/wiki/Big_O_notation">Big-O notation - Wikipedia</a>
+    <li> <a href="http://courses.cs.vt.edu/~cs2604/spring02/Notes/C03.Asymptotics.pdf">Big-O Analysis</a>
+    <li> <a href="http://www.apcomputerscience.com/apcs/misc/BIG-O.pdf">Big-O Notation - Analysis of Algorithms</a>
+    <li> <a href="https://students.ics.uci.edu/~zmohiudd/ONotationVisualizer.html">Big-O Notation Visualizer - Analysis of Algorithms</a>
+    <h5> Time Complexities </h5>
+    <ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Time_complexity">Time complexity - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities">Table of common time complexities - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations">Computational complexity of mathematical operations - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Factorial#Rate_of_growth_and_approximations_for_large_n">factorial [<i>n</i>!]: Rate of growth and approximations for large <i>n</i> - Wikipedia</a> The factorial grows at almost the rate of <i>n<sup>n</sup></i>.
+	    <ul>
+		<li> <a href="http://en.wikipedia.org/wiki/Stirling%27s_formula">Stirling's approximation - Wikipedia</a>
+	    </ul>
+	    <h6> at the limits (<i>beyond the scope of csci301</i>) </h6>
+	    <ul>
+		<li> <i>These functions are useful in the advanced analysis of algorithms and the theory of computation.</i>
+		<li> <a href="http://en.wikipedia.org/wiki/Iterated_logarithm">Iterated logarithm - Wikipedia</a>
+		<li> <a href="http://en.wikipedia.org/wiki/Knuth%27s_up-arrow_notation">Knuth's up-arrow notation - Wikipedia</a>
+		<li> <a href="http://en.wikipedia.org/wiki/Hyperoperation">Hyperoperation - Wikipedia</a>
+		<li> <a href="http://en.wikipedia.org/wiki/Ackermann%27s_function">Ackermann function - Wikipedia</a>
+		<li> <a href="http://en.wikipedia.org/wiki/Busy_beaver">Busy beaver - Wikipedia</a>
+	    </ul>
+	</ul>
+    </ul>
+   <!--
+   <li> <a href="http://bobcat.cc.oxy.edu/~rodney/BigOh/BigOh.doc">Big-Oh For Common Operations and Algorithms</a>
+   <li> <a href="http://www.cs.strath.ac.uk/~mdd/teaching/alg&comp/big_oh.html">A rough guide to big-oh notation</a>
+   <li> <a href="http://www.cs.utk.edu/~plank/plank/classes/cs140/Spring-1999/notes/BigO/">CS140 Lecture notes - Big O</a>
+   <li> <a href="http://www.stedwards.edu/science/baker/cosc2325/big-o.html">Big O Analysis Table</a>
+   <li> <a href="http://www.cs.wisc.edu/~hasti/cs367-common/notes/COMPLEXITY.html">Complexity and Big-O Notation</a>
+   -->
+</ul>
+
+<!--
+-->
+
+
+
+<h4> Sorting </h4>
+<ul>
+    <li> <a href="http://www.answers.com/topic/sorting-algorithm">sorting algorithm (Answers.com)</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Sort_algorithm">Sort Algorithms (Wikipedia)</a>
+    <li> <a href="http://www.student.seas.gwu.edu/~idsv/idsv.html">Interactive Data Structure Visualizations</a>
+    <li> <a href="http://www.sorting-algorithms.com">Sorting Algorithm Animations</a>
+    <li> <a href="http://cs.smith.edu/~thiebaut/java/sort/">Sorting Algorithm Animations (Java)</a>
+    <li> <a href="http://www.cs.pitt.edu/~kirk/cs1501/animations/Sort2.html">Sort Algorithm Animator Applet</a>
+    <li> <a href="http://www.cs.hope.edu/~dershem/ccaa/ccaa/sorting.html">CCAA - Sorting Algorithms</a>
+    <li> <a href="http://www.cs.ubc.ca/spider/harrison/Java/sorting-demo.html">Sorting Algorithms Demo</a>
+    <li> <a href="http://www.softpanorama.org/Algorithms/sorting.shtml">Slightly Skeptical View on Sorting Algorithms</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Timsort">Timsort - Wikipedia</a>
+    <li> <a href="https://github.com/gfx/cpp-TimSort">Timsort - C++ implementation</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Fibonacci_heap">Fibonacci heap - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/In-place_algorithm">In-place algorithms - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/On-line_algorithm">Online computations and algorithms - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Stable_sort#Stable">Stable vs. Unstable Sorts - Wikipedia</a>
+    <li> <a href="http://csdl2.computer.org/persagen/DLAbsToc.jsp?resourcePath=/dl/trans/ts/&toc=comp/trans/ts/1989/07/e7toc.xml&DOI=10.1109/32.29490">The External Heapsort</a> [hillsort]
+    <li> <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?tp=&arnumber=1209012">External sorting: run formation revisited</a> [batched replacement selection]
+    <li> <a href="http://portal.acm.org/citation.cfm?doid=1132960.1132964">Implementing sorting in database systems - ACM Computing Surveys</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Binary_search#Correctness_and_testing">Binary search algorithm: Correctness and testing - Wikipedia</a>
+</ul>
+
+<!--
+-->
+<h4> Graphs </h4>
+<ul>
+    <li> <a href="http://xlinux.nist.gov/dads/HTML/graph.html">Graph - NIST</a>
+    <li> <a href="http://www.utm.edu/departments/math/graph/index.html">Graph Theory Tutorials</a>
+    <ul>
+	<li> <a href="http://www.utm.edu/departments/math/graph/glossary.html">Graph Theory Glossary</a>
+	<li> <a href="http://people.hofstra.edu/geotrans/eng/methods/ch1m2en.html">Graph Theory : Definition and Properties</a>
+    </ul>
+    <li> <a href="http://en2.wikipedia.org/wiki/Graph_theory">Graph Theory (Wikipedia)</a>
+    <ul>
+	<li> <a href="http://en2.wikipedia.org/wiki/Graph_(mathematics)">Graphs [mathematical] (Wikipedia)</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Category:Graph_families">Graph Families (Wikipedia)</a>
+	<li> <a href="http://en2.wikipedia.org/wiki/Glossary_of_graph_theory">Glossary of Graph Theory (Wikipedia)</a>
+    </ul>
+    <li> <a href="http://www.austincc.edu/powens/+Topics/HTML/05-2/05-2.html">Graph Theory or (How mathematicians confuse lay-persons by using common terms for uncommon ideas)</a>
+    <h5> Graph Algorithms </h5>
+    <li> <a href="http://en.wikipedia.org/wiki/List_of_algorithms#Graph_algorithms">(list) Graph algorithms - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Category:Graph_algorithms">(category) Graph algorithms - Wikipedia</a>
+    <ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Depth-first_search">Graph: DFS - Wikipedia</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Breadth-first_search">Graph: BFS - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/breadthSearch.htm">BFS traversal algorithm</a> (applications to Bipartite graphs and tree diameters)
+	</ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Topological_sorting">Graph: Topological sorting - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed acyclic Graph - Wikipedia</a>
+	</ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Minimum_spanning_tree">Graph: Minimum spanning tree - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Prim%27s_algorithm">Graph: Prim's algorithm - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Graph: Kruskal's algorithm - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Bor%C5%AFvka%27s_algorithm">Graph: Boruvka's algorithm - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Edmonds%27_algorithm">Graph: Edmond's (directed graph) algorithm - Wikipedia</a>
+	    <ul>
+		<li> <a href="http://en.wikipedia.org/wiki/Arborescence_%28graph_theory%29">Graph: Arborescence - Wikipedia</a>
+	    </ul>
+	</ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Shortest_path_problem">Graph: Shortest path problem - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Graph: Dijkstra's algorithm - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Graph: Bellman-Ford algorithm - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Graph: Floyd-Warshall (all pairs) algorithm - Wikipedia</a>
+	</ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Euler_circut">Graph: Euler circuit - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Euler_circut#Constructing_Eulerian_trails_and_circuits">Graph: Constructing Eulerian trails and circuits - Wikipedia</a>
+	</ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Hamiltonian_circuit">Graph: Hamiltonian circuit - Wikipedia</a>
+	</ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Hamiltonian_path_problem">Graph: Hamiltonian path problem - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Knight%27s_tour">Graph: Knights's tour - Wikipedia</a>
+	</ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Connectivity_%28graph_theory%29">Graph: Connectivity - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Connectivity_%28graph_theory%29#Computational_aspects">Graph: Connectivity (computational aspects) - Wikipedia</a>
+	</ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Bipartite_graph">Bipartite Graph - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Bipartite_graph#Algorithms">Bipartite Graph algorithms - Wikipedia</a>
+	</ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Planar_graph">Planar Graph - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Planarity_testing">Graph: Planarity testing (algorithms) - Wikipedia</a>
+	</ul>
+    </ul>
+    <li> <a href="http://www.softpanorama.org/Algorithms/graph_algorithms.shtml">Graph algorithms - Softpanorama</a>
+    <li> <a href="http://cs.ecs.baylor.edu/~maurer/graphs/">Graph Algorithms (Peter M. Maurer)</a>
+    <li> <a href="http://www.cs.hope.edu/~dershem/ccaa/ccaa/graph.html">CCAA - Graph Algorithms</a>
+    <li> <a href="http://cs.smith.edu/~thiebaut/java/graph/">Graph Algorithms (Animations in Java)</a>
+    <li> <a href="http://www.animal.ahrgr.de/en/AnimList_galg.html">Graph Algorithms Animations</a>
+    <li> <a href="https://bluedrive.uwstout.edu/users/facultystaff/wuming/wwwroot/Samples/SelectInputMethod.html">IAPPGA - Program Package for Graph Algorithms</a>
+    <h5> Graph Libraries in C++ </h5>
+    <li> <a href="http://www.boost.org/doc/libs/1_35_0/libs/graph/doc/index.html">the Boost Graph Library</a>
+    <ul>
+	<li> <a href="http://www.boost.org/doc/libs/1_35_0/libs/graph/doc/table_of_contents.html">the Boost Graph Library - ToC</a>
+    </ul>
+    <li> <a href="http://www.algorithmic-solutions.info/leda_guide/graphalgorithms.html">LEDA Guide: Graph Algorithms</a>
+    <li> <a href="http://www.cs.auckland.ac.nz/~ute/220ft/graphalg/graphalg.html">An Introduction to Graph Algorithms (Ute Loerch) [Java]</a>
+    <h6> Sparse matrix formats </h6>
+    <ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Adjacency_matrix">Adjacency Matrix - Wikipedia</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Sparse_matrix">Sparse Matrix - Wikipedia</a>
+	<li> <a href="http://netlib.org/linalg/html_templates/node90.html">Survey of Sparse Matrix Storage Formats</a>
+	<li> <a href="http://math.nist.gov/MatrixMarket/formats.html">Sparse Matrix Text File Formats - Matrix Market</a>
+	<li> <a href="http://glaros.dtc.umn.edu/gkhome/views/metis">Family of Graph and Hypergraph Partitioning Software</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Graph_bandwidth">Graph bandwidth - Wikipedia</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Cuthill%E2%80%93McKee_algorithm">Cuthill-McKee algorithm - Wikipedia</a>
+    </ul>
+</ul>
+
+<h4> Tree Structures </h4>
+<ul>
+    <li> <a href="http://en.wikipedia.org/wiki/Tree_data_structure">Tree data structure - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Heap_%28data_structure%29">Heap - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Treap">Treap - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/AVL_tree">AVL tree - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Tree_rotation">Tree rotation - Wikipedia</a>
+    <li> <a href="http://webpages.ull.es/users/jriera/Docencia/AVL/AVL%20tree%20applet.htm">AVL tree applet</a>
+    <li> <a href="http://en.wikipedia.org/wiki/2-3_tree">2-3 Trees - Wikipedia</a>
+    <li> <a href="http://www.aihorizon.com/essays/basiccs/trees/twothree.htm">2-3 Trees</a>
+    <li> <a href="http://webpages.ull.es/users/jriera/Docencia/AVL/AVL%20tree%20applet.htm">2-3 tree applet</a>
+    <li> <a href="http://en.wikipedia.org/wiki/2-3-4_tree">2-3-4 Tree - Wikipedia</a>
+    <li> <a href="http://www.cs.unm.edu/~rlpm/499/ttft.html">A Graphical 2-3-4 Tree Implementation</a>
+</ul>
+
+<h5> Huffman coding </h5>
+<ul>
+    <li> <a href="http://en.wikipedia.org/wiki/Huffman_coding">Huffman coding - Wikipedia</a>
+    <ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Prefix_code">prefix code - Wikipedia</a>
+    </ul>
+    <li> <a href="http://www.cs.nyu.edu/~melamed/courses/102/lectures/huffman.ppt">Introduction to Huffman Coding</a> (ppt)
+    <li> <a href="https://cs.nyu.edu/~jchen/datastructures/huffmantutorial.htm">A quick tutorial on generating a huffman tree</a>
+    <li> <a href="http://en.nerdaholyc.com/huffman-coding-on-a-string/">A simple example of Huffman coding on a string</a>
+    <li> <a href="http://www.cs.duke.edu/csed/poop/huff/info/">Huffman Coding: A CS2 Assignment</a>
+    <li> <a href="http://www.cs.pitt.edu/~kirk/cs1501/animations/Huffman.html">Huffman Encoding & Decoding Animation</a>
+    <li> <a href="http://jaran.de/goodbits/2011/08/14/introduction-to-data-compression-huffman-coding/">Introduction to Data Compression - Huffman Coding</a>
+    <li> <a href="http://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/Greedy/huffman.htm">Huffman Codes</a>
+    <li> <a href="http://www.cprogramming.com/tutorial/computersciencetheory/huffman.html">Huffman Encoding Compression Algorithm - Cprogramming</a>
+    <li> <a href="http://www.compressconsult.com/huffman/">Practical Huffman coding</a>
+</ul>
+
+<h5>Pseudo-Random Numbers</h5>
+If you are using a computer to simulate either discrete or continuous systems,
+you will need to learn a little more about <i>pseudo-random</i> numbers in
+C++ and how to find high quality generators to replace the default
+<tt>rand()</tt> with.  Here are a few links to help with that.
+<ul>
+    <li> <a href="http://www.agner.org/random">Pseudorandom number generators</a>{ uniform and non-uniform distributions}
+    <li> <a href="http://en.wikipedia.org/wiki/Pseudorandom_number_generator">Pseudorandom number generator - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Linear_congruential_generator">Linear congruential (pseudorandom number) generators - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Mersenne_twister">Mersenne Twister (random number generator) - Wikipedia</a>
+    <li> <a href="http://en.wikipedia.org/wiki/Multiply-with-carry">Multiply-with-carry (random number generator) - Wikipedia</a>
+    <li> <a href="http://www.mathtools.net/C_C__/Random_numbers">Mathtools.net : C,C++/Random numbers</a>
+    <li> <a href="http://www.taygeta.com/random.xml">Random Number Generation</a>
+    <li> <a href="http://www.gnu.org/software/gsl/manual/gsl-ref_19.html">GNU Scientific Library - Reference Manual - Random Number Distributions</a>
+    <li> <a href="http://en.cppreference.com/w/cpp/numeric/random">Pseudo-random number generation using C++</a> (updated to C++11)
+    <li> <a href="http://www.johndcook.com/cpp_TR1_random.html">Random number generation using C++ TR1</a>
+    <ul>
+	<li> <a href="http://www.johndcook.com/test_TR1_random.html">Testing C++ TR1 random number generation</a>
+    </ul>
+    <li> <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2003/n1452.html">A Proposal to Add an Extensible Random Number Facility to the Standard Library (Revision 2)</a>
+    <li> <a href="http://sciencenews.org/articles/20041204/bob9.asp">Take a Chance: Science News Online, Dec. 4, 2004</a>
+    <li> <a href="http://www.cse.uiuc.edu/heath/scicomp/notes/chap13.pdf"><i>Scientific Computing Principles</i>, Chapter 13 Notes, Heath, 2nd ed Random numbers & simulation</a>
+    <li> <a href="http://www.taygeta.com/rwalks/node3.html"> Quasi-Random Numbers</a>
+    <li> <a href="http://www.mathworks.com/help/toolbox/stats/br5k9hi-8.html">Generating Quasi-Random Numbers</a>
+    <li> <a href="http://people.sc.fsu.edu/~jburkardt/cpp_src/sobol/sobol.html">SOBOL: Quasi-random sequence C++ library</a>
+<h5>Benford's Law</h5> 
+    <ul>
+	<li> <a href="http://mathworld.wolfram.com/BenfordsLaw.html">Benford's Law - Mathworld</a></li> 
+	<li> <a href="http://en.wikipedia.org/wiki/Benford's_law">Benford's Law - Wikipedia</a></li> 
+	<li> <a href="http://www.dspguide.com/ch34.htm">Explaining Benford's Law</a></li>
+    </ul>
+</ul>
+
+<h5>Hashing</h5>
+<ul>
+    <li> <a href="http://en.wikipedia.org/wiki/Hash_function">Hash function - Wikipedia</a></li> 
+    <li> <a href="http://mathworld.wolfram.com/HashFunction.html">Hash function - MathWorld</a></li> 
+    <li> <a href="http://research.cs.vt.edu/AVresearch/hashing/strings.php">Hashing tutorial</a></li> 
+    <li> <a href="http://www.partow.net/programming/hashfunctions">General Purpuse Hash Function Algorithms</a></li> 
+    <li> <a href="http://www.cse.yorku.ca/~oz/hash.html">Hash Functions</a></li> 
+    <li> <a href="http://www.javamex.com/tutorials/collections/hash_function_technical.shtml">How the String hash function works (and implications for other hash functions)</a></li> 
+    <li> <a href="http://attractivechaos.wordpress.com/2008/08/28/comparison-of-hash-table-libraries/">Comparison of Hash Table Libraries</a></li> 
+</ul>
+
+<h4> Algorithms </h4>
+<ul>
+    <li> <a href="http://www.cs.sunysb.edu/~algorith/">The Stony Brook Algorithm Repository</a>
+    <li> <a href="http://oopweb.com/Algorithms/Documents/PLDS210/VolumeFrames.html">OOPWeb.com - Data Structures and Algorithms by John Morris</a>
+    <li> <a href="http://en.wikipedia.org/wiki/On-line_algorithm">On-line algorithm - Wikipedia</a>
+    <li> <a href="http://www.cs.hope.edu/~dershem/ccaa/ccaa/">The Complete Collection of Algorithm Animations (CCAA)</a>
+    <li> <a href="http://www.ansatt.hig.no/frodeh/algmet/animate.html">Algorithm Animations/Visualizations (in Java)</a>
+    <h5> String Searching </h5>
+    <ul>
+	<li> <a href="http://en.wikipedia.org/wiki/String_searching_algorithm">String searching algorithm - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Knuth-Moris-Pratt algorithm - Wikipedia</a>
+	    <li> <a href="http://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string_search_algorithm">Boyer-Moore string search algorithm - Wikipedia</a>
+	</ul>
+	<li> <a href="http://www.softpanorama.org/Algorithms/pattern_matching.shtml">Pattern Matching and Quick String Search</a>
+	<li> <a href="http://www-igm.univ-mlv.fr/~lecroq/string/index.html">Exact String Matching algorithms</a> (Animation in Java)
+	<li> <a href="http://en.wikipedia.org/wiki/Fuzzy_string_searching">Approximate String Matching - Wikipedia</a>
+	<li> <a href="http://www.cs.ucr.edu/~stelo/pattern.html">Pattern Matching Pointers - Wikipedia</a>
+	<li> <a href="http://glaros.dtc.umn.edu/gkhome/pafi/overview">PAFI Software Package for Finding Frequent Patterns in Diverse Datasets</a>
+	<h6> Regular Expressions </h6>
+	<li> <a href="http://en.wikipedia.org/wiki/Regular_expression">Regular expressions - Wikipedia</a>
+	<li> <a href="http://swtch.com/~rsc/regexp/regexp1.html">Regular Expression Matching Can Be Simple And Fast</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Comparison_of_regular_expression_engines">Comparison of regular expression engines - Wikipedia</a>
+	<li> <a href="http://shop.oreilly.com/product/0636920012337.do"><i>Introducing Regular Expressions</i></a> (O'Reilly book)
+	<li> <a href="http://shop.oreilly.com/product/9780596528126.do"><i>Mastering Regular Expressions</i>, 3rd Ed.</a> (O'Reilly book)
+	<li> <a href="http://shop.oreilly.com/product/0636920023630.do"><i>Regular Expressions Cookbook</i>, 2nd Ed.</a> (O'Reilly book)
+	<li> <a href="http://www.greenend.org.uk/rjk/tech/regexp.html">Regular Expression Syntax Summary</a>
+	<li> <a href="http://devcheatsheet.com/tag/regex/">Regular Expressions Cheat Sheets</a>
+    </ul>
+    <h5> Finite Automata </h5>
+    <ul>
+	<li> <a href="http://en.wikipedia.org/wiki/Deterministic_finite_automaton">Deterministic Finite automaton - Wikipedia</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Nondeterministic_finite_automaton">Nondeterministic Finite automaton - Wikipedia</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Finite-state_machine">Finite-state machine - Wikipedia</a>
+	<li> <a href="http://en.wikipedia.org/wiki/Automata-based_programming">Automata-based programming - Wikipedia</a>
+	<ul>
+	    <li> <a href="http://en.wikipedia.org/wiki/Automata-based_programming#Using_object-oriented_capabilities">Using OO capabilities - Wikipedia</a>
+	</ul>
+    </ul>
+</ul>
+
+<h4> Numerics </h4>
+<ul>
+    <li> <a href="http://www.math.unipd.it/~michela/OP.htm">The Object-Oriented Numerics Page</a>
+</ul>
+
+<h3> REFERENCES:</h3>
+
+<dl>
+<dd> <a href="http://web.stcloudstate.edu/bajulstrom/cs301/links.html">Professor Julstrom's CSCI 301 links page</a></dd>
+<dd> <a href="http://foldoc.org">FOLDOC - Computing Dictionary</a></dd>
+<dd> <a href="http://www.nist.gov/dads/">NIST Dictionary of Algorithms and Data Structures</a></dd>
+<dd> <a href="http://en.wikipedia.org">Wikipedia, the free encyclopedia</a></dd>
+<dd> <a href="http://www.natural-innovations.com/boo/asciiebcdic.html">ASCII-EBCDIC</a></dd>
+<h5>IEEE 754 Floating Point Standard</h5>
+<dd> <a href="http://research.microsoft.com/~hollasch/cgindex/coding/ieeefloat.html">IEEE Standard 754 Floating Point Numbers</a></dd>
+<dd> <a href="http://www.psc.edu/general/software/packages/ieee/ieee.html">The IEEE standard for floating point arithmetic</a></dd>
+<dd> <a href="http://babbage.cs.qc.edu/courses/cs341/IEEE-754.html">IEEE-754 Floating-Point Conversion from Floating-Point to Hexadecimal</a></dd>
+<dd> <a href="http://www.scri.fsu.edu/~jac/MAD3401/Backgrnd/ieee.html">IEEE Floating-Point Notes</a></dd>
+<dd> <a href="http://cch.loria.fr/documentation/IEEE754/">EEE standard 754 for binary floating-point arithmetic </a></dd>
+
+<dl>
+<h3> C++ </h3>
+<dd> <a href="http://www.accu.org/resources/public/terse/cpp.htm">ACCU C/C++ Resources</a></dd>
+<dd> <a href="http://oopweb.com/CPP/Files/CPP.html">OOPWeb.com - C / C++ Directory - Programming Tutorials, STL, References, Guides...</a></dd>
+<dd> <a href="http://www.glenmccl.com/glos.htm">C++ Glossary</a> (McCluskey)</dd>
+<dd> <a href="http://www.research.att.com/~bs/glossary.html">C++ Glossary</a> (Stroustrup)</dd>
+<dd> <a href="http://www.dinkumware.com/manuals/reader.aspx?lib=cpp">Dinkum C++ Library</a></dd>
+<h4> FAQs </h4>
+<dl>
+<dd> <a href="http://www.parashift.com/c++-faq-lite/">C++ FAQ LITE - Frequently Asked Questions</a></dd>
+</dl>
+</dl>
+</dl>
+
+
+<h3> Documentation &amp; Literate Programming:</h3>
+<dl>
+    <h4> Doxygen</h4>
+    <dl>
+	<dd> <a href="http://www.stack.nl/~dimitri/doxygen">Doxygen</a> Documentation System</dd>
+	<dd> <a href="http://www-scf.usc.edu/~peterchd/doxygen">Doxygen Tutorial</a> (USC)</dd>
+	<dd> <a href="http://yolinux.com/TUTORIALS/LinuxTutorialC++CodingStyle.html#AUTODOCUMENTATION">Doxygen Tutorial</a> (Linux C++)</dd>
+	<dd> <a href="http://www.upl.cs.wisc.edu/tutorials/doxygen">Doxygen Tutorial</a> (UPL)</dd>
+    </dl>
+    <dd> <a href="http://www.softpanorama.org/SE/htmlization_of_programs.shtml">Literate Programming and HTMLization of programs</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Literate_programming">Literate programming - Wikipedia</a></dd>
+    <dd> <a href="http://www.literateprogramming.com">Literate programming</a></dd>
+</dl>
+<h3> Debugging:</h3>
+<dl>
+    <dd> <a href="http://www.thefreecountry.com/programming/debuggers.shtml">Free Debugging Tools, Program Checkers, Bug Trackers</a></dd>
+    <dd> <a href="http://heather.cs.ucdavis.edu/~matloff/debug.html">Norm Matloff's Debugging Tutorial</a></dd>
+    <dd> <a href="http://www.gnu.org/software/ddd">DDD - Data Display Debugger - GNU Project - Free Software Foundation (FSF)</a></dd>
+    <dl>
+	<dd> <a href="http://heather.cs.ucdavis.edu/~matloff/ddd.html">Norm Matloff's DDD Tutorial</a></dd>
+    </dl>
+    <dd> <a href="http://www.gnu.org/software/gdb/gdb.html">GDB: The GNU Project Debugger</a></dd>
+    <dl>
+	<dd> <a href="http://www.google.com/search?sourceid=navclient&ie=UTF-8&q=gdb+tutorial">Google Search: gdb tutorial</a></dd>
+	<dd> <a href="http://www.google.com/search?sourceid=navclient&ie=UTF-8&q=gdb+tutorial+C%2B%2B">Google Search: gdb tutorial C++</a></dd>
+	<dd> <a href="http://www.objsw.com/docs/gdb_80.html">GDB features for C++</a></dd>
+	<dd> <a href="http://docs.freebsd.org/info/gdb/gdb.info.Debugging_C_plus_plus.html">Debugging C plus plus</a></dd>
+	<dd> <a href="http://shekel.jct.ac.il/cc-res/online-doc/gdb/gdb_4.html">New Features since GDB Version 3.5</a></dd>
+    </dl>
+    <dd> <a href="http://docs.sun.com/db/doc/805-4948/6j4m9ic82?a=view">docs.sun.com: Debugging a Program With dbx</a></dd>
+    <dl>
+	<dd> <a href="http://docs.sun.com/db/doc/805-4948/6j4m9icc6?a=view">Chapter 16 Debugging C++</a></dd>
+    </dl>
+    <dd> <a href="http://queue.acm.org/detail.cfm?id=2031677">ACM Kode Vicious "Debugging on Live Systems"</a> [0Xdeadc0de]</dd>
+</dl>
+<h3> Demonstrations:</h3>
+<dl>
+    <dd> <a href="http://www.cs.concordia.ca/~twang/WangApr01/RootWang.html">Towers of Hanoi</a> {recursion}</dd>
+    <dd> <a href="http://www.shodor.org/interactivate/activities/SierpinskiTriangle/">Sierpinski's Triangle</a> {recursion}</dd>
+    <dd> <a href="http://www.shodor.org/interactivate/activities/SierpinskiCarpet/">Sierpinski's Carpet</a> {recursion}</dd>
+    <dd> <a href="http://www.shodor.org/interactivate/activities/KochSnowflake/">Koch's Snowflake</a> {recursion}</dd>
+</dl>
+<h4> Sorting:</h4>
+<dl>
+    <dd> <a href="http://www.cs.hope.edu/~dershem/ccaa/ccaa/sorting.html">CCAA - Sorting Algorithms</a></dd> {many sorts}
+    <dd> <a href="http://www.cs.ubc.ca/spider/harrison/Java/sorting-demo.html">Sorting Algorithms Demo</a></dd> {many sorts}
+    <dd> <a href="http://www.student.seas.gwu.edu/~idsv/idsv.html">Interactive Data Structure Visualizations: Quadratic Sorts</a></dd>
+</dl>
+<h3> Tutorials:</h3>
+
+<dl>
+<dd><h4> Unix </h4></dd>
+
+<dd> <a href="http://www.math.utah.edu/lab/unix/unix-commands.html">UNIX Tutorial for Beginners</a></dd> {used in class}
+<dd> <a href="http://www.math.utah.edu/lab/unix/unix-commands.html">Unix Command Summary</a></dd>
+<dd> <a href="http://www.emba.uvm.edu/CF/basic.html">Basic Unix Commands</a></dd>
+<dd> <a href="http://web.stcloudstate.edu/bajulstrom/cs201/intro.html">UNIX/VI Introduction</a></dd>
+    <dd><h4> Links </h4></dd>
+    <dd> <a href="http://wiki.linuxquestions.org/wiki/Symlinks">(Linux) Links [Wiki]</a></dd>
+</dl>
+
+<dl>
+<dd><h4> vi</h4></dd>
+
+<dd> <a href="http://www.cs.colostate.edu/helpdocs/vi.html">Basic vi Commands</a></dd>
+<dd> <a href="http://web.stcloudstate.edu/bajulstrom/cs201/vied.html">VI ESSENTIALS</a></dd>
+<dd> <a href="http://www.eng.hawaii.edu/Tutor/vi.html">Mastering the VI editor</a></dd>
+<dd> <a href="http://www.thomer.com/vi/vi.html">Vi Lovers Home Page</a> {<i>Lots
+of resources</i>}</dd>
+<dd> <a href="http://tnerual.eriogerg.free.fr/vim.html">Vim Quick Reference Card</a></dd>
+<dd> <a href="http://docs.freebsd.org/44doc/usd/12.vi/paper.html">An Introduction to Display Editing with Vi</a> {<i> by the creator of Vi, Bill Joy</i>}</dd>
+<dd> <a href="http://www.networkcomputing.com/unixworld/tutorial/009/009.html">The Vi/Ex Editor</a></dd>
+<dd> <a href="http://www.vim.org/docs.php">VIM docs</a></dd>
+<dd> <a href="http://www.informatik.uni-hamburg.de/RZ/software/emacs/viper/viper_toc.html">Viper Is a Package for Emacs Rebels (a Vi emulator for Emacs)</a></dd>
+</dl>
+<dl>
+
+<dd><h4> Emacs</h4></dd>
+
+<dd> <a href="http://www.cs.colostate.edu/helpdocs/emacs.html">Basic Emacs Editor Commands</a></dd>
+<dd> <a href="http://www.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></dd>
+<dd> <a href="http://yoda.cis.temple.edu:8080/UGAIWWW/help/emacs-tutorial.html">Emacs Tutorial</a></dd>
+<dd> <a href="http://vertigo.hsrl.rutgers.edu/ug/emacs_tutorial.html">Emacs
+Tutorial</a> {another}</dd>
+<dd> <a href="http://jeremy.zawodny.com/emacs/emacs.html">Emacs Beginner's HOWTO</a></dd>
+<dd> <a href="http://www.math.utah.edu/lab/unix/emacs-brief-tutorial.html">Brief Emacs Tutorial</a></dd>
+<dd> <a href="http://www.gnu.org/manual/emacs/html_node/emacs.html#SEC_Top">GNU Emacs Manual</a></dd>
+<dd> <a href="http://www.gnu.org/manual/emacs/html_chapter/emacs_toc.html">GNU Emacs Manual: Table of Contents</a></dd>
+<dd> <a href="http://www.cs.bu.edu/teaching/tool/emacs/programming">Using Emacs for Programming</a></dd>
+</dl>
+
+<dd><h4><a name="Make">Make (and alternatives)</a></h4></dd>
+<dl>
+    <dd><h5>Tutorials</h5></dd>
+    <dd> <a href="http://myweb.stedwards.edu/laurab/help/makefilehelp.html">Using a makefile for Managing a C++ Programming Project</a></dd>
+    <dd> <a href="http://helpdesk.cs.tamu.edu/docs/makeFile">Make Files - In C or C++</a></dd>
+    <dd> <a href="http://users.actcom.co.il/~choo/lupg/tutorials/writing-makefiles/writing-makefiles.html">Automating Program Compilation - Writing Makefiles</a></dd>
+    <dd> <a href="http://www.cs.utk.edu/~plank/plank/classes/cs494/494/notes/Make/lecture.html">Scripts and Utilities -- Make/Rcs lecture</a></dd>
+    <dd> <a href="http://cprogramming.com/tutorial/makefiles.html">Makefiles - Unravelling the Mysteries of Makefiles; cprogramming.com</a></dd>
+    <dd> <a href="http://cprogramming.com/tutorial/makefiles_continued.html">Advanced Makefile Tricks</a></dd>
+    <dd> <a href="#make3">Managing Projects with GNU Make, 3rd Ed.; O'Reilly</a></dd>
+
+    <dd><h5>Documents</h5></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Make_(software)">Make - Wikipedia</a></dd>
+    <dd> <a href="http://www.gnu.org/software/make">GNU Make</a></dd>
+    <dl>
+	<dd> <a href="http://www.gnu.org/software/make/manual">GNU Make Manual</a></dd>
+    </dl>
+    <dd> <a href="http://www.robertnz.net/genmake.htm">Automatic make file generator</a></dd>
+    <dd><h5>Alternatives</h5></dd>
+    <dd> <a href="http://www.onlamp.com/pub/a/onlamp/2004/11/18/gnumake_3e.html">make: The Evolution and Alternatives, by Andy Oram, Robert Mecklenburg</a></dd>
+    <dd> <a href="http://www.a-a-p.org">A-A-P project: install and develop software</a></dd>
+    <dl>
+	<dd> <a href="http://interactive.linuxjournal.com/article/7215">Automating Tasks with Aap</a></dd>
+	<dd> <a href="http://www.a-a-p.org/tools_build.html">Tools for A-A-P</a></dd>
+    </dl>
+    <dd><h5>IDEs</h5></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#C.2FC.2B.2B">Comparison of integrated development environments: C++ - Wikipedia</a></dd>
+    <dl>
+	<dd> <a href="http://en.wikipedia.org/wiki/Dev-C%2B%2B">Dev-C++</a> Note that project not active</dd>
+    </dl>
+    <dd> <a href="http://en.wikipedia.org/wiki/Code::Blocks">Code::Blocks - Wikipedia</a> MSWindows support &amp; GCC compiler incl.</dd>
+    <dl>
+	<dd> <a href="http://www.codeblocks.org">Code::Blocks, the open source, cross platform, free C++ IDE</a></dd>
+    </dl>
+    <dd> <a href="http://www.jgrasp.org">jGRASP: An IDE with Visualizations for Improving Software Comprehensibility</a></dd>
+    <dd> <a href="http://netbeans.org/features/cpp">NetBeans open source IDE</a></dd>
+    <dd> <a href="http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express">Visual C++ 2010 Express IDE</a></dd>
+    <dd> <a href="http://www.eclipse.org">Eclipse open source IDE</a></dd>
+    <dl>
+	<dd> <a href="http://www.eclipse.org/cdt">Eclipse CDT (C/C++ Development Tooling)</a> No included C++ compiler</dd>
+	<dd> <a href="http://www.youtube.com/watch?v=efd0wEYkUk0">Generate and Reverse C++ source to UML Class Diagram in Eclipse - YouTube</a> video tutorial</dd>
+    </dl>
+</dl>
+
+<dd><h4>Programming and Software Engineering</h4></dd>
+<dl>
+    <dd><h5>UML</h5></dd>
+    <dd></dd> <i>Note that Doxygen (in conjunction w. graphviz) will generate UML diagrams from your source</i>
+    <dd> <a href="http://en.wikipedia.org/wiki/Unified_Modeling_Language">Unified Modeling Language (UML) - Wikipedia</a></dd>
+    <dd> <a href="http://www.methodsandtools.com/archive/archive.php?id=76">Understanding the Unified Modeling Language (UML)</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/List_of_Unified_Modeling_Language_tools">list of Unified Modeling Language (UML) tools - Wikipedia</a></dd>
+    <dd> <a href="http://plg.uwaterloo.ca/~migod/uml.html">annotated list of UML tools</a></dd>
+    <dd> <a href="http://www.uml.org/#Links-General">A listing of UML Tutorials</a></dd>
+    <dd> <a href="http://www-306.ibm.com/software/rational/uml">UML (at IBM)</a></dd>
+<!--
+    <dd> <a href="http://pigseye.kennesaw.edu/~dbraun/csis4650/A&D/UML_tutorial/index.htm">UML Tutorial</a></dd>
+-->
+    <dd> <a href="http://www.umlet.com">UMLet Free UML Tool for Fast UML Diagrams</a></dd>
+    <dd> <a href="http://horstmann.com/violet">Violet</a> Free simple lightweight UML tool</dd>
+    <dd> <a href="http://argouml.tigris.org">ArgoUML modeling tool</a> (<i>open-source Java based</i>)</dd>
+    <dd> <a href="http://staruml.sourceforge.net/en">StarUML - The Open Source UML/MDA Platform</a> Win32</dd>
+    <dd> <a href="http://dia-installer.de">Dia Diagram Editor</a> Win32</dd>
+    <dd> <a href="http://web.tiscali.it/ggbhome/umlpad/umlpad.htm">UML Pad</a> (<i>open-source, MSWindows support </i>)</dd>
+    <dd> <a href="http://uml.sourceforge.net/index.php">UML Tool for KDE</a></dd>
+    <dd> <a href="http://cplus.about.com/od/uml">UML - Unified Modelling Language in C++ and C&#35; Design</a></dd>
+    <dd> <a href="http://www.codeproject.com/cpp/oopuml.asp">The Code Project - OOP and UML - C++ / MFC</a></dd>
+    <dd> <a href="http://www.cprogramming.com/tutorial.html#programmingarticles">Programming Articles from cprogramming.com</a></dd>
+    <dd> <a href="http://www.youtube.com/watch?v=efd0wEYkUk0">Generate and Reverse C++ source to UML Class Diagram in Eclipse - YouTube</a> video tutorial</dd>
+</dl>
+    <dd><h5>Paradigms</h5></dd>
+<dl>
+    <dd> <a href="http://en.wikipedia.org/wiki/Programming_paradigm">Programming paradigm</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Class-based_programming">Class-based programming</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Test_driven_development">Test Driven Development</a></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Design_by_contract">Design by contract</a></dd>
+    <dd><h6>Law of Demeter</h6></dd>
+    <dd> <a href="http://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter - Wikipedia</a></dd>
+    <dd> <a href="http://www.cmcrossroads.com/bradapp/docs/demeter-intro.html">Introducing Demeter and its Laws</a></dd>
+    <dd> <a href="http://www.ccs.neu.edu/home/lieber/LoD.html">Law of Demeter</a></dd> [links]
+    <dl>
+	<dd> <a href="http://www.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/paper-boy/demeter.pdf">The Paperboy, The Wallet, and The Law Of Demeter</a></dd>
+    </dl>
+</dl>
+<dl>
+    <dd><h4> C++ Language</h4></dd>
+<!--
+    <dd> <a href="http://www.tutorialbox.com/tutors/c++/C++tutor.htm">c++ tutorial</a></dd>
+    <dd> <a href="http://www.cee.hw.ac.uk/~pjbk/pathways/cpp1/">Introduction to C++ Programming I</a></dd>
+-->
+    <dd> <a href="http://www.learncpp.com">The LearnCpp.com tutorial</a></dd>
+    <dd> <a href="http://www.cplusplus.com/doc/tutorial/">The cplusplus.com tutorial</a></dd>
+    <dd> <a href="http://cplus.about.com/library/blcplustut.htm?PM=ss12_cplus">C++ Programming Tutorial [about.com]</a></dd>
+    <dd> <a href="http://cplus.about.com/library/glossary/blglossary.htm?PM=ss13_cplus">C/C++ Glossary [about.com]</a></dd>
+    <dd> <a href="http://oopweb.com/CPP/Documents/ThinkCScpp/VolumeFrames.html">How To Think Like A Computer Scientist with C++</a></dd>
+    <dd> <a href="http://webstaff.itn.liu.se/~aidvi/courses/07/C++/C++.html">C++ for computer graphics</a></dd>
+    <dd> <a href="http://gcc.gnu.org/onlinedocs/gccint/">GNU Compiler Collection (GCC) Internals</a></dd>
+    <dl>
+	<dd><h5> Templates </h5></dd>
+	<dd> <a href="http://www.bgsu.edu/departments/compsci/docs/templates.html">Template Classes</a> {doesn't use <tt>typename</tt>}</dd>
+	<dd> <a href="http://www.cplusplus.com/doc/tutorial/templates.html">Templates</a> {doesn't use <tt>typename</tt>}</dd>
+	<dd> <a href="http://www.devarticles.com/c/a/Cplusplus/The-Mighty-Cplus-Template/">The Mighty C++ Template</a></dd>
+	<dd> <a href="http://www.cprogramming.com/tutorial/templates.html">Templates and Templated Classes</a></dd>
+	<dd> <a href="http://www.cprogramming.com/tutorial/templated_functions.html">Templated functions</a></dd>
+	<dd> <a href="http://www.cprogramming.com/tutorial/template_specialization.html">Template Specialization and Partial Template Specialization</a></dd>
+	<dd> <a href="http://en.wikibooks.org/wiki/C%2B%2B_Programming/Templates">Templates -- Wiki Books</a></dd>
+<!--
+	<dd> <a href="http://www.codersource.net/cpp_class_templates.html">C++ Class Templates</a></dd>
+-->
+	<dd> <a href="http://msdn2.microsoft.com/en-us/library/y097fkab(VS.80).aspx">Templates</a></dd>
+<!--
+	<dd> <a href="http://clusterf.urz.uni-halle.de:5312/help/index.jsp?topic=/com.ibm.xlcpp8a.doc/language/ref/cplr318.htm">Templates</a></dd>
+-->
+	<dd> <a href="http://www.parashift.com/c++-faq-lite/templates.html">C++ FAQ Lite: <i>Templates</i></a></dd>
+<!--
+	<dd> <a href="http://www.iis.sinica.edu.tw/~kathy/vcstl/templates.htm">C++ Templates Tutorial</a> {doesn't use <tt>typename</tt>}</dd>
+-->
+	<dd> <a href="http://www.josuttis.com/tmplbook">C++ Templates - The Complete Guide: <i>source code</i></a> {source code from book}</dd>
+	<dd> <a href="http://www.comeaucomputing.com/techtalk/templates/">C++ Template FAQ - Comeau</a></dd>
+	<dd> <a href="http://stackoverflow.com/questions/6695261/template-within-template-why-should-be-within-a-nested-template-arg">Template within template: why "`>>' should be `> >' within a nested template argument list"</a></dd>
+	<dd> <a href="http://blog.aaronballman.com/2011/11/a-simple-introduction-to-type-traits/">A simple introduction to type traits</a></dd>
+	<dd> <a href="http://en.cppreference.com/w/cpp/types">C++ Type support</a> (introduces C++11 Type Traits)</dd>
+	<dd> <a href="http://www.boost.org/doc/libs/1_51_0/libs/type_traits/doc/html/index.html">C++ Boost (library) Type Traits</a></dd>
+	<dd> <a href="http://akrzemi1.wordpress.com/2012/03/19/meta-functions-in-c11/">Meta-functions in C++11</a></dd>
+	<dd> <a href="https://blogs.oracle.com/pcarlini/entry/template_aliases">Template aliases in C++11</a></dd>
+	<dd> <a href="http://www.stroustrup.com/C++11FAQ.html#template-alias">Template aliases C++11 - Stroustrup</a></dd>
+	<dd> <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2003/n1489.pdf">Templates aliases for C++11</a> (PDF)</dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Variadic_template">Variadic Templates - Wikipedia</a></dd>
+	<dd> <a href="http://www.devx.com/cplus/Article/41533">An Introduction to Variadic Templates in C++0X</a></dd>
+	<dd> <a href="http://www.stroustrup.com/C++11FAQ.html#variadic-templates">Variadic-Templates C++11 - Stroustrup</a></dd>
+    </dl>
+    <dl>
+	<dd><h5> operator overloading </h5></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Operator_(programming)">Operator (programming)</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B">Operators in C and C++</a></dd>
+	<dd> <a href="http://www.cs.caltech.edu/courses/cs11/material/cpp/donnie/cpp-ops.html">C++ Operator Overloading Guidelines</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Operator_overloading">Operator overloading - Wikipedia</a></dd>
+<!--
+	<dd> <a href="http://clusterf.urz.uni-halle.de:5312/help/index.jsp?topic=/com.ibm.xlcpp8a.doc/language/ref/cplr318.htm">Overloading Operators</a></dd>
+-->
+	<dd> <a href="http://msdn2.microsoft.com/en-us/library/5tk49fh2(VS.80).aspx">Operator Overloading</a></dd>
+	<dd> <a href="http://www.functionx.com/cpp/Lesson25.htm">Operator Overloading</a></dd>
+	<dd> <a href="http://www.parashift.com/c++-faq-lite/operator-overloading.html">Operator overloading &nbsp;Updated!&nbsp;, C++ FAQ Lite</a></dd>
+	<dd> <a href="http://www.csse.monash.edu.au/~jonmc/CSE2305/Topics/10.19.OpOverload/html/text.html">C++ Operator Overloading</a></dd>
+	<dd> <a href="http://en.wikibooks.org/wiki/C%2B%2B_Programming/Operator_Overloading">Operator Overloading -- Wiki Books</a></dd>
+	<dd> <a href="http://www.devarticles.com/c/a/Cplusplus/Operator-Overloading-in-C-plus">Operator overloading in C++</a> {with templates}</dd>
+	<dd> <a href="http://www.cplusplus.com/doc/tutorial/classes2.html">C++ Overloading Operators</a></dd>
+	<dd> <a href="http://msdn.microsoft.com/en-us/library/5s5sk305%28v=vs.80%29.aspx">C++ Conversion Functions</a></dd>
+	<dd> <a href="http://publib.boulder.ibm.com/infocenter/lnxpcomp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8l.doc%2Flanguage%2Fref%2Fcplr385.htm">Conversion Functions C++</a></dd>
+	<dd> <a href="http://www.cplusplus.com/reference/std/functional/">Functional</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Functional_(C%2B%2B)">Functional (C++) - Wikipedia</a></dd>
+	<dd> <a href="http://yosefk.com/c++fqa/operator.html">C++ FQA: Operator overloading </a></dd>
+	<dd> <a href="http://lambda-the-ultimate.org/node/1605">DSLs and operator associativity/precedence</a></dd>
+    </dl>
+    <dl>
+	<dd><h5> STL </h5></dd>
+	<dd> <a href="http://www.halpernwightsoftware.com/stdlib-scratch/quickref.html">C++ STL Quick Reference</a></dd>
+	<dd> <a href="http://www.linuxsoftware.co.nz/cppcontainers.html">C++ Containers Cheat Sheet</a></dd>
+	<dd> <a href="http://www.linuxsoftware.co.nz/cppiterators.html">C++ Iterators & Algorithms Cheat Sheet</a></dd>
+	<dd> <a href="http://www.cplusplus.com/reference/stl/">STL Containers - C++ Reference</a></dd>
+	<dd> <a href="http://www-h.eng.cam.ac.uk/help/tpl/talks/C++.html">CUED Talk: C++ and the STL (Standard Template Library)</a></dd>
+	<dd> <a href="http://www.pottsoft.com/home/stl/stl.htmlx">Phil Ottewell's STL Tutorial</a></dd>
+	<dd> <a href="http://www.oopweb.com/CPP/Documents/STL/VolumeFrames.html">The Standard Template Library Tutorial - Johannes Weidl</a></dd>
+	<dd> <a href="http://www.cs.brown.edu/people/jak/proglang/cpp/stltut/tut.html">A modest STL tutorial</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=102155">Storing Your Data in C++ Standard Library Containers</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=26051">The Standard Containers as Class Templates</a></dd>
+	<dd> <a href="http://www.sgi.com/tech/stl/">Standard Template Library Programmer's Guide (SGI)</a></dd>
+	<dl>
+	    <dd> <a href="http://www.sgi.com/tech/stl/stl_introduction.html">Introduction to the Standard Template Library (SGI)</a></dd>
+	    <dd> <a href="http://www.sgi.com/tech/stl/other_resources.html">Other STL Web sites (SGI)</a></dd>
+	    <dd> <a href="http://www.sgi.com/tech/stl/sort.html">STL sort (SGI)</a></dd>
+	</dl>
+	<dd> <a href="http://www.codeproject.com/vcpp/stl/stdsort.asp">Using the std::sort() Method</a></dd>
+	<dd> <a href="http://www.codeguru.com/forum/showthread.php?t=366063">STL Sorting: How to sort a 'std::list' containing classes/structures?</a></dd>
+	<dl>
+	    <dd><h6> &lt;string&gt; </h6></dd>
+	    <dd> <a href="http://www.linuxsoftware.co.nz/cppstrings.html">Shifting from C to C++ strings</a></dd>
+	    <dd> <a href="http://ei.cs.vt.edu/~cs1044/Notes/Chap12.Strings.pdf">C++ string variables</a></dd>
+	    <dd> <a href="http://www.cprogramming.com/tutorial/string.html">Cprogramming.com - C++ Standard Library - String Class</a></dd>
+	    <dd> <a href="http://www.msoe.edu/eecs/ce/courseinfo/stl/string.htm">ANSI String Class</a></dd>
+	    <dd> <a href="http://www.cppreference.com/cppstring">C++ strings (reference)</a></dd>
+	    <dd> <a href="http://www.yolinux.com/TUTORIALS/LinuxTutorialC++StringClass.html">Linux Tutorial: - C++ String Class Tutorial</a></dd>
+	    <dd> <a href="http://www.math.utah.edu/docs/info/libg++_19.html">User's Guide to the GNU C++ Class Library - The String class</a></dd>
+	    <dd> <a href="http://www.codeguru.com/forum/showthread.php?t=231056">CodeGuru Forums - C++ String: How to convert a numeric type to a string</a></dd>
+	    <dd> <a href="http://www.dinkumware.com/htm_cpl/string2.html">&lt;string&gt;</a></dd>
+	    <dd> <a href="http://www.utilitycode.com/str/default.aspx">Str Library - comprehensive C++ string class and regular expressions class</a></dd>
+	    <dl>
+		<dd> <a href="http://www.utilitycode.com/str/purchase_academic.aspx">Academic Licensing</a></dd> (free!)
+	    </dl>
+	</dl>
+    <h6> Algorithms in the STL</h6>
+    <dl>
+	<dd> <a href="http://en.cppreference.com/w/cpp/algorithm">STL Algorithm library reference</a> (includes C++11 methods)</dd>
+	<dl>
+	    <dd> <a href="http://en.cppreference.com/w/cpp/utility/functional">STL Function Object reference</a></dd>
+	</dl>
+    </dl>
+    <h6> Hashing in the STL</h6>
+    <dl>
+	<dd> <a href="http://www.ddj.com/cpp/198800559">Dr. Dobb's | C++ STL Hash Containers and Performance | April 5, 2007</a></dd>
+	<dd> <a href="http://www.boost.org/doc/html/hash.html">Boost library Hashing facilities</a> (becoming part of the next STL standard)</dd>
+    </dl>
+    <dd> <a href="http://www.informit.com/articles/index.asp?st=41346">All C++ Articles - Informit.com</a></dd>
+    <dl>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=169586">Memory Hygiene in C and C++: Safe Programming with Risky Data</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=169670">Memory Hygiene in C and C++, Part 2: Commercial Tools</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=102648">Memory Hygiene in C and C++ Part 3: Safe Programming with Risky Data</a></dd>
+	<dd> <a href="https://buildsecurityin.us-cert.gov/daisy/bsi/articles/knowledge/coding/312.html">Safe Integer Operations - Build Security In</a></dd>
+	<dd> <a href="http://hissa.nist.gov/sw_develop/ir5769/node6.html">SafeInt</a></dd>
+	<dd> <a href="http://www.cs.cmu.edu/~dbrumley/pubs/integer-ndss-07.pdf">RICH: Automatically Protecting Against Integer-Based Vulnerabilities</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=170909">User-Defined Extractors and Inserters in C++</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=337137">Combining User-Defined Inserters, Extractors, and Manipulators in C++</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=170770">Formatting Your Output with C++ Streams</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=31537">Exception Handling in C++</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=31473">Templates and Inheritance Interacting in C++</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=30667">C++ Templates: Metaprograms</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=30642">C++ Memory and Resource Management</a></dd>
+	<dd> <a href="http://www.informit.com/articles/article.asp?p=31529">Smart Pointers in C++</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Smart_pointer">Smart Pointer - Wikipedia</a></dd>
+    </dl>
+    <dd> <a href="http://www.boost.org/more/generic_programming.html">Generic Programming Techniques</a></dd>
+    <dd> <a href="http://www.boost.org/more/error_handling.html">Error and Exception Handling</a></dd>
+    <dd> <a href="http://www.boost.org/community/exception_safety.html">Exception-Safety in Generic Components: Lessons Learned from Specifying Exception-Safety for the C++ Standard Library - Boost</a></dd>
+</dl>
+<dl>
+    <dd><h5>The New C++ Standard [C++11]</h5></dd>
+    <dl>
+	<dd> <a href="http://blog.smartbear.com/software-quality/bid/167271/The-Biggest-Changes-in-C-11-and-Why-You-Should-Care">The Biggest Changes in C++11 (and Why You Should Care)</a></dd>
+	<dd> <a href="http://www.cprogramming.com/c++11/what-is-c++0x.html">What is C++11 about?</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/C%2B%2B11">C++11 - Wikipedia</a></dd>
+	<dd> <a href="http://www.stroustrup.com/C++11FAQ.html">C++11 FAQ - Stroustrup</a></dd>
+	<dd> <a href="http://en.cppreference.com/w/cpp">C++ Reference (including C++11) </a></dd>
+	<dd> <a href="http://www.pvv.org/~oma/cpp0x_aquadi_nov_2007.pdf">A quick and dirty introduction to C++0x </a>(as of November 2007)</dd>
+	<dd> <a href="http://www.stroustrup.com/rules.pdf">The Design of C++0x: Reinforcing C++’s proven strengths, while moving into the future - Stroustrup</a> (PDF)</dd>
+	<dd> <a href="http://www.informit.com/podcasts/episode.aspx?e=356872f9-fc8f-4165-bf5b-9b17be64a7fa&rl=1">The Future of C++ (video) [Scott Meyers]</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Technical_Report_1">C++ Technical Report 1 - Wikipedia</a> (the new STL)</dd>
+	<dd> <a href="http://www.aristeia.com/EC3E/TR1_info_frames.html">Scott Meyers: TR1 information</a></dd>
+	<dd> <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1836.pdf">Draft Technical Report on C++ Library Extensions (TR1)</a></dd>
+	<dd> <a href="http://www.boost.org">Boost C++ Libraries</a></dd>
+	<dd> <a href="http://electronicdesign.com/article/embedded/c11-ada-2012-renaissance-native-languages-74107">C++11 and Ada 2012 - renaissance of native languages?</a></dd>
+	<dd><h6>Specific Features</h6></dd>
+	<dl>
+	    <dd> <a href="http://www.cprogramming.com/c++11/c++11-ranged-for-loop.html">C++11 range-based for loops</a></dd>
+	    <dd> <a href="http://www.cprogramming.com/c++11/c++11-compile-time-processing-with-constexpr.html">Constexpr - Generalized Constant Expressions in C++11</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/C%2B%2B11#New_string_literals">New string literals - Wikipedia</a> &amp;
+		 <a href="http://en.wikipedia.org/wiki/C%2B%2B11#User-defined_literals">User-defined literals - Wikipedia</a></dd>
+	    <dd> <a href="http://www.cprogramming.com/c++11/c++11-lambda-closures.html">Lambda Functions in C++11 - the Definitive Guide</a> &amp;
+		 <a href="http://en.wikipedia.org/wiki/Anonymous_function#C.2B.2B">Anonymous function in C++11 - Wikipedia</a></dd>
+	    <dd> <a href="http://www.cprogramming.com/c++11/c++11-nullptr-strongly-typed-enum-class.html">Better types in C++11 - nullptr, enum classes (strongly typed enumerations) and cstdint</a> &amp;
+	         <a href="http://en.wikipedia.org/wiki/C%2B%2B11#Null_pointer_constant">C++11 Null pointer constant</a></dd>
+	    <dd> <a href="http://www.cprogramming.com/c++11/rvalue-references-and-move-semantics-in-c++11.html">Move semantics and rvalue references in C++11</a></dd>
+	    <dd> <a href="http://www.cprogramming.com/c++11/c++11-auto-decltype-return-value-after-function.html">Improved Type Inference in C++11: auto, decltype, and the new function declaration syntax</a></dd>
+	    <dd> <a href="http://en.wikipedia.org/wiki/Variadic_templates#C.2B.2B11">Variadic template C++11 - Wikipedia</a></dd>
+	</dl>
+	<dd><h6>C++11 compiler support</h6></dd>
+	<dl>
+	    <dd> <a href="http://gcc.gnu.org/projects/cxx0x.html">C++0x/C++11 Support in GCC</a></dd>
+	    <dd> <a href="http://gcc.gnu.org/onlinedocs/libstdc++/manual/status.html#status.iso.200x">gcc: The status of the library implementation</a></dd>
+	    <dd> <a href="http://clang.llvm.org/cxx_status.html">C++98 and C++11 Support in Clang</a></dd>
+	</dl>
+    </dl>
+<dd><h5> Anatomy of the g++ compiler </h5></dd>
+<dd> <a href="http://gcc.gnu.org/onlinedocs/cppinternals/index.html#Top">The GNU C Preprocessor Internals</a></dd>
+<dd> <a href="http://gcc.gnu.org/onlinedocs/gccint/Passes.html#Passes">Passes and Files of the Compiler</a></dd>
+<dd> <a href="http://gcc.gnu.org/onlinedocs/libstdc++/">The GNU C++ Library (libstdc++)</a></dd>
+</dl>
+<dd><h4> Other Languages worth considering</h4></dd>
+    <dl>
+	<dd> <a href="http://en.wikipedia.org/wiki/Ada_2005">Ada 2005 - Wikipedia</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/GNAT">GNU Ada compiler - Wikipedia</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Fortran">Fortran - Wikipedia</a> Fortran 2008 is current version</dd>
+	<dl>
+	    <dd> <a href="http://en.wikipedia.org/wiki/F_%28programming_language%29">F - Wikipedia</a> Fortran variant</dd>
+	</dl>
+	<dd> <a href="http://en.wikipedia.org/wiki/Icon_%28programming_language%29">Icon - Wikipedia</a></dd>
+	<dl>
+	    <dd> <a href="http://en.wikipedia.org/wiki/Unicon_%28programming_language%29">Unicon - Wikipedia</a> Icon descendant</dd>
+	</dl>
+	<dd> <a href="http://en.wikipedia.org/wiki/D_programming_language">D - Wikipedia</a></dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/BETA_programming_language">BETA - Wikipedia</a></dd>
+	<dl>
+	    <dd> <a href="http://www.daimi.au.dk/~eernst/gbeta/">gBETA </a> generalized BETA</dd>
+	</dl>
+	<dd> <a href="http://en.wikipedia.org/wiki/Erlang_%28programming_language%29">Erlang - Wikipedia</a> concurrent, fault-tolerant, &amp; supports hot-swapping</dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Scala_%28programming_language%29">Scala - Wikipedia</a> adds many features including functional programming to Java &amp; C#  -- a "better Java" </dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29">Python - Wikipedia</a> powerful, general-purpose, multi-paradigm very readable scripting langugage. Powerful libraries.</dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29">Ruby - Wikipedia</a> multi-paradigm, rapid development oriented.  Early implementations were slow.</dd>
+	<dd> <a href="http://en.wikipedia.org/wiki/Groovy_%28programming_language%29">Groovy - Wikipedia</a> scripting language compiling to JVM.  Influenced by Python, Ruby, Perl, &amp; Smalltalk. Native support for various markup languages (e.g. HTML &amp; XML)</dd>
+    </dl>
+</dl>
+<h3> Histories:</h3>
+<dl>
+<dd> <a href="http://dekalb.dc.peachnet.edu/~jbenson/csci1401/history.htm">Computing History -- Brief Timeline and Facts</a></dd>
+<dd> <a href="http://www.computer.org/computer/timeline">Timeline of Computing
+History</a></dd>
+<dd> <a href="http://www.computerhistory.org/timeline/index.page">CHM: Timeline
+of Computer History</a></dd>
+<dd> <a href="http://carbon.cudenver.edu/~traup/fa00/read/history.html">UNIX
+History</a></dd>
+<dd> <a href="http://cm.bell-labs.com/cm/cs/who/dmr/hist.html">The Evolution
+of the Unix Time-sharing System</a></dd>
+<dd> <a href="http://carbon.cudenver.edu/~traup/fa00/read/history.html">Unix
+History</a></dd>
+<dd> <a href="http://www.netzmafia.de/skripten/unix/chist.html">The Development
+of the C Language</a></dd>
+<dd> <a href="http://www.byte.com/art/9509/sec7/art19.htm">A Brief History of
+Programming Languages</a></dd>
+<dd> <a href="http://www.levenez.com/lang/">Computer Languages History</a></dd>
+</dl>
+
+<h3> Supplementary Books:</h3>
+<dl>
+<dd> <a href="http://www.oreilly.com/catalog/learnuml">Learning UML</a></dd>
+<dd> <a href="http://www.oreilly.com/catalog/cpluspluspr">C++ Pocket Reference</a></dd>
+<dd> <a href="http://www.oreilly.com/catalog/stlpr">STL Pocket Reference</a></dd>
+<dd> <a href="http://www.josuttis.com/libbook/libbook.html">The C++ Standard Library - A Tutorial and Reference; by Nicolai M. Josuttis</a></dd>
+<dd> <a href="http://www.awprofessional.com/title/0201749629">Effective STL: 50 Specific Ways to Improve Your Use of the Standard Template Library; by Scott Meyers</a></dd>
+<dd> <a href="http://www.awprofessional.com/title/0321113586">C++ Coding Standards: 101 Rules, Guidelines, and Best Practices; by Herb Sutter, Andrei Alexandrescu</a></dd>
+<dd> <a href="http://www.awprofessional.com/title/0321125185">C++ Gotchas: Avoiding Common Problems in Coding and Design; by Stephen Dewhurst</a></dd>
+<dd> <a href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130653942,00.htm">Practical Debugging in C++</a></dd>
+<dd> <a href="http://www.cc2e.com">Code Complete, Second Edition; by Steve McConnell</a></dd>
+<dd> <a name="make3" href="http://www.oreilly.com/catalog/make3">Managing Projects with GNU Make, 3rd Ed.; O'Reilly</a></dd>
+<h5> lists:</h5>
+<dd> <a href="http://www.accu.org/bookreviews/public/reviews/0hr/beginner_s_c__.htm">ACCU - Highly Recommended by subject: beginner's c++</a></dd>
+<dd> <a href="http://www.accu.org/bookreviews/public/reviews/0hr/debuggers.htm">ACCU - Highly Recommended by subject: debuggers</a></dd>
+</dl>
+
+<h3> Professional Organizations:</h3>
+<dl>
+    <dd> <a href="http://studentorg.stcloudstate.edu/acm">SCSU student chapter of the ACM</a></dd>
+    <dd> <a href="http://www.acm.org/membership/student">ACM Student Member Center</a></dd>
+    <dd> <a href="http://www.awc-hq.org">Association for Women in Computing (AWC)</a></dd>
+    <dd> <a href="http://women.acm.org">ACM-W: the ACM committee on Women in Computing</a></dd>
+    <dd> <a href="http://www.acm.org">ACM: Association for Computing Machinery, the world's first educational and scientific computing society</a></dd>
+    <dd> <a href="http://www.topcoder.com">Programming Contests, Software Development, and Employment Services at TopCoder</a></dd>
+</dl>
+
+<h3> Computing News:</h3>
+
+<ul>
+    <li> <a href="http://www.freshnews.org/">freshnews.org - fresh tech news from around the net</a></dd>
+    <li> <a href="http://www.pubpat.org/Microsoft_517_Rejected.htm">At PUBPAT's Request, Patent Office Rejects Microsoft FAT Patent</a></dd>
+</ul>
+
+
+<h3> Computing Humor:</h3>
+
+<dl>
+<dd> <a href="http://www.gnu.org/fun/jokes/error-haiku.html">Error messages in Haiku</a></dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/pasta.code.html">Spaghetti Code</a></dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/helloworld.html">Hello World</a></dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/unix.errors.html">Unix Error Messages</a></dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/vi.song.html">Addicted to vi</a> (lyrics)</dd>
+<dd> <a href="http://www.gnu.org/music/blues-song.html">The Programmer's Blues</a> (lyrics)</dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/last.bug.html">The Last Bug</a> (poem)</dd>
+<dd> <a href="http://www.gnu.org/fun/jokes/midnight.dreary.html">Midnight Dreary</a> (poem)</dd>
+</dl>
+
+<!--
+-->
+
+</body>
+</html>

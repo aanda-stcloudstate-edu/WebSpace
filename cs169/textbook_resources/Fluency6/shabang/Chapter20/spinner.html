@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+   <meta charset="UTF-8"/><title>Spinner</title>
+   <style>
+      body {text-align:center}
+   </style>
+   <script>
+     var frame = 0;												//Frame counter
+     var timerID;													//Timer handle var
+     var pics = new Array(12); 							//Array for prefetched gifs
+     function animate( ) {									
+     document.images[0].src = pics[frame].src;	
+     frame = (frame+1)%12;								
+     timerID = setTimeout("animate( )", 100);		
+}																		
+     for (var i = 0; i < pics.length; i++) {				
+        pics[i] = new Image( );								
+     }
+     for (var i = 0; i < pics.length; i++) {				
+        pics[i].src = "gifpix/Busy" + i + ".gif";		
+     }																	
+   </script>
+ </head>
+ <body>
+     <img src="gifpix/Busy0.gif" alt="spinner"/>  
+     <form>
+       <input type="button" value="Start"				
+            onclick='setTimeout("animate( )",100);'/>
+       <input type="button" value="Stop"
+           onclick='clearTimeout(timerID);'/>
+     </form>
+  </body>
+</html>

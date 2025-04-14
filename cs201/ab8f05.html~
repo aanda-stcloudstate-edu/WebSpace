@@ -1,0 +1,70 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab 8 [A. A. Anda]</title>
+</head>
+<body>
+
+<center> <h1> CSCI 201</h1></center>
+
+<center> <h2> Lab 8</h2></center>
+
+<center> <h3> [A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with
+<ul>
+    <li><u>multi-way selection</u> statements.
+</ul>
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+<P> Knowing when to use a <i>switch</i> statement vs. an <i>else-if</i>
+statement is important.  The switch statement, to select among several
+alternatives, must be used only with integral values.  However, if there are
+ranges of many integral values, we should instead use the else-if statement.
+
+<P> In this lab we will solve a problem using both facilities in their
+appropriate respective contexts.
+
+<h4> Solution Specification:</h4>
+<ol>
+<li>
+Create a new directory, <i>lab8</i>, and move to it.</li>
+
+<li>
+Develop a function which implements a solution to the problem expressed in
+<b>Project 53</b> on page 223.
+</li>
+
+<li>
+Your function should work for integer angles that are negative as well as for
+those that are greater in magnitude than 360 degrees.
+</li>
+
+<li>
+Develop another function to print the results.
+</li>
+
+<li>
+Develop and run a test driver program which validates both functions.<br>
+<ul>
+<li> Your program will prompt the user for an input angle.
+<li> In addition to the test values from the text, use angles &gt;360 and &lt;<0.
+</ul>
+</li>
+
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the source and the running of the program data.
+</li>
+
+</ol>
+
+
+</body>
+</html>

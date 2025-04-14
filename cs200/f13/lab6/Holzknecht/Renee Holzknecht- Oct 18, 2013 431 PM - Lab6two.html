@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+		Lab 6 (Exercise 9.17)
+		</title>
+		<script type="text/javascript" src="weather.js"></script>
+		<script type="text/javascript">
+		function DewPoint2()
+		{
+			var temperature, humidity, dpt; 
+			temperature=parseFloat(document.getElementById('tempBox').value); 
+			humidity=parseFloat(document.getElementById('humBox').value); 
+			dpt=DewPoint(temperature, humidity); 
+			document.getElementById('outputDiv').innerHTML='The dew point is ' + dpt + ' degrees F.'; 
+		}
+		</script>
+		<script type="text/javascript">
+		function WindChill2()
+		{
+			var temperature, wind, wch; 
+			temperature=parseFloat(document.getElementById('tempBox').value); 
+			wind=parseFloat(document.getElementById('windBox').value); 
+			wch=WindChill(temperature, wind); 
+			document.getElementById('outputDiv').innerHTML='The wind chill is ' + wch; 
+		}
+		</script>
+	</head>
+	<body>
+		<h1 style="text-align:center">
+		Lab 6 (Exercise 9.17)
+		</h1>
+		<br>
+		<table>
+			<tr><td>Insert temperature (F):</td><td><input type="text" id="tempBox" size=5 value=""></td></tr>
+			<tr><td>Insert humidity (%):</td><td><input type="text" id="humBox" size=5 value=""></td></tr>
+			<tr><td>Insert wind (mi/hr):</td><td><input type="text" id="windBox" size=5 value=""></td></tr>
+		</table>
+		<br>
+		<input type="button" value="Calculate Dew Point" onclick="DewPoint2()">
+		<input type="button" value="Calculate Wind Chill" onclick="WindChill2()">
+		<hr>
+		<div id="outputDiv"></div>
+	</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab4 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 4</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2>
+Introduction:</h2>
+This lab exercises informative user communication, the two integer division
+operators, and compound assignment expressions.
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab4</i>, and move to it.</li>
+
+<li>
+Write&nbsp; a working program which converts a binary number to decimal
+using the following algorithm (as expressed in Appendix D-2 of our C++
+text and your lecture notes):</li>
+
+<ol>
+<li>
+You can use the <tt>~aanda/cs201/source/CH03/p03-10.c++</tt> program from  page 102-103 of our C++ text as a
+template for this program.&nbsp; Be sure to copy it over to a new file
+with another name.&nbsp; {<i>This is an example of code reuse</i>}</li>
+
+<li>
+Ensure that your program has updated <u>comment </u>headers describing
+your identifying information, the date, and the purpose of the program.</li>
+
+<li>
+<u>Prompt</u> the user with explicit instructions on entering a binary
+number up to <u>eight</u> digits long as a <u>contiguous</u> sequence of
+ones and zeros.&nbsp; The leading digit must be nonzero. {<i>or it will
+be interpreted as an octal number</i>}</li>
+
+<li>
+<u>Read</u> the input as if it were a decimal integer {<i>that has only
+ones and zeros as digits</i>}</li>
+
+<li>
+Store the value of each bit in its own integer variable using the following
+algorithm:</li>
+
+<ol>
+<li>
+the rightmost bit value is the remainder of dividing the input integer
+by 10 {<i>use the <b>%</b> operator</i>}</li>
+
+<li>
+to extract the bit to the left of it, first divide the input integer by
+10 {<i>use /</i>}, then the bit value will be the remainder {<i>again use
+the </i><b>%</b><i> operator</i>}</li>
+
+<li>
+repeat until you have a value for all eight bits.</li>
+</ol>
+
+<li>
+<u>Print </u>the eight bits, in order, all on one line {<i>use <b>setw(1)</b>
+for each.&nbsp; This requires the inclusion of the <b>iomanip</b> library</i>.}</li>
+
+<li>
+<u>Declare all variables</u>.</li>
+
+<li>
+At this point, compile and run your program to ensure that it is working
+correctly before we move on to the next stage.&nbsp; The written bits must
+be in the <u>same order</u> as the input bits.&nbsp; Use several test numbers.</li>
+
+<li>
+Use the algorithm on page 882 of Appendix D-2 of our C++ textbook to convert
+the binary number to decimal.</li>
+
+<ol>
+<li>
+&nbsp;Use a variable to represent the successive powers of two and update
+it with the "<b>*=</b>"&nbsp;compound assignment operator.</li>
+
+<li>
+Update the running sum of powers of two (corresponding to the non-zero
+bits) in another variable with the "<b>+=</b>" compound assignment operator.</li>
+
+<li>
+Perform the above for all eight bits.</li>
+</ol>
+
+<li>
+Print the decimal value of the binary number on its own line which also
+describes to the user what the number is.</li>
+
+<li>
+<u>Declare all variables</u></li>
+
+<li>
+Compile and run.&nbsp; make sure the program is working correctly.&nbsp;
+Use several test numbers.</li>
+
+<li>
+When correct, use <b>script</b> to generate a printout of the source followed
+by a demonstration of the execution of the program to submit.</li>
+    <ol>
+	<li>
+	Use the following data to demonstrate: [11111111], [1010101], [1010].
+    </ol>
+</ol>
+</ol>
+</ol>
+
+</body>
+</html>

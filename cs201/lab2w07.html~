@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>csci 201 lab2</title></head><body linkifytime="16" linkified="0" linkifying="false">
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 2</h2></center>
+
+<hr width="100%">
+<h2>
+Introduction:</h2>
+This lab examines and lists the local integer and floating point environments
+with respect to limits on <i>csci</i> (a <b>Sparc</b> architecture) and
+compares them with those on an <b>Intel</b> architecture.
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<li> Create a new directory, <i>lab2</i>, and move to it.</li>
+
+<ol>
+<li> <i>run</i>: <tt><b>cp</b> ~aanda/cs201/source/CHAppndx/PE-0[12].c++ .</tt>
+<font color="red">{dot}</font></li>
+<li> <i>run</i>: <tt><b>cp</b> ~aanda/cs201/source/CHAppndx/PE-0[12].Intel .</tt>
+<font color="red">{dot}</font></li>
+
+<li> <i>compile</i>: <tt>g++ PE-01.c++ -o PE-01.exe</tt> </li>
+<li> <i>compile</i>: <tt>g++ PE-02.c++ -o PE-02.exe</tt> </li>
+
+<li>
+
+</li><li> <i>Run</i>: each executable {<i>*.exe</i>}</li> saving the output in PE-01.Sparc and PE-02.Sparc respectively.
+
+
+<li> Run <tt>diff</tt>: on each *.Sparc and *.Intel file respectively and save each output to a new file with a *.diff suffix</li>
+
+
+<li>
+<i>Print</i> a copy of the *.Sparc files together using <b>lpr</b> <i>outputfilename</i>.</li>
+
+
+<li>
+Submit one copy of the *.Sparc and the *diff files to D2L.</li>
+
+<li>
+Retain printout for your notes and exams.</li>
+</ol>
+<li> Write a program to test the integer division equation:<br>
+<center>
+    <tt> a == (a/b)*b + a%b </tt>
+</center>
+for all signs.
+<ol>
+    <li>Prompt the user for both values.
+    <li>Show that the relation holds.
+    <li>Submit to D2L the program source and a typescript file showing the program run for a variety of input pairs including pairs having all possible signs.
+</ol>
+<li> <tt>limits.h</tt> and <tt>float.h</tt> have been superceded by the new &lt;limits&gt; library file
+<ol>
+    <li> <i>run</i>: <tt><b>cp</b> ~aanda/cs201/local_limits.cpp .</tt>
+    <li> Compile and run this file storing the output in local_limits.Sparc
+    <li> Submit a copy of local_limits.Sparc to D2L
+    <li> <i>Print</i> a copy each of local_limits.cpp and local_limits.Sparc for yourself using <b>lpr</b> <i>outputfilename</i>.</li>
+</ol>
+</ol>
+
+<h4>
+Editing Suggestions:</h4>
+
+<li>
+run <b>vim</b></li>
+
+<li>
+set the following flags:</li>
+
+<blockquote>
+<li>
+	"<tt>:set cin sw=4</tt>"  {this maintains indenting.}
+</li>
+
+<li>
+"<tt>:syntax enable</tt>"
+{provides automatic syntax highlighting to help illuminate structure and
+mistakes}</li>
+
+<li>
+"yank" and "put" similar lines to save editing work {<b>yy</b> and
+<b>p</b> commands}</li>
+</blockquote>
+
+<li>
+use two terminal windows Write from the editor periodically {"<b>:w</b>"}
+while compiling and running in the other window to catch syntax and other
+errors early.</li>
+
+
+</body></html>

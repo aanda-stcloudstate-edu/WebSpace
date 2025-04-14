@@ -1,0 +1,404 @@
+<HTML>
+<HEAD>
+  <TITLE>Lab 8: JavaScript Strings and Encryption</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR="white" LINK="red" VLINK="darkred" ALINK="blue">
+
+<P ALIGN="right">Name: 
+_________________________________________</P>
+
+<P><BR><BR></P>
+
+<center><h2>Lab 8: JavaScript Strings and Encryption</h2>
+        <h3>Lab to accompany <a href="http://dave-reed.com/book">
+        A Balanced Introduction to Computer Science, 2nd ed.</a><br />
+        by David Reed, Pearson Prentice-Hall, &copy;2008.</h3></center>
+
+<P><BR></P>
+
+<P> In Chapter 15, you were introduced to JavaScript strings as objects, encapsulating 
+both properties (e.g., <TT>length</TT>) and operations (e.g., <TT>toUpperCase</TT>, 
+<TT>charAt</TT>).  In this lab, you will apply many of these string operations to the 
+task of encoding and decoding messages.  In addition, you will learn about the history 
+of encryption: the use of codes and ciphers to protect secret messages.
+
+<p><br /></p>
+
+<P><HR></P>
+
+<p><br /></p>
+
+<H3> Substitution Ciphers</H3>
+
+<P> The use of codes (or <I>ciphers</I>) as a means of hiding the meaning of messages 
+traces its roots to ancient history.  The first documented use of codes was by Hebrew 
+scribes in approximately 500 - 600 B.C.  The <I>Atbash cipher</I> specified that each 
+letter in a message would be encoded using the corresponding letter in the alphabet 
+reversed.  For example, 'A' would be encoded as 'Z', 'B' would be encoded as 'Y', 'C' 
+would be encoded as 'X', and so on.  The first known military use of codes was by 
+Julius Caesar in 50 - 60 B.C.  The <I>Caesar cipher</I> specified that each letter in 
+the alphabet would be encoded using the letter three later in the alphabet.  For 
+example, 'A' would be encoded as 'D', 'B' would be encoded as 'E', 'C' would be encoded 
+as 'F', and so on.  The code wraps around at the end of the alphabet, so 'X', 'Y' and 
+'Z' would be encoded as 'A', 'B', and 'C', respectively.   </P>
+
+<P> Both the Atbash and Caesar ciphers are examples of <I>substitution ciphers,</I> 
+codes in which one letter of the alphabet is substituted for another.  A substitution 
+cipher can be described succinctly by specifying its key, i.e., the sequence of letters 
+to which the alphabet is mapped.   For example, the keys for the Atbash  and Caesar 
+ciphers are listed below.  To encode a specific letter using one of these ciphers, 
+simply find the corresponding letter in the key below it. 
+
+<XMP>
+
+    Atbash cipher:                        Caesar cipher:
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        | | | | | | | | | | | | |             | | | | | | | | | | | | |
+        v v v v v v v v v v v v v             v v v v v v v v v v v v v
+        ZYXWVUTSRQPONMLKJIHGFEDCBA            DEFGHIJKLMNOPQRSTUVWXYZABC
+        
+</XMP>
+
+For example, the Atbash cipher would encode the word "CODE" as "XLWV", whereas the 
+Caesar cipher would encode it as "FRGH".  Although both of these ciphers were effective 
+at their time (when very few people could read at all), their simple patterns of 
+encoding letters seem pretty obvious today. In principle, though, a substitution cipher 
+can specify any mapping from letters to letters.  For example:
+
+<XMP>
+
+
+    Mystery cipher:                
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+        | | | | | | | | | | | | |  
+        v v v v v v v v v v v v v  
+        QWERTYUIOPASDFGHJKLZXCVBNM   
+        
+</XMP>
+
+Substitution ciphers have several attractive features.  For one, they are relatively 
+simple to understand and use.  They are also reasonably effective.  There are 26! (or 
+roughly <FONT SIZE=-1>4 x 10<SUP>26</SUP></FONT>) different arrangements of the 26 
+letters in the alphabet.  Since each of these arrangements may be used as a key for a 
+substitution cipher, there are 26! different codes that can be used.  By selecting one 
+of these keys, the corresponding cipher can be used to encode messages.  As long as the 
+recipient of the message has that same key, the message can be easily decoded.  Without 
+the key, however, decoding a message can be extremely difficult.  </P>
+
+<P><BR></P>
+
+
+
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 1:</FONT></B> &nbsp;&nbsp;
+For each of the three ciphers listed above, give the corresponding encodings: </P>
+
+<TABLE>
+<TR> <TD> <I>message</I> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <TD> Atbash 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <TD> Caesar 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <TD> Mystery &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TR>
+<TR> <TD COLSPAN=4> <HR></TR>
+<TR> <TD> <TT>ABCDE</TT> <BR> </TR>
+<TR> <TD> <TT>FOO</TT> <BR> </TR>
+<TR> <TD> <TT>SECRET</TT> </TR>
+</TABLE>
+
+<P><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+
+<P><HR></P>
+
+<p><br /></p>
+
+<H3> Encoding Messages</H3>
+
+<P> As the previous section showed, encoding messages using a substitution cipher is 
+relatively straightforward.  The following steps must take place:
+
+<PRE>
+    for as many letters as there are in the message
+        get the next character in the message
+        find its position in the <U>alphabet</U>
+        find the corresponding letter in the <U>key</U>
+        use that letter to encode the letter in the message
+</PRE>
+
+<P>These steps can be encoded in JavaScript as a function which takes the key and a 
+message as inputs and returns the encoded message.  In the HTML document below, the 
+<TT>Encode</TT> 
+function performs this encoding using the variable <TT>coded</TT> to accumulate the 
+coded message.  The variable is initially assigned to be the empty string, and as each 
+letter in the message is processed, the appropriate code letter is concatenated onto 
+the end of <TT>coded</TT>.  After traversing the entire message, <TT>coded</TT> will 
+contain the complete encoded version of the message. 
+
+<P>
+<TABLE BORDER>
+<TR><TD>
+<FONT SIZE=-1>
+<XMP>
+
+<html>
+<!-- cipher.html      by Dave Reed (davereed@creighton.edu)  --> 
+<!-- A lab program to accompany A Balanced Introduction to   -->
+<!-- Computer Science, 2nd ed., Pearson Prentice Hall, 2008. -->
+<!--                                                         -->
+<!-- This page encodes/decodes messages using a simple       -->
+<!-- substitution cipher (with key entered by the user)      -->
+<!-- ======================================================= -->
+
+<head>
+  <title> Substitution Cipher</title>
+
+  <script type="text/javascript">
+    function Encode(message, key)
+    // Assumes: message is the string to be encoded, and
+    //          key is a string of the 26 letters in arbitrary order
+    // Returns: the coded version of message using the substitution key 
+    {
+        var alphabet, coded, i, ch, index;
+
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        coded = "";  
+        i = 0;                                    
+        while (i < message.length) {                // for as many letters as there are
+            ch = message.charAt(i);                 //   access each letter in message
+            index = alphabet.indexOf(ch);           //   find its position in alphabet
+            if (index == -1) {                      //   if it's not a capital letter,
+                coded = coded + ch;                 //     then leave it as is & add
+            }                                       //   otherwise,
+            else {                                  //     find the corresponding
+                coded = coded + key.charAt(index);  //     letter in the key & add
+            }
+            i = i + 1;
+        }
+        return coded;
+    }
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr><td>According to the substitution cipher, each letter: <BR><BR> </td>
+        <td>&nbsp;<tt>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br /></tt>
+             &nbsp;<tt>| | | | | | | | | | | | | <br /></tt>
+             &nbsp;<tt>v v v v v v v v v v v v v </tt> </td>
+    </tr>
+    <tr><td>is encoded using the corresponding letter in the key: </td>
+        <td><input type="text" id="key" size="26" style="font-family:Courier,Monospace"
+                   value="XYZABCDEFGHIJKLMNOPQRSTUVW" /> </td>
+    </tr>
+    </table>
+
+    <hr />
+
+    <table>
+    <tr><td><textarea id="message" rows="8" cols="30"></textarea> </td>
+        <td><input type="button" value="Encode ==>" 
+                   onclick="document.getElementById('encoded').value=
+                              Encode(document.getElementById('message').value,
+                                     document.getElementById('key').value);" /> </td>
+        <td><textarea id="encoded" rows="8" cols="30"></textarea> </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+</XMP>
+</FONT>
+</TABLE>
+
+<P>The <TT>cipher.html</TT> page allows the user to specify the substitution key in a 
+text box, as well as the message to be encoded in a text area.  As a result, a message 
+can be encoded using any substitution cipher, simply by entering the appropriate 
+substitution key.  When the user clicks on the button, the message entered into the 
+text area to the left is encoded using the <TT>Encode</TT> function, and the encoded 
+message is displayed to the right.
+
+<P><BR></P>
+
+
+
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 2:</FONT></B> &nbsp;&nbsp;
+Cut-and-paste the above HTML code into a document named <TT>cipher.html</TT>.  Load 
+this document into the browser and use it to test your encoding predictions from 
+EXERCISE 1.
+
+<P><BR></P>
+
+How are non-uppercase letters handled by this code?  In particular, how are spaces and 
+punctuation marks encoded?  Similarly, how are digits or lowercase letters encoded?  
+Where is this handled in the code?
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></P>
+ 
+</BLOCKQUOTE>
+
+
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 3:</FONT></B> &nbsp;&nbsp;
+Add an ONCHANGE attribute to the text area containing the message to be encoded.  When 
+the user enters a message into this text area, all lower-case letters in the message 
+should automatically be made upper-case.  Similarly, add an ONCHANGE attribute to the 
+key text box so that the letters in the key are similarly guaranteed to be upper-case.
+
+<P><BR></P>
+ 
+</BLOCKQUOTE>
+
+
+<P><HR></P>
+
+<H3> Decoding Messages</H3>
+
+<P> Given an encoded message and the key by which it was encoded, decoding a message is 
+a straightforward process.  The steps in the encoding must simply be performed in 
+reverse.  That is, each coded letter must be mapped back into the corresponding letter 
+of the alphabet.  Consider the Atbash cipher, for example:   
+
+<XMP>
+    Atbash cipher:                  
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ   
+        | | | | | | | | | | | | |     (mapping to encode)
+        v v v v v v v v v v v v v  
+        ZYXWVUTSRQPONMLKJIHGFEDCBA 
+        | | | | | | | | | | | | |     (reverse mapping to decode)
+        v v v v v v v v v v v v v   
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ  
+</XMP>
+
+Since the letter 'A' is encoded as 'Z', the letter 'Z' is decoded by performing the 
+reverse mapping back to 'A'.  For each letter in a coded message, this reverse mapping 
+can be made to recover the original letter.  The steps involved in decoding an encoded 
+message can be described as follows:
+
+<PRE>
+    for as many letters as there are in the encoded message
+        get the next character in the encoded message
+        find its position in the <U>key</U>
+        find the corresponding letter in the <U>alphabet</U>
+        use that letter to decode the letter in the encoded message
+</PRE>
+
+<I>Note the similarities between the steps in encoding and decoding messages!</I>
+
+<P></P>
+
+
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 4:</FONT></B> &nbsp;&nbsp;
+Add a function called <TT>Decode</TT> to your <TT>cipher.html</TT> page.  This function 
+should be similar to the <TT>Encode</TT> function given to you, only it should decode 
+instead of encode messages.  It should take two inputs, representing the encoded 
+message and the substitution key, and should return the decoded version of that 
+message.  Add another button to the Web page labeled "<TT>Decode <==</TT>", immediately 
+below the "<TT>Encode ==></TT>" button.  When the user clicks on that button, the 
+contents of the text area on the right should be decoded, and the corresponding message 
+should be written in the text area on the left.  
+
+<P>Test your <TT>Decode</TT> function thoroughly.  List test values below that you used 
+to convince yourself that decodings are being performed correctly.</P>
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+
+<P><HR></P>
+
+<H3> Rotating Ciphers</H3>
+
+<P> In practice, substitution ciphers can often be broken (decoded without the key) 
+using insight and computational power.  As a good example of this, you may be familiar 
+with Crypto-quotes puzzles that appear in many newspapers.  These puzzles use a 
+substitution cipher to encode a quotation, and the challenge is to decode the 
+quotation.  This can be done by analyzing the patterns of words and the frequency of 
+letters in the quotation.  For example, if the same three-letter sequence appears 
+numerous times in the coded quotation, you might work under the assumption that it 
+represents the common word "the".  </P>
+
+<P> The weakness of substitution ciphers is that they always map the
+same letter of the alphabet to the same key letter.  Thus, it is possible to look at
+the coded message and look for patterns.  An interesting variation on
+substitution ciphers was adopted by Nazi Germany during World War II.
+The Germans used a machine called an Enigma for encoding all military
+messages.  The Enigma machine utilized a series of interconnected
+rotors to encode letters.  In essence, the rotors defined a
+substitution cipher, mapping one letter to another.  What made the
+Enigma machine so effective, however, was that the rotors were rotated
+after each letter was encoded, essentially changing the substitution
+cipher after every letter!  This added wrinkle made the Enigma codes
+virtually impossible to break (until electronic computers were
+built). </P>
+
+<P> This same effect can be obtained in a simple substitution cipher
+by rotating the key after each letter is encoded (ignoring
+non-letters).  For example, suppose you are using the Atbash cipher to
+encode "AAA".  After mapping 'A' to 'Z', the key
+"<TT>ZYXWVUTSRQPONMLKJIHGFEDCBA</TT>" would be rotated (say one letter
+to the left) to obtain "<TT>YXWVUTSRQPONMLKJIHGFEDCBAZ</TT>".  Thus,
+the second 'A' would be mapped to 'Y'.  Similarly, another rotation of
+the key would cause the third 'A' to be mapped to 'X'.  Using a
+rotating key, each occurrence of a letter in the message is mapped to
+a different letter, and so pattern analysis is more difficult.  </P>
+
+
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 5:</FONT></B> &nbsp;&nbsp;
+In Chapter 15, you defined a function named 
+<TT>RotateLeft</TT> that took a string as input and rotated the characters in that 
+string one position to the left (wrapping the first character back around to the end).  
+Add the <TT>RotateLeft</TT> function to your <TT>cipher.html</TT> page and call it in 
+both <TT>Encode</TT> and <TT>Decode</TT> to rotate the key after each letter is 
+encoded/decoded. <I>Note:</I> you should not rotate the key unless a letter is actually 
+encoded using the key.  </P>
+
+<P><BR></P>
+
+<P> Once you have written your code, you should test it thoroughly.  List test values 
+below that you used to convince yourself that encodings/decodings are being performed 
+correctly.
+
+<P><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+
+
+<P><BR></P>
+<BLOCKQUOTE>
+<B><FONT COLOR="red">EXERCISE 6:</FONT></B> &nbsp;&nbsp;
+Use your Web page to decode the following encoded message, using the key 
+"<TT>LPMKONJIBHUVGYCFTXDRZSEAWQ</TT>". </P>
+
+<XMP>
+    MFFHSNQPRHKRLLJ -- YOV QRFQ PNVIDBJJ AGU DBU!
+</XMP>
+
+<P><BR><BR><BR><BR><BR></P>
+
+</BLOCKQUOTE>
+
+
+<P><HR></P>
+
+<BLOCKQUOTE><i>
+Hand in a printout of the <TT>cipher.html</TT> document, attached to these sheets.</i> 
+</BLOCKQUOTE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- /export/home/cs200/cs200117/Documents/labs/lab6/magic.html Janna Stocker -->
+<!-- Section 3                                     Last Date Edited: 10/17/13 -->
+<!-- This page simulates the functionality of a Magic 8 ball.                 -->
+<!-- ======================================================================== -->
+
+<html>
+ <head>
+   <title> Magic 8-ball </title>
+   <script type="text/javascript" src="http://balance3e.com/random.js"></script>
+   <script type="text/javascript">
+     function PickAnswer() 
+	 // Assumes: That the question in the qBox is a yes/no question.
+     // Results: displays a random answer in outputDiv
+     {
+       var answer;
+       
+       answer = RandomOneOf(['Yes', 'Very doubtful', 'Ask again later', 'It is certain', 'Don\'t count on it']);           
+       document.getElementById('outputDiv').innerHTML = 
+           'The Magic 8-ball says: ' + answer;
+     }
+   </script> 
+ </head>
+
+ <body>
+   <div style="text-align:center">
+     <h2>Magic 8-ball (Mattel, Inc.)</h2>
+     <p>
+	 Enter a question below, then click on the Magic 8-Ball to receive its wisdom.<br>
+     <input type="text" id="qBox" size=100 value=""><br>
+     <img src="http://balance3e.com/Images/8ball.gif" alt="Magic 8-ball" 
+            onclick="PickAnswer();">
+	 </p>
+     <hr>
+     <div id="outputDiv"></div>
+   </div>
+ </body>
+</html>

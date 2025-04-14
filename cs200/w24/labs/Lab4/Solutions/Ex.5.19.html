@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- double.html Dave Reed -->
+<!-- Web page that displays a doubling number. -->
+<!-- =============================================== -->
+<html>
+	<head>
+		<title> Doubling </title>
+	</head>
+	<body>
+		<p>
+		<input type="text" id="numberBox" size=12 value="1">
+		</p>
+		<input type="button" value="Double It"
+			onclick="number=parseFloat(document.getElementById('numberBox').value);
+					double=2*number;
+					document.getElementById('numberBox').value=double;">
+	</body>
+</html>
+------------------------
+After 9 clicks, the number is 512.
+After 10 clicks, the number is 1024.

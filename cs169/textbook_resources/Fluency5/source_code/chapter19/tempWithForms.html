@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	   <title>Conversion</title>
+	   <style type="text/css">
+	       body {background-color : lightseagreen; font-family : verdana;
+	                font-size : large;
+	                }
+	   </style>
+	</head>
+	<body>
+      <script type="text/javascript">
+         function convertC2F (tempInC) {
+            return 9/5*tempInC + 32;
+         }
+      </script>
+      <form action="">
+         <p>Enter a Celcius temperature 
+           <input type="text" name="tempIn" size="4" onchange=
+           "document.forms[0].tempOut.value =
+                   convertC2F(document.forms[0].tempIn.value)"/>&#176; C <br/>
+           The equivalent in Fahrenheit is 
+           <input type="text" name="tempOut" size="4"/>&#176;	F
+         </p>
+      </form>
+	</body>
+</html>
+
+

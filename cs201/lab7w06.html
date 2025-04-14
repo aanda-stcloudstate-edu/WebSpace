@@ -1,0 +1,130 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab 7 [A. A. Anda]</title>
+</head>
+<body>
+
+<center> <h1> CSCI 201</h1></center>
+
+<center> <h2> Lab 7</h2></center>
+
+<center> <h3> [A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with
+<ul>
+    <li><u>event</u>-<i>controlled</i> loops [<i>see Figure 6-7</i>]
+    <li><u>counter</u>-<i>controlled</i> loops [<i>see Figure 6-8</i>]
+    <li>the <i>
+    non-<a href="http://en.wikipedia.org/wiki/Associativity">associativity</a>
+</i> of
+<u><a href="http://en.wikipedia.org/wiki/Floating_point">floating point</a> addition</u>
+<li>the effect of using floating point types which have different
+<u><a href="http://en.wikipedia.org/wiki/Precision_%28arithmetic%29">precisions</a></u>
+</ul>
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+<P> A <a href="http://www.jimloy.com/algebra/hseries.htm">harmonic series</a>
+is the sum of a sequence of terms, where the terms are
+the reciprocals of all of the set of positive integers:<br>
+<tt>1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + 1/7 + ...</tt><br>
+
+<P> In mathematical theory, using <i>infinite precision</i> arithmetic,
+the infinite sum of a harmonic series is <i>infinite</i> (but it grows as slowly
+as a log function), and the <i>order</i> in which you sum the terms is irrelevant.
+<br>I.e. <u><i>(a + b) + c</i></u> always equals <u><i>a + (b + c)</i></u>
+
+<P> In computing practice, using <i>finite precision</i> arithmetic,
+the <u>order</u> in which we sum the terms affects the <i>accuracy</i>.
+<br>I.e. <u><tt>(a + b) + c</tt></u> doesn't always equal <u><tt>a + (b + c)</tt></u><br><br>
+
+E.g. <i>{using 4 decimal digit addition and
+    <a href="http://en.wikipedia.org/wiki/Rounding">rounding</a>}</i>
+<pre>
+    0.4321
+   +0.00003456
+   -----------
+    0.4321
+   +0.00003456
+   -----------
+    0.4321
+</pre>
+VS.
+<pre>
+    0.00003456
+   +0.00003456
+   -----------
+    0.00006912
+   +0.4321
+   -----------
+    0.4322
+</pre>
+Most of the
+<i><a href="http://en.wikipedia.org/wiki/Significant_figures">significance</a></i>
+of a small number is lost when it is added to a
+large number.<br>
+When the <u>ratio</u> of the larger number to the smaller number becomes large
+enough, the sum will be identical to the larger number.<br>
+This behavior causes the <i>forward sum</i> (sum from largest to smallest terms)
+to be finite, and also to be less accurate, than the <i>backward sum</i>
+(sum from smallest to largest terms) of the same number of terms.<br>
+The <i>precision</i> of your floating point numbers also affects the
+<i><a href="http://en.wikipedia.org/wiki/Accuracy">accuracy</a></i> and ultimate sum.
+
+<P> To illustrate these properties, your program will have four separate loops:
+<i>forward</i> and <i>backward</i> sums using <tt><B> float </tt></B>
+precision, and also forward and backward sums using <tt><B> double </tt></B> precision.
+
+<P> Because we don't know in advance the point at which the terms in the
+forward sum will cease contributing to the partial sum, we need to use
+an <u><i>event-controlled </i>loop</u>.<br>
+When the <i>sum stops changing</i>, we exit the loop,
+and subtract one [ 1 ] from the running count of terms we have added.
+<br><b>Note:</b> use <i>only</i> <tt><B>float</tt></B> precision for the
+event-controlled loop.
+
+<P> We can now use the number of terms from the first loop to write
+<u><i>counter-controlled</i> loops</u> for the other three sums.
+
+<P> We then compare the three other sums with the <tt><B> double </B></tt> precision backward sum.
+
+<P> We will also then compare the <tt><B> double </B></tt> precision backward sum
+with a formula computed value for the sum:
+
+<P> H(n) = <tt>log(n) + Eulers + 1/(2 n) - 1/(12 n^2) + 1/(120 n^4)</tt>
+
+<P> where <tt>Eulers</tt> is a <tt>const double = 0.577215664901533</tt>
+
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab7</i>, and move to it.</li>
+
+<li>
+Copy <tt>~aanda/cs201/labs/lab7w06partial.cpp</tt> to your lab7 directory and
+name it <u><tt>harmonic.cpp</tt></u>.
+</li>
+
+<li>
+Edit and complete <tt>harmonic.cpp</tt> to solve the above problem.
+Name the executable <u><tt>harmonic</tt></u>.
+</li>
+
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the source and the running of the program data.
+</li>
+
+</ol>
+
+
+</body>
+</html>

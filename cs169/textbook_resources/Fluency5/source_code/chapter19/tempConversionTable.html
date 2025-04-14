@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+   
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	   <title>Conversion Table</title>
+	   <style type="text/css">
+	      body {background-color : navajowhite; color : black; font-family:verdana;
+	                text-align : center}
+	      table {margin-left : auto; margin-right : auto; }
+	      th     {min-width : 70px; background-color : white}
+	   </style>
+	</head>
+   <body><h2> Table of Celsius-<br/>Fahrenheit Equivalents</h2>
+      <table border='1'><tr><th> C </th><th> F </th></tr>
+        <script type = "text/javascript">
+          function convertC2F ( tempInC ) {
+             return (9 / 5) * tempInC + 32;
+          }
+          document.write('<tr style="background-color : #00ccff">'
+             + '<td>-10</td><td>' + convertC2F(-10) + '</td></tr>');
+          document.write('<tr style="background-color : #0088ff">'
+             + '<td> 0 </td><td>' + convertC2F(0) + '</td></tr>');
+          document.write('<tr style="background-color : #8800cc">'
+             + '<td> 10</td><td>' + convertC2F(10) + '</td></tr>');
+          document.write('<tr style="background-color : #cc0088">'
+             + '<td> 20</td><td>' + convertC2F(20) + '</td></tr>');
+          document.write('<tr style="background-color : #ff0033">'
+             + '<td> 30</td><td>' + convertC2F(30) + '</td></tr>');
+          document.write('<tr style="background-color : #cc0033">'
+             + '<td> 40</td><td>' + convertC2F(40) + '</td></tr>');
+      </script>
+     </table>
+     </body>
+</html>
+
+
+
+
+
+

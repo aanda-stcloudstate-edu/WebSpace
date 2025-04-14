@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- /export/home/cs200/cs200104/Documents/labs/Lab6/Lab6-9.8.html -->
+<!-- Kyle Holmberg -->
+<!-- CSCI 200 -->
+<!-- Created 10/17/13 -->
+<!-- Last Edited: 10/17/13 -->
+<!-- The purpose of this webpage is to practice using javascript libraries. -->
+<html>
+    <head>
+        <title>Lab 6 9.8</title>
+        
+        <script type="text/javascript" src="convert.js"></script>
+        <script type="text/javascript">
+            function CalculateSurfaceArea()
+            // Assumes: The user enters a height and weight
+            // Results: The body surface of the inputed height and weight
+            {
+                var weight, height;
+            
+                weight = PoundsToKilograms(parseFloat(document.getElementById('weightBox').value));
+                height = InchesToCentimeters(parseFloat(document.getElementById('heightBox').value));
+                    
+                document.getElementById('outputDiv').innerHTML = 'Your total body surface is ' + Math.round(SqMetersToSqFeet(Math.sqrt((height * weight) / 3600)) * 100) / 100 +
+                ' sqaure feet';
+            } 
+        </script>
+    </head>
+    
+    <body>
+        
+        <input type="button" value="Convert Body Surface!"
+                onclick="CalculateSurfaceArea();">
+        Input your weight:<input type="text" id="weightBox" value="" size=12>
+        Input your height:<input type="text" id="heightBox" value="" size=12>
+        
+        <hr>
+        
+        <div id="outputDiv"></div>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>CSCI 331 First Group Project Fall 2010</title>
+
+</head>
+
+<body lang=EN-US style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<h1><span style='font-size:10.5pt;font-family:"Lucida Sans Unicode"'>CSCI 331 -
+Software Systems  Fall 2010</span></h1>
+
+<h3><span style='font-size:10.5pt'>First Group Project</span></h3> 
+<h3>PROJECT COLLABORATION TYPE:  <u>Group</u></h3>
+
+<p>
+<h2>THE PROGRAM:</h2>  This project is the first in a two phase project.
+<br>
+One component of your team will implement
+<h3>Component A</h3>
+the creation of a <u>sorted</u> <u>file</u> of <u>records</u> via <i>k</i>-way
+(<i>tournament</i>) merging of <u>replacement selection</u> sorted lists.<br>
+<ul>
+    <li>This method should work with at least the following record types:
+    <ul>
+	<li>random integer valued (a <i>large</i> number of records)
+	<li>random string valued (a <i>medium</i> number of records)
+	<li>A record type from each of the four classes from the 1st programming assignment
+    </ul>
+    <li>You should provide a <i>comparison method</i> for each record type. 
+    <li>When we sort our records we will use replacement selection <i>then</i> merge.</li>
+    <li>Our replacement selection algorithm will assume a reset-able value
+    for the number of records that can fit in memory (defaulting to 8)
+    <li>The number of entries in the <i>k</i>-way tournament sort (<i>k</i>) will be the number of runs.
+    <li>Write the following statistics to a log file:</li>
+    <ol>
+	<li>an identification of which file the (input) unsorted records are from,</li>
+	<li>an identification of which file the (output) sorted records are placed in,</li>
+	<li>the number of records that can fit in memory,</li>
+	<li>the number of records,</li>
+	<li>the number of runs,</li>
+	<li>the smallest, largest and arithmetic mean number or records in all of the runs,</li>
+	<li>the height of the tournament tree for the merge</li>
+    </ol>
+    <li>A sorted file of records will be generated for each of our categories of record.</li>
+    <li>Write a program that demonstrates that your file sorter works for a reasonable set
+	of numbers of records in memory and <i>k</i>'s for the <i>k</i>-ary heap trees.</li>
+</ul>
+<b>Component A</b> will lay the foundation for the second team component which will implement a B+Tree.
+
+<h2>WHAT TO TURN IN:</h2>
+Each of the items below should be saved on a CD.
+Each team will have available at the due date a CD for the instructor and a CD for the other team.
+
+<ol>
+    <li><u>Design document for the classes</u>.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li> <u>The test data used</u>,<br>
+    along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script file from the test runs.<br>
+    Each test should be annotated on the script file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Also, leave a copy of the source file in your account until the graded
+    program is returned to you.<br>
+    (<font color="teal">20% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to compile and run the program. (use a <u>makefile</u>)
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+    <li>Everyone in the group should do their own paragraph describing
+	what you learned from this assignment.  
+	<br>(<font color="teal">5% of your grade</font>)
+    <ul>
+	<li>How much time did you spend on the program?
+	<li>Did you plan well before going to the computer?
+	<li>Did you test the program completely? 
+	<li>Did you learn anything new about the language?
+	<li>Did you learn anything new about the way you study or should study?
+    </ul>
+    <li>As a group, what did you learn to do, and not do, from the peer review
+	of other groups projects?
+    <li>Everyone in the group should turn in the peer evaluation.
+	These should be turned in to the instructor separately.
+    <li>The group leader should schedule a 15-minute meeting with me to
+	demonstrate the project.  The group leader must also turn in their
+	group log, the group member evaluations and the summary of the PSP data.
+</ol>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="UTF-8">
+        <title>Midterm 2 Review (CSCI 201 Spring 2019) [Professor A. A. Anda]</title>
+	<style type="text/css">
+	    code{font-family: courier; font-weight:bold; color:MidnightBlue}
+	</style>
+    </head>
+    <body BGCOLOR=white TEXT=black>
+    <div align="center"><h1>Midterm 2 Review</h1></div><br>
+    <div align="center"><h2>(CSCI 201 Spring 2018)</h2></div>
+    <div align="center"><h3>Professor A. A. Anda, Ph.D.</h3></div> <hr>
+
+ <h2>C++ Gaddis Chapters 6, 7, 8, 9, 11 &amp; 13</h2>
+  <ul>
+      <li>Chapter 6:  <b>Functions</b></li>
+      <ul>
+	  <li>functions: C++ (may have side effects and be <code>void</code>) vs. mathematical</li>
+	  <li>predefined functions: meanings &amp; uses</li>
+	  <li><code>srand</code> &amp; <code>rand</code> function usage</li>
+	  <li><code>void</code></li>
+	  <li><code>return</code> (and restrictions on what can be returned)</li>
+	  <li>arguments vs. formal parameters</li>
+	  <li><i>declaration</i> vs. <i>definition</i></li>
+	  <li>parameter/argument rules</li>
+	  <li><i>value</i> vs. <i>reference</i> parameters (and their uses)</li>
+	  <li><code>const</code> reference parameters</li>
+	  <li><i>nested</i> functions:
+	      <i>Yes</i> for calling (e.g. <code>f(g(x))</code>), but <i>No</i> for defining</li>
+	  <li><i>preconditions</i> &amp; <i>postconditions</i></li>
+	  <li>local variables</li>
+	  <li><i>swap</i> function</li>
+	  <li><i>default</i> parameters vs.<i>overloaded</i> function definitions</li>
+	  <li><i>assert</i> macro (and its uses)</li>
+	  <li><i>top-down &amp; modular</i> program development and <i>stubs &amp; drivers</i></li>
+      </ul>
+      <li>Chapter 7: (<i>static</i>) <b>Arrays</b></li>
+      <ul>
+	  <li>initialization variations</li>
+	  <li>incrementing the index vs. the element</li>
+	  <li>no bounds checking</li>
+	  <li><u>c-strings</u> (null terminated) vs. <u>character arrays</u></li>
+	  <li>arrays as function arguments</li>
+	  <li>range-based <code>for</code> loop with arrays</li>
+	  <li>can't use (<i>whole</i>) arrays:</li>
+	  <ul>
+	      <li>as function return types</li>
+	      <li>in I/O expressions (<i>use a loop</i>)</li>
+	      <li>in assignments (<i>use a loop</i>)</li>
+		  <li>in comparisons</li>
+	  </ul>
+	  <li>parallel arrays</li>
+	  <ul>
+	      <li>(<i>matched via identical symbolic dimension identifiers</i>)</li>
+	  </ul>
+	  <li>multidimensional arrays</li>
+	  <ul>
+	      <li>(<i>arrays of arrays of &hellip;</i>)</li>
+	  </ul>
+	  <li>frequency arrays {0-based}</li>
+	  <ul>
+	      <li><code>frequencies[ intValues[i] ]++;</code></li>
+	      <ul>
+		  <li><code>i: 0 &rArr; (intValuesCount - 1)</code></li>
+		  <li>Size of <code>frequencies[]</code> must be &ge; the <u>max</u>imum <i>value</i> of <code>intValues[]</code></li>
+		  <li>The <u>min</u>imum <i>value</i> of <code>intValues[]</code> must be &ge; 0</li>
+	      </ul>
+	  </ul>
+	  <li><code>&lt;array&gt;</code> &amp; <code>&lt;vector&gt;</code> classes</li>
+	  <ul>
+		<li><code>at()</code> <i>detects out-of-range errors</i></li>
+	  </ul>
+      </ul><br>
+      <li>Chapter 8: <b>Searching &amp; (<i>quadratic</i>) Sorting</b>
+      <ul>
+	  <li>searching:
+		  <ul>
+				<li>searches can either <i>succeed</i> or <i>fail</i></li>
+		      <li>linear (<i>best &amp; worst case scenarios</i>)</li>
+		      <li>binary (<i>what's the precondition?</i>)</li>
+			  <ul>
+				<li>standard formula (in textbook) can overflow and cannot be used for pointers</li>
+				<li>improved formula (in prelab reading) cannot overflow and works for pointers</li>
+			  </ul>
+		  </ul>
+	  </li>
+	  <li><u>frequency</u> array and <u>histogram</u> algorithms on un<u>sorted</u> data</li>
+	  <li>algorithm for most [<i>mode</i>] (or least) frequently occuring value of <u>sorted</u> data</li>
+	  <li>sorting algorithms:
+	      <ul>
+		  <li><u>bubble</u></li>
+		  <li><u>selection</u></li>
+		  <li><u>insertion</u> {see external links}</li>
+	      </ul>
+	      For the above sorts, one should be able to determine the big-O( <i>f</i>(<i>N</i>) ),
+	      in terms of both <u>swaps</u> and <u>comparisons</u>, for the following cases:
+	      <ul>
+		  <li><u>best</u> case (if any, which data ordering precondition produces it?)</li>
+		  <li><u>worst</u> case (if any, which data ordering precondition produces it?)</li>
+		  <li><u>average</u> case</li>
+	      </ul>
+	      What do we mean by a <u>stable</u> sort?  When do we require a stable sort?
+	  </li>
+	  <li>related algorithms (on arrays based on a variation of the <i>selection</i> sort):
+	      <ul>
+		  <li>permutation</li>
+		  <ul>
+		      <li>replace the find-<i>max/min</i> loop with a (<i>pseudo</i>)-random selection</li>
+		  </ul>
+	      </ul>
+	  <li><i>multidimensional</i> arrays (and how all of the above relate to them)</li>
+      </ul>
+      </li><br>
+    <li>Chapter 9: <b>Pointers &amp; Dynamic Arrays</b>
+    <ul>
+      <li>pointer <u>constants</u> and <u>variables</u></li>
+      <li>pointer values and computer <i>memory addresses</i></li>
+      <li><u>address</u> and <u>indirection</u> (<i>dereference</i>) operators</li>
+      <li>pointer <u>declaration</u>, <u>definition</u>, and <u>initialization</u></li>
+      <li>pointer <i>flexibility</i></li>
+      <li>pointers and functions: as <u>parameters</u> and <u><b>return</b></u> values</li>
+      <li>pointer types, casting, levels of indirection, and compatibility</li>
+      <li><b>NULL</b> and <b>void</b> pointers</li>
+      <li><u>lvalues</u> and <u>rvalues</u> and their uses</li>
+      <li>interrelationships between <i>arrays</i> and <i>pointers</i></li>
+      <li>interrelationships between <i>multidimensional</i> arrays and pointers</li>
+	  <ul>
+		<li>pointer-based expression for an element of a 2D array</li>
+	  </ul>
+      <li>pointer arithmetic:
+	      <ul>
+	         <li><u>valid</u> vs. <i>invalid</i> operations </li>
+	         <li>implicit <i>offsets</i></li>
+	      </ul>
+      </li>
+      <li>using the <i>right-left</i> rule to understand (<i>disambiguate</i>) complicated
+          declarations</li>
+      <li><u><i>dynamic</i></u> memory:</li>
+      <ul>
+		  <li><u>allocation</u> and <u>release</u> of memory from the <i>heap</i></li>
+		  <ul>
+			<li>scalar vs array</li>
+		  </ul>
+          <li><i>ragged</i> arrays</li>
+      </ul>
+      <li><u>smart pointers</u></li>
+      <ul>
+	  <li><code>unique_ptr</code> &amp;  <code>shared_ptr</code></li>
+	  <li>applied to both scalars and arrays</li>
+      </ul>
+      
+      <li><u>sorting</u> algorithms using pointers</li>
+      <ul>
+	  <li>(sort the pointers, based on comparisons of the values; do <u>not</u> sort the values themselves)</li>
+      </ul>
+      <li>interrelationships between <u>C-string</u>s and arrays</li>
+      <li>reading and writing complicated declarations</li>
+      <ul>
+	  <li>Right-Left/Spiral Rule</li>
+	  <li>uses of <code>typedef</code></li>
+      </ul>
+      <li>parsing, &amp; extracting data from, the <u>command line</u></li>
+    </ul>
+    <br>
+    <li>Chapter 13: <b>(<i>Intro. to</i>) Classes</b>
+    <ul>
+      <li>OOP motivation &amp; theory<br>
+      (e.g. relationship with ADTs)</li>
+      <li>OOP nomenclature</li>
+      <li>class usage</li>
+      <li>class style conventions</li>
+      <li>class declaration</li>
+      <li>access specification</li>
+      <ul>
+	  <li>public</li>
+	  <li>private</li>
+      </ul>
+      <li>accessors</li>
+      <ul>
+	  <li><code>const</code> methods</li>
+      </ul>
+      <li>mutators</li>
+      <li>class instantiation</li>
+      <li>pointers to objects</li>
+      <li>member access { <i>object.method</i><code>()</code> &amp; <i>pointer2object</i><code>-&gt;</code><i>method</i><code>()</code> }</li>
+      <li>private member functions (i.e. <i>helper functions</i> or <i>implementation revealing functions</i>)</li>
+      <li>separating <u>specification</u> from <u>implementation</u><br>
+      (<i>class_name</i><code>.h</code> &amp; <i>class_name</i><code>.cpp</code> files)</li>
+      <li>inline member functions (<i>why</i>? <i>guaranteed</i>?)</li>
+      <li>constructors</li>
+      <ul>
+	  <li>default constructor &amp; default arguments</li>
+	  <li>overloading</li>
+      </ul>
+      <li>destructor</li>
+      <ul>
+	  <li>dynamically allocated object &amp; object member handling</li>
+      </ul>
+      <li>UML class diagrams</li>
+      </ul>
+	  <li>memberwise assignment
+      <li>class aggregation
+      <ul>
+	  <li>access each level of aggregation
+      </ul>
+  </ul>
+  </ul>
+</body>
+</html>

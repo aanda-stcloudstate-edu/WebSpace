@@ -1,0 +1,94 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+       <title>CSCI 200; Lab 8; Fall 2010 [A. A. Anda]</title>
+       <style type="text/css"> 
+	   BODY TT {color:maroon}
+       </style>
+    </head>
+
+    <body>
+	<center>
+	    <h1>
+		CSCI 200
+	    </h1>
+	    <h2>
+		Lab 8
+	    </h2>
+	    <h3>
+		[A. A. Anda]<br>
+		Fall 2010
+	    </h3>
+	</center>
+
+	<hr WIDTH="100%">
+
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li>perform I/O via <u>ONCHANGE</u> <i>text box</i>es in the context of <i><u>event driven</u> programming</i></li>
+	    <li>use the two division operators, "/" &amp; "%" to implement conversion between binary and decimal
+	    in both directions</li>
+	    <li>use conditional logic to validate input</li>
+	    <li>define and use functions</li>
+	</ul>
+
+	<h2>Lab Assignment:</h2>
+
+	<ul>
+	    <li> Create a new directory, <b><tt>Lab8</tt></b>, in your class account directory.</li> 
+	    <li> Move into your <tt>Lab8</tt> directory</li> 
+	    <li> Create the file <tt>BinaryDecimalConverter.html</tt> 
+	    <li> Use HTML comments at the top of this file identifying:</li> 
+	    <ul> 
+		<li>where the file is located (e.g. <tt>~/cs200999/labs/Lab8/BinaryDecimalConverter.html</tt>)</li> 
+		<li>the author (<i>you</i>) </li> 
+		<li>what the program does</li> 
+		<li>when you created the file</li> 
+		<li>when you last modified the file</li> 
+	    </ul> 
+	    <li>When implementing your program, as often as is practical, repeat the following steps:</li> 
+	    <ol> 
+		<li> modify your Web page file via the editor</li> 
+		<li> save the file</li> 
+		<li> refresh the browser open to your Web page</li> 
+		<li> verify that your modifications did what you've intended</li> 
+	    </ol>
+	    <li>Title your Webpage appropriately.
+	    <li>Create two appropriately <i>labeled</i> textboxes on your Webpage.
+	    <li>Use the <u>ONCHANGE</u> attribute to convert the binary number in one box to the decimal in the other, and vice versa.
+	    <ul>
+		<li>The binary number will have to be stored and represented as a <i>decimal</i> whose digits
+		    are constrained to the values of <i>zero</i> and <i>one</i>.<br>
+		    E.g. binary <i>five</i> [ <tt>101</tt> ] is stored as decimal <i>one hundred one</i>.
+		<li>The numeric value is constrained to one byte of storage so that the maximum 
+		is a non-negative decimal integer between zero and 255 inclusive [<tt>0 .. 255</tt>].<br>
+		<li>The maximum binary representation is therefore <tt>11111111</tt>.<br>
+		    Therefore, use the <tt>alert()</tt> function to complain to the user that their <u>input</u> data
+		    is <u>outside</u> the specified <u>range</u>s.<br>
+		    (<i>Because we have restricted the number of binary digits to a maximum of eight,
+			there is no need to use a repetition statement.</i>)
+	    </ul>
+	    <li>Use another <tt>alert()</tt> to indicate that a value containing an illegal digit ( [<tt>2 .. 9</tt>] )
+		was entered into the binary number field
+	    <li>Label the text boxes appropriately, i.e. each textbox should be labeled with its respective
+		<u>base</u> and <u>valid input range</u>.<br>
+		E.g. <tt>Base 10 [0 .. 255]</tt>
+
+	    <li>Ensure that identifiers in your code (e.g. variable and function names) are labeled appropriately.
+
+	    <li>Use a separate function for base conversion in each direction respectively.
+
+	    <li><b><i>Extra Credit:</i></b> use the
+		<a href="http://www.javascriptkit.com/javatutors/switch.shtml">JavaScript <tt>switch</tt> statement</a> to
+		convert either the decimal or binary value additionally to and from <u>hexadecimal</u>
+		via two single-character text boxes.
+	    <li><u>Test</u> your code using either the conversion tool on the
+		<a href="http://www.dave-reed.com/book/Chapter12/data.html">Data Representation Page</a>
+		from Reed's <a href="http://www.dave-reed.com/book/source.html">resource page</a> or use the conversion
+		tool on <a href="http://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html">this page</a>.
+	    <li>When finished, submit your Lab 8 solution Webpage to the appropriate dropbox.
+	</ul>
+    </body>
+</html>

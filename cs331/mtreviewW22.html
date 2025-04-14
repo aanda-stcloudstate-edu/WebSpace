@@ -1,0 +1,271 @@
+<html>
+<head>
+<title>CSCI 331 Midterm Review - Spring 2022</title>
+    <style>
+        code {font-family: courier; font-weight: bold; color:MidnightBlue}
+    </style>
+</head>
+<body bgcolor="#eeeeee" text="#000000">
+<pre>
+Spring 2022
+CSCI 331 Midterm Review Topics
+
+Topics from Folk et al. unless attributed to the course Web page (CWP)
+Chapter 1  Intro
+
+    Disk I/O slow
+
+    New design work uses same tools in new ways
+
+    OOP integrates content &amp; behavior
+        and enhances data protection &amp; control of behaviour
+
+    Glossary
+        
+    CWP:
+        magic numbers 
+            (why bad &amp; how to eliminate)
+        enumerated types 
+            (why good)
+        struct/class data member alignment 
+            (how to measure size &amp; improve via re-ordering)
+        special integer types 
+            (<code>size_t, ptrdiff_t, </code>&amp; fixed width)
+        <code>auto</code>
+
+Chapter 2  Fundamental file processing ops
+
+    Fundamental file operations
+        open
+        create
+        close
+        read
+        write
+        seek
+
+    Physical vs Logical file
+
+    I/O linkage:
+        logical file name
+        address in memory
+
+    Glossary
+
+Chapter 3.[1,4&ndash;7,9] Secondary storage &amp; system SW
+
+    HDD
+        organization
+        estimating capacities
+        sector vs block organization of tracks
+        non-data overhead
+        disk access costs
+        3 primary latencies
+            seek time
+                ave, worst, best, &amp; ave # of tracks ratio
+            rotational delay
+                ave
+                skewing
+            transfer time
+        block size performance effects
+        disk as bottleneck
+        RAID (3 possible functionalities in any combination)
+            error detection/correction
+                parity bit
+                Hamming(7,4) {(8,4)}
+            striping
+            mirroring
+            
+    CD-Roms
+        organization
+        access costs and performance
+
+    SSDs {CWP}
+        advantages / liabilities
+        
+    Buffer Management
+        Multiple Buffering
+        Gather / Scatter
+
+    
+    Glossary
+        CAV vs CLV
+
+Chapter 4  File structure concepts
+
+    Stream file
+
+    Field structures
+        fixed length
+        length indicated 
+            {binary vs ASCII vs BCD} 
+            [includes itself?]
+        delimited
+            necessary conditions for delimiter characters
+            separators vs terminators
+        keyword 
+            optional fields 
+            arbitrirary ordered fields
+            requires other structure
+
+    Record structures
+        fixed length
+        fixed field number
+        length indicated
+        indexed
+        delimited
+            different from field delimiter characters?
+
+    Navigational complexities {big-O()}
+    
+    Mixed numbers &amp; characters
+        file dump {Unix: od}
+        byte order {Unix: dd}
+
+    Buffer Classes
+        pack/unpack {vs write/read}
+
+    Inheritance
+        public vs private
+        virtual methods (pure?)
+        multiple inheritance
+        class hierarchy
+
+    Glossary
+
+Chapter 5 Files of records -- management
+
+    Record access
+        keys
+            distinct
+            primary
+            secondary
+            cannonical
+
+        sequential search
+            performance issues
+            tools
+                Boyer-Moore string search algorithm (CWP)
+                    when to use
+                    computational complexities w.r.t. string &amp; pattern lengths
+                    Galil rule
+            Unix tools
+                g<u><b>re</b></u>p
+                    regular expressions
+
+        direct access
+            RRN [fixed size] &amp; offset [variable size]
+
+        header records
+
+    Abstract data models for access
+    
+        header records &amp; self-describing files
+        
+        meta-data {categories: descriptive, navigational, schema(types)}
+        
+        mixing object types in a file
+            keywords
+            tags
+
+        representation-independent access
+            abstract data model
+                
+        extensibility
+
+    Portability &amp; Standardization
+        factors:
+            OS's
+            languages
+            architectures
+
+        achieving portability
+            standard format
+            standard binary encoding
+            number &amp; text conversion
+            file structure conversion
+                intermediate standard format
+            file system differences
+
+    XML &amp; JSON
+        schema
+        
+    Glossary
+
+Chapter 6  Organizing files for performance
+
+    Space reclamation {fixed vs variable length records}
+
+        used &amp; avail lists
+        
+        record addition
+
+        record updating
+
+        record deletion
+
+        storage compaction
+            marking {<i>tombstones</i>}
+            linked lists &amp; stacks
+            
+        preparation for coalescence
+        
+        fragmentation
+            internal
+            external
+            
+        placement strategies
+            first-fit
+            best-fit
+            worst-fit
+
+    Internal sorting &amp; binary searching
+        binary vs sequential
+            necessary conditions for binary search {in memory vs file}
+        midpoint arithmetic expressions 
+            which is best and why? [overflow &amp; pointer arithmetic]
+        sorting in memory
+        stability
+        online
+        in-place
+        key-sorting
+        don't writeback
+        pinned records
+
+    Glossary
+
+Chapter 7  Indexing
+
+    Keys
+        primary {selected from candidate key set}
+        secondary
+
+        Simple Index
+        sorted
+        entry sequenced
+
+    Templates
+
+    Indexed file maintenance
+        record addition
+        record deletion
+        record update
+
+        Access by multiple keys
+
+    Inverted indexes
+        linking
+        extending to an arbitrary number of secondary indices
+
+    Glossary
+
+Chapter 8, Section 8.1  Cosequential Processing
+
+    Match and Merge
+	relationships to sets
+	    set element counting
+	maximum and minimum output list sizes
+<!--
+-->
+</pre>
+</body>
+</html>

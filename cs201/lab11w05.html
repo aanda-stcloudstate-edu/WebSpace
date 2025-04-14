@@ -1,0 +1,75 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab11 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 11</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+The first section of this lab provides experience with one-dimensional arrays.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+
+<P> In Lab 4, we read in a decimal integer but interpreted it as a binary
+number.  We then computed and output its decimal value.<br>
+In this lab we are going to perform a sequence of two successive modifications
+to our Lab 4 program exploiting our knowledge of more C++ language features
+which which improve the <i>readability</i>, <i>robustness</i>, and
+<i>generality</i> of our Lab 4 program.
+
+<P>
+In the first section of this lab, we will modify our Lab 4 program to use an
+array within a loop rather than a set of related variables and code blocks.
+We will also make it more robust by checking the consistency of our input.
+<P>
+In the second section of this lab, we will further modify our program to make
+it more general by adding the ability to convert from a range of bases.
+
+<h4> Solution Specification:</h4>
+<ol>
+    <li> Create a new directory, <i>lab11</i>, and move to it.</li>
+    <li>part I: Modify a program solving 
+    <a href="http://web.stcloudstate.edu/aanda/cs201/lab4w05.html">lab 4</a>.
+    <ol>
+	<li>Use an array to represent the bit values.
+	<li>Use loops wherever possible.
+	<li>You may use the
+	<a href="http://web.stcloudstate.edu/aanda/cs201/convert2to10.html">example program</a>
+	code as your base code.
+	<li>Ensure the consistency of the input by checking that each digit has the value of either zero or one.<br>
+	<i>(be sure to test that you are catching bad input)</i>
+
+    </ol>
+    <li>Part II: Now add generality by adding the ability to convert from a range of bases.
+    <ol>
+	<li>Prompt the user for a base in the range [2,10]
+	<li>Ensure that it is in that range.
+	<li>Modify the program to give the correct decimal value
+    </ol>
+    <li>Part III: Now extend the range of bases to 16.
+    <ol>
+	<li>You will want to use character I/O for this part to ensure the
+	    consistency of the input.
+    </ol>
+</ol>
+
+
+</body>
+</html>

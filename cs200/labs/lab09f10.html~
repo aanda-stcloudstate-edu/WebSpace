@@ -1,0 +1,78 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+       <title>CSCI 200; Lab 9; Fall 2010 [A. A. Anda]</title>
+	<style type="text/css"> 
+	   BODY TT {color:maroon}
+       </style>
+       
+    </head>
+    <body>
+
+	<center>
+	<h1>
+	    CSCI 200
+	</h1>
+
+	<h2>
+	    Lab 9
+	</h2>
+
+	<h3>
+	    [A. A. Anda]<br>
+	    Fall 2010
+	</h3>
+	</center>
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to use <b>Conditional Repetition</b>.
+	<h2>Lab Assignment:</h2>
+
+	<ul> 
+	    <li> Create a new directory, <b><tt>Lab9</tt></b>, in your class account directory.</li> 
+	    <li> Move into your <tt>Lab9</tt> directory</li> 
+	    <li> Create the files <tt>Stats13.6.html</tt>, <tt>Stats13.7.html</tt>, &amp; <tt>Stats13.17.html</tt>,
+	    <li> Use HTML comments at the top of this file identifying:</li> 
+	    <ul> 
+		<li>where the file is located (e.g. <tt>~/cs200999/labs/Lab9/Stats13.6.html</tt>)</li> 
+		<li>the author (<i>you</i>) </li> 
+		<li>what the program does</li> 
+		<li>when you created the file</li> 
+		<li>when you last modified the file</li> 
+	    </ul> 
+	    <li>When implementing your program, as often as is practical, repeat the following steps:</li> 
+	    <ol> 
+		<li> modify your Web page file via the editor</li> 
+		<li> save the file</li> 
+		<li> refresh the browser open to your Web page</li> 
+		<li> verify that your modifications did what you've intended</li> 
+	    </ol> 
+	    <li>Title your Webpage appropriately.
+	</ul> 
+	
+	<p> 
+
+	Using <tt> <a href="http://www.dave-reed.com/book/Chapter13/stats.html">stats.html</a>
+	</tt> from Reed's
+	<a href="http://www.dave-reed.com/book/source.html">resource page</a>,<br>
+	Implement Exercises:
+	<ol>
+	    <li>13.6 &amp; 13.7</li>
+	    <ul>
+		<li>The <u>number of rolls</u> should be a <u>multiple</u> of <b>36</b>. (<i>this is so that the expected number of rolls of any specified value is a whole number</i>)</li>
+		<li>Display the expected frequency (how many times out of 36) and both the <a href="http://en.wikipedia.org/wiki/Relative_error">absolute &amp; relative error</a> from the expected frequency.</li>
+	    </ul>
+	    <li>13.17</li>
+	</ol>
+	<p>
+
+	When finished:
+	<ul>
+	    <li>After testing thoroughly, submit your exercises 13.7 &amp; 13.17 solution Web pages to the dropbox.</li>
+	    <li>Also, submit a screenshot of each, following their respective execution, to the dropbox.
+	</ul>
+
+    </body>
+</html>

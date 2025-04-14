@@ -1,0 +1,1368 @@
+  /********************************************************/
+ /**************** Consumer Side CSS *********************/
+/********************************************************/
+
+
+/* **************************************************** */
+/* Universal elements defined below here. Do not alter! */
+/* **************************************************** */
+body {
+ 	background-color: #faf5e8;
+	margin: 0px 0px;
+	padding: 0px;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	}
+table {font-size: 12px;	font-family: Arial, Verdana, Sans-Serif;}
+td {font-size: 12px; font-family: Arial, Verdana, Sans-Serif;}
+A:link {color: #17417f; text-decoration: underline;}
+A:visited {color: #17417f; text-decoration: underline;}
+A:hover {color: #7a0000; text-decoration: none;}
+A:active {color: #cc0000; text-decoration: underline;}
+input, select, textarea {font-size: 11px; color: #000000;}
+/* You'll need to make an exception for checkboxes and apply this style
+   to them, because of how IE handles them in relation to CSS styles */
+.check, .check input {border: 0px; background: transparent;}
+/* regularText, formLabel and basicInput are Band-aids: Used
+   to catch elements which may not have picked up formatting */
+hr {color: #e0d4bb; background:#e0d4bb; border:0; height: 4px; width: 100%;} /* Kumaran (02/09/2006) - made HR FireFox compliant */
+
+
+/* **************************************************** */
+/* Recurring elements defined below here. Do not alter! */
+/* **************************************************** */
+.pageTitle {
+	font-weight: bold;
+	width: 590px;
+	color: #6887B4;
+	font-size: 18px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #E0D4bb;
+	margin-bottom: 10px;
+	margin-top: 3px;
+	}
+.regularText {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 12px;
+	color: #000;
+	font-weight: normal;
+	text-decoration: none;
+	padding-left: 2px;
+	}
+.regularText A:link {color: #17417f; text-decoration: underline;}
+.regularText A:visited {color: #17417f; text-decoration: underline;}
+.regularText A:hover {color: #7a0000; text-decoration: none;}
+.regularText A:active {color: #cc0000; text-decoration: underline;}
+.helpLink {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 12px;
+	color: #cc0000;
+	font-weight: bold;
+	}
+.helpLink a:link {font-weight: bold; color: #cc0000; text-decoration: underline;}
+.helpLink a:visited {font-weight: bold; color: #cc0000; text-decoration: underline;}
+.helpLink a:hover {font-weight: bold; color: #7a0000; text-decoration: none;}
+.helpLink a:active {font-weight: bold; color: #7a0000; text-decoration: underline;}
+.formLabel {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 12px;
+	color: #17417f;
+	font-weight: bold;}
+/* Use the class below when a form element doesn't pick up the global style */
+.basicInput {font-size: 11px; color: #000000;}
+/* Error text for forms and such. It's called #lblMsg so it
+   can pick up the pre-existing div ID coded by developers */
+#lblMsg {
+	padding-left: 5px;
+	padding-bottom: 5px;
+	color: #CC0000;
+	font-weight: bold;
+	}
+/* Use the mini classes for footers, captions, disclaimers and other tiny text */
+.miniText {font-size: 10px;	color: #000; font-family: Verdana, sans-serif;}
+/* Wrap contentPadder around the entire page to apply padding evenly */
+.contentPadder {margin: 10px; font-family: Arial, Verdana, sans-serif; font-size: 12px;}
+/* The class below is for when you have a div of content just below the title. It removes extra spacing. */
+.contentPadderTitle {margin-left: 10px; margin-right: 10px; margin-bottom: 10px; font-family: Arial, Verdana, sans-serif; font-size: 12px;}
+
+/* For data grids on the consumer site */
+.dataGridTable {border: 0px solid #000; width: 500px;}
+.dataGridHead {padding-left: 3px; font-size: 12px; color: #FFF; text-decoration: none; padding:4px; font-weight: bold;}
+.dataGridHead a:link {color: #FFF; text-decoration: underline;}
+.dataGridHead a:visited {color: #FFF; text-decoration: underline;}
+.dataGridHead a:hover {color: #FFF; text-decoration: none;}
+.dataGridHead a:active {color: #FFF; text-decoration: underline;}
+.dataGridRow {font-size: 12px; color: #000; text-decoration: none; padding: 2px;}
+.dataGridRow a:link {color: #17417F; text-decoration: underline;}
+.dataGridRow a:visited {color: #17417F; text-decoration: underline;}
+.dataGridRow a:hover {color: #6f8db9; text-decoration: none;}
+.dataGridRow a:active {color: #6f8db9; text-decoration: underline;}
+.dataGridAltRow {font-size: 12px; color: #000; text-decoration: none; padding: 2px;}
+.dataGridAltRow a:link {color: #17417F; text-decoration: underline;}
+.dataGridAltRow a:visited {color: #17417F; text-decoration: underline;}
+.dataGridAltRow a:hover {color: #6f8db9; text-decoration: none;}
+.dataGridAltRow a:active {color: #6f8db9; text-decoration: underline;}
+
+/* Secondary Navigation Classes */
+.secondNav {margin: 0px; background-color: #C0CDE0; font-family: Arial, Verdana, Sans-serif; padding: 3px; color: #17417F; font-size: 11px; text-align: center;}
+.secondNav a:link {margin: 0px; color: #17417F; text-decoration: none; font-weight: bold; font-size: 11px; font-family: Arial, Verdana, Sans-serif; text-align: center;}
+.secondNav a:visited{margin: 0px; color: #17417F; text-decoration: none; font-weight: bold; font-size: 11px; font-family: Arial, Verdana, Sans-serif; text-align: center;}
+.secondNav a:hover{margin: 0px; color: #7a0000; text-decoration: underline; font-weight: bold; font-size: 11px; font-family: Arial, Verdana, Sans-serif; text-align: center;}
+.secondNav a:active{margin: 0px; color: #17417F; text-decoration: none; font-weight: bold; font-size: 11px; font-family: Arial, Verdana, Sans-serif; text-align: center;}
+.secondNavItem {padding-right: 15px;}
+.secondnavHolder {width: 100%; text-align: center; background-color: #C0CDE0;}
+.secondNavBG {background-image: url(/images/secondNavBG.gif); background-repeat: no-repeat;}
+.nonLink {color: #748EB5; font-weight: bold;}
+
+/* Subnav Classes - Do not alter */
+#ucMenu_tbSubMenu {
+	width: 772px;
+	border: 0px;
+	/*background-color: #C0CDE0;*/
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #17417f;
+	font-weight: normal;
+	text-align: center;
+	margin: 0px;
+	}
+#ucMenu_tbSubMenu TD {
+	font-size: 11px;
+	}
+#ucMenu_tbSubMenu a {
+	text-decoration: none;
+	color: #17417f;
+	}
+#ucMenu_tbSubMenu a:visited {
+	text-decoration: none;
+	color: #17417f;
+	}
+#ucMenu_tbSubMenu a:active {
+	text-decoration: underline;
+	color: #7a0000;
+	}
+#ucMenu_tbSubMenu a:hover {
+	text-decoration: underline;
+	color: #cc0000;
+	}
+/* BG Colors Classes */
+.bgVeryDarkBlue {background-color: #000066;}
+.bgDarkBlue {background-color: #17417f;}
+.bgVeryLightBlue {background-color: #c0cde0;}
+.bgDarkRed {background-color: #7a0000;}
+.bgBrightRed {background-color: #cc0000;}
+.bgDarkCream {background-color: #e0d4bb;}
+/* Font Colors Classes */
+.fontVeryDarkBlue {color: #000066;}
+.fontDarkBlue {color: #17417f;}
+.fontVeryLightBlue {color: #c0cde0;}
+.fontDarkRed {color: #7a0000;}
+.fontBrightRed {color: #cc0000;}
+.fontDarkCream {color: #e0d4bb;}
+.fakeDynHeader {font-family: Arial, Verdana, Helvetica; color: #17417f; font-size: 24px; font-weight: bold; padding-top: 5px; padding-bottom: 5px; padding-left: 10px;}
+/* Wecome Back, XYZ */
+.welcomeBack {color: #17417F; font-weight: bold;}
+/* The following class prevents the More Search Options and Hide Search Options
+   links from appearing visited. */
+.noVisit A:link {color: #17417f; text-decoration: underline;}
+.noVisit A:visited {color: #17417f; text-decoration: underline;}
+.noVisit A:hover {color: #7a0000; text-decoration: none;}
+.noVisit A:active {color: #cc0000; text-decoration: underline;}
+.radlinks {text-decoration: none; font-weight: bold; line-height: 20px;}
+.radlinks A:link {color: #17417f; text-decoration: underline;}
+.radlinks A:visited {color: #17417f; text-decoration: underline;}
+.radlinks A:hover {color: #7a0000; text-decoration: none;}
+.radlinks A:active {color: #cc0000; text-decoration: underline;}
+
+/* ******************************************************************* */
+/* Page or section specific elements defined below here. Do not alter! */
+/* ******************************************************************* */
+/* Home Page */
+.homeWrapper {
+	width: 772px;
+	margin: 0px auto;
+	text-align: left;
+	padding: 0px;
+	border: 0px solid #333;
+	font-family: Arial, Verdana, sans-serif;}
+.centerizer {text-align: center; font-weight: normal;}
+.siteContent {width: 772px;	text-align: center;}
+.fourSquareLabels {
+	background-color: #17417f;
+	width: 172px;
+	color: #fff;
+	font-family: Verdana, Arial, , sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center; 
+	vertical-align: middle;
+	line-height: 18px;
+	}
+.fourSquareLabelsBox {height: 40px; background-color: #17417f; text-align: center; }
+.lastUpdated {font-size: 10px; font-weight: bold;}
+.optimizeTxtBox {
+	/* display: none; */
+	margin-top: 50px;
+	border: 0px solid #000;
+	width: 772px;
+	}
+.optimizeTxtHead {
+	font-family: Arial, Verdana, sans-serif;
+	color: #666666;
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: 1px solid #b5b5b5;
+	padding-bottom: 4px;
+	}
+.optimizeTxt {
+	font-family: Verdana, Arial, Sans-Serif;
+	color: #666666;
+	font-size: 10px;
+	text-align: justify;
+	padding-top: 4px;
+	}
+.optimizeTxt, ul {
+	margin-left: 15px;
+	list-style-type: square;
+	}
+/* Property Search */
+.tabSrchHelperBox {
+	width: 360px;
+	background-color: #cc0000;
+	border-left: 2px solid #7a0000;
+	border-right: 2px solid #7a0000;
+	border-bottom: 2px solid #7a0000;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Arial, Verdana, Sans-Serif;
+	}
+/* This is a div box that holds the bottom layer for the javascript psrch map rollovers */
+#mapper {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/mnwi.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+.moreOptions {color: #17417f; position:relative;}
+.moreOptionsBox {border-bottom: 1px solid #666; padding-bottom: 6px; margin-bottom: 15px;}
+   
+/* Property Search Results */
+/* Property Details */
+/* Popup Windows */
+/* Agent/Office Search */
+.AOinputContainer {
+	background-color: #e0d4bb;
+	width: 200px;
+	height: 283px;
+	padding: 5px;
+	border-left: 1px solid #C9BCA1;
+	border-right: 1px solid #827456;
+	border-top: 1px solid #C9BCA1;
+	border-bottom: 1px solid #827456;
+	}
+.officeName {
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #17417F;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border-bottom: 3px solid #E0D4BB;
+	}
+.officePic {
+	border: 1px solid #000;
+	width: 266px;
+	}
+.officeButtons {
+	padding-top: 0px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	}
+.officeInfoSubhead {
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #17417F;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #E0D4BB;
+	}
+.printOfficeName {
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #17417F;
+	}
+#tblOfficeInfo {
+	border-bottom: 4px solid #000066;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+	}
+.officePrintVP {
+	border-bottom: 4px solid #000066;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+	}
+/* This is a div box that holds the bottom layer for the javascript psrch and off srch map rollovers */
+#mapperOffice {
+	width: 385px;
+	height: 281px;
+	border: 1px solid #000;      
+	background-image: url(/images/Office/mapOfficeOff.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+
+#mapperMNGeneral {
+	width: 359px;
+	height: 299px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+#mapperRochester {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Region_rochester.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+#mapperSouthwest {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Region_swmn.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+ 
+#mapperNortheast {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Region_nemn.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+#mapperNorthwest {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Region_nwmn.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+#mapperMSP {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Region_mplsstp.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+ 
+#mapperBurnettWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/mapBurnettWIOff.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+
+
+#mapperPierceWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/mapPierceWIOff.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+/* Wisconsin Maps*/	
+#mapperNorthwestWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Region_nwwi.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+
+	#mapperStCroixWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/stcroix.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+    #mapperDouglasWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/douglas.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+    #mapperBayfieldWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/bayfield.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+	#mapperBurnettWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/burnett.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+	#mapperWashburnWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Washburn.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+ #mapperSawyerWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Sawyer.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+ 
+ #mapperPolkWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Polk.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+	
+ #mapperBarronWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Barron.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+
+ #mapperRuskWI {
+	width: 359px;
+	height: 299px;
+	background-image: url(/images/Property/Rusk.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+ #mapperGeneralWI {
+	width: 359px;
+	height: 299px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #E0D4BC;
+	}
+	
+	
+/* Property Search Results */
+.courtesyOf {color: #000; text-decoration: none;}
+.courtesyOf a:link {color: #000; text-decoration: underline;}
+.courtesyOf a:visited {color: #000; text-decoration: underline;}
+.courtesyOf a:hover {color: #999; text-decoration: none;}
+.courtesyOf a:active {color: #000; text-decoration: none;}
+.courtesyOfTitle {color: #999; text-decoration: none;}
+/* Agent/Office Results */
+/* Agent/Office Profile */
+.agentInfoBlock {text-align: justify;}
+.agentBioSubHead {
+	font-weight: bold;
+	color: #17417f;
+	font-size: 12px;
+	font-family: Arial, Verdana, Sans-Serif;
+	}
+.agentHR {color: #faf5e8; margin-top: 0px; margin-bottom: 3px;}
+.agentBioContactInfo {color: #17417f; font-weight: bold;}
+.agentBioOfficeName {font-size: 18px; font-weight: bold;}
+.officeProfAgentName {color: #000; font-weight: bold; text-decoration: none;}
+.officeProfAgentName A:link {color: #17417f; font-weight: bold; text-decoration: none;}
+.officeProfAgentName A:visited {color: #17417f; font-weight: bold; text-decoration: none;}
+.officeProfAgentName A:hover {color: #7a0000; font-weight: bold; text-decoration: underline;}
+.officeProfAgentName A:active {color: #cc0000; font-weight: bold; text-decoration: underline;}
+/* Language Services, which is under Agent */
+.langServBox {
+	background-color: #6f8db9;
+	width: 200px;
+	height: 200px;
+	border-left: 2px solid #93AACB;
+	border-right: 2px solid #4D6281;
+	border-top: 2px solid #93AACB;
+	border-bottom: 2px solid #4D6281;
+	padding: 20px;
+	margin-top: 2px;
+	}
+.langServTable {
+	color: #fff;
+	font-size: 12px;
+	}
+.langServTxt {text-align: justify;}
+/* Agent Branded Banner */
+.agentBrandedBanner 
+	{
+	background-color: #17417f;
+	}
+.agentBannerAgentName {font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 15px; color: #fff; font-weight: bold; }
+.agentBannerInfoCell {font-size: 13px; color: #fff; text-decoration: none; font-weight: normal; padding-left: 3px; padding-right: 5px; background-color: #17417f;}
+.agentBannerInfoCell a:link {color: #fff; text-decoration: underline;}
+.agentBannerInfoCell a:visited {color: #fff; text-decoration: underline;}
+.agentBannerInfoCell a:hover {color: #fff; text-decoration: none;}
+.agentBannerInfoCell a:active {color: #fff; text-decoration: none;}
+.agentBannerContactCell  {font-size: 12px; color: #fff; text-decoration: none; font-weight: bold;}
+.agentBannerContactCell a:link {font-size: 12px; color: #fff; text-decoration: underline;}
+.agentBannerContactCell a:visited {font-size: 12px; color: #fff; text-decoration: underline;}
+.agentBannerContactCell a:hover {font-size: 12px; color: #fff; text-decoration: none;}
+.agentBannerContactCell a:active {font-size: 12px; color: #fff; text-decoration: none;}
+.agentBannerSSCell {padding-right: 10px;}
+.lblDesignation {}
+.lblPhone {}
+
+/* Unused ? 
+.ABagentName {color: #fff; font-weight: bold; font-size: 14px;}
+.ABagentTitle {color: #fff; font-face: Verdana; font-size: 12px; line-height: 10px;}
+.ABphoneContact {color: #fff; text-decoration: none; font-size: 12px; line-height: 12px;}
+.ABphoneContact a:link {color: #fff; text-decoration: underline; font-size: 12px; line-height: 12px;}
+.ABphoneContact a:visited {color: #fff; text-decoration: underline; font-size: 12px; line-height: 12px;}
+.ABphoneContact a:hover {color: #fff; text-decoration: none; font-size: 12px; line-height: 12px;}
+.ABphoneContact a:active {color: #fff; text-decoration: none; font-size: 12px; line-height: 12px;}
+ Unused ? */
+
+/* Dynamic Content Pages */
+
+/* Home Search Alert (Personalization) */
+.HSAgutter A:link {color: #17417f; text-decoration: underline; font-weight: bold;}
+.HSAgutter A:visited {color: #17417f; text-decoration: underline; font-weight: bold;}
+.HSAgutter A:hover {color: #7a0000; text-decoration: none; font-weight: bold;}
+.HSAgutter A:active {color: #cc0000; text-decoration: underline; font-weight: bold;}
+
+/* Distinctive Homes(r) - Previews(r) */
+.distinctiveHouse {
+	width: 209px;
+	padding: 3px;
+	border: 3px solid #17417f;
+	}
+ .distSearchInstructions  {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Arial, Verdana, Sans-Serif;
+	color: #17417f;
+	}
+ .distSearchList  {
+	font-size: 12px;
+	font-weight: normal;
+	font-family: Arial, Verdana, Sans-Serif;
+	color: #17417f;
+	}
+.distMapBox {border: 1px solid #000; width: 290;}
+ 
+/* Developments / New Homes */
+/* .developmentName {color: #17417f; font-weight: bold; font-family: Arial, Verdana, Sans-Serif;}  */
+.aboutDevs { margin-left: 5px; color: #17417f; font-weight: bold; font-family: Arial, Verdana, Sans-Serif; font-size: 18px; }
+.developerName { color: #17417f; font-weight: bold; font-family: Arial, Verdana, Sans-Serif; font-size: 14px; }
+.devNameChevron {margin-left: 25px; color: #17417f; font-weight: bold; font-family: Arial, Verdana, Sans-Serif; font-size: 18px;}
+.devNameContainer {margin-top: 6px; margin-bottom: 9px;}
+.devSubNav {}
+.development411Pic { PADDING-RIGHT: 10px; FLOAT: left }
+.development411 { TEXT-ALIGN: justify }
+.newHomesInputsBox {
+	background-color: #E0D4BB;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-left: 2px solid #C9BCA1;
+	border-right: 2px solid #827456;
+	border-top: 2px solid #C9BCA1;
+	border-bottom: 2px solid #827456;
+	}
+.CondosinputHelper {font-size: 11px;}
+.condosMapBox {margin-left: 10px;}
+.tblDevelopmentsBox {
+	background-color: #FFF;
+	border-left: 1px solid #17417f;
+	border-right: 1px solid #17417f;
+	border-bottom: 1px solid #17417f;
+	height: 250px;
+	width: 406px;
+	overflow: auto;
+	}
+.mapInstructions {
+	background-color: #E0D4BB;
+	width: 306px;
+	padding: 8px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	border-left: 2px solid #C9BCA1;
+	border-right: 2px solid #827456;
+	border-top: 2px solid #C9BCA1;
+	border-bottom: 2px solid #827456;
+	font-weight: bold;
+	text-align: center;
+	}
+/* #tblDevelopments {
+	background-color: #FFF;
+	border-left: 2px solid #17417f;
+	border-right: 2px solid #17417f;
+	border-bottom: 2px solid #17417f;
+	height: 250px;
+	width: 436px;
+	overflow: auto;
+	} */
+/* Printable Flyer */
+/* Careers */
+/* Popup Windows universal styling */
+.popTable {height: 100%;}
+.popBanner {
+	width: 100%;
+	height: 50px;
+	border-bottom: 3px solid #CC0000;
+	}
+.popContent {
+	width: 100%;
+	text-align: left;
+	vertical-align: top;
+	padding: 10px;
+	}
+.popStretch {background-color: #17417F;}
+/* Make another popContent class in the .aspx of the page that
+   needs a popup. Specify the height in there, it will override */
+.popFooter {
+	background-color: #17417F;
+	width: 100%;
+	height: 25px;
+	text-align: right;
+	padding-top: 2px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+	}
+.popFooter a:link {font-size: 11px; color: #fff; text-decoration: none;}
+.popFooter a:visited {font-size: 11px; color: #fff; text-decoration: none;}
+.popFooter a:hover {font-size: 11px; color: #faf5e8; text-decoration: underline;}
+.popFooter a:active {font-size: 11px; color: #e0d4bb; text-decoration: none;}
+/* Popup windows Contact Us / Request more Info form styling */
+.popReqInfo {text-align: right; color: #7a0000; font-weight: bold;}
+.reqMoreInfoTxtArea {width: 558px; height: 100px;}
+.reqInfoBtnPad {width: 100%; text-align: center; padding: 10px;}
+.reqInfoContactInfoInput {width: 160px; margin-top: 1px; margin-bottom: 1px;}
+.checkBoxColumnPadder {padding-left: 7px;}
+.reqMoreInfophInputA {width: 48px;}
+.reqMoreInfophInputB {width: 54px;}
+.reqmoreInfoEmlInput {width: 170px;}
+/* SPSA Application Form */
+.spsaFormBox {
+		background-color: #e0d4bb;
+		
+		padding: 10px;
+		}
+	.spsaUpperForm {
+		width: 100%;
+		padding: 4px;
+		border-bottom: 5px solid #000066;
+		}
+	.spsaUpperForm {
+		width: 100%;
+		padding: 4px;
+		}
+	.spsaHRCtitle {font-size: 12px; font-weight:bold; width: 100%; text-align: center; margin-top: 24px; margin-bottom: 10px;}
+	.spsaSPSAtitle {font-size: 16px; font-weight:bold; width: 100%; text-align: center; margin-bottom: 20px; color: #17417f; size: 18px;}
+	.spsaAppCompName {width: 465px;}
+	.spsaAppToS {width: 407px;}
+	.spsaAppResponsible {width: 357px;}
+	.spsaAppFName {width: 200px;}
+	.spsaAppLName {width: 223px;}
+	.spsaAppAddy1 {width: 500px;}
+	.spsaAppAddy2 {width: 500px;}
+	.spsaAppEmail {width: 232px;}
+	.spsaAppWebsite {width: 219px;}
+	/* *************** */
+	.questionNumber {width: 10px; font-weight: bold;}
+	.questionNumberRadio {width: 10px; font-weight: bold; padding-top: 8px;}
+	/* *************** */
+	.question {
+		padding: 4px;
+		margin-top: 15px;
+		}
+	.mainQuestion {font-weight: bold;}
+	.spsaSubmit {padding: 20px; text-align: center;}
+/* Site Map */
+/* Sitewide Footer */
+.siteFooter {
+	width: 772px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	font-size: 8px;
+	padding: 4px;
+	padding-left: 12px;
+	text-decoration: none;}
+.footerTop {background-color: #17417F; color: #EAEAEA;}
+.footerTop a:link {color: #EAEAEA; text-decoration: underline;}
+.footerTop a:visited {color: #EAEAEA; text-decoration: underline;}
+.footerTop a:active {color: #EAEAEA; text-decoration: none;}
+.footerTop a:hover {color: #EAEAEA;	text-decoration: none;}
+.footerBottom {color: #666666; line-height: 15px;}
+.footerBottom a:link {color: #666666; text-decoration: underline;}
+.footerBottom a:visited {color: #666666;text-decoration: underline;}
+.footerBottom a:active {color: #666666;	text-decoration: none;}
+.footerBottom a:hover {color: #666666; text-decoration: none;}
+.footiePad {
+	color: #666666;
+	width: 772px;
+	font-size: 8px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 4px;
+	padding-left: 12px;}
+.footiePad a:link {color: #666666; text-decoration: underline;}
+.footiePad a:visited {color: #666666; text-decoration: underline;}
+.footiePad a:active {color: #999999; text-decoration: none;}
+.footiePad a:hover {color: #999999;	text-decoration: none;}
+.footerInfo {font-size: 10px;}
+.footerStretcher {width: 100%; border: 0px solid #000;}
+.footerStretcherColor {background-color: #6F8DB9; font-size: 8px; height: 22px;}
+
+/* Moved these Classes */
+.navStretcher {width: 100%; border: 0px solid #000;}
+.navStretcherColor  {background-color: #6F8DB9; font-size: 8px; height: 21px;}
+.navStretcherColor2 {background-color: #FAF5E0; font-size: 8px; height: 2px;}
+.navStretcherColor3 {background-color: #c0cde0; font-size: 8px; height: 21px;}
+/* end moved */
+
+.bannerStretcher {width: 100%; border: 0px solid #000;}
+.bannerStretcherColor {background-color: #17417F; font-size: 8px; height: 83px;}
+.bannerStretcherColor2 {background-color: #CC0000; font-size: 8px; height: 5px;}
+.dynContentStretcherColor {background-color: #6F8DB9;}
+.dynContentStretcherColor2 {background-color: #c0cde0;}
+.dynContentNavStretch {
+	background-image: url(/images/DynamicContent/navBG.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	}
+.distHomesBannerStretch {
+	background-image: url(/images/DistinctiveHomes/navBG.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	background-color: #fff;
+	}
+.distHomesBannerStretchList {
+	background-image: url(/images/DistinctiveHomes/navBG2.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	background-color: #E5E5E5;
+	}
+/* This class is a clone of 'dynContentNavStretch' , above. It's a workaroundh / hack to save time. */
+.secondNavBG {
+	background-image: url(/images/DynamicContent/navBG.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	}
+/* Privacy & Terms of Use Pages */
+/* Normal aka Corporate Branded Banner */
+.bannerNormal {
+	width: 772px;
+	height: 88px;
+	border: 0px solid #000;
+	margin-bottom: 2px;
+	background-image: url(/images/banner.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	text-align: right;}
+.bannerLinks {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-right: 10px;
+	text-decoration: none;
+	color: #FFF;}
+.bannerlinks a:link {color: #FFF; text-decoration: none;}
+.bannerlinks a:visited {color: #FFF; text-decoration: none;}
+.bannerlinks a:hover {color: #FFF; text-decoration: underline;}
+.bannerlinks a:active {color: #FFF;	text-decoration: underline;}
+.bannerGreeting {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	margin-top: 0px;
+	margin-right: 10px;
+	text-decoration: none;
+	color: #FFF;}
+.bannerGreeting a:link {color: #FFF; text-decoration: none;}
+.bannerGreeting a:visited {color: #FFF;	text-decoration: none;}
+.bannerGreeting a:hover {color: #FFF; text-decoration: underline;}
+.bannerGreeting a:active {color: #FFF; text-decoration: underline;}
+.speedSearchBanner {
+	font-family: Arial, sans-serif;
+	font-weight: normal;
+	color: #fff;
+	margin: 0px;
+	text-decoration: none;
+	background-color: #17417f;
+	}
+.speedSearchBanner b {font-size: 9px; font-weight: normal;}
+.speedSearchDD {font-size: 10px; color: #000000; width: 125px;}
+.speedSearchTXTinput {font-size: 10px; color: #000000; width: 160px;}
+.speedSearchInfo {color: #FFF; font-family: Arial, Verdana, sans-serif; font-size: 10px; font-weight: normal;}
+.speedSearchInfo A:link{color: #FFF; text-decoration: underline;}
+.speedSearchInfo A:visited{color: #FFF; text-decoration: underline;}
+.speedSearchInfo A:hover{color: #FFF; text-decoration: underline;}
+.speedSearchInfo A:active{color: #FFF; text-decoration: underline;}
+.SpeedSearchErrors {}
+
+/* **************** */
+/* EULA class below */
+/* **************** */
+
+.EULA {
+	border: black 1px solid; 
+	background-color:White; 
+	font-size:10pt; 
+	font-family:Arial; 
+	padding:2px 2px 2px 2px; 
+	overflow:auto; 
+	width:400px; 
+	height:150px; 
+	text-align:left;
+	}
+
+/* Agent Branded Banner */
+/* Previews & Luxury Homes Banner */
+/* Develpment & New Construction Banner */
+/*  */
+/*  */
+/*  */
+
+
+/*  
+Everything below this line was copied from an old site and is therefore theoretically useless. Commented out for now. Will delete over time if no problems arise. 
+*/
+
+
+/* Property Search Classes Here */
+.SearchSliderBox {
+	background-color: #e0d4bb;
+	width: 360px;
+	height: 299px;
+	padding: -1px;
+	border-left: 1px solid #C9BCA1;
+	border-right: 1px solid #827456;
+	border-top: 1px solid #C9BCA1;
+	border-bottom: 1px solid #827456;
+	}
+	
+.SearchSliderMapBox {
+	background-color: #e0d4bb;
+	width: 360px;
+	height: 299px;
+	padding: -1px;
+	border-left: 1px solid #C9BCA1;
+	border-right: 1px solid #827456;
+	border-top: 1px solid #C9BCA1;
+	border-bottom: 1px solid #827456;
+	}	
+
+/* Property Search Results Classes Here */
+.resultsSpecialHider {color: #e0d4bb;}
+.pSrchResultsAddy {font-size: 14px; font-family: Arial, Verdana, Sans-Serif; font-weight: bold;}
+.pSrchOptionsGrouper {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	}
+
+/* ********************************** 
+/* Property Search Classes below here 
+/* ********************************** 
+
+.srchFormFrame
+{
+	width: 772px;
+	padding-top: 5px;
+}
+.srchFormTabs
+{
+	font-size: 12px;
+}
+.srchFormBoxes
+{
+	width: 400px;
+}
+.tabsLabel
+{
+	border-left: 2px solid #000;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+	padding-left: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.propSrchInstructions
+{
+	font-weight: bold;
+	padding-bottom: 5px;
+	font-size: 16px;
+}
+.propSearchSwitch
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.propSearchHSA
+{
+	width: 400px;
+	padding-bottom: 15px;
+}
+.propSearchFindCity
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+.propSearchCityInput
+{
+}
+.propSearchBedsBaths
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+.propSearchNow
+{
+	font-size: 12px;
+}
+.showSearchCriteriaTopper
+{
+	width: 185px;
+	font-size: 12px;
+	font-weight: bold;
+}
+.showSearchCriteriaBox
+{
+	border: 0px solid #000;
+	background-color: #EAEAEA;
+}
+.showSearchCriteria
+{
+	width: 160px;
+	height: 200px;
+	font-size: 11px;
+	margin-top: 10px;
+}
+.searchCritieraHelp
+{
+	font-size: 11px;
+	font-weight: normal;
+}
+.getListingCount
+{
+	width: 40px;
+	font-size: 9px;
+}
+.propSearchResultsMod
+{
+	font-size: 12px;
+	font-weight: normal;
+}
+.inputText
+{
+	font-size: 10px;
+}
+.selectUnselect
+{
+	font-size: 9px;
+	font-weight: normal;
+}
+.propSearchCityInput
+{
+	width: 200px;
+	font-size: 10px;
+}
+.propSearchCityDropD
+{
+	width: 200px;
+	height: 100px;
+	font-size: 10px;
+}
+.propSearchCritMods
+{
+	padding-top: 10px;
+}
+.propSearchRadios
+{
+	font-size: 11px;
+}
+.propSearchRadiusInput
+{
+	width: 150px;
+	font-size: 10px;
+}
+.radiusState
+{
+	width: 80px;
+	font-size: 10px;
+}
+.radiusZip
+{
+	width: 45px;
+	font-size: 10px;
+}
+.radiusDistance
+{
+	font-size: 10px;
+	width: 100px;
+}
+.zipSearch
+{
+	width: 350px;
+	height: 200px;
+	background-color: #EAEAEA;
+	padding: 25px;
+	font-weight: normal;
+	font-size: 12px;
+}
+.MLSSearch
+{
+	width: 300px;
+	height: 200px;
+	background-color: #EAEAEA;
+	padding-top: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 25px;
+	font-weight: normal;
+	font-size: 12px;
+}
+.MLSRadios
+{
+	font-size: 12px;
+	padding-bottom: 10px;
+}
+.MLSSearchInput1
+{
+	width: 300px;
+	font-size: 10px;
+}
+.MLSSearchInput2
+{
+	width: 300px;
+	height: 125px;
+	font-size: 10px;
+}
+.zipSearch
+{
+	width: 300px;
+	height: 200px;
+	background-color: #EAEAEA;
+	padding: 25px;
+	font-weight: normal;
+	font-size: 12px;
+}
+.zipSearchInput
+{
+	width: 300px;
+	font-size: 10px;
+}
+
+
+/* *********************************** */
+/* Property Results Classes below here */
+/* *********************************** */
+.resultsTopper
+{
+	width: 772px;
+	font-size: 12px;
+	font-family: Arial, Verdana, sans serif;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000;
+}
+.resultsLinks
+{
+	width: 130px;
+}
+.resultsPageLabel
+{
+	width: 550px;
+	font-weight: bold;
+	font-size: 16px;
+}
+.resultsPageLabel b
+{
+	font-size: 20px;
+	font-weight: bold;
+}
+.resultsPaging
+{
+	width: 772px;
+	font-size: 12px;
+	font-family: Arial, Verdana, sans serif;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-bottom: 3px;
+	border-bottom: 1px solid #000;
+}
+.resultsPagingCell
+{
+	width: 72px;
+}
+.sortResults
+{
+	width: 772px;
+	font-size: 12px;
+	font-family: Arial, Verdana, sans serif;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+	text-align: left;
+	padding-top: 3px;
+	padding-bottom: 15px;
+}
+.resultsTable
+{
+	width: 772px;
+	font-size: 12px;
+	border-bottom: 1px solid #000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.resultsTable b
+{
+	font-weight: bold;
+	font-size: 14px;
+}
+.resultsBtnColumn
+{
+	width: 120px;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000;
+}
+.propResultsThumb
+{
+	width: 150px;
+	text-align: left;
+}
+.propResultsInfoCell
+{
+	width: 302px;
+}
+.resultsThumbCell
+{
+	width: 64px;
+}
+.resultsTableMini
+{
+	font-size: 12px;
+	padding-top: 5px;
+}
+.resultsTableMiniCol1
+{
+	width: 175px;
+}
+.resultsTableMiniCol2
+{
+}
+.resultsTableListedBy
+{
+	width: 200px;
+}
+.resultsTableThumbRow
+{
+	width: 652px;
+}
+
+/* *********************************** */
+/* Property Details Classes below here */ 
+/* *********************************** */
+.propDetAddyPrice {
+	width: 772px;
+	margin: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: normal;
+	color: #17417f;
+	font-weight: bold;
+	font-size: 14px;
+	}
+	.propDetAddy{
+	margin: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: normal;
+	color: #17417f;
+	font-weight: bold;
+	font-size: 14px;
+	}
+	
+	.propDetAddyPriceSold {
+	width: 772px;
+	margin: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: normal;
+	color: #cc0000;
+	font-weight: bold;
+	font-size: 14px;
+	}
+.propDetBigPic {border: 1px solid #000; margin-top: 4px;}
+.propDetLittlePicsPad {margin-top: 3px; margin-left: 2px;}
+.propDetLittlePics {border: 1px solid #000;}
+.propDetDirs {padding: 5px;}
+.propDetMiniHead {margin-bottom: 5px; font-weight: bold; color: #17417f;}
+.PropDetAgentInfo {margin-left: 5px;}
+.moreOptionColumns tr td {position:relative;}
+.compareBorder {border: 0px solid #000;}
+
+.propDetPaging
+{
+	width: 772px;
+	margin: 0px;
+	margin-top: 10px;
+}
+
+.propHotInfo
+{
+	width: 772px;
+}
+.propDetThumbs
+{
+	padding-bottom: 4px;
+}
+.propDetInfoBtn
+{
+	padding-bottom: 4px;
+}
+.propData
+{
+	border-top: 1px solid #000;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	text-align: left;
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: normal;
+}
+.propDataTable
+{
+	font-size: 12px;
+	width: 752px;
+}
+.propDetAgents
+{
+	border-top: 0px solid #000;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	text-align: left;
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: normal;
+}
+.propDetAgentsTable
+{
+	font-size: 12px;
+	width: 772px;
+}
+.propData b
+{
+	color: .02225f;
+	font-weight: bold;
+}
+.propData ul
+{
+	list-style-type: square;
+	margin-left: 20px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-right: 0px;
+}
+.propDataRoom411
+{
+	font-size: 12px;
+}
+.borderizer
+{
+	border: 1px solid #000;
+}
+.propDetDirections
+{
+	text-align: left;
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+	margin-top: 10px;
+	width: 425px;
+}
+.detailsPagingCell
+{
+	width: 125px;
+}
+.detailsPriceTop
+{
+	width: 125px;
+}
+.detailsPhotoCell
+{
+	width: 425px;
+}
+.propDetThumbs
+{
+	width: 220px;
+}
+.propDetAgent1
+{
+	width: 72px;
+}
+.propDetAgent2
+{
+	width: 150px;
+}
+.pdMainData
+{
+	width: 386px;
+}

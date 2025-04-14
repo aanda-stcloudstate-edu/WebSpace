@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+   <head> 
+     <meta charset="UTF-8"/>
+	 <title>The Bean Counter</title> 
+     <script> 
+           var shots = 1; 
+           var drink = "none"; 
+           var ounce = 0; 
+     </script>
+	 <style>
+	         body {background-color : saddlebrown; color : darkorange; 
+	                   font-family : helvetica; text-align : center}
+	         hr      {width:50%; color: darkorange}
+	         h1     {color : white;}
+	         table {margin-left : auto; margin-right : auto; text-align : center; 
+	                   background-color : #993300; border-style : solid;
+	                   border-color : firebrick; border-width : medium; padding : 8px }
+     </style>
+   </head> 
+   <body> 
+      <h1> the bean counter</h1> 
+      <hr/> 
+      <p><b>figuring the price of espresso drinks<br /> 
+                    so baristas can have time to chat</b></p> 
+
+       <table>
+       <tr>
+          <td><button form="esp" onclick='shots = 1; shotpic.value="  1"' > 1 </button></td>
+          <td><button form="esp" onclick='ounce = 8; sizepic.value="  S"'> S </button></td>
+          <td><button form="esp" onclick='drink = "espresso"'; >
+                   &nbsp;&nbsp;ESPRESSO  &nbsp;&nbsp;&nbsp;</button></td>
+          <td><button form="esp" onclick='
+            shots = 1;
+            drink = "none";
+            ounce = 0;
+            disp.value = "0.00"
+             '> Clear </button></td>
+        </tr>
+ 
+        <tr>
+          <td><button form="esp"  onclick='shots = 2; shotpic.value="  2" '> 2 </button></td>
+          <td><button form="esp" onclick='ounce = 12; sizepic.value="  T"  '> T </button></td>
+          <td><button form="esp" onclick='drink = "latte"'>
+                    &nbsp;&nbsp;&nbsp;&nbsp; LATTE    &nbsp; &nbsp;&nbsp;&nbsp;</button></td>
+          <td></td>
+        </tr>
+ 
+        <tr>
+          <td><button form='esp' onclick='shots = 3; shotpic.value = "  3" '> 3 </button></td>
+          <td><button form="esp" onclick='ounce = 16; sizepic.value= "  G"'> G </button></td>
+          <td><button form="esp" onclick='drink = "cappuccino"'>  
+                    CAPPUCCINO  </button>
+          </td>
+          <td><button form="esp" 
+                onclick='
+                    var price = -10; 
+					var taxRate = 0.087; 
+					if (drink == "espresso") 
+						price = 1.40; 
+					if (drink == "latte" || drink == "cappuccino") { 
+					if (ounce == 8) 
+						price = 1.95; 
+					if (ounce == 12) 
+						price = 2.35; 
+					if (ounce == 16) 
+						price = 2.75; 
+					} 
+					if (drink == "Americano") 
+						price = 1.20 + .30 * (ounce/8); 
+					price = price + (shots - 1) * .50; 
+					price = price + price * taxRate; 
+	  			    disp.value = (Math.round(100*price)/100).toFixed(2); 
+				'>  Total  </button></td>
+        </tr>
+ 
+        <tr>
+          <td><button form="esp"  onclick='shots = 4; shotpic.value = "  4"'> 4 </button></td>
+          <td></td>
+          <td><button form="esp" onclick='drink = "Americano"'>  
+                    AMERICANO  &nbsp;</button>
+          </td>
+          <td class="tot">
+            <form name="esp">
+            <input type="text" id="disp" value="0.00" size="5" />
+            </form>
+          </td>
+        </tr>
+       </table>
+ 
+</body> 
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 18</h1>
+      <p align="center">&nbsp;</p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 18-1 An interface for the ADT dictionary">Listing 18-1 An
+                    interface for the ADT dictionary</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font color="#3333ff" size="3"><b><big><span class="sh_comment" style="font-style: italic;">/** An interface for the ADT dictionary.</span>
+<span class="sh_type">@file</span><span class="sh_comment" style="font-style: italic;"> DictionaryInterface.h */</span>
+<span class="sh_preproc" style="font-weight: bold;">#ifndef</span> _DICTIONARY_INTERFACE
+<span class="sh_preproc" style="font-weight: bold;">#define</span> _DICTIONARY_INTERFACE
+<span class="sh_preproc" style="font-weight: bold;">#include</span> <span class="sh_string" style="font-family: monospace;">"NotFoundException.h"</span>
+<span class="sh_keyword" style="font-weight: bold;">template</span> <span class="sh_symbol">&lt;</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">KeyType</span><span class="sh_symbol">,</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">ItemType</span> <span class="sh_symbol">&gt;</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">DictionaryInterface</span>
+<span class="sh_cbracket">{</span>
+<span class="sh_keyword" style="font-weight: bold;">public</span><span class="sh_symbol">:</span>
+<span class="sh_comment" style="font-style: italic;">/** Sees whether this dictionary is empty.</span>
+<span class="sh_type">@return</span><span class="sh_comment" style="font-style: italic;"> True if the dictionary is empty;</span>
+<span class="sh_comment" style="font-style: italic;">otherwise returns false. */</span>
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">isEmpty</span> <span class="sh_symbol">()</span><span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Gets the number of items in this dictionary.</span>
+<span class="sh_type">@return</span><span class="sh_comment" style="font-style: italic;"> The number of items in the dictionary. */</span>
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_type">int</span> <span class="sh_function" style="font-weight: bold;">getNumberOfItems</span> <span class="sh_symbol">()</span> <span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Inserts an item into this dictionary according to the items</span>
+<span class="sh_comment" style="font-style: italic;">search key.</span>
+<span class="sh_type">@pre</span><span class="sh_comment" style="font-style: italic;"> The search key of the new item differs from all search</span>
+<span class="sh_comment" style="font-style: italic;">keys presently in the dictionary.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> If the insertion is successful, newItem is in its</span>
+<span class="sh_comment" style="font-style: italic;">proper position within the dictionary.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> searchKey The search key associated with the item to be inserted.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> newItem The item to add to the dictionary.</span>
+<span class="sh_type">@return</span><span class="sh_comment" style="font-style: italic;"> True if item was successfully added, or false if not. */</span>
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">add</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">,</span> <span class="sh_keyword" style="font-weight: bold;">const</span> ItemType <span class="sh_symbol">&amp;</span> newItem<span class="sh_symbol">)</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Removes an item with the given search key from this dictionary.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> If the item whose search key equals searchKey</span>
+<span class="sh_comment" style="font-style: italic;">existed in the dictionary, the item was removed.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> searchKey The search key of the item to be removed.</span>
+<span class="sh_type">@return</span><span class="sh_comment" style="font-style: italic;"> True if the item was successfully removed, or false if not. */</span>
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">remove</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Removes all entries from this dictionary. */</span>
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">clear</span> <span class="sh_symbol">()</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Retrieves an item with a given search key from a dictionary.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> If the retrieval is successful, the item is returned.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> searchKey The search key of the item to be retrieved.</span>
+<span class="sh_type">@return</span><span class="sh_comment" style="font-style: italic;"> The item associated with the search key.</span>
+<span class="sh_type">@throw</span><span class="sh_comment" style="font-style: italic;"> NotFoundException if the item does not exist. */</span>
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span><span class="sh_function" style="font-weight: bold;">getItem</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_keyword" style="font-weight: bold;">throw</span> <span class="sh_symbol">(</span>NotFoundException<span class="sh_symbol">)</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Sees whether this dictionary contains an item with a given</span>
+<span class="sh_comment" style="font-style: italic;">search key.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> The dictionary is unchanged.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> searchKey The search key of the item to be retrieved.</span>
+<span class="sh_type">@return</span><span class="sh_comment" style="font-style: italic;"> True if an item with the given search key exists in the</span>
+<span class="sh_comment" style="font-style: italic;">dictionary. */</span>
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">contains</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Traverses this dictionary and calls a given client function once</span>
+<span class="sh_comment" style="font-style: italic;">for each item.</span>
+<span class="sh_type">@post</span><span class="sh_comment" style="font-style: italic;"> The given functions action occurs once for each item in the</span>
+<span class="sh_comment" style="font-style: italic;">dictionary and possibly alters the item.</span>
+<span class="sh_type">@param</span><span class="sh_comment" style="font-style: italic;"> visit A client function. */</span>
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">traverse</span> <span class="sh_symbol">(</span><span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">visit</span> <span class="sh_symbol">(</span>ItemType <span class="sh_symbol">&amp;))</span> <span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
+<span class="sh_cbracket">}</span><span class="sh_symbol">;</span>				<span class="sh_comment" style="font-style: italic;">// end DictionaryInterface</span>
+<span class="sh_preproc" style="font-weight: bold;">#endif</span></big>
+</b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p> </p>
+    </font><font face="Arial, Arial, Helvetica"><br>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 18-2 A header file for a class of dictionary entries">Listing 18-2 A
+                    header file for a class of dictionary entries</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font size="3"><b><font color="#3333ff"><big><span class="sh_comment" style="font-style: italic;">/** A class of entry objects for an array-based implementation of the</span>
+<span class="sh_comment" style="font-style: italic;">ADT dictionary.</span>
+<span class="sh_type">@file</span><span class="sh_comment" style="font-style: italic;"> Entry.h */</span>
+<span class="sh_preproc" style="font-weight: bold;">#ifndef</span> _ENTRY
+<span class="sh_preproc" style="font-weight: bold;">#define</span> _ENTRY
+<span class="sh_keyword" style="font-weight: bold;">template</span> <span class="sh_symbol">&lt;</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">KeyType</span><span class="sh_symbol">,</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">ItemType</span> <span class="sh_symbol">&gt;</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">Entry</span>
+<span class="sh_cbracket">{</span>
+<span class="sh_keyword" style="font-weight: bold;">private</span><span class="sh_symbol">:</span>
+  <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>item<span class="sh_symbol">;</span>
+  <span class="sh_usertype">KeyType</span><span class="sh_normal"> </span>searchKey<span class="sh_symbol">;</span>
+
+<span class="sh_keyword" style="font-weight: bold;">protected</span><span class="sh_symbol">:</span>
+  <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">setKey</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">);</span>
+
+<span class="sh_keyword" style="font-weight: bold;">public</span><span class="sh_symbol">:</span>
+  <span class="sh_function" style="font-weight: bold;">Entry</span> <span class="sh_symbol">();</span>
+  <span class="sh_function" style="font-weight: bold;">Entry</span> <span class="sh_symbol">(</span><span class="sh_usertype">ItemType</span><span class="sh_normal"> </span>newEntry<span class="sh_symbol">,</span> <span class="sh_usertype">KeyType</span><span class="sh_normal"> </span>searchKey<span class="sh_symbol">);</span>
+  <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span><span class="sh_function" style="font-weight: bold;">getItem</span> <span class="sh_symbol">()</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+  <span class="sh_usertype">KeyType</span><span class="sh_normal"> </span><span class="sh_function" style="font-weight: bold;">getKey</span> <span class="sh_symbol">()</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+  <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">setItem</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> ItemType <span class="sh_symbol">&amp;</span> newEntry<span class="sh_symbol">);</span>
+
+  <span class="sh_type">bool</span> <span class="sh_keyword" style="font-weight: bold;">operator</span><span class="sh_symbol">==</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> Entry <span class="sh_symbol">&lt;</span> KeyType<span class="sh_symbol">,</span> ItemType <span class="sh_symbol">&gt;</span> <span class="sh_symbol">&amp;</span>rightHandItem<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+  <span class="sh_type">bool</span> <span class="sh_keyword" style="font-weight: bold;">operator</span><span class="sh_symbol">&gt;</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> Entry <span class="sh_symbol">&lt;</span> KeyType<span class="sh_symbol">,</span> ItemType <span class="sh_symbol">&gt;</span> <span class="sh_symbol">&amp;</span>rightHandItem<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+<span class="sh_cbracket">}</span><span class="sh_symbol">;</span>				<span class="sh_comment" style="font-style: italic;">// end Entry</span>
+
+</big></font><span class="sh_preproc" style="color: rgb(0, 0, 139); font-weight: bold;"><font color="#3333ff"><big>#inclu</big><big>de</big></font></span><font color="#3333ff"><big> <span class="sh_string" style="font-family: monospace;">"Entry.cpp"</span>
+<span class="sh_preproc" style="font-weight: bold;">#endif</span></big></font>
+</b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p> </p>
+    </font><font face="Arial, Arial, Helvetica"><br>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 18-3 A header file for the class ArrayDictionary">Listing 18-3 A
+                    header file for the class <font face="Courier New">ArrayDictionary</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><big><font color="#3333ff" size="3"><big><b><span class="sh_comment" style="font-style: italic;">/** An array-based implementation of the ADT dictionary</span>
+<span class="sh_comment" style="font-style: italic;">that organizes its data items in sorted search-key order.</span>
+<span class="sh_comment" style="font-style: italic;">Search keys in the dictionary are unique.</span>
+<span class="sh_type">@file</span><span class="sh_comment" style="font-style: italic;"> ArrayDictionary.h */</span>
+<span class="sh_preproc" style="font-weight: bold;">#ifndef</span> _ARRAY_DICTIONARY
+<span class="sh_preproc" style="font-weight: bold;">#define</span> _ARRAY_DICTIONARY
+<span class="sh_preproc" style="font-weight: bold;">#include</span> <span class="sh_string" style="font-family: monospace;">"DictionaryInterface.h"</span>
+<span class="sh_preproc" style="font-weight: bold;">#include</span> <span class="sh_string" style="font-family: monospace;">"Entry.h"</span>
+<span class="sh_preproc" style="font-weight: bold;">#include</span> <span class="sh_string" style="font-family: monospace;">"NotFoundException.h"</span>
+<span class="sh_keyword" style="font-weight: bold;">template</span> <span class="sh_symbol">&lt;</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">KeyType</span><span class="sh_symbol">,</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">ItemType</span> <span class="sh_symbol">&gt;</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">ArrayDictionary</span><span class="sh_symbol">:</span><span class="sh_keyword" style="font-weight: bold;">public</span> DictionaryInterface <span class="sh_symbol">&lt;</span> KeyType<span class="sh_symbol">,</span> ItemType <span class="sh_symbol">&gt;</span>
+<span class="sh_cbracket">{</span>
+<span class="sh_keyword" style="font-weight: bold;">private</span><span class="sh_symbol">:</span>
+  <span class="sh_keyword" style="font-weight: bold;">static</span> <span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_type">int</span> DEFAULT_CAPACITY <span class="sh_symbol">=</span> <span class="sh_number">21</span><span class="sh_symbol">;</span>	<span class="sh_comment" style="font-style: italic;">// Small capacity to test for</span>
+
+<span class="sh_comment" style="font-style: italic;">// a full dictionary</span>
+  Entry <span class="sh_symbol">&lt;</span> KeyType<span class="sh_symbol">,</span> ItemType <span class="sh_symbol">&gt;</span> <span class="sh_symbol">*</span>items<span class="sh_symbol">;</span>	<span class="sh_comment" style="font-style: italic;">// Array of dictionary entries</span>
+  <span class="sh_type">int</span> itemCount<span class="sh_symbol">;</span>	<span class="sh_comment" style="font-style: italic;">// Current count of dictionary items</span>
+
+  <span class="sh_type">int</span> maxItems<span class="sh_symbol">;</span>	<span class="sh_comment" style="font-style: italic;">// Maximum capacity of the dictionary</span>
+
+  <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">destroyDictionary</span> <span class="sh_symbol">();</span>
+
+  <span class="sh_type">int</span> <span class="sh_function" style="font-weight: bold;">findEntryIndex</span> <span class="sh_symbol">(</span><span class="sh_type">int</span> firstIndex<span class="sh_symbol">,</span> <span class="sh_type">int</span> lastIndex<span class="sh_symbol">,</span> <span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+<span class="sh_keyword" style="font-weight: bold;">public</span><span class="sh_symbol">:</span>
+  <span class="sh_function" style="font-weight: bold;">ArrayDictionary</span> <span class="sh_symbol">();</span>
+  <span class="sh_function" style="font-weight: bold;">ArrayDictionary</span> <span class="sh_symbol">(</span><span class="sh_type">int</span> maxNumberOfEntries<span class="sh_symbol">);</span>
+
+  <span class="sh_function" style="font-weight: bold;">ArrayDictionary</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> ArrayDictionary <span class="sh_symbol">&lt;</span> KeyType<span class="sh_symbol">,</span> ItemType <span class="sh_symbol">&gt;</span> <span class="sh_symbol">&amp;</span>dict<span class="sh_symbol">);</span>
+
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_symbol">~</span> <span class="sh_function" style="font-weight: bold;">ArrayDictionary</span> <span class="sh_symbol">();</span>
+  <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">isEmpty</span> <span class="sh_symbol">()</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+  <span class="sh_type">int</span> <span class="sh_function" style="font-weight: bold;">getNumberOfItems</span> <span class="sh_symbol">()</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+  <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">add</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">,</span> <span class="sh_keyword" style="font-weight: bold;">const</span> ItemType <span class="sh_symbol">&amp;</span> newItem<span class="sh_symbol">);</span>
+
+  <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">remove</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">);</span>
+
+  <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">clear</span> <span class="sh_symbol">();</span>
+
+  <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span><span class="sh_function" style="font-weight: bold;">getItem</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_keyword" style="font-weight: bold;">throw</span> <span class="sh_symbol">(</span>NotFoundException<span class="sh_symbol">);</span>
+
+  <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">contains</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Traverses the items in this dictionary in sorted search-key order</span>
+<span class="sh_comment" style="font-style: italic;">and calls a given client function once for each item. */</span>
+  <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">traverse</span> <span class="sh_symbol">(</span><span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">visit</span> <span class="sh_symbol">(</span>ItemType <span class="sh_symbol">&amp;))</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;
+</span>
+<span class="sh_cbracket">}</span><span class="sh_symbol">;</span>				<span class="sh_comment" style="font-style: italic;">// end ArrayDictionary</span>
+
+<span class="sh_preproc" style="font-weight: bold;">#include</span> <span class="sh_string" style="font-family: monospace;">"ArrayDictionary.cpp"</span>
+<span class="sh_preproc" style="font-weight: bold;">#endif</span>
+</b></big></font></big></pre>
+                <big></big></td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <big><font color="#3333ff" face="Arial, Arial, Helvetica"> </font></big></div>
+    <big><font color="#3333ff" face="Arial, Arial, Helvetica">
+        <p> </p>
+      </font></big><font face="Arial, Arial, Helvetica"><br>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a name="Listing 18-A, Public method add">Listing 18-A,
+                    Public method <font face="Courier New">add</font></a><br>
+                  </h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font color="#3333ff"><big><font size="3"><big><b><span class="sh_keyword" style="font-weight: bold;">template</span> <span class="sh_symbol">&lt;</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">KeyType</span><span class="sh_symbol">,</span> <span class="sh_keyword" style="font-weight: bold;">class</span><span class="sh_normal"> </span><span class="sh_classname">ItemType</span> <span class="sh_symbol">&gt;</span> <span class="sh_type">bool</span> ArrayDictionary <span class="sh_symbol">&lt;</span> KeyType<span class="sh_symbol">,</span> ItemType <span class="sh_symbol">&gt;::</span><span class="sh_function" style="font-weight: bold; background-color:#FFFF00">add</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> ItemType <span class="sh_symbol">&amp;</span> newItem<span class="sh_symbol">,</span>
+											    <span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span>
+<span class="sh_cbracket">{</span>
+  <span class="sh_type">bool</span> ableToInsert <span class="sh_symbol">=</span> <span class="sh_symbol">(</span>itemCount <span class="sh_symbol">&lt;</span> maxItems<span class="sh_symbol">);</span>
+
+  <span class="sh_keyword" style="font-weight: bold;">if</span> <span class="sh_symbol">(</span>ableToInsert<span class="sh_symbol">)</span>
+    <span class="sh_cbracket">{</span>
+<span class="sh_comment" style="font-style: italic;">// Make room for new entry by shifting all entries at</span>
+<span class="sh_comment" style="font-style: italic;">// positions &gt;= newPosition toward the end of the array</span>
+<span class="sh_comment" style="font-style: italic;">// (no shift if newPosition == itemCount + 1). Performing</span>
+<span class="sh_comment" style="font-style: italic;">// a binary search doesnt help here, because we need to</span>
+<span class="sh_comment" style="font-style: italic;">// shift the entries while looking for the insertion location.</span>
+      <span class="sh_type">int</span> index <span class="sh_symbol">=</span> itemCount<span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">// Short-circuit evaluation is important</span>
+      <span class="sh_keyword" style="font-weight: bold;">while</span> <span class="sh_symbol">((</span>index <span class="sh_symbol">&gt;</span> <span class="sh_number">0</span><span class="sh_symbol">)</span> <span class="sh_symbol">&amp;&amp;</span> <span class="sh_symbol">(</span>searchKey <span class="sh_symbol">&lt;</span> items<span class="sh_symbol">[</span>index <span class="sh_symbol">-</span> <span class="sh_number">1</span><span class="sh_symbol">].</span><span class="sh_function" style="font-weight: bold;">getKey</span> <span class="sh_symbol">()))</span>
+	<span class="sh_cbracket">{</span>
+	  items<span class="sh_symbol">[</span>index<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> items<span class="sh_symbol">[</span>index <span class="sh_symbol">-</span> <span class="sh_number">1</span><span class="sh_symbol">];</span>
+	  index <span class="sh_symbol">-;</span>
+	<span class="sh_cbracket">}</span>			<span class="sh_comment" style="font-style: italic;">// end while</span>
+<span class="sh_comment" style="font-style: italic;">// Insert new entry</span>
+      items<span class="sh_symbol">[</span>index<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> Entry <span class="sh_symbol">&lt;</span> KeyType<span class="sh_symbol">,</span> ItemType <span class="sh_symbol">&gt;</span> <span class="sh_symbol">(</span>newItem<span class="sh_symbol">,</span> searchKey<span class="sh_symbol">);</span>
+      itemCount<span class="sh_symbol">++;</span>		<span class="sh_comment" style="font-style: italic;">// Increase count of entries</span>
+    <span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end if</span>
+  <span class="sh_keyword" style="font-weight: bold;">return</span> ableToInsert<span class="sh_symbol">;</span>
+<span class="sh_cbracket">}</span>				<span class="sh_comment" style="font-style: italic;">// end add</span>
+</b></big></font></big></font></pre>
+                <big></big></td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font color="#3333ff"><big><font face="Arial, Arial, Helvetica"> </font></big></font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 18-4 A header file for the class TreeDictionary">
+                Listing 18-4 A header file for the class <font face="monospace">
+                TreeDictionary</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><font size="3" color="#3333ff"><big><big><b><span class="sh_comment"><span style="font-style: italic"><font size="4">/** A binary search tree implementation of the ADT dictionary
+that organizes its data items in sorted search-key order.
+Search keys in the dictionary are unique.
+@file TreeDictionary.h */
+#ifndef _TREE_DICTIONARY
+#define _TREE_DICTIONARY
+#include &quot;DictionaryInterface.h&quot;
+#include &quot;BinarySearchTree.h&quot;
+#include &quot;Entry.h&quot;
+#include &quot;NotFoundException.h&quot;
+template &lt; class KeyType, class ItemType &gt; class TreeDictionary:public DictionaryInterface &lt; KeyType, ItemType &gt;
+{
+private:
+// Binary search tree of dictionary entries
+  BinarySearchTree &lt; Entry &lt; KeyType, ItemType &gt; &gt;itemTree;
+  void traversalHelper (Entry &lt; KeyType, ItemType &gt; &amp;theEntry);
+
+public:
+  TreeDictionary ();
+  TreeDictionary (int maxNumberOfEntries);
+
+  TreeDictionary (const TreeDictionary &lt; KeyType, ItemType &gt; &amp;dict);
+
+  virtual ~ TreeDictionary ();
+</font></span></span></b></big></big></font><big><font color="#3333ff" size="3"><big><b>  <span class="sh_function" style="font-weight: bold;">ArrayDictionary</span> <span class="sh_symbol">();</span>
+  <span class="sh_function" style="font-weight: bold;">ArrayDictionary</span> <span class="sh_symbol">(</span><span class="sh_type">int</span> maxNumberOfEntries<span class="sh_symbol">);</span>
+
+  <span class="sh_function" style="font-weight: bold;">ArrayDictionary</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> ArrayDictionary <span class="sh_symbol">&lt;</span> KeyType<span class="sh_symbol">,</span> ItemType <span class="sh_symbol">&gt;</span> <span class="sh_symbol">&amp;</span>dict<span class="sh_symbol">);</span>
+
+  <span class="sh_keyword" style="font-weight: bold;">virtual</span> <span class="sh_symbol">~</span> <span class="sh_function" style="font-weight: bold;">ArrayDictionary</span> <span class="sh_symbol">();</span>
+  <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">isEmpty</span> <span class="sh_symbol">()</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+  <span class="sh_type">int</span> <span class="sh_function" style="font-weight: bold;">getNumberOfItems</span> <span class="sh_symbol">()</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+  <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">add</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">,</span> <span class="sh_keyword" style="font-weight: bold;">const</span> ItemType <span class="sh_symbol">&amp;</span> newItem<span class="sh_symbol">);</span>
+
+  <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">remove</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">);</span>
+
+  <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">clear</span> <span class="sh_symbol">();</span>
+
+  <span class="sh_usertype">ItemType</span><span class="sh_normal"> </span><span class="sh_function" style="font-weight: bold;">getItem</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span> <span class="sh_keyword" style="font-weight: bold;">throw</span> <span class="sh_symbol">(</span>NotFoundException<span class="sh_symbol">);</span>
+
+  <span class="sh_type">bool</span> <span class="sh_function" style="font-weight: bold;">contains</span> <span class="sh_symbol">(</span><span class="sh_keyword" style="font-weight: bold;">const</span> KeyType <span class="sh_symbol">&amp;</span> searchKey<span class="sh_symbol">)</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span>
+
+<span class="sh_comment" style="font-style: italic;">/** Traverses the items in this dictionary in sorted search-key order</span>
+<span class="sh_comment" style="font-style: italic;">and calls a given client function once for each item. */</span>
+  <span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">traverse</span> <span class="sh_symbol">(</span><span class="sh_type">void</span> <span class="sh_function" style="font-weight: bold;">visit</span> <span class="sh_symbol">(</span>ItemType <span class="sh_symbol">&amp;))</span> <span class="sh_keyword" style="font-weight: bold;">const</span><span class="sh_symbol">;</span></b></big></font></big></pre>
+              <pre><font size="3" color="#3333ff"><big><big><b><span class="sh_comment"><span style="font-style: italic"><font size="4">
+};  // end TreeDictionary
+
+#include &quot;TreeDictionary.cpp&quot;
+#endif</font></span></span></b></big></big></font></pre>
+                <pre><font size="3" color="#3333ff"><b><big><big><span class="sh_comment"><span style="font-style: italic"><font size="4">
+</font></span></span></big></big></b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a name="Listing 18-5 The class HashedEntry">
+                Listing 18-5 The class <font face="Courier New">HashedEntry</font></a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><font size="4" color="#3333ff"><b><span class="sh_comment"><span style="font-style: italic">/** A class of entry objects for a hashing implementation of the
+ADT dictionary.
+@file HashedEntry.h */
+#ifndef _HASHED_ENTRY
+#define _HASHED_ENTRY
+#include &quot;Entry.h&quot;
+template &lt; class KeyType, class ItemType &gt; class HashedEntry:public Entry &lt; KeyType, ItemType &gt;
+{
+private:
+  HashedEntry &lt; KeyType, ItemType &gt; *nextPtr;
+public:
+  HashedEntry ();
+  HashedEntry (ItemType newEntry, KeyType searchKey);
+  HashedEntry (ItemType newEntry, KeyType searchKey, HashedEntry &lt; KeyType, ItemType &gt; *nextEntryPtr);
+  void setNext (HashedEntry &lt; KeyType, ItemType &gt; *nextEntryPtr);
+
+  HashedEntry &lt; KeyType, ItemType &gt; *getNext ()const;
+};  // end HashedEntry
+
+#include &quot;HashedEntry.cpp&quot;
+#endif</span></span></b></font></pre>
+                <pre><b><font size="4" color="#3333ff"><span class="sh_comment"><span style="font-style: italic">
+</span></span></font></b></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 18-B Definitions of add and remove functions.">
+                Listing 18-B Definitions of <font face="Courier New">add</font> 
+                and <font face="Courier New">remove</font> functions.</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><font size="4" color="#3333ff"><b><span class="sh_comment"><span style="font-style: italic">template &lt; class KeyType, class ItemType &gt; bool HashedDictionary &lt; KeyType, ItemType &gt;::<span style="background-color: #FFFF00">add</span> (const ItemType &amp; newItem,
+											     const KeyType &amp; searchKey)
+{
+// Create entry to add to dictionary
+  HashedEntry &lt; KeyType, ItemType &gt; *entryToAddPtr = new HashedEntry &lt; KeyType, ItemType &gt; (newItem, searchKey);
+// Compute the hashed index into the array
+  int itemHashIndex = getHashIndex (searchKey);
+
+// Add the entry to the chain at itemHashIndex
+  if (hashTable[itemHashIndex] == nullptr)
+    {
+      hashTable[itemHashIndex] = entryToAddPtr;
+    }
+  else
+    {
+      entryToAddPtr-&gt;setNext (hashTable[itemHashIndex]);
+      hashTable[itemHashIndex] = entryToAddPtr;
+    }	// end if
+  return true;
+}   // end add
+
+
+template &lt; class KeyType, class ItemType &gt; bool HashedDictionary &lt; KeyType, ItemType &gt;::<span style="background-color: #FFFF00">remove</span> (const KeyType &amp; searchKey)
+{
+  bool itemFound = false;
+
+// Compute the hashed index into the array
+  int itemHashIndex = getHashIndex (searchKey);
+
+  if (hashTable[itemHashIndex] != nullptr)
+    {
+// Special case - first node has target
+      if (searchKey == hashTable[itemHashIndex]-&gt;getKey ())
+	{
+	  HashedEntry &lt; KeyType, ItemType &gt; *entryToRemovePtr = hashTable[itemHashIndex];
+	  hashTable[itemHashIndex] = hashTable[itemHashIndex]-&gt;getNext ();
+	  delete entryToRemovePtr;
+
+	  entryToRemovePtr = nullptr;	// For safety
+	  itemFound = true;
+	}
+      else	// Search the rest of the chain
+	{
+	  HashedEntry &lt; KeyType, ItemType &gt; *prevPtr = hashTable[itemHashIndex];
+	  HashedEntry &lt; KeyType, ItemType &gt; *curPtr = prevPtr-&gt;getNext ();
+	  while ((curPtr != nullptr) &amp;&amp; !itemFound)
+	    {
+// Found item in chain so remove that node
+	      if (searchKey == curPtr-&gt;getKey ())
+		{
+		  prevPtr-&gt;setNext (curPtr-&gt;getNext ());
+		  delete curPtr;
+
+		  curPtr = nullptr;	// For safety
+		  itemFound = true;
+		}
+	      else	// Look at next entry in chain
+		{
+		  prevPtr = curPtr;
+		  curPtr = curPtr-&gt;getNext ();
+		}	// end if
+	    }	// end while
+	}	// end if
+    }	// end if
+  return itemFound;
+}   // end remove</span></span></b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    </body>
+</html>

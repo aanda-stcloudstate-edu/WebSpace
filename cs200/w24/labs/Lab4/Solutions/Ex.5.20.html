@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- double.html Dave Reed -->
+<!-- Web page that displays a doubling and halving number. -->
+<!-- =============================================== -->
+<html>
+	<head>
+		<title> Doubling &amp; Halving </title>
+	</head>
+	<body>
+		<p>
+			<input type="text" id="numberBox" size=12 value="1">
+		</p>
+		<input type="button" value="Double It"
+				onclick="number=parseFloat(document.getElementById('numberBox').value);
+						double=2*number;
+						document.getElementById('numberBox').value=double;">
+		<input type="button" value="Halve It"
+				onclick="number=parseFloat(document.getElementById('numberBox').value);
+						half=number/2;
+						document.getElementById('numberBox').value=half;">
+	</body>
+</html>
+------------------------
+1024 is reduced to 1 in 10 clicks.
+2048 is reduced to 1 in 11 clicks.

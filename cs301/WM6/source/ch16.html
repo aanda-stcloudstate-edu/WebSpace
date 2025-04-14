@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 16</h1>
+    <p align="center"><a href="#LISTING 16-1 The class">Listing 16-1</a><br>
+    <a href="#LISTING 16-2 The">Listing 16-2</a><br>
+    <a href="#LISTING 16-3 A header">Listing 16-3</a><br>
+    <a href="#LISTING 16-4 A header file for the link-based implementation of the class BinarySearchTree">
+    Listing 16-4</a><br>
+    <a href="#Listing 16-A Significant">Listing 16-A</a><br>
+    <a href="#Listing_16-B_Pseudocode_for">Listing 16-B</a><br>
+    <a href="#Listing 16-C Final draft of removal algorithm">Listing 16-C</a></p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <div align="center">
+                  <center>
+                    <h3 align="center"> <a name="LISTING 16-1 The class">LISTING 16-1 The class <font
+                          face="Courier New">TreeNode</font> for an
+                        array-based implementation of the ADT binary
+                        tree</a></h3>
+                  </center>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font color="#0000FF" size="3">template &lt; class ItemType &gt; class TreeNode
+{
+private:
+  ItemType item;	// Data portion
+  int leftChild;	// Index to left child
+
+  int rightChild;	// Index to right child
+
+public:
+  TreeNode ();
+  TreeNode (const ItemType &amp; nodeItem, int left, int right);
+
+// Declarations of the methods setItem, getItem, setLeft, getLeft,
+// setRight, and getRight are here.
+// . . .
+
+};  // end TreeNode</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <div align="center">
+                  <center>
+                    <h3 align="center"> <a name="LISTING 16-2 The">LISTING 16-2 The header file containing
+                        the class <font face="Courier New">BinaryNode</font>
+                        for a link-based implementation of the ADT
+                        binary tree</a></h3>
+                  </center>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font color="#0000FF" size="3">/** A class of nodes for a link-based binary tree.
+@file BinaryNode.h */
+#ifndef _BINARY_NODE
+#define _BINARY_NODE
+template &lt; class ItemType &gt; class BinaryNode
+{
+private:
+  ItemType item;	// Data portion
+  BinaryNode &lt; ItemType &gt; *leftChildPtr;	// Pointer to left child
+  BinaryNode &lt; ItemType &gt; *rightChildPtr;	// Pointer to right child
+public:
+  BinaryNode ();
+  BinaryNode (const ItemType &amp; anItem);
+
+  BinaryNode (const ItemType &amp; anItem, BinaryNode &lt; ItemType &gt; *leftPtr, BinaryNode &lt; ItemType &gt; *rightPtr);
+
+  void setItem (const ItemType &amp; anItem);
+
+  ItemType getItem () const;
+
+  bool isLeaf () const;
+
+  BinaryNode &lt; ItemType &gt; *getLeftChildPtr ()const;
+
+  BinaryNode &lt; ItemType &gt; *getRightChildPtr ()const;
+
+  void setLeftChildPtr (BinaryNode &lt; ItemType &gt; *leftPtr);
+
+  void setRightChildPtr (BinaryNode &lt; ItemType &gt; *rightPtr);
+};  // end BinaryNode
+
+#include "BinaryNode.cpp"
+#endif</font></b></pre>
+                <pre><font color="#0000FF" size="3"><b>
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <div align="center">
+                  <center>
+                    <h3 align="center"> <a name="LISTING 16-3 A header">LISTING 16-3 A header fi
+                        le for the link-based implementation of the
+                        class <font face="Courier New">BinaryNodeTree</font></a></h3>
+                  </center>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font color="#0000FF" size="3">/** ADT binary tree: Link-based implementation.
+@file BinaryNodeTree.h */
+#ifndef _BINARY_NODE_TREE
+#define _BINARY_NODE_TREE
+#include "BinaryTreeInterface.h"
+#include "BinaryNode.h"
+#include "PrecondViolatedExcep.h"
+#include "NotFoundException.h"
+template &lt; class ItemType &gt; void BinaryNodeTree:public BinaryTreeInterface &lt; ItemType &gt;
+{
+  private:BinaryNode &lt; ItemType &gt; *rootPtr;
+  protected:
+//------------------------------------------------------------
+// Protected Utility Methods Section:
+// Recursive helper methods for the public methods.
+//------------------------------------------------------------
+  int getHeightHelper (BinaryNode &lt; ItemType &gt; *subTreePtr) const;
+  int getNumberOfNodesHelper (BinaryNode &lt; ItemType &gt; *subTreePtr) const;
+
+// Recursively deletes all nodes from the tree.
+  void destroyTree (BinaryNode &lt; ItemType &gt; *subTreePtr);
+
+// Recursively adds a new node to the tree in a left/right fashion to
+// keep the tree balanced.
+    BinaryNode &lt; ItemType &gt; *balancedAdd (BinaryNode &lt; ItemType &gt; *subTreePtr, BinaryNode &lt; ItemType &gt; *newNodePtr);
+
+// Removes the target value from the tree by calling moveValuesUpTree
+// to overwrite value with value from child.
+    BinaryNode &lt; ItemType &gt; *removeValue (BinaryNode &lt; ItemType &gt; *subTreePtr, const ItemType target, bool &amp; success);
+
+// Copies values up the tree to overwrite value in current node until
+// a leaf is reached; the leaf is then removed, since its value is
+// stored in the parent.
+    BinaryNode &lt; ItemType &gt; *moveValuesUpTree (BinaryNode &lt; ItemType &gt; *subTreePtr);
+
+// Recursively searches for target value in the tree by using a
+// preorder traversal.
+    BinaryNode &lt; ItemType &gt; *findNode (BinaryNode &lt; ItemType &gt; *treePtr, const ItemType &amp; target, bool &amp; success) const;
+
+// Copies the tree rooted at treePtr and returns a pointer to
+// the copy.
+    BinaryNode &lt; ItemType &gt; *copyTree (const BinaryNode &lt; ItemType &gt; *treePtr) const;
+
+// Recursive traversal helper methods:
+  void preorder (void visit (ItemType &amp;), BinaryNode &lt; ItemType &gt; *treePtr) const;
+  void inorder (void visit (ItemType &amp;), BinaryNode &lt; ItemType &gt; *treePtr) const;
+  void postorder (void visit (ItemType &amp;), BinaryNode &lt; ItemType &gt; *treePtr) const;
+
+    public:
+//------------------------------------------------------------
+// Constructor and Destructor Section.
+//------------------------------------------------------------
+    BinaryNodeTree ();
+    BinaryNodeTree (const ItemType &amp; rootItem);
+    BinaryNodeTree (const ItemType &amp; rootItem, const BinaryNodeTree &lt; ItemType &gt; *leftTreePtr,
+		    const BinaryNodeTree &lt; ItemType &gt; *rightTreePtr);
+    BinaryNodeTree (const BinaryNodeTree &lt; ItemType &gt; &amp;tree);
+    virtual ~ BinaryNodeTree ();
+//------------------------------------------------------------
+// Public BinaryTreeInterface Methods Section.
+//------------------------------------------------------------
+  bool isEmpty () const;
+  int getHeight () const;
+  int getNumberOfNodes () const;
+  ItemType getRootData () const throw (PrecondViolatedExcep);
+  void setRootData (const ItemType &amp; newData);
+  bool add (const ItemType &amp; newData);	// Adds a node
+  bool remove (const ItemType &amp; data);	// Removes a node
+  void clear ();
+  ItemType getEntry (const ItemType &amp; anEntry) const throw (NotFoundException);
+  bool contains (const ItemType &amp; anEntry) const;
+//------------------------------------------------------------
+// Public Traversals Section.
+//------------------------------------------------------------
+  void preorderTraverse (void visit (ItemType &amp;)) const;
+  void inorderTraverse (void visit (ItemType &amp;)) const;
+  void postorderTraverse (void visit (ItemType &amp;)) const;
+//------------------------------------------------------------
+// Overloaded Operator Section.
+//------------------------------------------------------------
+    BinaryNodeTree &amp; operator= (const BinaryNodeTree &amp; rightHandSide);
+};  // end BinaryNodeTree
+
+#include "BinaryNodeTree.cpp"
+#endif</font></b></pre>
+                <pre><font color="#0000FF" size="3"><b>
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"> <a name="Listing 16-A Significant">Listing
+                    16-A&nbsp;&nbsp; Significant portions of
+                    implementation file</a></h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font color="#0000FF" size="3">// Constructors
+
+template &lt; class ItemType &gt; BinaryNodeTree &lt; ItemType &gt;::BinaryNodeTree ():rootPtr (nullptr)
+{
+}   // end default constructor
+
+template &lt; class ItemType &gt; BinaryNodeTree &lt; ItemType &gt;::BinaryNodeTree (const ItemType &amp; rootItem)
+{
+  rootPtr = new BinaryNode &lt; ItemType &gt; (rootItem, nullptr, nullptr);
+}   // end constructor
+
+template &lt; class ItemType &gt; BinaryNodeTree &lt; ItemType &gt;::BinaryNodeTree (const ItemType &amp; rootItem,
+									 const BinaryNodeTree &lt; ItemType &gt; *leftTreePtr,
+									 const BinaryNodeTree &lt; ItemType &gt; *rightTreePtr)
+{
+  rootPtr = new BinaryNode &lt; ItemType &gt; (rootItem, copyTree (leftTreePtr-&gt;rootPtr), copyTree (rightTreePtr-&gt;rootPtr));
+}   // end constructor
+
+
+// copyTree
+template &lt; class ItemType &gt; BinaryNode &lt; ItemType &gt; *BinaryNodeTree &lt; ItemType &gt;::copyTree (const BinaryNode &lt; ItemType &gt;
+											    *treePtr) const const
+{
+  BinaryNode &lt; ItemType &gt; *newTreePtr = nullptr;
+// Copy tree nodes during a preorder traversal
+  if (treePtr != nullptr)
+    {
+// Copy node
+      newTreePtr = new BinaryNode &lt; ItemType &gt; (treePtr-&gt;getItem (), nullptr, nullptr);
+      newTreePtr-&gt;setLeftChildPtr (copyTree (treePtr-&gt;getLeftChildPtr ()));
+      newTreePtr-&gt;setRightChildPtr (copyTree (treePtr-&gt;getRightChildPtr ()));
+    }	// end if
+// Else tree is empty (newTreePtr is nullptr)
+  return newTreePtr;
+}   // end copyTree
+
+
+// Copy Constructor
+template &lt; class ItemType &gt; BinaryNodeTree &lt; ItemType &gt;::BinaryNodeTree (const BinaryNodeTree &lt; ItemType &gt; &amp;treePtr)
+{
+  rootPtr = copyTree (treePtr.rootPtr);
+}   // end copy constructor
+
+
+// destroyTree
+template &lt; class ItemType &gt; void BinaryNodeTree &lt; ItemType &gt;::destroyTree (BinaryNode &lt; ItemType &gt; *subTreePtr)
+{
+  if (subTreePtr != nullptr)
+    {
+      destroyTree (subTreePtr-&gt;getLeftChildPtr ());
+      destroyTree (subTreePtr-&gt;getRightChildPtr ());
+      delete subTreePtr;
+    }	// end if
+}   // end destroyTree
+
+// getHeight
+template &lt; class ItemType &gt; int BinaryNodeTree &lt; ItemType &gt;::getHeightHelper (BinaryNode &lt; ItemType &gt; *subTreePtr) const const
+{
+  if (subTreePtr == nullptr)
+    return 0;
+  else
+    return 1 + max (getHeightHelper (subTreePtr-&gt;getLeftChildPtr ()), getHeightHelper (subTreePtr-&gt;getRightChildPtr ()));
+}   // end getHeightHelper
+
+
+// add
+template &lt; class ItemType &gt; bool BinaryNodeTree &lt; ItemType &gt;::add (const ItemType &amp; newData)
+{
+  BinaryNode &lt; ItemType &gt; *newNodePtr = new BinaryNode &lt; ItemType &gt; (newData);
+  rootPtr = balancedAdd (rootPtr, newNodePtr);
+  return true;
+}   // end add
+
+
+//  balanceAdd
+template &lt; class ItemType &gt; BinaryNode &lt; ItemType &gt; *BinaryNodeTree &lt; ItemType &gt;::balancedAdd (BinaryNode &lt; ItemType &gt;
+											       *subTreePtr,
+											       BinaryNode &lt; ItemType &gt;
+											       *newNodePtr)
+{
+  if (subTreePtr == nullptr)
+    return newNodePtr;
+  else
+    {
+      BinaryNode &lt; ItemType &gt; *leftPtr = subTreePtr-&gt;getLeftChildPtr ();
+      BinaryNode &lt; ItemType &gt; *rightPtr = subTreePtr-&gt;getRightChildPtr ();
+      if (getHeightHelper (leftPtr) &gt; getHeightHelper (rightPtr))
+	{
+	  rightPtr = balancedAdd (rightPtr, newNodePtr);
+	  subTreePtr-&gt;setRightChildPtr (rightPtr);
+	}
+      else
+	{
+	  leftPtr = balancedAdd (leftPtr, newNodePtr);
+	  subTreePtr-&gt;setLeftChildPtr (leftPtr);
+	}	// end if
+      return subTreePtr;
+    }	// end if
+}   // end balancedAdd</font></b></pre>
+                <pre><b><font color="#0000FF" size="3">
+//  inorder
+template &lt; class ItemType &gt; void BinaryNodeTree &lt; ItemType &gt;::inorder (void visit (ItemType &amp;),
+								       BinaryNode &lt; ItemType &gt; *treePtr) const const
+{
+  if (treePtr != nullptr)
+    {
+      inorder (visit, treePtr-&gt;getLeftChildPtr ());
+      ItemType theItem = treePtr-&gt;getItem ();
+
+      visit (theItem);
+      inorder (visit, treePtr-&gt;getRightChildPtr ());
+    }	// end if
+}   // end inorder</font></b></pre>
+                <pre>&nbsp;</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p> </p>
+    </font><font face="Arial, Arial, Helvetica"><br>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center"><a name="Listing_16-B_Pseudocode_for"></a>Listing
+                  16-B&nbsp; Pseudocode for nonrecursive traversal
+                  strategy assuming a linkbased implementation.<br>
+                </h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font color="#3333ff" size="+1"><b>// Nonrecursively traverses a binary tree in inorder.<br>   traverse (visit (item: ItemType):void):void<br>// Initialize<br>       nodeStack = A new, empty stack curPtr = rootPtr ()	// Start at root<br>  done = false while (!done)<br>  {<br>    if (curPtr != nullptr)<br>      {<br>// Place pointer to node on stack before traversing the nodes left subtree<br>       nodeStack.push (curPtr)<br>// Traverse the left subtree<br>       curPtr = curPtr-&gt;getLeftChildPtr ()}<br>    else			// Backtrack from the empty subtree and visit the node at the top of<br>// the stack; however, if the stack is empty, you are done<br>      {<br>       if (!nodeStack.isEmpty ()){<br>				  nodeStack.peek (curPtr) visit (curPtr-&gt;getItem ())nodeStack.pop ()<br>// Traverse the right subtree of the node just visited<br>				  curPtr = curPtr-&gt;getRightChildPtr ()}<br>       else<br>       done = true}<br>  }
+</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 16-C Final draft of removal algorithm">Listing 
+                16-C Final draft of removal algorithm</a></h3>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font color="#3333ff" size="+1"><b>// Removes the given target from the binary search tree to which subTreePtr points.
+// Returns a pointer to the node at this tree location after the value is removed.
+// Sets success to true if the removal is successful, or false otherwise.
+removeValue (subTreePtr: BinaryNodePointer, target: ItemType, 
+  success: boolean &amp;):BinaryNodePointer if (subTreePtr == nullptr)
+  {
+  success = false return nullptr}
+else if (subTreePtr-&gt;getItem () == target)
+  {
+// Item is in the root of some subtree
+    subTreePtr = removeNode (subTreePtr)	// Remove the item
+  success = true return subTreePtr}
+else if (subTreePtr-&gt;getItem () &gt; target)
+  {
+// Search the left subtree
+  tempPtr = removeValue (subTreePtr-&gt;getLeftChildPtr (), target, success)
+      subTreePtr-&gt;setLeftChildPtr (tempPtr) return subTreePtr}
+else
+  {
+// Search the right subtree
+  tempPtr = removeValue (subTreePtr-&gt;getRightChildPtr (), target, success)
+      subTreePtr-&gt;setRightChildPtr (tempPtr) return subTreePtr}
+// Removes the item in the node, N, to which nodePtr points.
+// Returns a pointer to the node at this tree location after node N is deleted.
+removeNode (nodePtr: BinaryNodePointer):BinaryNodePointer if (N is a leaf)
+  {
+// Remove leaf from the tree
+    delete nodePtr nodePtr = nullptr return nodePtr}
+    else
+    if (N has only one child C)
+      {
+// C replaces N as the child of N s parent
+	if (C is a left child)
+	  nodeToConnectPtr = nodePtr-&gt;getLeftChildPtr ()
+	  else
+	  nodeToConnectPtr = nodePtr-&gt;getRightChildPtr ()
+        delete nodePtr nodePtr = nullptr return nodeToConnectPtr
+	  }
+	  else	// N has two children
+	  {
+// Find the inorder successor of the entry in N: it is in the left subtree rooted
+// at N s right child
+	    tempPtr = removeLeftmostNode (nodePtr-&gt;getRightChildPtr (), newNodeValue) 
+          nodePtr-&gt;setRightChildPtr (tempPtr) nodePtr-&gt;setItem (newNodeValue)	
+// Put replacement value in node N
+	    return nodePtr
+	  }
+//Removes the leftmost node in the left subtree of the node pointed to by nodePtr.
+// Sets inorderSuccessor to the value in this node.
+// Returns a pointer to the revised subtree.
+      removeLeftmostNode (nodePtr:BinaryNodePointer,
+      inorderSuccesssor: ItemType &amp;):BinaryNodePointer
+	  if (nodePtr-&gt;getLeftChildPtr () == nullptr)
+	  {
+// This is the node you want; it has no left child, but it might have a right subtree
+	    inorderSuccesssor = nodePtr-&gt;getItem ()return removeNode (nodePtr)
+	  }
+	else
+	  return removeLeftmostNode (nodePtr-&gt;getLeftChildPtr (), inorderSuccesssor)</b></font></pre>
+                <pre><b><font color="#3333ff" size="+1">
+</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <div align="center">
+                  <center>
+                  <h3 align="center">
+                  <a name="LISTING 16-4 A header file for the link-based implementation of the class BinarySearchTree">
+                  LISTING 16-4 A header file for the link-based implementation 
+                  of the class <font face="Courier New">BinarySearchTree</font></a></h3>
+                  </center>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><font color="#3333ff" size="+1"><b>/** Link-based implementation of the ADT binary search tree.
+@file BinarySearchTree.h */
+#ifndef _BINARY_SEARCH_TREE
+#define _BINARY_SEARCH_TREE
+#include &quot;BinaryTreeInterface.h&quot;
+#include &quot;BinaryNode.h&quot;
+#include &quot;BinaryNodeTree.h&quot;
+#include &quot;NotFoundException.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+template &lt; class ItemType &gt; class BinarySearchTree:public BinaryNodeTree &lt; ItemType &gt;
+{
+private:
+  BinaryNode &lt; ItemType &gt; *rootPtr;
+protected:
+//------------------------------------------------------------
+// Protected Utility Methods Section:
+// Recursive helper methods for the public methods.
+//------------------------------------------------------------
+// Recursively finds where the given node should be placed and
+// inserts it in a leaf at that point.
+  BinaryNode &lt; ItemType &gt; *insertInorder (BinaryNode &lt; ItemType &gt; *subTreePtr, 
+                                          BinaryNode &lt; ItemType &gt; *newNode);
+
+// Removes the given target value from the tree while maintaining a
+// binary search tree.
+  BinaryNode &lt; ItemType &gt; *removeValue (BinaryNode &lt; ItemType &gt; *subTreePtr, 
+                                        const ItemType target, bool &amp; success);
+
+// Removes a given node from a tree while maintaining a
+// binary search tree.
+  BinaryNode &lt; ItemType &gt; *removeNode (BinaryNode &lt; ItemType &gt; *nodePtr);
+// Removes the leftmost node in the left subtree of the node
+// pointed to by nodePtr.
+// Sets inorderSuccessor to the value in this node.
+// Returns a pointer to the revised subtree.
+  BinaryNode &lt; ItemType &gt; *removeLeftmostNode (BinaryNode &lt; ItemType &gt; *subTreePtr, 
+                                               ItemType &amp; inorderSuccessor);
+// Returns a pointer to the node containing the given value,
+// or nullptr if not found.
+  BinaryNode &lt; ItemType &gt; *findNode (BinaryNode &lt; ItemType &gt; *treePtr, 
+                                     const ItemType &amp; target) const;
+
+public:
+//------------------------------------------------------------
+// Constructor and Destructor Section.
+//------------------------------------------------------------
+  BinarySearchTree ();
+  BinarySearchTree (const ItemType &amp; rootItem);
+
+  BinarySearchTree (const BinarySearchTree &lt; ItemType &gt; &amp;tree);
+
+  virtual ~ BinarySearchTree ();
+//------------------------------------------------------------
+// Public Methods Section.
+//------------------------------------------------------------
+  bool isEmpty () const;
+
+  int getHeight () const;
+
+  int getNumberOfNodes () const;
+
+  ItemType getRootData () const throw (PrecondViolatedExcep);
+
+  void setRootData (const ItemType &amp; newData) const throw (PrecondViolatedExcep);
+
+  bool add (const ItemType &amp; newEntry);
+
+  bool remove (const ItemType &amp; anEntry);
+
+  void clear ();
+
+  ItemType getEntry (const ItemType &amp; anEntry) const throw (NotFoundException);
+
+  bool contains (const ItemType &amp; anEntry) const;
+
+//------------------------------------------------------------
+// Public Traversals Section.
+//------------------------------------------------------------
+  void preorderTraverse (void visit (ItemType &amp;)) const;
+
+  void inorderTraverse (void visit (ItemType &amp;)) const;
+
+  void postorderTraverse (void visit (ItemType &amp;)) const;
+
+//------------------------------------------------------------
+// Overloaded Operator Section.
+//------------------------------------------------------------
+  BinarySearchTree &lt; ItemType &gt; &amp;operator= (const BinarySearchTree &lt; ItemType &gt; &amp;rightHandSide);
+};  // end BinarySearchTree
+
+#include &quot;BinarySearchTree.cpp&quot;
+#endif</b></font></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <font face="Arial, Arial, Helvetica"> </font></div>
+    </body>
+</html>

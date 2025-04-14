@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	   <title>Counter Assistant</title>
+	   <style type="text/css">
+	      body {background-color : blueviolet; color : white; font-family : optima;
+	                text-align : center}
+	      table {margin-left : auto; margin-right : auto}
+	   </style>
+	</head>
+	<body>
+      <h2>Every Little Bit Counts<i style="color : hotpink">!</i></h2>
+      <script type="text/javascript">
+         var count1=0, count2=0, count3=0, count4=0;
+         function row(num) {
+            document.write('<tr><td><input type="button" value="Count"' );
+            document.write(' onclick="count'+num+'=count'+num+'+1;' );
+            document.write(' document.forms[0].arch'+num+'.value=count'+num+'"/></td>' );
+            document.write('<td><input type="text" size="5" name="arch'+num+'"/></td>' );
+            document.write('<td><input type="text" size="20" name="what'+num+'"/></td>' );
+            document.write('<td><input type="button" value="C" ' );
+            document.write( ' onclick="document.forms[0].arch'+num+'.value='+"' ';" );
+            document.write("document.forms[0].what"+num+".value=' ';" );
+            document.write('count'+num+'=0"/></td></tr>' );
+         }
+      </script>
+      <form activity="">
+         <table>
+            <tr><th> </th><th> Total </th><th> Meaning </th><th>Clear</th></tr>
+            <script type="text/javascript">
+               row(1); row(2); row(3); row(4);
+            </script>
+         </table>
+      </form>
+	</body>
+</html>

@@ -1,0 +1,704 @@
+MIME-Version: 1.0
+X-Document-Type: Worksheet
+Content-Location: file:///C:/AAAD1E53/Ch13HWf13.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dwindows-125=
+2">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 14">
+<link rel=3DFile-List href=3D"Ch13HWf13_files/filelist.xml">
+<style id=3D"Ch13HWexample1_9763_Styles"><!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.font59763
+	{color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;}
+.font69763
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:italic;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;}
+.xl159763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl659763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl669763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl679763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	border:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl689763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	border:.5pt solid windowtext;
+	background:#8DB4E2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl699763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\[h\]\:mm\:ss";
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl709763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\[h\]\:mm\:ss";
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl719763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl729763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"0\.000";
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl739763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl749763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:#C00000;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl759763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl769763
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\[h\]\:mm\:ss";
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+--></style>
+</head>
+
+<body>
+<!--[if !excel]>&nbsp;&nbsp;<![endif]-->
+<!--The following information was generated by Microsoft Excel's Publish as=
+ Web
+Page wizard.-->
+<!--If the same item is republished from Excel, all information between the=
+ DIV
+tags will be replaced.-->
+<!----------------------------->
+<!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
+<!----------------------------->
+
+<div id=3D"Ch13HWexample1_9763" align=3Dcenter x:publishsource=3D"Excel">
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D1016 style=3D'bor=
+der-collapse:
+ collapse;table-layout:fixed;width:770pt'>
+ <col class=3Dxl669763 width=3D130 style=3D'mso-width-source:userset;mso-wi=
+dth-alt:
+ 4754;width:98pt'>
+ <col width=3D48 style=3D'mso-width-source:userset;mso-width-alt:1755;width=
+:36pt'>
+ <col width=3D57 span=3D2 style=3D'mso-width-source:userset;mso-width-alt:2=
+084;
+ width:43pt'>
+ <col width=3D50 span=3D13 style=3D'mso-width-source:userset;mso-width-alt:=
+1828;
+ width:38pt'>
+ <col class=3Dxl659763 width=3D74 style=3D'mso-width-source:userset;mso-wid=
+th-alt:
+ 2706;width:56pt'>
+ <tr height=3D62 style=3D'mso-height-source:userset;height:46.5pt'>
+  <td height=3D62 class=3Dxl669763 width=3D130 style=3D'height:46.5pt;width=
+:98pt'><a
+  name=3D"RANGE!A1:R13"></a></td>
+  <td class=3Dxl759763 width=3D48 style=3D'width:36pt'><font class=3D"font6=
+9763">Enter
+  speed</font><font class=3D"font59763"> (MPH)</font></td>
+  <td class=3Dxl159763 width=3D57 style=3D'width:43pt'></td>
+  <td class=3Dxl159763 width=3D57 style=3D'width:43pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl159763 width=3D50 style=3D'width:38pt'></td>
+  <td class=3Dxl659763 width=3D74 style=3D'width:56pt'></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>MPH</td>
+  <td class=3Dxl689763>7.3</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>1</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>2</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>3</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>4</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>5</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>6</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>7</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>8</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>9</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>10</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>11</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>12</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>13</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>14</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>15</td>
+  <td class=3Dxl659763></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>KPH</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none'>11.748</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>1.609</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>3.219</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>4.828</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>6.437</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>8.047</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>9.656</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>11.265</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>12.875</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>14.484</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>16.093</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>17.703</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>19.312</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>20.921</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>22.531</td>
+  <td class=3Dxl729763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>24.140</td>
+  <td class=3Dxl659763></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl159763></td>
+  <td class=3Dxl719763>&nbsp;</td>
+  <td class=3Dxl659763></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>min./mi.</td>
+  <td class=3Dxl679763>8.2192</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>60</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>30</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>20</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>15</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>12</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>10</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>8.5714</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>7.5</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>6.6667</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>6</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>5.4545</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>5</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>4.6154</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>4.2857</td>
+  <td class=3Dxl679763 style=3D'border-left:none'>4</td>
+  <td class=3Dxl749763>[dec. min.]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>min./mi.</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none'>0:08:13</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>1:00:00</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:30:00</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:20:00</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:15:00</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:12:00</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:10:00</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:08:34</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:07:30</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:06:40</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:06:00</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:05:27</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:05:00</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:04:37</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:04:17</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:04:00</td>
+  <td class=3Dxl749763>[mm:ss]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>min./km.</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none'>0:05:06</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:37:17</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:18:38</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:12:26</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:09:19</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:07:27</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:06:13</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:05:20</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:04:40</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:04:09</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:03:44</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:03:23</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:03:06</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:02:52</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:02:40</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:02:29</td>
+  <td class=3Dxl749763>[mm:ss]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl769763>&nbsp;</td>
+  <td class=3Dxl749763></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>5K time</td>
+  <td class=3Dxl699763 align=3Dright>0:25:32</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>3:06:25</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:33:12</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:02:08</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:46:36</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:37:17</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:31:04</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:26:38</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:23:18</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:20:43</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:18:38</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:16:57</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:15:32</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:14:20</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:13:19</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:12:26</td>
+  <td class=3Dxl749763>[h:mm:ss]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>10K time</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none'>0:51:04</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>6:12:49</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>3:06:25</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>2:04:16</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>1:33:12</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>1:14:34</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>1:02:08</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:53:16</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:46:36</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:41:25</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:37:17</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:33:54</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:31:04</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:28:41</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:26:38</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>0:24:51</td>
+  <td class=3Dxl749763>[h:mm:ss]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl159763 style=3D'height:15.0pt'></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl709763></td>
+  <td class=3Dxl769763>&nbsp;</td>
+  <td class=3Dxl159763></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>Half-Marathon ti=
+me</td>
+  <td class=3Dxl699763 align=3Dright>1:47:45</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>13:06:34</t=
+d>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>6:33:17</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>4:22:11</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>3:16:38</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>2:37:19</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>2:11:06</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:52:22</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:38:19</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:27:24</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:18:39</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:11:30</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:05:33</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>1:00:30</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:56:11</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-left:none'>0:52:26</td>
+  <td class=3Dxl749763>[h:mm:ss]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl739763 style=3D'height:15.0pt'>Marathon time</t=
+d>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none'>3:35:30</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>26:13:08</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>13:06:34</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>8:44:23</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>6:33:17</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>5:14:38</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>4:22:11</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>3:44:44</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>3:16:38</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>2:54:48</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>2:37:19</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>2:23:01</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>2:11:06</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>2:01:01</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>1:52:22</td>
+  <td class=3Dxl699763 align=3Dright style=3D'border-top:none;border-left:n=
+one'>1:44:53</td>
+  <td class=3Dxl749763>[h:mm:ss]</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D130 style=3D'width:98pt'></td>
+  <td width=3D48 style=3D'width:36pt'></td>
+  <td width=3D57 style=3D'width:43pt'></td>
+  <td width=3D57 style=3D'width:43pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D50 style=3D'width:38pt'></td>
+  <td width=3D74 style=3D'width:56pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--END OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD-->
+<!----------------------------->
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

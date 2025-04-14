@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>Code Listings Chapter 2</title>
+    <meta name="Microsoft Theme" content="glacier 011">
+  </head>
+  <body alink="#66CCCC" background="glabkgnd.jpg" bgcolor="#99ccff"
+    link="#006666" text="#000000" vlink="#999999">
+    <h1 align="center">Code Listings Chapter 12</h1>
+      <p align="center">
+      <a href="#Listing 12-1  A  C++ interface for sorted lists">Listing 12-1</a><br>
+      <a href="#Listing 12-2 The header fi le for the class LinkedSortedList .">
+      Listing 12-2</a><br>
+      <a href="#Listing 12-3 The header file for the class SortedListHasA">
+      Listing 12-3</a><br>
+      <a href="#Listing 12-4 A header fi le for the class SortedListIsA">Listing 
+      12-4</a><br>
+      <a href="#LISTING 12-5 The header fi le for the class SortedListAsA">
+      Listing 12-5</a></p>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 12-1  A  C++ interface for sorted lists">
+                Listing 12-1&nbsp; A&nbsp; C++ interface for sorted lists</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">/** Interface for the ADT sorted list
+@file SortedListInterface.h */
+#ifndef _SORTED_LIST_INTERFACE
+#define SORTED_LIST_INTERFACE
+template &lt; class ItemType &gt; class SortedListInterface
+{
+public:
+
+/** Inserts an entry into this sorted list in its proper order
+so that the list remains sorted.
+@pre None.
+@post newEntry is in the list, and the list is sorted.
+@param newEntry The entry to insert into the sorted list. */
+  virtual void insertSorted (const ItemType &amp; newEntry) = 0;
+
+/** Removes the first or only occurrence of the given entry from this
+sorted list.
+@pre None.
+@post If the removal is successful, the first occurrence of the
+given entry is no longer in the sorted list, and the returned
+value is true. Otherwise, the sorted list is unchanged and the
+returned value is false.
+@param anEntry The entry to remove.
+@return True if removal is successful, or false if not. */
+  virtual bool removeSorted (const ItemType &amp; anEntry) = 0;
+
+/** Gets the position of the first or only occurrence of the given
+entry in this sorted list. In case the entry is not in the list,
+determines where it should be if it were added to the list.
+@pre None.
+@post The position where the given entry is or belongs is returned.
+The sorted list is unchanged.
+@param anEntry The entry to locate.
+@return Either the position of the given entry, if it occurs in the
+sorted list, or the position where the entry would occur, but as a
+negative integer. */
+  virtual int getPosition (const ItemType &amp; anEntry) = 0;
+
+/** Sees whether this list is empty.
+@return True if the list is empty; otherwise returns false. */
+  virtual bool isEmpty ()const = 0;
+
+/** Gets the current number of entries in this list.
+@return The integer number of entries currently in the list. */
+  virtual int getLength () const = 0;
+
+/** Inserts an entry into this list at a given position.
+@pre None.
+@post If 1 &lt;= position &lt;= getLength() + 1 and the insertion is
+successful, newEntry is at the given position in the list,
+other entries are renumbered accordingly, and the returned
+value is true.
+@param newPosition The list position at which to insert newEntry.
+@param newEntry The entry to insert into the list.
+@return True if insertion is successful, or false if not. */
+  virtual bool insert (int newPosition, const ItemType &amp; newEntry) = 0;
+
+/** Removes the entry at a given position from this list.
+@pre None.
+@post If 1 &lt;= position &lt;= getLength() and the removal is successful,
+the entry at the given position in the list is removed, other
+items are renumbered accordingly, and the returned value is true.
+@param position The list position of the entry to remove.
+@return True if removal is successful, or false if not. */
+  virtual bool remove (int position) = 0;
+
+/** Removes all entries from this list.
+@post List contains no entries and the count of items is 0. */
+  virtual void clear () = 0;
+
+/** Gets the entry at the given position in this list.
+@pre 1 &lt;= position &lt;= getLength().
+@post The desired entry has been returned.
+@param position The list position of the desired entry.
+@return The entry at the given position. */
+  virtual ItemType getEntry (int position) const = 0;
+
+/** Replaces the entry at the given position in this list.
+@pre 1 &lt;= position &lt;= getLength().
+@post The entry at the given position is newEntry.
+@param position The list position of the entry to replace.
+@param newEntry The replacement entry. */
+  virtual void setEntry (int position, const ItemType &amp; newEntry) = 0;
+
+};  // end SortedListInterface
+#endif</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <h3 align="center">
+                <a name="Listing 12-2 The header fi le for the class LinkedSortedList .">
+                Listing 12-2 The header file for the class
+                <font face="Courier New">LinkedSortedList</font> .</a></h3>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+              <pre><b><font size="3" color="#0000FF">/** ADT sorted list: Link-based implementation.
+@file LinkedSortedList.h */
+#ifndef _LINKED_SORTED_LIST
+#define _LINKED_SORTED_LIST
+#include &quot;SortedListInterface.h&quot;
+#include &quot;Node.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+template &lt; class ItemType &gt; class LinkedSortedList:public SortedListInterface &lt; ItemType &gt;
+{
+private:
+  Node &lt; ItemType &gt; *headPtr;	// Pointer to first node in the chain
+  int itemCount;	// Current count of list items
+// Locates the node that is before the node that should or does
+// contain the given entry.
+// @param anEntry The entry to find.
+// @return Either a pointer to the node before the node that contains
+// or should contain the given entry, or nullptr if no prior node exists.
+  Node &lt; ItemType &gt; *getNodeBefore (const ItemType &amp; anEntry) const;
+// Locates the node at a given position within the chain.
+  Node &lt; ItemType &gt; *getNodeAt (int position) const;
+// Returns a pointer to a copy of the chain to which origChainPtr points.
+  Node &lt; ItemType &gt; *copyChain (const Node &lt; ItemType &gt; *origChainPtr);
+
+public:
+  LinkedSortedList ();
+  LinkedSortedList (const LinkedSortedList &lt; ItemType &gt; &amp;aList);
+  virtual ~ LinkedSortedList ();
+  void insertSorted (const ItemType &amp; newEntry);
+  bool removeSorted (const ItemType &amp; anEntry);
+  int getPosition (const ItemType &amp; newEntry) const;
+
+// The following methods are the same as given in ListInterface:
+  bool isEmpty () const;
+  int getLength () const;
+  bool remove (int position);
+  void clear ();
+  ItemType getEntry (int position) const throw (PrecondViolatedExcep);
+};  // end LinkedSortedList
+
+#include &quot;LinkedSortedList.cpp&quot;
+#endif</font></b></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <div align="center">
+                  <h3 align="center">
+                  <a name="Listing 12-3 The header file for the class SortedListHasA">
+                  Listing 12-3 The header file for the class
+                  <font face="Courier New">SortedListHasA</font></a></h3>
+                </div>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font size="3" color="#0000FF">/** ADT sorted list using the ADT list.
+@file SortedListHasA.h */
+#ifndef _SORTED_LIST_HAS_A
+#define _SORTED_LIST_HAS_A
+#include &quot;SortedListInterface.h&quot;
+#include &quot;ListInterface.h&quot;
+#include &quot;Node.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+template &lt; class ItemType &gt; class SortedListHasA:public SortedListInterface &lt; ItemType &gt;
+{
+private:
+  ListInterface &lt; ItemType &gt; *listPtr;
+public:
+  SortedListHasA ();
+  SortedListHasA (const SortedListHasA &lt; ItemType &gt; &amp;sList);
+  virtual ~ SortedListHasA ();
+  void insertSorted (const ItemType &amp; newEntry);
+  bool removeSorted (const ItemType &amp; anEntry);
+  int getPosition (const ItemType &amp; newEntry) const;
+</font></b></pre>
+                <pre><b><font size="3" color="#0000FF">/** Sees whether this list is empty.
+@return True if the list is empty; otherwise returns false. */
+  virtual bool isEmpty ()const = 0;
+
+/** Gets the current number of entries in this list.
+@return The integer number of entries currently in the list. */
+  virtual int getLength () const = 0;
+
+/** Inserts an entry into this list at a given position.
+@pre None.
+@post If 1 &lt;= position &lt;= getLength() + 1 and the insertion is
+successful, newEntry is at the given position in the list,
+other entries are renumbered accordingly, and the returned
+value is true.
+@param newPosition The list position at which to insert newEntry.
+@param newEntry The entry to insert into the list.
+@return True if insertion is successful, or false if not. */
+  virtual bool insert (int newPosition, const ItemType &amp; newEntry) = 0;
+
+/** Removes the entry at a given position from this list.
+@pre None.
+@post If 1 &lt;= position &lt;= getLength() and the removal is successful,
+the entry at the given position in the list is removed, other
+items are renumbered accordingly, and the returned value is true.
+@param position The list position of the entry to remove.
+@return True if removal is successful, or false if not. */
+  virtual bool remove (int position) = 0;
+
+/** Removes all entries from this list.
+@post List contains no entries and the count of items is 0. */
+  virtual void clear () = 0;
+
+/** Gets the entry at the given position in this list.
+@pre 1 &lt;= position &lt;= getLength().
+@post The desired entry has been returned.
+@param position The list position of the desired entry.
+@return The entry at the given position. */
+  virtual ItemType getEntry (int position) const = 0;
+
+/** Replaces the entry at the given position in this list.
+@pre 1 &lt;= position &lt;= getLength().
+@post The entry at the given position is newEntry.
+@param position The list position of the entry to replace.
+@param newEntry The replacement entry. */
+  virtual void setEntry (int position, const ItemType &amp; newEntry) = 0;
+};  // end SortedListHasA
+
+#include &quot;SortedListHasA.cpp&quot;
+#endif</font></b><font size="3" color="#0000FF"><b>
+</b></font></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <div align="center">
+                  <h3 align="center">
+                  <a name="Listing 12-4 A header fi le for the class SortedListIsA">
+                  Listing 12-4 A header file for the class
+                  <font face="Courier New">SortedListIsA</font></a></h3>
+                </div>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font size="3" color="#0000FF">/** ADT sorted list using ADT list.
+@file SortedListIsA.h */
+#ifndef _SORTED_LIST_IS_A
+#define _SORTED_LIST_IS_A
+#include &quot;LinkedList.h&quot;
+#include &quot;Node.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+template &lt; class ItemType &gt; class SortedListIsA:public LinkedList &lt; ItemType &gt;
+{
+public:
+  SortedListIsA ();
+  SortedListIsA (const SortedListIsA &lt; ItemType &gt; &amp;sList);
+
+  virtual ~ SortedListIsA ();
+  void insertSorted (const ItemType &amp; newEntry);
+
+  bool removeSorted (const ItemType &amp; anEntry);
+
+  int getPosition (const ItemType &amp; anEntry) const;
+
+// The inherited methods remove, clear, getEntry, isEmpty, and
+// getLength have the same specifications as given in ListInterface.
+// The following methods must be overridden to disable their
+// effect on a sorted list:
+  bool insert (int newPosition, const ItemType &amp; newEntry);
+
+  void setEntry (int position, const ItemType &amp; newEntry) throw (PrecondViolatedExcep);
+};  // end SortedListIsA
+
+#include &quot;SortedListIsA.cpp&quot;
+#endif</font></b></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+    <font face="Arial, Arial, Helvetica">
+      <p>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+    </font>
+    <div align="center"><font face="Arial, Arial, Helvetica"> </font>
+      <center>
+        <table bordercolorlight="#99CCCC" bordercolordark="#000000"
+          border="1" width="65%">
+          <tbody>
+            <tr>
+              <td width="100%">
+                <div align="center">
+                  <center>
+                  <h3 align="center">
+                  <a name="LISTING 12-5 The header fi le for the class SortedListAsA">
+                  Listing 12-5 The header file for the class
+                  <font face="Courier New">SortedListAsA</font></a></h3>
+                  </center>
+                </div>
+                </td>
+            </tr>
+            <tr>
+              <td width="100%">
+                <pre><b><font size="3" color="#0000FF">/** ADT sorted list using ADT list.
+@file SortedListAsA.h */
+#ifndef _SORTED_LIST_AS_A
+#define _SORTED_LIST_AS_A
+#include &quot;SortedListInterface.h&quot;
+#include &quot;ListInterface.h&quot;
+#include &quot;Node.h&quot;
+#include &quot;PrecondViolatedExcep.h&quot;
+
+template &lt; class ItemType &gt; class SortedListAsA:public SortedListInterface &lt; ItemType &gt;,
+                            private LinkedList &lt; ItemType &gt;
+{
+public:
+  SortedListAsA ();
+  SortedListAsA (const SortedListAsA &lt; ItemType &gt; &amp;sList);
+
+  virtual ~ SortedListAsA ();
+
+  void insertSorted (const ItemType &amp; newEntry);
+
+  bool removeSorted (const ItemType &amp; anEntry);
+
+  int getPosition (const ItemType &amp; anEntry) const;
+};  // end SortedListAsA
+
+#include &quot;SortedListAsA.cpp&quot;
+#endif</font></b></pre>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      <font face="Arial, Arial, Helvetica">
+      </font></div>
+      </body>
+</html>

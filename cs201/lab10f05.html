@@ -1,0 +1,121 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab 10 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 10</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with exploiting more efficient algorithms
+to perform an identical computational task, and recursion.  The task
+is to compute the <i>non-negative</i> <u>integer power</u> of a
+(<b><tt>double</tt></b>) number.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+<P> One of the most important tasks of a computer scientist is the
+identification, development, testing, and implementation of more
+<u>efficient</u> algorithms.
+In most cases, we will want the more efficient algorithm to
+be as accurate as the original, but in other cases, we are willing to
+settle for <i>close enough</i>.  For our current problem of raising a
+number to an integer power, our answer will be at least as accurate.
+
+<P> We will write and demonstrate four functions for the calculation of
+integer powers of a number:
+<ol>
+<li> iterative
+<li> recursive
+<li> nonrecursive binary.
+<li> recursive binary.
+</ol>
+
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li>
+Create a new directory, <tt>lab10</tt>, and move to it.</li>
+
+<li>
+Copy <tt>~aanda/cs201/labs/lab10f05partial.cpp</tt> to your <tt>lab10</tt>
+directory.
+</li>
+
+<li>
+Edit and complete <tt>lab10f05partial.cpp</tt> to solve the above problem,
+    and name the working program source <tt>lab10.cpp</tt>.
+	Name the executable <tt>lab10</tt>.
+</li>
+
+<li>
+For each function, maintain a counter which counts the number of
+multiplications.  Reset the counter between power function evaluations.
+</li>
+
+<li>
+For the iterative function, see <b>Program 6-19</b> in Forouzan.
+</li>
+
+<li>
+For the recursive function, use the relations that
+<ul>
+	<li> <tt>x<sup>n</sup> == x * x<sup>(n-1)</sup></tt>
+	<li> <tt>x<sup>1</sup> == x</tt>
+	<li> <tt>x<sup>0</sup> == 1</tt>
+</ul>
+</li>
+
+<li>
+For the nonrecursive binary exponentiation algorithm, see:
+<a href="http://mathforum.org/library/drmath/view/55603.html">http://mathforum.org/library/drmath/view/55603.html</a>
+<ul>
+    <li><a href="http://primes.utm.edu/glossary/page.php?sort=BinaryExponentiation">http://primes.utm.edu/glossary/page.php?sort=BinaryExponentiation</a>
+</ul>
+</li>
+
+<li>
+For the recursive binary exponentiation function, use the relations that<br>
+<ul>
+	<li> if n is an even integer, <tt>x<sup>n</sup> == x<sup>(n/2)</sup> * x<sup>(n/2)</sup></tt>
+	<li> if n is an odd integer, <tt>x<sup>n</sup> == x * x<sup>(n/2)</sup> * x<sup>(n/2)</sup></tt>
+	<li> <tt>x<sup>1</sup> == x</tt>
+	<li> <tt>x<sup>0</sup> == 1</tt>
+</ul>
+</li>
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the source and the running of the program data for "checkout".
+Use for the number: [1.01].  The powers will be: 10, 100, 1000, 10000.
+</li>
+
+<li>
+As an exercise, after lab, augment your power functions to handle negative
+powers as well.  Remember that the following relation holds:
+<ul>
+    <li> <tt>x<sup>(-n)</sup> == 1.0 / x<sup>n</sup></tt>
+</ul>
+</li>
+
+</ol>
+
+
+</body>
+</html>

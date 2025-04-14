@@ -1,0 +1,129 @@
+A. A. Anda                  Name______________________________
+
+big-O Exercises.
+
+I) Write out the big-O ordering of the following functions from smallest to
+    largest:
+
+a) 1.0001^N
+b) 10000 * lg(N)
+c) 15 * N^5 - 3 * N^3 + 13 * N
+d) 10^50
+e) N!
+f) 100 * N * lg(N)
+g) lg(lg(N))
+h) 20 * N^2
+i) 0.2 * N^3
+j) sqrt(N)
+k) sqrt(N^5)
+l) 0.00001 * N
+m) lg^5(N)
+
+Ordering:__________________________________________________________________
+
+II) Let Body1 = O(1); Body2 = O(lg(N)); Body3 = O(N).
+    What is big O(f(N)) for the following statements?
+
+1) O(____________________)
+    {
+	Body1;
+	Body2;
+	Body3;
+    }
+
+2) O(____________________)
+    for (i = 1; i <= 10000; i++)
+    {
+	Body1;
+	Body2;
+	Body3;
+    }
+
+3) O(____________________)
+    for (i = 1; i <= N; i++)
+    {
+	Body1;
+	Body2;
+	Body3;
+    }
+
+4) O(____________________)
+    for (i = 1; i <= N/10000; i++)
+    {
+	Body1;
+	Body2;
+	Body3;
+    }
+
+5) O(____________________)
+    for (i = 1; i <= N; i+=10000)
+    {
+	Body1;
+	Body2;
+	Body3;
+    }
+
+6) O(____________________)
+    for (i = N; i >= 1; i--)
+    {
+	Body1;
+	Body2;
+	Body3;
+    }
+
+7) O(____________________)
+    for (i = 1; i <= N; i*=10000)
+    {
+	Body1;
+	Body2;
+	Body3;
+    }
+
+8) O(____________________)
+    for (i = 1; i <= N; i++)
+	Body1;
+    for (j = 1; j <= N; j++)
+	Body2;
+    for (k = 1; k <= N; k++)
+	Body3;
+
+9) O(____________________)
+    for (i = 1; i <= N; i++)
+	for (j = 1; j <= N; j++)
+	    for (k = 1; k <= N; k++)
+	    {
+		Body1;
+		Body2;
+		Body3;
+	    }
+
+10) O(____________________)
+    for (i = 1; i <= N; i++)
+	for (j = 1; j <= i; j++)
+	    for (k = 1; k <= j; k++)
+	    {
+		Body1;
+		Body2;
+		Body3;
+	    }
+
+11) O(____________________)
+    for (i = 1; i <= N; i*=2)
+	for (j = 1; j <= N; j*=2)
+	    for (k = 1; k <= N; k*=2)
+	    {
+		Body1;
+		Body2;
+		Body3;
+	    }
+
+12) O(____________________)
+    for (i = 1; i <= N; i++)
+	for (j = 1; j <= N; j*=2)
+	    for (k = N; k >= 1; k/=2)
+		for (m = N; m >= 1; k--)
+		{
+		    Body1;
+		    Body2;
+		    Body3;
+		}

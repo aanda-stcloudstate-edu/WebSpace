@@ -1,0 +1,41 @@
+<!doctype=html>
+<!-- /export/home/cs200/cs200119/documents/labs/lab6/lab6-9.17.html -->
+<!-- Created by: Mitchell Then -->
+<!-- The purpose of this program is to exhibit the use of functions -->
+<!-- File Created: 10/21/13 -->
+<!-- Last Edited: 10/21/13 -->
+
+<html>
+
+	<head>
+		<title>Magic 8 Ball</title>
+		<script type="text/javascript" src="http://balance3e.com/random.js"></script>
+		
+		<script type="text/javascript">
+			function getAnswer()
+			{
+				return RandomOneOf(['Signs point to yes.','Reply hazy, try again','You may rely on it.','It is decidedly so.','Cannot predict now.'])
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<h1 style="text-align:center">THE MAGIC 8 BALL</h1>
+		<hr>
+		<p style="text-align:center">Ask and you shall recieve a rather cryptic answer...</p>
+		<table style="margin:0px auto; text-align:center">
+			<tr><td>
+				<input type="text" id="question" size=100>
+			</td></tr>
+			<tr><td>
+				<img src="http://balance3e.com/Images/8ball.gif" alt="8 Ball"
+					onclick="document.getElementById('outputDiv').innerHTML = getAnswer();">
+			</td></tr>
+			<tr><td>
+				<hr>
+				<div id="outputDiv"></div>
+			</td></tr>
+		</table>
+	</body>
+</html>

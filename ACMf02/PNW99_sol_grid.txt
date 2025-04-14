@@ -1,0 +1,10 @@
+Results from the ACM Pacific Northwest Regional Programming Contest 1999
+Contest Reports/Stats
+http://icpc.baylor.edu/past/icpc2000/regionals/PacNW99/Problems.html#Problem%20Solution%20Grid
+
+--------|------|------|------|------|------|------|------|------|------|
+Problem | A/1  | B/2  | C/3  | D/4  | E/5  | F/6  | G/7  | H/8  | I/9  |
+Tries   |  97  |  15  |  67  |  11  |  23  |  55  |  72  |  21  |      |
+Yes     |  50  |   5  |  33  |   6  |   9  |  10  |  51  |   4  |      |
+Fastest |  14  | 169  |  14  | 107  | 128  | 184  |  25  | 191  |      |
+--------|------|------|------|------|------|------|------|------|------|

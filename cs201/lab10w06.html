@@ -1,0 +1,78 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab 10 Spring 2006[A. A. Anda]</title>
+</head>
+<body>
+
+<center> <h1> CSCI 201</h1></center>
+
+<center> <h2> Lab 10 Spring 2006</h2></center>
+
+<center> <h3> [A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with <u>arrays</u>.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+The <u>array</u> is a <i>data structure</i> which allows us to aggregate
+a set of related items of the same type under a common label.  We distinguish
+between the items by using an index which corresponds to a sequence index.
+
+<P> Loops and arrays work hand-in-hand.  We use loop indices in array index
+expressions to systematically refer to array elements.
+
+<P> In this lab we will use a loop to reverse the elements of an array in-place.
+
+<h4> Solution Specification:</h4>
+Create a new directory, <i>lab10</i>, and move to it.<br>
+
+Develop a <tt>reverse_array</tt> function which implements a solution to the
+problem expressed in <b>Problem 29</b> on page 407.
+<ol type=I>
+    <li> <b>Input:</b>
+    <ol type=1>
+    <li>Prompt the user to enter up to a maximum
+    (<i>determined by your array size</i>)
+    number of integers, ending with an <i>end-of-file</i> character.</li>
+    <li>Use a loop to read those integers.</li>
+    <li>Maintain a running count of the number of integers entered.</li>
+    <li>If the user tries to enter more than the maximum:
+    <ol type=a>
+	<li>Discard that entry.
+	<li>Send the user an informative message via the <u>standard error</u>
+       	stream.
+	<li>Exit the loop.
+    </ol>
+    <li>Use another loop to print out the entries, ten to a row.
+</ol>
+<li><b>Reverse:</b>
+<ol>
+    <li>
+    Use a loop in our <tt>reverse_array</tt> function to select array elements
+    to swap.
+    </li>
+
+    <li>
+    Use the <tt>exchange()</tt> function from page 142 to perform the element swaps.
+    </li>
+</ol>
+<li><b>Output:</b> use a loop to print out the reversed entries,
+    ten to a row.  </li>
+<li><b>Testing:</b> ensure that your program works for the boundary cases,
+    and for even and odd numbers of entries.</li>
+<li><b>Improvement:</b> You could modify your program to have a more user
+    friendly user interface which allows the user to verify that the input was
+    correct and, if not, specify an index and value to change.
+    (<i>ensure that the index is valid</i>)<br>
+    This can be repeated as many times as necessary.
+    </li>
+</ol>
+
+
+</body>
+</html>

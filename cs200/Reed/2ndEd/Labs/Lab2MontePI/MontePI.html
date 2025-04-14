@@ -1,0 +1,75 @@
+<html>
+<!-- randSeq.html     by Dave Reed (davereed@creighton.edu) --> 
+<!-- A lab program to accompany A Balanced Introduction to  -->
+<!-- Computer Science, 2nd ed. Pearson Prentice Hall, 2008. -->
+<!--                                                        -->
+<!-- This page simulates throwing random darts at a square  -->
+<!-- with an inscribed circle, and reports the number of    -->
+<!-- darts that land inside the circle.                     -->
+<!------------------------------------------------------------>
+
+<head>
+  <title> Monte Carlo Darts </title>
+</head>
+
+<body bgcolor="lightgrey">
+
+<h2 style="text-align:center">Monte Carlo Darts</h2>
+<h3 style="text-align:center">by David Reed, for <a 
+href="http://dave-reed.com/book">A Balanced Introduction to Computer 
+Science, 2nd ed.</a></h3>
+
+<p>This Web page generates random points within a square 
+and 
+reports the number of points that land inside the 
+inscribed 
+circle.  Simply enter the desired number of points and 
+click 
+the button labeled "<tt>Click to generate the 
+points</tt>".  
+You may click the button multiple times to continue adding 
+points and accumulating counts.  If you wish to start with 
+a 
+new square, click on the button labeled "<tt>Clear points 
+and 
+reset counts</tt>" (clicking <tt>Reload</tt> in the 
+browser 
+will not reset the counts). </p>
+
+<hr />
+
+<div style="text-align:center">
+<form name="MontePI">
+<table>
+<tr>
+<td>
+<applet code="MontePI.class" width=300 height=300 name="MonteApplet" mayscript>
+    <i>Sorry, you must have a Java-enabled browser.</i>
+</applet> </td>
+<td>
+Number of points to generate:
+<input type="text" name="numPoints" size=6 value=100> 
+&nbsp;&nbsp;&nbsp;
+<br /><br />
+<input type="button" value="Click to generate the points"      
+       onclick="points=parseInt(document.MontePI.numPoints.value);
+                document.MonteApplet.drawDots(points); ">
+<br /><br /><br />
+<table>
+<tr>
+<td align="right">Number inside the circle: </td>
+<td><input type="text" name="numInside" size=6 value=0
+       onfocus="this.blur();"> </td></tr>
+<tr>
+<td align="right">Total number of points: </td>
+<td><input type="text" name="totalPoints" size=6 value=0
+       onfocus="this.blur();"> </td></tr>
+</table> 
+<br /><br />
+<input type="button" value="Clear points and reset counts" 
+onClick="document.MonteApplet.drawCircle();"> </td></tr>
+</table>
+</form>
+</div>
+</body>
+</html>

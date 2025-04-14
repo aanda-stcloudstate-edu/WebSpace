@@ -1,0 +1,114 @@
+<HTML>
+    <HEAD>
+	<TITLE>CSCI 200 - Fall, 2010, A. A. Anda,  Homework Assignment 3: <i>Let's Make a Deal</i></TITLE>
+	<style type="text/css"> 
+	   BODY TT {color:maroon}
+	   BODY XMP {color:maroon}
+       </style>
+    </HEAD>
+    <BODY BGCOLOR=white TEXT=black>
+	<H3>
+	  CSCI 200<BR>
+	  Computer Science 1<BR>
+	  Fall, 2010<br>
+	  A. A. Anda
+	</H3>
+	<P>
+	<DIV ALIGN=center>
+		<b>Homework Assignment 3: <i>Let's Make a Deal</i></b><BR>
+	</DIV>
+	<P>
+	<HR>
+	This assignment is an exercise in
+	<a href="http://en.wikipedia.org/wiki/Stochastic">stochastic</a>
+	<a href="http://en.wikipedia.org/wiki/Discrete_event_simulation">discrete event simulation</a>
+	demonstrating &amp;
+	<a href="http://en.wikipedia.org/wiki/Computer_model"> computer modeling</a> a seemingly paradoxical principle of probability as embodied in
+	the <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall paradox</a> which emerged from a mathematical analysis of the optimal strategy
+	for winning the best prize on the television game show, <i>Let's Make a Deal</i>.<br><br>
+	<b>Conditional execution</b> statements (<i>introduced in Chapter 11 of Reed</i>) will be required to perform this homework.
+	<HR>
+	<P>
+	Create a Webpage with the following elements:
+	<ol type=I>
+	    <li> Standard identifying information.
+	    <ol>
+		<li> The title (what's displayed on the top bar of the browser window)
+		     will include:
+		 <ul>
+		     <li>Your name
+		     <li>the course
+		     <li>the assignment &amp; number
+		     <li>the date
+		 </ul>
+		 <li> Centered at the top of the Webpage will be the same information
+		     that is in the title.
+	    </ol>
+	    <li> <a href="http://foldoc.org/?query=reverse+engineer">Reverse Engineer</a>
+	    <a href="http://www.stat.sc.edu/~west/javahtml/LetsMakeaDeal.html">The Let's Make a Deal Applet</a> using JavaScript, subject to the following constraints:
+	    <ul>
+		<li>Use a textbox to prompt the user with one of the following messages:<br>
+		(<i>Displayed in their respective appropriate context</i>)</li>
+		<ul>
+		    <li>Pick a door.</li>
+		    <li>You have picked door <tt>[ selected door number variable ]</tt>.
+			Switch or stay by clicking on the doors.</li>
+		    <li>You loose! Click on a door to play again.</li>
+		    <li>You win! Click on a door to play again.</li>
+		</ul>
+		<li>Use a set of six <u>textbox</u>es, serving as counters, to record the:</li>
+		<ol>
+		    <li>number of times that the user <u>didn't</u> switch;</li>
+		    <li>number of times that the user <u>didn't</u> switch and <i>won</i>;</li>
+		    <li><i>winning percentage</i> when the user <u>didn't</u> switch;</li>
+		    <li>number of times that the user <u>did</u> switch;</li>
+		    <li>number of times that the user <u>did</u> switch and <i>won</i>;</li>
+		    <li><i>winning percentage</i> when the user <u>did</u> switch;</li>
+		</ol>
+		<li><i>Ensure</i> that <u>all</u> textboxes have <u>disabled user input</u>.</li>
+		<li>Have two text lines which read:</li>
+		<ul>
+		    <li>In [ <tt><u>total</u> didn't_switch_box</tt> ] games in which you haven't switched, you have won [ <tt><u>won total</u> didn't_switch_box</tt> ] times for a success rate of [ <tt><u>winning percentage</u> didn't_switch_box</tt> ]%.</li>
+		    <li>In [ <tt><u>total</u> did_switch_box</tt> ] games in which you have switched, you have won [ <tt><u>won total</u> did_switch_box</tt> ] times for a success rate of [ <tt><u>winning percentage</u> did_switch_box</tt> ]%.</li>
+		</ul>
+		<li>Design your page using:<br>
+		<ul>
+		    <li>The following code can be used for clicking on the images:
+			<xmp>
+			    <script type="text/javascript">
+				DOOR1 = 0; DOOR2 = 1; DOOR3 = 2; // Assign symbolic identifiers to door number constants.
+				state = 0; // Initialize the state variable.  The simulation goes (for each click respectively) from state == 0, to state == 1, to state == 2, then back to state == 0.
+				winning_door = RandomInt(0,2);  // Initialize the winning door variable.  Also place this statement in your reset() function which is called when any door is clicked in state == 2.
+			    </script>
+			    <div style="text-align:center">
+				<img id="door1Img" border=1 src="http://web.stcloudstate.edu/aanda/cs200/LMaD_images/door1.gif" alt="Door 1 image"
+				     onclick="click_action(DOOR1);">
+				<img id="door2Img" border=1 src="http://web.stcloudstate.edu/aanda/cs200/LMaD_images/door2.gif" alt="Door 2 image"
+				     onclick="click_action(DOOR2);">
+				<img id="door3Img" border=1 src="http://web.stcloudstate.edu/aanda/cs200/LMaD_images/door3.gif" alt="Door 3 image"
+				     onclick="click_action(DOOR3);">
+			    </div>
+			</xmp>
+		    <li> The other two images are at: <tt>"http://web.stcloudstate.edu/aanda/cs200/LMaD_images/donkey.gif"</tt> &amp; <tt>"http://web.stcloudstate.edu/aanda/cs200/LMaD_images/prizemoney.gif"</tt>.
+		    <li> <i>You</i> write the <tt>click_action()</tt> function.
+		    <li>If in <tt>state == 0</tt> and the user selects the winning door, either of the other two doors can be opened to reveal the donkey.<br>
+			The code to do this is (remembering to include Reed's <tt>random.js</tt> library):
+			<xmp>
+			    door_to_open = (winning_door + RandomInt(1, 2)) % 3;
+			</xmp>
+		</ul>
+		<li>Use <i>comments</i> in your code to both:</li>
+		<ul>
+		    <li>state function <u>preconditions</u> &amp; <u>postconditions</u>;</li>
+		    <li>describe the <i>logic</i> of your program.</li>
+		</ul>
+	    </ul>
+	</ol>
+	<P>
+	<HR>
+	After testing thoroughly, submit this file to its D2L Dropbox.<br>
+	Also, submit a <a href="http://www.microsoft.com/windowsxp/using/setup/tips/screenshot.mspx">screenshot</a> after playing 60 times, switching doors 30 times, and not switching doors the other 30 times.
+	<HR>
+    </BODY>
+</HTML>
+

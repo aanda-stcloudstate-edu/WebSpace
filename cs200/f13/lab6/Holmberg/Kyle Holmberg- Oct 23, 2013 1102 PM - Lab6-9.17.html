@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- /export/home/cs200/cs200104/Documents/labs/Lab6/Lab6-9.17.html -->
+<!-- Kyle Holmberg -->
+<!-- CSCI 200 -->
+<!-- Created 10/17/13 -->
+<!-- Last Edited: 10/23/13 -->
+<!-- The purpose of this webpage is to practice using javascript libraries. -->
+<html>
+    <head>
+        <title>Lab 6 9.17</title>
+        
+        <script type="text/javascript" src="weather.js"></script>
+        <script type="text/javascript">
+            function CalculateDewPoint()
+            // Assumes: 
+            // Results: 
+            {
+                var temp, humidity;
+            
+                temp = document.getElementById('tempBox').value;
+                
+                humidity = document.getElementById('humidityBox').value;
+                    
+                document.getElementById('outputDiv').innerHTML = 'The dew point is ' + DewPoint(temp, humidity);
+            } 
+        </script>
+        <script type="text/javascript">
+            function CalculateWindChill()
+            // Assumes:
+            // Results:
+            {
+                var temp, wind;
+                
+                temp = document.getElementById('tempBox').value;
+                
+                wind = document.getElementById('windBox').value;
+                
+                document.getElementById('outputDiv').innerHTML = 'The wind chill is ' + WindChill(temp, wind);
+            }
+        </script>
+    </head>
+    
+    <body>
+        
+        <input type="button" value="Calculate Dew Point!"
+                onclick="CalculateDewPoint();">
+        <input type="button" value="Calculate Wind Chill!"
+                onclick="CalculateWindChill();">
+        Humidity<input type="text" id="humidityBox" value="" size=12>
+        Temperature<input type="text" id="tempBox" value="" size=12>
+        Wind<input type="text" id="windBox" value="" size=12>
+        
+        <hr>
+        
+        <div id="outputDiv"></div>
+    </body>
+</html>

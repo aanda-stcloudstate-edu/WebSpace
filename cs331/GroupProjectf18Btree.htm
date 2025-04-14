@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI 331 B+Tree Group Project Fall 2018</title>
+    <style>
+	code{font-weight:bold; color:MidnightBlue}
+    </style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h1>CSCI 331 - Software Systems Fall 2018</h1>
+
+<h2>B+Tree Group Project</h2> 
+
+<p>
+<h2>Data:</h2>
+Our data set uses a header record to informs the B+tree regarding how the B+tree program can process the records and their fields.<br>
+I.e. our data tells the program how to read it the data.
+<ul>
+    <li> Your data set will be:
+    <ul>
+	<li> From this <a href="http://web.stcloudstate.edu/aanda/cs331/w18/us_postal_codes.xlsx">XLSX file</a> which
+	    can be saved as this <a href="http://web.stcloudstate.edu/aanda/cs331/w18/us_postal_codes.txt">TXT file</a>
+	    as <b>fixed-size</b> fields and records.
+	<li>Your records will be sorted by your primary key field (zip code).
+    </ul>
+    <ul>
+	<li>Use this data to generate an input data file having the following characteristics:
+	<ul>
+	    <li>A header file followed by the fixed-length records containing fixed length fields.
+	    <li>The header record will contain the following information:
+	    <ul>
+		<li>size: header
+		<li>flag: insert (* see below)
+		<li>count: records
+		<li>size: record
+		<li>count: fields per record
+		<li>list: size: field
+		<li>list: text: field labels
+		<li>ordinal: sort field<br>(-1 indicates that the data is unsorted)
+		<li>text: what is the data, and where did it come from?
+	    </ul>
+	</ul>
+    </ul>
+</ul>
+If the insert flag is false, then the data should consist of a set of keys of records to <u>delete</u>.<br>
+A delete data file should be used for testing only.
+Specify a simpler header record in this case. <br><br>
+
+Consider how you might specify a testing data file that can mix records to be deleted with those to be inserted.
+
+</p>
+
+
+<h2>Implement a B+tree having the following attributes:</h2>
+<p>
+<ul>
+    <li>Essentially, we are implimenting Programming Exercises 10.19, 10.21, and 10.22.</li>
+    <li> generate and use a configurable-order B+tree (defaulting to a block capacity of 4 records)
+    <li> records will reside in the <u>leaves</u> <i>only</i> in a seqence of singly or doubly <u>linked blocks</u>.
+	(We are borrowing the idea of linked blocked records from Chapter 10.1 &amp; 10.2, and introduced
+	in the first paragraph of p. 401 in Section 9.9, and defined in Section 9.10)
+    <li> higher order nodes will contain <i>only</i> <u>keys</u>.<br>
+    <li> each right-most key in a block will be promoted to it's parent unless the block is the index set root.
+    <li> B+tree file:
+    <ul>
+	<li>All blocks will be the same (<i>fixed</i>) size [so they may be pointed to via their <b>RBN</b> and potentially go to the same (<i>single</i>) avail list]
+	<li>There will be two block capacities: one for the (<i>leaf-level</i>) blocks containing records,
+	    and a another (<i>larger</i>) capacity for non-leaf-level blocks containing keys only (consider this the <i>order</i>).
+	<li>Header Record components: (import information from data file header)
+	<ul>
+	    <li>size: header
+	    <li>size: block
+	    <li>count: total blocks
+	    <li>count: index set blocks
+	    <li>count: sequence set blocks
+	    <li>count: avail list blocks
+	    <li>count: capacity: records per sequence set block
+	    <li>count: capacity: keys per index set block
+	    <li>count: index set levels<br>(<i>optional</i>)
+	    <li>RBN: root
+	    <li>RBN: sequence set
+	    <li>RBN: avail list
+	    <li>count: records
+	    <li>size: record
+	    <li>count: fields per record
+	    <li>list: size: field
+	    <li>list: text: field labels
+	    <li>ordinal: sort field
+	    <li>text: what is the data, and where did it come from?
+	    <li>time: generated
+	    <li>time: last modified
+	</ul>
+	<li>Sequence Set block components:
+	<ul>
+	    <li>count: records
+	    <li>RBN: successor pointer<br>
+	    <li>RBN: predecessor pointer<br>(<i>optional</i> - useful for splitting, merging, &amp; redistribution)
+	    <li>RBN: parent pointer<br>(becomes avail list successor if count==0)
+	    <li>list: records
+	</ul>
+	    <li>Index Set block components:
+	<ul>
+	    <li>count: key/RBN pairs
+	    <li>list: key/RBN pairs<br>(could also be two lists respectively)
+	    <li>RBN: parent pointer<br>(becomes avail list successor if count==0)
+	</ul>
+    </ul>
+</ul>
+</p>
+<h3>Command Line</h3>
+<p>
+The command line flags and options should include:
+<ul>
+    <li>B+tree file name
+    <ul>
+	<li>if exists, <code>open</code>
+	<li>else, <code>create</code>
+    </ul>
+    <li>data file name
+    <ul>
+	<li>if the B+tree file exists, add records after <code>open</code><br>(useful for testing &amp; debugging)
+	<li>else, use to <code>create</code>
+    </ul>
+    <li>data file insert/delete flag
+    <ul>
+	<li>if flag=="I", data file consists of records to be added
+	<li>if flag=="D", data file consists of sort keys of records to be deleted
+    </ul>
+    <li>block size (bytes) <b>OR</b> index set order <b>OR</b> sequence set order <br>(others will be derived)
+    <li>fill percentage [50% - 100%] (default to 75%)
+    <li>batch flag
+    <ul>
+	<li>if exists, process data files,<br>then <code>exit</code>
+	<li>else, process data files (if any),<br>then open interactive <code>menu</code>
+    </ul>
+    <li>verbose flag<br>(displays additional information - useful for generating test logs)
+    <li>debug flag<br>(displays additional information used for debugging)
+    <li>sequence set iteration flag<br>(send, in order, every record to standard output)
+    <ul>
+	<li>determine how you will represent the fields and records. <br>(what would Unix <code>sort</code> expect?)
+    </ul>
+    <li>consistency check flag
+    <ul>
+	<li> the <i>consistency check</i> determines:
+	<ol>
+	    <li>that every record in the sequence set can be accessed by iterating through the sequence set
+		and they are in order WRT the sort key;
+	    <li>and for each record encountered in the iteration through the sequence set, that record can be accessed
+		by its sort key through the index set (via the root).
+	    <li>Note: If the consistency check fails, display/log as much information as possible regarding where and why it failed.
+	</ol>
+	<li>if the B+tree file exists, run the consistency check after opening and after processing the input if any
+	<li>else run the consistency check after processing the input to create the B+tree file.
+    </ul>
+</ul>
+Note: if the command line is empty, print the command line menu
+</p>
+<h3>Testing</h3>
+<p>
+Use a shell script to perform as a test driver which demonstrates that your B+tree works correctly.<br>
+Each line of the shell script should call the B+tree program with differing command line entries and file redirection targets.
+At a minimum your program should be able to:
+<ul>
+    <li>create a B+tree <i>file</i> from a sorted (by primary key) input file.
+    <li>open an existing B+tree file then process the data file.
+    <li>run a consistency check
+    <li>create or open an existing B+tree file, then open an interactive menu
+    <li>display (<i>readably</i>) all the fields of a record<br>(specified by sort key)
+    <li>display (<i>optionally</i>) a specific field of a record<br>(specified by sort key)
+    <li>modify fields in any record 
+    <li>insert records
+    <li>delete records<br>(by sort key)
+    <li>iterate through the sequence set writing the records to a specified file name or to standard output
+    <li>dump the structure of the tree (see below)
+    <li>any other useful operations you think of that you can implement and test
+    <ul>
+	<li>e.g. display the number of records, avail blocks, index set blocks, sequence set blocks, and fill statistics
+    </ul>
+</ul>
+You should have a method of displaying (<b>dump</b>ing) the contents of the B+tree
+to assist you in determining whether your implementations for building, insertion and
+deletion are functioning properly.  This dump should be readable and clearly display the B+tree's vertical
+and horizontal structure.
+</p>
+
+<p>
+Be sure that your testing exercises all of the boundary cases you can think of.<br>
+Many of your data sets can be just large enough to demonstrate that case in a non-trivial context.<br>
+Show that your tests pass for various block sizes and numbers of records.<br>
+Consider as a final large test, processing roughly half of the data records in sorted order,
+followed by inserting the other half in random order.
+</p>
+
+<p>
+<h3>Demo</h3>
+<p>
+<ol>
+    <li>Reserve an hour during finals week for the team to collectively make an oral
+	presentation and demonstration of their project to the professor.</li>
+</ol>
+</p>
+
+<h2>WHAT TO TURN IN:</h2>
+<p>
+
+<ol>
+    <li><u>Design document for the classes</u>.<br>
+	(Consider using facilities in, e.g. Jgrasp or Doxygen)
+    (<font color="teal">25% of your grade</font>)
+
+    <li> <u>The test document</u>,<br>
+    <li> Describe the test data used along with an <u>explanation of why you chose it</u>,<br>
+    and <u>what were the results of the tests</u>.<br>
+    This should include a script or log file from the test runs.<br>
+    Each test should be annotated on the script/log file.<br>
+    (<font color="teal">25% of your grade</font>)
+
+    <li><u>The source file of the program</u>.<br>
+    Also, leave a copy of the source file in your account until the graded
+    program is returned to you.<br>
+    (<font color="teal">20% of your grade</font>)
+
+    <li><u>The users manual</u>.<br>
+    This should be typed and have a section for each of the following:<br>
+    (<font color="teal">25% of your grade</font>)
+    <ol type=a>
+	<li>The name of the program.
+	<li>What the program is supposed to do.
+	<li>Where it is located on the computer.<br>
+	(<tt>pwd</tt> will answer this for you)
+	<li>How to compile and run the program. (use a <u>makefile</u>)
+	<li>A sample execution of the program.<br>
+	(this is not the test data)
+	<li>What the known errors in the program are.
+    </ol>
+    <li>Reflection: all group members will write their own paragraph describing
+	what they learned from this group assignments.  
+	<br>(<font color="teal">5% of your grade</font>)
+    <ul>
+	<li>How much time did you spend on the program?
+	<li>Did you plan well before going to the computer?
+	<li>Did you test the program completely? 
+	<li>Did you learn anything new about the language?
+	<li>Did you learn anything new about the way you study or should study?
+    </ul>
+    <li>Everyone in the group should turn in their peer evaluations to the instructor separately.
+    <li>The group leader should schedule a 30-minute meeting with me to
+	demonstrate the project.  The group leader must also turn in their
+	group log, the group member evaluations and the summary of the PSP data.
+</ol>
+</p>
+</div>
+
+</body>
+
+</html>

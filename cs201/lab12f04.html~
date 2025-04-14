@@ -1,0 +1,76 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab 12 [A. A. Anda]</title>
+</head>
+<body>
+
+<center> <h1> CSCI 201</h1></center>
+
+<center> <h2> Lab 12</h2></center>
+
+<center> <h3> [A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2> Introduction:</h2>
+This lab provides experience with two-dimensional <b><i>ragged</i></b> arrays.
+<h2> Lab Assignment:</h2>
+
+<h4> Problem Motivation and Definition:</h4>
+
+This lab is intended to provide experience with initializing, printing, and
+indexing of two-dimensional <b><i>ragged</i></b> arrays as well as experience
+with <u>pointers</u> and <u>dynamic memory</u> which are required for the
+implementation of ragged arrays.<p>
+
+We want to modify the last lab's program which initialized and printed a
+two-dimensional array.  The array was filled with Pascal's triangle.<p>
+We will now create the two-dimensional array dynamically as as a ragged array.
+The problem is defined in our text as <tt>problem 9-71</tt>.
+
+<h4> Solution Specification:</h4>
+<ol>
+<ol>
+<li> Create a new directory, <i>lab12</i>, and move to it.</li>
+
+<li>
+Solve Problem 9-71 from page 484 of our C++ text.
+</li>
+
+<ol>
+
+<li>
+Read in a size for the triangle.
+</li>
+
+<li>
+Initialize a ragged array of the correct dimensions.<p>
+(<i> See <b>Figure 9-41</b> on p. 461 and <b>Programs</b> <b>9-15</b> through
+    <b>9-18</b> on pages 466-468.</i>)
+</li>
+
+<li>
+<b>Note:</b> You have the option of building the array rows dynamically,
+interleaving the dynamic creation of a row with the population of its elements.
+</li>
+
+</ol>
+
+<li>
+Test with sizes = {1, 3, 12, 20}
+</li>
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the source and the running of the program for the test data.<br>
+<b>Note:</b> so that the full width of the size 20 triangle may be displayed,
+printout using the following command rather than lpr:<br>
+<tt>enscript --landscape <i>filename</i></tt>
+</li>
+
+</ol>
+
+
+</body>
+</html>

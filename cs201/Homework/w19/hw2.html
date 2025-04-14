@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <TITLE>CSCI 201 - Assignment 2 - Spring 2019 A. A. Anda</TITLE>
+    <style>
+	code {font-family: courier; font-weight: bold; color:MidnightBlue}
+    </style>
+    
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 201<br>
+  Computer Science 1<br>
+  Spring, 2019<br>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <B>Assignment 2</B><br>
+</DIV>
+<P>
+<HR>
+<P>
+For the following two problems you will solve:
+<ol type=I>
+    <h5>General Documentation </h5>
+    <li>The following must appear as <u>comments</u> at the top of each of your source code files:<br>
+    <ul>
+	<li><b>name</b>,</li>
+	<li><b>course</b>,</li>
+	<li><b>date</b>,</li>
+	<li><b>section number</b>,</li>
+	<li><b>assignment number</b>,</li>
+	<li><b>full pathname on <code>csci2</code> for its executable file</b>,</li>
+	<li><b>brief description of the purpose for the program</b></li>
+    </ul>
+	(<i>Do this before you write any code</i>)</li>
+    <li>the <b>purpose</b> of the program will also appear as <u>comments</u>
+    at the top of your source code.<br>
+    (<i>Do this before you write any code</i>)</li>
+    <h5>Module Documentation</h5>
+    <li>the purpose of important statements or blocks of statements in the
+	source code of your program will be described by <u>comments</u>
+	preceding them.<br>
+	(<i>Do this before you write any code</i>)</li>
+    <h5>Data Names </h5>
+    <li>use <i>intelligent</i> <u>data names</u> which match the terminology
+    of the user as closely as possible.</li>
+    <P>
+    <li>use <u>whitespace</u> and <i>consistent</i> <u>indenting</u> to enhance the
+	readability of your code.</li>
+    <li>For each program, at least one day prior to submitting your <u>source file</u> (as a syntax-highlighted PDF file) and <u>output</u> to the Homework 2 Assignment D2L dropbox,
+    you will submit a <u>pseudocode</u> (<i>see</i> the top of Gaddis p. 136 {p. 134, 8th ed.}) text file for that problem to the Homework 2 D2L Assignment dropbox.
+    Use that pseudocode as a foundation for the comments you include in your source code (<i>see</i> Prog. 3-28)</li>
+    <P>
+    <li>compile your code with <br><code>g++  -Wall -o</code> <code><i>filename</i> <i>filename</i></code><code>.cpp</code><br>(ensure that there are no compiler errors and as few warnings as possible)
+    <P>
+    <li>use <b>script</b> on <i>csci</i> to generate a file which contains
+    a (<code>script</code> file) demonstration of the (possibly interactive)
+    running of your program (on good test data).<br>
+    (e.g. compare your computed <i>day of the week</i> with the output of the Unix <code>cal</code> function.)<br>
+    There should be several testing runs.<br>
+</ol>
+<P>
+<HR>
+<center>
+    <h3>HW 2.1: Day of the Week</h3>
+</center>
+Write a program that, when a given a target date (<u>month</u>, <u>day</u>, <u>year</u>) is input, will display the <u>day of the week</u> for <i>that</i> date.<br>
+
+You will implement the following algorithm:
+<ol>
+    <li>Calculate the <u>day of the week</u> for <b>December 31</b> of the <i>preceding</i> <u>year</u> by using the follwing formula:
+    <span style="color:red;"> // which factors in the count of <i>leap years</i></span>
+    <br>
+	<center>
+	    ( (year - 1) * 365 + &lfloor; (year - 1) / 4 &rfloor; - &lfloor; (year - 1) / 100 &rfloor; + &lfloor; (year - 1) / 400 &rfloor; ) % 7
+	</center>
+	where the result has the following interpretation:
+	<ul>
+	    <li> 0: Sunday
+	    <li> 1: Monday
+	    <li> 2: Tuesday
+	    <li> 3: Wednesday
+	    <li> 4: Thursday
+	    <li> 5: Friday
+	    <li> 6: Saturday
+	</ul>
+	<li> Now that you have the day for December 31 of the preceding year,
+	you then calculate (<i>and add to the previous result</i>) the <b>sum</b> of the <u>total number of days</u> in <i>each</i> month <i>preceding</i> the <u>target month</u>.<br>
+	    Use a <code>switch</code> statement having <i>fall-through</i> logic for this calculation.<br>
+	    E.g. if the target month is December,<br>
+	    the <code>switch</code> statement will execute the top <code>case</code> which adds the number of days in November to the sum,
+	    <br>then control falls down to the next <code>case</code> which adds the number of days in October, and so on through January.<br>
+	    For a target month of January the <code>switch</code> statement would add no days.<br>
+	    For February, you will need to compute whether it has 28 or 29 days by adding one if the year is (divisible by 4 AND not by 100) OR the year is divisible by 400 .
+	    <li> To this sum, now add the target day of the month.<br>
+	    This number, <i>modulo seven</i>, is the day of the week for the target date using the above encoding scheme.
+	    <li> For extra credit, use
+	    <a href="http://web.stcloudstate.edu/aanda/cs201.html#enumerations"><code>enum</code> data types</a>
+	    (<i>see </i>Gaddis, Section 11.11 {<small>11.12 in 8th ed.</small>}) for the
+	    <u>days</u> of the week, the <u>months</u> of the year, and the <u>number of days</u> in each month.
+</ol>
+    <p>
+    XKCD:
+    <img src="https://imgs.xkcd.com/comics/2018.png" alt="xkcd leap year" >
+    </p>
+<HR>
+<center>
+    <h3>HW 2.2: Quadratic Formula</h3>
+</center>
+Write a program that tries to find the roots of the quadratic polynomial [ <i>a x</i><sup>2</sup> + <i>b x + c</i> ] using the quadratic formula.<br>
+Handle the following input coefficient conditions:
+<ul>
+    <li>If both <i>a</i> and <i>b</i> are zero, output that "<code>there is no solution</code>".
+    <li>If <i>a</i> only is zero, then there is a single real root, ( -<i>c/b</i> ).
+    <li>If <i>b</i> only is non-zero, then there is a single real root which is <i>zero</i>.
+    <li>If the <i>discriminant</i> [ (<i>b</i><sup>2</sup> - 4<i>ac</i>)] is zero,<br>
+	then the two real roots will have the same value, ( -<i>b</i>/(2<i>a</i>) ).
+    <li>If the <i>discriminant</i> is negative, output the roots as a complex conjugate pair.
+    <li>else output the two distinct real roots.
+</ul>
+<P>
+You can check your computed results with this <a href="https://www.symbolab.com/solver/quadratic-equation-calculator"><i>quadratic equation calculator</i></a><br>
+<P>
+A tutorial for the complex conjugate solution case is here: <a href="https://web.archive.org/web/20160520115441/http://www.regentsprep.org/regents/math/algtrig/ate3/quadcomlesson.htm">Solving Quadratic Equations with Complex Roots</a><br>
+<P>
+Make sure that your set of test data exercises <i>every</i> branch of the logic!<br>
+<P>
+<b>Note:</b> in practice, one would use the following more accurate <a href="http://people.csail.mit.edu/bkph/articles/Quadratics.pdf"><i>Numerically Stable Method for Solving Quadratic Equations</i></a>
+<P>
+<HR>
+</BODY>
+</HTML>
+

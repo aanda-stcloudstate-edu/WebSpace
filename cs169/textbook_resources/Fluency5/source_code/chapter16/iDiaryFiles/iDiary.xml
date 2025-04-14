@@ -1,0 +1,82 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="iDiarySS.xsl"?>
+
+<idiary>
+   <entry>
+      <date>19 September 2011</date>
+      <cool><title>The Digital Diary</title>
+          This will be fun! I start my digital journal today. So, to launch it with the right sentiment,
+          I looked up what Henry David Thoreau wrote on the first day of his famous <ital>Journal.</ital> He said,
+          <quote>"'What are you doing now?' he asked. 'Do you keep a journal?' So I make my first entry today."</quote>
+          Which, I guess, is pretty much what I just said. Great minds ... !
+      </cool>           
+   </entry>
+   
+   <entry>
+    <date>20 September 2011</date>
+    <cool>
+       <title>Kepler-16b, <ital>Star Wars</ital> Planet</title>
+         NASA found Tatooine! It's a planet orbiting a binary star system, just like Tatooine in the <ital>Star Wars</ital>
+         movies. It's only 200 lightyears away -- Let's Go!!! -- and is about the size of Saturn. According to Slate's 
+       <link url="http://www.youtube.com/watch?v=R8KkHBqO4kk" > <ital>Trending</ital>  </link>Report, the two stars 
+         orbit each other every 41 days, and the Kepler-16b planet orbits them once every 229 days. 
+         <nasavid url="http://www.youtube.com/embed/0MfRo0eC1ks" />
+         This is today's Astronomy Picture of the Day, <link url="http:apod.nasa.gov"> APOD, </link>which is one of
+         my all time favorite Web sites.
+    </cool>
+   </entry>
+   
+   <entry>
+     <date> 21 September 2011 </date>
+     <cool>
+        OMG! There are 0 rats in Alberta, Canada! Really?! It's bigger than France! I guess it's true, because
+        <link url="http://www1.agric.gov.ab.ca/$department/deptdocs.nsf/all/agdex3441">here's the story.</link>
+        Was <ital>Ratatouille</ital> allowed in the theaters???
+     </cool>
+   </entry>
+   
+   <entry>
+     <date> 22 September 2011</date>
+       <cool>I ran across this today, and am saving it here so I don't lose track of it. I don't quite get it! 
+        <poem>
+
+           <p_title>Selecting a Reader</p_title>
+           <poet>Ted Kooser</poet>
+           <line>First, I would have her be beautiful,</line>
+           <line>and walking carefully up on my poetry</line>
+           <line>at the loneliest moment of an afternoon,</line>
+           <line>her hair still damp at the neck</line>
+
+           <line>from washing it. She should be wearing</line>
+           <line>a raincoat, an old one, dirty</line>
+           <line>from not having money enough for the cleaners.</line>
+           <line>She will take out her glasses, and there</line>
+           <line>in the bookstore, she will thumb</line>
+           <line>over my poems, then put the book back</line>
+
+           <line>up on its shelf. She will say to herself,</line>
+           <line>"For that kind of money, I can get</line>
+           <line>my raincoat cleaned." And she will.</line>
+        </poem>
+        
+       </cool>
+   </entry>
+   
+   <entry>
+     <date> 23 September 2011</date>
+     <cool>
+     <title>One Woman Achieves Immortality!</title>
+         I just finished reading <ital>The Immortal Life of Henrietta Lacks</ital> by Rebecca Skloot. Lacks was a 
+         poor African American tobacco farmer who had five children, and died in 1951 at age 31 from cervical
+         cancer. Doctors at Johns Hopkins took cancer cells from her without her permission. The cells had a
+         never-before-seen ability to continue to live in a culture medium. Most cells die after a few generations but hers
+         are still going today, 60 years later! They have been critical to a huge amount of medical research.
+         It is a terrific book! <para>
+         <pic file="pix/lacks.jpg" width = "120"/> <pic file="pix/hela.jpg" width="350"/></para>
+         The cells are known as HELA cells, the first two letters of her two names, and they hit on Google more 
+         than 2 million times.
+     </cool>
+   </entry>
+   
+</idiary>
+

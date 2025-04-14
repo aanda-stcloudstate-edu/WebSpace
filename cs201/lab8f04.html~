@@ -1,0 +1,109 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>csci 201 lab8 [A. A. Anda]</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 8</h2></center>
+
+<center>
+<h3>
+[A. A. Anda]</h3></center>
+
+<hr WIDTH="100%">
+<h2>
+Introduction:</h2>
+This lab provides experience with conditional statements.
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<li>
+Create a new directory, <i>lab8</i>, and move to it.</li>
+
+<li>
+Write a working program, and function <tt><u>quad_roots(a,b,c,r1,r2)</u></tt>
+which it calls, which requests from the user an ordered triple of floating
+point numbers.  These will be the coefficients of the quadratic equation,<br>
+<center><b><i>ax<sup>2</sup> + bx + c</i> = 0</b>.</center><br>
+<i>r1</i> and <i>r2</i> will be the roots of the quadratic equation computed by
+the following formulae:<br>
+<ol>
+    <li><i>Compute the discriminant: </i> <b>d = b<sup>2</sup> - 4ac</b> </li>
+	    <ul>
+		<li>if <b>a</b> &lt; <b>b</b> are zero</li>
+		<ul>
+		    <li> There is no solution
+		    <li>Print a descriptive message to stderr
+		</ul>
+		<li>if <b>d &lt; 0</b></li>
+		<ul>
+		    <li>Solution is imaginary
+		    <li>Print descriptive message to stderr
+		</ul>
+		<li>if <b>d = 0</b>
+		<ul>
+		    <li>Doubled root solution
+		    <li> r1 and r2 are <b>-b/(2a)</b> if <b>a != 0</b>
+		    <li> print a descriptive message to stderr if a == 0
+		</ul>
+		<li>if <b>a = 0</b>
+		<ul>
+		    <li>Single solution
+		    <li> r1 and r2 are (-c/b) if b != 0
+		    <li> print descriptive message to stderr if b == 0
+		</ul>
+	    <li>if <b>d &gt; 0</b>
+		<ul>
+		    <li> Create sign() function: sign(x) = -1 if x&lt;0,
+		    else sign(x) = 1 <i>{use ternary expression}</i></li>
+		    <li> s = -(b + d<sup>1/2</sup>*sign(b))/2
+		    <li> r1 = s/a
+		    <li> r2 = c/s
+		</ul>
+	    </ul>
+</ol>
+
+
+<li>
+Ensure that your program and functions have updated <u>comment </u>headers
+describing your identifying information, the date, and the purpose of the
+program or function.<br>
+Each user defined function should document what each
+parameter is and whether they are IN, OUT, or IN/OUT. <br>
+
+
+<li> Use an appropriate input and output function
+<b>Note</b>:
+<ul>
+<li>
+Don't forget to place the <u>prototype declaration</u>
+for each function above the function header of the main program.
+<li>
+Use <b>stubs</b> (See Program 4-13 on pg. 165) to design from the top down
+and ensure that the functional structure is working at an intermediate stage.  When the stub form is working properly, replace each with the complete code and test.
+</ul>
+</li>
+
+<li>
+Compile and run.<br>
+Ensure that the program is working correctly.<br>
+Test with values in Table 5-13 on page 225
+</li>
+
+
+<li>
+When correct, generate a printout of the source, and demonstrate, via
+typescript, the running of the program for "checkout".</li>
+</ol>
+
+</body>
+</html>

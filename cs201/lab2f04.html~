@@ -1,0 +1,161 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+<TITLE>CSCI 201[2] Lab1</TITLE>
+<style>
+    span {font-style: italic; font-variant: small-caps}
+</style>
+</head>
+<body BGCOLOR=white TEXT=black>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 2</h2></center>
+
+<hr WIDTH="100%">
+<h1>
+Introduction:</h1>
+This lab will exercise your newly acquired command of Unix and its commands.
+<br>&nbsp;Before writing out answers to the assigned questions, test them
+yourself.
+<br>Follow all instructions carefully.
+<br>You may work together to find the answers.
+<br>&nbsp;
+<h3>
+Useful tools:</h3>
+
+<ul>
+<li>
+<b>touch: "</b>touch foo" creates the empty file <u>foo</u>.</li>
+
+<li>
+<b>screen:&nbsp; </b>this command creates multiple virtual windows in your
+telnet window.&nbsp; The following commands should be sufficient:</li>
+
+<ul>
+<li>
+invoke <b>screen</b> at the prompt.</li>
+
+<li>
+<b>^a c</b> : creates another screen and switches to it.</li>
+
+<li>
+<b>^a [spacebar]</b> : toggles to the next existing virtual screen (that
+you had created at some time previously using <b>^a c</b>).</li>
+
+<li>
+<b>exit </b>: destroys the current virtual screen.</li>
+</ul>
+
+<li>
+<b>Wildcards</b>: [see Ch. 3, pages 66-68, in the Unix text] special
+characters that the shell uses to search for classes of filenames</li>
+
+<ul>
+<li>
+"<b>?</b>": replace with <i>any</i> one text character.</li>
+
+<li>
+"<b>*</b>": replace with <i>zero or more</i> arbitrary characters.</li>
+
+<li>
+"<b>[...]</b>": replace with <i>any one of the characters</i> enclosed
+in the brackets.</li>
+
+<ul>
+<li>
+A range can be indicated: e.g. <b>[A-Z]</b> means <i>any upper case alphabetic
+character</i>.</li>
+</ul>
+</ul>
+
+<li>
+<b>Pipes</b>: [see Ch. 5, pages 151-153, in the Unix text] a pipe, indicated by the vertical bar character "|",&nbsp;
+sends the output of the preceding program in the the input of the successive
+program.</li>
+
+<ul>
+<li>
+e.g. "prog1 | prog2" has <u>prog2</u> processing the output of <u>prog1</u></li>
+</ul>
+</ul>
+
+<h3>
+Lab Assignment:</h3>
+
+<ol>
+<li>
+I: Work through <b>Sessions I</b> and <b>II</b> on page 119 of the Unix text
+	(don't turn anything in from these two sessions).
+
+<li>
+II: Create the directory <b>lab1.</b></li>
+
+<li>
+III:&nbsp; Write the answers to the following questions in the file <b>answers.txt
+</b>located in directory<b> lab1.</b></li>
+
+<ol>
+<li>
+What is your name, course, section and date? </li>
+<li>
+What command lists all of the files in a directory including
+those prefixed with the period character?</li>
+
+<li>
+Write a command to change the name of the file <b>a.out</b> to
+<b>program1</b></li>
+
+<li>
+Write a command to print a file homework1 to the terminal.</li>
+
+<li>
+Write a command to list all the files in your directory whose
+names are exactly eight characters long where the last four characters
+are ".cpp"</li>
+
+<li>
+Write a command to list all the file names which end in an <i>even</i>
+number.</li>
+
+<li>
+Write a command to list all the file names which&nbsp; contain
+an upper case alphabetic character anywhere.</li>
+
+<li>
+Write a command to move the file <u>upone.ps</u> up one directory
+level (towards the root).</li>
+
+<li>
+<i>using the </i> <tt><b>grep</b></tt> <i>command</i>[Unix text Ch. 10]<br>
+Write a command to copy all of the lines in the file <u>source.c</u>
+containing the string "//"&nbsp;in them into a new file named <u>comments</u>
+.</li>
+
+<li>
+Write a command to copy all of the lines in the file <u>source.c
+</u><i>not </i>containing the string "//"&nbsp;in them into a new file
+named <u>codeonly</u> .</li>
+
+<li>
+<i>using the </i> <tt><b>sort</b></tt> <i>command</i>[Unix text Ch. 6.5]<br>
+Write a command which sorts all of the lines containing the string
+"Smith" of those files ending in ".addresses"</li>
+</ol>
+
+<li> 
+IV: Print the answers using the command <b> lpr </b> <i>answers.txt</i> .
+
+<li> 
+V: With time left over or after lab, run and follow the instructions in the
+<tt>vimtutor</tt> command on <span>csci</span>.
+</ol>
+
+</body>
+</html>

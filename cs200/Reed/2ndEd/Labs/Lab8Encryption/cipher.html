@@ -1,0 +1,66 @@
+<html>
+<!-- cipher.html      by Dave Reed (davereed@creighton.edu)  --> 
+<!-- A lab program to accompany A Balanced Introduction to   -->
+<!-- Computer Science, 2nd ed., Pearson Prentice Hall, 2008. -->
+<!--                                                         -->
+<!-- This page encodes/decodes messages using a simple       -->
+<!-- substitution cipher (with key entered by the user)      -->
+<!-- ======================================================= -->
+
+<head>
+  <title> Substitution Cipher</title>
+
+  <script type="text/javascript">
+    function Encode(message, key)
+    // Assumes: message is the string to be encoded, and
+    //          key is a string of the 26 letters in arbitrary order
+    // Returns: the coded version of message using the substitution key 
+    {
+        var alphabet, coded, i, ch, index;
+
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        coded = "";  
+        i = 0;                                    
+        while (i < message.length) {                // for as many letters as there are
+            ch = message.charAt(i);                 //   access each letter in message
+            index = alphabet.indexOf(ch);           //   find its position in alphabet
+            if (index == -1) {                      //   if it's not a capital letter,
+                coded = coded + ch;                 //     then leave it as is & add
+            }                                       //   otherwise,
+            else {                                  //     find the corresponding
+                coded = coded + key.charAt(index);  //     letter in the key & add
+            }
+            i = i + 1;
+        }
+        return coded;
+    }
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr><td>According to the substitution cipher, each letter: <BR><BR> </td>
+        <td>&nbsp;<tt>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br /></tt>
+             &nbsp;<tt>| | | | | | | | | | | | | <br /></tt>
+             &nbsp;<tt>v v v v v v v v v v v v v </tt> </td>
+    </tr>
+    <tr><td>is encoded using the corresponding letter in the key: </td>
+        <td><input type="text" id="key" size="26" style="font-family:Courier,Monospace"
+                 value="XYZABCDEFGHIJKLMNOPQRSTUVW" /> </td>
+    </tr>
+    </table>
+
+    <hr />
+
+    <table>
+    <tr><td><textarea id="message" rows="8" cols="30"></textarea> </td>
+        <td><input type="button" value="Encode ==>" 
+                   onclick="document.getElementById('encoded').value=
+                              Encode(document.getElementById('message').value,
+                                     document.getElementById('key').value);" /> </td>
+        <td><textarea id="encoded" rows="8" cols="30"></textarea> </td>
+    </tr>
+  </table>
+</body>
+</html>

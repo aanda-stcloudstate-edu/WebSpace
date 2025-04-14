@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>
+	    title goes here
+	</title>
+	<!-- Other header content here -->
+    </head>
+    <body>
+	<p>
+	Body stuff here 
+	</p>
+	<hr/>
+	<pre>
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+    &lt;head&gt;
+	&lt;title&gt;
+	    title goes here
+	&lt;/title&gt;
+	Other header content here
+    &lt;/head&gt;
+    &lt;body&gt;
+	Body stuff here
+    &lt;/body&gt;
+&lt;/html&gt;
+	</pre>
+    </body>
+</html>

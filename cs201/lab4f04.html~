@@ -1,0 +1,92 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 lab4</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Lab 4</h2></center>
+
+<hr WIDTH="100%">
+<h2>
+Introduction:</h2>
+This lab examines and lists the local integer and floating point environments
+with respect to limits on&nbsp;&nbsp; <i>csci</i>.
+<h2>
+Lab Assignment:</h2>
+
+<ol>
+<ol>
+<li>
+Create a new directory, <i>lab4</i>, and move to it.</li>
+
+<li>
+<i>run</i>: <b>cp</b> ~cs201400/lab4/writelimits.cpp mylimits.cpp</li>
+
+<li>
+<i>Edit </i>this file to include <u>all</u> of the information in Tables
+E-1 and E-2 on pages 778 and 779 of our C++&nbsp;text.</li>
+
+<li>
+<i>Compile</i> (<tt>g++ -Wall mylimits.cpp -o mylimits</tt>)</li>
+
+<li>
+<i>Run</i></li>
+
+<li>
+<i>Debug </i>(if necessary)</li>
+
+<li>
+<i>Print</i>&nbsp; two copies of the output&nbsp; and your&nbsp;
+<u>source</u> file together using <b>lpr -# 2</b> <i>outputfilename</i>.</li>
+
+<li>
+On each copy, <i><u>circle</u></i>&nbsp; by hand those limit values which
+differ from those in our text.</li>
+
+<li>
+Hand in one printout.</li>
+
+<li>
+Retain one printout for your notes.</li>
+</ol>
+</ol>
+
+<h4>
+Editing Suggestions:</h4>
+
+<li>
+run <b>vim</b></li>
+
+<li>
+set the following flags:</li>
+
+<blockquote>
+<li>
+":set cin sw=4"&nbsp; {this maintains indenting.&nbsp; See p. 206 of our Unix
+text for details}</li>
+
+<li>
+":syntax enable" {provides automatic syntax highlighting to help illuminate
+structure and mistakes}</li>
+
+<li>
+"yank"&nbsp;and "put" similar lines to save editing work {<b>yy</b> and
+<b>p</b> commands}</li>
+</blockquote>
+
+<li>
+use two windows (via the <b>screen</b> command).&nbsp; Write from the editor
+periodically {"<b>:w</b>"} while compiling&nbsp; and running&nbsp; in the
+other window to catch syntax and other errors early.</li>
+
+</body>
+</html>

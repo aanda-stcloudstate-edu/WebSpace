@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>CSCI 200 - Fall, 2010, A. A. Anda Homework Assignment 4: Changing Bases via Loops</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 200<BR>
+  Computer Science 1<BR>
+  Fall, 2010<br>
+  A. A. Anda
+</H3>
+<P>
+<DIV ALIGN=center>
+  <b>Homework Assignment 4: Changing Bases via Loops</b><BR>
+</DIV>
+<P>
+<HR>
+Rewrite your solution to
+<a href="http://web.stcloudstate.edu/aanda/cs200/lab10w10.html">Lab 10</a> to use loops.<br>
+The number of times you will need to loop can be computed as the <i>number of
+    digits of the smallest base</i>.<br>
+[<i>Note</i>: the number of digits of an integer <i>N</i> in the smaller base is:
+<tt>1 + &lfloor;
+    <a href="https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Math/log">log</a>
+</tt><font size=-1><sub>[smaller base]</sub></font><tt>(N)</tt> &rfloor; ]<br>
+[<i>Note</i>: the JavaScript <tt>log()</tt> function returns the <i>natural</i> log [base <i>e</i>] of its argument.  See
+<a href="http://oakroadsystems.com/math/loglaws.htm#NewBase">here</a> or
+<a href="http://www.purplemath.com/modules/logrules4.htm">here</a>
+for a reminder and restatement of the formulae for changing logarithm bases.]<br>
+(By convention, we often write <tt>log</tt><sub><i>e</i></sub><tt>()</tt> as <tt>ln</tt><tt>()</tt>, and similarly,
+we often write <tt>log</tt><sub>2</sub><tt>()</tt> as <tt>lg()</tt>.
+Sometimes, <tt>log()</tt> means <tt>log</tt><sub>10</sub><tt>()</tt>.)
+<P>
+The integers can now be larger in value than 255 [2<sup>8</sup>-1].
+<HR>
+<P>
+Create a Web-page with the following elements:
+<ol type=I>
+    <li> Standard identifying information.
+    <ol>
+	<li> The file name will be <tt>Homework4.html</tt> in your CS200 directory.
+	<li> The title (what's displayed on the top bar of the browser window)
+	     will include:
+	 <ul>
+	     <li>Your name
+	     <li>the course
+	     <li>the assignment &amp; number
+	     <li>the date
+	 </ul>
+	 <li> Centered at the top of the Web-page will be the same information
+	     that is in the title.
+    </ol>
+    <li> Create a text-box based base conversion facility based on your Lab 9 program<br> In addition to the functionality you built into your Lab 9 program, your homework assignment will have the following additional features:
+    <ul>
+	<li>Each text box containing the representation of a value to some base will have a corresponding text box for representing that base.<br>
+	A valid base will be an integer between 2 and 10 inclusive {[2..10]}.<br>
+	<i>(Be sure to ensure that it is an integer)</i>
+	<li><b>Alert</b> the user with a descriptive message if the they have entered:
+	<ul>
+	    <li>a necessary textbox is empty. (you can use the
+	    <a href="http://www.codetoad.com/javascript/isempty.asp">IsEmpty()</a>
+	    function or its contents)
+	    <li>a <u>base</u> which violates the above precondition.
+	    <li>a <u>digit</u> which is not valid for that base.
+	    <li>a <u>value</u> for conversion which is negative or not an integer (you can use the
+	    <a href="http://www.codetoad.com/javascript/isnumeric.asp">IsNumeric()</a>
+	    function)
+	</ul>
+    </ul>
+</ol>
+<P>
+<HR>
+You can use this
+<a href="http://www.efunda.com/units/base_n.cfm?base_from=10">on-line base conversion</a> Web-page to help you validate your conversions.<p>
+After testing thoroughly (<i>especially the set of alerts generated when <u>any</u> of the preconditions are violated</i>), submit this file to its D2L Dropbox.
+<HR>
+</BODY>
+</HTML>
+

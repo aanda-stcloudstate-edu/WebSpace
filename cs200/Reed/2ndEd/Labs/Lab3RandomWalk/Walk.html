@@ -1,0 +1,118 @@
+<html>
+<!-- Walk.html     by Dave Reed (davereed@creighton.edu)     --> 
+<!-- A lab program to accompany A Balanced Introduction to   -->
+<!-- Computer Science, 2nd ed., Pearson Prentice Hall, 2008. -->
+<!--                                                         -->
+<!-- This page provides a simple visual environment for      -->
+<!-- displaying stats on repeated random walks.  The user    -->
+<!-- can specify the length and number of walks, then view   -->
+<!-- the results in a Java applet (TurtleGraphics.class).    -->
+<!-- ======================================================= -->
+
+<head>
+<script type="text/javascript" src="random.js"></script>
+
+<script type="text/javascript">
+  function showRandomWalks()
+  {
+      AAAstep = parseFloat(document.appletForm.stepSize.value);
+      for (iAQ4=1; iAQ4 <= parseFloat(document.appletForm.numWalks.value); iAQ4=iAQ4+1) 
+{
+          XXX = 0;  YYY = 0;
+          for (i1x4=1; i1x4 <= parseFloat(document.appletForm.numSteps.value); 
+i1x4=i1x4+1){
+            AAAangle = RandomNum(0, 2*Math.PI);
+            XXX = XXX + AAAstep*Math.sin(AAAangle);
+            YYY = YYY + AAAstep*Math.cos(AAAangle);
+          }
+          document.TurtleApplet.jumpTo(XXX,YYY);  
+          document.TurtleApplet.drawString('x');
+          AAAsquare = Math.pow(Math.sqrt( Math.pow(XXX, 2) + Math.pow(YYY, 2)), 2);
+          AAAwalks = parseFloat(document.appletForm.walksSoFar.value);
+          AAAavg = parseFloat(document.appletForm.avgSquare.value);
+          document.appletForm.walksSoFar.value = AAAwalks+1;
+          document.appletForm.avgSquare.value = 
+((AAAwalks*AAAavg)+AAAsquare)/(AAAwalks+1);
+          document.appletForm.avgNormal.value = 
+              document.appletForm.avgSquare.value/Math.pow(AAAstep,2);
+       }
+  }
+  
+  function resetAll()
+  {
+      document.applets.TurtleApplet.clear();
+      document.TurtleApplet.jumpTo(0,0);
+      document.TurtleApplet.drawString('o');
+      document.appletForm.walksSoFar.value = 0;
+      document.appletForm.avgSquare.value = 0;
+      document.appletForm.avgNormal.value = 0;
+  }
+</script>
+
+<title>Random Walk Simulator</title>
+</head>
+
+<body bgcolor="lightgrey" 
+      onLoad="document.TurtleApplet.penUp();
+              document.TurtleApplet.jumpTo(0,0);
+              document.TurtleApplet.drawString('o');">
+              
+<div style="text-align:center">
+<h2>Random Walk Simulator</h2>
+<h3>by David Reed, for <a href="http://dave-reed.com/book">A Balanced Introduction 
+to Computer 
+Science, 2nd ed.</a></h3>
+<hr />
+
+<form name="appletForm">
+<table>
+<tr>
+  <td>Number of random walks: &nbsp; </td>
+  <td><input type="text" name="numWalks" size=6 value=1> </td>
+  <td colspan=2 rowspan=2><input type="button" name="evalButton" 
+       value="Execute random walks" onClick="showRandomWalks();"> </td></tr>
+<tr>
+  <td>Number of steps per walk: &nbsp; </td>
+  <td><input type="text" name="numSteps" size=6 value=100> </td></tr>
+<tr>
+  <td>Size of each step: &nbsp; </td>
+  <td><input type="text" name="stepSize" size=6 value=1> </td>
+  <td colspan=2 rowspan=2><input type="button" name="resetButton" 
+              value="Clear graphics and reset" 
+              onClick= "resetAll()"> </td></tr>
+<tr>
+  <td>Expression for each turn: &nbsp; </td>
+  <td><input type="text" name="turnExpr" size=35 value="RandomInt(1, 360)"> </td></tr>
+<tr><td colspan=4><hr />
+<tr>
+<td colspan=2 style="text-align:center">
+125<br />
+-200
+<applet align="center" code="TurtleGraphics.class" name="TurtleApplet" 
+width=400 height=250>
+</applet>
+200  &nbsp;&nbsp;&nbsp;&nbsp;<br />
+-125
+<td></td>
+<td>
+<u><h3> Random Walk Statistics</h3></u>
+<table>
+<tr><td>walks since last reset: &nbsp; </td>
+    <td><input type="text" name="walksSoFar" size=8 value=0> </td></tr>
+<tr><td><br /> </td></tr>
+<tr><td>average (pixel distance)<sup>2</sup>: &nbsp; </td>
+    <td><input type="text" name="avgSquare" size=8 value=0> </td></tr>
+<tr><td>average (step distance)<sup>2</sup>: &nbsp; </td>
+    <td><input type="text" name="avgNormal" size=8 value=0> </td></tr>
+</table>
+</table>
+</form>
+
+</div>
+</body>
+</html>
+
+
+
+
+

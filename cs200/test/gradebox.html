@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- tip.html                                  Dave Reed -->
+<!-- Web page that calculates the tip amount on a check. -->
+<!-- =================================================== -->
+
+<html>
+ <head>
+   <title> Grade Calculator </title>
+ </head>
+
+ <body>
+   <h2>Grade Calculator</h2>
+   <p>
+     Enter the check amount: $<input type="text" id="gradeBox" size=10 value="">
+     <br>
+
+   </p>   
+   <input type="button" value="Calculate Grade" 
+          onclick="grade = document.getElementById('gradeBox').value;
+					newGrade = grade + 5;
+                   document.getElementById('outputDiv').innerHTML=
+                       'Your grade is' + newGrade + 'after scaling.';">
+   <hr>
+   <div id="outputDiv"></div>
+ </body>
+</html>

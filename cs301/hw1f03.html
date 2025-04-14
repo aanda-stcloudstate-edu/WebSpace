@@ -1,0 +1,127 @@
+<HTML>
+<HEAD>
+<TITLE>CSCI 301 Programming Assignment 1</TITLE>
+</HEAD>
+<BODY BGCOLOR=white TEXT=black>
+<H3>
+  CSCI 301<BR>
+  Computer Science 2<BR>
+  Fall, 2003<BR>
+</H3>
+<P>
+<DIV ALIGN=center>
+  <TABLE>
+    <TR><TD><IMG SRC="http://www.uis.edu/careerservices/sisyphus.gif">
+        <TD WIDTH=220 VALIGN=center ALIGN=center>
+          <FONT FACE=arial><B>
+            Programming Assignment 1<BR>
+          </B></FONT>
+        <TD><IMG SRC="http://www.uis.edu/careerservices/sisyphus.gif">
+  </TABLE>
+</DIV>
+<HR>
+<P>
+<DL>
+  <DT>TITLE
+    <DD><B>DETECTING PALINDROMES</B>
+    <P>
+  <DT>INTRODUCTION
+    <DD>A <B>palindrome</B> is a string that reads the same forwards
+    and backwards (ignoring spaces, punctuation, and capitalization).
+    Examples are the familiar ``If I had a hi-fi,'' and the grander
+    ``A man, a plan, a canal, Panama.''
+    <P>
+  <DT>DESCRIPTION
+    <DD>You are to design, implement, document, and test a program that
+    reads a line of input from the terminal and reports whether or not
+    that line is a palindrome. The object of this assignment is to review
+    and exercise C++ in general and arrays and strings in C++ in
+    particular.
+    <P>
+  <DT>INPUT
+    <DD>An input line may contain any characters, though <I>only letters</I>
+    are relevant in palindromes. The maximum length of the input is 80
+    characters (one line on the terminal).
+    <P>
+  <DT>OUTPUT
+    <DD>The program will prompt for the input line---a candidate
+    palindrome---and will report whether or not the line is a palindrome.
+    <P>
+  <DT>ERRORS
+    <DD>The program may assume that the input is as described.
+    It need not detect any errors.
+    <P>
+  <DT>EXAMPLE
+    <DD>Several runs of the program might look like this:
+    <PRE>
+      csh> pal
+      Enter a line that might be a palindrome:
+      Madam I'm Adam.
+      The string is a palindrome.
+
+      csh> pal
+      Enter a line that might be a palindrome:
+      Able was I ere I saw Elba.
+      The string is a palindrome.
+
+      csh> pal
+      Enter a line that might be a palindrome:
+      Go hang a salami, I'm a lasagna hog.
+      The string is a palindrome.
+
+      csh> pal
+      Enter a line that might be a palindrome:
+      This is another candidate string.
+      The string is NOT a palindrome.
+    </PRE>
+    <P>
+  <DT>OTHER REQUIREMENTS
+    <DD>Use arrays of <TT><B>char</B></TT>acters to hold any strings that the
+    program manipulates, and terminate strings within those arrays
+    with the null character '\0'. Write at least one function, and
+    use functions from the library <TT><B>strings.h</B></TT> as necessary.
+    <P>
+  <DT>HINTS
+    <DD>Consider reading the input one character at a time and
+    preserving only the letters; they're all that's interesting, after all.
+    Note the <TT><B>iostream.h</B></TT> function <TT><B>get(ch)</B></TT>,
+    which reads exactly one character, including the blank. The
+    following loop will read all the characters in an input line, one at a
+    time, into the variable <TT><B>c</B></TT>.
+    <PRE>
+      char c;
+        .
+         .
+          .
+      cin.get(c);
+      while ( c >= ' ' )
+      {
+        < Do something with c. >
+
+        cin.get(c);
+      }
+    </PRE>
+    Appendix F in the text describes input and output in C++ in more detail.
+    <P>
+    Also see Program 13-10 of Forouzan & Gilberg.
+    <P>
+  <DT>HAND IN
+    <DD>See <A HREF="http://web.stcloudstate.edu/aanda/cs301/handin.html">About Programming Assignments</A>
+    for a description of what to hand in: design document, user
+    document, code, tests, and summary.
+</DL>
+<P>
+<HR>
+<TABLE WIDTH=100%>
+  <TR>
+    <TD><IMG SRC="http://condor.stcloudstate.edu/~julstrom/icons/doc03.gif">
+    <TD ALIGN=center>Be sure your <B>name</B>, the <B>assignment number</B>,
+      and the <B>due date</B> appear prominently on every part of every
+      assignment that you hand in.
+    <TD><IMG SRC="http://condor.stcloudstate.edu/~julstrom/icons/doc03.gif">
+</TABLE>
+<HR>
+Based on the following Web page by Prof. Julstrom: <A HREF="http://condor.stcloudstate.edu/~julstrom/cs301/p1s03.html">http://condor.stcloudstate.edu/~julstrom/cs301/p1s03.html</A>
+</BODY>
+</HTML>
+

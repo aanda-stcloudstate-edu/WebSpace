@@ -1,0 +1,4 @@
+Errata
+
+p. 110, Ch. 04 -- Exercise 8: http://homes.cs.washington.edu/~snyder/index.html
+p. 231, Ch. 08 -- TryIt 8.6 Answer: 1100 1110 = 128 + 64 + 8 + 4 + 2

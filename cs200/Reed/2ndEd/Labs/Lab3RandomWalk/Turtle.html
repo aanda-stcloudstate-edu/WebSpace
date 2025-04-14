@@ -1,0 +1,166 @@
+<html>
+<!-- Turtle.html     by Dave Reed (davereed@creighton.edu)   --> 
+<!-- A lab program to accompany A Balanced Introduction to   -->
+<!-- Computer Science, 2nd ed., Pearson Prentice Hall, 2008. -->
+<!--                                                         -->
+<!-- This page provides a simple Turtle Graphics environment -->
+<!-- in which the user can enter commands in a text area,    -->
+<!-- then click a button and see the resulting graphics in   -->
+<!-- a Java applet (TurtleGraphics.class).                   -->
+<!-- ======================================================= -->
+
+<head>
+<script type="text/javascript" src="random.js"></script>
+
+<script type="text/javascript">
+    function distance() {
+        return Math.sqrt( Math.pow(getX(), 2) + Math.pow(getY(), 2) );
+    }
+
+    function home() {
+        document.applets.TurtleApplet.home(); 
+        document.appletForm.turtleX.value = getX();
+        document.appletForm.turtleY.value = getY();
+        document.appletForm.turtleHead.value = getHeading();
+        document.appletForm.turtleDist.value = distance();
+        document.appletForm.squareDist.value =
+             Math.pow(document.appletForm.turtleDist.value, 2);
+    }
+
+    function clearScreen() {
+          document.applets.TurtleApplet.clear();
+    }
+
+    function penUp() {
+        document.applets.TurtleApplet.penUp(); 
+    } 
+
+    function penDown() {
+        document.applets.TurtleApplet.penDown(); 
+   }
+                     
+    function drawString(str) {
+        document.applets.TurtleApplet.drawString(str); 
+    }
+     
+    function left(degrees) {
+        document.applets.TurtleApplet.left(degrees); 
+        document.appletForm.turtleHead.value = getHeading();
+    }
+
+    function right(degrees) {
+        document.applets.TurtleApplet.right(degrees); 
+        document.appletForm.turtleHead.value = getHeading();
+    }
+
+    function forward(steps) { 
+        document.applets.TurtleApplet.forward(steps); 
+        document.appletForm.turtleX.value = getX();
+        document.appletForm.turtleY.value = getY();
+        document.appletForm.turtleDist.value = distance();
+        document.appletForm.squareDist.value =
+             Math.pow(document.appletForm.turtleDist.value, 2);
+    }
+     
+    function backward(steps) {                       
+        document.applets.TurtleApplet.backward(steps);
+        document.appletForm.turtleX.value = getX();
+        document.appletForm.turtleY.value = getY(); 
+        document.appletForm.turtleDist.value = distance();
+        document.appletForm.squareDist.value = 
+             Math.pow(document.appletForm.turtleDist.value, 2);
+    }
+    
+    function getHeading() { 
+        return document.applets.TurtleApplet.getHeading(); 
+    } 
+
+    function getX() {
+        return document.applets.TurtleApplet.getX(); 
+    } 
+                  
+    function getY() {
+        return document.applets.TurtleApplet.getY(); 
+    } 
+
+    function getPen() {
+        return document.applets.TurtleApplet.getPen(); 
+    }
+    
+    function executeCommands()
+    {
+        if (document.appletForm.homeBox.checked) home();
+        for (i1x4 = 1; i1x4 <= parseInt(document.appletForm.numReps.value); 
+i1x4=i1x4+1){
+           eval(document.appletForm.inputArea.value);
+        }
+    }
+</script>
+
+<title>Turtle Graphics</title>
+</head>
+
+<body bgcolor="lightgrey">
+<div style="text-align:center">
+<h2>Turtle Graphics</h2>
+<h3>by David Reed, for <a href="http://dave-reed.com/book">A Balanced Introduction 
+to Computer 
+Science, 2nd ed.</a></h3>
+<hr />
+
+<form name="appletForm">
+<table>
+<tr>
+<td align="center"><textarea name="inputArea" rows=8 
+cols=50></textarea></td>
+<td> &nbsp;&nbsp;&nbsp; </td>
+<td><u><h3>Turtle Commands</h3></u>
+    <input type="button" name="evalButton" value="Execute code" 
+onClick="executeCommands()">
+    <input type="text" name="numReps" value=1 size=4> time(s)
+    <br />
+    <input type="checkbox" name="homeBox"> Start each drawing at (0,0)
+    <br /><br />
+    <input type="button" name="resetButton" value="Reset graphics screen" 
+           onClick= "home(); clearScreen();;"> 
+</td>
+</tr>
+<tr><td colspan=3><hr />
+<tr>
+<td align="center">
+125<br />
+-200
+<applet align="center" code="TurtleGraphics.class" name="TurtleApplet" 
+        width=400 height=250>
+</applet>
+200<br />
+-125
+<td></td>
+<td>
+<u><h3> Turtle Status</h3></u>
+heading: &nbsp;
+<input type="text" name="turtleHead" size=3 value=0><sup>o</sup>
+<br /><br />
+location: &nbsp;
+(<input type="text" name="turtleX" size=4 value=0>,
+ <input type="text" name="turtleY" size=4 value=0>)
+<br /><br /><hr /><br />
+<table>
+<tr><td>distance from (0,0): 
+    <td><input type="text" name="turtleDist" size=8 value=0>
+<tr><td><br />
+<tr><td>distance<sup>2</sup> from (0,0): &nbsp;
+    <td><input type="text" name="squareDist" size=8 value=0>
+</table>
+
+</table>
+</form>
+
+
+</div>
+</body>
+</html>
+
+
+
+

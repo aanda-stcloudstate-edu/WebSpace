@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>W:\cs331\mt1reviewF18.html</title>
+<meta name="Generator" content="Vim/6.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<pre>
+Fall 2018
+CS 331 Midterm 1 Review Topics
+
+Chapter 1  Intro
+
+        Disk I/O slow
+
+        New design work uses same tools in new ways
+
+        OOP integrates content &amp; behavior
+                and enhances data protection &amp; control of behaviour
+
+        Glossary
+
+Chapter 2  Fundamental file processing ops
+
+        Fundamental file operations
+                open
+                create
+                close
+                read
+                write
+                seek
+
+        Physical vs Logical file
+
+        I/O linkage:
+                logical file name
+                address in memory
+                how much data
+
+        Unix file system
+
+        Glossary
+
+Chapter 3 Secondary storage &amp; system SW
+
+        Disks
+                organization
+                estimating capacities
+                sector vs block organization of tracks
+                non-data overhead
+                disk access costs
+			seek time
+			rotational delay
+			transfer time
+                block size performance effects
+                disk as bottleneck
+                        RAID
+				striping
+				error detect/correct
+				mirroring
+        CD-Roms
+                organization
+                access costs and performance
+
+        Buffer Management
+                Multiple Buffering
+                Gather / Scatter
+
+        Glossary
+
+Chapter 4  File structure concepts
+
+        Stream file
+
+        Field structures
+                fixed length
+                length indicated
+                delimited
+                keyword
+
+        Record structures
+                fixed length
+                fixed field number
+                length indicated
+                indexed
+                delimited
+
+        Mixed numbers &amp; characters
+                file dump
+                byte order
+
+        Buffer Classes
+                pack/unpack
+
+        Inheritance
+                virtual methods
+                multiple inheritance
+                class hierarchy
+
+        Glossary
+
+Chapter 5 Files of records -- management
+
+        Record access
+                keys
+                        distinct
+                        primary
+                        secondary
+                        cannonical
+
+                sequential search
+                        performance issues
+                        tools
+                        when to use
+                        Unix tools
+
+                direct access
+                        RRN &amp; offset
+
+                header records
+
+        Abstract data models for access
+                headers &amp; self-describing files
+                meta-data
+                mixing object types in a file
+                        keywords
+                        tags
+
+                representation-independent access
+                        abstract data model
+                extensibility
+
+        Portability &amp; Standardization
+                factors:
+                        OS's
+                        languages
+                        architectures
+
+                achieving portability
+                        standard format
+                        standard binary encoding
+                        number &amp; text conversion
+                        file structure conversion
+                                intermediate standard format
+                        file system differences
+                        portability w.r.t. Unix
+                                dd utility
+
+        Glossary
+
+Chapter 6  Organizing files for performance
+
+        Data compression
+
+                lossy
+
+                lossless
+                        redundancy reduction
+                        repeated sequence suppression (run-length encoding)
+                        variable-length codes (Huffman)
+                                static
+                                dynamic
+                        Hierarchical grammar-based codes (Sequitur)
+				[generate original string from compressed grammar]
+
+        Space reclamation
+
+                record addition
+
+                record updating
+
+                record deletion
+
+                storage compaction
+                        marking
+                        linked lists &amp; stacks
+			preparation for coalescence
+
+                fragmentation
+                        internal
+                        external
+
+                placement strategies
+                        first-fit
+                        best-fit
+                        worst-fit
+
+	Internal sorting &amp; binary searching
+                        binary vs sequential
+			midpoint expressions (which is best?)
+                        sorting in memory
+				stability
+				online
+				in-place
+                        key-sorting
+                        don't writeback
+                        pinned records
+
+        Glossary
+
+Chapter 7  Indexing
+
+	Keys
+		primary
+		candidate
+		secondary
+
+        Simple Index
+		sorted
+		entry sequenced
+
+	Templates
+
+	Indexed file maintenance
+		record addition
+		record deletion
+		record update
+
+        Access by multiple keys
+
+	Inverted indexes
+		linking
+		extending to an arbitrary number of secondary indices
+
+        Glossary
+
+Chapter 8.1
+	Cosequential processing
+	merging
+	matching
+	Unix tools
+
+</pre>
+</body>
+</html>

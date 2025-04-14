@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+       <title>CSCI 200 lab10 Spring 2024 [Professor A. A. Anda]</title>
+       <style type="text/css"> 
+	   BODY TT {color:maroon}
+       </style>
+       
+    </head>
+    <body>
+
+	<center>
+	    <h1>CSCI 200</h1>
+
+	    <h2>Lab 10</h2>
+
+	    <h3>
+		[Professor A. A. Anda]<br>
+		Spring 2024
+	    </h3>
+	</center>
+
+	<hr WIDTH="100%">
+	<h2>Introduction:</h2>
+	This lab exercises the ability to:
+	<ul>
+	    <li><u>Write</u>, <u>run</u>, and <u>test</u> an <b>assembly language</b> program for Reed's
+	    <a href="http://balance3e.com/Ch14/machine.html">Complete Knob&amp;Switch Computer Simulator</a>.</li>
+	</ul>
+	<h2>Lab Assignment:</h2>
+
+	<ol>
+	    <li> Create a new folder, <b><tt>Lab10</tt></b>, in your <b><tt>labs</tt></b> folder.</li>
+	    <li> Move into your <b><tt>Lab10</tt></b> folder</li>
+	</ol>
+	<p>
+	For the following two Exercises, before programming the Simulator, type (or write down) your assembly program,
+	then step through it.<br>
+	(<b>Hint:</b> at first, use variables for your data memory addresses, then when your code passes your step-through,
+	and you know the address of the halt statement, then replace the variables with the appropriate addresses)
+	<p>
+	<ol>
+	    <li> <u>Exercise 14.13</u> with the following modification
+	    <ul>
+		<li>use the memory location immediately following the <tt>HALT</tt> instruction as your (<i>input</i>) operand (the value to be multiplied by four.
+		<li>use the memory location immediately following the input operand as your (<i>output</i> result) product destination.
+		<li>use only one register.
+	    </ul>
+	    <li>Create a program to perform the <u>multiplication</u> operation by
+		computing the product of the <i>positive</i> integers in the first two memory locations follwing the <tt>HALT</tt> command.
+		Store the resulting product in the third memory location following the <tt>HALT</tt> instruction.<br>
+		[<i>HINT</i>: create a loop for which every iteration adds one operand to a running sum<br>
+		(<i>which will represent the product at the end</i>) while decrementing the other operand.<br>
+		Stop the loop, then store the (resulting) product when the decremented value is zero.<br>
+		(consider using a <b>Branching Instruction</b> from the <a href="http://balance3e.com/Ch14/instructions.html">K & S Model 2 - Assembly & Machine Language Instruction Set</a>, such as the <tt>BZERO</tt> instruction, to implement loops)]
+	    <li><b>Extra Credit</b>: Raise the positive value in the first of two memory locations follwing the
+		<tt>HALT</tt> instruction to the power of the positive value in the second memory location and store
+		the result in the third memory location.
+</ol>
+	</ol>
+	<p>
+	When each simulation performs correctly, submit <u>screenshots</u> of the simulator,
+	<i>before</i> and <i>after</i> each assembly language program runs on the simulator,
+	to the Lab10 D2L dropbox.
+    </body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-4GB i686) [Netscape]">
+   <title>csci 201 Debugging Hints &amp; Suggestions</title>
+</head>
+<body>
+
+<center>
+<h1>
+CSCI 201</h1></center>
+
+<center>
+<h2>
+Debugging Hints &amp; Suggestions</h2></center>
+
+<hr WIDTH="100%">
+
+<h4>
+Development</h4>
+
+<ul>
+<li>
+Use <i>lots</i> of white space and consistent structural indentation to
+maximise the readability of your program.&nbsp; The easier it is to read,
+the easier it is to debug;</li>
+
+<li>
+Consider starting with the psuedocode version of your program as a basis
+for the descriptive comments in your program.&nbsp; Insert code below the
+comments which describe it;</li>
+
+<li>
+Solve the <i>smallest </i>possible version of the problem you're attacking.&nbsp;
+Once that is correct, scale up;</li>
+
+<li>
+Procede incrementally.&nbsp; Ensure you're program is correct in stages:</li>
+
+<ul>
+<li>
+code</li>
+
+<li>
+compile</li>
+
+<li>
+test</li>
+
+<li>
+repeat</li>
+</ul>
+
+<li>
+Test with the most diverse possible set of test data at each stage;</li>
+
+<li>
+Use an editor with syntax highlighting such as vim or emacs;</li>
+
+<li>
+Follow the suggestions in&nbsp; the <u>SOFTWARE ENGINEERING AND PROGRAMMING
+STYLE</u> section of each of the chapters we have or are covering;</li>
+
+<li>
+Follow the suggestions and directives in Appendix H, <u>Program Standards
+and Styles</u>;</li>
+</ul>
+
+<h4>
+Syntax errors</h4>
+
+<ul>
+<li>
+If the compiler generates a list of error messages, look for a problem
+at location of the earliest line number mentioned, <i>and the lines preceding&nbsp;
+it</i>.</li>
+
+<ul>
+<li>
+After you think you've corrected it, <u>recompile</u>.&nbsp; Often, many
+of the subsequent error messages were propogated from the one you corrected
+and will disappear.</li>
+</ul>
+
+<li>
+Make sure:</li>
+
+<ul>
+<li>
+you have followed all directives in the <u>TIPS AND COMMON PROGRAMMING
+ERRORS</u> section of each of the chapters we have or are covering;</li>
+
+<li>
+all variable are declared, and also initialized when necessary;</li>
+
+<li>
+all statements end with a semicolon;</li>
+
+<li>
+all delimiters (e.g. parentheses, apostrophes, quotes, brackets, and braces)
+are matched;</li>
+
+<ul>
+<li>
+To this end, I recommend always starting a delimiter bracketed expression
+with the matched delimiters and then inserting into them.&nbsp; (e.g.,
+begin writing&nbsp; a string literal with "", and then insert into the
+pair)</li>
+</ul>
+
+<li>
+all necessary libraries have been properly included;</li>
+</ul>
+</ul>
+
+<h4>
+Logic errors</h4>
+
+<ul>
+<li>
+Trace by hand: try to recreate by hand what you expect each successive
+statement will do.</li>
+
+<li>
+Program tracing: print out the values of variables at intermediate stages
+to track how they are changing.&nbsp; Are the changes what you expected?</li>
+</ul>
+
+</body>
+</html>
